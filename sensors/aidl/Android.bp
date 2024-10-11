@@ -1,0 +1,78 @@
+/*
+ * Copyright (C) 2023 Robert Bosch GmbH
+ * Copyright (C) 2023 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+ 
+filegroup {
+    name: "sensors-bosch.rc",
+    srcs: ["android.hardware.sensors@aidl-service-bosch.rc"],
+}
+
+filegroup {
+    name: "sensors-bosch.xml",
+    srcs: ["android.hardware.sensors@aidl-bosch.xml"],
+}
+
+cc_library_static {
+    name: "libsensorsboschimpl",
+    vendor: true,
+    shared_libs: [
+        "libbase",
+        "libfmq",
+        "libpower",
+        "libbinder_ndk",
+        "android.hardware.sensors-V1-ndk",
+    ],
+    static_libs: [
+        "android.hardware.sensors@hwctl.bosch",
+        "libboschsensorcore",
+        "libboschsensors",
+    ],
+    export_include_dirs: ["include"],
+    srcs: [
+        "SensorsHalAidl.cpp",
+        "Sensor.cpp",
+    ],
+    visibility: [
+        ":__subpackages__",
+    ],
+}
+
+cc_binary {
+    name: "android.hardware.sensors@aidl-service.bosch",
+    owner: "Robert Bosch GmbH",
+    relative_install_path: "hw",
+    vendor: true,
+    proprietary: true,
+    init_rc: [":sensors-bosch.rc"],
+    vintf_fragments: [":sensors-bosch.xml"],
+    shared_libs: [
+        "libbase",
+        "libbinder_ndk",
+        "libfmq",
+        "libpower",
+        "libcutils",
+        "liblog",
+        "libutils",
+        "android.hardware.sensors-V1-ndk",
+    ],
+    static_libs: [
+        "android.hardware.sensors@hwctl.bosch",
+        "libsensorsboschimpl",
+        "libboschsensorcore",
+        "libboschsensors",
+    ],
+    srcs: ["service.cpp"],
+}

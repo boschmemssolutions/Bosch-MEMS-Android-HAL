@@ -1,0 +1,7 @@
+service vendor.sensors-hal-aidl-multihal-bosch /vendor/bin/hw/android.hardware.sensors@aidl-service.multihal.bosch
+    class hal
+    user system
+    group system wakelock context_hub
+    task_profiles ServiceCapacityLow
+    capabilities BLOCK_SUSPEND
+    rlimit rtprio 10 10

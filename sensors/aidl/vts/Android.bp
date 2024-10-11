@@ -1,0 +1,46 @@
+/*
+ * Copyright (C) 2023 Robert Bosch GmbH
+ * Copyright (C) 2023 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+ 
+cc_test {
+    name: "BoschAidlHalSensorsTargetTest",
+    defaults: [
+        "use_libaidlvintf_gtest_helper_static",
+        "VtsHalSensorsDefaults",
+        "VtsHalTargetTestDefaults",
+    ],
+    srcs: [
+        "BoschAidlHalSensorsTargetTest.cpp",
+        "SensorsAidlEnvironment.cpp",
+    ],
+    shared_libs: [
+        "libbinder",
+        "libbinder_ndk",
+        "libvndksupport",
+        "libfmq",
+        "android.hardware.common-V2-ndk",
+        "android.hardware.common.fmq-V1-ndk",
+    ],
+    static_libs: [
+        "android.hardware.sensors-V1-ndk",
+        "VtsHalSensorsTargetTestUtils",
+        "libaidlcommonsupport",
+    ],
+    test_suites: [
+        "general-tests",
+        "vts",
+    ],
+}

@@ -1,0 +1,4 @@
+service vendor.sensors-hal-2.0-bosch /vendor/bin/hw/android.hardware.sensors@2.0-service.bosch
+    class hal
+    user system
+    group system
