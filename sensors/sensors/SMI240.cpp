@@ -24,24 +24,32 @@ Smi240Acc::Smi240Acc() : SensorCore() {
   mSensorData.driverName = "smi240";
   mSensorData.sensorName = "SMI240 BOSCH Accelerometer Sensor";
   mSensorData.sysfsRaw = {"in_accel_x_raw", "in_accel_y_raw", "in_accel_z_raw"};
+  mSensorData.temperatureSysfsRaw = "in_temp_object_raw";
   mSensorData.type = BoschSensorType::ACCEL;
   mSensorData.minDelayUs = 5000;
   mSensorData.maxDelayUs = 2000000;
   mSensorData.power = 5.0f;
   mSensorData.range = gravityToAcceleration(16);
   mSensorData.resolution = gravityToAcceleration(1.0f / 2000);
+  mSensorData.temperatureScale = 1.0f / 256;
+  mSensorData.temperatureOffset = 25.0f * 256;
+  mSensorData.reportMode = CONTINUOUS;
 }
 
 Smi240Gyro::Smi240Gyro() : SensorCore() {
   mSensorData.driverName = "smi240";
   mSensorData.sensorName = "SMI240 BOSCH Gyroscope Sensor";
   mSensorData.sysfsRaw = {"in_anglvel_x_raw", "in_anglvel_y_raw", "in_anglvel_z_raw"};
+  mSensorData.temperatureSysfsRaw = "in_temp_object_raw";
   mSensorData.type = BoschSensorType::GYRO;
   mSensorData.minDelayUs = 5000;
   mSensorData.maxDelayUs = 2000000;
   mSensorData.power = 5.0f;
   mSensorData.range = degreeToRad(300);
   mSensorData.resolution = degreeToRad(1.0f / 100);
+  mSensorData.temperatureScale = 1.0f / 256;
+  mSensorData.temperatureOffset = 25.0f * 256;
+  mSensorData.reportMode = CONTINUOUS;
 }
 
 Smi240LinearAcc::Smi240LinearAcc(const std::shared_ptr<SensorCore> accel, const std::shared_ptr<SensorCore> gyro) {
@@ -52,6 +60,8 @@ Smi240LinearAcc::Smi240LinearAcc(const std::shared_ptr<SensorCore> accel, const 
   mSensorData.power = accel->getSensorData().power + gyro->getSensorData().power;
   mSensorData.range = accel->getSensorData().range;
   mSensorData.resolution = accel->getSensorData().resolution;
+  mSensorData.reportMode = CONTINUOUS;
+
   mGyroVar = SMI240_GYRO_VAR;
 
   mDependencyList.push_back(accel);
@@ -66,6 +76,8 @@ Smi240Gravity::Smi240Gravity(const std::shared_ptr<SensorCore> accel, const std:
   mSensorData.power = accel->getSensorData().power + gyro->getSensorData().power;
   mSensorData.range = accel->getSensorData().range;
   mSensorData.resolution = accel->getSensorData().resolution;
+  mSensorData.reportMode = CONTINUOUS;
+
   mGyroVar = SMI240_GYRO_VAR;
 
   mDependencyList.push_back(accel);

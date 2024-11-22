@@ -17,6 +17,7 @@
 #include "sensors-impl/SensorsHalAidl.h"
 
 #include <aidl/android/hardware/common/fmq/SynchronizedReadWrite.h>
+#include <aidlcommonsupport/NativeHandle.h>
 
 using ::aidl::android::hardware::common::fmq::MQDescriptor;
 using ::aidl::android::hardware::common::fmq::SynchronizedReadWrite;
@@ -24,12 +25,46 @@ using ::aidl::android::hardware::sensors::Event;
 using ::aidl::android::hardware::sensors::ISensors;
 using ::aidl::android::hardware::sensors::ISensorsCallback;
 using ::aidl::android::hardware::sensors::SensorInfo;
+using ::bosch::sensor::hal::configuration::V1_0::Configuration;
 using ::ndk::ScopedAStatus;
 
 namespace aidl {
 namespace android {
 namespace hardware {
 namespace sensors {
+
+#define SENSOR_XML_CONFIG_FILE_NAME "sensor_hal_configuration.xml"
+static const char* gSensorConfigLocationList[] = {"/odm/etc/sensors/", "/vendor/etc/sensors/"};
+static const int gSensorConfigLocationListSize =
+  (sizeof(gSensorConfigLocationList) / sizeof(gSensorConfigLocationList[0]));
+#define MODULE_NAME "bosch-hal"
+
+static std::optional<std::vector<Configuration>> getSensorConfiguration(
+  const std::vector<::bosch::sensor::hal::configuration::V1_0::Sensor>& sensor_list, const std::string& name,
+  SensorType type) {
+  for (auto sensor : sensor_list) {
+    if ((name.compare(sensor.getName()) == 0) && (type == (SensorType)sensor.getType())) {
+      return sensor.getConfiguration();
+    }
+  }
+  return std::nullopt;
+}
+
+static std::optional<std::vector<::bosch::sensor::hal::configuration::V1_0::Sensor>> readSensorsConfigFromXml() {
+  for (int i = 0; i < gSensorConfigLocationListSize; i++) {
+    const auto sensor_config_file = std::string(gSensorConfigLocationList[i]) + SENSOR_XML_CONFIG_FILE_NAME;
+    auto sensorConfig = ::bosch::sensor::hal::configuration::V1_0::read(sensor_config_file.c_str());
+    if (sensorConfig) {
+      auto modulesList = sensorConfig->getFirstModules()->get_module();
+      for (auto module : modulesList) {
+        if (module.getHalName().compare(MODULE_NAME) == 0) {
+          return module.getFirstSensors()->getSensor();
+        }
+      }
+    }
+  }
+  return std::nullopt;
+}
 
 ScopedAStatus SensorsHalAidl::activate(int32_t in_sensorHandle, bool in_enabled) {
   auto sensor = mSensors.find(in_sensorHandle);
@@ -78,24 +113,102 @@ void SensorsHalAidl::AddSensors() {
     sensorInfo.fifoReservedEventCount = 0;
     sensorInfo.fifoMaxEventCount = 0;
     sensorInfo.requiredPermission = "";
-    sensorInfo.flags |= SensorInfo::SENSOR_FLAG_BITS_CONTINUOUS_MODE;
+
+    switch (data.reportMode) {
+      case bosch::sensors::SensorReportingMode::CONTINUOUS:
+        sensorInfo.flags |= SensorInfo::SENSOR_FLAG_BITS_CONTINUOUS_MODE;
+        sensorInfo.flags |= SensorInfo::SENSOR_FLAG_BITS_ADDITIONAL_INFO;
+        sensorInfo.flags |= SensorInfo::SENSOR_FLAG_BITS_DIRECT_CHANNEL_ASHMEM;
+        sensorInfo.flags |=
+          (static_cast<int32_t>(ISensors::RateLevel::FAST) << SensorInfo::SENSOR_FLAG_SHIFT_DIRECT_REPORT);
+        break;
+      case bosch::sensors::SensorReportingMode::ON_CHANGE:
+        sensorInfo.flags |= SensorInfo::SENSOR_FLAG_BITS_ON_CHANGE_MODE;
+        break;
+      case bosch::sensors::SensorReportingMode::ONE_SHOT:
+        sensorInfo.flags |= SensorInfo::SENSOR_FLAG_BITS_ONE_SHOT_MODE;
+        break;
+      case bosch::sensors::SensorReportingMode::SPECIAL_REPORTING:
+        sensorInfo.flags |= SensorInfo::SENSOR_FLAG_BITS_SPECIAL_REPORTING_MODE;
+        break;
+      default:
+        ALOGW("Unknown sensor reporting mode: %d", data.reportMode);
+        break;
+    }
     sensorInfo.minDelayUs = data.minDelayUs;
     sensorInfo.maxDelayUs = data.maxDelayUs;
     sensorInfo.power = data.power;
     sensorInfo.maxRange = data.range;
     sensorInfo.resolution = data.resolution;
 
-    std::shared_ptr<Sensor> halSensor = std::make_shared<Sensor>(this /* callback */, sensorInfo, sensor);
+    const auto sensors_config_list = readSensorsConfigFromXml();
+    const auto& sensorconfig = getSensorConfiguration(*sensors_config_list, sensorInfo.name, sensorInfo.type);
+    std::shared_ptr<Sensor> halSensor = std::make_shared<Sensor>(this /* callback */, sensorInfo, sensor, sensorconfig);
     mSensors[halSensor->getSensorInfo().sensorHandle] = halSensor;
     ALOGD("AddSensor[%d] %s", halSensor->getSensorInfo().sensorHandle, halSensor->getSensorInfo().name.c_str());
   }
 }
 
-ScopedAStatus SensorsHalAidl::configDirectReport(int32_t /* in_sensorHandle */, int32_t /* in_channelHandle */,
-                                                 ISensors::RateLevel /* in_rate */, int32_t* _aidl_return) {
-  *_aidl_return = EX_UNSUPPORTED_OPERATION;
+ScopedAStatus SensorsHalAidl::configDirectReport(int32_t in_sensorHandle, int32_t in_channelHandle,
+                                                 ISensors::RateLevel in_rate, int32_t* _aidl_return) {
+  std::lock_guard<std::mutex> lock(mChannelMutex);
 
-  return ScopedAStatus::fromExceptionCode(EX_UNSUPPORTED_OPERATION);
+  auto channelIt = mDirectChannels.find(in_channelHandle);
+  if (channelIt == mDirectChannels.end()) {
+    return ndk::ScopedAStatus::fromExceptionCode(EX_ILLEGAL_ARGUMENT);
+  }
+
+  if (in_sensorHandle == -1 && in_rate == ISensors::RateLevel::STOP) {
+    for (auto sensor : channelIt->second->sensorHandles) {
+      auto sensorIt = mSensors.find(sensor);
+      if (sensorIt != mSensors.end()) {
+        channelIt->second->rateNs[sensor] = 0;
+        sensorIt->second->stopDirectChannel(in_channelHandle);
+      }
+    }
+    return ndk::ScopedAStatus::ok();
+  }
+
+  auto sensorIt = mSensors.find(in_sensorHandle);
+  if (sensorIt == mSensors.end()) {
+    return ndk::ScopedAStatus::fromExceptionCode(EX_ILLEGAL_ARGUMENT);
+  }
+
+  if (!(sensorIt->second->getSensorInfo().flags & SensorInfo::SENSOR_FLAG_BITS_DIRECT_CHANNEL_ASHMEM)) {
+    return ndk::ScopedAStatus::fromExceptionCode(EX_ILLEGAL_ARGUMENT);
+  }
+
+  const int32_t maxRate = (sensorIt->second->getSensorInfo().flags & SENSOR_FLAG_MASK_DIRECT_REPORT) >>
+                          SensorInfo::SENSOR_FLAG_SHIFT_DIRECT_REPORT;
+
+  switch (in_rate) {
+    case ISensors::RateLevel::STOP:
+      channelIt->second->rateNs[in_sensorHandle] = 0;
+      break;
+    case ISensors::RateLevel::NORMAL:
+      channelIt->second->rateNs[in_sensorHandle] = 20000000;
+      break;
+    case ISensors::RateLevel::FAST:
+      if (maxRate < static_cast<int32_t>(ISensors::RateLevel::FAST)) {
+        return ndk::ScopedAStatus::fromExceptionCode(EX_ILLEGAL_ARGUMENT);
+      }
+      channelIt->second->rateNs[in_sensorHandle] = 5000000;
+      break;
+    case ISensors::RateLevel::VERY_FAST:
+      if (maxRate < static_cast<int32_t>(ISensors::RateLevel::VERY_FAST)) {
+        return ndk::ScopedAStatus::fromExceptionCode(EX_ILLEGAL_ARGUMENT);
+      }
+      channelIt->second->rateNs[in_sensorHandle] = 1250000;
+      break;
+    default:
+      return ndk::ScopedAStatus::fromExceptionCode(EX_ILLEGAL_ARGUMENT);
+  }
+
+  channelIt->second->sensorHandles.push_back(in_sensorHandle);
+  sensorIt->second->addDirectChannel(in_channelHandle, channelIt->second->rateNs[in_sensorHandle]);
+
+  *_aidl_return = in_sensorHandle;
+  return ndk::ScopedAStatus::ok();
 }
 
 ScopedAStatus SensorsHalAidl::flush(int32_t in_sensorHandle) {
@@ -137,6 +250,17 @@ ScopedAStatus SensorsHalAidl::initialize(
   // Save a reference to the callback
   mCallback = in_sensorsCallback;
 
+  // Reset direct channels
+  for (auto& [channelHandle, channel] : mDirectChannels) {
+    for (auto sensorHandle : channel->sensorHandles) {
+      auto sensor = mSensors.find(sensorHandle);
+      if (sensor != mSensors.end()) {
+        sensor->second->removeDirectChannel(channelHandle);
+      }
+    }
+  }
+  mDirectChannels.clear();
+
   // Ensure that any existing EventFlag is properly deleted
   deleteEventFlag();
 
@@ -170,12 +294,29 @@ ScopedAStatus SensorsHalAidl::injectSensorData(const Event& in_event) {
   return ScopedAStatus::fromServiceSpecificError(static_cast<int32_t>(ERROR_BAD_VALUE));
 }
 
-ScopedAStatus SensorsHalAidl::registerDirectChannel(const ISensors::SharedMemInfo& /* in_mem */,
-                                                    int32_t* _aidl_return) {
-  *_aidl_return = EX_UNSUPPORTED_OPERATION;
+ScopedAStatus SensorsHalAidl::registerDirectChannel(const ISensors::SharedMemInfo& in_mem, int32_t* _aidl_return) {
+  std::lock_guard<std::mutex> lock(mChannelMutex);
 
-  return ScopedAStatus::fromExceptionCode(EX_UNSUPPORTED_OPERATION);
-}
+  if (in_mem.type != ISensors::SharedMemInfo::SharedMemType::ASHMEM) {
+    return ndk::ScopedAStatus::fromExceptionCode(EX_ILLEGAL_ARGUMENT);
+  }
+
+  sensors_direct_mem_t directMem = {.type = static_cast<int>(in_mem.type),
+                                    .format = static_cast<int>(in_mem.format),
+                                    .size = static_cast<size_t>(in_mem.size),
+                                    .handle = ::android::makeFromAidl(in_mem.memoryHandle)};
+
+  auto ch = std::make_unique<::android::AshmemDirectChannel>(&directMem);
+
+  if (ch->isValid()) {
+    int32_t channelHandle = mNextChannelHandle++;
+    mDirectChannels.insert(std::make_pair(channelHandle, std::move(ch)));
+    *_aidl_return = channelHandle;
+    return ndk::ScopedAStatus::ok();
+  } else {
+    return ndk::ScopedAStatus::fromServiceSpecificError(ch->getError());
+  }
+}  // namespace sensors
 
 ScopedAStatus SensorsHalAidl::setOperationMode(OperationMode in_mode) {
   auto res = ScopedAStatus::ok();
@@ -185,8 +326,22 @@ ScopedAStatus SensorsHalAidl::setOperationMode(OperationMode in_mode) {
   return res;
 }
 
-ScopedAStatus SensorsHalAidl::unregisterDirectChannel(int32_t /* in_channelHandle */) {
-  return ScopedAStatus::fromExceptionCode(EX_UNSUPPORTED_OPERATION);
+ScopedAStatus SensorsHalAidl::unregisterDirectChannel(int32_t in_channelHandle) {
+  std::lock_guard<std::mutex> lock(mChannelMutex);
+
+  auto channelIt = mDirectChannels.find(in_channelHandle);
+  if (channelIt != mDirectChannels.end()) {
+    for (auto sensorHandle : channelIt->second->sensorHandles) {
+      auto sensorIt = mSensors.find(sensorHandle);
+      if (sensorIt != mSensors.end()) {
+        sensorIt->second->removeDirectChannel(in_channelHandle);
+      }
+    }
+  }
+
+  mDirectChannels.erase(in_channelHandle);
+
+  return ndk::ScopedAStatus::ok();
 }
 
 }  // namespace sensors

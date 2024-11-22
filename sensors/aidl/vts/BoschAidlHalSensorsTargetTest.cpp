@@ -828,7 +828,7 @@ void SensorsAidlTest::checkVec3Sensor(SensorType type, const Event::EventPayload
   if (type == SensorType::GRAVITY || type == SensorType::LINEAR_ACCELERATION) {
     // These sensors are required to be calibrated
     checkIsOk(batch(sensorInfo.sensorHandle, sensorInfo.minDelayUs * 1000LL, 0 /* maxReportLatencyNs */));
-    usleep(sensorInfo.minDelayUs * 500LL);
+    usleep(sensorInfo.minDelayUs * 50LL);
   }
   events = getEnvironment()->collectEvents(kCollectionTimeoutUs, kNumEvents);
   checkIsOk(activate(sensorInfo.sensorHandle, 0));

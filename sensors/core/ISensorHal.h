@@ -26,10 +26,18 @@ namespace bosch {
 namespace sensors {
 
 enum BoschSensorType {
-  ACCEL = 1,          // SensorType::ACCELEROMETER
-  GYRO = 4,           // SensorType::GYROSCOPE
-  GRAVITY = 9,        // SensorType::GRAVITY
-  LINEAR_ACCEL = 10,  // SensorType::LINEAR_ACCELERATION
+  ACCEL = 1,                 // SensorType::ACCELEROMETER
+  GYRO = 4,                  // SensorType::GYROSCOPE
+  GRAVITY = 9,               // SensorType::GRAVITY
+  LINEAR_ACCEL = 10,         // SensorType::LINEAR_ACCELERATION
+  AMBIENT_TEMPERATURE = 13,  // SensorType::AMBIENT_TEMPERATURE
+};
+
+enum SensorReportingMode {
+  CONTINUOUS = 0,
+  ON_CHANGE = 1,
+  ONE_SHOT = 2,
+  SPECIAL_REPORTING = 3,
 };
 
 struct SensorData {
@@ -37,12 +45,16 @@ struct SensorData {
   std::string driverName;
   std::string sensorName;
   std::array<std::string, 3> sysfsRaw;
+  std::string temperatureSysfsRaw;
   BoschSensorType type;
   int32_t minDelayUs;
   int32_t maxDelayUs;
   float power;
   float range;
   float resolution;
+  float temperatureScale;
+  float temperatureOffset;
+  SensorReportingMode reportMode;
 };
 
 struct SensorValues {
@@ -56,6 +68,7 @@ public:
   virtual ~ISensorHal() = default;
 
   virtual std::vector<SensorValues> readSensorValues() = 0;
+  virtual bool readSensorTemperature(float* temperature) = 0;
   virtual void activate(bool enable) = 0;
   virtual void batch(int64_t samplingPeriodNs, int64_t maxReportLatencyNs) = 0;
   virtual const SensorData& getSensorData() const = 0;

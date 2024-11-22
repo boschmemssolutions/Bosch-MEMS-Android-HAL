@@ -34,6 +34,7 @@ public:
   ~SensorCore() override = default;
 
   std::vector<SensorValues> readSensorValues() override;
+  bool readSensorTemperature(float* temperature) override;
   void activate(bool enable) override;
   void batch(int64_t samplingPeriodNs, int64_t maxReportLatencyNs) override;
   const SensorData& getSensorData() const override { return mSensorData; }

@@ -68,6 +68,12 @@ public:
   ~Smi230Gravity() = default;
 };
 
+class Smi230AmbientTemperature : public Smi230Common {
+public:
+  Smi230AmbientTemperature();
+  ~Smi230AmbientTemperature() = default;
+};
+
 }  // namespace sensors
 }  // namespace bosch
 

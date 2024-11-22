@@ -34,6 +34,7 @@ cc_library_shared {
         "libhidlbase",
         "liblog",
         "libutils",
+        "libcutils",
     ],
     static_libs: [
         "android.hardware.sensors@1.0-convert",
@@ -41,6 +42,7 @@ cc_library_shared {
         "android.hardware.sensors@hwctl.bosch",
         "libboschsensorcore",
         "libboschsensors",
+        "libxml2",
     ],
     header_libs: [
       "android.hardware.sensors@2.X-multihal.header",
@@ -50,4 +52,7 @@ cc_library_shared {
         "-Wno-unused-variable",
         "-Wno-unused-parameter",
     ],
+    generated_sources: ["bosch_sensor_hal_configuration_V1_0"],
+    generated_headers: ["bosch_sensor_hal_configuration_V1_0"],
+    export_generated_headers: ["bosch_sensor_hal_configuration_V1_0"],
 }

@@ -980,7 +980,7 @@ void SensorsHidlTest::checkVec3Sensor(SensorTypeVersion type, const Vec3& lowerL
   if (type == SensorTypeVersion::GRAVITY || type == SensorTypeVersion::LINEAR_ACCELERATION) {
     // These sensors are required to be calibrated
     ASSERT_EQ(batch(handle, sensor.minDelay * 1000LL, 0 /* maxReportLatencyNs */), Result::OK);
-    usleep(sensor.minDelay * 500LL);
+    usleep(sensor.minDelay * 50LL);
   }
   events = getEnvironment()->collectEvents(kCollectionTimeoutUs, kNumEvents);
   ASSERT_EQ(activate(handle, 0), Result::OK);

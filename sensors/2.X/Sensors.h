@@ -30,6 +30,7 @@
 #include <memory>
 #include <thread>
 
+#include "DirectChannel.h"
 #include "EventMessageQueueWrapper.h"
 #include "Sensor.h"
 #include "SensorList.h"
@@ -39,6 +40,44 @@ namespace hardware {
 namespace sensors {
 namespace V2_X {
 namespace implementation {
+
+using Configuration = ::bosch::sensor::hal::configuration::V1_0::Configuration;
+using SensorType = ::android::hardware::sensors::V2_1::SensorType;
+using RateLevel = ::android::hardware::sensors::V1_0::RateLevel;
+
+#define SENSOR_XML_CONFIG_FILE_NAME "sensor_hal_configuration.xml"
+static const char* gSensorConfigLocationList[] = {"/odm/etc/sensors/", "/vendor/etc/sensors/"};
+static const int gSensorConfigLocationListSize =
+  (sizeof(gSensorConfigLocationList) / sizeof(gSensorConfigLocationList[0]));
+
+#define MODULE_NAME "bosch-hal"
+
+static inline std::optional<std::vector<Configuration>> getSensorConfiguration(
+  const std::vector<::bosch::sensor::hal::configuration::V1_0::Sensor>& sensor_list, const std::string& name,
+  SensorType type) {
+  for (auto sensor : sensor_list) {
+    if ((name.compare(sensor.getName()) == 0) && (type == (SensorType)sensor.getType())) {
+      return sensor.getConfiguration();
+    }
+  }
+  return std::nullopt;
+}
+
+static inline std::optional<std::vector<::bosch::sensor::hal::configuration::V1_0::Sensor>> readSensorsConfigFromXml() {
+  for (int i = 0; i < gSensorConfigLocationListSize; i++) {
+    const auto sensor_config_file = std::string(gSensorConfigLocationList[i]) + SENSOR_XML_CONFIG_FILE_NAME;
+    auto sensorConfig = ::bosch::sensor::hal::configuration::V1_0::read(sensor_config_file.c_str());
+    if (sensorConfig) {
+      auto modulesList = sensorConfig->getFirstModules()->get_module();
+      for (auto module : modulesList) {
+        if (module.getHalName().compare(MODULE_NAME) == 0) {
+          return module.getFirstSensors()->getSensor();
+        }
+      }
+    }
+  }
+  return std::nullopt;
+}
 
 template <class ISensorsInterface>
 struct Sensors : public ISensorsInterface, public ISensorsEventCallback {
@@ -52,7 +91,6 @@ struct Sensors : public ISensorsInterface, public ISensorsEventCallback {
   using WakeLockQueueFlagBits = ::android::hardware::sensors::V2_0::WakeLockQueueFlagBits;
   using ISensorsCallback = ::android::hardware::sensors::V2_0::ISensorsCallback;
   using SensorInfo = ::android::hardware::sensors::V2_1::SensorInfo;
-  using SensorType = ::android::hardware::sensors::V2_1::SensorType;
   using EventMessageQueue = MessageQueue<Event, kSynchronizedReadWrite>;
   using WakeLockMessageQueue = MessageQueue<uint32_t, kSynchronizedReadWrite>;
 
@@ -60,7 +98,7 @@ struct Sensors : public ISensorsInterface, public ISensorsEventCallback {
 
   Sensors()
     : mEventQueueFlag(nullptr),
-      mNextHandle(0),
+      mNextHandle(1),
       mOutstandingWakeUpEvents(0),
       mReadWakeLockQueueRun(false),
       mAutoReleaseWakeLockTime(0),
@@ -119,6 +157,17 @@ struct Sensors : public ISensorsInterface, public ISensorsEventCallback {
 
     // Save a reference to the callback
     mCallback = sensorsCallback;
+
+    // Reset direct channels
+    for (auto& [channelHandle, channel] : mDirectChannels) {
+      for (auto sensorHandle : channel->sensorHandles) {
+        auto sensor = mSensors.find(sensorHandle);
+        if (sensor != mSensors.end()) {
+          sensor->second->removeDirectChannel(channelHandle);
+        }
+      }
+    }
+    mDirectChannels.clear();
 
     // Save the event queue.
     mEventQueue = std::move(eventQueue);
@@ -187,18 +236,130 @@ struct Sensors : public ISensorsInterface, public ISensorsEventCallback {
     return Result::BAD_VALUE;
   }
 
-  Return<void> registerDirectChannel(const SharedMemInfo& /* mem */,
+  Return<void> registerDirectChannel(const SharedMemInfo& mem,
                                      V2_0::ISensors::registerDirectChannel_cb _hidl_cb) override {
-    _hidl_cb(Result::INVALID_OPERATION, -1 /* channelHandle */);
-    return Return<void>();
+    std::lock_guard<std::mutex> lock(mChannelMutex);
+
+    if (mem.type != V1_0::SharedMemType::ASHMEM) {
+      _hidl_cb(Result::INVALID_OPERATION, -1);
+      return Void();
+    }
+
+    sensors_direct_mem_t directMem;
+    if (!V1_0::implementation::convertFromSharedMemInfo(mem, &directMem)) {
+      _hidl_cb(Result::BAD_VALUE, -1);
+      return Void();
+    }
+
+    auto ch = std::make_unique<AshmemDirectChannel>(&directMem);
+
+    if (ch->isValid()) {
+      int32_t channelHandle = mNextChannelHandle++;
+      mDirectChannels.insert(std::make_pair(channelHandle, std::move(ch)));
+      _hidl_cb(Result::OK, channelHandle);
+      return Void();
+    } else {
+      switch (ch->getError()) {
+        case BAD_VALUE:
+          _hidl_cb(Result::BAD_VALUE, -1);
+          break;
+        case NO_MEMORY:
+          _hidl_cb(Result::NO_MEMORY, -1);
+          break;
+        default:
+          _hidl_cb(Result::INVALID_OPERATION, -1);
+          break;
+      }
+      return Void();
+    }
   }
 
-  Return<Result> unregisterDirectChannel(int32_t /* channelHandle */) override { return Result::INVALID_OPERATION; }
+  Return<Result> unregisterDirectChannel(int32_t channelHandle) override {
+    std::lock_guard<std::mutex> lock(mChannelMutex);
 
-  Return<void> configDirectReport(int32_t /* sensorHandle */, int32_t /* channelHandle */, RateLevel /* rate */,
+    auto channelIt = mDirectChannels.find(channelHandle);
+    if (channelIt != mDirectChannels.end()) {
+      for (auto sensorHandle : channelIt->second->sensorHandles) {
+        auto sensorIt = mSensors.find(sensorHandle);
+        if (sensorIt != mSensors.end()) {
+          sensorIt->second->removeDirectChannel(channelHandle);
+        }
+      }
+    }
+
+    mDirectChannels.erase(channelHandle);
+
+    return Result::OK;
+  }
+
+  Return<void> configDirectReport(int32_t sensorHandle, int32_t channelHandle, RateLevel rate,
                                   V2_0::ISensors::configDirectReport_cb _hidl_cb) override {
-    _hidl_cb(Result::INVALID_OPERATION, 0 /* reportToken */);
-    return Return<void>();
+    std::lock_guard<std::mutex> lock(mChannelMutex);
+
+    auto channelIt = mDirectChannels.find(channelHandle);
+    if (channelIt == mDirectChannels.end()) {
+      _hidl_cb(Result::BAD_VALUE, -1);
+      return Void();
+    }
+
+    if (sensorHandle == -1 && rate == RateLevel::STOP) {
+      for (auto sensor : channelIt->second->sensorHandles) {
+        auto sensorIt = mSensors.find(sensor);
+        if (sensorIt != mSensors.end()) {
+          channelIt->second->rateNs[sensor] = 0;
+          sensorIt->second->stopDirectChannel(channelHandle);
+        }
+      }
+      _hidl_cb(Result::OK, -1);
+      return Void();
+    }
+
+    auto sensorIt = mSensors.find(sensorHandle);
+    if (sensorIt == mSensors.end()) {
+      _hidl_cb(Result::BAD_VALUE, -1);
+      return Void();
+    }
+
+    if (!(sensorIt->second->getSensorInfo().flags & V1_0::SensorFlagBits::DIRECT_CHANNEL_ASHMEM)) {
+      _hidl_cb(Result::BAD_VALUE, -1);
+      return Void();
+    }
+
+    const int32_t maxRate = (sensorIt->second->getSensorInfo().flags & V1_0::SensorFlagBits::MASK_DIRECT_REPORT) >>
+                            static_cast<uint8_t>(V1_0::SensorFlagShift::DIRECT_REPORT);
+
+    switch (rate) {
+      case RateLevel::STOP:
+        channelIt->second->rateNs[sensorHandle] = 0;
+        break;
+      case RateLevel::NORMAL:
+        channelIt->second->rateNs[sensorHandle] = 20000000;
+        break;
+      case RateLevel::FAST:
+        if (maxRate < static_cast<int32_t>(RateLevel::FAST)) {
+          _hidl_cb(Result::BAD_VALUE, -1);
+          return Void();
+        }
+        channelIt->second->rateNs[sensorHandle] = 5000000;
+        break;
+      case RateLevel::VERY_FAST:
+        if (maxRate < static_cast<int32_t>(RateLevel::VERY_FAST)) {
+          _hidl_cb(Result::BAD_VALUE, -1);
+          return Void();
+        }
+        channelIt->second->rateNs[sensorHandle] = 1250000;
+        break;
+      default:
+        _hidl_cb(Result::BAD_VALUE, -1);
+        return Void();
+    }
+
+    channelIt->second->sensorHandles.push_back(sensorHandle);
+    sensorIt->second->addDirectChannel(channelHandle, channelIt->second->rateNs[sensorHandle]);
+
+    _hidl_cb(Result::OK, sensorHandle);
+
+    return Void();
   }
 
   void postEvents(const std::vector<V2_1::Event>& events, bool wakeup) override {
@@ -211,6 +372,31 @@ struct Sensors : public ISensorsInterface, public ISensorsEventCallback {
         // properly hold a wake lock until the framework has secured a wake lock
         updateWakeLock(events.size(), 0 /* eventsHandled */);
       }
+    }
+  }
+
+  void writeToDirectBuffer(const std::vector<V2_1::Event>& events, int64_t samplingPeriodNs) override {
+    if (mChannelMutex.try_lock()) {
+      for (const auto& event : events) {
+        for (auto& [channelHandle, channel] : mDirectChannels) {
+          if (std::find(channel->sensorHandles.begin(), channel->sensorHandles.end(), event.sensorHandle) ==
+              channel->sensorHandles.end()) {
+            continue;  // Skip channels that sensorHandle not match
+          }
+          if (channel->rateNs[event.sensorHandle] == 0) {
+            continue;  // Skip channels that are not active
+          }
+          channel->sampleCount[event.sensorHandle]++;
+          if (samplingPeriodNs * channel->sampleCount[event.sensorHandle] < channel->rateNs[event.sensorHandle]) {
+            continue;  // Skip channels that have faster sampling period
+          }
+          sensors_event_t ev;
+          V2_1::implementation::convertToSensorEvent(event, &ev);
+          channel->write(&ev);
+          channel->sampleCount[event.sensorHandle] = 0;
+        }
+      }
+      mChannelMutex.unlock();
     }
   }
 
@@ -231,14 +417,39 @@ protected:
       sensorInfo.fifoReservedEventCount = 0;
       sensorInfo.fifoMaxEventCount = 0;
       sensorInfo.requiredPermission = "";
-      sensorInfo.flags |= V1_0::SensorFlagBits::CONTINUOUS_MODE;
+
+      switch (data.reportMode) {
+        case bosch::sensors::SensorReportingMode::ON_CHANGE:
+          sensorInfo.flags |= V1_0::SensorFlagBits::ON_CHANGE_MODE;
+          break;
+        case bosch::sensors::SensorReportingMode::CONTINUOUS:
+          sensorInfo.flags |= V1_0::SensorFlagBits::CONTINUOUS_MODE;
+          sensorInfo.flags |= V1_0::SensorFlagBits::ADDITIONAL_INFO;
+          sensorInfo.flags |= V1_0::SensorFlagBits::DIRECT_CHANNEL_ASHMEM;
+          sensorInfo.flags |=
+            (static_cast<int32_t>(RateLevel::FAST) << static_cast<uint8_t>(V1_0::SensorFlagShift::DIRECT_REPORT));
+          break;
+        case bosch::sensors::SensorReportingMode::ONE_SHOT:
+          sensorInfo.flags |= V1_0::SensorFlagBits::ONE_SHOT_MODE;
+          break;
+        case bosch::sensors::SensorReportingMode::SPECIAL_REPORTING:
+          sensorInfo.flags |= V1_0::SensorFlagBits::SPECIAL_REPORTING_MODE;
+          break;
+        default:
+          ALOGW("Unknown report mode: %d", data.reportMode);
+          break;
+      }
       sensorInfo.minDelay = data.minDelayUs;
       sensorInfo.maxDelay = data.maxDelayUs;
       sensorInfo.power = data.power;
       sensorInfo.maxRange = data.range;
       sensorInfo.resolution = data.resolution;
 
-      std::shared_ptr<Sensor> halSensor = std::make_shared<Sensor>(this /* callback */, sensorInfo, sensor);
+      const auto sensors_config_list = readSensorsConfigFromXml();
+      std::optional<std::vector<Configuration>> sensorconfig = std::nullopt;
+      sensorconfig = getSensorConfiguration(*sensors_config_list, sensorInfo.name, sensorInfo.type);
+      std::shared_ptr<Sensor> halSensor =
+        std::make_shared<Sensor>(this /* callback */, sensorInfo, sensor, sensorconfig);
       mSensors[halSensor->getSensorInfo().sensorHandle] = halSensor;
       ALOGD("AddSensor[%d] %s", halSensor->getSensorInfo().sensorHandle, halSensor->getSensorInfo().name.c_str());
     }
@@ -390,6 +601,13 @@ protected:
    * Flag to indicate if a wake lock has been acquired
    */
   bool mHasWakeLock;
+
+  /**
+   * Direct channel support
+   */
+  std::map<int32_t, std::unique_ptr<DirectChannelBase>> mDirectChannels;
+  std::mutex mChannelMutex;
+  int32_t mNextChannelHandle = 1;
 };
 
 }  // namespace implementation

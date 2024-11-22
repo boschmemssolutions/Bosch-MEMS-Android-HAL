@@ -62,24 +62,32 @@ Smi330Acc::Smi330Acc() {
   mSensorData.driverName = "smi330";
   mSensorData.sensorName = "SMI330 BOSCH Accelerometer Sensor";
   mSensorData.sysfsRaw = {"in_accel_x_raw", "in_accel_y_raw", "in_accel_z_raw"};
+  mSensorData.temperatureSysfsRaw = "in_temp_object_raw";
   mSensorData.type = BoschSensorType::ACCEL;
   mSensorData.minDelayUs = 5000;
   mSensorData.maxDelayUs = 1280000;
   mSensorData.power = 0.4f;
   mSensorData.range = gravityToAcceleration(8);
   mSensorData.resolution = gravityToAcceleration(1.0f / 4096);
+  mSensorData.temperatureScale = 1.0f / 512;
+  mSensorData.temperatureOffset = 23.0f * 512;
+  mSensorData.reportMode = CONTINUOUS;
 }
 
 Smi330Gyro::Smi330Gyro() {
   mSensorData.driverName = "smi330";
   mSensorData.sensorName = "SMI330 BOSCH Gyroscope Sensor";
   mSensorData.sysfsRaw = {"in_anglvel_x_raw", "in_anglvel_y_raw", "in_anglvel_z_raw"};
+  mSensorData.temperatureSysfsRaw = "in_temp_object_raw";
   mSensorData.type = BoschSensorType::GYRO;
   mSensorData.minDelayUs = 5000;
   mSensorData.maxDelayUs = 1280000;
   mSensorData.power = 0.4f;
   mSensorData.range = degreeToRad(125);
   mSensorData.resolution = degreeToRad(1.0f / 262.144f);
+  mSensorData.temperatureScale = 1.0f / 512;
+  mSensorData.temperatureOffset = 23.0f * 512;
+  mSensorData.reportMode = CONTINUOUS;
 }
 
 Smi330LinearAcc::Smi330LinearAcc(const std::shared_ptr<SensorCore> accel, const std::shared_ptr<SensorCore> gyro) {
@@ -90,6 +98,8 @@ Smi330LinearAcc::Smi330LinearAcc(const std::shared_ptr<SensorCore> accel, const 
   mSensorData.power = accel->getSensorData().power + gyro->getSensorData().power;
   mSensorData.range = accel->getSensorData().range;
   mSensorData.resolution = accel->getSensorData().resolution;
+  mSensorData.reportMode = CONTINUOUS;
+
   mGyroVar = SMI330_GYRO_VAR;
 
   mDependencyList.push_back(accel);
@@ -104,6 +114,8 @@ Smi330Gravity::Smi330Gravity(const std::shared_ptr<SensorCore> accel, const std:
   mSensorData.power = accel->getSensorData().power + gyro->getSensorData().power;
   mSensorData.range = accel->getSensorData().range;
   mSensorData.resolution = accel->getSensorData().resolution;
+  mSensorData.reportMode = CONTINUOUS;
+
   mGyroVar = SMI330_GYRO_VAR;
 
   mDependencyList.push_back(accel);

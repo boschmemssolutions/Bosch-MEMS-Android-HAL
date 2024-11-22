@@ -39,6 +39,11 @@ cc_library_static {
         "android.hardware.sensors@hwctl.bosch",
         "libboschsensorcore",
         "libboschsensors",
+        "libxml2",
+        "libaidlcommonsupport",
+    ],
+    header_libs: [
+      "libhardware_headers",
     ],
     export_include_dirs: ["include"],
     srcs: [
@@ -48,6 +53,9 @@ cc_library_static {
     visibility: [
         ":__subpackages__",
     ],
+    generated_sources: ["bosch_sensor_hal_configuration_V1_0"],
+    generated_headers: ["bosch_sensor_hal_configuration_V1_0"],
+    export_generated_headers: ["bosch_sensor_hal_configuration_V1_0"],
 }
 
 cc_binary {
@@ -73,6 +81,11 @@ cc_binary {
         "libsensorsboschimpl",
         "libboschsensorcore",
         "libboschsensors",
+        "libxml2",
+        "libaidlcommonsupport",
+    ],
+    header_libs: [
+      "libhardware_headers",
     ],
     srcs: ["service.cpp"],
 }

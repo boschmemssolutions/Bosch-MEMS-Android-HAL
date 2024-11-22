@@ -25,9 +25,14 @@ cc_library_static {
     ],
     shared_libs: [
       "libutils",
+      "libcutils",
+    ],
+    header_libs: [
+      "libhardware_headers",
     ],
     srcs: [
         "SensorCore.cpp",
         "CompositeSensors.cpp",
+        "DirectChannel.cpp",
     ],
 }

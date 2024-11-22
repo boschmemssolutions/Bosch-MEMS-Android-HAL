@@ -21,6 +21,7 @@
 
 #include <vector>
 
+#include "DirectChannel.h"
 #include "IHalProxyCallbackWrapper.h"
 #include "Sensor.h"
 #include "SensorList.h"
@@ -77,6 +78,7 @@ public:
 
   // Method from ISensorsEventCallback.
   void postEvents(const std::vector<Event>& events, bool wakeup) override;
+  void writeToDirectBuffer(const std::vector<Event>& events, int64_t samplingPeriodNs) override;
 
 protected:
   void AddSensors();
@@ -93,7 +95,7 @@ protected:
   /**
    * The next available sensor handle
    */
-  int32_t mNextHandle = 0;
+  int32_t mNextHandle = 1;
 
   /**
    * Callback used to communicate to the HalProxy when dynamic sensors are
@@ -113,6 +115,13 @@ private:
    * A list of the available sensors
    */
   bosch::sensors::SensorList mSensorList;
+
+  /**
+   * Direct channel support
+   */
+  std::map<int32_t, std::unique_ptr<DirectChannelBase>> mDirectChannels;
+  std::mutex mChannelMutex;
+  int32_t mNextChannelHandle = 1;
 };
 
 template <class SubHalClass>

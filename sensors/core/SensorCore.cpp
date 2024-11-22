@@ -63,6 +63,19 @@ void SensorCore::updateSamplingRate() {
   setSamplingRate(usedSamplingPeriod);
 }
 
+bool SensorCore::readSensorTemperature(float* temperature) {
+  std::string data;
+  if (mSensorData.temperatureSysfsRaw.empty()) return false;
+
+  if (0 == hwctl::readFromFile(mDevice + mSensorData.temperatureSysfsRaw, data)) {
+    *temperature = (::atof(data.c_str()) + mSensorData.temperatureOffset) * mSensorData.temperatureScale;
+    return true;
+  } else {
+    ALOGE("Sensor readSensorTemperature failed");
+    return false;
+  }
+}
+
 std::vector<SensorValues> SensorCore::readSensorValues() {
   std::vector<SensorValues> sensorValues{};
   readPollingData(sensorValues);

@@ -17,6 +17,7 @@
  
 cc_test {
     name: "BoschAidlHalSensorsTargetTest",
+    cflags: ["-DLOG_TAG=\"sensors_aidl_hal_test.bosch\""],
     defaults: [
         "use_libaidlvintf_gtest_helper_static",
         "VtsHalSensorsDefaults",

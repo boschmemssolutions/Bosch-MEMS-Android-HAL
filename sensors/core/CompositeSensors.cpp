@@ -37,6 +37,15 @@ void CompositeSensorCore::activate(bool enable) {
   mJustStarted = true;
 }
 
+bool CompositeSensorCore::readSensorTemperature(float* temperature) {
+  for (const auto& sensor : mDependencyList) {
+    if (sensor->readSensorTemperature(temperature)) {
+      return true;
+    }
+  }
+  return false;
+}
+
 void CompositeSensorCore::batch(int64_t samplingPeriodNs, int64_t maxReportLatencyNs) {
   for (const auto& sensor : mDependencyList) {
     sensor->batchByType(mSensorData.type, samplingPeriodNs, maxReportLatencyNs);

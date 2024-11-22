@@ -19,10 +19,12 @@
 
 #include <aidl/android/hardware/sensors/BnSensors.h>
 
+#include <map>
 #include <string>
 #include <thread>
 
 #include "ISensorHal.h"
+#include "bosch_sensor_hal_configuration_V1_0.h"
 
 namespace aidl {
 namespace android {
@@ -35,6 +37,7 @@ public:
 
   virtual ~ISensorsEventCallback(){};
   virtual void postEvents(const std::vector<Event>& events, bool wakeup) = 0;
+  virtual void writeToDirectBuffer(const std::vector<Event>& events, int64_t samplingPeriodNs) = 0;
 };
 
 class Sensor {
@@ -45,9 +48,14 @@ public:
   using SensorInfo = ::aidl::android::hardware::sensors::SensorInfo;
   using SensorType = ::aidl::android::hardware::sensors::SensorType;
   using MetaDataEventType = ::aidl::android::hardware::sensors::Event::EventPayload::MetaData::MetaDataEventType;
+  using AdditionalInfo = ::aidl::android::hardware::sensors::AdditionalInfo;
+  using AdditionalInfoType = ::aidl::android::hardware::sensors::AdditionalInfo::AdditionalInfoType;
+  using Location = ::bosch::sensor::hal::configuration::V1_0::Location;
+  using Orientation = ::bosch::sensor::hal::configuration::V1_0::Orientation;
+  using Configuration = ::bosch::sensor::hal::configuration::V1_0::Configuration;
 
   Sensor(ISensorsEventCallback* callback, const SensorInfo& sensorInfo,
-         std::shared_ptr<bosch::sensors::ISensorHal> sensor);
+         std::shared_ptr<bosch::sensors::ISensorHal> sensor, const std::optional<std::vector<Configuration>>& config);
   ~Sensor();
 
   const SensorInfo& getSensorInfo() const;
@@ -60,10 +68,20 @@ public:
   bool supportsDataInjection() const;
   ndk::ScopedAStatus injectEvent(const Event& event);
 
+  void addDirectChannel(int32_t channelHandle, int64_t samplingPeriodNs);
+  void stopDirectChannel(int32_t channelHandle);
+  void removeDirectChannel(int32_t channelHandle);
+
 private:
   void run();
   std::vector<Event> readEvents();
   static void startThread(Sensor* sensor);
+  ndk::ScopedAStatus getSensorPlacement(std::vector<AdditionalInfo>& additionalInfoFrames);
+  ndk::ScopedAStatus getSensorTemperature(std::vector<AdditionalInfo>& additionalInfoFrames);
+  std::optional<std::vector<Location>> getLocation();
+  std::optional<std::vector<Orientation>> getOrientation();
+  ndk::ScopedAStatus setSensorPlacementData(AdditionalInfo* sensorPlacement, int index, float value);
+  void sendAdditionalInfoReport();
 
   bool isWakeUpSensor();
 
@@ -71,6 +89,21 @@ private:
   int64_t mSamplingPeriodNs;
   int64_t mLastSampleTimeNs;
   SensorInfo mSensorInfo;
+
+  struct DirectChannel {
+    bool enabled;
+    int64_t samplingPeriodNs;
+  };
+  std::map<int32_t, DirectChannel> mDirectChannels{};
+
+  static constexpr uint8_t LOCATION_X_IDX = 3;
+  static constexpr uint8_t LOCATION_Y_IDX = 7;
+  static constexpr uint8_t LOCATION_Z_IDX = 11;
+  static constexpr uint8_t ROTATION_X_IDX = 0;
+  static constexpr uint8_t ROTATION_Y_IDX = 1;
+  static constexpr uint8_t ROTATION_Z_IDX = 2;
+
+  AdditionalInfo::AdditionalInfoPayload::FloatValues mAdditionalInfoValues;
 
   std::atomic_bool mStopThread;
   std::condition_variable mWaitCV;
@@ -80,6 +113,7 @@ private:
   ISensorsEventCallback* mCallback;
 
   std::shared_ptr<bosch::sensors::ISensorHal> mSensor;
+  std::optional<std::vector<Configuration>> mConfig;
 };
 
 }  // namespace sensors

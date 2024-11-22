@@ -24,6 +24,7 @@
 
 #include <map>
 
+#include "DirectChannel.h"
 #include "Sensor.h"
 #include "SensorList.h"
 
@@ -44,7 +45,7 @@ class SensorsHalAidl : public BnSensors, public ISensorsEventCallback {
 public:
   SensorsHalAidl()
     : mEventQueueFlag(nullptr),
-      mNextHandle(0),
+      mNextHandle(1),
       mOutstandingWakeUpEvents(0),
       mReadWakeLockQueueRun(false),
       mAutoReleaseWakeLockTime(0),
@@ -93,6 +94,38 @@ public:
         // properly hold a wake lock until the framework has secured a wake lock
         updateWakeLock(events.size(), 0 /* eventsHandled */);
       }
+    }
+  }
+
+  void writeToDirectBuffer(const std::vector<Event>& events, int64_t samplingPeriodNs) override {
+    if (mChannelMutex.try_lock()) {
+      for (const auto& event : events) {
+        for (auto& [channelHandle, channel] : mDirectChannels) {
+          if (std::find(channel->sensorHandles.begin(), channel->sensorHandles.end(), event.sensorHandle) ==
+              channel->sensorHandles.end()) {
+            continue;  // Skip channels that sensorHandle not match
+          }
+          if (channel->rateNs[event.sensorHandle] == 0) {
+            continue;  // Skip channels that are not active
+          }
+          channel->sampleCount[event.sensorHandle]++;
+          if (samplingPeriodNs * channel->sampleCount[event.sensorHandle] < channel->rateNs[event.sensorHandle]) {
+            continue;  // Skip channels that have faster sampling period
+          }
+          sensors_event_t ev = {.version = sizeof(sensors_event_t),
+                                .sensor = event.sensorHandle,
+                                .type = (int32_t)event.sensorType,
+                                .reserved0 = 0,
+                                .timestamp = event.timestamp};
+          ev.acceleration.x = event.payload.get<Event::EventPayload::vec3>().x;
+          ev.acceleration.y = event.payload.get<Event::EventPayload::vec3>().y;
+          ev.acceleration.z = event.payload.get<Event::EventPayload::vec3>().z;
+          ev.acceleration.status = (int32_t)event.payload.get<Event::EventPayload::vec3>().status;
+          channel->write(&ev);
+          channel->sampleCount[event.sensorHandle] = 0;
+        }
+      }
+      mChannelMutex.unlock();
     }
   }
 
@@ -200,6 +233,13 @@ private:
   int64_t mAutoReleaseWakeLockTime;
   // Flag to indicate if a wake lock has been acquired
   bool mHasWakeLock;
+
+  /**
+   * Direct channel support
+   */
+  std::map<int32_t, std::unique_ptr<::android::DirectChannelBase>> mDirectChannels;
+  std::mutex mChannelMutex;
+  int32_t mNextChannelHandle = 1;
 };
 
 }  // namespace sensors

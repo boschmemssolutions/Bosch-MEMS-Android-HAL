@@ -33,9 +33,13 @@ public:
   std::vector<std::shared_ptr<ISensorHal>> getAvailableSensors();
 
 private:
-  std::vector<std::shared_ptr<SensorCore>> mSensorList{std::make_shared<Smi330Acc>(), std::make_shared<Smi330Gyro>(),
-                                                       std::make_shared<Smi240Acc>(), std::make_shared<Smi240Gyro>(),
-                                                       std::make_shared<Smi230Acc>(), std::make_shared<Smi230Gyro>()};
+  std::vector<std::shared_ptr<SensorCore>> mSensorList{std::make_shared<Smi330Acc>(),
+                                                       std::make_shared<Smi330Gyro>(),
+                                                       std::make_shared<Smi240Acc>(),
+                                                       std::make_shared<Smi240Gyro>(),
+                                                       std::make_shared<Smi230Acc>(),
+                                                       std::make_shared<Smi230Gyro>(),
+                                                       std::make_shared<Smi230AmbientTemperature>()};
 
   std::vector<std::shared_ptr<CompositeSensorCore>> mCompositeSensorList{
     std::make_shared<Smi330Gravity>(mSensorList[0], mSensorList[1]),

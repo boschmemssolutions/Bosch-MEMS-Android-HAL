@@ -34,6 +34,7 @@ public:
 
   void activate(bool enable) override;
   void batch(int64_t samplingPeriodNs, int64_t maxReportLatencyNs) override;
+  bool readSensorTemperature(float* temperature) override;
   const SensorData& getSensorData() const override { return mSensorData; }
 
   const std::vector<std::shared_ptr<SensorCore>>& getDependencyList() const { return mDependencyList; }
