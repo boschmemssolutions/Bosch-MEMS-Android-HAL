@@ -26,9 +26,9 @@ All hidls are only supported in android v13
 
 The Android HAL passes all the google CTS and VTS tests
 
-[CTS Test Report](test/CTS/2025.02.03_17.22.10/test_result.html)
+[CTS Test Report](sensors/test/CTS/2025.02.03_17.22.10/test_result.html)
 
-[VTS Test Report](test/VTS/multihal/aidl/host/linux-x86/vts/android-vts/results/latest/test_result.html)
+[VTS Test Report](sensors/test/VTS/multihal/aidl/host/linux-x86/vts/android-vts/results/latest/test_result.html)
 
 
 ## Documentaion <a name=doc></a>
