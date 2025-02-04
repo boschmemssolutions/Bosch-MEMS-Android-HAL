@@ -1,0 +1,1432 @@
+{
+  "device_groups": [
+    {
+      "devices": [
+        0
+      ],
+      "subset_allocation": false
+    }
+  ],
+  "layers": [],
+  "extensions": [
+    {
+      "extension_name": "VK_KHR_surface",
+      "spec_version": 25
+    },
+    {
+      "extension_name": "VK_KHR_surface_protected_capabilities",
+      "spec_version": 1
+    },
+    {
+      "extension_name": "VK_KHR_android_surface",
+      "spec_version": 6
+    },
+    {
+      "extension_name": "VK_EXT_swapchain_colorspace",
+      "spec_version": 4
+    },
+    {
+      "extension_name": "VK_KHR_get_surface_capabilities2",
+      "spec_version": 1
+    },
+    {
+      "extension_name": "VK_GOOGLE_surfaceless_query",
+      "spec_version": 1
+    },
+    {
+      "extension_name": "VK_KHR_device_group_creation",
+      "spec_version": 1
+    },
+    {
+      "extension_name": "VK_KHR_external_fence_capabilities",
+      "spec_version": 1
+    },
+    {
+      "extension_name": "VK_KHR_external_memory_capabilities",
+      "spec_version": 1
+    },
+    {
+      "extension_name": "VK_KHR_external_semaphore_capabilities",
+      "spec_version": 1
+    },
+    {
+      "extension_name": "VK_KHR_get_physical_device_properties2",
+      "spec_version": 2
+    },
+    {
+      "extension_name": "VK_EXT_debug_report",
+      "spec_version": 10
+    },
+    {
+      "extension_name": "VK_EXT_debug_utils",
+      "spec_version": 2
+    }
+  ],
+  "devices": [
+    {
+      "properties": {
+        "api_version": 4202770,
+        "driver_version": 100663301,
+        "vendor_id": 5348,
+        "device_id": 3192414163,
+        "device_type": 1,
+        "device_name": "V3D 4.2.14",
+        "pipeline_cache_uuid": [
+          111,
+          90,
+          138,
+          9,
+          186,
+          6,
+          53,
+          149,
+          156,
+          30,
+          96,
+          115,
+          122,
+          219,
+          116,
+          144
+        ],
+        "limits": {
+          "max_image_dimension_1d": 4096,
+          "max_image_dimension_2d": 4096,
+          "max_image_dimension_3d": 4096,
+          "max_image_dimension_cube": 4096,
+          "max_image_array_layers": 2048,
+          "max_texel_buffer_elements": 268435456,
+          "max_uniform_buffer_range": 1073741824,
+          "max_storage_buffer_range": 1073741824,
+          "max_push_constants_size": 128,
+          "max_memory_allocation_count": 484267,
+          "max_sampler_allocation_count": 65536,
+          "buffer_image_granularity": "0x0000000000000100",
+          "sparse_address_space_size": "0x0000000000000000",
+          "max_bound_descriptor_sets": 16,
+          "max_per_stage_descriptor_samplers": 24,
+          "max_per_stage_descriptor_uniform_buffers": 16,
+          "max_per_stage_descriptor_storage_buffers": 8,
+          "max_per_stage_descriptor_sampled_images": 16,
+          "max_per_stage_descriptor_storage_images": 4,
+          "max_per_stage_descriptor_input_attachments": 4,
+          "max_per_stage_resources": 128,
+          "max_descriptor_set_samplers": 144,
+          "max_descriptor_set_uniform_buffers": 96,
+          "max_descriptor_set_uniform_buffers_dynamic": 8,
+          "max_descriptor_set_storage_buffers": 48,
+          "max_descriptor_set_storage_buffers_dynamic": 4,
+          "max_descriptor_set_sampled_images": 96,
+          "max_descriptor_set_storage_images": 24,
+          "max_descriptor_set_input_attachments": 4,
+          "max_vertex_input_attributes": 16,
+          "max_vertex_input_bindings": 16,
+          "max_vertex_input_attribute_offset": 4294967295,
+          "max_vertex_input_binding_stride": 4294967295,
+          "max_vertex_output_components": 64,
+          "max_tessellation_generation_level": 0,
+          "max_tessellation_patch_size": 0,
+          "max_tessellation_control_per_vertex_input_components": 0,
+          "max_tessellation_control_per_vertex_output_components": 0,
+          "max_tessellation_control_per_patch_output_components": 0,
+          "max_tessellation_control_total_output_components": 0,
+          "max_tessellation_evaluation_input_components": 0,
+          "max_tessellation_evaluation_output_components": 0,
+          "max_geometry_shader_invocations": 32,
+          "max_geometry_input_components": 64,
+          "max_geometry_output_components": 64,
+          "max_geometry_output_vertices": 256,
+          "max_geometry_total_output_components": 1024,
+          "max_fragment_input_components": 64,
+          "max_fragment_output_attachments": 4,
+          "max_fragment_dual_src_attachments": 0,
+          "max_fragment_combined_output_resources": 16,
+          "max_compute_shared_memory_size": 16384,
+          "max_compute_work_group_count": [
+            65535,
+            65535,
+            65535
+          ],
+          "max_compute_work_group_invocations": 256,
+          "max_compute_work_group_size": [
+            256,
+            256,
+            256
+          ],
+          "sub_pixel_precision_bits": 6,
+          "sub_texel_precision_bits": 8,
+          "mipmap_precision_bits": 8,
+          "max_draw_indexed_index_value": 16777215,
+          "max_draw_indirect_count": 2147483647,
+          "max_sampler_lod_bias": 14.0,
+          "max_sampler_anisotropy": 16.0,
+          "max_viewports": 1,
+          "max_viewport_dimensions": [
+            4096,
+            4096
+          ],
+          "viewport_bounds_range": [
+            -8192.0,
+            8191.0
+          ],
+          "viewport_sub_pixel_bits": 0,
+          "min_memory_map_alignment": "0x0000000000001000",
+          "min_texel_buffer_offset_alignment": "0x0000000000000040",
+          "min_uniform_buffer_offset_alignment": "0x0000000000000020",
+          "min_storage_buffer_offset_alignment": "0x0000000000000020",
+          "min_texel_offset": -8,
+          "max_texel_offset": 7,
+          "min_texel_gather_offset": -8,
+          "max_texel_gather_offset": 7,
+          "min_interpolation_offset": -0.5,
+          "max_interpolation_offset": 0.5,
+          "sub_pixel_interpolation_offset_bits": 6,
+          "max_framebuffer_width": 4096,
+          "max_framebuffer_height": 4096,
+          "max_framebuffer_layers": 256,
+          "framebuffer_color_sample_counts": 5,
+          "framebuffer_depth_sample_counts": 5,
+          "framebuffer_stencil_sample_counts": 5,
+          "framebuffer_no_attachments_sample_counts": 5,
+          "max_color_attachments": 4,
+          "sampled_image_color_sample_counts": 5,
+          "sampled_image_integer_sample_counts": 5,
+          "sampled_image_depth_sample_counts": 5,
+          "sampled_image_stencil_sample_counts": 5,
+          "storage_image_sample_counts": 1,
+          "max_sample_mask_words": 1,
+          "timestamp_compute_and_graphics": true,
+          "timestamp_period": 1.0,
+          "max_clip_distances": 8,
+          "max_cull_distances": 0,
+          "max_combined_clip_and_cull_distances": 8,
+          "discrete_queue_priorities": 2,
+          "point_size_range": [
+            0.03125,
+            512.0
+          ],
+          "line_width_range": [
+            1.0,
+            32.0
+          ],
+          "point_size_granularity": 0.03125,
+          "line_width_granularity": 0.03125,
+          "strict_lines": true,
+          "standard_sample_locations": false,
+          "optimal_buffer_copy_offset_alignment": "0x0000000000000020",
+          "optimal_buffer_copy_row_pitch_alignment": "0x0000000000000020",
+          "non_coherent_atom_size": "0x0000000000000100"
+        },
+        "sparse_properties": {
+          "residency_standard_2d_block_shape": false,
+          "residency_standard_2d_multisample_block_shape": false,
+          "residency_standard_3d_block_shape": false,
+          "residency_aligned_mip_size": false,
+          "residency_non_resident_strict": false
+        }
+      },
+      "features": {
+        "robust_buffer_access": true,
+        "full_draw_index_uint32": false,
+        "image_cube_array": true,
+        "independent_blend": true,
+        "geometry_shader": true,
+        "tessellation_shader": false,
+        "sample_rate_shading": true,
+        "dual_src_blend": false,
+        "logic_op": true,
+        "multi_draw_indirect": false,
+        "draw_indirect_first_instance": true,
+        "depth_clamp": false,
+        "depth_bias_clamp": true,
+        "fill_mode_non_solid": true,
+        "depth_bounds": false,
+        "wide_lines": true,
+        "large_points": true,
+        "alpha_to_one": true,
+        "multi_viewport": false,
+        "sampler_anisotropy": true,
+        "texture_compression_etc2": true,
+        "texture_compression_astc_ldr": true,
+        "texture_compression_bc": false,
+        "occlusion_query_precise": true,
+        "pipeline_statistics_query": false,
+        "vertex_pipeline_stores_and_atomics": true,
+        "fragment_stores_and_atomics": true,
+        "shader_tessellation_and_geometry_point_size": true,
+        "shader_image_gather_extended": true,
+        "shader_storage_image_extended_formats": true,
+        "shader_storage_image_multisample": false,
+        "shader_storage_image_read_without_format": true,
+        "shader_storage_image_write_without_format": false,
+        "shader_uniform_buffer_array_dynamic_indexing": false,
+        "shader_sampled_image_array_dynamic_indexing": false,
+        "shader_storage_buffer_array_dynamic_indexing": false,
+        "shader_storage_image_array_dynamic_indexing": false,
+        "shader_clip_distance": true,
+        "shader_cull_distance": false,
+        "shader_float64": false,
+        "shader_int64": false,
+        "shader_int16": false,
+        "shader_resource_residency": false,
+        "shader_resource_min_lod": false,
+        "sparse_binding": false,
+        "sparse_residency_buffer": false,
+        "sparse_residency_image_2d": false,
+        "sparse_residency_image_3d": false,
+        "sparse_residency_2_samples": false,
+        "sparse_residency_4_samples": false,
+        "sparse_residency_8_samples": false,
+        "sparse_residency_16_samples": false,
+        "sparse_residency_aliased": false,
+        "variable_multisample_rate": false,
+        "inherited_queries": true
+      },
+      "memory": {
+        "memory_type_count": 1,
+        "memory_types": [
+          {
+            "property_flags": 7,
+            "heap_index": 0
+          }
+        ],
+        "memory_heap_count": 1,
+        "memory_heaps": [
+          {
+            "size": "0x00000000763ab800",
+            "flags": 1
+          }
+        ]
+      },
+      "queues": [
+        {
+          "queue_flags": 7,
+          "queue_count": 1,
+          "timestamp_valid_bits": 64,
+          "min_image_transfer_granularity": {
+            "width": 1,
+            "height": 1,
+            "depth": 1
+          }
+        }
+      ],
+      "layers": [],
+      "extensions": [
+        {
+          "extension_name": "VK_KHR_incremental_present",
+          "spec_version": 2
+        },
+        {
+          "extension_name": "VK_KHR_shared_presentable_image",
+          "spec_version": 1
+        },
+        {
+          "extension_name": "VK_GOOGLE_display_timing",
+          "spec_version": 1
+        },
+        {
+          "extension_name": "VK_KHR_8bit_storage",
+          "spec_version": 1
+        },
+        {
+          "extension_name": "VK_KHR_16bit_storage",
+          "spec_version": 1
+        },
+        {
+          "extension_name": "VK_KHR_bind_memory2",
+          "spec_version": 1
+        },
+        {
+          "extension_name": "VK_KHR_buffer_device_address",
+          "spec_version": 1
+        },
+        {
+          "extension_name": "VK_KHR_copy_commands2",
+          "spec_version": 1
+        },
+        {
+          "extension_name": "VK_KHR_create_renderpass2",
+          "spec_version": 1
+        },
+        {
+          "extension_name": "VK_KHR_dedicated_allocation",
+          "spec_version": 3
+        },
+        {
+          "extension_name": "VK_KHR_depth_stencil_resolve",
+          "spec_version": 1
+        },
+        {
+          "extension_name": "VK_KHR_descriptor_update_template",
+          "spec_version": 1
+        },
+        {
+          "extension_name": "VK_KHR_device_group",
+          "spec_version": 4
+        },
+        {
+          "extension_name": "VK_KHR_driver_properties",
+          "spec_version": 1
+        },
+        {
+          "extension_name": "VK_KHR_external_fence",
+          "spec_version": 1
+        },
+        {
+          "extension_name": "VK_KHR_external_fence_fd",
+          "spec_version": 1
+        },
+        {
+          "extension_name": "VK_KHR_external_memory",
+          "spec_version": 1
+        },
+        {
+          "extension_name": "VK_KHR_external_memory_fd",
+          "spec_version": 1
+        },
+        {
+          "extension_name": "VK_KHR_external_semaphore",
+          "spec_version": 1
+        },
+        {
+          "extension_name": "VK_KHR_external_semaphore_fd",
+          "spec_version": 1
+        },
+        {
+          "extension_name": "VK_KHR_format_feature_flags2",
+          "spec_version": 2
+        },
+        {
+          "extension_name": "VK_KHR_get_memory_requirements2",
+          "spec_version": 1
+        },
+        {
+          "extension_name": "VK_KHR_image_format_list",
+          "spec_version": 1
+        },
+        {
+          "extension_name": "VK_KHR_imageless_framebuffer",
+          "spec_version": 1
+        },
+        {
+          "extension_name": "VK_KHR_maintenance1",
+          "spec_version": 2
+        },
+        {
+          "extension_name": "VK_KHR_maintenance2",
+          "spec_version": 1
+        },
+        {
+          "extension_name": "VK_KHR_maintenance3",
+          "spec_version": 1
+        },
+        {
+          "extension_name": "VK_KHR_maintenance4",
+          "spec_version": 2
+        },
+        {
+          "extension_name": "VK_KHR_multiview",
+          "spec_version": 1
+        },
+        {
+          "extension_name": "VK_KHR_pipeline_executable_properties",
+          "spec_version": 1
+        },
+        {
+          "extension_name": "VK_KHR_relaxed_block_layout",
+          "spec_version": 1
+        },
+        {
+          "extension_name": "VK_KHR_sampler_mirror_clamp_to_edge",
+          "spec_version": 3
+        },
+        {
+          "extension_name": "VK_KHR_sampler_ycbcr_conversion",
+          "spec_version": 14
+        },
+        {
+          "extension_name": "VK_KHR_separate_depth_stencil_layouts",
+          "spec_version": 1
+        },
+        {
+          "extension_name": "VK_KHR_shader_float_controls",
+          "spec_version": 4
+        },
+        {
+          "extension_name": "VK_KHR_shader_integer_dot_product",
+          "spec_version": 1
+        },
+        {
+          "extension_name": "VK_KHR_shader_non_semantic_info",
+          "spec_version": 1
+        },
+        {
+          "extension_name": "VK_KHR_shader_terminate_invocation",
+          "spec_version": 1
+        },
+        {
+          "extension_name": "VK_KHR_spirv_1_4",
+          "spec_version": 1
+        },
+        {
+          "extension_name": "VK_KHR_storage_buffer_storage_class",
+          "spec_version": 1
+        },
+        {
+          "extension_name": "VK_KHR_synchronization2",
+          "spec_version": 1
+        },
+        {
+          "extension_name": "VK_KHR_timeline_semaphore",
+          "spec_version": 2
+        },
+        {
+          "extension_name": "VK_KHR_uniform_buffer_standard_layout",
+          "spec_version": 1
+        },
+        {
+          "extension_name": "VK_KHR_variable_pointers",
+          "spec_version": 1
+        },
+        {
+          "extension_name": "VK_KHR_vulkan_memory_model",
+          "spec_version": 3
+        },
+        {
+          "extension_name": "VK_KHR_workgroup_memory_explicit_layout",
+          "spec_version": 1
+        },
+        {
+          "extension_name": "VK_KHR_zero_initialize_workgroup_memory",
+          "spec_version": 1
+        },
+        {
+          "extension_name": "VK_EXT_4444_formats",
+          "spec_version": 1
+        },
+        {
+          "extension_name": "VK_EXT_attachment_feedback_loop_layout",
+          "spec_version": 2
+        },
+        {
+          "extension_name": "VK_EXT_border_color_swizzle",
+          "spec_version": 1
+        },
+        {
+          "extension_name": "VK_EXT_color_write_enable",
+          "spec_version": 1
+        },
+        {
+          "extension_name": "VK_EXT_custom_border_color",
+          "spec_version": 12
+        },
+        {
+          "extension_name": "VK_EXT_depth_clip_control",
+          "spec_version": 1
+        },
+        {
+          "extension_name": "VK_EXT_external_memory_dma_buf",
+          "spec_version": 1
+        },
+        {
+          "extension_name": "VK_EXT_host_query_reset",
+          "spec_version": 1
+        },
+        {
+          "extension_name": "VK_EXT_image_drm_format_modifier",
+          "spec_version": 2
+        },
+        {
+          "extension_name": "VK_EXT_image_robustness",
+          "spec_version": 1
+        },
+        {
+          "extension_name": "VK_EXT_index_type_uint8",
+          "spec_version": 1
+        },
+        {
+          "extension_name": "VK_EXT_inline_uniform_block",
+          "spec_version": 1
+        },
+        {
+          "extension_name": "VK_EXT_line_rasterization",
+          "spec_version": 1
+        },
+        {
+          "extension_name": "VK_EXT_load_store_op_none",
+          "spec_version": 1
+        },
+        {
+          "extension_name": "VK_EXT_memory_budget",
+          "spec_version": 1
+        },
+        {
+          "extension_name": "VK_EXT_multi_draw",
+          "spec_version": 1
+        },
+        {
+          "extension_name": "VK_EXT_physical_device_drm",
+          "spec_version": 1
+        },
+        {
+          "extension_name": "VK_EXT_pipeline_creation_cache_control",
+          "spec_version": 3
+        },
+        {
+          "extension_name": "VK_EXT_pipeline_creation_feedback",
+          "spec_version": 1
+        },
+        {
+          "extension_name": "VK_EXT_pipeline_robustness",
+          "spec_version": 1
+        },
+        {
+          "extension_name": "VK_EXT_primitive_topology_list_restart",
+          "spec_version": 1
+        },
+        {
+          "extension_name": "VK_EXT_private_data",
+          "spec_version": 1
+        },
+        {
+          "extension_name": "VK_EXT_provoking_vertex",
+          "spec_version": 1
+        },
+        {
+          "extension_name": "VK_EXT_queue_family_foreign",
+          "spec_version": 1
+        },
+        {
+          "extension_name": "VK_EXT_separate_stencil_usage",
+          "spec_version": 1
+        },
+        {
+          "extension_name": "VK_EXT_shader_demote_to_helper_invocation",
+          "spec_version": 1
+        },
+        {
+          "extension_name": "VK_EXT_shader_module_identifier",
+          "spec_version": 1
+        },
+        {
+          "extension_name": "VK_EXT_subgroup_size_control",
+          "spec_version": 2
+        },
+        {
+          "extension_name": "VK_EXT_texel_buffer_alignment",
+          "spec_version": 1
+        },
+        {
+          "extension_name": "VK_EXT_tooling_info",
+          "spec_version": 1
+        },
+        {
+          "extension_name": "VK_EXT_vertex_attribute_divisor",
+          "spec_version": 3
+        },
+        {
+          "extension_name": "VK_ANDROID_external_memory_android_hardware_buffer",
+          "spec_version": 5
+        },
+        {
+          "extension_name": "VK_KHR_swapchain",
+          "spec_version": 70
+        }
+      ],
+      "vk_khr_driver_properties": {
+        "driver_properties_khr": {
+          "driver_id": 19,
+          "driver_name": "V3DV Mesa",
+          "driver_info": "Mesa 24.0.5 (git-0980e80ca0)",
+          "conformance_version": {
+            "major": 1,
+            "minor": 3,
+            "subminor": 6,
+            "patch": 1
+          }
+        }
+      },
+      "vk_khr_variable_pointers": {
+        "variable_pointer_features_khr": {
+          "variable_pointers_storage_buffer": true,
+          "variable_pointers": false
+        }
+      },
+      "supported_formats": [
+        {
+          "format": 2,
+          "linear_tiling_features": 51584,
+          "optimal_tiling_features": 56705,
+          "buffer_features": 0
+        },
+        {
+          "format": 3,
+          "linear_tiling_features": 51584,
+          "optimal_tiling_features": 56705,
+          "buffer_features": 0
+        },
+        {
+          "format": 4,
+          "linear_tiling_features": 51584,
+          "optimal_tiling_features": 56705,
+          "buffer_features": 0
+        },
+        {
+          "format": 6,
+          "linear_tiling_features": 51584,
+          "optimal_tiling_features": 56705,
+          "buffer_features": 0
+        },
+        {
+          "format": 8,
+          "linear_tiling_features": 51584,
+          "optimal_tiling_features": 56705,
+          "buffer_features": 0
+        },
+        {
+          "format": 9,
+          "linear_tiling_features": 51584,
+          "optimal_tiling_features": 56707,
+          "buffer_features": 88
+        },
+        {
+          "format": 10,
+          "linear_tiling_features": 0,
+          "optimal_tiling_features": 54275,
+          "buffer_features": 88
+        },
+        {
+          "format": 13,
+          "linear_tiling_features": 51328,
+          "optimal_tiling_features": 52359,
+          "buffer_features": 120
+        },
+        {
+          "format": 14,
+          "linear_tiling_features": 51328,
+          "optimal_tiling_features": 52359,
+          "buffer_features": 120
+        },
+        {
+          "format": 16,
+          "linear_tiling_features": 51584,
+          "optimal_tiling_features": 56707,
+          "buffer_features": 88
+        },
+        {
+          "format": 17,
+          "linear_tiling_features": 0,
+          "optimal_tiling_features": 54275,
+          "buffer_features": 88
+        },
+        {
+          "format": 20,
+          "linear_tiling_features": 51328,
+          "optimal_tiling_features": 52355,
+          "buffer_features": 88
+        },
+        {
+          "format": 21,
+          "linear_tiling_features": 51328,
+          "optimal_tiling_features": 52355,
+          "buffer_features": 88
+        },
+        {
+          "format": 37,
+          "linear_tiling_features": 51584,
+          "optimal_tiling_features": 56707,
+          "buffer_features": 88
+        },
+        {
+          "format": 38,
+          "linear_tiling_features": 0,
+          "optimal_tiling_features": 54275,
+          "buffer_features": 88
+        },
+        {
+          "format": 41,
+          "linear_tiling_features": 51328,
+          "optimal_tiling_features": 52355,
+          "buffer_features": 88
+        },
+        {
+          "format": 42,
+          "linear_tiling_features": 51328,
+          "optimal_tiling_features": 52355,
+          "buffer_features": 88
+        },
+        {
+          "format": 43,
+          "linear_tiling_features": 51584,
+          "optimal_tiling_features": 56707,
+          "buffer_features": 0
+        },
+        {
+          "format": 44,
+          "linear_tiling_features": 51584,
+          "optimal_tiling_features": 56707,
+          "buffer_features": 88
+        },
+        {
+          "format": 50,
+          "linear_tiling_features": 51584,
+          "optimal_tiling_features": 56707,
+          "buffer_features": 0
+        },
+        {
+          "format": 51,
+          "linear_tiling_features": 51584,
+          "optimal_tiling_features": 56707,
+          "buffer_features": 88
+        },
+        {
+          "format": 52,
+          "linear_tiling_features": 0,
+          "optimal_tiling_features": 54275,
+          "buffer_features": 88
+        },
+        {
+          "format": 55,
+          "linear_tiling_features": 51328,
+          "optimal_tiling_features": 52355,
+          "buffer_features": 88
+        },
+        {
+          "format": 56,
+          "linear_tiling_features": 51328,
+          "optimal_tiling_features": 52355,
+          "buffer_features": 88
+        },
+        {
+          "format": 57,
+          "linear_tiling_features": 51584,
+          "optimal_tiling_features": 56707,
+          "buffer_features": 0
+        },
+        {
+          "format": 58,
+          "linear_tiling_features": 51584,
+          "optimal_tiling_features": 56707,
+          "buffer_features": 88
+        },
+        {
+          "format": 64,
+          "linear_tiling_features": 51584,
+          "optimal_tiling_features": 56707,
+          "buffer_features": 88
+        },
+        {
+          "format": 68,
+          "linear_tiling_features": 51328,
+          "optimal_tiling_features": 52355,
+          "buffer_features": 24
+        },
+        {
+          "format": 70,
+          "linear_tiling_features": 0,
+          "optimal_tiling_features": 54275,
+          "buffer_features": 88
+        },
+        {
+          "format": 71,
+          "linear_tiling_features": 0,
+          "optimal_tiling_features": 54275,
+          "buffer_features": 88
+        },
+        {
+          "format": 74,
+          "linear_tiling_features": 51328,
+          "optimal_tiling_features": 52359,
+          "buffer_features": 120
+        },
+        {
+          "format": 75,
+          "linear_tiling_features": 51328,
+          "optimal_tiling_features": 52359,
+          "buffer_features": 120
+        },
+        {
+          "format": 76,
+          "linear_tiling_features": 51584,
+          "optimal_tiling_features": 56707,
+          "buffer_features": 88
+        },
+        {
+          "format": 77,
+          "linear_tiling_features": 0,
+          "optimal_tiling_features": 54275,
+          "buffer_features": 88
+        },
+        {
+          "format": 78,
+          "linear_tiling_features": 0,
+          "optimal_tiling_features": 54275,
+          "buffer_features": 88
+        },
+        {
+          "format": 81,
+          "linear_tiling_features": 51328,
+          "optimal_tiling_features": 52355,
+          "buffer_features": 88
+        },
+        {
+          "format": 82,
+          "linear_tiling_features": 51328,
+          "optimal_tiling_features": 52355,
+          "buffer_features": 88
+        },
+        {
+          "format": 83,
+          "linear_tiling_features": 51584,
+          "optimal_tiling_features": 56707,
+          "buffer_features": 88
+        },
+        {
+          "format": 91,
+          "linear_tiling_features": 0,
+          "optimal_tiling_features": 54275,
+          "buffer_features": 88
+        },
+        {
+          "format": 92,
+          "linear_tiling_features": 0,
+          "optimal_tiling_features": 54275,
+          "buffer_features": 88
+        },
+        {
+          "format": 95,
+          "linear_tiling_features": 51328,
+          "optimal_tiling_features": 52355,
+          "buffer_features": 88
+        },
+        {
+          "format": 96,
+          "linear_tiling_features": 51328,
+          "optimal_tiling_features": 52355,
+          "buffer_features": 88
+        },
+        {
+          "format": 97,
+          "linear_tiling_features": 51584,
+          "optimal_tiling_features": 56707,
+          "buffer_features": 88
+        },
+        {
+          "format": 98,
+          "linear_tiling_features": 51328,
+          "optimal_tiling_features": 52359,
+          "buffer_features": 120
+        },
+        {
+          "format": 99,
+          "linear_tiling_features": 51328,
+          "optimal_tiling_features": 52359,
+          "buffer_features": 120
+        },
+        {
+          "format": 100,
+          "linear_tiling_features": 51328,
+          "optimal_tiling_features": 52355,
+          "buffer_features": 88
+        },
+        {
+          "format": 101,
+          "linear_tiling_features": 51328,
+          "optimal_tiling_features": 52355,
+          "buffer_features": 88
+        },
+        {
+          "format": 102,
+          "linear_tiling_features": 51328,
+          "optimal_tiling_features": 52355,
+          "buffer_features": 88
+        },
+        {
+          "format": 103,
+          "linear_tiling_features": 51328,
+          "optimal_tiling_features": 52355,
+          "buffer_features": 88
+        },
+        {
+          "format": 104,
+          "linear_tiling_features": 0,
+          "optimal_tiling_features": 0,
+          "buffer_features": 64
+        },
+        {
+          "format": 105,
+          "linear_tiling_features": 0,
+          "optimal_tiling_features": 0,
+          "buffer_features": 64
+        },
+        {
+          "format": 106,
+          "linear_tiling_features": 0,
+          "optimal_tiling_features": 0,
+          "buffer_features": 64
+        },
+        {
+          "format": 107,
+          "linear_tiling_features": 51328,
+          "optimal_tiling_features": 52355,
+          "buffer_features": 88
+        },
+        {
+          "format": 108,
+          "linear_tiling_features": 51328,
+          "optimal_tiling_features": 52355,
+          "buffer_features": 88
+        },
+        {
+          "format": 109,
+          "linear_tiling_features": 51328,
+          "optimal_tiling_features": 52355,
+          "buffer_features": 88
+        },
+        {
+          "format": 122,
+          "linear_tiling_features": 51584,
+          "optimal_tiling_features": 56707,
+          "buffer_features": 24
+        },
+        {
+          "format": 123,
+          "linear_tiling_features": 0,
+          "optimal_tiling_features": 54273,
+          "buffer_features": 0
+        },
+        {
+          "format": 124,
+          "linear_tiling_features": 51712,
+          "optimal_tiling_features": 52739,
+          "buffer_features": 0
+        },
+        {
+          "format": 125,
+          "linear_tiling_features": 51712,
+          "optimal_tiling_features": 52737,
+          "buffer_features": 0
+        },
+        {
+          "format": 126,
+          "linear_tiling_features": 51712,
+          "optimal_tiling_features": 52739,
+          "buffer_features": 0
+        },
+        {
+          "format": 129,
+          "linear_tiling_features": 51712,
+          "optimal_tiling_features": 52737,
+          "buffer_features": 0
+        },
+        {
+          "format": 131,
+          "linear_tiling_features": 0,
+          "optimal_tiling_features": 54273,
+          "buffer_features": 0
+        },
+        {
+          "format": 132,
+          "linear_tiling_features": 0,
+          "optimal_tiling_features": 54273,
+          "buffer_features": 0
+        },
+        {
+          "format": 133,
+          "linear_tiling_features": 0,
+          "optimal_tiling_features": 54273,
+          "buffer_features": 0
+        },
+        {
+          "format": 134,
+          "linear_tiling_features": 0,
+          "optimal_tiling_features": 54273,
+          "buffer_features": 0
+        },
+        {
+          "format": 135,
+          "linear_tiling_features": 0,
+          "optimal_tiling_features": 54273,
+          "buffer_features": 0
+        },
+        {
+          "format": 136,
+          "linear_tiling_features": 0,
+          "optimal_tiling_features": 54273,
+          "buffer_features": 0
+        },
+        {
+          "format": 137,
+          "linear_tiling_features": 0,
+          "optimal_tiling_features": 54273,
+          "buffer_features": 0
+        },
+        {
+          "format": 138,
+          "linear_tiling_features": 0,
+          "optimal_tiling_features": 54273,
+          "buffer_features": 0
+        },
+        {
+          "format": 147,
+          "linear_tiling_features": 0,
+          "optimal_tiling_features": 54273,
+          "buffer_features": 0
+        },
+        {
+          "format": 148,
+          "linear_tiling_features": 0,
+          "optimal_tiling_features": 54273,
+          "buffer_features": 0
+        },
+        {
+          "format": 149,
+          "linear_tiling_features": 0,
+          "optimal_tiling_features": 54273,
+          "buffer_features": 0
+        },
+        {
+          "format": 150,
+          "linear_tiling_features": 0,
+          "optimal_tiling_features": 54273,
+          "buffer_features": 0
+        },
+        {
+          "format": 151,
+          "linear_tiling_features": 0,
+          "optimal_tiling_features": 54273,
+          "buffer_features": 0
+        },
+        {
+          "format": 152,
+          "linear_tiling_features": 0,
+          "optimal_tiling_features": 54273,
+          "buffer_features": 0
+        },
+        {
+          "format": 153,
+          "linear_tiling_features": 0,
+          "optimal_tiling_features": 54273,
+          "buffer_features": 0
+        },
+        {
+          "format": 154,
+          "linear_tiling_features": 0,
+          "optimal_tiling_features": 54273,
+          "buffer_features": 0
+        },
+        {
+          "format": 155,
+          "linear_tiling_features": 0,
+          "optimal_tiling_features": 54273,
+          "buffer_features": 0
+        },
+        {
+          "format": 156,
+          "linear_tiling_features": 0,
+          "optimal_tiling_features": 54273,
+          "buffer_features": 0
+        },
+        {
+          "format": 157,
+          "linear_tiling_features": 0,
+          "optimal_tiling_features": 54273,
+          "buffer_features": 0
+        },
+        {
+          "format": 158,
+          "linear_tiling_features": 0,
+          "optimal_tiling_features": 54273,
+          "buffer_features": 0
+        },
+        {
+          "format": 159,
+          "linear_tiling_features": 0,
+          "optimal_tiling_features": 54273,
+          "buffer_features": 0
+        },
+        {
+          "format": 160,
+          "linear_tiling_features": 0,
+          "optimal_tiling_features": 54273,
+          "buffer_features": 0
+        },
+        {
+          "format": 161,
+          "linear_tiling_features": 0,
+          "optimal_tiling_features": 54273,
+          "buffer_features": 0
+        },
+        {
+          "format": 162,
+          "linear_tiling_features": 0,
+          "optimal_tiling_features": 54273,
+          "buffer_features": 0
+        },
+        {
+          "format": 163,
+          "linear_tiling_features": 0,
+          "optimal_tiling_features": 54273,
+          "buffer_features": 0
+        },
+        {
+          "format": 164,
+          "linear_tiling_features": 0,
+          "optimal_tiling_features": 54273,
+          "buffer_features": 0
+        },
+        {
+          "format": 165,
+          "linear_tiling_features": 0,
+          "optimal_tiling_features": 54273,
+          "buffer_features": 0
+        },
+        {
+          "format": 166,
+          "linear_tiling_features": 0,
+          "optimal_tiling_features": 54273,
+          "buffer_features": 0
+        },
+        {
+          "format": 167,
+          "linear_tiling_features": 0,
+          "optimal_tiling_features": 54273,
+          "buffer_features": 0
+        },
+        {
+          "format": 168,
+          "linear_tiling_features": 0,
+          "optimal_tiling_features": 54273,
+          "buffer_features": 0
+        },
+        {
+          "format": 169,
+          "linear_tiling_features": 0,
+          "optimal_tiling_features": 54273,
+          "buffer_features": 0
+        },
+        {
+          "format": 170,
+          "linear_tiling_features": 0,
+          "optimal_tiling_features": 54273,
+          "buffer_features": 0
+        },
+        {
+          "format": 171,
+          "linear_tiling_features": 0,
+          "optimal_tiling_features": 54273,
+          "buffer_features": 0
+        },
+        {
+          "format": 172,
+          "linear_tiling_features": 0,
+          "optimal_tiling_features": 54273,
+          "buffer_features": 0
+        },
+        {
+          "format": 173,
+          "linear_tiling_features": 0,
+          "optimal_tiling_features": 54273,
+          "buffer_features": 0
+        },
+        {
+          "format": 174,
+          "linear_tiling_features": 0,
+          "optimal_tiling_features": 54273,
+          "buffer_features": 0
+        },
+        {
+          "format": 175,
+          "linear_tiling_features": 0,
+          "optimal_tiling_features": 54273,
+          "buffer_features": 0
+        },
+        {
+          "format": 176,
+          "linear_tiling_features": 0,
+          "optimal_tiling_features": 54273,
+          "buffer_features": 0
+        },
+        {
+          "format": 177,
+          "linear_tiling_features": 0,
+          "optimal_tiling_features": 54273,
+          "buffer_features": 0
+        },
+        {
+          "format": 178,
+          "linear_tiling_features": 0,
+          "optimal_tiling_features": 54273,
+          "buffer_features": 0
+        },
+        {
+          "format": 179,
+          "linear_tiling_features": 0,
+          "optimal_tiling_features": 54273,
+          "buffer_features": 0
+        },
+        {
+          "format": 180,
+          "linear_tiling_features": 0,
+          "optimal_tiling_features": 54273,
+          "buffer_features": 0
+        },
+        {
+          "format": 181,
+          "linear_tiling_features": 0,
+          "optimal_tiling_features": 54273,
+          "buffer_features": 0
+        },
+        {
+          "format": 182,
+          "linear_tiling_features": 0,
+          "optimal_tiling_features": 54273,
+          "buffer_features": 0
+        },
+        {
+          "format": 183,
+          "linear_tiling_features": 0,
+          "optimal_tiling_features": 54273,
+          "buffer_features": 0
+        },
+        {
+          "format": 184,
+          "linear_tiling_features": 0,
+          "optimal_tiling_features": 54273,
+          "buffer_features": 0
+        },
+        {
+          "format": 1000156002,
+          "linear_tiling_features": 4243456,
+          "optimal_tiling_features": 12763137,
+          "buffer_features": 0
+        },
+        {
+          "format": 1000156003,
+          "linear_tiling_features": 4243456,
+          "optimal_tiling_features": 12763137,
+          "buffer_features": 0
+        }
+      ],
+      "subgroup_properties": {
+        "subgroup_size": 16,
+        "supported_stages": 32,
+        "supported_operations": 1,
+        "quad_operations_in_all_stages": false
+      },
+      "point_clipping_properties": {
+        "point_clipping_behavior": 0
+      },
+      "multiview_properties": {
+        "max_multiview_view_count": 16,
+        "max_multiview_instance_index": 4294967294
+      },
+      "id_properties": {
+        "device_uuid": [
+          46,
+          209,
+          49,
+          133,
+          231,
+          124,
+          226,
+          234,
+          207,
+          213,
+          7,
+          136,
+          24,
+          212,
+          227,
+          229
+        ],
+        "driver_uuid": [
+          62,
+          254,
+          26,
+          157,
+          239,
+          112,
+          182,
+          49,
+          244,
+          152,
+          227,
+          132,
+          102,
+          135,
+          219,
+          129
+        ],
+        "device_luid": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "device_node_mask": 0,
+        "device_luid_valid": false
+      },
+      "maintenance_3_properties": {
+        "max_per_set_descriptors": 67108863,
+        "max_memory_allocation_size": "0x0000000040000000"
+      },
+      "bit16_storage_features": {
+        "storage_buffer_16bit_access": true,
+        "uniform_and_storage_buffer_16bit_access": true,
+        "storage_push_constant_16": true,
+        "storage_input_output_16": false
+      },
+      "multiview_features": {
+        "multiview": true,
+        "multiview_geometry_shader": false,
+        "multiview_tessellation_shader": false
+      },
+      "variable_pointer_features": {
+        "variable_pointers_storage_buffer": true,
+        "variable_pointers": false
+      },
+      "protected_memory_features": {
+        "protected_memory": false
+      },
+      "sampler_ycbcr_conversion_features": {
+        "sampler_ycbcr_conversion": true
+      },
+      "shader_draw_parameter_features": {
+        "shader_draw_parameters": false
+      },
+      "external_fence_properties": [
+        {
+          "handle_type": 1,
+          "export_from_imported_handle_types": 9,
+          "compatible_handle_types": 9,
+          "external_fence_features": 3
+        },
+        {
+          "handle_type": 8,
+          "export_from_imported_handle_types": 9,
+          "compatible_handle_types": 9,
+          "external_fence_features": 3
+        }
+      ],
+      "external_semaphore_properties": [
+        {
+          "handle_type": 1,
+          "export_from_imported_handle_types": 17,
+          "compatible_handle_types": 17,
+          "external_semaphore_features": 3
+        },
+        {
+          "handle_type": 16,
+          "export_from_imported_handle_types": 17,
+          "compatible_handle_types": 17,
+          "external_semaphore_features": 3
+        }
+      ]
+    }
+  ]
+}

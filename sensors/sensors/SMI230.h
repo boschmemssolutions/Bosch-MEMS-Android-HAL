@@ -23,37 +23,40 @@
 namespace bosch {
 namespace sensors {
 
-class Smi230Common : public SensorCore {
-public:
-  Smi230Common() = default;
-  virtual ~Smi230Common() = default;
-
-  void setPowerMode(bool enable) override;
-
-private:
-  const std::string mSysfsPowerMode = "pwr ";
-};
-
-class Smi230Acc : public Smi230Common {
+class Smi230Acc : public SensorCore {
 public:
   Smi230Acc();
   ~Smi230Acc() = default;
 
-  void setSamplingRate(int64_t samplingPeriodNs) override;
+  void setPowerMode(bool enable) override;
 
 private:
-  const std::string mSysfsOdr = "odr ";
+  const std::string mSysfsPowerMode = "pwr";
+  const std::string mSysfsOdr = "odr";
 };
 
-class Smi230Gyro : public Smi230Common {
+class Smi230AccUncalibrated : public Smi230Acc {
+public:
+  Smi230AccUncalibrated();
+  ~Smi230AccUncalibrated() = default;
+};
+
+class Smi230Gyro : public SensorCore {
 public:
   Smi230Gyro();
   ~Smi230Gyro() = default;
 
-  void setSamplingRate(int64_t samplingPeriodNs) override;
+  void setPowerMode(bool enable) override;
 
 private:
-  const std::string mSysfsOdr = "bw_odr ";
+  const std::string mSysfsPowerMode = "pwr";
+  const std::string mSysfsOdr = "bw_odr";
+};
+
+class Smi230GyroUncalibrated : public Smi230Gyro {
+public:
+  Smi230GyroUncalibrated();
+  ~Smi230GyroUncalibrated() = default;
 };
 
 class Smi230LinearAcc : public LinearAcceleration {
@@ -66,12 +69,6 @@ class Smi230Gravity : public Gravity {
 public:
   Smi230Gravity(const std::shared_ptr<SensorCore> accel, const std::shared_ptr<SensorCore> gyro);
   ~Smi230Gravity() = default;
-};
-
-class Smi230AmbientTemperature : public Smi230Common {
-public:
-  Smi230AmbientTemperature();
-  ~Smi230AmbientTemperature() = default;
 };
 
 }  // namespace sensors

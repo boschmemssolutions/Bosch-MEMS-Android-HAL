@@ -78,6 +78,7 @@ public:
   void addDirectChannel(int32_t channelHandle, int64_t samplingPeriodNs);
   void stopDirectChannel(int32_t channelHandle);
   void removeDirectChannel(int32_t channelHandle);
+  void updateDirectChannel();
 
 private:
   void run();
@@ -97,8 +98,11 @@ private:
   static constexpr uint8_t ROTATION_Z_IDX = 2;
 
   bool mIsEnabled;
+  bool mDirectChannelEnabled;
   int64_t mSamplingPeriodNs;
-  int64_t mLastSampleTimeNs;
+  int64_t mNextSampleTimeNs;
+  int64_t mDirectChannelRateNs;
+  int64_t mNextDirectChannelNs;
   SensorInfo mSensorInfo;
 
   struct DirectChannel {

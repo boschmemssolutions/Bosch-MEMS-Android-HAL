@@ -18,7 +18,7 @@
 
 #include <unistd.h>
 
-#include "hwctl.h"
+#include "FileHandler.h"
 
 namespace bosch::sensors {
 
@@ -27,7 +27,7 @@ static constexpr float SMI330_GYRO_VAR = 4.9e-5;  // (rad/s)^2 / Hz
 void Smi330Imu::setPowerMode(Index idx, bool enable, const std::string& device) {
   mIsEnabled[idx] = enable;
   updateSamplingRate(device);
-  hwctl::writeToFile(device + mSysfsPowerMode[idx] + std::to_string(enable ? 3 : 0));
+  bosch::hwctl::WriteHandler handler(device, mSysfsPowerMode[idx], enable ? "3" : "0");
   usleep(200000);
 }
 
@@ -55,7 +55,7 @@ void Smi330Imu::updateSamplingRate(const std::string& device) {
       break;
     }
   }
-  hwctl::writeToFile(device + mSysfsOdr + std::to_string(odr));
+  bosch::hwctl::WriteHandler handler(device, mSysfsOdr, std::to_string(odr));
 }
 
 Smi330Acc::Smi330Acc() {
@@ -74,6 +74,11 @@ Smi330Acc::Smi330Acc() {
   mSensorData.reportMode = CONTINUOUS;
 }
 
+Smi330AccUncalibrated::Smi330AccUncalibrated() {
+  mSensorData.sensorName = "SMI330 BOSCH Accelerometer Uncalibrated Sensor";
+  mSensorData.type = BoschSensorType::ACCEL_UNCALIBRATED;
+}
+
 Smi330Gyro::Smi330Gyro() {
   mSensorData.driverName = "smi330";
   mSensorData.sensorName = "SMI330 BOSCH Gyroscope Sensor";
@@ -83,11 +88,21 @@ Smi330Gyro::Smi330Gyro() {
   mSensorData.minDelayUs = 5000;
   mSensorData.maxDelayUs = 1280000;
   mSensorData.power = 0.4f;
-  mSensorData.range = degreeToRad(125);
-  mSensorData.resolution = degreeToRad(1.0f / 262.144f);
+  mSensorData.range = degreeToRad(250);
+  mSensorData.resolution = degreeToRad(1.0f / 131.072f);
   mSensorData.temperatureScale = 1.0f / 512;
   mSensorData.temperatureOffset = 23.0f * 512;
   mSensorData.reportMode = CONTINUOUS;
+}
+
+void Smi330Gyro::setScale() {
+  // Fixed range of 250 °/s
+  bosch::hwctl::WriteHandler handler(mDevice, mSysfsScale, "0.007629395");
+}
+
+Smi330GyroUncalibrated::Smi330GyroUncalibrated() {
+  mSensorData.sensorName = "SMI330 BOSCH Gyroscope Uncalibrated Sensor";
+  mSensorData.type = BoschSensorType::GYRO_UNCALIBRATED;
 }
 
 Smi330LinearAcc::Smi330LinearAcc(const std::shared_ptr<SensorCore> accel, const std::shared_ptr<SensorCore> gyro) {

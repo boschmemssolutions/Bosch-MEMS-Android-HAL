@@ -16,7 +16,7 @@
 
 #include "SensorList.h"
 
-#include "hwctl.h"
+#include "FileHandler.h"
 
 namespace bosch::sensors {
 
@@ -25,7 +25,7 @@ std::vector<std::shared_ptr<ISensorHal>> SensorList::getAvailableSensors() {
   std::vector<std::shared_ptr<ISensorHal>> availableSensors{};
 
   for (const auto& sensor : mSensorList) {
-    if (hwctl::isSensorAvailable(sensor->getSensorData().driverName, device)) {
+    if (bosch::hwctl::isSensorAvailable(sensor->getSensorData().driverName, device)) {
       sensor->setAvailable(true);
       sensor->setDevice(device);
       availableSensors.push_back(sensor);

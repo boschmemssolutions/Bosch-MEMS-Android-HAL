@@ -1,0 +1,404 @@
+<html>
+    <head>
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Test Report</title>
+        <style type="text/css">
+                    @import "compatibility_result.css";
+                </style>
+    </head>
+    <body>
+        <div>
+            <table class="title">
+                <tr>
+                    <td align="left"><img src="logo.png"></td>
+                </tr>
+            </table>
+        </div>
+        <div>
+            <table class="summary">
+                <tr>
+                    <th colspan="2">Summary</th>
+                </tr>
+                <tr>
+                    <td class="rowtitle">Suite / Plan</td><td>VTS / vts-bosch</td>
+                </tr>
+                <tr>
+                    <td class="rowtitle">Suite / Build</td><td>13_r4 / eng.gus1st.20250127.092412</td>
+                </tr>
+                <tr>
+                    <td class="rowtitle">Host Info</td><td>
+                                Result/@start
+                                RT-C-008FN
+                                (Linux - 5.15.0-130-generic)
+                            </td>
+                </tr>
+                <tr>
+                    <td class="rowtitle">Start time / End Time</td><td>Sun Feb 02 01:57:16 GMT 2025 /
+                                Sun Feb 02 02:09:09 GMT 2025</td>
+                </tr>
+                <tr>
+                    <td class="rowtitle">Tests Passed</td><td>63</td>
+                </tr>
+                <tr>
+                    <td class="rowtitle">Tests Failed</td><td>0</td>
+                </tr>
+                <tr>
+                    <td class="rowtitle">Modules Done</td><td>1</td>
+                </tr>
+                <tr>
+                    <td class="rowtitle">Modules Total</td><td>1</td>
+                </tr>
+                <tr>
+                    <td class="rowtitle">Fingerprint</td><td>Raspberry/bosch_hal_v2_0/rpi4:13/TQ3A.230901.001/2:userdebug/test-keys</td>
+                </tr>
+                <tr>
+                    <td class="rowtitle">Security Patch</td><td>2023-09-01</td>
+                </tr>
+                <tr>
+                    <td class="rowtitle">Release (SDK)</td><td>13 (33)
+                            </td>
+                </tr>
+                <tr>
+                    <td class="rowtitle">ABIs</td><td>arm64-v8a,armeabi-v7a,armeabi</td>
+                </tr>
+            </table>
+        </div>
+        <br>
+        <div>
+            <table class="testsummary">
+                <tr>
+                    <th>Module</th><th>Passed</th><th>Failed</th><th>Assumption Failure</th><th>Ignored</th><th>Total Tests</th><th>Done</th><th>Reason</th>
+                </tr>
+                <tr>
+                    <td><a href="#arm64-v8a%C2%A0BoschHalSensorsV2_0TargetTest">arm64-v8a&nbsp;BoschHalSensorsV2_0TargetTest</a></td><td>63</td><td>0</td><td>0</td><td>0</td><td>63</td><td>true</td><td></td>
+                </tr>
+            </table>
+        </div>
+        <br>
+        <div>
+            <table class="testdetails">
+                <tr>
+                    <td class="module" colspan="3"><a name="arm64-v8a%C2%A0BoschHalSensorsV2_0TargetTest">arm64-v8a&nbsp;BoschHalSensorsV2_0TargetTest</a></td>
+                </tr>
+                <tr>
+                    <th width="30%">Test</th><th width="5%">Result</th><th>Details</th>
+                </tr>
+                <tr>
+                    <td class="testname">PerInstance/SensorsHidlTest#SensorListValid/0_default</td><td class="pass">
+                        <div style="text-align: center; margin-left:auto; margin-right:auto;">pass</div>
+                    </td><td class="failuredetails"></td>
+                </tr>
+                <tr>
+                    <td class="testname">PerInstance/SensorsHidlTest#SensorListContainsBoschSensor/0_default</td><td class="pass">
+                        <div style="text-align: center; margin-left:auto; margin-right:auto;">pass</div>
+                    </td><td class="failuredetails"></td>
+                </tr>
+                <tr>
+                    <td class="testname">PerInstance/SensorsHidlTest#SetOperationMode/0_default</td><td class="pass">
+                        <div style="text-align: center; margin-left:auto; margin-right:auto;">pass</div>
+                    </td><td class="failuredetails"></td>
+                </tr>
+                <tr>
+                    <td class="testname">PerInstance/SensorsHidlTest#InjectSensorEventData/0_default</td><td class="pass">
+                        <div style="text-align: center; margin-left:auto; margin-right:auto;">pass</div>
+                    </td><td class="failuredetails"></td>
+                </tr>
+                <tr>
+                    <td class="testname">PerInstance/SensorsHidlTest#CallInitializeTwice/0_default</td><td class="pass">
+                        <div style="text-align: center; margin-left:auto; margin-right:auto;">pass</div>
+                    </td><td class="failuredetails"></td>
+                </tr>
+                <tr>
+                    <td class="testname">PerInstance/SensorsHidlTest#CleanupConnectionsOnInitialize/0_default</td><td class="pass">
+                        <div style="text-align: center; margin-left:auto; margin-right:auto;">pass</div>
+                    </td><td class="failuredetails"></td>
+                </tr>
+                <tr>
+                    <td class="testname">PerInstance/SensorsHidlTest#FlushSensor/0_default</td><td class="pass">
+                        <div style="text-align: center; margin-left:auto; margin-right:auto;">pass</div>
+                    </td><td class="failuredetails"></td>
+                </tr>
+                <tr>
+                    <td class="testname">PerInstance/SensorsHidlTest#FlushOneShotSensor/0_default</td><td class="pass">
+                        <div style="text-align: center; margin-left:auto; margin-right:auto;">pass</div>
+                    </td><td class="failuredetails"></td>
+                </tr>
+                <tr>
+                    <td class="testname">PerInstance/SensorsHidlTest#FlushInactiveSensor/0_default</td><td class="pass">
+                        <div style="text-align: center; margin-left:auto; margin-right:auto;">pass</div>
+                    </td><td class="failuredetails"></td>
+                </tr>
+                <tr>
+                    <td class="testname">PerInstance/SensorsHidlTest#Batch/0_default</td><td class="pass">
+                        <div style="text-align: center; margin-left:auto; margin-right:auto;">pass</div>
+                    </td><td class="failuredetails"></td>
+                </tr>
+                <tr>
+                    <td class="testname">PerInstance/SensorsHidlTest#Activate/0_default</td><td class="pass">
+                        <div style="text-align: center; margin-left:auto; margin-right:auto;">pass</div>
+                    </td><td class="failuredetails"></td>
+                </tr>
+                <tr>
+                    <td class="testname">PerInstance/SensorsHidlTest#ConfigCheck/0_default</td><td class="pass">
+                        <div style="text-align: center; margin-left:auto; margin-right:auto;">pass</div>
+                    </td><td class="failuredetails"></td>
+                </tr>
+                <tr>
+                    <td class="testname">PerInstance/SensorsHidlTest#NoStaleEvents/0_default</td><td class="pass">
+                        <div style="text-align: center; margin-left:auto; margin-right:auto;">pass</div>
+                    </td><td class="failuredetails"></td>
+                </tr>
+                <tr>
+                    <td class="testname">PerInstance/SensorsHidlTest#DirectChannelAshmem/0_default</td><td class="pass">
+                        <div style="text-align: center; margin-left:auto; margin-right:auto;">pass</div>
+                    </td><td class="failuredetails"></td>
+                </tr>
+                <tr>
+                    <td class="testname">PerInstance/SensorsHidlTest#DirectChannelGralloc/0_default</td><td class="pass">
+                        <div style="text-align: center; margin-left:auto; margin-right:auto;">pass</div>
+                    </td><td class="failuredetails"></td>
+                </tr>
+                <tr>
+                    <td class="testname">PerInstance/SensorsHidlTest#AccelerometerCheckSensorVector/0_default</td><td class="pass">
+                        <div style="text-align: center; margin-left:auto; margin-right:auto;">pass</div>
+                    </td><td class="failuredetails"></td>
+                </tr>
+                <tr>
+                    <td class="testname">PerInstance/SensorsHidlTest#GyroscopeCheckSensorVector/0_default</td><td class="pass">
+                        <div style="text-align: center; margin-left:auto; margin-right:auto;">pass</div>
+                    </td><td class="failuredetails"></td>
+                </tr>
+                <tr>
+                    <td class="testname">PerInstance/SensorsHidlTest#GravityCheckSensorVector/0_default</td><td class="pass">
+                        <div style="text-align: center; margin-left:auto; margin-right:auto;">pass</div>
+                    </td><td class="failuredetails"></td>
+                </tr>
+                <tr>
+                    <td class="testname">PerInstance/SensorsHidlTest#LinearAccelerationCheckSensorVector/0_default</td><td class="pass">
+                        <div style="text-align: center; margin-left:auto; margin-right:auto;">pass</div>
+                    </td><td class="failuredetails"></td>
+                </tr>
+                <tr>
+                    <td class="testname">PerInstance/SensorsHidlTest#AccelerometerStreamingOperationSlow/0_default</td><td class="pass">
+                        <div style="text-align: center; margin-left:auto; margin-right:auto;">pass</div>
+                    </td><td class="failuredetails"></td>
+                </tr>
+                <tr>
+                    <td class="testname">PerInstance/SensorsHidlTest#AccelerometerStreamingOperationNormal/0_default</td><td class="pass">
+                        <div style="text-align: center; margin-left:auto; margin-right:auto;">pass</div>
+                    </td><td class="failuredetails"></td>
+                </tr>
+                <tr>
+                    <td class="testname">PerInstance/SensorsHidlTest#AccelerometerStreamingOperationFast/0_default</td><td class="pass">
+                        <div style="text-align: center; margin-left:auto; margin-right:auto;">pass</div>
+                    </td><td class="failuredetails"></td>
+                </tr>
+                <tr>
+                    <td class="testname">PerInstance/SensorsHidlTest#GyroscopeStreamingOperationSlow/0_default</td><td class="pass">
+                        <div style="text-align: center; margin-left:auto; margin-right:auto;">pass</div>
+                    </td><td class="failuredetails"></td>
+                </tr>
+                <tr>
+                    <td class="testname">PerInstance/SensorsHidlTest#GyroscopeStreamingOperationNormal/0_default</td><td class="pass">
+                        <div style="text-align: center; margin-left:auto; margin-right:auto;">pass</div>
+                    </td><td class="failuredetails"></td>
+                </tr>
+                <tr>
+                    <td class="testname">PerInstance/SensorsHidlTest#GyroscopeStreamingOperationFast/0_default</td><td class="pass">
+                        <div style="text-align: center; margin-left:auto; margin-right:auto;">pass</div>
+                    </td><td class="failuredetails"></td>
+                </tr>
+                <tr>
+                    <td class="testname">PerInstance/SensorsHidlTest#GravityStreamingOperationFast/0_default</td><td class="pass">
+                        <div style="text-align: center; margin-left:auto; margin-right:auto;">pass</div>
+                    </td><td class="failuredetails"></td>
+                </tr>
+                <tr>
+                    <td class="testname">PerInstance/SensorsHidlTest#LinearAccelerationStreamingOperationFast/0_default</td><td class="pass">
+                        <div style="text-align: center; margin-left:auto; margin-right:auto;">pass</div>
+                    </td><td class="failuredetails"></td>
+                </tr>
+                <tr>
+                    <td class="testname">PerInstance/SensorsHidlTest#AccelerometerSamplingPeriodHotSwitchOperation/0_default</td><td class="pass">
+                        <div style="text-align: center; margin-left:auto; margin-right:auto;">pass</div>
+                    </td><td class="failuredetails"></td>
+                </tr>
+                <tr>
+                    <td class="testname">PerInstance/SensorsHidlTest#GyroscopeSamplingPeriodHotSwitchOperation/0_default</td><td class="pass">
+                        <div style="text-align: center; margin-left:auto; margin-right:auto;">pass</div>
+                    </td><td class="failuredetails"></td>
+                </tr>
+                <tr>
+                    <td class="testname">PerInstance/SensorsHidlTest#GravitySamplingPeriodHotSwitchOperation/0_default</td><td class="pass">
+                        <div style="text-align: center; margin-left:auto; margin-right:auto;">pass</div>
+                    </td><td class="failuredetails"></td>
+                </tr>
+                <tr>
+                    <td class="testname">PerInstance/SensorsHidlTest#LinearAccelerationSamplingPeriodHotSwitchOperation/0_default</td><td class="pass">
+                        <div style="text-align: center; margin-left:auto; margin-right:auto;">pass</div>
+                    </td><td class="failuredetails"></td>
+                </tr>
+                <tr>
+                    <td class="testname">PerInstance/SensorsHidlTest#AccelerometerBatchingOperation/0_default</td><td class="pass">
+                        <div style="text-align: center; margin-left:auto; margin-right:auto;">pass</div>
+                    </td><td class="failuredetails"></td>
+                </tr>
+                <tr>
+                    <td class="testname">PerInstance/SensorsHidlTest#GyroscopeBatchingOperation/0_default</td><td class="pass">
+                        <div style="text-align: center; margin-left:auto; margin-right:auto;">pass</div>
+                    </td><td class="failuredetails"></td>
+                </tr>
+                <tr>
+                    <td class="testname">PerInstance/SensorsHidlTest#GravityBatchingOperation/0_default</td><td class="pass">
+                        <div style="text-align: center; margin-left:auto; margin-right:auto;">pass</div>
+                    </td><td class="failuredetails"></td>
+                </tr>
+                <tr>
+                    <td class="testname">PerInstance/SensorsHidlTest#LinearAccelerationBatchingOperation/0_default</td><td class="pass">
+                        <div style="text-align: center; margin-left:auto; margin-right:auto;">pass</div>
+                    </td><td class="failuredetails"></td>
+                </tr>
+                <tr>
+                    <td class="testname">PerInstance/SensorsHidlTest#AccelerometerAshmemDirectReportOperationNormal/0_default</td><td class="pass">
+                        <div style="text-align: center; margin-left:auto; margin-right:auto;">pass</div>
+                    </td><td class="failuredetails"></td>
+                </tr>
+                <tr>
+                    <td class="testname">PerInstance/SensorsHidlTest#AccelerometerAshmemDirectReportOperationFast/0_default</td><td class="pass">
+                        <div style="text-align: center; margin-left:auto; margin-right:auto;">pass</div>
+                    </td><td class="failuredetails"></td>
+                </tr>
+                <tr>
+                    <td class="testname">PerInstance/SensorsHidlTest#AccelerometerAshmemDirectReportOperationVeryFast/0_default</td><td class="pass">
+                        <div style="text-align: center; margin-left:auto; margin-right:auto;">pass</div>
+                    </td><td class="failuredetails"></td>
+                </tr>
+                <tr>
+                    <td class="testname">PerInstance/SensorsHidlTest#GyroscopeAshmemDirectReportOperationNormal/0_default</td><td class="pass">
+                        <div style="text-align: center; margin-left:auto; margin-right:auto;">pass</div>
+                    </td><td class="failuredetails"></td>
+                </tr>
+                <tr>
+                    <td class="testname">PerInstance/SensorsHidlTest#GyroscopeAshmemDirectReportOperationFast/0_default</td><td class="pass">
+                        <div style="text-align: center; margin-left:auto; margin-right:auto;">pass</div>
+                    </td><td class="failuredetails"></td>
+                </tr>
+                <tr>
+                    <td class="testname">PerInstance/SensorsHidlTest#GyroscopeAshmemDirectReportOperationVeryFast/0_default</td><td class="pass">
+                        <div style="text-align: center; margin-left:auto; margin-right:auto;">pass</div>
+                    </td><td class="failuredetails"></td>
+                </tr>
+                <tr>
+                    <td class="testname">PerInstance/SensorsHidlTest#GravityAshmemDirectReportOperationNormal/0_default</td><td class="pass">
+                        <div style="text-align: center; margin-left:auto; margin-right:auto;">pass</div>
+                    </td><td class="failuredetails"></td>
+                </tr>
+                <tr>
+                    <td class="testname">PerInstance/SensorsHidlTest#GravityAshmemDirectReportOperationFast/0_default</td><td class="pass">
+                        <div style="text-align: center; margin-left:auto; margin-right:auto;">pass</div>
+                    </td><td class="failuredetails"></td>
+                </tr>
+                <tr>
+                    <td class="testname">PerInstance/SensorsHidlTest#GravityAshmemDirectReportOperationVeryFast/0_default</td><td class="pass">
+                        <div style="text-align: center; margin-left:auto; margin-right:auto;">pass</div>
+                    </td><td class="failuredetails"></td>
+                </tr>
+                <tr>
+                    <td class="testname">PerInstance/SensorsHidlTest#LinearAccelerationAshmemDirectReportOperationNormal/0_default</td><td class="pass">
+                        <div style="text-align: center; margin-left:auto; margin-right:auto;">pass</div>
+                    </td><td class="failuredetails"></td>
+                </tr>
+                <tr>
+                    <td class="testname">PerInstance/SensorsHidlTest#LinearAccelerationAshmemDirectReportOperationFast/0_default</td><td class="pass">
+                        <div style="text-align: center; margin-left:auto; margin-right:auto;">pass</div>
+                    </td><td class="failuredetails"></td>
+                </tr>
+                <tr>
+                    <td class="testname">PerInstance/SensorsHidlTest#LinearAccelerationAshmemDirectReportOperationVeryFast/0_default</td><td class="pass">
+                        <div style="text-align: center; margin-left:auto; margin-right:auto;">pass</div>
+                    </td><td class="failuredetails"></td>
+                </tr>
+                <tr>
+                    <td class="testname">PerInstance/SensorsHidlTest#AccelerometerGrallocDirectReportOperationNormal/0_default</td><td class="pass">
+                        <div style="text-align: center; margin-left:auto; margin-right:auto;">pass</div>
+                    </td><td class="failuredetails"></td>
+                </tr>
+                <tr>
+                    <td class="testname">PerInstance/SensorsHidlTest#AccelerometerGrallocDirectReportOperationFast/0_default</td><td class="pass">
+                        <div style="text-align: center; margin-left:auto; margin-right:auto;">pass</div>
+                    </td><td class="failuredetails"></td>
+                </tr>
+                <tr>
+                    <td class="testname">PerInstance/SensorsHidlTest#AccelerometerGrallocDirectReportOperationVeryFast/0_default</td><td class="pass">
+                        <div style="text-align: center; margin-left:auto; margin-right:auto;">pass</div>
+                    </td><td class="failuredetails"></td>
+                </tr>
+                <tr>
+                    <td class="testname">PerInstance/SensorsHidlTest#GyroscopeGrallocDirectReportOperationNormal/0_default</td><td class="pass">
+                        <div style="text-align: center; margin-left:auto; margin-right:auto;">pass</div>
+                    </td><td class="failuredetails"></td>
+                </tr>
+                <tr>
+                    <td class="testname">PerInstance/SensorsHidlTest#GyroscopeGrallocDirectReportOperationFast/0_default</td><td class="pass">
+                        <div style="text-align: center; margin-left:auto; margin-right:auto;">pass</div>
+                    </td><td class="failuredetails"></td>
+                </tr>
+                <tr>
+                    <td class="testname">PerInstance/SensorsHidlTest#GyroscopeGrallocDirectReportOperationVeryFast/0_default</td><td class="pass">
+                        <div style="text-align: center; margin-left:auto; margin-right:auto;">pass</div>
+                    </td><td class="failuredetails"></td>
+                </tr>
+                <tr>
+                    <td class="testname">PerInstance/SensorsHidlTest#GravityGrallocDirectReportOperationNormal/0_default</td><td class="pass">
+                        <div style="text-align: center; margin-left:auto; margin-right:auto;">pass</div>
+                    </td><td class="failuredetails"></td>
+                </tr>
+                <tr>
+                    <td class="testname">PerInstance/SensorsHidlTest#GravityGrallocDirectReportOperationFast/0_default</td><td class="pass">
+                        <div style="text-align: center; margin-left:auto; margin-right:auto;">pass</div>
+                    </td><td class="failuredetails"></td>
+                </tr>
+                <tr>
+                    <td class="testname">PerInstance/SensorsHidlTest#GravityGrallocDirectReportOperationVeryFast/0_default</td><td class="pass">
+                        <div style="text-align: center; margin-left:auto; margin-right:auto;">pass</div>
+                    </td><td class="failuredetails"></td>
+                </tr>
+                <tr>
+                    <td class="testname">PerInstance/SensorsHidlTest#LinearAccelerationGrallocDirectReportOperationNormal/0_default</td><td class="pass">
+                        <div style="text-align: center; margin-left:auto; margin-right:auto;">pass</div>
+                    </td><td class="failuredetails"></td>
+                </tr>
+                <tr>
+                    <td class="testname">PerInstance/SensorsHidlTest#LinearAccelerationGrallocDirectReportOperationFast/0_default</td><td class="pass">
+                        <div style="text-align: center; margin-left:auto; margin-right:auto;">pass</div>
+                    </td><td class="failuredetails"></td>
+                </tr>
+                <tr>
+                    <td class="testname">PerInstance/SensorsHidlTest#LinearAccelerationGrallocDirectReportOperationVeryFast/0_default</td><td class="pass">
+                        <div style="text-align: center; margin-left:auto; margin-right:auto;">pass</div>
+                    </td><td class="failuredetails"></td>
+                </tr>
+                <tr>
+                    <td class="testname">PerInstance/SensorsHidlTest#ConfigureDirectChannelWithInvalidHandle/0_default</td><td class="pass">
+                        <div style="text-align: center; margin-left:auto; margin-right:auto;">pass</div>
+                    </td><td class="failuredetails"></td>
+                </tr>
+                <tr>
+                    <td class="testname">PerInstance/SensorsHidlTest#CleanupDirectConnectionOnInitialize/0_default</td><td class="pass">
+                        <div style="text-align: center; margin-left:auto; margin-right:auto;">pass</div>
+                    </td><td class="failuredetails"></td>
+                </tr>
+                <tr>
+                    <td class="testname">PerInstance/SensorsHidlTest#SensorListDoesntContainInvalidType/0_default</td><td class="pass">
+                        <div style="text-align: center; margin-left:auto; margin-right:auto;">pass</div>
+                    </td><td class="failuredetails"></td>
+                </tr>
+                <tr>
+                    <td class="testname">PerInstance/SensorsHidlTest#FlushNonexistentSensor/0_default</td><td class="pass">
+                        <div style="text-align: center; margin-left:auto; margin-right:auto;">pass</div>
+                    </td><td class="failuredetails"></td>
+                </tr>
+            </table>
+        </div>
+    </body>
+</html>

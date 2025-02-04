@@ -1,0 +1,64 @@
+[invocation started]
+[    log: tradefed-expanded-config | path: /tmp/eng.gus1st.20250127.092412/vts-bosch/inv_11616718589999975041/inv_10139811242144432040/tradefed-expanded-config_15495230099104605114.xml]
+[    log: InputDeviceInfo.deviceinfo.json | path: /tmp/eng.gus1st.20250127.092412/vts-bosch/inv_11616718589999975041/inv_10139811242144432040/InputDeviceInfo.deviceinfo.json_7495794554234644990.txt.gz]
+[    log: CpuDeviceInfo.deviceinfo.json | path: /tmp/eng.gus1st.20250127.092412/vts-bosch/inv_11616718589999975041/inv_10139811242144432040/CpuDeviceInfo.deviceinfo.json_7949324548898121604.txt.gz]
+[    log: ScreenDeviceInfo.deviceinfo.json | path: /tmp/eng.gus1st.20250127.092412/vts-bosch/inv_11616718589999975041/inv_10139811242144432040/ScreenDeviceInfo.deviceinfo.json_18108095506634733211.txt.gz]
+[    log: SensorDeviceInfo.deviceinfo.json | path: /tmp/eng.gus1st.20250127.092412/vts-bosch/inv_11616718589999975041/inv_10139811242144432040/SensorDeviceInfo.deviceinfo.json_15862654993500008067.txt.gz]
+[    log: ClientIdDeviceInfo.deviceinfo.json | path: /tmp/eng.gus1st.20250127.092412/vts-bosch/inv_11616718589999975041/inv_10139811242144432040/ClientIdDeviceInfo.deviceinfo.json_1929877673184131199.txt.gz]
+[    log: MediaDrmDeviceInfo.deviceinfo.json | path: /tmp/eng.gus1st.20250127.092412/vts-bosch/inv_11616718589999975041/inv_10139811242144432040/MediaDrmDeviceInfo.deviceinfo.json_7374480823279235083.txt.gz]
+[    log: UserDeviceInfo.deviceinfo.json | path: /tmp/eng.gus1st.20250127.092412/vts-bosch/inv_11616718589999975041/inv_10139811242144432040/UserDeviceInfo.deviceinfo.json_2629580002364488445.txt.gz]
+[    log: framework_compatibility_matrix.xml | path: /tmp/eng.gus1st.20250127.092412/vts-bosch/inv_11616718589999975041/inv_10139811242144432040/framework_compatibility_matrix.xml_6876797326621794493.txt.gz]
+[    log: HapticsDeviceInfo.deviceinfo.json | path: /tmp/eng.gus1st.20250127.092412/vts-bosch/inv_11616718589999975041/inv_10139811242144432040/HapticsDeviceInfo.deviceinfo.json_18301954570420870186.txt.gz]
+[    log: MemoryDeviceInfo.deviceinfo.json | path: /tmp/eng.gus1st.20250127.092412/vts-bosch/inv_11616718589999975041/inv_10139811242144432040/MemoryDeviceInfo.deviceinfo.json_6820953230580498041.txt.gz]
+[    log: DefaultAppDeviceInfo.deviceinfo.json | path: /tmp/eng.gus1st.20250127.092412/vts-bosch/inv_11616718589999975041/inv_10139811242144432040/DefaultAppDeviceInfo.deviceinfo.json_7256651840114114501.txt.gz]
+[    log: ConfigurationDeviceInfo.deviceinfo.json | path: /tmp/eng.gus1st.20250127.092412/vts-bosch/inv_11616718589999975041/inv_10139811242144432040/ConfigurationDeviceInfo.deviceinfo.json_7818246251413389189.txt.gz]
+[    log: GenericDeviceInfo.deviceinfo.json | path: /tmp/eng.gus1st.20250127.092412/vts-bosch/inv_11616718589999975041/inv_10139811242144432040/GenericDeviceInfo.deviceinfo.json_928961480909654957.txt.gz]
+[    log: VintfDeviceInfo.deviceinfo.json | path: /tmp/eng.gus1st.20250127.092412/vts-bosch/inv_11616718589999975041/inv_10139811242144432040/VintfDeviceInfo.deviceinfo.json_7521867328448637339.txt.gz]
+[    log: MediaDeviceInfo.deviceinfo.json | path: /tmp/eng.gus1st.20250127.092412/vts-bosch/inv_11616718589999975041/inv_10139811242144432040/MediaDeviceInfo.deviceinfo.json_11047980743568082551.txt.gz]
+[    log: VulkanDeviceInfo.deviceinfo.json | path: /tmp/eng.gus1st.20250127.092412/vts-bosch/inv_11616718589999975041/inv_10139811242144432040/VulkanDeviceInfo.deviceinfo.json_2140689795382888097.txt.gz]
+[    log: CameraDeviceInfo.deviceinfo.json | path: /tmp/eng.gus1st.20250127.092412/vts-bosch/inv_11616718589999975041/inv_10139811242144432040/CameraDeviceInfo.deviceinfo.json_4699185612015762991.txt.gz]
+[    log: GraphicsDeviceInfo.deviceinfo.json | path: /tmp/eng.gus1st.20250127.092412/vts-bosch/inv_11616718589999975041/inv_10139811242144432040/GraphicsDeviceInfo.deviceinfo.json_15455767344604142042.txt.gz]
+[    log: framework_manifest.xml | path: /tmp/eng.gus1st.20250127.092412/vts-bosch/inv_11616718589999975041/inv_10139811242144432040/framework_manifest.xml_11238828185329003650.txt.gz]
+[    log: LocaleDeviceInfo.deviceinfo.json | path: /tmp/eng.gus1st.20250127.092412/vts-bosch/inv_11616718589999975041/inv_10139811242144432040/LocaleDeviceInfo.deviceinfo.json_7108871454733649794.txt.gz]
+[    log: FeatureDeviceInfo.deviceinfo.json | path: /tmp/eng.gus1st.20250127.092412/vts-bosch/inv_11616718589999975041/inv_10139811242144432040/FeatureDeviceInfo.deviceinfo.json_13382775450501348524.txt.gz]
+[    log: PackageDeviceInfo.deviceinfo.json | path: /tmp/eng.gus1st.20250127.092412/vts-bosch/inv_11616718589999975041/inv_10139811242144432040/PackageDeviceInfo.deviceinfo.json_1746036687739127745.txt.gz]
+[    log: device_manifest.xml | path: /tmp/eng.gus1st.20250127.092412/vts-bosch/inv_11616718589999975041/inv_10139811242144432040/device_manifest.xml_1277820334110397755.txt.gz]
+[    log: AppStandbyDeviceInfo.deviceinfo.json | path: /tmp/eng.gus1st.20250127.092412/vts-bosch/inv_11616718589999975041/inv_10139811242144432040/AppStandbyDeviceInfo.deviceinfo.json_12834539646763015704.txt.gz]
+[    log: device_compatibility_matrix.xml | path: /tmp/eng.gus1st.20250127.092412/vts-bosch/inv_11616718589999975041/inv_10139811242144432040/device_compatibility_matrix.xml_7945948069428291581.txt.gz]
+[    log: StorageDeviceInfo.deviceinfo.json | path: /tmp/eng.gus1st.20250127.092412/vts-bosch/inv_11616718589999975041/inv_10139811242144432040/StorageDeviceInfo.deviceinfo.json_10302431182144838290.txt.gz]
+[    log: device_logcat_setup_192.168.137.18:5555 | path: /tmp/eng.gus1st.20250127.092412/vts-bosch/inv_11616718589999975041/inv_10139811242144432040/device_logcat_setup_192.168.137.18:5555_9094078668147963569.txt]
+  [module arm64-v8a BoschAidlHalSensorsTargetTest started]
+    [run arm64-v8a BoschAidlHalSensorsTargetTest (testCount: 19,attempt: 0) started]
+      - test: Sensors/SensorsAidlTest#SensorListValid/0_android_hardware_sensors_ISensors_default (status=PASSED)
+      - test: Sensors/SensorsAidlTest#SensorListContainsBoschSensor/0_android_hardware_sensors_ISensors_default (status=PASSED)
+      - test: Sensors/SensorsAidlTest#SetOperationMode/0_android_hardware_sensors_ISensors_default (status=PASSED)
+      - test: Sensors/SensorsAidlTest#InjectSensorEventData/0_android_hardware_sensors_ISensors_default (status=PASSED)
+      - test: Sensors/SensorsAidlTest#CallInitializeTwice/0_android_hardware_sensors_ISensors_default (status=PASSED)
+      - test: Sensors/SensorsAidlTest#CleanupConnectionsOnInitialize/0_android_hardware_sensors_ISensors_default (status=PASSED)
+      - test: Sensors/SensorsAidlTest#FlushSensor/0_android_hardware_sensors_ISensors_default (status=PASSED)
+      - test: Sensors/SensorsAidlTest#FlushOneShotSensor/0_android_hardware_sensors_ISensors_default (status=PASSED)
+      - test: Sensors/SensorsAidlTest#FlushInactiveSensor/0_android_hardware_sensors_ISensors_default (status=PASSED)
+      - test: Sensors/SensorsAidlTest#Batch/0_android_hardware_sensors_ISensors_default (status=PASSED)
+      - test: Sensors/SensorsAidlTest#Activate/0_android_hardware_sensors_ISensors_default (status=PASSED)
+      - test: Sensors/SensorsAidlTest#AccelerometerCheckSensorVector/0_android_hardware_sensors_ISensors_default (status=PASSED)
+      - test: Sensors/SensorsAidlTest#GyroscopeCheckSensorVector/0_android_hardware_sensors_ISensors_default (status=PASSED)
+      - test: Sensors/SensorsAidlTest#GravityCheckSensorVector/0_android_hardware_sensors_ISensors_default (status=PASSED)
+      - test: Sensors/SensorsAidlTest#LinearAccelerationCheckSensorVector/0_android_hardware_sensors_ISensors_default (status=PASSED)
+      - test: Sensors/SensorsAidlTest#ConfigCheck/0_android_hardware_sensors_ISensors_default (status=PASSED)
+      - test: Sensors/SensorsAidlTest#NoStaleEvents/0_android_hardware_sensors_ISensors_default (status=PASSED)
+      - test: Sensors/SensorsAidlTest#DirectChannelAshmem/0_android_hardware_sensors_ISensors_default (status=PASSED)
+      - test: Sensors/SensorsAidlTest#DirectChannelGralloc/0_android_hardware_sensors_ISensors_default (status=PASSED)
+    [run ended]
+  [module ended]
+  [module arm64-v8a BoschHalSensorManagerV1_0TargetTest started]
+    [run arm64-v8a BoschHalSensorManagerV1_0TargetTest (testCount: 4,attempt: 0) started]
+      - test: PerInstance/SensorManagerTest#List/0_default (status=PASSED)
+      - test: PerInstance/SensorManagerTest#Ashmem/0_default (status=PASSED)
+      - test: PerInstance/SensorManagerTest#GetDefaultAccelerometer/0_default (status=PASSED)
+      - test: PerInstance/SensorManagerTest#Accelerometer/0_default (status=IGNORED)
+    [run ended]
+  [module ended]
+[    log: device_logcat_test_192.168.137.18:5555 | path: /tmp/eng.gus1st.20250127.092412/vts-bosch/inv_11616718589999975041/inv_10139811242144432040/device_logcat_test_192.168.137.18:5555_11223636006191535768.txt]
+[    log: executeShellCommandLog_192.168.137.18:5555 | path: /tmp/eng.gus1st.20250127.092412/vts-bosch/inv_11616718589999975041/inv_10139811242144432040/executeShellCommandLog_192.168.137.18:5555_1230885702389513309.txt.gz]
+[    log: host_adb_log | path: /tmp/eng.gus1st.20250127.092412/vts-bosch/inv_11616718589999975041/inv_10139811242144432040/host_adb_log_6846510450486292037.txt]
+[    log: host_log | path: /tmp/eng.gus1st.20250127.092412/vts-bosch/inv_11616718589999975041/inv_10139811242144432040/host_log_3811561427983526012.txt]

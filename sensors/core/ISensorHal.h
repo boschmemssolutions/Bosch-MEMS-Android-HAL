@@ -25,12 +25,19 @@
 namespace bosch {
 namespace sensors {
 
+/*
+ * Reduce polling time of the sensor thread by this factor.
+ * 1 means no reduction, 0.5 means half the polling time.
+ */
+constexpr float POLL_TIME_REDUCTION_FACTOR = 1.0f;
+
 enum BoschSensorType {
-  ACCEL = 1,                 // SensorType::ACCELEROMETER
-  GYRO = 4,                  // SensorType::GYROSCOPE
-  GRAVITY = 9,               // SensorType::GRAVITY
-  LINEAR_ACCEL = 10,         // SensorType::LINEAR_ACCELERATION
-  AMBIENT_TEMPERATURE = 13,  // SensorType::AMBIENT_TEMPERATURE
+  ACCEL = 1,                // SensorType::ACCELEROMETER
+  GYRO = 4,                 // SensorType::GYROSCOPE
+  GRAVITY = 9,              // SensorType::GRAVITY
+  LINEAR_ACCEL = 10,        // SensorType::LINEAR_ACCELERATION
+  GYRO_UNCALIBRATED = 16,   // SensorType::GYROSCOPE_UNCALIBRATED
+  ACCEL_UNCALIBRATED = 35,  // SensorType::ACCELEROMETER_UNCALIBRATED
 };
 
 enum SensorReportingMode {

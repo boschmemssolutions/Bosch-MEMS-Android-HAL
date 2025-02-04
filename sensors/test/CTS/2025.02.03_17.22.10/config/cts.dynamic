@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no' ?>
+<dynamicConfig>
+  <entry key="media_files_url">
+    <value>https://dl.google.com/dl/android/cts/android-cts-media-1.5.zip</value>
+  </entry>
+  <entry key="remote_config_retrieved">
+    <value>true</value>
+  </entry>
+</dynamicConfig>

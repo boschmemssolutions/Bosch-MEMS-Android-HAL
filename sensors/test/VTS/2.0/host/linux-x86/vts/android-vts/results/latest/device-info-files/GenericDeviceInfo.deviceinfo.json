@@ -1,0 +1,22 @@
+{
+  "build_id": "TQ3A.230901.001",
+  "build_product": "bosch_hal_v2_0",
+  "build_device": "rpi4",
+  "build_board": "unknown",
+  "build_manufacturer": "Raspberry",
+  "build_brand": "Raspberry",
+  "build_model": "Raspberry Pi 4",
+  "build_type": "userdebug",
+  "build_fingerprint": "Raspberry/bosch_hal_v2_0/rpi4:13/TQ3A.230901.001/2:userdebug/test-keys",
+  "build_abi": "arm64-v8a",
+  "build_abi2": "",
+  "build_serial": "100000009d2b0d07",
+  "build_version_release": "13",
+  "build_version_sdk": "33",
+  "build_reference_fingerprint": "",
+  "build_abis": "arm64-v8a,armeabi-v7a,armeabi",
+  "build_abis_32": "armeabi-v7a,armeabi",
+  "build_abis_64": "arm64-v8a",
+  "build_version_base_os": "",
+  "build_version_security_patch": "2023-09-01"
+}

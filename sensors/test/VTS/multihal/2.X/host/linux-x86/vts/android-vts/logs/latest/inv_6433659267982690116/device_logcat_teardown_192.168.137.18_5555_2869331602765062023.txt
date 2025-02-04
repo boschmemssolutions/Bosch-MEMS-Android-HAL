@@ -1,0 +1,19 @@
+01-29 12:53:03.183 10088  4239  4283 I ndroid.systemui: Background concurrent copying GC freed 113528(6918KB) AllocSpace objects, 8(224KB) LOS objects, 49% free, 7642KB/14MB, paused 132us,70us total 105.407ms
+01-29 12:53:03.329 10101  4870  4967 W MediaProvider: isAppCloneUserPair for user 0: false
+01-29 12:53:03.331 10101  4870  4967 V MediaProvider: Inserted id:1000000347 less than next row id backup:1000001000.
+01-29 12:53:03.510 10101  4870  4966 I MediaProvider: Deleted 1 0 0 0 0 0 0 items on external_primary due to com.android.shell
+01-29 12:53:03.612  1000  3978  4004 I ActivityManager: Force stopping android.tradefed.contentprovider appid=10108 user=-1: deletePackageX
+01-29 12:53:03.612  1000  3978  4004 D OomAdjuster: Not killing cached processes
+01-29 12:53:03.623  root   331  3033 D installd: Found valid user 12
+01-29 12:53:03.623  root   331  3033 D installd: Found valid user 10
+01-29 12:53:03.623  root   331  3033 D installd: Found valid user 11
+01-29 12:53:03.739  root     0     0 I logd    : start watching /data/system/packages.list ...
+01-29 12:53:03.746  root     0     0 I logd    : ReadPackageList, total packages: 114
+01-29 12:53:03.789  1000  3978  3995 W Looper  : Slow dispatch took 162ms android.fg h=android.os.Handler c=<recycled PooledLambda@33a1131> m=0
+01-29 12:53:03.791  1000  3978  4023 D PackageManager: Instant App installer not found with android.intent.action.INSTALL_INSTANT_APP_PACKAGE
+01-29 12:53:03.791  1000  3978  4023 D PackageManager: Clear ephemeral installer activity
+01-29 12:53:03.794  1000  3978  5111 E TaskPersister: File error accessing recents directory (directory doesn't exist?).
+01-29 12:53:03.794  1000  3978  5111 E TaskPersister: File error accessing recents directory (directory doesn't exist?).
+01-29 12:53:03.796  1000  3978  5111 E TaskPersister: File error accessing recents directory (directory doesn't exist?).
+01-29 12:53:03.806  1000  3978  4023 I ActivityManager: Force stopping android.tradefed.contentprovider appid=10108 user=10: pkg removed
+01-29 12:53:03.819  1000  3978  4023 I ActivityManager: Force stopping android.tradefed.contentprovider appid=10108 user=0: pkg removed

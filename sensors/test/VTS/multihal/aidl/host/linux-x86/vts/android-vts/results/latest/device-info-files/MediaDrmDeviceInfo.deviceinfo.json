@@ -1,0 +1,19 @@
+{
+  "media_drm_info": [
+    {
+      "scheme_uuid ": "1077efec-c0b2-4d02-ace3-3c1e52e2fb4b",
+      "vendor": "Google",
+      "version": "aidl-1",
+      "description": "ClearKey CDM"
+    },
+    {
+      "scheme_uuid ": "e2719d58-a985-b3c9-781a-b030af78d30e",
+      "vendor": "Google",
+      "version": "aidl-1",
+      "description": "ClearKey CDM"
+    }
+  ],
+  "media_drm_hal": [
+    "/vendor/bin/hw/android.hardware.drm-service.clearkey"
+  ]
+}

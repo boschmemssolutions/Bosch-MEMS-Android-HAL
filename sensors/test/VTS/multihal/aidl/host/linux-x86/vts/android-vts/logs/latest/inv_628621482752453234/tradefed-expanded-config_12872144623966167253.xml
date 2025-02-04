@@ -1,0 +1,63 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<configuration>
+  <build_provider class="com.android.compatibility.common.tradefed.build.CompatibilityBuildProvider">
+    <option name="plan" value="vts-bosch" />
+  </build_provider>
+  <target_preparer class="com.android.compatibility.common.tradefed.targetprep.VtsDeviceInfoCollector" />
+  <target_preparer class="com.android.compatibility.common.tradefed.targetprep.DeviceInfoCollector">
+    <option name="src-dir" value="/sdcard/device-info-files/" />
+    <option name="dest-dir" value="device-info-files/" />
+    <option name="temp-dir" value="temp-device-info-files/" />
+    <option name="apk" value="CtsDeviceInfo.apk" />
+    <option name="package" value="com.android.compatibility.common.deviceinfo" />
+    <option name="throw-error" value="false" />
+  </target_preparer>
+  <device_recovery class="com.android.tradefed.device.WaitDeviceRecovery" />
+  <device_requirements class="com.android.tradefed.device.DeviceSelectionOptions">
+    <option name="serial" value="192.168.137.18:5555" />
+  </device_requirements>
+  <device_options class="com.android.tradefed.device.TestDeviceOptions" />
+  <test class="com.android.compatibility.common.tradefed.testtype.suite.CompatibilityTestSuite">
+    <option name="exclude-filter" value="VtsHalConfirmationUIV1_0TargetTest *ConfirmationUIHidlTest.AbortTest/*" />
+    <option name="exclude-filter" value="VtsHalConfirmationUIV1_0TargetTest *ConfirmationUIHidlTest.PortableMessageTest2/*" />
+    <option name="exclude-filter" value="VtsHalConfirmationUIV1_0TargetTest *ConfirmationUIHidlTest.PortableMessageTest2Magnified/*" />
+    <option name="exclude-filter" value="VtsHalConfirmationUIV1_0TargetTest *ConfirmationUIHidlTest.PortableMessageTest1/*" />
+    <option name="exclude-filter" value="VtsHalConfirmationUIV1_0TargetTest *ConfirmationUIHidlTest.PortableMessageTest1Magnified/*" />
+    <option name="exclude-filter" value="VtsHalConfirmationUIV1_0TargetTest *ConfirmationUIHidlTest.UserOkTest/*" />
+    <option name="exclude-filter" value="VtsHalConfirmationUIV1_0TargetTest *ConfirmationUIHidlTest.MessageTooLongTest/*" />
+    <option name="exclude-filter" value="VtsHalConfirmationUIV1_0TargetTest *ConfirmationUIHidlTest.UserCancelTest/*" />
+    <option name="exclude-filter" value="vts_virtual_ab_test VirtualAbRequirementTest.EnabledOnLaunchR" />
+    <option name="exclude-filter" value="VtsHalConfirmationUIV1_0TargetTest *ConfirmationUIHidlTest.MalformedUTF8Test3/*" />
+    <option name="exclude-filter" value="VtsHalConfirmationUIV1_0TargetTest *ConfirmationUIHidlTest.MalformedUTF8Test1/*" />
+    <option name="exclude-filter" value="VtsHalConfirmationUIV1_0TargetTest *ConfirmationUIHidlTest.MessageWayTooLongTest/*" />
+    <option name="exclude-filter" value="VtsHalConfirmationUIV1_0TargetTest *ConfirmationUIHidlTest.MalformedUTF8Test2/*" />
+    <option name="primary-abi-only" value="true" />
+  </test>
+  <config_desc class="com.android.tradefed.config.ConfigurationDescriptor">
+    <option name="metadata" key="SERVER_REFERENCE" value="15c13775-29a1-4cc6-b031-f58489a3da05" />
+  </config_desc>
+  <logger class="com.android.tradefed.log.FileLogger">
+    <option name="log-level-display" value="WARN" />
+  </logger>
+  <log_saver class="com.android.tradefed.result.FileSystemLogSaver" />
+  <result_reporter class="com.android.compatibility.common.tradefed.result.ConsoleReporter" />
+  <result_reporter class="com.android.compatibility.common.tradefed.result.suite.CompatibilityProtoResultReporter">
+    <option name="proto-output-file" value="/home/eae1rt/jenkins/RT-C-008FN/SMI230-rpi4-arm64-spi-android/workspace/Bosch-MEMS-Android-HAL_PR-34/build/SMI230/out_hal/multihal/aidl/host/linux-x86/vts/android-vts/results/2025.02.02_03.24.20/proto/test-record.pb" />
+    <option name="periodic-proto-writing" value="true" />
+  </result_reporter>
+  <result_reporter class="com.android.compatibility.common.tradefed.result.suite.CertificationSuiteResultReporter" />
+  <result_reporter class="com.android.compatibility.common.tradefed.result.suite.CompactProtoReporter" />
+  <result_reporter class="com.android.compatibility.common.tradefed.result.suite.CertificationReportCreator" />
+  <cmd_options class="com.android.tradefed.command.CommandOptions">
+    <option name="test-tag" value="vts-bosch" />
+    <option name="report-passed-tests" value="false" />
+  </cmd_options>
+  <system_checker class="com.android.tradefed.suite.checker.DeviceBaselineChecker">
+    <option name="enable-experimental-device-baseline-setters" value="disable_os_auto_update" />
+    <option name="enable-experimental-device-baseline-setters" value="keep_screen_on" />
+  </system_checker>
+  <sandbox_options class="com.android.tradefed.sandbox.SandboxOptions" />
+  <retry_decision class="com.android.tradefed.retry.BaseRetryDecision" />
+  <coverage class="com.android.tradefed.testtype.coverage.CoverageOptions" />
+  <global_filters class="com.android.tradefed.config.filter.GlobalTestFilter" />
+</configuration>

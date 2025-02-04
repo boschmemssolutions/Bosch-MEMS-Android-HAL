@@ -18,16 +18,11 @@
 
 #include <unistd.h>
 
-#include "hwctl.h"
+#include "FileHandler.h"
 
 namespace bosch::sensors {
 
 static constexpr float SMI230_GYRO_VAR = 1.72e-4;  // (rad/s)^2 / Hz
-
-void Smi230Common::setPowerMode(bool enable) {
-  hwctl::writeToFile(mDevice + mSysfsPowerMode + (enable ? "normal" : "suspend"));
-  usleep(200000);
-}
 
 Smi230Acc::Smi230Acc() {
   mSensorData.driverName = "smi230acc";
@@ -35,7 +30,7 @@ Smi230Acc::Smi230Acc() {
   mSensorData.sysfsRaw = {"in_accel_x_raw", "in_accel_y_raw", "in_accel_z_raw"};
   mSensorData.temperatureSysfsRaw = "in_temp_object_raw";
   mSensorData.type = BoschSensorType::ACCEL;
-  mSensorData.minDelayUs = 5000;
+  mSensorData.minDelayUs = 10000;
   mSensorData.maxDelayUs = 2000000;
   mSensorData.power = 0.2f;
   mSensorData.range = gravityToAcceleration(4);
@@ -45,14 +40,23 @@ Smi230Acc::Smi230Acc() {
   mSensorData.reportMode = CONTINUOUS;
 };
 
-void Smi230Acc::setSamplingRate(int64_t) { hwctl::writeToFile(mDevice + mSysfsOdr + "200Hz"); }
+void Smi230Acc::setPowerMode(bool enable) {
+  { bosch::hwctl::WriteHandler handler(mDevice, mSysfsOdr, "200Hz"); }
+  { bosch::hwctl::WriteHandler handler(mDevice, mSysfsPowerMode, enable ? "normal" : "suspend"); }
+  usleep(200000);
+}
+
+Smi230AccUncalibrated::Smi230AccUncalibrated() {
+  mSensorData.sensorName = "SMI230 BOSCH Accelerometer Uncalibrated Sensor";
+  mSensorData.type = BoschSensorType::ACCEL_UNCALIBRATED;
+}
 
 Smi230Gyro::Smi230Gyro() {
   mSensorData.driverName = "smi230gyro";
   mSensorData.sensorName = "SMI230 BOSCH Gyroscope Sensor";
   mSensorData.sysfsRaw = {"in_anglvel_x_raw", "in_anglvel_y_raw", "in_anglvel_z_raw"};
   mSensorData.type = BoschSensorType::GYRO;
-  mSensorData.minDelayUs = 5000;
+  mSensorData.minDelayUs = 10000;
   mSensorData.maxDelayUs = 2000000;
   mSensorData.power = 5.0f;
   mSensorData.range = degreeToRad(2000);
@@ -60,12 +64,21 @@ Smi230Gyro::Smi230Gyro() {
   mSensorData.reportMode = CONTINUOUS;
 }
 
-void Smi230Gyro::setSamplingRate(int64_t) { hwctl::writeToFile(mDevice + mSysfsOdr + "bw64_odr200"); }
+void Smi230Gyro::setPowerMode(bool enable) {
+  { bosch::hwctl::WriteHandler handler(mDevice, mSysfsOdr, "bw64_odr200"); }
+  { bosch::hwctl::WriteHandler handler(mDevice, mSysfsPowerMode, enable ? "normal" : "suspend"); }
+  usleep(200000);
+}
+
+Smi230GyroUncalibrated::Smi230GyroUncalibrated() {
+  mSensorData.sensorName = "SMI230 BOSCH Gyroscope Uncalibrated Sensor";
+  mSensorData.type = BoschSensorType::GYRO_UNCALIBRATED;
+}
 
 Smi230LinearAcc::Smi230LinearAcc(const std::shared_ptr<SensorCore> accel, const std::shared_ptr<SensorCore> gyro) {
   mSensorData.sensorName = "SMI230 BOSCH Linear Accelerometer Sensor";
   mSensorData.type = BoschSensorType::LINEAR_ACCEL;
-  mSensorData.minDelayUs = 5000;
+  mSensorData.minDelayUs = 10000;
   mSensorData.maxDelayUs = 20000;
   mSensorData.power = accel->getSensorData().power + gyro->getSensorData().power;
   mSensorData.range = accel->getSensorData().range;
@@ -81,7 +94,7 @@ Smi230LinearAcc::Smi230LinearAcc(const std::shared_ptr<SensorCore> accel, const 
 Smi230Gravity::Smi230Gravity(const std::shared_ptr<SensorCore> accel, const std::shared_ptr<SensorCore> gyro) {
   mSensorData.sensorName = "SMI230 BOSCH Gravity Sensor";
   mSensorData.type = BoschSensorType::GRAVITY;
-  mSensorData.minDelayUs = 5000;
+  mSensorData.minDelayUs = 10000;
   mSensorData.maxDelayUs = 20000;
   mSensorData.power = accel->getSensorData().power + gyro->getSensorData().power;
   mSensorData.range = accel->getSensorData().range;
@@ -91,19 +104,6 @@ Smi230Gravity::Smi230Gravity(const std::shared_ptr<SensorCore> accel, const std:
 
   mDependencyList.push_back(accel);
   mDependencyList.push_back(gyro);
-}
-
-Smi230AmbientTemperature::Smi230AmbientTemperature() {
-  mSensorData.driverName = "smi230acc";
-  mSensorData.sensorName = "SMI230 BOSCH Ambient Temperature Sensor";
-  mSensorData.sysfsRaw = {"in_temp_object_raw"};
-  mSensorData.type = BoschSensorType::AMBIENT_TEMPERATURE;
-  mSensorData.minDelayUs = 5000;
-  mSensorData.maxDelayUs = 20000;
-  mSensorData.power = 0.2f;
-  mSensorData.range = 85;
-  mSensorData.resolution = 0.001f;
-  mSensorData.reportMode = ON_CHANGE;
 }
 
 }  // namespace bosch::sensors

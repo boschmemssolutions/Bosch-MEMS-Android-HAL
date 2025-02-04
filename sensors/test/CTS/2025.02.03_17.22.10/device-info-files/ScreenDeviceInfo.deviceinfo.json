@@ -1,0 +1,12 @@
+{
+  "width_pixels": 1920,
+  "height_pixels": 1080,
+  "x_dpi": 81.27999877929688,
+  "y_dpi": 80.68199920654297,
+  "density": 1.5,
+  "density_dpi": 240,
+  "screen_size": "large",
+  "smallest_screen_width_dp": 720,
+  "wm_jetpack_version": "[Sidecar]1.0.0-reference",
+  "display_features": []
+}

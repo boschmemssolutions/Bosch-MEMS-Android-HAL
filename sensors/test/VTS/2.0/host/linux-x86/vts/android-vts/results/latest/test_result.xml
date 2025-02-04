@@ -1,0 +1,72 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no' ?><?xml-stylesheet type="text/xsl" href="compatibility_result.xsl"?>
+<Result start="1738461436225" end="1738462149193" start_display="Sun Feb 02 01:57:16 GMT 2025" end_display="Sun Feb 02 02:09:09 GMT 2025" command_line_args="vts-bosch -s 192.168.137.18:5555 --primary-abi-only" suite_name="VTS" suite_variant="VTS" suite_version="13_r4" suite_plan="vts-bosch" suite_build_number="eng.gus1st.20250127.092412" report_version="5.0" devices="192.168.137.18:5555" host_name="RT-C-008FN" os_name="Linux" os_version="5.15.0-130-generic" os_arch="amd64" java_vendor="Oracle Corporation" java_version="11.0.13">
+  <Build invocation-id="1" command_line_args="vts-bosch -s 192.168.137.18:5555 --primary-abi-only" adb_version="1.0.41 subVersion: 35.0.2-12147458 install path: /usr/bin/platform-tools/adb" java_version="11.0.13" java_classpath="/home/eae1rt/jenkins/RT-C-008FN/SMI230-rpi4-arm64-spi-android/workspace/Bosch-MEMS-Android-HAL_PR-34/build/SMI230/out_hal/2.0/host/linux-x86/vts/android-vts/tools/compatibility-host-util.jar:/home/eae1rt/jenkins/RT-C-008FN/SMI230-rpi4-arm64-spi-android/workspace/Bosch-MEMS-Android-HAL_PR-34/build/SMI230/out_hal/2.0/host/linux-x86/vts/android-vts/tools/compatibility-tradefed.jar:/home/eae1rt/jenkins/RT-C-008FN/SMI230-rpi4-arm64-spi-android/workspace/Bosch-MEMS-Android-HAL_PR-34/build/SMI230/out_hal/2.0/host/linux-x86/vts/android-vts/tools/loganalysis.jar:/home/eae1rt/jenkins/RT-C-008FN/SMI230-rpi4-arm64-spi-android/workspace/Bosch-MEMS-Android-HAL_PR-34/build/SMI230/out_hal/2.0/host/linux-x86/vts/android-vts/tools/tradefed-test-framework.jar:/home/eae1rt/jenkins/RT-C-008FN/SMI230-rpi4-arm64-spi-android/workspace/Bosch-MEMS-Android-HAL_PR-34/build/SMI230/out_hal/2.0/host/linux-x86/vts/android-vts/tools/tradefed.jar:/home/eae1rt/jenkins/RT-C-008FN/SMI230-rpi4-arm64-spi-android/workspace/Bosch-MEMS-Android-HAL_PR-34/build/SMI230/out_hal/2.0/host/linux-x86/vts/android-vts/tools/vts-tradefed-tests.jar:/home/eae1rt/jenkins/RT-C-008FN/SMI230-rpi4-arm64-spi-android/workspace/Bosch-MEMS-Android-HAL_PR-34/build/SMI230/out_hal/2.0/host/linux-x86/vts/android-vts/tools/vts-tradefed.jar" log_saving_time="69" collector_time_ms="17" test-type-count_AndroidJUnitTest="22" server_reference="5b214a92-9889-434d-b300-bac25c1a2c82" target-preparer-setup-latency_com.android.compatibility.common.tradefed.targetprep.VtsDeviceInfoCollector="2302" device_done_timestamp="1738462149145" test-type-count_GTest="63" push_file_time_ms="218" push_dir_time_ms="290" teardown_disk_usage_bytes="0" tf_dynamic_resolver_pair_timestamp="1738461436036:1738461436055" pull_dir_count="1" does_file_exists_time_ms="147" fetch_build_time_ms="28" adb_root_routine_count="1" host_sleep="1738462139786:1738462140786" does_file_exists_count="2" tf_module_setup_pair_timestamp="1738461515781:1738461519983" tf_setup_end_timestamp="1738461436386" pull_dir_time_ms="40333" test_teardown="1738462148748:1738462149067" device_release_state="AVAILABLE" target-preparer-teardown-latency_com.android.compatibility.common.tradefed.targetprep.VtsDeviceInfoCollector="4" log_saving_count="33" delete_device_file_count="1" check_device_availability="1738462148334:1738462148748" pre_multi_preparer="1738461436381:1738461436383" push_dir_count="1" tf_teardown_start_timestamp="1738462148750" lab_setup="1738461436383:1738461436386" tf_module_teardown_pair_timestamp="1738462111070:1738462147946" tf_invocation_end_timestamp="1738462149178" adb_root_time="2499" target-preparer-setup-latency_com.android.compatibility.common.tradefed.targetprep.DeviceInfoCollector="74194" package_install_time_ms="3726" start_logcat="1738461436083:1738461436155" setup_time_ms="76682" total_test_count="85" status_checker_pair="1738461513870:1738461515775,1738462148109:1738462148109" tf_test_teardown_pair_timestamp="1738462148750:1738462148766" fetch_artifact="1738461436055:1738461436083" tf_fetch_build_start_timestamp="1738461436055" soft_restart_after_module="1" tf_test_setup_pair_timestamp="1738461436381:1738461436383,1738461436386:1738461513065" tf_invocation_start_timestamp="1738461436030" invocation_warm_up="1738461436029:1738461436033" target-preparer-teardown-latency_com.android.compatibility.common.tradefed.targetprep.DeviceInfoCollector="8" tf_setup_start_timestamp="1738461436381" package_install_count="2" tf_teardown_end_timestamp="1738462149067" device_count="1" tf_fetch_build_end_timestamp="1738461436083" tf_fetch_build_pair_timestamp="1738461436055:1738461436083" tf_teardown_pair_timestamp="1738462148285:1738462148748,1738462148766:1738462149039" tf_test_pair_timestamp="1738461513197:1738462148141" sharding="1738461436155:1738461436158" load_test_configs_time_ms="425" dynamic_download="1738461436036:1738461436055" test_setup="1738461436386:1738461513065" test_execution="1738461513197:1738462148134" log_and_release_device="1738462149067:1738462149146" tf_setup_pair_timestamp="1738461436374:1738461436380,1738461436383:1738461436386" delete_device_file_time_ms="74" push_file_count="2" tf_objects_tracking="com.android.compatibility.common.tradefed.targetprep.ApkInstrumentationPreparer=1,com.android.tradefed.testtype.GTest=1,com.android.tradefed.targetprep.BaseTargetPreparer=4,com.android.compatibility.common.tradefed.targetprep.DeviceInfoCollector=1,com.android.compatibility.common.tradefed.testtype.suite.CompatibilityTestSuite=1,com.android.tradefed.targetprep.StopServicesSetup=1,com.android.tradefed.targetprep.PushFilePreparer=1,com.android.compatibility.common.tradefed.targetprep.PreconditionPreparer=1,com.android.compatibility.common.tradefed.build.CompatibilityBuildProvider=1,com.android.tradefed.testtype.suite.BaseTestSuite=1,com.android.tradefed.testtype.GTestBase=1,com.android.tradefed.testtype.suite.ITestSuite=1,com.android.compatibility.common.tradefed.targetprep.VtsDeviceInfoCollector=1,com.android.tradefed.targetprep.RootTargetPreparer=1" device_kernel_info="Linux localhost 5.15.131-v8-g41e890d4dfe0-dirty-ab5 #1 SMP PREEMPT Wed Jan 29 09:29:24 UTC 2025 aarch64 Toybox" system_img_info="Raspberry/bosch_hal_v2_0/rpi4:13/TQ3A.230901.001/2:userdebug/test-keys" vendor_img_info="Raspberry/bosch_hal_v2_0/rpi4:13/TQ3A.230901.001/2:userdebug/test-keys" build_vendor_manufacturer="Raspberry" build_abi22="" build_abis_32="armeabi-v7a,armeabi" build_reference_fingerprint="null" build_tags="test-keys" build_version_incremental="2" build_fingerprint_unaltered="Raspberry/bosch_hal_v2_0/rpi4:13/TQ3A.230901.001/2:userdebug/test-keys" build_model="Raspberry Pi 4" build_bootimage_fingerprint="Raspberry/bosch_hal_v2_0/rpi4:13/TQ3A.230901.001/2:userdebug/test-keys" build_version_sdk="33" build_system_fingerprint="Raspberry/bosch_hal_v2_0/rpi4:13/TQ3A.230901.001/2:userdebug/test-keys" build_vendor_model="Raspberry Pi 4" build_serial="100000009d2b0d07" build_version_security_patch="2023-09-01" build_abi="arm64-v8a" build_abis_64="arm64-v8a" build_board="null" build_abis="arm64-v8a,armeabi-v7a,armeabi" build_version_release="13" build_board2="" build_first_api_level="33" build_reference_fingerprint2="" build_manufacturer="Raspberry" build_product="bosch_hal_v2_0" build_brand="Raspberry" build_fingerprint="Raspberry/bosch_hal_v2_0/rpi4:13/TQ3A.230901.001/2:userdebug/test-keys" build_device="rpi4" build_id="TQ3A.230901.001" build_version_base_os="null" build_vendor_fingerprint="Raspberry/bosch_hal_v2_0/rpi4:13/TQ3A.230901.001/2:userdebug/test-keys" build_type="userdebug" build_abi2="null" build_version_base_os2="" />
+  <Summary pass="63" failed="0" modules_done="1" modules_total="1" />
+  <Module name="BoschHalSensorsV2_0TargetTest" abi="arm64-v8a" runtime="628123" done="true" pass="63" total_tests="63">
+    <TestCase name="PerInstance/SensorsHidlTest">
+      <Test result="pass" name="SensorListValid/0_default" />
+      <Test result="pass" name="SensorListContainsBoschSensor/0_default" />
+      <Test result="pass" name="SetOperationMode/0_default" />
+      <Test result="pass" name="InjectSensorEventData/0_default" />
+      <Test result="pass" name="CallInitializeTwice/0_default" />
+      <Test result="pass" name="CleanupConnectionsOnInitialize/0_default" />
+      <Test result="pass" name="FlushSensor/0_default" />
+      <Test result="pass" name="FlushOneShotSensor/0_default" />
+      <Test result="pass" name="FlushInactiveSensor/0_default" />
+      <Test result="pass" name="Batch/0_default" />
+      <Test result="pass" name="Activate/0_default" />
+      <Test result="pass" name="ConfigCheck/0_default" />
+      <Test result="pass" name="NoStaleEvents/0_default" />
+      <Test result="pass" name="DirectChannelAshmem/0_default" />
+      <Test result="pass" name="DirectChannelGralloc/0_default" />
+      <Test result="pass" name="AccelerometerCheckSensorVector/0_default" />
+      <Test result="pass" name="GyroscopeCheckSensorVector/0_default" />
+      <Test result="pass" name="GravityCheckSensorVector/0_default" />
+      <Test result="pass" name="LinearAccelerationCheckSensorVector/0_default" />
+      <Test result="pass" name="AccelerometerStreamingOperationSlow/0_default" />
+      <Test result="pass" name="AccelerometerStreamingOperationNormal/0_default" />
+      <Test result="pass" name="AccelerometerStreamingOperationFast/0_default" />
+      <Test result="pass" name="GyroscopeStreamingOperationSlow/0_default" />
+      <Test result="pass" name="GyroscopeStreamingOperationNormal/0_default" />
+      <Test result="pass" name="GyroscopeStreamingOperationFast/0_default" />
+      <Test result="pass" name="GravityStreamingOperationFast/0_default" />
+      <Test result="pass" name="LinearAccelerationStreamingOperationFast/0_default" />
+      <Test result="pass" name="AccelerometerSamplingPeriodHotSwitchOperation/0_default" />
+      <Test result="pass" name="GyroscopeSamplingPeriodHotSwitchOperation/0_default" />
+      <Test result="pass" name="GravitySamplingPeriodHotSwitchOperation/0_default" />
+      <Test result="pass" name="LinearAccelerationSamplingPeriodHotSwitchOperation/0_default" />
+      <Test result="pass" name="AccelerometerBatchingOperation/0_default" />
+      <Test result="pass" name="GyroscopeBatchingOperation/0_default" />
+      <Test result="pass" name="GravityBatchingOperation/0_default" />
+      <Test result="pass" name="LinearAccelerationBatchingOperation/0_default" />
+      <Test result="pass" name="AccelerometerAshmemDirectReportOperationNormal/0_default" />
+      <Test result="pass" name="AccelerometerAshmemDirectReportOperationFast/0_default" />
+      <Test result="pass" name="AccelerometerAshmemDirectReportOperationVeryFast/0_default" />
+      <Test result="pass" name="GyroscopeAshmemDirectReportOperationNormal/0_default" />
+      <Test result="pass" name="GyroscopeAshmemDirectReportOperationFast/0_default" />
+      <Test result="pass" name="GyroscopeAshmemDirectReportOperationVeryFast/0_default" />
+      <Test result="pass" name="GravityAshmemDirectReportOperationNormal/0_default" />
+      <Test result="pass" name="GravityAshmemDirectReportOperationFast/0_default" />
+      <Test result="pass" name="GravityAshmemDirectReportOperationVeryFast/0_default" />
+      <Test result="pass" name="LinearAccelerationAshmemDirectReportOperationNormal/0_default" />
+      <Test result="pass" name="LinearAccelerationAshmemDirectReportOperationFast/0_default" />
+      <Test result="pass" name="LinearAccelerationAshmemDirectReportOperationVeryFast/0_default" />
+      <Test result="pass" name="AccelerometerGrallocDirectReportOperationNormal/0_default" />
+      <Test result="pass" name="AccelerometerGrallocDirectReportOperationFast/0_default" />
+      <Test result="pass" name="AccelerometerGrallocDirectReportOperationVeryFast/0_default" />
+      <Test result="pass" name="GyroscopeGrallocDirectReportOperationNormal/0_default" />
+      <Test result="pass" name="GyroscopeGrallocDirectReportOperationFast/0_default" />
+      <Test result="pass" name="GyroscopeGrallocDirectReportOperationVeryFast/0_default" />
+      <Test result="pass" name="GravityGrallocDirectReportOperationNormal/0_default" />
+      <Test result="pass" name="GravityGrallocDirectReportOperationFast/0_default" />
+      <Test result="pass" name="GravityGrallocDirectReportOperationVeryFast/0_default" />
+      <Test result="pass" name="LinearAccelerationGrallocDirectReportOperationNormal/0_default" />
+      <Test result="pass" name="LinearAccelerationGrallocDirectReportOperationFast/0_default" />
+      <Test result="pass" name="LinearAccelerationGrallocDirectReportOperationVeryFast/0_default" />
+      <Test result="pass" name="ConfigureDirectChannelWithInvalidHandle/0_default" />
+      <Test result="pass" name="CleanupDirectConnectionOnInitialize/0_default" />
+      <Test result="pass" name="SensorListDoesntContainInvalidType/0_default" />
+      <Test result="pass" name="FlushNonexistentSensor/0_default" />
+    </TestCase>
+  </Module>
+</Result>

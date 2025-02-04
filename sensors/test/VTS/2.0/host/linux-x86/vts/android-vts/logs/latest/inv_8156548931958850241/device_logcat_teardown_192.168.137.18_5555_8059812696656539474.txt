@@ -1,0 +1,19 @@
+01-29 12:53:29.890 10101  4822  5080 W MediaProvider: isAppCloneUserPair for user 0: false
+01-29 12:53:29.893 10101  4822  5080 V MediaProvider: Inserted id:1000000334 less than next row id backup:1000001000.
+01-29 12:53:30.028 10101  4822  5080 I MediaProvider: Deleted 1 0 0 0 0 0 0 items on external_primary due to com.android.shell
+01-29 12:53:30.129  1000  3930  3956 I ActivityManager: Force stopping android.tradefed.contentprovider appid=10108 user=-1: deletePackageX
+01-29 12:53:30.130  1000  3930  3956 D OomAdjuster: Not killing cached processes
+01-29 12:53:30.140  root   333  3047 D installd: Found valid user 12
+01-29 12:53:30.140  root   333  3047 D installd: Found valid user 10
+01-29 12:53:30.140  root   333  3047 D installd: Found valid user 11
+01-29 12:53:30.258  root     0     0 I logd    : start watching /data/system/packages.list ...
+01-29 12:53:30.266  root     0     0 I logd    : ReadPackageList, total packages: 114
+01-29 12:53:30.294  1000  3930  3975 D PackageManager: Instant App installer not found with android.intent.action.INSTALL_INSTANT_APP_PACKAGE
+01-29 12:53:30.295  1000  3930  3975 D PackageManager: Clear ephemeral installer activity
+01-29 12:53:30.297  1000  3930  5086 E TaskPersister: File error accessing recents directory (directory doesn't exist?).
+01-29 12:53:30.297  1000  3930  5086 E TaskPersister: File error accessing recents directory (directory doesn't exist?).
+01-29 12:53:30.298  1000  3930  5086 E TaskPersister: File error accessing recents directory (directory doesn't exist?).
+01-29 12:53:30.308  1000  3930  3975 I ActivityManager: Force stopping android.tradefed.contentprovider appid=10108 user=10: pkg removed
+01-29 12:53:30.311  1000  3930  3975 D CompatibilityChangeReporter: Compat change id reported: 181136395; UID 1010052; state: DISABLED
+01-29 12:53:30.312  1000  3930  3975 D CompatibilityChangeReporter: Compat change id reported: 174042936; UID 1010052; state: DISABLED
+01-29 12:53:30.321  1000  3930  3975 I ActivityManager: Force stopping android.tradefed.contentprovider appid=10108 user=0: pkg removed

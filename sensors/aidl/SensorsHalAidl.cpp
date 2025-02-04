@@ -120,7 +120,7 @@ void SensorsHalAidl::AddSensors() {
         sensorInfo.flags |= SensorInfo::SENSOR_FLAG_BITS_ADDITIONAL_INFO;
         sensorInfo.flags |= SensorInfo::SENSOR_FLAG_BITS_DIRECT_CHANNEL_ASHMEM;
         sensorInfo.flags |=
-          (static_cast<int32_t>(ISensors::RateLevel::FAST) << SensorInfo::SENSOR_FLAG_SHIFT_DIRECT_REPORT);
+          (static_cast<int32_t>(ISensors::RateLevel::NORMAL) << SensorInfo::SENSOR_FLAG_SHIFT_DIRECT_REPORT);
         break;
       case bosch::sensors::SensorReportingMode::ON_CHANGE:
         sensorInfo.flags |= SensorInfo::SENSOR_FLAG_BITS_ON_CHANGE_MODE;

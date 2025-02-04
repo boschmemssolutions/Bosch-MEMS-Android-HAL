@@ -133,7 +133,7 @@ Sensor::Sensor(ISensorsEventCallback* callback, const SensorInfo& sensorInfo,
                std::shared_ptr<bosch::sensors::ISensorHal> sensor,
                const std::optional<std::vector<Configuration>>& config)
   : mIsEnabled(false),
-    mLastSampleTimeNs(0),
+    mDirectChannelEnabled(false),
     mSensorInfo(sensorInfo),
     mStopThread(false),
     mCallback(callback),
@@ -141,6 +141,9 @@ Sensor::Sensor(ISensorsEventCallback* callback, const SensorInfo& sensorInfo,
     mConfig(config) {
   mRunThread = std::thread(startThread, this);
   mSamplingPeriodNs = sensorInfo.minDelay * 1000LL;
+  mDirectChannelRateNs = std::numeric_limits<int64_t>::max();
+  mNextSampleTimeNs = std::numeric_limits<int64_t>::max();
+  mNextDirectChannelNs = std::numeric_limits<int64_t>::max();
 }
 
 Sensor::~Sensor() {
@@ -150,6 +153,7 @@ Sensor::~Sensor() {
     std::unique_lock<std::mutex> lock(mRunMutex);
     mStopThread = true;
     mIsEnabled = false;
+    mDirectChannelEnabled = false;
     mWaitCV.notify_all();
   }
   mRunThread.join();
@@ -158,13 +162,15 @@ Sensor::~Sensor() {
 const SensorInfo& Sensor::getSensorInfo() const { return mSensorInfo; }
 
 void Sensor::batch(int64_t samplingPeriodNs, int64_t maxReportLatencyNs) {
-  if (!mDirectChannels.empty()) return;
+  ALOGD("Sensor batch %s %ld %ld", mSensorInfo.name.c_str(), samplingPeriodNs, maxReportLatencyNs);
 
+  std::unique_lock<std::mutex> lock(mRunMutex);
   samplingPeriodNs = std::clamp(samplingPeriodNs, static_cast<int64_t>(mSensorInfo.minDelay) * 1000,
                                 static_cast<int64_t>(mSensorInfo.maxDelay) * 1000);
 
-  ALOGD("Sensor batch %s %ld %ld", mSensorInfo.name.c_str(), samplingPeriodNs, maxReportLatencyNs);
-  mSensor->batch(samplingPeriodNs, maxReportLatencyNs);
+  if (samplingPeriodNs < mDirectChannelRateNs) {
+    mSensor->batch(samplingPeriodNs, maxReportLatencyNs);
+  }
 
   if (mSamplingPeriodNs != samplingPeriodNs) {
     mSamplingPeriodNs = samplingPeriodNs;
@@ -203,12 +209,12 @@ void Sensor::sendAdditionalInfoReport() {
 }
 
 void Sensor::activate(bool enable) {
-  if (!mDirectChannels.empty()) return;
-
   ALOGD("Sensor activate %s %d", mSensorInfo.name.c_str(), enable);
+
+  std::unique_lock<std::mutex> lock(mRunMutex);
   if (mIsEnabled != enable) {
-    std::unique_lock<std::mutex> lock(mRunMutex);
     mIsEnabled = enable;
+    mNextSampleTimeNs = mIsEnabled ? 0 : std::numeric_limits<int64_t>::max();
     mWaitCV.notify_all();
     mSensor->activate(enable);
     if (enable) sendAdditionalInfoReport();
@@ -251,20 +257,8 @@ void Sensor::addDirectChannel(int32_t channelHandle, int64_t samplingPeriodNs) {
   }
 
   std::unique_lock<std::mutex> lock(mRunMutex);
-
   mDirectChannels[channelHandle] = {true, samplingPeriodNs};
-
-  mSamplingPeriodNs = std::numeric_limits<int64_t>::max();
-  for (const auto& [_, channel] : mDirectChannels) {
-    if (channel.enabled && (channel.samplingPeriodNs < mSamplingPeriodNs)) {
-      mSamplingPeriodNs = channel.samplingPeriodNs;
-    }
-  }
-
-  mIsEnabled = true;
-  mSensor->batch(mSamplingPeriodNs, 0);
-  mSensor->activate(true);
-  mWaitCV.notify_all();
+  updateDirectChannel();
 }
 
 void Sensor::stopDirectChannel(int32_t channelHandle) {
@@ -277,20 +271,7 @@ void Sensor::stopDirectChannel(int32_t channelHandle) {
     itRateNs->second.enabled = false;
     itRateNs->second.samplingPeriodNs = 0;
   }
-
-  bool anyChannelEnabled = false;
-  for (const auto& [_, channel] : mDirectChannels) {
-    if (channel.enabled) {
-      anyChannelEnabled = true;
-      break;
-    }
-  }
-
-  if (!anyChannelEnabled) {
-    mIsEnabled = false;
-    mSensor->activate(false);
-    mWaitCV.notify_all();
-  }
+  updateDirectChannel();
 }
 
 void Sensor::removeDirectChannel(int32_t channelHandle) {
@@ -301,41 +282,70 @@ void Sensor::removeDirectChannel(int32_t channelHandle) {
   auto itEnabled = mDirectChannels.find(channelHandle);
   if (itEnabled != mDirectChannels.end()) {
     mDirectChannels.erase(itEnabled);
-    if (mDirectChannels.empty()) {
-      mIsEnabled = false;
-      mSensor->activate(false);
-      mWaitCV.notify_all();
+  }
+  updateDirectChannel();
+}
+
+void Sensor::updateDirectChannel() {
+  int64_t directChannelRateNs = std::numeric_limits<int64_t>::max();
+  for (const auto& [_, channel] : mDirectChannels) {
+    if (channel.enabled && (channel.samplingPeriodNs < directChannelRateNs)) {
+      directChannelRateNs = channel.samplingPeriodNs;
     }
   }
+  if (mDirectChannelRateNs != directChannelRateNs) {
+    mDirectChannelRateNs = directChannelRateNs;
+
+    if (mDirectChannelRateNs < mSamplingPeriodNs) {
+      mSensor->batch(mDirectChannelRateNs, 0);
+    }
+  }
+
+  bool anyChannelEnabled = false;
+  for (const auto& [_, channel] : mDirectChannels) {
+    if (channel.enabled) {
+      anyChannelEnabled = true;
+      break;
+    }
+  }
+  if (mDirectChannelEnabled != anyChannelEnabled) {
+    mDirectChannelEnabled = anyChannelEnabled;
+    mNextDirectChannelNs = mDirectChannelEnabled ? 0 : std::numeric_limits<int64_t>::max();
+    if (!mIsEnabled) {
+      mSensor->activate(mDirectChannelEnabled);
+    }
+  }
+
+  mWaitCV.notify_all();
 }
 
 void Sensor::startThread(Sensor* sensor) { sensor->run(); }
 
 void Sensor::run() {
   std::unique_lock<std::mutex> runLock(mRunMutex);
-  constexpr int64_t kNanosecondsInSeconds = 1000 * 1000 * 1000;
 
   while (!mStopThread) {
-    if (!mIsEnabled) {
-      mWaitCV.wait(runLock, [&] { return (mIsEnabled || mStopThread); });
+    if (!mIsEnabled && !mDirectChannelEnabled) {
+      mWaitCV.wait(runLock, [&] { return (mIsEnabled || mDirectChannelEnabled || mStopThread); });
     } else {
-      timespec curTime;
-      clock_gettime(CLOCK_BOOTTIME, &curTime);
-      int64_t now = (curTime.tv_sec * kNanosecondsInSeconds) + curTime.tv_nsec;
-      int64_t nextSampleTime = mLastSampleTimeNs + mSamplingPeriodNs;
-
-      if (now >= nextSampleTime) {
-        mLastSampleTimeNs = now;
-        nextSampleTime = mLastSampleTimeNs + mSamplingPeriodNs;
-        if (!mDirectChannels.empty()) {
-          mCallback->writeToDirectBuffer(readEvents(), mSamplingPeriodNs);
-        } else {
-          mCallback->postEvents(readEvents(), isWakeUpSensor());
+      int64_t currentTime = android::elapsedRealtimeNano();
+      std::vector<Event> events = readEvents();
+      if (mDirectChannelEnabled) {
+        if (currentTime >= mNextDirectChannelNs) {
+          mNextDirectChannelNs = currentTime + mDirectChannelRateNs * bosch::sensors::POLL_TIME_REDUCTION_FACTOR;
+          mCallback->writeToDirectBuffer(events, mDirectChannelRateNs);
         }
       }
-      clock_gettime(CLOCK_BOOTTIME, &curTime);
-      now = (curTime.tv_sec * kNanosecondsInSeconds) + curTime.tv_nsec;
-      mWaitCV.wait_for(runLock, std::chrono::nanoseconds(nextSampleTime - now));
+      if (mIsEnabled) {
+        if (currentTime >= mNextSampleTimeNs) {
+          mNextSampleTimeNs = currentTime + mSamplingPeriodNs * bosch::sensors::POLL_TIME_REDUCTION_FACTOR;
+          mCallback->postEvents(events, isWakeUpSensor());
+        }
+      }
+      currentTime = android::elapsedRealtimeNano();
+      int64_t waitTime = std::min(mNextSampleTimeNs, mNextDirectChannelNs) - currentTime;
+      if (waitTime < 1000000) waitTime = 1000000;
+      mWaitCV.wait_for(runLock, std::chrono::nanoseconds(waitTime));
     }
   }
 }
@@ -352,6 +362,15 @@ Result Sensor::injectEvent(const Event& event) {
 }
 
 bool areAlmostEqual(float a, float b, float epsilon = 1e-5) { return std::fabs(a - b) < epsilon; }
+
+float gyroUncalibratedFix(const SensorInfo& mSensorInfo) {
+  std::string sensorName = mSensorInfo.name;
+  std::string smi230Keyword("SMI230 BOSCH");
+  if (sensorName.find(smi230Keyword) != std::string::npos)
+    return mSensorInfo.resolution;
+  else
+    return 0;
+}
 
 std::vector<Event> Sensor::readEvents() {
   std::vector<Event> events;
@@ -370,6 +389,28 @@ std::vector<Event> Sensor::readEvents() {
         event.u.scalar = value.data[0];
         lastTemperature = value.data[0];
         // ALOGD("Temperature: %f, timestamp: %zu", event.u.scalar, static_cast<size_t>(event.timestamp));
+      }
+    } else if (mSensorInfo.type == SensorType::GYROSCOPE_UNCALIBRATED) {
+      if (value.data.size() == xyzLength) {
+        event.u.uncal.x = value.data[0] + gyroUncalibratedFix(mSensorInfo);
+        event.u.uncal.y = value.data[1] + gyroUncalibratedFix(mSensorInfo);
+        event.u.uncal.z = value.data[2] + gyroUncalibratedFix(mSensorInfo);
+        event.u.uncal.x_bias = 0;
+        event.u.uncal.y_bias = 0;
+        event.u.uncal.z_bias = 0;
+      } else {
+        ALOGE("Read failed: %zu", static_cast<size_t>(value.data.size()));
+      }
+    } else if (mSensorInfo.type == SensorType::ACCELEROMETER_UNCALIBRATED) {
+      if (value.data.size() == xyzLength) {
+        event.u.uncal.x = value.data[0];
+        event.u.uncal.y = value.data[1];
+        event.u.uncal.z = value.data[2];
+        event.u.uncal.x_bias = 0;
+        event.u.uncal.y_bias = 0;
+        event.u.uncal.z_bias = 0;
+      } else {
+        ALOGE("Read failed: %zu", static_cast<size_t>(value.data.size()));
       }
     } else {
       if (value.data.size() == xyzLength) {

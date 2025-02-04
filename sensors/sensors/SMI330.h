@@ -48,8 +48,8 @@ private:
 
   const int64_t mMinSamplingRateNs = 2500000;
   const int64_t mMaxSamplingRateNs = 1280000000;
-  const std::string mSysfsOdr{"in_sampling_frequency "};
-  const std::array<std::string, Index::LENGTH> mSysfsPowerMode{"in_accel_en ", "in_anglvel_en "};
+  const std::string mSysfsOdr{"in_sampling_frequency"};
+  const std::array<std::string, Index::LENGTH> mSysfsPowerMode{"in_accel_en", "in_anglvel_en"};
 
   std::array<bool, Index::LENGTH> mIsEnabled{false, false};
   std::array<int64_t, Index::LENGTH> mSamplingPeriodNs{mMaxSamplingRateNs, mMaxSamplingRateNs};
@@ -68,17 +68,35 @@ public:
   };
 };
 
+class Smi330AccUncalibrated : public Smi330Acc {
+public:
+  Smi330AccUncalibrated();
+  ~Smi330AccUncalibrated() = default;
+};
+
 class Smi330Gyro : public SensorCore {
 public:
   Smi330Gyro();
   ~Smi330Gyro() = default;
 
   void setPowerMode(bool enable) override {
+    if (enable) setScale();
     Smi330Imu::getInstance().setPowerMode(Smi330Imu::Index::GYRO, enable, mDevice);
   };
   void setSamplingRate(int64_t samplingPeriodNs) override {
     Smi330Imu::getInstance().setSamplingRate(Smi330Imu::Index::GYRO, samplingPeriodNs, mDevice);
   };
+
+private:
+  void setScale();
+
+  const std::string mSysfsScale{"in_anglvel_scale"};
+};
+
+class Smi330GyroUncalibrated : public Smi330Gyro {
+public:
+  Smi330GyroUncalibrated();
+  ~Smi330GyroUncalibrated() = default;
 };
 
 class Smi330LinearAcc : public LinearAcceleration {

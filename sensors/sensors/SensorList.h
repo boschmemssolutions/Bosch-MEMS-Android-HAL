@@ -39,7 +39,12 @@ private:
                                                        std::make_shared<Smi240Gyro>(),
                                                        std::make_shared<Smi230Acc>(),
                                                        std::make_shared<Smi230Gyro>(),
-                                                       std::make_shared<Smi230AmbientTemperature>()};
+                                                       std::make_shared<Smi330AccUncalibrated>(),
+                                                       std::make_shared<Smi330GyroUncalibrated>(),
+                                                       std::make_shared<Smi240AccUncalibrated>(),
+                                                       std::make_shared<Smi240GyroUncalibrated>(),
+                                                       std::make_shared<Smi230AccUncalibrated>(),
+                                                       std::make_shared<Smi230GyroUncalibrated>()};
 
   std::vector<std::shared_ptr<CompositeSensorCore>> mCompositeSensorList{
     std::make_shared<Smi330Gravity>(mSensorList[0], mSensorList[1]),

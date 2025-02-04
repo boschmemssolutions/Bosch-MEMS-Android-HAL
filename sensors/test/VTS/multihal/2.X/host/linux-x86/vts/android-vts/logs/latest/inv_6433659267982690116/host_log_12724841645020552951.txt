@@ -1,0 +1,611 @@
+02-02 02:52:08 D/Configuration: Resolve and download remote files from @Option
+02-02 02:52:08 I/TestInvocation: Invocation was started with cmd: vts-bosch -s 192.168.137.18:5555 --primary-abi-only
+02-02 02:52:08 D/InvocationExecution: Skip linking external directory as FileProperty was set.
+02-02 02:52:08 D/RunUtil: Running command [adb, version] with timeout: 2m 0s
+02-02 02:52:08 D/TestInvocation: Fetch build duration: 12 ms
+02-02 02:52:08 D/RunUtil: Running command [adb, -s, 192.168.137.18:5555, shell, getprop, ro.build.version.sdk] with timeout: 45s
+02-02 02:52:08 D/GlobalTestFilter: Setting up global filters
+02-02 02:52:08 D/BackgroundDeviceAction: Sleep for 5000 before starting logcat for 192.168.137.18:5555.
+02-02 02:52:08 I/TestInvocation: Starting invocation for 'vts-bosch' with '[ DeviceBuildInfo{bid=eng.gus1st.20250127.092412, serial=192.168.137.18:5555} on device '192.168.137.18:5555'] 
+02-02 02:52:08 D/RunUtil: Running command [chmod, ug+rwx, /tmp/eng.gus1st.20250127.092412] with timeout: 10s
+02-02 02:52:08 D/RunUtil: Running command [chmod, ug+rwx, /tmp/eng.gus1st.20250127.092412/vts-bosch] with timeout: 10s
+02-02 02:52:08 D/FileUtil: Creating temp directory at /tmp/eng.gus1st.20250127.092412/vts-bosch with prefix "inv_"
+02-02 02:52:08 D/RunUtil: Running command [chmod, ug+rwx, /tmp/eng.gus1st.20250127.092412/vts-bosch/inv_17489611042386109199] with timeout: 10s
+02-02 02:52:08 D/FileSystemLogSaver: Using log file directory /tmp/eng.gus1st.20250127.092412/vts-bosch/inv_17489611042386109199
+02-02 02:52:08 D/FileUtil: Creating temp directory at /tmp/eng.gus1st.20250127.092412/vts-bosch/inv_17489611042386109199 with prefix "inv_"
+02-02 02:52:08 I/LogFileSaver: Using log file directory /tmp/eng.gus1st.20250127.092412/vts-bosch/inv_17489611042386109199/inv_11011877675835258028
+02-02 02:52:08 D/CompatibilityProtoResultReporter: Proto Results Directory: /home/eae1rt/jenkins/RT-C-008FN/SMI230-rpi4-arm64-spi-android/workspace/Bosch-MEMS-Android-HAL_PR-34/build/SMI230/out_hal/multihal/2.X/host/linux-x86/vts/android-vts/results/2025.02.02_02.52.08/proto
+02-02 02:52:08 D/FileUtil: Creating temp file at /home/eae1rt/jenkins/RT-C-008FN/SMI230-rpi4-arm64-spi-android/workspace/Bosch-MEMS-Android-HAL_PR-34/build/SMI230/out_hal/multihal/2.X/host/linux-x86/vts/android-vts/results/2025.02.02_02.52.08/proto with prefix "tmp-proto" suffix ""
+02-02 02:52:08 D/CertificationSuiteResultReporter: Initializing result directory
+02-02 02:52:08 D/CertificationSuiteResultReporter: Results Directory: /home/eae1rt/jenkins/RT-C-008FN/SMI230-rpi4-arm64-spi-android/workspace/Bosch-MEMS-Android-HAL_PR-34/build/SMI230/out_hal/multihal/2.X/host/linux-x86/vts/android-vts/results/2025.02.02_02.52.08
+02-02 02:52:08 D/CertificationSuiteResultReporter: Created log dir /home/eae1rt/jenkins/RT-C-008FN/SMI230-rpi4-arm64-spi-android/workspace/Bosch-MEMS-Android-HAL_PR-34/build/SMI230/out_hal/multihal/2.X/host/linux-x86/vts/android-vts/logs/2025.02.02_02.52.08
+02-02 02:52:08 D/FileUtil: Creating temp directory at /home/eae1rt/jenkins/RT-C-008FN/SMI230-rpi4-arm64-spi-android/workspace/Bosch-MEMS-Android-HAL_PR-34/build/SMI230/out_hal/multihal/2.X/host/linux-x86/vts/android-vts/logs/2025.02.02_02.52.08 with prefix "inv_"
+02-02 02:52:08 I/LogFileSaver: Using log file directory /home/eae1rt/jenkins/RT-C-008FN/SMI230-rpi4-arm64-spi-android/workspace/Bosch-MEMS-Android-HAL_PR-34/build/SMI230/out_hal/multihal/2.X/host/linux-x86/vts/android-vts/logs/2025.02.02_02.52.08/inv_6433659267982690116
+02-02 02:52:08 D/CompatibilityProtoResultReporter: Proto Results Directory: /home/eae1rt/jenkins/RT-C-008FN/SMI230-rpi4-arm64-spi-android/workspace/Bosch-MEMS-Android-HAL_PR-34/build/SMI230/out_hal/multihal/2.X/host/linux-x86/vts/android-vts/results/2025.02.02_02.52.08/proto
+02-02 02:52:08 D/LogFileSaver: Log data for tradefed-expanded-config is already compressed, skipping compression
+02-02 02:52:08 D/FileUtil: Creating temp file at /home/eae1rt/jenkins/RT-C-008FN/SMI230-rpi4-arm64-spi-android/workspace/Bosch-MEMS-Android-HAL_PR-34/build/SMI230/out_hal/multihal/2.X/host/linux-x86/vts/android-vts/logs/2025.02.02_02.52.08/inv_6433659267982690116 with prefix "tradefed-expanded-config_" suffix ".xml"
+02-02 02:52:08 I/LogFileSaver: Saved log file /home/eae1rt/jenkins/RT-C-008FN/SMI230-rpi4-arm64-spi-android/workspace/Bosch-MEMS-Android-HAL_PR-34/build/SMI230/out_hal/multihal/2.X/host/linux-x86/vts/android-vts/logs/2025.02.02_02.52.08/inv_6433659267982690116/tradefed-expanded-config_3887543316766557492.xml. [size=5047, elapsed=0ms]
+02-02 02:52:08 D/CertificationSuiteResultReporter: Saved logs for tradefed-expanded-config in /home/eae1rt/jenkins/RT-C-008FN/SMI230-rpi4-arm64-spi-android/workspace/Bosch-MEMS-Android-HAL_PR-34/build/SMI230/out_hal/multihal/2.X/host/linux-x86/vts/android-vts/logs/2025.02.02_02.52.08/inv_6433659267982690116/tradefed-expanded-config_3887543316766557492.xml
+02-02 02:52:08 D/LogFileSaver: Log data for tradefed-expanded-config is already compressed, skipping compression
+02-02 02:52:08 D/FileUtil: Creating temp file at /tmp/eng.gus1st.20250127.092412/vts-bosch/inv_17489611042386109199/inv_11011877675835258028 with prefix "tradefed-expanded-config_" suffix ".xml"
+02-02 02:52:08 I/LogFileSaver: Saved log file /tmp/eng.gus1st.20250127.092412/vts-bosch/inv_17489611042386109199/inv_11011877675835258028/tradefed-expanded-config_12122055691176146250.xml. [size=5047, elapsed=0ms]
+02-02 02:52:08 D/InvocationExecution: Starting device pre invocation setup for : '192.168.137.18:5555'
+02-02 02:52:08 D/NativeDevice: Using connection: com.android.tradefed.device.connection.DefaultConnection@4ac0f22f
+02-02 02:52:08 I/CommandInterrupter: Interrupt allowed
+02-02 02:52:08 D/InvocationExecution: Starting setup for device: '192.168.137.18:5555'
+02-02 02:52:08 D/InvocationExecution: starting preparer 'com.android.compatibility.common.tradefed.targetprep.VtsDeviceInfoCollector@7bfafdf9' on device: '192.168.137.18:5555'
+02-02 02:52:08 I/NativeDeviceStateMonitor: Device 192.168.137.18:5555 is already ONLINE
+02-02 02:52:08 I/NativeDeviceStateMonitor: Waiting 360000 ms for device 192.168.137.18:5555 boot complete
+02-02 02:52:08 I/DeviceStateMonitor: Waiting 359928 ms for device 192.168.137.18:5555 package manager
+02-02 02:52:08 I/NativeDeviceStateMonitor: Waiting 359836 ms for device 192.168.137.18:5555 external store
+02-02 02:52:09 D/RunUtil: Running command [adb, -s, 192.168.137.18:5555, shell, getprop, ro.product.vendor.manufacturer] with timeout: 45s
+02-02 02:52:09 D/RunUtil: Running command [adb, -s, 192.168.137.18:5555, shell, getprop, ro.product.first_api_level] with timeout: 45s
+02-02 02:52:09 D/RunUtil: Running command [adb, -s, 192.168.137.18:5555, shell, getprop, ro.product.vendor.manufacturer] with timeout: 45s
+02-02 02:52:09 D/RunUtil: Running command [adb, -s, 192.168.137.18:5555, shell, getprop, ro.product.cpu.abilist32] with timeout: 45s
+02-02 02:52:09 D/RunUtil: Running command [adb, -s, 192.168.137.18:5555, shell, getprop, ro.build.reference.fingerprint] with timeout: 45s
+02-02 02:52:09 D/RunUtil: Running command [adb, -s, 192.168.137.18:5555, shell, getprop, ro.product.name] with timeout: 45s
+02-02 02:52:09 D/RunUtil: Running command [adb, -s, 192.168.137.18:5555, shell, getprop, ro.build.tags] with timeout: 45s
+02-02 02:52:09 D/RunUtil: Running command [adb, -s, 192.168.137.18:5555, shell, getprop, ro.product.brand] with timeout: 45s
+02-02 02:52:09 D/RunUtil: Running command [adb, -s, 192.168.137.18:5555, shell, getprop, ro.build.fingerprint] with timeout: 45s
+02-02 02:52:09 D/RunUtil: Running command [adb, -s, 192.168.137.18:5555, shell, getprop, ro.product.vendor.model] with timeout: 45s
+02-02 02:52:09 D/RunUtil: Running command [adb, -s, 192.168.137.18:5555, shell, getprop, ro.product.device] with timeout: 45s
+02-02 02:52:09 D/RunUtil: Running command [adb, -s, 192.168.137.18:5555, shell, getprop, ro.build.id] with timeout: 45s
+02-02 02:52:09 D/RunUtil: Running command [adb, -s, 192.168.137.18:5555, shell, getprop, ro.bootimage.build.fingerprint] with timeout: 45s
+02-02 02:52:09 D/RunUtil: Running command [adb, -s, 192.168.137.18:5555, shell, getprop, ro.build.version.sdk] with timeout: 45s
+02-02 02:52:09 D/RunUtil: Running command [adb, -s, 192.168.137.18:5555, shell, getprop, ro.build.fingerprint] with timeout: 45s
+02-02 02:52:09 D/RunUtil: Running command [adb, -s, 192.168.137.18:5555, shell, getprop, ro.product.vendor.model] with timeout: 45s
+02-02 02:52:10 D/RunUtil: Running command [adb, -s, 192.168.137.18:5555, shell, getprop, ro.serialno] with timeout: 45s
+02-02 02:52:10 D/RunUtil: Running command [adb, -s, 192.168.137.18:5555, shell, getprop, ro.build.version.security_patch] with timeout: 45s
+02-02 02:52:10 D/RunUtil: Running command [adb, -s, 192.168.137.18:5555, shell, getprop, ro.product.cpu.abi] with timeout: 45s
+02-02 02:52:10 D/RunUtil: Running command [adb, -s, 192.168.137.18:5555, shell, getprop, ro.product.cpu.abilist64] with timeout: 45s
+02-02 02:52:10 D/RunUtil: Running command [adb, -s, 192.168.137.18:5555, shell, getprop, ro.build.version.base_os] with timeout: 45s
+02-02 02:52:10 D/RunUtil: Running command [adb, -s, 192.168.137.18:5555, shell, getprop, ro.vendor.build.fingerprint] with timeout: 45s
+02-02 02:52:10 D/RunUtil: Running command [adb, -s, 192.168.137.18:5555, shell, getprop, ro.product.board] with timeout: 45s
+02-02 02:52:10 D/RunUtil: Running command [adb, -s, 192.168.137.18:5555, shell, getprop, ro.build.type] with timeout: 45s
+02-02 02:52:10 D/RunUtil: Running command [adb, -s, 192.168.137.18:5555, shell, getprop, ro.product.cpu.abilist] with timeout: 45s
+02-02 02:52:10 D/RunUtil: Running command [adb, -s, 192.168.137.18:5555, shell, getprop, ro.build.version.release] with timeout: 45s
+02-02 02:52:10 D/RunUtil: Running command [adb, -s, 192.168.137.18:5555, shell, getprop, ro.product.cpu.abi2] with timeout: 45s
+02-02 02:52:10 D/RunUtil: Running command [adb, -s, 192.168.137.18:5555, shell, getprop, ro.odm.build.fingerprint] with timeout: 45s
+02-02 02:52:10 D/RunUtil: Running command [adb, -s, 192.168.137.18:5555, shell, getprop, ro.odm.build.version.incremental] with timeout: 45s
+02-02 02:52:10 D/RunUtil: Running command [adb, -s, 192.168.137.18:5555, shell, getprop, ro.product.odm.device] with timeout: 45s
+02-02 02:52:10 D/RunUtil: Running command [adb, -s, 192.168.137.18:5555, shell, getprop, ro.boot.product.hardware.sku] with timeout: 45s
+02-02 02:52:10 D/InvocationExecution: done with preparer 'com.android.compatibility.common.tradefed.targetprep.VtsDeviceInfoCollector@7bfafdf9' on device: '192.168.137.18:5555' in 2s
+02-02 02:52:10 D/InvocationExecution: starting preparer 'com.android.compatibility.common.tradefed.targetprep.DeviceInfoCollector@7cd2161f' on device: '192.168.137.18:5555'
+02-02 02:52:10 D/RunUtil: Running command [adb, -s, 192.168.137.18:5555, shell, getprop, ro.product.model] with timeout: 45s
+02-02 02:52:10 D/RunUtil: Running command [adb, -s, 192.168.137.18:5555, shell, getprop, ro.product.device] with timeout: 45s
+02-02 02:52:10 D/RunUtil: Running command [adb, -s, 192.168.137.18:5555, shell, getprop, ro.build.id] with timeout: 45s
+02-02 02:52:10 D/RunUtil: Running command [adb, -s, 192.168.137.18:5555, shell, getprop, ro.bootimage.build.fingerprint] with timeout: 45s
+02-02 02:52:10 D/RunUtil: Running command [adb, -s, 192.168.137.18:5555, shell, getprop, ro.build.version.sdk] with timeout: 45s
+02-02 02:52:10 D/RunUtil: Running command [adb, -s, 192.168.137.18:5555, shell, getprop, ro.product.manufacturer] with timeout: 45s
+02-02 02:52:10 D/RunUtil: Running command [adb, -s, 192.168.137.18:5555, shell, getprop, ro.serialno] with timeout: 45s
+02-02 02:52:11 D/RunUtil: Running command [adb, -s, 192.168.137.18:5555, shell, getprop, ro.build.version.security_patch] with timeout: 45s
+02-02 02:52:11 D/RunUtil: Running command [adb, -s, 192.168.137.18:5555, shell, getprop, ro.product.cpu.abilist32] with timeout: 45s
+02-02 02:52:11 D/RunUtil: Running command [adb, -s, 192.168.137.18:5555, shell, getprop, ro.build.reference.fingerprint] with timeout: 45s
+02-02 02:52:11 D/RunUtil: Running command [adb, -s, 192.168.137.18:5555, shell, getprop, ro.product.cpu.abi] with timeout: 45s
+02-02 02:52:11 D/RunUtil: Running command [adb, -s, 192.168.137.18:5555, shell, getprop, ro.product.cpu.abilist64] with timeout: 45s
+02-02 02:52:11 D/RunUtil: Running command [adb, -s, 192.168.137.18:5555, shell, getprop, ro.product.name] with timeout: 45s
+02-02 02:52:11 D/RunUtil: Running command [adb, -s, 192.168.137.18:5555, shell, getprop, ro.build.tags] with timeout: 45s
+02-02 02:52:11 D/RunUtil: Running command [adb, -s, 192.168.137.18:5555, shell, getprop, ro.build.version.incremental] with timeout: 45s
+02-02 02:52:11 D/RunUtil: Running command [adb, -s, 192.168.137.18:5555, shell, getprop, ro.product.brand] with timeout: 45s
+02-02 02:52:11 D/RunUtil: Running command [adb, -s, 192.168.137.18:5555, shell, getprop, ro.build.fingerprint] with timeout: 45s
+02-02 02:52:11 D/RunUtil: Running command [adb, -s, 192.168.137.18:5555, shell, getprop, ro.vendor.build.fingerprint] with timeout: 45s
+02-02 02:52:11 D/RunUtil: Running command [adb, -s, 192.168.137.18:5555, shell, getprop, ro.build.version.base_os] with timeout: 45s
+02-02 02:52:11 D/RunUtil: Running command [adb, -s, 192.168.137.18:5555, shell, getprop, ro.product.cpu.abilist] with timeout: 45s
+02-02 02:52:11 D/RunUtil: Running command [adb, -s, 192.168.137.18:5555, shell, getprop, ro.product.board] with timeout: 45s
+02-02 02:52:11 D/RunUtil: Running command [adb, -s, 192.168.137.18:5555, shell, getprop, ro.build.type] with timeout: 45s
+02-02 02:52:11 D/RunUtil: Running command [adb, -s, 192.168.137.18:5555, shell, getprop, ro.build.version.release] with timeout: 45s
+02-02 02:52:11 D/RunUtil: Running command [adb, -s, 192.168.137.18:5555, shell, getprop, ro.product.cpu.abi2] with timeout: 45s
+02-02 02:52:12 I/NativeDeviceStateMonitor: Device 192.168.137.18:5555 is already ONLINE
+02-02 02:52:12 I/NativeDeviceStateMonitor: Waiting 360000 ms for device 192.168.137.18:5555 boot complete
+02-02 02:52:12 I/DeviceStateMonitor: Waiting 359934 ms for device 192.168.137.18:5555 package manager
+02-02 02:52:12 I/NativeDeviceStateMonitor: Waiting 359836 ms for device 192.168.137.18:5555 external store
+02-02 02:52:12 I/ApkInstrumentationPreparer: Instrumenting package: com.android.compatibility.common.deviceinfo
+02-02 02:52:12 D/RunUtil: Running command [adb, -s, 192.168.137.18:5555, shell, getprop, ro.build.version.codename] with timeout: 45s
+02-02 02:52:12 D/RunUtil: Running command [adb, -s, 192.168.137.18:5555, shell, getprop, ro.build.version.sdk] with timeout: 45s
+02-02 02:52:12 D/AndroidJUnitTest: Disabled test storage as it's not supported on that branch.
+02-02 02:52:12 D/RunUtil: Running command [adb, -s, 192.168.137.18:5555, shell, getprop, ro.build.version.codename] with timeout: 45s
+02-02 02:52:12 D/RunUtil: Running command [adb, -s, 192.168.137.18:5555, shell, getprop, ro.build.version.sdk] with timeout: 45s
+02-02 02:52:12 D/RunUtil: Running command [adb, -s, 192.168.137.18:5555, shell, getprop, ro.build.version.sdk] with timeout: 45s
+02-02 02:52:12 D/CtsDeviceInfo.apk: Uploading CtsDeviceInfo.apk onto device '192.168.137.18:5555'
+02-02 02:52:12 D/Device: Uploading file onto device '192.168.137.18:5555'
+02-02 02:52:13 D/BackgroundDeviceAction: Waiting for device 192.168.137.18:5555 online before starting.
+02-02 02:52:13 D/BackgroundDeviceAction: Device 192.168.137.18:5555 now online.
+02-02 02:52:13 D/BackgroundDeviceAction: Starting logcat for 192.168.137.18:5555.
+02-02 02:52:15 D/RunUtil: Running command [aapt, dump, badging, /home/eae1rt/jenkins/RT-C-008FN/SMI230-rpi4-arm64-spi-android/workspace/Bosch-MEMS-Android-HAL_PR-34/build/SMI230/out_hal/multihal/2.X/host/linux-x86/vts/android-vts/testcases/CtsDeviceInfo/arm64/CtsDeviceInfo.apk] with timeout: 1m 0s
+02-02 02:52:15 W/FileUtil: Filename for prefix: temporary-stdout-[aapt, dump, badging, /home/eae1rt/jenkins/RT-C-008FN/SMI230-rpi4-arm64-spi-android/workspace/Bosch-MEMS-Android-HAL_PR-34/build/SMI230/out_hal/multihal/2.X/host/linux-x86/vts/android-vts/testcases/CtsDeviceInfo/arm64/CtsDeviceInfo.apk] and suffix: .txt, would be too long for FileSystem,truncating it.
+02-02 02:52:15 W/FileUtil: Filename for prefix: temporary-errout-[aapt, dump, badging, /home/eae1rt/jenkins/RT-C-008FN/SMI230-rpi4-arm64-spi-android/workspace/Bosch-MEMS-Android-HAL_PR-34/build/SMI230/out_hal/multihal/2.X/host/linux-x86/vts/android-vts/testcases/CtsDeviceInfo/arm64/CtsDeviceInfo.apk] and suffix: .txt, would be too long for FileSystem,truncating it.
+02-02 02:52:15 D/RunUtil: Running command [aapt, dump, xmltree, /home/eae1rt/jenkins/RT-C-008FN/SMI230-rpi4-arm64-spi-android/workspace/Bosch-MEMS-Android-HAL_PR-34/build/SMI230/out_hal/multihal/2.X/host/linux-x86/vts/android-vts/testcases/CtsDeviceInfo/arm64/CtsDeviceInfo.apk, AndroidManifest.xml] with timeout: 1m 0s
+02-02 02:52:15 W/FileUtil: Filename for prefix: temporary-stdout-[aapt, dump, xmltree, /home/eae1rt/jenkins/RT-C-008FN/SMI230-rpi4-arm64-spi-android/workspace/Bosch-MEMS-Android-HAL_PR-34/build/SMI230/out_hal/multihal/2.X/host/linux-x86/vts/android-vts/testcases/CtsDeviceInfo/arm64/CtsDeviceInfo.apk, AndroidManifest.xml] and suffix: .txt, would be too long for FileSystem,truncating it.
+02-02 02:52:15 W/FileUtil: Filename for prefix: temporary-errout-[aapt, dump, xmltree, /home/eae1rt/jenkins/RT-C-008FN/SMI230-rpi4-arm64-spi-android/workspace/Bosch-MEMS-Android-HAL_PR-34/build/SMI230/out_hal/multihal/2.X/host/linux-x86/vts/android-vts/testcases/CtsDeviceInfo/arm64/CtsDeviceInfo.apk, AndroidManifest.xml] and suffix: .txt, would be too long for FileSystem,truncating it.
+02-02 02:52:15 D/RunUtil: Running command [adb, -s, 192.168.137.18:5555, shell, appops, write-settings] with timeout: 2m 0s
+02-02 02:52:16 D/ListInstrumentationParser: instrumentation:com.android.compatibility.common.deviceinfo/androidx.test.runner.AndroidJUnitRunner (target=com.android.compatibility.common.deviceinfo)
+02-02 02:52:16 D/ListInstrumentationParser: 
+02-02 02:52:16 I/InstrumentationTest: No runner name specified. Using: androidx.test.runner.AndroidJUnitRunner.
+02-02 02:52:16 D/RunUtil: Running command [adb, -s, 192.168.137.18:5555, shell, getprop, ro.build.version.codename] with timeout: 45s
+02-02 02:52:16 D/RunUtil: Running command [adb, -s, 192.168.137.18:5555, shell, getprop, ro.build.version.sdk] with timeout: 45s
+02-02 02:52:16 D/RunUtil: Running command [adb, -s, 192.168.137.18:5555, shell, getprop, ro.build.version.codename] with timeout: 45s
+02-02 02:52:16 D/RunUtil: Running command [adb, -s, 192.168.137.18:5555, shell, getprop, ro.build.version.sdk] with timeout: 45s
+02-02 02:52:16 D/InstrumentationTest: Initializing com.android.tradefed.device.metric.CountTestCasesCollector for instrumentation.
+02-02 02:52:16 I/RemoteAndroidTest: Running am instrument -w -r --no-isolated-storage   -e newRunListenerMode true -e timeout_msec 300000 com.android.compatibility.common.deviceinfo/androidx.test.runner.AndroidJUnitRunner on raspberry_pi_4-192.168.137.18:5555
+02-02 02:52:44 D/TestDevice: Uninstalling com.android.compatibility.common.deviceinfo with extra args 
+02-02 02:52:45 D/ApkInstrumentationPreparer: Target preparation successful
+02-02 02:52:45 D/RunUtil: Running command [adb, -s, 192.168.137.18:5555, shell, getprop, ro.build.version.codename] with timeout: 45s
+02-02 02:52:45 D/RunUtil: Running command [adb, -s, 192.168.137.18:5555, shell, getprop, ro.build.version.sdk] with timeout: 45s
+02-02 02:52:45 D/RunUtil: Running command [adb, -s, 192.168.137.18:5555, shell, getprop, ro.build.version.sdk] with timeout: 45s
+02-02 02:52:45 D/RunUtil: Running command [adb, -s, 192.168.137.18:5555, shell, getprop, ro.build.version.codename] with timeout: 45s
+02-02 02:52:45 D/RunUtil: Running command [adb, -s, 192.168.137.18:5555, shell, getprop, ro.build.version.sdk] with timeout: 45s
+02-02 02:52:45 D/RunUtil: Running command [adb, -s, 192.168.137.18:5555, shell, getprop, ro.build.version.sdk] with timeout: 45s
+02-02 02:52:45 D/TradefedContentProvider.apk4771017734888906960.apk: Uploading TradefedContentProvider.apk4771017734888906960.apk onto device '192.168.137.18:5555'
+02-02 02:52:45 D/Device: Uploading file onto device '192.168.137.18:5555'
+02-02 02:52:46 D/RunUtil: Running command [aapt, dump, badging, /tmp/TradefedContentProvider.apk4771017734888906960.apk] with timeout: 1m 0s
+02-02 02:52:46 D/RunUtil: Running command [aapt, dump, xmltree, /tmp/TradefedContentProvider.apk4771017734888906960.apk, AndroidManifest.xml] with timeout: 1m 0s
+02-02 02:52:46 D/RunUtil: Running command [adb, -s, 192.168.137.18:5555, shell, appops, write-settings] with timeout: 2m 0s
+02-02 02:52:46 D/RunUtil: Running command [adb, -s, 192.168.137.18:5555, shell, cmd, appops, set, android.tradefed.contentprovider, android:legacy_storage, allow] with timeout: 2m 0s
+02-02 02:52:46 D/RunUtil: Running command [adb, -s, 192.168.137.18:5555, shell, cmd, appops, get, android.tradefed.contentprovider] with timeout: 2m 0s
+02-02 02:52:47 D/RunUtil: Running command [adb, -s, 192.168.137.18:5555, shell, getprop, ro.build.version.codename] with timeout: 45s
+02-02 02:52:47 D/RunUtil: Running command [adb, -s, 192.168.137.18:5555, shell, getprop, ro.build.version.sdk] with timeout: 45s
+02-02 02:52:48 D/ContentProviderHandler: Received from content provider:
+Row: 0 name=AppStandbyDeviceInfo.deviceinfo.json, absolute_path=/sdcard/device-info-files/AppStandbyDeviceInfo.deviceinfo.json, is_directory=false, mime_type=application/json, metadata=NULL
+Row: 1 name=CameraDeviceInfo.deviceinfo.json, absolute_path=/sdcard/device-info-files/CameraDeviceInfo.deviceinfo.json, is_directory=false, mime_type=application/json, metadata=NULL
+Row: 2 name=ClientIdDeviceInfo.deviceinfo.json, absolute_path=/sdcard/device-info-files/ClientIdDeviceInfo.deviceinfo.json, is_directory=false, mime_type=application/json, metadata=NULL
+Row: 3 name=ConfigurationDeviceInfo.deviceinfo.json, absolute_path=/sdcard/device-info-files/ConfigurationDeviceInfo.deviceinfo.json, is_directory=false, mime_type=application/json, metadata=NULL
+Row: 4 name=CpuDeviceInfo.deviceinfo.json, absolute_path=/sdcard/device-info-files/CpuDeviceInfo.deviceinfo.json, is_directory=false, mime_type=application/json, metadata=NULL
+Row: 5 name=DefaultAppDeviceInfo.deviceinfo.json, absolute_path=/sdcard/device-info-files/DefaultAppDeviceInfo.deviceinfo.json, is_directory=false, mime_type=application/json, metadata=NULL
+Row: 6 name=FeatureDeviceInfo.deviceinfo.json, absolute_path=/sdcard/device-info-files/FeatureDeviceInfo.deviceinfo.json, is_directory=false, mime_type=application/json, metadata=NULL
+Row: 7 name=GenericDeviceInfo.deviceinfo.json, absolute_path=/sdcard/device-info-files/GenericDeviceInfo.deviceinfo.json, is_directory=false, mime_type=application/json, metadata=NULL
+Row: 8 name=GraphicsDeviceInfo.deviceinfo.json, absolute_path=/sdcard/device-info-files/GraphicsDeviceInfo.deviceinfo.json, is_directory=false, mime_type=application/json, metadata=NULL
+Row: 9 name=HapticsDeviceInfo.deviceinfo.json, absolute_path=/sdcard/device-info-files/HapticsDeviceInfo.deviceinfo.json, is_directory=false, mime_type=application/json, metadata=NULL
+Row: 10 name=InputDeviceInfo.deviceinfo.json, absolute_path=/sdcard/device-info-files/InputDeviceInfo.deviceinfo.json, is_directory=false, mime_type=application/json, metadata=NULL
+Row: 11 name=LocaleDeviceInfo.deviceinfo.json, absolute_path=/sdcard/device-info-files/LocaleDeviceInfo.deviceinfo.json, is_directory=false, mime_type=application/json, metadata=NULL
+Row: 12 name=MediaDeviceInfo.deviceinfo.json, absolute_path=/sdcard/device-info-files/MediaDeviceInfo.deviceinfo.json, is_directory=false, mime_type=application/json, metadata=NULL
+Row: 13 name=MediaDrmDeviceInfo.deviceinfo.json, absolute_path=/sdcard/device-info-files/MediaDrmDeviceInfo.deviceinfo.json, is_directory=false, mime_type=application/json, metadata=NULL
+Row: 14 name=MemoryDeviceInfo.deviceinfo.json, absolute_path=/sdcard/device-info-files/MemoryDeviceInfo.deviceinfo.json, is_directory=false, mime_type=application/json, metadata=NULL
+Row: 15 name=PackageDeviceInfo.deviceinfo.json, absolute_path=/sdcard/device-info-files/PackageDeviceInfo.deviceinfo.json, is_directory=false, mime_type=application/json, metadata=NULL
+Row: 16 name=ScreenDeviceInfo.deviceinfo.json, absolute_path=/sdcard/device-info-files/ScreenDeviceInfo.deviceinfo.json, is_directory=false, mime_type=application/json, metadata=NULL
+Row: 17 name=SensorDeviceInfo.deviceinfo.json, absolute_path=/sdcard/device-info-files/SensorDeviceInfo.deviceinfo.json, is_directory=false, mime_type=application/json, metadata=NULL
+Row: 18 name=StorageDeviceInfo.deviceinfo.json, absolute_path=/sdcard/device-info-files/StorageDeviceInfo.deviceinfo.json, is_directory=false, mime_type=application/json, metadata=NULL
+Row: 19 name=UserDeviceInfo.deviceinfo.json, absolute_path=/sdcard/device-info-files/UserDeviceInfo.deviceinfo.json, is_directory=false, mime_type=application/json, metadata=NULL
+Row: 20 name=VintfDeviceInfo.deviceinfo.json, absolute_path=/sdcard/device-info-files/VintfDeviceInfo.deviceinfo.json, is_directory=false, mime_type=application/json, metadata=NULL
+Row: 21 name=VulkanDeviceInfo.deviceinfo.json, absolute_path=/sdcard/device-info-files/VulkanDeviceInfo.deviceinfo.json, is_directory=false, mime_type=application/json, metadata=NULL
+Row: 22 name=device_compatibility_matrix.xml, absolute_path=/sdcard/device-info-files/device_compatibility_matrix.xml, is_directory=false, mime_type=text/xml, metadata=NULL
+Row: 23 name=device_manifest.xml, absolute_path=/sdcard/device-info-files/device_manifest.xml, is_directory=false, mime_type=text/xml, metadata=NULL
+Row: 24 name=framework_compatibility_matrix.xml, absolute_path=/sdcard/device-info-files/framework_compatibility_matrix.xml, is_directory=false, mime_type=text/xml, metadata=NULL
+Row: 25 name=framework_manifest.xml, absolute_path=/sdcard/device-info-files/framework_manifest.xml, is_directory=false, mime_type=text/xml, metadata=NULL
+
+02-02 02:52:48 D/RunUtil: Running command [adb, -s, 192.168.137.18:5555, shell, content, read, --user, 10, --uri, content://android.tradefed.contentprovider/%252Fsdcard%252Fdevice-info-files%252FAppStandbyDeviceInfo.deviceinfo.json] with timeout: 2m 0s
+02-02 02:52:50 D/RunUtil: Running command [adb, -s, 192.168.137.18:5555, shell, content, read, --user, 10, --uri, content://android.tradefed.contentprovider/%252Fsdcard%252Fdevice-info-files%252FCameraDeviceInfo.deviceinfo.json] with timeout: 2m 0s
+02-02 02:52:51 D/RunUtil: Running command [adb, -s, 192.168.137.18:5555, shell, content, read, --user, 10, --uri, content://android.tradefed.contentprovider/%252Fsdcard%252Fdevice-info-files%252FClientIdDeviceInfo.deviceinfo.json] with timeout: 2m 0s
+02-02 02:52:52 D/RunUtil: Running command [adb, -s, 192.168.137.18:5555, shell, content, read, --user, 10, --uri, content://android.tradefed.contentprovider/%252Fsdcard%252Fdevice-info-files%252FConfigurationDeviceInfo.deviceinfo.json] with timeout: 2m 0s
+02-02 02:52:54 D/RunUtil: Running command [adb, -s, 192.168.137.18:5555, shell, content, read, --user, 10, --uri, content://android.tradefed.contentprovider/%252Fsdcard%252Fdevice-info-files%252FCpuDeviceInfo.deviceinfo.json] with timeout: 2m 0s
+02-02 02:52:55 D/RunUtil: Running command [adb, -s, 192.168.137.18:5555, shell, content, read, --user, 10, --uri, content://android.tradefed.contentprovider/%252Fsdcard%252Fdevice-info-files%252FDefaultAppDeviceInfo.deviceinfo.json] with timeout: 2m 0s
+02-02 02:52:57 D/RunUtil: Running command [adb, -s, 192.168.137.18:5555, shell, content, read, --user, 10, --uri, content://android.tradefed.contentprovider/%252Fsdcard%252Fdevice-info-files%252FFeatureDeviceInfo.deviceinfo.json] with timeout: 2m 0s
+02-02 02:52:58 D/RunUtil: Running command [adb, -s, 192.168.137.18:5555, shell, content, read, --user, 10, --uri, content://android.tradefed.contentprovider/%252Fsdcard%252Fdevice-info-files%252FGenericDeviceInfo.deviceinfo.json] with timeout: 2m 0s
+02-02 02:53:00 D/RunUtil: Running command [adb, -s, 192.168.137.18:5555, shell, content, read, --user, 10, --uri, content://android.tradefed.contentprovider/%252Fsdcard%252Fdevice-info-files%252FGraphicsDeviceInfo.deviceinfo.json] with timeout: 2m 0s
+02-02 02:53:01 D/RunUtil: Running command [adb, -s, 192.168.137.18:5555, shell, content, read, --user, 10, --uri, content://android.tradefed.contentprovider/%252Fsdcard%252Fdevice-info-files%252FHapticsDeviceInfo.deviceinfo.json] with timeout: 2m 0s
+02-02 02:53:02 D/RunUtil: Running command [adb, -s, 192.168.137.18:5555, shell, content, read, --user, 10, --uri, content://android.tradefed.contentprovider/%252Fsdcard%252Fdevice-info-files%252FInputDeviceInfo.deviceinfo.json] with timeout: 2m 0s
+02-02 02:53:04 D/RunUtil: Running command [adb, -s, 192.168.137.18:5555, shell, content, read, --user, 10, --uri, content://android.tradefed.contentprovider/%252Fsdcard%252Fdevice-info-files%252FLocaleDeviceInfo.deviceinfo.json] with timeout: 2m 0s
+02-02 02:53:05 D/RunUtil: Running command [adb, -s, 192.168.137.18:5555, shell, content, read, --user, 10, --uri, content://android.tradefed.contentprovider/%252Fsdcard%252Fdevice-info-files%252FMediaDeviceInfo.deviceinfo.json] with timeout: 2m 0s
+02-02 02:53:07 D/RunUtil: Running command [adb, -s, 192.168.137.18:5555, shell, content, read, --user, 10, --uri, content://android.tradefed.contentprovider/%252Fsdcard%252Fdevice-info-files%252FMediaDrmDeviceInfo.deviceinfo.json] with timeout: 2m 0s
+02-02 02:53:08 D/RunUtil: Running command [adb, -s, 192.168.137.18:5555, shell, content, read, --user, 10, --uri, content://android.tradefed.contentprovider/%252Fsdcard%252Fdevice-info-files%252FMemoryDeviceInfo.deviceinfo.json] with timeout: 2m 0s
+02-02 02:53:09 D/RunUtil: Running command [adb, -s, 192.168.137.18:5555, shell, content, read, --user, 10, --uri, content://android.tradefed.contentprovider/%252Fsdcard%252Fdevice-info-files%252FPackageDeviceInfo.deviceinfo.json] with timeout: 2m 0s
+02-02 02:53:11 D/RunUtil: Running command [adb, -s, 192.168.137.18:5555, shell, content, read, --user, 10, --uri, content://android.tradefed.contentprovider/%252Fsdcard%252Fdevice-info-files%252FScreenDeviceInfo.deviceinfo.json] with timeout: 2m 0s
+02-02 02:53:12 D/RunUtil: Running command [adb, -s, 192.168.137.18:5555, shell, content, read, --user, 10, --uri, content://android.tradefed.contentprovider/%252Fsdcard%252Fdevice-info-files%252FSensorDeviceInfo.deviceinfo.json] with timeout: 2m 0s
+02-02 02:53:14 D/RunUtil: Running command [adb, -s, 192.168.137.18:5555, shell, content, read, --user, 10, --uri, content://android.tradefed.contentprovider/%252Fsdcard%252Fdevice-info-files%252FStorageDeviceInfo.deviceinfo.json] with timeout: 2m 0s
+02-02 02:53:15 D/RunUtil: Running command [adb, -s, 192.168.137.18:5555, shell, content, read, --user, 10, --uri, content://android.tradefed.contentprovider/%252Fsdcard%252Fdevice-info-files%252FUserDeviceInfo.deviceinfo.json] with timeout: 2m 0s
+02-02 02:53:16 D/RunUtil: Running command [adb, -s, 192.168.137.18:5555, shell, content, read, --user, 10, --uri, content://android.tradefed.contentprovider/%252Fsdcard%252Fdevice-info-files%252FVintfDeviceInfo.deviceinfo.json] with timeout: 2m 0s
+02-02 02:53:18 D/RunUtil: Running command [adb, -s, 192.168.137.18:5555, shell, content, read, --user, 10, --uri, content://android.tradefed.contentprovider/%252Fsdcard%252Fdevice-info-files%252FVulkanDeviceInfo.deviceinfo.json] with timeout: 2m 0s
+02-02 02:53:19 D/RunUtil: Running command [adb, -s, 192.168.137.18:5555, shell, content, read, --user, 10, --uri, content://android.tradefed.contentprovider/%252Fsdcard%252Fdevice-info-files%252Fdevice_compatibility_matrix.xml] with timeout: 2m 0s
+02-02 02:53:21 D/RunUtil: Running command [adb, -s, 192.168.137.18:5555, shell, content, read, --user, 10, --uri, content://android.tradefed.contentprovider/%252Fsdcard%252Fdevice-info-files%252Fdevice_manifest.xml] with timeout: 2m 0s
+02-02 02:53:22 D/RunUtil: Running command [adb, -s, 192.168.137.18:5555, shell, content, read, --user, 10, --uri, content://android.tradefed.contentprovider/%252Fsdcard%252Fdevice-info-files%252Fframework_compatibility_matrix.xml] with timeout: 2m 0s
+02-02 02:53:23 D/RunUtil: Running command [adb, -s, 192.168.137.18:5555, shell, content, read, --user, 10, --uri, content://android.tradefed.contentprovider/%252Fsdcard%252Fdevice-info-files%252Fframework_manifest.xml] with timeout: 2m 0s
+02-02 02:53:25 D/FileUtil: Creating temp file at /tmp/eng.gus1st.20250127.092412/vts-bosch/inv_17489611042386109199/inv_11011877675835258028 with prefix "InputDeviceInfo.deviceinfo.json_" suffix ".txt.gz"
+02-02 02:53:25 I/LogFileSaver: Saved gzip log file /tmp/eng.gus1st.20250127.092412/vts-bosch/inv_17489611042386109199/inv_11011877675835258028/InputDeviceInfo.deviceinfo.json_13624847119161317505.txt.gz. [size=10, elapsed=37ms]
+02-02 02:53:25 D/FileUtil: Creating temp file at /tmp/eng.gus1st.20250127.092412/vts-bosch/inv_17489611042386109199/inv_11011877675835258028 with prefix "CpuDeviceInfo.deviceinfo.json_" suffix ".txt.gz"
+02-02 02:53:25 I/LogFileSaver: Saved gzip log file /tmp/eng.gus1st.20250127.092412/vts-bosch/inv_17489611042386109199/inv_11011877675835258028/CpuDeviceInfo.deviceinfo.json_15201118570233113740.txt.gz. [size=10, elapsed=9ms]
+02-02 02:53:25 D/FileUtil: Creating temp file at /tmp/eng.gus1st.20250127.092412/vts-bosch/inv_17489611042386109199/inv_11011877675835258028 with prefix "ScreenDeviceInfo.deviceinfo.json_" suffix ".txt.gz"
+02-02 02:53:25 I/LogFileSaver: Saved gzip log file /tmp/eng.gus1st.20250127.092412/vts-bosch/inv_17489611042386109199/inv_11011877675835258028/ScreenDeviceInfo.deviceinfo.json_3395470057777628850.txt.gz. [size=10, elapsed=0ms]
+02-02 02:53:25 D/FileUtil: Creating temp file at /tmp/eng.gus1st.20250127.092412/vts-bosch/inv_17489611042386109199/inv_11011877675835258028 with prefix "SensorDeviceInfo.deviceinfo.json_" suffix ".txt.gz"
+02-02 02:53:25 I/LogFileSaver: Saved gzip log file /tmp/eng.gus1st.20250127.092412/vts-bosch/inv_17489611042386109199/inv_11011877675835258028/SensorDeviceInfo.deviceinfo.json_9428340299182606052.txt.gz. [size=10, elapsed=0ms]
+02-02 02:53:25 D/FileUtil: Creating temp file at /tmp/eng.gus1st.20250127.092412/vts-bosch/inv_17489611042386109199/inv_11011877675835258028 with prefix "ClientIdDeviceInfo.deviceinfo.json_" suffix ".txt.gz"
+02-02 02:53:25 I/LogFileSaver: Saved gzip log file /tmp/eng.gus1st.20250127.092412/vts-bosch/inv_17489611042386109199/inv_11011877675835258028/ClientIdDeviceInfo.deviceinfo.json_12494079982283935809.txt.gz. [size=10, elapsed=0ms]
+02-02 02:53:25 D/FileUtil: Creating temp file at /tmp/eng.gus1st.20250127.092412/vts-bosch/inv_17489611042386109199/inv_11011877675835258028 with prefix "MediaDrmDeviceInfo.deviceinfo.json_" suffix ".txt.gz"
+02-02 02:53:25 I/LogFileSaver: Saved gzip log file /tmp/eng.gus1st.20250127.092412/vts-bosch/inv_17489611042386109199/inv_11011877675835258028/MediaDrmDeviceInfo.deviceinfo.json_17301408151324077358.txt.gz. [size=10, elapsed=0ms]
+02-02 02:53:25 D/FileUtil: Creating temp file at /tmp/eng.gus1st.20250127.092412/vts-bosch/inv_17489611042386109199/inv_11011877675835258028 with prefix "UserDeviceInfo.deviceinfo.json_" suffix ".txt.gz"
+02-02 02:53:25 I/LogFileSaver: Saved gzip log file /tmp/eng.gus1st.20250127.092412/vts-bosch/inv_17489611042386109199/inv_11011877675835258028/UserDeviceInfo.deviceinfo.json_17799966519201099461.txt.gz. [size=10, elapsed=1ms]
+02-02 02:53:25 D/FileUtil: Creating temp file at /home/eae1rt/jenkins/RT-C-008FN/SMI230-rpi4-arm64-spi-android/workspace/Bosch-MEMS-Android-HAL_PR-34/build/SMI230/out_hal/multihal/2.X/host/linux-x86/vts/android-vts/logs/2025.02.02_02.52.08/inv_6433659267982690116 with prefix "framework_compatibility_matrix.xml_" suffix ".txt.gz"
+02-02 02:53:25 I/LogFileSaver: Saved gzip log file /home/eae1rt/jenkins/RT-C-008FN/SMI230-rpi4-arm64-spi-android/workspace/Bosch-MEMS-Android-HAL_PR-34/build/SMI230/out_hal/multihal/2.X/host/linux-x86/vts/android-vts/logs/2025.02.02_02.52.08/inv_6433659267982690116/framework_compatibility_matrix.xml_10788778855242177299.txt.gz. [size=10, elapsed=11ms]
+02-02 02:53:25 D/CertificationSuiteResultReporter: Saved logs for framework_compatibility_matrix.xml in /home/eae1rt/jenkins/RT-C-008FN/SMI230-rpi4-arm64-spi-android/workspace/Bosch-MEMS-Android-HAL_PR-34/build/SMI230/out_hal/multihal/2.X/host/linux-x86/vts/android-vts/logs/2025.02.02_02.52.08/inv_6433659267982690116/framework_compatibility_matrix.xml_10788778855242177299.txt.gz
+02-02 02:53:25 D/FileUtil: Creating temp file at /tmp/eng.gus1st.20250127.092412/vts-bosch/inv_17489611042386109199/inv_11011877675835258028 with prefix "framework_compatibility_matrix.xml_" suffix ".txt.gz"
+02-02 02:53:25 I/LogFileSaver: Saved gzip log file /tmp/eng.gus1st.20250127.092412/vts-bosch/inv_17489611042386109199/inv_11011877675835258028/framework_compatibility_matrix.xml_10393878071272187182.txt.gz. [size=10, elapsed=1ms]
+02-02 02:53:25 D/FileUtil: Creating temp file at /tmp/eng.gus1st.20250127.092412/vts-bosch/inv_17489611042386109199/inv_11011877675835258028 with prefix "HapticsDeviceInfo.deviceinfo.json_" suffix ".txt.gz"
+02-02 02:53:25 I/LogFileSaver: Saved gzip log file /tmp/eng.gus1st.20250127.092412/vts-bosch/inv_17489611042386109199/inv_11011877675835258028/HapticsDeviceInfo.deviceinfo.json_18352482301942930921.txt.gz. [size=10, elapsed=0ms]
+02-02 02:53:25 D/FileUtil: Creating temp file at /tmp/eng.gus1st.20250127.092412/vts-bosch/inv_17489611042386109199/inv_11011877675835258028 with prefix "MemoryDeviceInfo.deviceinfo.json_" suffix ".txt.gz"
+02-02 02:53:25 I/LogFileSaver: Saved gzip log file /tmp/eng.gus1st.20250127.092412/vts-bosch/inv_17489611042386109199/inv_11011877675835258028/MemoryDeviceInfo.deviceinfo.json_5082646790689323531.txt.gz. [size=10, elapsed=0ms]
+02-02 02:53:25 D/FileUtil: Creating temp file at /tmp/eng.gus1st.20250127.092412/vts-bosch/inv_17489611042386109199/inv_11011877675835258028 with prefix "DefaultAppDeviceInfo.deviceinfo.json_" suffix ".txt.gz"
+02-02 02:53:25 I/LogFileSaver: Saved gzip log file /tmp/eng.gus1st.20250127.092412/vts-bosch/inv_17489611042386109199/inv_11011877675835258028/DefaultAppDeviceInfo.deviceinfo.json_18393473279806840969.txt.gz. [size=10, elapsed=0ms]
+02-02 02:53:25 D/FileUtil: Creating temp file at /tmp/eng.gus1st.20250127.092412/vts-bosch/inv_17489611042386109199/inv_11011877675835258028 with prefix "ConfigurationDeviceInfo.deviceinfo.json_" suffix ".txt.gz"
+02-02 02:53:25 I/LogFileSaver: Saved gzip log file /tmp/eng.gus1st.20250127.092412/vts-bosch/inv_17489611042386109199/inv_11011877675835258028/ConfigurationDeviceInfo.deviceinfo.json_16016030359027634795.txt.gz. [size=10, elapsed=0ms]
+02-02 02:53:25 D/FileUtil: Creating temp file at /tmp/eng.gus1st.20250127.092412/vts-bosch/inv_17489611042386109199/inv_11011877675835258028 with prefix "GenericDeviceInfo.deviceinfo.json_" suffix ".txt.gz"
+02-02 02:53:25 I/LogFileSaver: Saved gzip log file /tmp/eng.gus1st.20250127.092412/vts-bosch/inv_17489611042386109199/inv_11011877675835258028/GenericDeviceInfo.deviceinfo.json_8997788391572303608.txt.gz. [size=10, elapsed=0ms]
+02-02 02:53:25 D/FileUtil: Creating temp file at /tmp/eng.gus1st.20250127.092412/vts-bosch/inv_17489611042386109199/inv_11011877675835258028 with prefix "VintfDeviceInfo.deviceinfo.json_" suffix ".txt.gz"
+02-02 02:53:25 I/LogFileSaver: Saved gzip log file /tmp/eng.gus1st.20250127.092412/vts-bosch/inv_17489611042386109199/inv_11011877675835258028/VintfDeviceInfo.deviceinfo.json_5478886849070563800.txt.gz. [size=10, elapsed=0ms]
+02-02 02:53:25 D/FileUtil: Creating temp file at /tmp/eng.gus1st.20250127.092412/vts-bosch/inv_17489611042386109199/inv_11011877675835258028 with prefix "MediaDeviceInfo.deviceinfo.json_" suffix ".txt.gz"
+02-02 02:53:25 I/LogFileSaver: Saved gzip log file /tmp/eng.gus1st.20250127.092412/vts-bosch/inv_17489611042386109199/inv_11011877675835258028/MediaDeviceInfo.deviceinfo.json_10756370750419752538.txt.gz. [size=10, elapsed=1ms]
+02-02 02:53:25 D/FileUtil: Creating temp file at /tmp/eng.gus1st.20250127.092412/vts-bosch/inv_17489611042386109199/inv_11011877675835258028 with prefix "VulkanDeviceInfo.deviceinfo.json_" suffix ".txt.gz"
+02-02 02:53:25 I/LogFileSaver: Saved gzip log file /tmp/eng.gus1st.20250127.092412/vts-bosch/inv_17489611042386109199/inv_11011877675835258028/VulkanDeviceInfo.deviceinfo.json_9105589348098412392.txt.gz. [size=10, elapsed=0ms]
+02-02 02:53:25 D/FileUtil: Creating temp file at /tmp/eng.gus1st.20250127.092412/vts-bosch/inv_17489611042386109199/inv_11011877675835258028 with prefix "CameraDeviceInfo.deviceinfo.json_" suffix ".txt.gz"
+02-02 02:53:25 I/LogFileSaver: Saved gzip log file /tmp/eng.gus1st.20250127.092412/vts-bosch/inv_17489611042386109199/inv_11011877675835258028/CameraDeviceInfo.deviceinfo.json_3873725739243089849.txt.gz. [size=10, elapsed=0ms]
+02-02 02:53:25 D/FileUtil: Creating temp file at /tmp/eng.gus1st.20250127.092412/vts-bosch/inv_17489611042386109199/inv_11011877675835258028 with prefix "GraphicsDeviceInfo.deviceinfo.json_" suffix ".txt.gz"
+02-02 02:53:25 I/LogFileSaver: Saved gzip log file /tmp/eng.gus1st.20250127.092412/vts-bosch/inv_17489611042386109199/inv_11011877675835258028/GraphicsDeviceInfo.deviceinfo.json_2866697369277054203.txt.gz. [size=10, elapsed=1ms]
+02-02 02:53:25 D/FileUtil: Creating temp file at /home/eae1rt/jenkins/RT-C-008FN/SMI230-rpi4-arm64-spi-android/workspace/Bosch-MEMS-Android-HAL_PR-34/build/SMI230/out_hal/multihal/2.X/host/linux-x86/vts/android-vts/logs/2025.02.02_02.52.08/inv_6433659267982690116 with prefix "framework_manifest.xml_" suffix ".txt.gz"
+02-02 02:53:25 I/LogFileSaver: Saved gzip log file /home/eae1rt/jenkins/RT-C-008FN/SMI230-rpi4-arm64-spi-android/workspace/Bosch-MEMS-Android-HAL_PR-34/build/SMI230/out_hal/multihal/2.X/host/linux-x86/vts/android-vts/logs/2025.02.02_02.52.08/inv_6433659267982690116/framework_manifest.xml_6973042997232640309.txt.gz. [size=10, elapsed=0ms]
+02-02 02:53:25 D/CertificationSuiteResultReporter: Saved logs for framework_manifest.xml in /home/eae1rt/jenkins/RT-C-008FN/SMI230-rpi4-arm64-spi-android/workspace/Bosch-MEMS-Android-HAL_PR-34/build/SMI230/out_hal/multihal/2.X/host/linux-x86/vts/android-vts/logs/2025.02.02_02.52.08/inv_6433659267982690116/framework_manifest.xml_6973042997232640309.txt.gz
+02-02 02:53:25 D/FileUtil: Creating temp file at /tmp/eng.gus1st.20250127.092412/vts-bosch/inv_17489611042386109199/inv_11011877675835258028 with prefix "framework_manifest.xml_" suffix ".txt.gz"
+02-02 02:53:25 I/LogFileSaver: Saved gzip log file /tmp/eng.gus1st.20250127.092412/vts-bosch/inv_17489611042386109199/inv_11011877675835258028/framework_manifest.xml_9342555236429406921.txt.gz. [size=10, elapsed=2ms]
+02-02 02:53:25 D/FileUtil: Creating temp file at /tmp/eng.gus1st.20250127.092412/vts-bosch/inv_17489611042386109199/inv_11011877675835258028 with prefix "LocaleDeviceInfo.deviceinfo.json_" suffix ".txt.gz"
+02-02 02:53:25 I/LogFileSaver: Saved gzip log file /tmp/eng.gus1st.20250127.092412/vts-bosch/inv_17489611042386109199/inv_11011877675835258028/LocaleDeviceInfo.deviceinfo.json_13084856074552333073.txt.gz. [size=10, elapsed=0ms]
+02-02 02:53:25 D/FileUtil: Creating temp file at /tmp/eng.gus1st.20250127.092412/vts-bosch/inv_17489611042386109199/inv_11011877675835258028 with prefix "FeatureDeviceInfo.deviceinfo.json_" suffix ".txt.gz"
+02-02 02:53:25 I/LogFileSaver: Saved gzip log file /tmp/eng.gus1st.20250127.092412/vts-bosch/inv_17489611042386109199/inv_11011877675835258028/FeatureDeviceInfo.deviceinfo.json_13258701840264270843.txt.gz. [size=10, elapsed=0ms]
+02-02 02:53:25 D/FileUtil: Creating temp file at /tmp/eng.gus1st.20250127.092412/vts-bosch/inv_17489611042386109199/inv_11011877675835258028 with prefix "PackageDeviceInfo.deviceinfo.json_" suffix ".txt.gz"
+02-02 02:53:25 I/LogFileSaver: Saved gzip log file /tmp/eng.gus1st.20250127.092412/vts-bosch/inv_17489611042386109199/inv_11011877675835258028/PackageDeviceInfo.deviceinfo.json_7000698713981767584.txt.gz. [size=21696, elapsed=18ms]
+02-02 02:53:25 D/FileUtil: Creating temp file at /home/eae1rt/jenkins/RT-C-008FN/SMI230-rpi4-arm64-spi-android/workspace/Bosch-MEMS-Android-HAL_PR-34/build/SMI230/out_hal/multihal/2.X/host/linux-x86/vts/android-vts/logs/2025.02.02_02.52.08/inv_6433659267982690116 with prefix "device_manifest.xml_" suffix ".txt.gz"
+02-02 02:53:25 I/LogFileSaver: Saved gzip log file /home/eae1rt/jenkins/RT-C-008FN/SMI230-rpi4-arm64-spi-android/workspace/Bosch-MEMS-Android-HAL_PR-34/build/SMI230/out_hal/multihal/2.X/host/linux-x86/vts/android-vts/logs/2025.02.02_02.52.08/inv_6433659267982690116/device_manifest.xml_2049400706178802500.txt.gz. [size=10, elapsed=0ms]
+02-02 02:53:25 D/CertificationSuiteResultReporter: Saved logs for device_manifest.xml in /home/eae1rt/jenkins/RT-C-008FN/SMI230-rpi4-arm64-spi-android/workspace/Bosch-MEMS-Android-HAL_PR-34/build/SMI230/out_hal/multihal/2.X/host/linux-x86/vts/android-vts/logs/2025.02.02_02.52.08/inv_6433659267982690116/device_manifest.xml_2049400706178802500.txt.gz
+02-02 02:53:25 D/FileUtil: Creating temp file at /tmp/eng.gus1st.20250127.092412/vts-bosch/inv_17489611042386109199/inv_11011877675835258028 with prefix "device_manifest.xml_" suffix ".txt.gz"
+02-02 02:53:25 I/LogFileSaver: Saved gzip log file /tmp/eng.gus1st.20250127.092412/vts-bosch/inv_17489611042386109199/inv_11011877675835258028/device_manifest.xml_14639343909770443416.txt.gz. [size=10, elapsed=1ms]
+02-02 02:53:25 D/FileUtil: Creating temp file at /tmp/eng.gus1st.20250127.092412/vts-bosch/inv_17489611042386109199/inv_11011877675835258028 with prefix "AppStandbyDeviceInfo.deviceinfo.json_" suffix ".txt.gz"
+02-02 02:53:25 I/LogFileSaver: Saved gzip log file /tmp/eng.gus1st.20250127.092412/vts-bosch/inv_17489611042386109199/inv_11011877675835258028/AppStandbyDeviceInfo.deviceinfo.json_2421579233810063979.txt.gz. [size=10, elapsed=0ms]
+02-02 02:53:25 D/FileUtil: Creating temp file at /home/eae1rt/jenkins/RT-C-008FN/SMI230-rpi4-arm64-spi-android/workspace/Bosch-MEMS-Android-HAL_PR-34/build/SMI230/out_hal/multihal/2.X/host/linux-x86/vts/android-vts/logs/2025.02.02_02.52.08/inv_6433659267982690116 with prefix "device_compatibility_matrix.xml_" suffix ".txt.gz"
+02-02 02:53:25 I/LogFileSaver: Saved gzip log file /home/eae1rt/jenkins/RT-C-008FN/SMI230-rpi4-arm64-spi-android/workspace/Bosch-MEMS-Android-HAL_PR-34/build/SMI230/out_hal/multihal/2.X/host/linux-x86/vts/android-vts/logs/2025.02.02_02.52.08/inv_6433659267982690116/device_compatibility_matrix.xml_18386724604821007151.txt.gz. [size=10, elapsed=0ms]
+02-02 02:53:25 D/CertificationSuiteResultReporter: Saved logs for device_compatibility_matrix.xml in /home/eae1rt/jenkins/RT-C-008FN/SMI230-rpi4-arm64-spi-android/workspace/Bosch-MEMS-Android-HAL_PR-34/build/SMI230/out_hal/multihal/2.X/host/linux-x86/vts/android-vts/logs/2025.02.02_02.52.08/inv_6433659267982690116/device_compatibility_matrix.xml_18386724604821007151.txt.gz
+02-02 02:53:25 D/FileUtil: Creating temp file at /tmp/eng.gus1st.20250127.092412/vts-bosch/inv_17489611042386109199/inv_11011877675835258028 with prefix "device_compatibility_matrix.xml_" suffix ".txt.gz"
+02-02 02:53:25 I/LogFileSaver: Saved gzip log file /tmp/eng.gus1st.20250127.092412/vts-bosch/inv_17489611042386109199/inv_11011877675835258028/device_compatibility_matrix.xml_12103613431625676418.txt.gz. [size=10, elapsed=0ms]
+02-02 02:53:25 D/FileUtil: Creating temp file at /tmp/eng.gus1st.20250127.092412/vts-bosch/inv_17489611042386109199/inv_11011877675835258028 with prefix "StorageDeviceInfo.deviceinfo.json_" suffix ".txt.gz"
+02-02 02:53:25 I/LogFileSaver: Saved gzip log file /tmp/eng.gus1st.20250127.092412/vts-bosch/inv_17489611042386109199/inv_11011877675835258028/StorageDeviceInfo.deviceinfo.json_13371009975423706029.txt.gz. [size=10, elapsed=0ms]
+02-02 02:53:25 D/InvocationExecution: done with preparer 'com.android.compatibility.common.tradefed.targetprep.DeviceInfoCollector@7cd2161f' on device: '192.168.137.18:5555' in 1m 14s
+02-02 02:53:25 D/InvocationExecution: Done with setup of device: '192.168.137.18:5555'
+02-02 02:53:25 D/RunUtil: Running command [adb, -s, 192.168.137.18:5555, shell, uname, -a] with timeout: 2m 0s
+02-02 02:53:25 D/RunUtil: Running command [adb, -s, 192.168.137.18:5555, shell, getprop, ro.system.build.fingerprint] with timeout: 45s
+02-02 02:53:25 D/RunUtil: Running command [adb, -s, 192.168.137.18:5555, shell, getprop, ro.vendor.build.fingerprint] with timeout: 45s
+02-02 02:53:25 D/InvocationExecution: Total setup duration: 1m 17s'
+02-02 02:53:25 D/LogFileSaver: Log data for device_logcat_setup_192.168.137.18:5555 is already compressed, skipping compression
+02-02 02:53:25 D/FileUtil: Creating temp file at /home/eae1rt/jenkins/RT-C-008FN/SMI230-rpi4-arm64-spi-android/workspace/Bosch-MEMS-Android-HAL_PR-34/build/SMI230/out_hal/multihal/2.X/host/linux-x86/vts/android-vts/logs/2025.02.02_02.52.08/inv_6433659267982690116 with prefix "device_logcat_setup_192.168.137.18:5555_" suffix ".txt"
+02-02 02:53:25 I/LogFileSaver: Saved log file /home/eae1rt/jenkins/RT-C-008FN/SMI230-rpi4-arm64-spi-android/workspace/Bosch-MEMS-Android-HAL_PR-34/build/SMI230/out_hal/multihal/2.X/host/linux-x86/vts/android-vts/logs/2025.02.02_02.52.08/inv_6433659267982690116/device_logcat_setup_192.168.137.18:5555_13823747964846103127.txt. [size=2908343, elapsed=3ms]
+02-02 02:53:25 D/CertificationSuiteResultReporter: Saved logs for device_logcat_setup_192.168.137.18:5555 in /home/eae1rt/jenkins/RT-C-008FN/SMI230-rpi4-arm64-spi-android/workspace/Bosch-MEMS-Android-HAL_PR-34/build/SMI230/out_hal/multihal/2.X/host/linux-x86/vts/android-vts/logs/2025.02.02_02.52.08/inv_6433659267982690116/device_logcat_setup_192.168.137.18:5555_13823747964846103127.txt
+02-02 02:53:25 D/LogFileSaver: Log data for device_logcat_setup_192.168.137.18:5555 is already compressed, skipping compression
+02-02 02:53:25 D/FileUtil: Creating temp file at /tmp/eng.gus1st.20250127.092412/vts-bosch/inv_17489611042386109199/inv_11011877675835258028 with prefix "device_logcat_setup_192.168.137.18:5555_" suffix ".txt"
+02-02 02:53:25 I/LogFileSaver: Saved log file /tmp/eng.gus1st.20250127.092412/vts-bosch/inv_17489611042386109199/inv_11011877675835258028/device_logcat_setup_192.168.137.18:5555_6555681766790485073.txt. [size=2908343, elapsed=2ms]
+02-02 02:53:25 D/PrettyPrintDelimiter: 
+===============================
+===== TEST PHASE STARTING =====
+===============================
+02-02 02:53:25 D/RunUtil: Running command [adb, -s, 192.168.137.18:5555, shell, cmd, device_state, print-states] with timeout: 2m 0s
+02-02 02:53:25 D/RunUtil: Running command [adb, -s, 192.168.137.18:5555, shell, getprop, ro.product.cpu.abi] with timeout: 45s
+02-02 02:53:26 D/BaseTestSuite: Initializing ModuleRepo
+ABIs:[{arm64-v8a, bitness=64}]
+Test Args:[]
+Module Args:[]
+
+Excludes: {arm64-v8a VtsHalConfirmationUIV1_0TargetTest=[VtsHalConfirmationUIV1_0TargetTest *ConfirmationUIHidlTest.AbortTest/*, VtsHalConfirmationUIV1_0TargetTest *ConfirmationUIHidlTest.PortableMessageTest2/*, VtsHalConfirmationUIV1_0TargetTest *ConfirmationUIHidlTest.PortableMessageTest2Magnified/*, VtsHalConfirmationUIV1_0TargetTest *ConfirmationUIHidlTest.PortableMessageTest1/*, VtsHalConfirmationUIV1_0TargetTest *ConfirmationUIHidlTest.PortableMessageTest1Magnified/*, VtsHalConfirmationUIV1_0TargetTest *ConfirmationUIHidlTest.UserOkTest/*, VtsHalConfirmationUIV1_0TargetTest *ConfirmationUIHidlTest.MessageTooLongTest/*, VtsHalConfirmationUIV1_0TargetTest *ConfirmationUIHidlTest.UserCancelTest/*, VtsHalConfirmationUIV1_0TargetTest *ConfirmationUIHidlTest.MalformedUTF8Test3/*, VtsHalConfirmationUIV1_0TargetTest *ConfirmationUIHidlTest.MalformedUTF8Test1/*, VtsHalConfirmationUIV1_0TargetTest *ConfirmationUIHidlTest.MessageWayTooLongTest/*, VtsHalConfirmationUIV1_0TargetTest *ConfirmationUIHidlTest.MalformedUTF8Test2/*], arm64-v8a vts_virtual_ab_test=[vts_virtual_ab_test VirtualAbRequirementTest.EnabledOnLaunchR]}
+02-02 02:53:26 D/BaseTestSuite: Foldable states: [foldable:0:DEFAULT]
+02-02 02:53:26 D/ITestSuite: Resource not found for allowed preparers: /suite/google-allowed-preparers.txt
+02-02 02:53:26 D/ITestSuite: [Total Unique Modules = 1]
+02-02 02:53:26 D/BaseTestSuite: Filters for 'arm64-v8a BoschHalSensorsV2_1TargetTest': []
+02-02 02:53:26 I/ITestSuite: Running system status checker before module execution: arm64-v8a BoschHalSensorsV2_1TargetTest
+02-02 02:53:26 D/RunUtil: Running command [adb, -s, 192.168.137.18:5555, shell, getprop, ro.build.version.codename] with timeout: 45s
+02-02 02:53:26 D/RunUtil: Running command [adb, -s, 192.168.137.18:5555, shell, getprop, ro.build.version.sdk] with timeout: 45s
+02-02 02:53:26 D/RunUtil: Running command [adb, -s, 192.168.137.18:5555, shell, getprop, ro.build.version.codename] with timeout: 45s
+02-02 02:53:26 D/RunUtil: Running command [adb, -s, 192.168.137.18:5555, shell, getprop, ro.build.version.sdk] with timeout: 45s
+02-02 02:53:26 D/RunUtil: Running command [adb, -s, 192.168.137.18:5555, shell, getprop, ro.build.version.codename] with timeout: 45s
+02-02 02:53:26 D/RunUtil: Running command [adb, -s, 192.168.137.18:5555, shell, getprop, ro.build.version.sdk] with timeout: 45s
+02-02 02:53:26 D/RunUtil: Running command [adb, -s, 192.168.137.18:5555, shell, getprop, ro.build.version.codename] with timeout: 45s
+02-02 02:53:26 D/RunUtil: Running command [adb, -s, 192.168.137.18:5555, shell, getprop, ro.build.version.sdk] with timeout: 45s
+02-02 02:53:26 D/RunUtil: Running command [adb, -s, 192.168.137.18:5555, shell, getprop, ro.build.version.sdk] with timeout: 45s
+02-02 02:53:26 D/RunUtil: Running command [adb, -s, 192.168.137.18:5555, shell, getprop, ro.build.version.sdk] with timeout: 45s
+02-02 02:53:26 D/RunUtil: Running command [adb, -s, 192.168.137.18:5555, shell, getprop, ro.build.version.sdk] with timeout: 45s
+02-02 02:53:28 I/DeviceBaselineChecker: Enable device baselines disable_os_auto_update,keep_screen_on,disable_usb_app_verification,clear_lock_screen in 1889 millis.
+02-02 02:53:28 D/ModuleDefinition: Running module arm64-v8a BoschHalSensorsV2_1TargetTest
+02-02 02:53:28 D/ModuleDefinition: Running setup preparer: RootTargetPreparer
+02-02 02:53:28 I/NativeDevice: adb root on device 192.168.137.18:5555
+02-02 02:53:28 D/RunUtil: Running command [adb, -s, 192.168.137.18:5555, root] with timeout: 2m 0s
+02-02 02:53:28 D/BackgroundDeviceAction: Sleep for 5000 before starting logcat for 192.168.137.18:5555.
+02-02 02:53:28 I/NativeDeviceStateMonitor: Waiting for device 192.168.137.18:5555 to be in NOT_AVAILABLE mode for '2s'; it is currently in ONLINE mode...
+02-02 02:53:30 W/NativeDevice: Did not detect device 192.168.137.18:5555 becoming unavailable after root
+02-02 02:53:30 D/ModuleDefinition: Running setup preparer: StopServicesSetup
+02-02 02:53:31 D/ModuleDefinition: Running setup preparer: PushFilePreparer
+02-02 02:53:31 D/RunUtil: Running command [adb, -s, 192.168.137.18:5555, shell, getprop, ro.build.version.sdk] with timeout: 45s
+02-02 02:53:31 D/RunUtil: Running command [adb, -s, 192.168.137.18:5555, shell, getprop, ro.build.id] with timeout: 45s
+02-02 02:53:31 D/RunUtil: Running command [adb, -s, 192.168.137.18:5555, shell, getprop, ro.revision] with timeout: 45s
+02-02 02:53:31 D/RunUtil: Running command [adb, -s, 192.168.137.18:5555, shell, getprop, gsm.sim.state] with timeout: 45s
+02-02 02:53:31 D/RunUtil: Running command [adb, -s, 192.168.137.18:5555, shell, getprop, gsm.operator.alpha] with timeout: 45s
+02-02 02:53:32 D/PushFilePreparer: Trying to push local 'BoschHalSensorsV2_1TargetTest' to remote '/data/local/tmp/BoschHalSensorsV2_1TargetTest'
+02-02 02:53:32 D/NativeDevice: Using 'ls' to check doesFileExist(/data/local/tmp/BoschHalSensorsV2_1TargetTest)
+02-02 02:53:32 D/NativeDevice: /home/eae1rt/jenkins/RT-C-008FN/SMI230-rpi4-arm64-spi-android/workspace/Bosch-MEMS-Android-HAL_PR-34/build/SMI230/out_hal/multihal/2.X/host/linux-x86/vts/android-vts/testcases/BoschHalSensorsV2_1TargetTest/arm directory was not pushed because it was filtered.
+02-02 02:53:32 D/NativeDevice: Using 'ls' to check doesFileExist(/data/local/tmp/BoschHalSensorsV2_1TargetTest)
+02-02 02:53:33 I/GTest: Running gtest /data/local/tmp/BoschHalSensorsV2_1TargetTest/arm64/BoschHalSensorsV2_1TargetTest --gtest_print_time  on 192.168.137.18:5555
+02-02 02:53:33 D/ModuleListener: ModuleListener.testRunStarted(BoschHalSensorsV2_1TargetTest, 63, 0) on 192.168.137.18:5555
+02-02 02:53:33 D/ModuleListener: ModuleListener.testStarted(PerInstance/SensorsHidlTest#SensorListValid/0_default) on 192.168.137.18:5555
+02-02 02:53:33 D/BackgroundDeviceAction: Waiting for device 192.168.137.18:5555 online before starting.
+02-02 02:53:33 D/BackgroundDeviceAction: Device 192.168.137.18:5555 now online.
+02-02 02:53:33 D/BackgroundDeviceAction: Starting logcat for 192.168.137.18:5555.
+02-02 02:53:36 I/ModuleListener: [1/63] 192.168.137.18:5555 BoschHalSensorsV2_1TargetTest PerInstance/SensorsHidlTest#SensorListValid/0_default PASSED
+02-02 02:53:36 D/ModuleListener: ModuleListener.testStarted(PerInstance/SensorsHidlTest#SensorListContainsBoschSensor/0_default) on 192.168.137.18:5555
+02-02 02:53:39 I/ModuleListener: [2/63] 192.168.137.18:5555 BoschHalSensorsV2_1TargetTest PerInstance/SensorsHidlTest#SensorListContainsBoschSensor/0_default PASSED
+02-02 02:53:39 D/ModuleListener: ModuleListener.testStarted(PerInstance/SensorsHidlTest#SetOperationMode/0_default) on 192.168.137.18:5555
+02-02 02:53:42 I/ModuleListener: [3/63] 192.168.137.18:5555 BoschHalSensorsV2_1TargetTest PerInstance/SensorsHidlTest#SetOperationMode/0_default PASSED
+02-02 02:53:42 D/ModuleListener: ModuleListener.testStarted(PerInstance/SensorsHidlTest#InjectSensorEventData/0_default) on 192.168.137.18:5555
+02-02 02:53:45 I/ModuleListener: [4/63] 192.168.137.18:5555 BoschHalSensorsV2_1TargetTest PerInstance/SensorsHidlTest#InjectSensorEventData/0_default PASSED
+02-02 02:53:45 D/ModuleListener: ModuleListener.testStarted(PerInstance/SensorsHidlTest#CallInitializeTwice/0_default) on 192.168.137.18:5555
+02-02 02:54:03 I/ModuleListener: [5/63] 192.168.137.18:5555 BoschHalSensorsV2_1TargetTest PerInstance/SensorsHidlTest#CallInitializeTwice/0_default PASSED
+02-02 02:54:03 D/ModuleListener: ModuleListener.testStarted(PerInstance/SensorsHidlTest#CleanupConnectionsOnInitialize/0_default) on 192.168.137.18:5555
+02-02 02:54:18 I/ModuleListener: [6/63] 192.168.137.18:5555 BoschHalSensorsV2_1TargetTest PerInstance/SensorsHidlTest#CleanupConnectionsOnInitialize/0_default PASSED
+02-02 02:54:18 D/ModuleListener: ModuleListener.testStarted(PerInstance/SensorsHidlTest#FlushSensor/0_default) on 192.168.137.18:5555
+02-02 02:54:25 I/ModuleListener: [7/63] 192.168.137.18:5555 BoschHalSensorsV2_1TargetTest PerInstance/SensorsHidlTest#FlushSensor/0_default PASSED
+02-02 02:54:25 D/ModuleListener: ModuleListener.testStarted(PerInstance/SensorsHidlTest#FlushOneShotSensor/0_default) on 192.168.137.18:5555
+02-02 02:54:28 I/ModuleListener: [8/63] 192.168.137.18:5555 BoschHalSensorsV2_1TargetTest PerInstance/SensorsHidlTest#FlushOneShotSensor/0_default PASSED
+02-02 02:54:28 D/ModuleListener: ModuleListener.testStarted(PerInstance/SensorsHidlTest#FlushInactiveSensor/0_default) on 192.168.137.18:5555
+02-02 02:54:32 I/ModuleListener: [9/63] 192.168.137.18:5555 BoschHalSensorsV2_1TargetTest PerInstance/SensorsHidlTest#FlushInactiveSensor/0_default PASSED
+02-02 02:54:32 D/ModuleListener: ModuleListener.testStarted(PerInstance/SensorsHidlTest#Batch/0_default) on 192.168.137.18:5555
+02-02 02:54:37 I/ModuleListener: [10/63] 192.168.137.18:5555 BoschHalSensorsV2_1TargetTest PerInstance/SensorsHidlTest#Batch/0_default PASSED
+02-02 02:54:37 D/ModuleListener: ModuleListener.testStarted(PerInstance/SensorsHidlTest#Activate/0_default) on 192.168.137.18:5555
+02-02 02:54:44 I/ModuleListener: [11/63] 192.168.137.18:5555 BoschHalSensorsV2_1TargetTest PerInstance/SensorsHidlTest#Activate/0_default PASSED
+02-02 02:54:44 D/ModuleListener: ModuleListener.testStarted(PerInstance/SensorsHidlTest#ConfigCheck/0_default) on 192.168.137.18:5555
+02-02 02:54:47 I/ModuleListener: [12/63] 192.168.137.18:5555 BoschHalSensorsV2_1TargetTest PerInstance/SensorsHidlTest#ConfigCheck/0_default PASSED
+02-02 02:54:47 D/ModuleListener: ModuleListener.testStarted(PerInstance/SensorsHidlTest#NoStaleEvents/0_default) on 192.168.137.18:5555
+02-02 02:54:55 I/ModuleListener: [13/63] 192.168.137.18:5555 BoschHalSensorsV2_1TargetTest PerInstance/SensorsHidlTest#NoStaleEvents/0_default PASSED
+02-02 02:54:55 D/ModuleListener: ModuleListener.testStarted(PerInstance/SensorsHidlTest#DirectChannelAshmem/0_default) on 192.168.137.18:5555
+02-02 02:55:02 I/ModuleListener: [14/63] 192.168.137.18:5555 BoschHalSensorsV2_1TargetTest PerInstance/SensorsHidlTest#DirectChannelAshmem/0_default PASSED
+02-02 02:55:02 D/ModuleListener: ModuleListener.testStarted(PerInstance/SensorsHidlTest#DirectChannelGralloc/0_default) on 192.168.137.18:5555
+02-02 02:55:05 I/ModuleListener: [15/63] 192.168.137.18:5555 BoschHalSensorsV2_1TargetTest PerInstance/SensorsHidlTest#DirectChannelGralloc/0_default PASSED
+02-02 02:55:05 D/ModuleListener: ModuleListener.testStarted(PerInstance/SensorsHidlTest#AccelerometerCheckSensorVector/0_default) on 192.168.137.18:5555
+02-02 02:55:09 I/ModuleListener: [16/63] 192.168.137.18:5555 BoschHalSensorsV2_1TargetTest PerInstance/SensorsHidlTest#AccelerometerCheckSensorVector/0_default PASSED
+02-02 02:55:09 D/ModuleListener: ModuleListener.testStarted(PerInstance/SensorsHidlTest#GyroscopeCheckSensorVector/0_default) on 192.168.137.18:5555
+02-02 02:55:12 I/ModuleListener: [17/63] 192.168.137.18:5555 BoschHalSensorsV2_1TargetTest PerInstance/SensorsHidlTest#GyroscopeCheckSensorVector/0_default PASSED
+02-02 02:55:12 D/ModuleListener: ModuleListener.testStarted(PerInstance/SensorsHidlTest#GravityCheckSensorVector/0_default) on 192.168.137.18:5555
+02-02 02:55:17 I/ModuleListener: [18/63] 192.168.137.18:5555 BoschHalSensorsV2_1TargetTest PerInstance/SensorsHidlTest#GravityCheckSensorVector/0_default PASSED
+02-02 02:55:17 D/ModuleListener: ModuleListener.testStarted(PerInstance/SensorsHidlTest#LinearAccelerationCheckSensorVector/0_default) on 192.168.137.18:5555
+02-02 02:55:22 I/ModuleListener: [19/63] 192.168.137.18:5555 BoschHalSensorsV2_1TargetTest PerInstance/SensorsHidlTest#LinearAccelerationCheckSensorVector/0_default PASSED
+02-02 02:55:22 D/ModuleListener: ModuleListener.testStarted(PerInstance/SensorsHidlTest#AccelerometerStreamingOperationSlow/0_default) on 192.168.137.18:5555
+02-02 02:55:30 I/ModuleListener: [20/63] 192.168.137.18:5555 BoschHalSensorsV2_1TargetTest PerInstance/SensorsHidlTest#AccelerometerStreamingOperationSlow/0_default PASSED
+02-02 02:55:30 D/ModuleListener: ModuleListener.testStarted(PerInstance/SensorsHidlTest#AccelerometerStreamingOperationNormal/0_default) on 192.168.137.18:5555
+02-02 02:55:39 I/ModuleListener: [21/63] 192.168.137.18:5555 BoschHalSensorsV2_1TargetTest PerInstance/SensorsHidlTest#AccelerometerStreamingOperationNormal/0_default PASSED
+02-02 02:55:39 D/ModuleListener: ModuleListener.testStarted(PerInstance/SensorsHidlTest#AccelerometerStreamingOperationFast/0_default) on 192.168.137.18:5555
+02-02 02:55:47 I/ModuleListener: [22/63] 192.168.137.18:5555 BoschHalSensorsV2_1TargetTest PerInstance/SensorsHidlTest#AccelerometerStreamingOperationFast/0_default PASSED
+02-02 02:55:47 D/ModuleListener: ModuleListener.testStarted(PerInstance/SensorsHidlTest#GyroscopeStreamingOperationSlow/0_default) on 192.168.137.18:5555
+02-02 02:55:55 I/ModuleListener: [23/63] 192.168.137.18:5555 BoschHalSensorsV2_1TargetTest PerInstance/SensorsHidlTest#GyroscopeStreamingOperationSlow/0_default PASSED
+02-02 02:55:55 D/ModuleListener: ModuleListener.testStarted(PerInstance/SensorsHidlTest#GyroscopeStreamingOperationNormal/0_default) on 192.168.137.18:5555
+02-02 02:56:04 I/ModuleListener: [24/63] 192.168.137.18:5555 BoschHalSensorsV2_1TargetTest PerInstance/SensorsHidlTest#GyroscopeStreamingOperationNormal/0_default PASSED
+02-02 02:56:04 D/ModuleListener: ModuleListener.testStarted(PerInstance/SensorsHidlTest#GyroscopeStreamingOperationFast/0_default) on 192.168.137.18:5555
+02-02 02:56:12 I/ModuleListener: [25/63] 192.168.137.18:5555 BoschHalSensorsV2_1TargetTest PerInstance/SensorsHidlTest#GyroscopeStreamingOperationFast/0_default PASSED
+02-02 02:56:12 D/ModuleListener: ModuleListener.testStarted(PerInstance/SensorsHidlTest#GravityStreamingOperationFast/0_default) on 192.168.137.18:5555
+02-02 02:56:21 I/ModuleListener: [26/63] 192.168.137.18:5555 BoschHalSensorsV2_1TargetTest PerInstance/SensorsHidlTest#GravityStreamingOperationFast/0_default PASSED
+02-02 02:56:21 D/ModuleListener: ModuleListener.testStarted(PerInstance/SensorsHidlTest#LinearAccelerationStreamingOperationFast/0_default) on 192.168.137.18:5555
+02-02 02:56:30 I/ModuleListener: [27/63] 192.168.137.18:5555 BoschHalSensorsV2_1TargetTest PerInstance/SensorsHidlTest#LinearAccelerationStreamingOperationFast/0_default PASSED
+02-02 02:56:30 D/ModuleListener: ModuleListener.testStarted(PerInstance/SensorsHidlTest#AccelerometerSamplingPeriodHotSwitchOperation/0_default) on 192.168.137.18:5555
+02-02 02:58:39 I/ModuleListener: [28/63] 192.168.137.18:5555 BoschHalSensorsV2_1TargetTest PerInstance/SensorsHidlTest#AccelerometerSamplingPeriodHotSwitchOperation/0_default PASSED
+02-02 02:58:39 D/ModuleListener: ModuleListener.testStarted(PerInstance/SensorsHidlTest#GyroscopeSamplingPeriodHotSwitchOperation/0_default) on 192.168.137.18:5555
+02-02 03:00:47 I/ModuleListener: [29/63] 192.168.137.18:5555 BoschHalSensorsV2_1TargetTest PerInstance/SensorsHidlTest#GyroscopeSamplingPeriodHotSwitchOperation/0_default PASSED
+02-02 03:00:47 D/ModuleListener: ModuleListener.testStarted(PerInstance/SensorsHidlTest#GravitySamplingPeriodHotSwitchOperation/0_default) on 192.168.137.18:5555
+02-02 03:00:57 I/ModuleListener: [30/63] 192.168.137.18:5555 BoschHalSensorsV2_1TargetTest PerInstance/SensorsHidlTest#GravitySamplingPeriodHotSwitchOperation/0_default PASSED
+02-02 03:00:57 D/ModuleListener: ModuleListener.testStarted(PerInstance/SensorsHidlTest#LinearAccelerationSamplingPeriodHotSwitchOperation/0_default) on 192.168.137.18:5555
+02-02 03:01:07 I/ModuleListener: [31/63] 192.168.137.18:5555 BoschHalSensorsV2_1TargetTest PerInstance/SensorsHidlTest#LinearAccelerationSamplingPeriodHotSwitchOperation/0_default PASSED
+02-02 03:01:07 D/ModuleListener: ModuleListener.testStarted(PerInstance/SensorsHidlTest#AccelerometerBatchingOperation/0_default) on 192.168.137.18:5555
+02-02 03:01:10 I/ModuleListener: [32/63] 192.168.137.18:5555 BoschHalSensorsV2_1TargetTest PerInstance/SensorsHidlTest#AccelerometerBatchingOperation/0_default PASSED
+02-02 03:01:10 D/ModuleListener: ModuleListener.testStarted(PerInstance/SensorsHidlTest#GyroscopeBatchingOperation/0_default) on 192.168.137.18:5555
+02-02 03:01:13 I/ModuleListener: [33/63] 192.168.137.18:5555 BoschHalSensorsV2_1TargetTest PerInstance/SensorsHidlTest#GyroscopeBatchingOperation/0_default PASSED
+02-02 03:01:13 D/ModuleListener: ModuleListener.testStarted(PerInstance/SensorsHidlTest#GravityBatchingOperation/0_default) on 192.168.137.18:5555
+02-02 03:01:16 I/ModuleListener: [34/63] 192.168.137.18:5555 BoschHalSensorsV2_1TargetTest PerInstance/SensorsHidlTest#GravityBatchingOperation/0_default PASSED
+02-02 03:01:16 D/ModuleListener: ModuleListener.testStarted(PerInstance/SensorsHidlTest#LinearAccelerationBatchingOperation/0_default) on 192.168.137.18:5555
+02-02 03:01:19 I/ModuleListener: [35/63] 192.168.137.18:5555 BoschHalSensorsV2_1TargetTest PerInstance/SensorsHidlTest#LinearAccelerationBatchingOperation/0_default PASSED
+02-02 03:01:19 D/ModuleListener: ModuleListener.testStarted(PerInstance/SensorsHidlTest#AccelerometerAshmemDirectReportOperationNormal/0_default) on 192.168.137.18:5555
+02-02 03:01:24 I/ModuleListener: [36/63] 192.168.137.18:5555 BoschHalSensorsV2_1TargetTest PerInstance/SensorsHidlTest#AccelerometerAshmemDirectReportOperationNormal/0_default PASSED
+02-02 03:01:24 D/ModuleListener: ModuleListener.testStarted(PerInstance/SensorsHidlTest#AccelerometerAshmemDirectReportOperationFast/0_default) on 192.168.137.18:5555
+02-02 03:01:27 I/ModuleListener: [37/63] 192.168.137.18:5555 BoschHalSensorsV2_1TargetTest PerInstance/SensorsHidlTest#AccelerometerAshmemDirectReportOperationFast/0_default PASSED
+02-02 03:01:27 D/ModuleListener: ModuleListener.testStarted(PerInstance/SensorsHidlTest#AccelerometerAshmemDirectReportOperationVeryFast/0_default) on 192.168.137.18:5555
+02-02 03:01:30 I/ModuleListener: [38/63] 192.168.137.18:5555 BoschHalSensorsV2_1TargetTest PerInstance/SensorsHidlTest#AccelerometerAshmemDirectReportOperationVeryFast/0_default PASSED
+02-02 03:01:30 D/ModuleListener: ModuleListener.testStarted(PerInstance/SensorsHidlTest#GyroscopeAshmemDirectReportOperationNormal/0_default) on 192.168.137.18:5555
+02-02 03:01:35 I/ModuleListener: [39/63] 192.168.137.18:5555 BoschHalSensorsV2_1TargetTest PerInstance/SensorsHidlTest#GyroscopeAshmemDirectReportOperationNormal/0_default PASSED
+02-02 03:01:35 D/ModuleListener: ModuleListener.testStarted(PerInstance/SensorsHidlTest#GyroscopeAshmemDirectReportOperationFast/0_default) on 192.168.137.18:5555
+02-02 03:01:38 I/ModuleListener: [40/63] 192.168.137.18:5555 BoschHalSensorsV2_1TargetTest PerInstance/SensorsHidlTest#GyroscopeAshmemDirectReportOperationFast/0_default PASSED
+02-02 03:01:38 D/ModuleListener: ModuleListener.testStarted(PerInstance/SensorsHidlTest#GyroscopeAshmemDirectReportOperationVeryFast/0_default) on 192.168.137.18:5555
+02-02 03:01:41 I/ModuleListener: [41/63] 192.168.137.18:5555 BoschHalSensorsV2_1TargetTest PerInstance/SensorsHidlTest#GyroscopeAshmemDirectReportOperationVeryFast/0_default PASSED
+02-02 03:01:41 D/ModuleListener: ModuleListener.testStarted(PerInstance/SensorsHidlTest#GravityAshmemDirectReportOperationNormal/0_default) on 192.168.137.18:5555
+02-02 03:01:47 I/ModuleListener: [42/63] 192.168.137.18:5555 BoschHalSensorsV2_1TargetTest PerInstance/SensorsHidlTest#GravityAshmemDirectReportOperationNormal/0_default PASSED
+02-02 03:01:47 D/ModuleListener: ModuleListener.testStarted(PerInstance/SensorsHidlTest#GravityAshmemDirectReportOperationFast/0_default) on 192.168.137.18:5555
+02-02 03:01:50 I/ModuleListener: [43/63] 192.168.137.18:5555 BoschHalSensorsV2_1TargetTest PerInstance/SensorsHidlTest#GravityAshmemDirectReportOperationFast/0_default PASSED
+02-02 03:01:50 D/ModuleListener: ModuleListener.testStarted(PerInstance/SensorsHidlTest#GravityAshmemDirectReportOperationVeryFast/0_default) on 192.168.137.18:5555
+02-02 03:01:53 I/ModuleListener: [44/63] 192.168.137.18:5555 BoschHalSensorsV2_1TargetTest PerInstance/SensorsHidlTest#GravityAshmemDirectReportOperationVeryFast/0_default PASSED
+02-02 03:01:53 D/ModuleListener: ModuleListener.testStarted(PerInstance/SensorsHidlTest#LinearAccelerationAshmemDirectReportOperationNormal/0_default) on 192.168.137.18:5555
+02-02 03:01:58 I/ModuleListener: [45/63] 192.168.137.18:5555 BoschHalSensorsV2_1TargetTest PerInstance/SensorsHidlTest#LinearAccelerationAshmemDirectReportOperationNormal/0_default PASSED
+02-02 03:01:58 D/ModuleListener: ModuleListener.testStarted(PerInstance/SensorsHidlTest#LinearAccelerationAshmemDirectReportOperationFast/0_default) on 192.168.137.18:5555
+02-02 03:02:01 I/ModuleListener: [46/63] 192.168.137.18:5555 BoschHalSensorsV2_1TargetTest PerInstance/SensorsHidlTest#LinearAccelerationAshmemDirectReportOperationFast/0_default PASSED
+02-02 03:02:01 D/ModuleListener: ModuleListener.testStarted(PerInstance/SensorsHidlTest#LinearAccelerationAshmemDirectReportOperationVeryFast/0_default) on 192.168.137.18:5555
+02-02 03:02:04 I/ModuleListener: [47/63] 192.168.137.18:5555 BoschHalSensorsV2_1TargetTest PerInstance/SensorsHidlTest#LinearAccelerationAshmemDirectReportOperationVeryFast/0_default PASSED
+02-02 03:02:04 D/ModuleListener: ModuleListener.testStarted(PerInstance/SensorsHidlTest#AccelerometerGrallocDirectReportOperationNormal/0_default) on 192.168.137.18:5555
+02-02 03:02:07 I/ModuleListener: [48/63] 192.168.137.18:5555 BoschHalSensorsV2_1TargetTest PerInstance/SensorsHidlTest#AccelerometerGrallocDirectReportOperationNormal/0_default PASSED
+02-02 03:02:07 D/ModuleListener: ModuleListener.testStarted(PerInstance/SensorsHidlTest#AccelerometerGrallocDirectReportOperationFast/0_default) on 192.168.137.18:5555
+02-02 03:02:10 I/ModuleListener: [49/63] 192.168.137.18:5555 BoschHalSensorsV2_1TargetTest PerInstance/SensorsHidlTest#AccelerometerGrallocDirectReportOperationFast/0_default PASSED
+02-02 03:02:10 D/ModuleListener: ModuleListener.testStarted(PerInstance/SensorsHidlTest#AccelerometerGrallocDirectReportOperationVeryFast/0_default) on 192.168.137.18:5555
+02-02 03:02:13 I/ModuleListener: [50/63] 192.168.137.18:5555 BoschHalSensorsV2_1TargetTest PerInstance/SensorsHidlTest#AccelerometerGrallocDirectReportOperationVeryFast/0_default PASSED
+02-02 03:02:13 D/ModuleListener: ModuleListener.testStarted(PerInstance/SensorsHidlTest#GyroscopeGrallocDirectReportOperationNormal/0_default) on 192.168.137.18:5555
+02-02 03:02:16 I/ModuleListener: [51/63] 192.168.137.18:5555 BoschHalSensorsV2_1TargetTest PerInstance/SensorsHidlTest#GyroscopeGrallocDirectReportOperationNormal/0_default PASSED
+02-02 03:02:16 D/ModuleListener: ModuleListener.testStarted(PerInstance/SensorsHidlTest#GyroscopeGrallocDirectReportOperationFast/0_default) on 192.168.137.18:5555
+02-02 03:02:19 I/ModuleListener: [52/63] 192.168.137.18:5555 BoschHalSensorsV2_1TargetTest PerInstance/SensorsHidlTest#GyroscopeGrallocDirectReportOperationFast/0_default PASSED
+02-02 03:02:19 D/ModuleListener: ModuleListener.testStarted(PerInstance/SensorsHidlTest#GyroscopeGrallocDirectReportOperationVeryFast/0_default) on 192.168.137.18:5555
+02-02 03:02:22 I/ModuleListener: [53/63] 192.168.137.18:5555 BoschHalSensorsV2_1TargetTest PerInstance/SensorsHidlTest#GyroscopeGrallocDirectReportOperationVeryFast/0_default PASSED
+02-02 03:02:22 D/ModuleListener: ModuleListener.testStarted(PerInstance/SensorsHidlTest#GravityGrallocDirectReportOperationNormal/0_default) on 192.168.137.18:5555
+02-02 03:02:25 I/ModuleListener: [54/63] 192.168.137.18:5555 BoschHalSensorsV2_1TargetTest PerInstance/SensorsHidlTest#GravityGrallocDirectReportOperationNormal/0_default PASSED
+02-02 03:02:25 D/ModuleListener: ModuleListener.testStarted(PerInstance/SensorsHidlTest#GravityGrallocDirectReportOperationFast/0_default) on 192.168.137.18:5555
+02-02 03:02:28 I/ModuleListener: [55/63] 192.168.137.18:5555 BoschHalSensorsV2_1TargetTest PerInstance/SensorsHidlTest#GravityGrallocDirectReportOperationFast/0_default PASSED
+02-02 03:02:28 D/ModuleListener: ModuleListener.testStarted(PerInstance/SensorsHidlTest#GravityGrallocDirectReportOperationVeryFast/0_default) on 192.168.137.18:5555
+02-02 03:02:31 I/ModuleListener: [56/63] 192.168.137.18:5555 BoschHalSensorsV2_1TargetTest PerInstance/SensorsHidlTest#GravityGrallocDirectReportOperationVeryFast/0_default PASSED
+02-02 03:02:31 D/ModuleListener: ModuleListener.testStarted(PerInstance/SensorsHidlTest#LinearAccelerationGrallocDirectReportOperationNormal/0_default) on 192.168.137.18:5555
+02-02 03:02:34 I/ModuleListener: [57/63] 192.168.137.18:5555 BoschHalSensorsV2_1TargetTest PerInstance/SensorsHidlTest#LinearAccelerationGrallocDirectReportOperationNormal/0_default PASSED
+02-02 03:02:34 D/ModuleListener: ModuleListener.testStarted(PerInstance/SensorsHidlTest#LinearAccelerationGrallocDirectReportOperationFast/0_default) on 192.168.137.18:5555
+02-02 03:02:37 I/ModuleListener: [58/63] 192.168.137.18:5555 BoschHalSensorsV2_1TargetTest PerInstance/SensorsHidlTest#LinearAccelerationGrallocDirectReportOperationFast/0_default PASSED
+02-02 03:02:37 D/ModuleListener: ModuleListener.testStarted(PerInstance/SensorsHidlTest#LinearAccelerationGrallocDirectReportOperationVeryFast/0_default) on 192.168.137.18:5555
+02-02 03:02:40 I/ModuleListener: [59/63] 192.168.137.18:5555 BoschHalSensorsV2_1TargetTest PerInstance/SensorsHidlTest#LinearAccelerationGrallocDirectReportOperationVeryFast/0_default PASSED
+02-02 03:02:40 D/ModuleListener: ModuleListener.testStarted(PerInstance/SensorsHidlTest#ConfigureDirectChannelWithInvalidHandle/0_default) on 192.168.137.18:5555
+02-02 03:02:43 I/ModuleListener: [60/63] 192.168.137.18:5555 BoschHalSensorsV2_1TargetTest PerInstance/SensorsHidlTest#ConfigureDirectChannelWithInvalidHandle/0_default PASSED
+02-02 03:02:43 D/ModuleListener: ModuleListener.testStarted(PerInstance/SensorsHidlTest#CleanupDirectConnectionOnInitialize/0_default) on 192.168.137.18:5555
+02-02 03:02:50 I/ModuleListener: [61/63] 192.168.137.18:5555 BoschHalSensorsV2_1TargetTest PerInstance/SensorsHidlTest#CleanupDirectConnectionOnInitialize/0_default PASSED
+02-02 03:02:50 D/ModuleListener: ModuleListener.testStarted(PerInstance/SensorsHidlTest#SensorListDoesntContainInvalidType/0_default) on 192.168.137.18:5555
+02-02 03:02:53 I/ModuleListener: [62/63] 192.168.137.18:5555 BoschHalSensorsV2_1TargetTest PerInstance/SensorsHidlTest#SensorListDoesntContainInvalidType/0_default PASSED
+02-02 03:02:53 D/ModuleListener: ModuleListener.testStarted(PerInstance/SensorsHidlTest#FlushNonexistentSensor/0_default) on 192.168.137.18:5555
+02-02 03:02:57 I/ModuleListener: [63/63] 192.168.137.18:5555 BoschHalSensorsV2_1TargetTest PerInstance/SensorsHidlTest#FlushNonexistentSensor/0_default PASSED
+02-02 03:02:57 D/ModuleListener: ModuleListener.testRunEnded(564371) on 192.168.137.18:5555
+02-02 03:02:57 I/NativeDeviceStateMonitor: Device 192.168.137.18:5555 is already ONLINE
+02-02 03:02:57 I/NativeDeviceStateMonitor: Waiting 359999 ms for device 192.168.137.18:5555 boot complete
+02-02 03:03:25 D/BackgroundDeviceAction: Sleep for 5000 before starting logcat for 192.168.137.18:5555.
+02-02 03:03:26 I/DeviceStateMonitor: Waiting 331068 ms for device 192.168.137.18:5555 package manager
+02-02 03:03:26 I/NativeDeviceStateMonitor: Waiting 330977 ms for device 192.168.137.18:5555 external store
+02-02 03:03:27 I/NativeDevice: adb unroot on device 192.168.137.18:5555
+02-02 03:03:27 D/RunUtil: Running command [adb, -s, 192.168.137.18:5555, unroot] with timeout: 2m 0s
+02-02 03:03:27 I/NativeDeviceStateMonitor: Waiting for device 192.168.137.18:5555 to be in NOT_AVAILABLE mode for '5s'; it is currently in ONLINE mode...
+02-02 03:03:30 D/BackgroundDeviceAction: Waiting for device 192.168.137.18:5555 online before starting.
+02-02 03:03:30 D/BackgroundDeviceAction: Device 192.168.137.18:5555 now online.
+02-02 03:03:30 D/BackgroundDeviceAction: Starting logcat for 192.168.137.18:5555.
+02-02 03:03:32 W/NativeDevice: Did not detect device 192.168.137.18:5555 becoming unavailable after unroot
+02-02 03:03:32 D/RunUtil: Running command [adb, connect, 192.168.137.18:5555] with timeout: 20s
+02-02 03:03:32 D/RemoteAndroidDevice: adb connect output: status: SUCCESS stdout: already connected to 192.168.137.18:5555
+
+02-02 03:03:32 D/RunUtil: Running command [adb, connect, 192.168.137.18:5555] with timeout: 20s
+02-02 03:03:32 D/RemoteAndroidDevice: adb connect confirmed:
+stdout: already connected to 192.168.137.18:5555
+
+
+02-02 03:03:32 I/RemoteAndroidDevice: Waiting 120000 ms for adb connection.
+02-02 03:03:32 D/RunUtil: Running command [adb, connect, 192.168.137.18:5555] with timeout: 20s
+02-02 03:03:32 D/RemoteAndroidDevice: adb connect confirmed:
+stdout: already connected to 192.168.137.18:5555
+
+
+02-02 03:03:32 D/RemoteAndroidDevice: Adb connection confirmed.
+02-02 03:03:32 I/NativeDeviceStateMonitor: Device 192.168.137.18:5555 is already ONLINE
+02-02 03:03:32 I/NativeDeviceStateMonitor: Device 192.168.137.18:5555 is already ONLINE
+02-02 03:03:32 I/NativeDeviceStateMonitor: Waiting 360000 ms for device 192.168.137.18:5555 boot complete
+02-02 03:03:32 I/DeviceStateMonitor: Waiting 359928 ms for device 192.168.137.18:5555 package manager
+02-02 03:03:32 I/NativeDeviceStateMonitor: Waiting 359830 ms for device 192.168.137.18:5555 external store
+02-02 03:03:33 D/RunUtil: Running command [adb, -s, 192.168.137.18:5555, shell, getprop, ro.build.version.sdk] with timeout: 45s
+02-02 03:03:33 D/RunUtil: Running command [adb, -s, 192.168.137.18:5555, shell, getprop, persist.sys.boot.reason.history] with timeout: 45s
+02-02 03:03:33 W/NativeDevice: There is no reboot history since 1738155177000
+02-02 03:03:33 E/ModuleDefinition: Detected a soft-restart after module arm64-v8a BoschHalSensorsV2_1TargetTest
+02-02 03:03:33 I/ConsoleReporter: [192.168.137.18:5555] Starting arm64-v8a BoschHalSensorsV2_1TargetTest with 63 tests
+02-02 03:03:33 I/ConsoleReporter: [1/63 arm64-v8a BoschHalSensorsV2_1TargetTest 192.168.137.18:5555] PerInstance/SensorsHidlTest#SensorListValid/0_default pass
+02-02 03:03:33 I/ConsoleReporter: [2/63 arm64-v8a BoschHalSensorsV2_1TargetTest 192.168.137.18:5555] PerInstance/SensorsHidlTest#SensorListContainsBoschSensor/0_default pass
+02-02 03:03:33 I/ConsoleReporter: [3/63 arm64-v8a BoschHalSensorsV2_1TargetTest 192.168.137.18:5555] PerInstance/SensorsHidlTest#SetOperationMode/0_default pass
+02-02 03:03:33 I/ConsoleReporter: [4/63 arm64-v8a BoschHalSensorsV2_1TargetTest 192.168.137.18:5555] PerInstance/SensorsHidlTest#InjectSensorEventData/0_default pass
+02-02 03:03:33 I/ConsoleReporter: [5/63 arm64-v8a BoschHalSensorsV2_1TargetTest 192.168.137.18:5555] PerInstance/SensorsHidlTest#CallInitializeTwice/0_default pass
+02-02 03:03:33 I/ConsoleReporter: [6/63 arm64-v8a BoschHalSensorsV2_1TargetTest 192.168.137.18:5555] PerInstance/SensorsHidlTest#CleanupConnectionsOnInitialize/0_default pass
+02-02 03:03:33 I/ConsoleReporter: [7/63 arm64-v8a BoschHalSensorsV2_1TargetTest 192.168.137.18:5555] PerInstance/SensorsHidlTest#FlushSensor/0_default pass
+02-02 03:03:33 I/ConsoleReporter: [8/63 arm64-v8a BoschHalSensorsV2_1TargetTest 192.168.137.18:5555] PerInstance/SensorsHidlTest#FlushOneShotSensor/0_default pass
+02-02 03:03:33 I/ConsoleReporter: [9/63 arm64-v8a BoschHalSensorsV2_1TargetTest 192.168.137.18:5555] PerInstance/SensorsHidlTest#FlushInactiveSensor/0_default pass
+02-02 03:03:33 I/ConsoleReporter: [10/63 arm64-v8a BoschHalSensorsV2_1TargetTest 192.168.137.18:5555] PerInstance/SensorsHidlTest#Batch/0_default pass
+02-02 03:03:33 I/ConsoleReporter: [11/63 arm64-v8a BoschHalSensorsV2_1TargetTest 192.168.137.18:5555] PerInstance/SensorsHidlTest#Activate/0_default pass
+02-02 03:03:33 I/ConsoleReporter: [12/63 arm64-v8a BoschHalSensorsV2_1TargetTest 192.168.137.18:5555] PerInstance/SensorsHidlTest#ConfigCheck/0_default pass
+02-02 03:03:33 I/ConsoleReporter: [13/63 arm64-v8a BoschHalSensorsV2_1TargetTest 192.168.137.18:5555] PerInstance/SensorsHidlTest#NoStaleEvents/0_default pass
+02-02 03:03:33 I/ConsoleReporter: [14/63 arm64-v8a BoschHalSensorsV2_1TargetTest 192.168.137.18:5555] PerInstance/SensorsHidlTest#DirectChannelAshmem/0_default pass
+02-02 03:03:33 I/ConsoleReporter: [15/63 arm64-v8a BoschHalSensorsV2_1TargetTest 192.168.137.18:5555] PerInstance/SensorsHidlTest#DirectChannelGralloc/0_default pass
+02-02 03:03:33 I/ConsoleReporter: [16/63 arm64-v8a BoschHalSensorsV2_1TargetTest 192.168.137.18:5555] PerInstance/SensorsHidlTest#AccelerometerCheckSensorVector/0_default pass
+02-02 03:03:33 I/ConsoleReporter: [17/63 arm64-v8a BoschHalSensorsV2_1TargetTest 192.168.137.18:5555] PerInstance/SensorsHidlTest#GyroscopeCheckSensorVector/0_default pass
+02-02 03:03:33 I/ConsoleReporter: [18/63 arm64-v8a BoschHalSensorsV2_1TargetTest 192.168.137.18:5555] PerInstance/SensorsHidlTest#GravityCheckSensorVector/0_default pass
+02-02 03:03:33 I/ConsoleReporter: [19/63 arm64-v8a BoschHalSensorsV2_1TargetTest 192.168.137.18:5555] PerInstance/SensorsHidlTest#LinearAccelerationCheckSensorVector/0_default pass
+02-02 03:03:33 I/ConsoleReporter: [20/63 arm64-v8a BoschHalSensorsV2_1TargetTest 192.168.137.18:5555] PerInstance/SensorsHidlTest#AccelerometerStreamingOperationSlow/0_default pass
+02-02 03:03:33 I/ConsoleReporter: [21/63 arm64-v8a BoschHalSensorsV2_1TargetTest 192.168.137.18:5555] PerInstance/SensorsHidlTest#AccelerometerStreamingOperationNormal/0_default pass
+02-02 03:03:33 I/ConsoleReporter: [22/63 arm64-v8a BoschHalSensorsV2_1TargetTest 192.168.137.18:5555] PerInstance/SensorsHidlTest#AccelerometerStreamingOperationFast/0_default pass
+02-02 03:03:33 I/ConsoleReporter: [23/63 arm64-v8a BoschHalSensorsV2_1TargetTest 192.168.137.18:5555] PerInstance/SensorsHidlTest#GyroscopeStreamingOperationSlow/0_default pass
+02-02 03:03:33 I/ConsoleReporter: [24/63 arm64-v8a BoschHalSensorsV2_1TargetTest 192.168.137.18:5555] PerInstance/SensorsHidlTest#GyroscopeStreamingOperationNormal/0_default pass
+02-02 03:03:33 I/ConsoleReporter: [25/63 arm64-v8a BoschHalSensorsV2_1TargetTest 192.168.137.18:5555] PerInstance/SensorsHidlTest#GyroscopeStreamingOperationFast/0_default pass
+02-02 03:03:33 I/ConsoleReporter: [26/63 arm64-v8a BoschHalSensorsV2_1TargetTest 192.168.137.18:5555] PerInstance/SensorsHidlTest#GravityStreamingOperationFast/0_default pass
+02-02 03:03:33 I/ConsoleReporter: [27/63 arm64-v8a BoschHalSensorsV2_1TargetTest 192.168.137.18:5555] PerInstance/SensorsHidlTest#LinearAccelerationStreamingOperationFast/0_default pass
+02-02 03:03:33 I/ConsoleReporter: [28/63 arm64-v8a BoschHalSensorsV2_1TargetTest 192.168.137.18:5555] PerInstance/SensorsHidlTest#AccelerometerSamplingPeriodHotSwitchOperation/0_default pass
+02-02 03:03:33 I/ConsoleReporter: [29/63 arm64-v8a BoschHalSensorsV2_1TargetTest 192.168.137.18:5555] PerInstance/SensorsHidlTest#GyroscopeSamplingPeriodHotSwitchOperation/0_default pass
+02-02 03:03:33 I/ConsoleReporter: [30/63 arm64-v8a BoschHalSensorsV2_1TargetTest 192.168.137.18:5555] PerInstance/SensorsHidlTest#GravitySamplingPeriodHotSwitchOperation/0_default pass
+02-02 03:03:33 I/ConsoleReporter: [31/63 arm64-v8a BoschHalSensorsV2_1TargetTest 192.168.137.18:5555] PerInstance/SensorsHidlTest#LinearAccelerationSamplingPeriodHotSwitchOperation/0_default pass
+02-02 03:03:33 I/ConsoleReporter: [32/63 arm64-v8a BoschHalSensorsV2_1TargetTest 192.168.137.18:5555] PerInstance/SensorsHidlTest#AccelerometerBatchingOperation/0_default pass
+02-02 03:03:33 I/ConsoleReporter: [33/63 arm64-v8a BoschHalSensorsV2_1TargetTest 192.168.137.18:5555] PerInstance/SensorsHidlTest#GyroscopeBatchingOperation/0_default pass
+02-02 03:03:33 I/ConsoleReporter: [34/63 arm64-v8a BoschHalSensorsV2_1TargetTest 192.168.137.18:5555] PerInstance/SensorsHidlTest#GravityBatchingOperation/0_default pass
+02-02 03:03:33 I/ConsoleReporter: [35/63 arm64-v8a BoschHalSensorsV2_1TargetTest 192.168.137.18:5555] PerInstance/SensorsHidlTest#LinearAccelerationBatchingOperation/0_default pass
+02-02 03:03:33 I/ConsoleReporter: [36/63 arm64-v8a BoschHalSensorsV2_1TargetTest 192.168.137.18:5555] PerInstance/SensorsHidlTest#AccelerometerAshmemDirectReportOperationNormal/0_default pass
+02-02 03:03:33 I/ConsoleReporter: [37/63 arm64-v8a BoschHalSensorsV2_1TargetTest 192.168.137.18:5555] PerInstance/SensorsHidlTest#AccelerometerAshmemDirectReportOperationFast/0_default pass
+02-02 03:03:33 I/ConsoleReporter: [38/63 arm64-v8a BoschHalSensorsV2_1TargetTest 192.168.137.18:5555] PerInstance/SensorsHidlTest#AccelerometerAshmemDirectReportOperationVeryFast/0_default pass
+02-02 03:03:33 I/ConsoleReporter: [39/63 arm64-v8a BoschHalSensorsV2_1TargetTest 192.168.137.18:5555] PerInstance/SensorsHidlTest#GyroscopeAshmemDirectReportOperationNormal/0_default pass
+02-02 03:03:33 I/ConsoleReporter: [40/63 arm64-v8a BoschHalSensorsV2_1TargetTest 192.168.137.18:5555] PerInstance/SensorsHidlTest#GyroscopeAshmemDirectReportOperationFast/0_default pass
+02-02 03:03:33 I/ConsoleReporter: [41/63 arm64-v8a BoschHalSensorsV2_1TargetTest 192.168.137.18:5555] PerInstance/SensorsHidlTest#GyroscopeAshmemDirectReportOperationVeryFast/0_default pass
+02-02 03:03:33 I/ConsoleReporter: [42/63 arm64-v8a BoschHalSensorsV2_1TargetTest 192.168.137.18:5555] PerInstance/SensorsHidlTest#GravityAshmemDirectReportOperationNormal/0_default pass
+02-02 03:03:33 I/ConsoleReporter: [43/63 arm64-v8a BoschHalSensorsV2_1TargetTest 192.168.137.18:5555] PerInstance/SensorsHidlTest#GravityAshmemDirectReportOperationFast/0_default pass
+02-02 03:03:33 I/ConsoleReporter: [44/63 arm64-v8a BoschHalSensorsV2_1TargetTest 192.168.137.18:5555] PerInstance/SensorsHidlTest#GravityAshmemDirectReportOperationVeryFast/0_default pass
+02-02 03:03:33 I/ConsoleReporter: [45/63 arm64-v8a BoschHalSensorsV2_1TargetTest 192.168.137.18:5555] PerInstance/SensorsHidlTest#LinearAccelerationAshmemDirectReportOperationNormal/0_default pass
+02-02 03:03:33 I/ConsoleReporter: [46/63 arm64-v8a BoschHalSensorsV2_1TargetTest 192.168.137.18:5555] PerInstance/SensorsHidlTest#LinearAccelerationAshmemDirectReportOperationFast/0_default pass
+02-02 03:03:33 I/ConsoleReporter: [47/63 arm64-v8a BoschHalSensorsV2_1TargetTest 192.168.137.18:5555] PerInstance/SensorsHidlTest#LinearAccelerationAshmemDirectReportOperationVeryFast/0_default pass
+02-02 03:03:33 I/ConsoleReporter: [48/63 arm64-v8a BoschHalSensorsV2_1TargetTest 192.168.137.18:5555] PerInstance/SensorsHidlTest#AccelerometerGrallocDirectReportOperationNormal/0_default pass
+02-02 03:03:33 I/ConsoleReporter: [49/63 arm64-v8a BoschHalSensorsV2_1TargetTest 192.168.137.18:5555] PerInstance/SensorsHidlTest#AccelerometerGrallocDirectReportOperationFast/0_default pass
+02-02 03:03:33 I/ConsoleReporter: [50/63 arm64-v8a BoschHalSensorsV2_1TargetTest 192.168.137.18:5555] PerInstance/SensorsHidlTest#AccelerometerGrallocDirectReportOperationVeryFast/0_default pass
+02-02 03:03:33 I/ConsoleReporter: [51/63 arm64-v8a BoschHalSensorsV2_1TargetTest 192.168.137.18:5555] PerInstance/SensorsHidlTest#GyroscopeGrallocDirectReportOperationNormal/0_default pass
+02-02 03:03:33 I/ConsoleReporter: [52/63 arm64-v8a BoschHalSensorsV2_1TargetTest 192.168.137.18:5555] PerInstance/SensorsHidlTest#GyroscopeGrallocDirectReportOperationFast/0_default pass
+02-02 03:03:33 I/ConsoleReporter: [53/63 arm64-v8a BoschHalSensorsV2_1TargetTest 192.168.137.18:5555] PerInstance/SensorsHidlTest#GyroscopeGrallocDirectReportOperationVeryFast/0_default pass
+02-02 03:03:33 I/ConsoleReporter: [54/63 arm64-v8a BoschHalSensorsV2_1TargetTest 192.168.137.18:5555] PerInstance/SensorsHidlTest#GravityGrallocDirectReportOperationNormal/0_default pass
+02-02 03:03:33 I/ConsoleReporter: [55/63 arm64-v8a BoschHalSensorsV2_1TargetTest 192.168.137.18:5555] PerInstance/SensorsHidlTest#GravityGrallocDirectReportOperationFast/0_default pass
+02-02 03:03:33 I/ConsoleReporter: [56/63 arm64-v8a BoschHalSensorsV2_1TargetTest 192.168.137.18:5555] PerInstance/SensorsHidlTest#GravityGrallocDirectReportOperationVeryFast/0_default pass
+02-02 03:03:33 I/ConsoleReporter: [57/63 arm64-v8a BoschHalSensorsV2_1TargetTest 192.168.137.18:5555] PerInstance/SensorsHidlTest#LinearAccelerationGrallocDirectReportOperationNormal/0_default pass
+02-02 03:03:33 I/ConsoleReporter: [58/63 arm64-v8a BoschHalSensorsV2_1TargetTest 192.168.137.18:5555] PerInstance/SensorsHidlTest#LinearAccelerationGrallocDirectReportOperationFast/0_default pass
+02-02 03:03:33 I/ConsoleReporter: [59/63 arm64-v8a BoschHalSensorsV2_1TargetTest 192.168.137.18:5555] PerInstance/SensorsHidlTest#LinearAccelerationGrallocDirectReportOperationVeryFast/0_default pass
+02-02 03:03:33 I/ConsoleReporter: [60/63 arm64-v8a BoschHalSensorsV2_1TargetTest 192.168.137.18:5555] PerInstance/SensorsHidlTest#ConfigureDirectChannelWithInvalidHandle/0_default pass
+02-02 03:03:33 I/ConsoleReporter: [61/63 arm64-v8a BoschHalSensorsV2_1TargetTest 192.168.137.18:5555] PerInstance/SensorsHidlTest#CleanupDirectConnectionOnInitialize/0_default pass
+02-02 03:03:33 I/ConsoleReporter: [62/63 arm64-v8a BoschHalSensorsV2_1TargetTest 192.168.137.18:5555] PerInstance/SensorsHidlTest#SensorListDoesntContainInvalidType/0_default pass
+02-02 03:03:33 I/ConsoleReporter: [63/63 arm64-v8a BoschHalSensorsV2_1TargetTest 192.168.137.18:5555] PerInstance/SensorsHidlTest#FlushNonexistentSensor/0_default pass
+02-02 03:03:33 I/ConsoleReporter: [192.168.137.18:5555] arm64-v8a BoschHalSensorsV2_1TargetTest completed in 10m 1s. 63 passed, 0 failed, 0 not executed
+02-02 03:03:33 I/ITestSuite: Running system status checker after module execution: arm64-v8a BoschHalSensorsV2_1TargetTest
+02-02 03:03:33 D/FileUtil: Creating temp file at /home/eae1rt/jenkins/RT-C-008FN/SMI230-rpi4-arm64-spi-android/workspace/Bosch-MEMS-Android-HAL_PR-34/build/SMI230/out_hal/multihal/2.X/host/linux-x86/vts/android-vts/results/2025.02.02_02.52.08/proto with prefix "tmp-proto" suffix ""
+02-02 03:03:33 D/PrettyPrintDelimiter: 
+=============================
+===== TEST PHASE ENDING =====
+=============================
+02-02 03:03:34 D/LogFileSaver: Log data for device_logcat_test_192.168.137.18:5555 is already compressed, skipping compression
+02-02 03:03:34 D/FileUtil: Creating temp file at /home/eae1rt/jenkins/RT-C-008FN/SMI230-rpi4-arm64-spi-android/workspace/Bosch-MEMS-Android-HAL_PR-34/build/SMI230/out_hal/multihal/2.X/host/linux-x86/vts/android-vts/logs/2025.02.02_02.52.08/inv_6433659267982690116 with prefix "device_logcat_test_192.168.137.18:5555_" suffix ".txt"
+02-02 03:03:34 I/LogFileSaver: Saved log file /home/eae1rt/jenkins/RT-C-008FN/SMI230-rpi4-arm64-spi-android/workspace/Bosch-MEMS-Android-HAL_PR-34/build/SMI230/out_hal/multihal/2.X/host/linux-x86/vts/android-vts/logs/2025.02.02_02.52.08/inv_6433659267982690116/device_logcat_test_192.168.137.18:5555_3052733914211034964.txt. [size=5966894, elapsed=10ms]
+02-02 03:03:34 D/CertificationSuiteResultReporter: Saved logs for device_logcat_test_192.168.137.18:5555 in /home/eae1rt/jenkins/RT-C-008FN/SMI230-rpi4-arm64-spi-android/workspace/Bosch-MEMS-Android-HAL_PR-34/build/SMI230/out_hal/multihal/2.X/host/linux-x86/vts/android-vts/logs/2025.02.02_02.52.08/inv_6433659267982690116/device_logcat_test_192.168.137.18:5555_3052733914211034964.txt
+02-02 03:03:34 D/LogFileSaver: Log data for device_logcat_test_192.168.137.18:5555 is already compressed, skipping compression
+02-02 03:03:34 D/FileUtil: Creating temp file at /tmp/eng.gus1st.20250127.092412/vts-bosch/inv_17489611042386109199/inv_11011877675835258028 with prefix "device_logcat_test_192.168.137.18:5555_" suffix ".txt"
+02-02 03:03:34 I/LogFileSaver: Saved log file /tmp/eng.gus1st.20250127.092412/vts-bosch/inv_17489611042386109199/inv_11011877675835258028/device_logcat_test_192.168.137.18:5555_9131808028914899319.txt. [size=5966894, elapsed=7ms]
+02-02 03:03:34 I/CommandInterrupter: Interrupt blocked
+02-02 03:03:34 D/FileUtil: Creating temp file at /home/eae1rt/jenkins/RT-C-008FN/SMI230-rpi4-arm64-spi-android/workspace/Bosch-MEMS-Android-HAL_PR-34/build/SMI230/out_hal/multihal/2.X/host/linux-x86/vts/android-vts/logs/2025.02.02_02.52.08/inv_6433659267982690116 with prefix "executeShellCommandLog_192.168.137.18:5555_" suffix ".txt.gz"
+02-02 03:03:34 I/LogFileSaver: Saved gzip log file /home/eae1rt/jenkins/RT-C-008FN/SMI230-rpi4-arm64-spi-android/workspace/Bosch-MEMS-Android-HAL_PR-34/build/SMI230/out_hal/multihal/2.X/host/linux-x86/vts/android-vts/logs/2025.02.02_02.52.08/inv_6433659267982690116/executeShellCommandLog_192.168.137.18:5555_3829321611448530525.txt.gz. [size=10, elapsed=9ms]
+02-02 03:03:34 D/CertificationSuiteResultReporter: Saved logs for executeShellCommandLog_192.168.137.18:5555 in /home/eae1rt/jenkins/RT-C-008FN/SMI230-rpi4-arm64-spi-android/workspace/Bosch-MEMS-Android-HAL_PR-34/build/SMI230/out_hal/multihal/2.X/host/linux-x86/vts/android-vts/logs/2025.02.02_02.52.08/inv_6433659267982690116/executeShellCommandLog_192.168.137.18:5555_3829321611448530525.txt.gz
+02-02 03:03:34 D/FileUtil: Creating temp file at /tmp/eng.gus1st.20250127.092412/vts-bosch/inv_17489611042386109199/inv_11011877675835258028 with prefix "executeShellCommandLog_192.168.137.18:5555_" suffix ".txt.gz"
+02-02 03:03:34 I/LogFileSaver: Saved gzip log file /tmp/eng.gus1st.20250127.092412/vts-bosch/inv_17489611042386109199/inv_11011877675835258028/executeShellCommandLog_192.168.137.18:5555_3398525259414777645.txt.gz. [size=10, elapsed=3ms]
+02-02 03:03:34 D/TestInvocation: Checking that devices are online.
+02-02 03:03:34 I/NativeDeviceStateMonitor: Device 192.168.137.18:5555 is already ONLINE
+02-02 03:03:34 I/NativeDeviceStateMonitor: Waiting 359999 ms for device 192.168.137.18:5555 boot complete
+02-02 03:03:34 I/DeviceStateMonitor: Waiting 359921 ms for device 192.168.137.18:5555 package manager
+02-02 03:03:34 I/NativeDeviceStateMonitor: Waiting 359829 ms for device 192.168.137.18:5555 external store
+02-02 03:03:34 D/InvocationExecution: starting tearDown 'com.android.compatibility.common.tradefed.targetprep.DeviceInfoCollector@7cd2161f' on device: '192.168.137.18:5555'
+02-02 03:03:34 D/InvocationExecution: done with tearDown 'com.android.compatibility.common.tradefed.targetprep.DeviceInfoCollector@7cd2161f' on device: '192.168.137.18:5555' in 13 ms
+02-02 03:03:34 D/InvocationExecution: starting tearDown 'com.android.compatibility.common.tradefed.targetprep.VtsDeviceInfoCollector@7bfafdf9' on device: '192.168.137.18:5555'
+02-02 03:03:34 D/InvocationExecution: done with tearDown 'com.android.compatibility.common.tradefed.targetprep.VtsDeviceInfoCollector@7bfafdf9' on device: '192.168.137.18:5555' in 2 ms
+02-02 03:03:34 D/TestDevice: Uninstalling android.tradefed.contentprovider with extra args 
+02-02 03:03:34 D/RunUtil: Running command [id, -u, eae1rt] with timeout: 1m 0s
+02-02 03:03:34 D/RunUtil: Running command [tail, -c, 10MB, /tmp/adb.946866742.log] with timeout: 1m 0s
+02-02 03:03:34 D/LogFileSaver: Log data for host_adb_log is already compressed, skipping compression
+02-02 03:03:34 D/FileUtil: Creating temp file at /home/eae1rt/jenkins/RT-C-008FN/SMI230-rpi4-arm64-spi-android/workspace/Bosch-MEMS-Android-HAL_PR-34/build/SMI230/out_hal/multihal/2.X/host/linux-x86/vts/android-vts/logs/2025.02.02_02.52.08/inv_6433659267982690116 with prefix "host_adb_log_" suffix ".txt"
+02-02 03:03:34 I/LogFileSaver: Saved log file /home/eae1rt/jenkins/RT-C-008FN/SMI230-rpi4-arm64-spi-android/workspace/Bosch-MEMS-Android-HAL_PR-34/build/SMI230/out_hal/multihal/2.X/host/linux-x86/vts/android-vts/logs/2025.02.02_02.52.08/inv_6433659267982690116/host_adb_log_9365128701662747658.txt. [size=9740, elapsed=1ms]
+02-02 03:03:34 D/CertificationSuiteResultReporter: Saved logs for host_adb_log in /home/eae1rt/jenkins/RT-C-008FN/SMI230-rpi4-arm64-spi-android/workspace/Bosch-MEMS-Android-HAL_PR-34/build/SMI230/out_hal/multihal/2.X/host/linux-x86/vts/android-vts/logs/2025.02.02_02.52.08/inv_6433659267982690116/host_adb_log_9365128701662747658.txt
+02-02 03:03:34 D/LogFileSaver: Log data for host_adb_log is already compressed, skipping compression
+02-02 03:03:34 D/FileUtil: Creating temp file at /tmp/eng.gus1st.20250127.092412/vts-bosch/inv_17489611042386109199/inv_11011877675835258028 with prefix "host_adb_log_" suffix ".txt"
+02-02 03:03:34 I/LogFileSaver: Saved log file /tmp/eng.gus1st.20250127.092412/vts-bosch/inv_17489611042386109199/inv_11011877675835258028/host_adb_log_8644644405179899060.txt. [size=9740, elapsed=0ms]
+02-02 03:03:34 D/LogFileSaver: Log data for device_logcat_teardown_192.168.137.18:5555 is already compressed, skipping compression
+02-02 03:03:34 D/FileUtil: Creating temp file at /home/eae1rt/jenkins/RT-C-008FN/SMI230-rpi4-arm64-spi-android/workspace/Bosch-MEMS-Android-HAL_PR-34/build/SMI230/out_hal/multihal/2.X/host/linux-x86/vts/android-vts/logs/2025.02.02_02.52.08/inv_6433659267982690116 with prefix "device_logcat_teardown_192.168.137.18:5555_" suffix ".txt"
+02-02 03:03:34 I/LogFileSaver: Saved log file /home/eae1rt/jenkins/RT-C-008FN/SMI230-rpi4-arm64-spi-android/workspace/Bosch-MEMS-Android-HAL_PR-34/build/SMI230/out_hal/multihal/2.X/host/linux-x86/vts/android-vts/logs/2025.02.02_02.52.08/inv_6433659267982690116/device_logcat_teardown_192.168.137.18:5555_2869331602765062023.txt. [size=2166, elapsed=3ms]
+02-02 03:03:34 D/CertificationSuiteResultReporter: Saved logs for device_logcat_teardown_192.168.137.18:5555 in /home/eae1rt/jenkins/RT-C-008FN/SMI230-rpi4-arm64-spi-android/workspace/Bosch-MEMS-Android-HAL_PR-34/build/SMI230/out_hal/multihal/2.X/host/linux-x86/vts/android-vts/logs/2025.02.02_02.52.08/inv_6433659267982690116/device_logcat_teardown_192.168.137.18:5555_2869331602765062023.txt
+02-02 03:03:34 D/LogFileSaver: Log data for device_logcat_teardown_192.168.137.18:5555 is already compressed, skipping compression
+02-02 03:03:34 D/FileUtil: Creating temp file at /tmp/eng.gus1st.20250127.092412/vts-bosch/inv_17489611042386109199/inv_11011877675835258028 with prefix "device_logcat_teardown_192.168.137.18:5555_" suffix ".txt"
+02-02 03:03:34 I/LogFileSaver: Saved log file /tmp/eng.gus1st.20250127.092412/vts-bosch/inv_17489611042386109199/inv_11011877675835258028/device_logcat_teardown_192.168.137.18:5555_501298881275026765.txt. [size=2166, elapsed=2ms]
+02-02 03:03:34 I/TestInvocation: Done stopping logcat for 192.168.137.18:5555
+02-02 03:03:34 D/BackgroundDeviceAction: com.android.ddmlib.TimeoutException while running logcat on 192.168.137.18:5555. May see duplicated content in log.
+02-02 03:03:34 D/BackgroundDeviceAction: Waiting for device 192.168.137.18:5555 online before starting.
+02-02 03:03:34 D/CommandScheduler: TestDeviceState for releasing '192.168.137.18:5555(class com.android.tradefed.device.RemoteAndroidDevice)' is 'ONLINE'
+02-02 03:03:34 I/NativeDeviceStateMonitor: Waiting 30000 ms for device 192.168.137.18:5555 shell to be responsive
+02-02 03:03:35 I/NativeDeviceStateMonitor: shell ready. id output: uid=2000(shell) gid=2000(shell) groups=2000(shell),1004(input),1007(log),1011(adb),1015(sdcard_rw),1028(sdcard_r),1078(ext_data_rw),1079(ext_obb_rw),3001(net_bt_admin),3002(net_bt),3003(inet),3006(net_bw_stats),3009(readproc),3011(uhid),3012(readtracefs) context=u:r:shell:s0
+
+02-02 03:03:35 D/CommandScheduler: Release map of the devices: {com.android.tradefed.device.RemoteAndroidDevice@61b12021=AVAILABLE}
+02-02 03:03:35 W/NativeDevice: Attempting to stop logcat when not capturing for 192.168.137.18:5555

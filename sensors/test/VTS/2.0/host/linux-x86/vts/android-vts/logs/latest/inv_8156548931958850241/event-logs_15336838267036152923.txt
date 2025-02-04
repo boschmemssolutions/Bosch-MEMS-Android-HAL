@@ -1,0 +1,101 @@
+[invocation started]
+[    log: tradefed-expanded-config | path: /tmp/eng.gus1st.20250127.092412/vts-bosch/inv_1433381651368296665/inv_3673794744632688690/tradefed-expanded-config_2331972410829740833.xml]
+[    log: InputDeviceInfo.deviceinfo.json | path: /tmp/eng.gus1st.20250127.092412/vts-bosch/inv_1433381651368296665/inv_3673794744632688690/InputDeviceInfo.deviceinfo.json_1710647450516528195.txt.gz]
+[    log: CpuDeviceInfo.deviceinfo.json | path: /tmp/eng.gus1st.20250127.092412/vts-bosch/inv_1433381651368296665/inv_3673794744632688690/CpuDeviceInfo.deviceinfo.json_7336759360007594031.txt.gz]
+[    log: ScreenDeviceInfo.deviceinfo.json | path: /tmp/eng.gus1st.20250127.092412/vts-bosch/inv_1433381651368296665/inv_3673794744632688690/ScreenDeviceInfo.deviceinfo.json_433133931717602983.txt.gz]
+[    log: SensorDeviceInfo.deviceinfo.json | path: /tmp/eng.gus1st.20250127.092412/vts-bosch/inv_1433381651368296665/inv_3673794744632688690/SensorDeviceInfo.deviceinfo.json_13021364763189244892.txt.gz]
+[    log: ClientIdDeviceInfo.deviceinfo.json | path: /tmp/eng.gus1st.20250127.092412/vts-bosch/inv_1433381651368296665/inv_3673794744632688690/ClientIdDeviceInfo.deviceinfo.json_376837073991647088.txt.gz]
+[    log: MediaDrmDeviceInfo.deviceinfo.json | path: /tmp/eng.gus1st.20250127.092412/vts-bosch/inv_1433381651368296665/inv_3673794744632688690/MediaDrmDeviceInfo.deviceinfo.json_9452101255888411874.txt.gz]
+[    log: UserDeviceInfo.deviceinfo.json | path: /tmp/eng.gus1st.20250127.092412/vts-bosch/inv_1433381651368296665/inv_3673794744632688690/UserDeviceInfo.deviceinfo.json_5918267593262003644.txt.gz]
+[    log: framework_compatibility_matrix.xml | path: /tmp/eng.gus1st.20250127.092412/vts-bosch/inv_1433381651368296665/inv_3673794744632688690/framework_compatibility_matrix.xml_13454865551805603039.txt.gz]
+[    log: HapticsDeviceInfo.deviceinfo.json | path: /tmp/eng.gus1st.20250127.092412/vts-bosch/inv_1433381651368296665/inv_3673794744632688690/HapticsDeviceInfo.deviceinfo.json_2171672514225336885.txt.gz]
+[    log: MemoryDeviceInfo.deviceinfo.json | path: /tmp/eng.gus1st.20250127.092412/vts-bosch/inv_1433381651368296665/inv_3673794744632688690/MemoryDeviceInfo.deviceinfo.json_6242774219662946737.txt.gz]
+[    log: DefaultAppDeviceInfo.deviceinfo.json | path: /tmp/eng.gus1st.20250127.092412/vts-bosch/inv_1433381651368296665/inv_3673794744632688690/DefaultAppDeviceInfo.deviceinfo.json_957801115874983883.txt.gz]
+[    log: ConfigurationDeviceInfo.deviceinfo.json | path: /tmp/eng.gus1st.20250127.092412/vts-bosch/inv_1433381651368296665/inv_3673794744632688690/ConfigurationDeviceInfo.deviceinfo.json_6239114780686597240.txt.gz]
+[    log: GenericDeviceInfo.deviceinfo.json | path: /tmp/eng.gus1st.20250127.092412/vts-bosch/inv_1433381651368296665/inv_3673794744632688690/GenericDeviceInfo.deviceinfo.json_3641457121356911477.txt.gz]
+[    log: VintfDeviceInfo.deviceinfo.json | path: /tmp/eng.gus1st.20250127.092412/vts-bosch/inv_1433381651368296665/inv_3673794744632688690/VintfDeviceInfo.deviceinfo.json_17914277591244294109.txt.gz]
+[    log: MediaDeviceInfo.deviceinfo.json | path: /tmp/eng.gus1st.20250127.092412/vts-bosch/inv_1433381651368296665/inv_3673794744632688690/MediaDeviceInfo.deviceinfo.json_14243061868369896631.txt.gz]
+[    log: VulkanDeviceInfo.deviceinfo.json | path: /tmp/eng.gus1st.20250127.092412/vts-bosch/inv_1433381651368296665/inv_3673794744632688690/VulkanDeviceInfo.deviceinfo.json_10492641988702294023.txt.gz]
+[    log: CameraDeviceInfo.deviceinfo.json | path: /tmp/eng.gus1st.20250127.092412/vts-bosch/inv_1433381651368296665/inv_3673794744632688690/CameraDeviceInfo.deviceinfo.json_8717838259364763334.txt.gz]
+[    log: GraphicsDeviceInfo.deviceinfo.json | path: /tmp/eng.gus1st.20250127.092412/vts-bosch/inv_1433381651368296665/inv_3673794744632688690/GraphicsDeviceInfo.deviceinfo.json_11808029301069393210.txt.gz]
+[    log: framework_manifest.xml | path: /tmp/eng.gus1st.20250127.092412/vts-bosch/inv_1433381651368296665/inv_3673794744632688690/framework_manifest.xml_667163297705573152.txt.gz]
+[    log: LocaleDeviceInfo.deviceinfo.json | path: /tmp/eng.gus1st.20250127.092412/vts-bosch/inv_1433381651368296665/inv_3673794744632688690/LocaleDeviceInfo.deviceinfo.json_14801782199678637259.txt.gz]
+[    log: FeatureDeviceInfo.deviceinfo.json | path: /tmp/eng.gus1st.20250127.092412/vts-bosch/inv_1433381651368296665/inv_3673794744632688690/FeatureDeviceInfo.deviceinfo.json_11654880110703856097.txt.gz]
+[    log: PackageDeviceInfo.deviceinfo.json | path: /tmp/eng.gus1st.20250127.092412/vts-bosch/inv_1433381651368296665/inv_3673794744632688690/PackageDeviceInfo.deviceinfo.json_816074105480952545.txt.gz]
+[    log: device_manifest.xml | path: /tmp/eng.gus1st.20250127.092412/vts-bosch/inv_1433381651368296665/inv_3673794744632688690/device_manifest.xml_6622060034415540982.txt.gz]
+[    log: AppStandbyDeviceInfo.deviceinfo.json | path: /tmp/eng.gus1st.20250127.092412/vts-bosch/inv_1433381651368296665/inv_3673794744632688690/AppStandbyDeviceInfo.deviceinfo.json_3701460237235416586.txt.gz]
+[    log: device_compatibility_matrix.xml | path: /tmp/eng.gus1st.20250127.092412/vts-bosch/inv_1433381651368296665/inv_3673794744632688690/device_compatibility_matrix.xml_16646722141010569239.txt.gz]
+[    log: StorageDeviceInfo.deviceinfo.json | path: /tmp/eng.gus1st.20250127.092412/vts-bosch/inv_1433381651368296665/inv_3673794744632688690/StorageDeviceInfo.deviceinfo.json_14033210468209374758.txt.gz]
+[    log: device_logcat_setup_192.168.137.18:5555 | path: /tmp/eng.gus1st.20250127.092412/vts-bosch/inv_1433381651368296665/inv_3673794744632688690/device_logcat_setup_192.168.137.18:5555_3253614885812033209.txt]
+  [module arm64-v8a BoschHalSensorsV2_0TargetTest started]
+    [run arm64-v8a BoschHalSensorsV2_0TargetTest (testCount: 63,attempt: 0) started]
+      - test: PerInstance/SensorsHidlTest#SensorListValid/0_default (status=PASSED)
+      - test: PerInstance/SensorsHidlTest#SensorListContainsBoschSensor/0_default (status=PASSED)
+      - test: PerInstance/SensorsHidlTest#SetOperationMode/0_default (status=PASSED)
+      - test: PerInstance/SensorsHidlTest#InjectSensorEventData/0_default (status=PASSED)
+      - test: PerInstance/SensorsHidlTest#CallInitializeTwice/0_default (status=PASSED)
+      - test: PerInstance/SensorsHidlTest#CleanupConnectionsOnInitialize/0_default (status=PASSED)
+      - test: PerInstance/SensorsHidlTest#FlushSensor/0_default (status=PASSED)
+      - test: PerInstance/SensorsHidlTest#FlushOneShotSensor/0_default (status=PASSED)
+      - test: PerInstance/SensorsHidlTest#FlushInactiveSensor/0_default (status=PASSED)
+      - test: PerInstance/SensorsHidlTest#Batch/0_default (status=PASSED)
+      - test: PerInstance/SensorsHidlTest#Activate/0_default (status=PASSED)
+      - test: PerInstance/SensorsHidlTest#ConfigCheck/0_default (status=PASSED)
+      - test: PerInstance/SensorsHidlTest#NoStaleEvents/0_default (status=PASSED)
+      - test: PerInstance/SensorsHidlTest#DirectChannelAshmem/0_default (status=PASSED)
+      - test: PerInstance/SensorsHidlTest#DirectChannelGralloc/0_default (status=PASSED)
+      - test: PerInstance/SensorsHidlTest#AccelerometerCheckSensorVector/0_default (status=PASSED)
+      - test: PerInstance/SensorsHidlTest#GyroscopeCheckSensorVector/0_default (status=PASSED)
+      - test: PerInstance/SensorsHidlTest#GravityCheckSensorVector/0_default (status=PASSED)
+      - test: PerInstance/SensorsHidlTest#LinearAccelerationCheckSensorVector/0_default (status=PASSED)
+      - test: PerInstance/SensorsHidlTest#AccelerometerStreamingOperationSlow/0_default (status=PASSED)
+      - test: PerInstance/SensorsHidlTest#AccelerometerStreamingOperationNormal/0_default (status=PASSED)
+      - test: PerInstance/SensorsHidlTest#AccelerometerStreamingOperationFast/0_default (status=PASSED)
+      - test: PerInstance/SensorsHidlTest#GyroscopeStreamingOperationSlow/0_default (status=PASSED)
+      - test: PerInstance/SensorsHidlTest#GyroscopeStreamingOperationNormal/0_default (status=PASSED)
+      - test: PerInstance/SensorsHidlTest#GyroscopeStreamingOperationFast/0_default (status=PASSED)
+      - test: PerInstance/SensorsHidlTest#GravityStreamingOperationFast/0_default (status=PASSED)
+      - test: PerInstance/SensorsHidlTest#LinearAccelerationStreamingOperationFast/0_default (status=PASSED)
+      - test: PerInstance/SensorsHidlTest#AccelerometerSamplingPeriodHotSwitchOperation/0_default (status=PASSED)
+      - test: PerInstance/SensorsHidlTest#GyroscopeSamplingPeriodHotSwitchOperation/0_default (status=PASSED)
+      - test: PerInstance/SensorsHidlTest#GravitySamplingPeriodHotSwitchOperation/0_default (status=PASSED)
+      - test: PerInstance/SensorsHidlTest#LinearAccelerationSamplingPeriodHotSwitchOperation/0_default (status=PASSED)
+      - test: PerInstance/SensorsHidlTest#AccelerometerBatchingOperation/0_default (status=PASSED)
+      - test: PerInstance/SensorsHidlTest#GyroscopeBatchingOperation/0_default (status=PASSED)
+      - test: PerInstance/SensorsHidlTest#GravityBatchingOperation/0_default (status=PASSED)
+      - test: PerInstance/SensorsHidlTest#LinearAccelerationBatchingOperation/0_default (status=PASSED)
+      - test: PerInstance/SensorsHidlTest#AccelerometerAshmemDirectReportOperationNormal/0_default (status=PASSED)
+      - test: PerInstance/SensorsHidlTest#AccelerometerAshmemDirectReportOperationFast/0_default (status=PASSED)
+      - test: PerInstance/SensorsHidlTest#AccelerometerAshmemDirectReportOperationVeryFast/0_default (status=PASSED)
+      - test: PerInstance/SensorsHidlTest#GyroscopeAshmemDirectReportOperationNormal/0_default (status=PASSED)
+      - test: PerInstance/SensorsHidlTest#GyroscopeAshmemDirectReportOperationFast/0_default (status=PASSED)
+      - test: PerInstance/SensorsHidlTest#GyroscopeAshmemDirectReportOperationVeryFast/0_default (status=PASSED)
+      - test: PerInstance/SensorsHidlTest#GravityAshmemDirectReportOperationNormal/0_default (status=PASSED)
+      - test: PerInstance/SensorsHidlTest#GravityAshmemDirectReportOperationFast/0_default (status=PASSED)
+      - test: PerInstance/SensorsHidlTest#GravityAshmemDirectReportOperationVeryFast/0_default (status=PASSED)
+      - test: PerInstance/SensorsHidlTest#LinearAccelerationAshmemDirectReportOperationNormal/0_default (status=PASSED)
+      - test: PerInstance/SensorsHidlTest#LinearAccelerationAshmemDirectReportOperationFast/0_default (status=PASSED)
+      - test: PerInstance/SensorsHidlTest#LinearAccelerationAshmemDirectReportOperationVeryFast/0_default (status=PASSED)
+      - test: PerInstance/SensorsHidlTest#AccelerometerGrallocDirectReportOperationNormal/0_default (status=PASSED)
+      - test: PerInstance/SensorsHidlTest#AccelerometerGrallocDirectReportOperationFast/0_default (status=PASSED)
+      - test: PerInstance/SensorsHidlTest#AccelerometerGrallocDirectReportOperationVeryFast/0_default (status=PASSED)
+      - test: PerInstance/SensorsHidlTest#GyroscopeGrallocDirectReportOperationNormal/0_default (status=PASSED)
+      - test: PerInstance/SensorsHidlTest#GyroscopeGrallocDirectReportOperationFast/0_default (status=PASSED)
+      - test: PerInstance/SensorsHidlTest#GyroscopeGrallocDirectReportOperationVeryFast/0_default (status=PASSED)
+      - test: PerInstance/SensorsHidlTest#GravityGrallocDirectReportOperationNormal/0_default (status=PASSED)
+      - test: PerInstance/SensorsHidlTest#GravityGrallocDirectReportOperationFast/0_default (status=PASSED)
+      - test: PerInstance/SensorsHidlTest#GravityGrallocDirectReportOperationVeryFast/0_default (status=PASSED)
+      - test: PerInstance/SensorsHidlTest#LinearAccelerationGrallocDirectReportOperationNormal/0_default (status=PASSED)
+      - test: PerInstance/SensorsHidlTest#LinearAccelerationGrallocDirectReportOperationFast/0_default (status=PASSED)
+      - test: PerInstance/SensorsHidlTest#LinearAccelerationGrallocDirectReportOperationVeryFast/0_default (status=PASSED)
+      - test: PerInstance/SensorsHidlTest#ConfigureDirectChannelWithInvalidHandle/0_default (status=PASSED)
+      - test: PerInstance/SensorsHidlTest#CleanupDirectConnectionOnInitialize/0_default (status=PASSED)
+      - test: PerInstance/SensorsHidlTest#SensorListDoesntContainInvalidType/0_default (status=PASSED)
+      - test: PerInstance/SensorsHidlTest#FlushNonexistentSensor/0_default (status=PASSED)
+    [run ended]
+  [module ended]
+[    log: device_logcat_test_192.168.137.18:5555 | path: /tmp/eng.gus1st.20250127.092412/vts-bosch/inv_1433381651368296665/inv_3673794744632688690/device_logcat_test_192.168.137.18:5555_5131779738712201530.txt]
+[    log: executeShellCommandLog_192.168.137.18:5555 | path: /tmp/eng.gus1st.20250127.092412/vts-bosch/inv_1433381651368296665/inv_3673794744632688690/executeShellCommandLog_192.168.137.18:5555_6988804987586667577.txt.gz]
+[    log: host_adb_log | path: /tmp/eng.gus1st.20250127.092412/vts-bosch/inv_1433381651368296665/inv_3673794744632688690/host_adb_log_13022646247311261242.txt]
+[    log: device_logcat_teardown_192.168.137.18:5555 | path: /tmp/eng.gus1st.20250127.092412/vts-bosch/inv_1433381651368296665/inv_3673794744632688690/device_logcat_teardown_192.168.137.18:5555_2361439464475654477.txt]
+[    log: host_log | path: /tmp/eng.gus1st.20250127.092412/vts-bosch/inv_1433381651368296665/inv_3673794744632688690/host_log_11578721646899394297.txt]

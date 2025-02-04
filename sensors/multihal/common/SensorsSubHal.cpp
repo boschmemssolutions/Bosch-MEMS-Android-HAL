@@ -150,7 +150,7 @@ void ISensorsSubHalBase::AddSensors() {
         sensorInfo.flags |= V1_0::SensorFlagBits::ADDITIONAL_INFO;
         sensorInfo.flags |= V1_0::SensorFlagBits::DIRECT_CHANNEL_ASHMEM;
         sensorInfo.flags |=
-          (static_cast<int32_t>(RateLevel::FAST) << static_cast<uint8_t>(V1_0::SensorFlagShift::DIRECT_REPORT));
+          (static_cast<int32_t>(RateLevel::NORMAL) << static_cast<uint8_t>(V1_0::SensorFlagShift::DIRECT_REPORT));
         break;
       case bosch::sensors::SensorReportingMode::ONE_SHOT:
         sensorInfo.flags |= V1_0::SensorFlagBits::ONE_SHOT_MODE;
@@ -200,7 +200,7 @@ Return<void> ISensorsSubHalBase::registerDirectChannel(const SharedMemInfo& mem,
   std::lock_guard<std::mutex> lock(mChannelMutex);
 
   if (mem.type != V1_0::SharedMemType::ASHMEM) {
-    _hidl_cb(Result::INVALID_OPERATION, -1);
+    _hidl_cb(Result::BAD_VALUE, -1);
     return Void();
   }
 
@@ -269,7 +269,7 @@ Return<void> ISensorsSubHalBase::configDirectReport(int32_t sensorHandle, int32_
         sensorIt->second->stopDirectChannel(channelHandle);
       }
     }
-    _hidl_cb(Result::OK, -1);
+    _hidl_cb(Result::OK, 0);
     return Void();
   }
 

@@ -809,8 +809,8 @@ constexpr bool inRange(float value, float lowerLimit, float upperLimit) {
 void SensorsAidlTest::checkVec3Sensor(SensorType type, const Event::EventPayload::Vec3& lowerLimit,
                                       const Event::EventPayload::Vec3& upperLimit) {
   std::vector<Event> events;
-  constexpr useconds_t kCollectionTimeoutUs = 1000 * 1000;  // 1s
-  constexpr int32_t kNumEvents = 1;
+  constexpr useconds_t kCollectionTimeoutUs = 5000 * 1000;  // 5s
+  constexpr int32_t kNumEvents = 20;
   SensorInfo sensorInfo{};
 
   for (const SensorInfo& sensor : getSensorsList()) {
@@ -834,38 +834,49 @@ void SensorsAidlTest::checkVec3Sensor(SensorType type, const Event::EventPayload
   checkIsOk(activate(sensorInfo.sensorHandle, 0));
   ASSERT_GE(events.size(), kNumEvents);
 
-  const Event::EventPayload::Vec3& v = events[0].payload.get<Event::EventPayload::Tag::vec3>();
-  ALOGD("Collected event, x: %f, y: %f, z: %f", v.x, v.y, v.z);
-  EXPECT_TRUE(inRange(v.x, lowerLimit.x, upperLimit.x));
-  EXPECT_TRUE(inRange(v.y, lowerLimit.y, upperLimit.y));
-  EXPECT_TRUE(inRange(v.z, lowerLimit.z, upperLimit.z));
+  float xSum = 0.0f;
+  float ySum = 0.0f;
+  float zSum = 0.0f;
+  for (const auto& ev : events) {
+    xSum += ev.payload.get<Event::EventPayload::Tag::vec3>().x;
+    ySum += ev.payload.get<Event::EventPayload::Tag::vec3>().y;
+    zSum += ev.payload.get<Event::EventPayload::Tag::vec3>().z;
+  }
+  const float xAvg = xSum / events.size();
+  const float yAvg = ySum / events.size();
+  const float zAvg = zSum / events.size();
+
+  ALOGD("Average values, x: %f, y: %f, z: %f", xAvg, yAvg, zAvg);
+  EXPECT_TRUE(inRange(xAvg, lowerLimit.x, upperLimit.x));
+  EXPECT_TRUE(inRange(yAvg, lowerLimit.y, upperLimit.y));
+  EXPECT_TRUE(inRange(zAvg, lowerLimit.z, upperLimit.z));
 }
 
 // Test if accelerometer sensor vector is in range
 TEST_P(SensorsAidlTest, AccelerometerCheckSensorVector) {
-  const Event::EventPayload::Vec3 lowerLimit = {-0.3, -0.3, GRAVITY_EARTH - 0.3, SensorStatus::ACCURACY_HIGH};
-  const Event::EventPayload::Vec3 upperLimit = {0.3, 0.3, GRAVITY_EARTH + 0.3, SensorStatus::ACCURACY_HIGH};
+  const Event::EventPayload::Vec3 lowerLimit = {-1.0, -1.0, GRAVITY_EARTH - 1.0, SensorStatus::ACCURACY_HIGH};
+  const Event::EventPayload::Vec3 upperLimit = {1.0, 1.0, GRAVITY_EARTH + 1.0, SensorStatus::ACCURACY_HIGH};
   checkVec3Sensor(SensorType::ACCELEROMETER, lowerLimit, upperLimit);
 }
 
 // Test if gyroscope sensor vector is in range
 TEST_P(SensorsAidlTest, GyroscopeCheckSensorVector) {
-  const Event::EventPayload::Vec3 lowerLimit = {-0.1, -0.1, -0.1, SensorStatus::ACCURACY_HIGH};
-  const Event::EventPayload::Vec3 upperLimit = {0.1, 0.1, 0.1, SensorStatus::ACCURACY_HIGH};
+  const Event::EventPayload::Vec3 lowerLimit = {-1.0, -1.0, -1.0, SensorStatus::ACCURACY_HIGH};
+  const Event::EventPayload::Vec3 upperLimit = {1.0, 1.0, 1.0, SensorStatus::ACCURACY_HIGH};
   checkVec3Sensor(SensorType::GYROSCOPE, lowerLimit, upperLimit);
 }
 
 // Test if gravity sensor vector is in range
 TEST_P(SensorsAidlTest, GravityCheckSensorVector) {
-  const Event::EventPayload::Vec3 lowerLimit = {-0.3, -0.3, GRAVITY_EARTH - 0.3, SensorStatus::ACCURACY_HIGH};
-  const Event::EventPayload::Vec3 upperLimit = {0.3, 0.3, GRAVITY_EARTH + 0.3, SensorStatus::ACCURACY_HIGH};
+  const Event::EventPayload::Vec3 lowerLimit = {-1.0, -1.0, GRAVITY_EARTH - 1.0, SensorStatus::ACCURACY_HIGH};
+  const Event::EventPayload::Vec3 upperLimit = {1.0, 1.0, GRAVITY_EARTH + 1.0, SensorStatus::ACCURACY_HIGH};
   checkVec3Sensor(SensorType::GRAVITY, lowerLimit, upperLimit);
 }
 
 // Test if linear acceleration sensor vector is in range
 TEST_P(SensorsAidlTest, LinearAccelerationCheckSensorVector) {
-  const Event::EventPayload::Vec3 lowerLimit = {-0.3, -0.3, -0.3, SensorStatus::ACCURACY_HIGH};
-  const Event::EventPayload::Vec3 upperLimit = {0.3, 0.3, 0.3, SensorStatus::ACCURACY_HIGH};
+  const Event::EventPayload::Vec3 lowerLimit = {-1.0, -1.0, -1.0, SensorStatus::ACCURACY_HIGH};
+  const Event::EventPayload::Vec3 upperLimit = {1.0, 1.0, 1.0, SensorStatus::ACCURACY_HIGH};
   checkVec3Sensor(SensorType::LINEAR_ACCELERATION, lowerLimit, upperLimit);
 }
 

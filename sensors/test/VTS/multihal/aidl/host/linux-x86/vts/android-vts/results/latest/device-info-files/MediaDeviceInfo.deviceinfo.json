@@ -1,0 +1,2843 @@
+{
+  "media_codec_info": [
+    {
+      "name": "c2.android.aac.decoder",
+      "canonical": "c2.android.aac.decoder",
+      "encoder": false,
+      "alias": false,
+      "software": true,
+      "hardware": false,
+      "vendor": false,
+      "supported_type": [
+        {
+          "type": "audio/mp4a-latm",
+          "codec_profile_level": [
+            {
+              "level": 0,
+              "profile": 2
+            },
+            {
+              "level": 0,
+              "profile": 5
+            },
+            {
+              "level": 0,
+              "profile": 29
+            },
+            {
+              "level": 0,
+              "profile": 23
+            },
+            {
+              "level": 0,
+              "profile": 39
+            },
+            {
+              "level": 0,
+              "profile": 20
+            },
+            {
+              "level": 0,
+              "profile": 42
+            }
+          ],
+          "supported_secure_playback": false
+        }
+      ]
+    },
+    {
+      "name": "OMX.google.aac.decoder",
+      "canonical": "c2.android.aac.decoder",
+      "encoder": false,
+      "alias": true,
+      "software": true,
+      "hardware": false,
+      "vendor": false,
+      "supported_type": [
+        {
+          "type": "audio/mp4a-latm",
+          "codec_profile_level": [
+            {
+              "level": 0,
+              "profile": 2
+            },
+            {
+              "level": 0,
+              "profile": 5
+            },
+            {
+              "level": 0,
+              "profile": 29
+            },
+            {
+              "level": 0,
+              "profile": 23
+            },
+            {
+              "level": 0,
+              "profile": 39
+            },
+            {
+              "level": 0,
+              "profile": 20
+            },
+            {
+              "level": 0,
+              "profile": 42
+            }
+          ],
+          "supported_secure_playback": false
+        }
+      ]
+    },
+    {
+      "name": "c2.android.aac.encoder",
+      "canonical": "c2.android.aac.encoder",
+      "encoder": true,
+      "alias": false,
+      "software": true,
+      "hardware": false,
+      "vendor": false,
+      "supported_type": [
+        {
+          "type": "audio/mp4a-latm",
+          "codec_profile_level": [
+            {
+              "level": 0,
+              "profile": 2
+            },
+            {
+              "level": 0,
+              "profile": 5
+            },
+            {
+              "level": 0,
+              "profile": 29
+            },
+            {
+              "level": 0,
+              "profile": 23
+            },
+            {
+              "level": 0,
+              "profile": 39
+            }
+          ],
+          "supported_secure_playback": false
+        }
+      ]
+    },
+    {
+      "name": "OMX.google.aac.encoder",
+      "canonical": "c2.android.aac.encoder",
+      "encoder": true,
+      "alias": true,
+      "software": true,
+      "hardware": false,
+      "vendor": false,
+      "supported_type": [
+        {
+          "type": "audio/mp4a-latm",
+          "codec_profile_level": [
+            {
+              "level": 0,
+              "profile": 2
+            },
+            {
+              "level": 0,
+              "profile": 5
+            },
+            {
+              "level": 0,
+              "profile": 29
+            },
+            {
+              "level": 0,
+              "profile": 23
+            },
+            {
+              "level": 0,
+              "profile": 39
+            }
+          ],
+          "supported_secure_playback": false
+        }
+      ]
+    },
+    {
+      "name": "c2.android.amrnb.decoder",
+      "canonical": "c2.android.amrnb.decoder",
+      "encoder": false,
+      "alias": false,
+      "software": true,
+      "hardware": false,
+      "vendor": false,
+      "supported_type": [
+        {
+          "type": "audio/3gpp",
+          "supported_secure_playback": false
+        }
+      ]
+    },
+    {
+      "name": "OMX.google.amrnb.decoder",
+      "canonical": "c2.android.amrnb.decoder",
+      "encoder": false,
+      "alias": true,
+      "software": true,
+      "hardware": false,
+      "vendor": false,
+      "supported_type": [
+        {
+          "type": "audio/3gpp",
+          "supported_secure_playback": false
+        }
+      ]
+    },
+    {
+      "name": "c2.android.amrnb.encoder",
+      "canonical": "c2.android.amrnb.encoder",
+      "encoder": true,
+      "alias": false,
+      "software": true,
+      "hardware": false,
+      "vendor": false,
+      "supported_type": [
+        {
+          "type": "audio/3gpp",
+          "supported_secure_playback": false
+        }
+      ]
+    },
+    {
+      "name": "OMX.google.amrnb.encoder",
+      "canonical": "c2.android.amrnb.encoder",
+      "encoder": true,
+      "alias": true,
+      "software": true,
+      "hardware": false,
+      "vendor": false,
+      "supported_type": [
+        {
+          "type": "audio/3gpp",
+          "supported_secure_playback": false
+        }
+      ]
+    },
+    {
+      "name": "c2.android.amrwb.decoder",
+      "canonical": "c2.android.amrwb.decoder",
+      "encoder": false,
+      "alias": false,
+      "software": true,
+      "hardware": false,
+      "vendor": false,
+      "supported_type": [
+        {
+          "type": "audio/amr-wb",
+          "supported_secure_playback": false
+        }
+      ]
+    },
+    {
+      "name": "OMX.google.amrwb.decoder",
+      "canonical": "c2.android.amrwb.decoder",
+      "encoder": false,
+      "alias": true,
+      "software": true,
+      "hardware": false,
+      "vendor": false,
+      "supported_type": [
+        {
+          "type": "audio/amr-wb",
+          "supported_secure_playback": false
+        }
+      ]
+    },
+    {
+      "name": "c2.android.amrwb.encoder",
+      "canonical": "c2.android.amrwb.encoder",
+      "encoder": true,
+      "alias": false,
+      "software": true,
+      "hardware": false,
+      "vendor": false,
+      "supported_type": [
+        {
+          "type": "audio/amr-wb",
+          "supported_secure_playback": false
+        }
+      ]
+    },
+    {
+      "name": "OMX.google.amrwb.encoder",
+      "canonical": "c2.android.amrwb.encoder",
+      "encoder": true,
+      "alias": true,
+      "software": true,
+      "hardware": false,
+      "vendor": false,
+      "supported_type": [
+        {
+          "type": "audio/amr-wb",
+          "supported_secure_playback": false
+        }
+      ]
+    },
+    {
+      "name": "c2.android.flac.decoder",
+      "canonical": "c2.android.flac.decoder",
+      "encoder": false,
+      "alias": false,
+      "software": true,
+      "hardware": false,
+      "vendor": false,
+      "supported_type": [
+        {
+          "type": "audio/flac",
+          "supported_secure_playback": false
+        }
+      ]
+    },
+    {
+      "name": "OMX.google.flac.decoder",
+      "canonical": "c2.android.flac.decoder",
+      "encoder": false,
+      "alias": true,
+      "software": true,
+      "hardware": false,
+      "vendor": false,
+      "supported_type": [
+        {
+          "type": "audio/flac",
+          "supported_secure_playback": false
+        }
+      ]
+    },
+    {
+      "name": "c2.android.flac.encoder",
+      "canonical": "c2.android.flac.encoder",
+      "encoder": true,
+      "alias": false,
+      "software": true,
+      "hardware": false,
+      "vendor": false,
+      "supported_type": [
+        {
+          "type": "audio/flac",
+          "supported_secure_playback": false
+        }
+      ]
+    },
+    {
+      "name": "OMX.google.flac.encoder",
+      "canonical": "c2.android.flac.encoder",
+      "encoder": true,
+      "alias": true,
+      "software": true,
+      "hardware": false,
+      "vendor": false,
+      "supported_type": [
+        {
+          "type": "audio/flac",
+          "supported_secure_playback": false
+        }
+      ]
+    },
+    {
+      "name": "c2.android.g711.alaw.decoder",
+      "canonical": "c2.android.g711.alaw.decoder",
+      "encoder": false,
+      "alias": false,
+      "software": true,
+      "hardware": false,
+      "vendor": false,
+      "supported_type": [
+        {
+          "type": "audio/g711-alaw",
+          "supported_secure_playback": false
+        }
+      ]
+    },
+    {
+      "name": "OMX.google.g711.alaw.decoder",
+      "canonical": "c2.android.g711.alaw.decoder",
+      "encoder": false,
+      "alias": true,
+      "software": true,
+      "hardware": false,
+      "vendor": false,
+      "supported_type": [
+        {
+          "type": "audio/g711-alaw",
+          "supported_secure_playback": false
+        }
+      ]
+    },
+    {
+      "name": "c2.android.g711.mlaw.decoder",
+      "canonical": "c2.android.g711.mlaw.decoder",
+      "encoder": false,
+      "alias": false,
+      "software": true,
+      "hardware": false,
+      "vendor": false,
+      "supported_type": [
+        {
+          "type": "audio/g711-mlaw",
+          "supported_secure_playback": false
+        }
+      ]
+    },
+    {
+      "name": "OMX.google.g711.mlaw.decoder",
+      "canonical": "c2.android.g711.mlaw.decoder",
+      "encoder": false,
+      "alias": true,
+      "software": true,
+      "hardware": false,
+      "vendor": false,
+      "supported_type": [
+        {
+          "type": "audio/g711-mlaw",
+          "supported_secure_playback": false
+        }
+      ]
+    },
+    {
+      "name": "c2.android.mp3.decoder",
+      "canonical": "c2.android.mp3.decoder",
+      "encoder": false,
+      "alias": false,
+      "software": true,
+      "hardware": false,
+      "vendor": false,
+      "supported_type": [
+        {
+          "type": "audio/mpeg",
+          "supported_secure_playback": false
+        }
+      ]
+    },
+    {
+      "name": "OMX.google.mp3.decoder",
+      "canonical": "c2.android.mp3.decoder",
+      "encoder": false,
+      "alias": true,
+      "software": true,
+      "hardware": false,
+      "vendor": false,
+      "supported_type": [
+        {
+          "type": "audio/mpeg",
+          "supported_secure_playback": false
+        }
+      ]
+    },
+    {
+      "name": "c2.android.opus.decoder",
+      "canonical": "c2.android.opus.decoder",
+      "encoder": false,
+      "alias": false,
+      "software": true,
+      "hardware": false,
+      "vendor": false,
+      "supported_type": [
+        {
+          "type": "audio/opus",
+          "supported_secure_playback": false
+        }
+      ]
+    },
+    {
+      "name": "OMX.google.opus.decoder",
+      "canonical": "c2.android.opus.decoder",
+      "encoder": false,
+      "alias": true,
+      "software": true,
+      "hardware": false,
+      "vendor": false,
+      "supported_type": [
+        {
+          "type": "audio/opus",
+          "supported_secure_playback": false
+        }
+      ]
+    },
+    {
+      "name": "c2.android.opus.encoder",
+      "canonical": "c2.android.opus.encoder",
+      "encoder": true,
+      "alias": false,
+      "software": true,
+      "hardware": false,
+      "vendor": false,
+      "supported_type": [
+        {
+          "type": "audio/opus",
+          "supported_secure_playback": false
+        }
+      ]
+    },
+    {
+      "name": "c2.android.raw.decoder",
+      "canonical": "c2.android.raw.decoder",
+      "encoder": false,
+      "alias": false,
+      "software": true,
+      "hardware": false,
+      "vendor": false,
+      "supported_type": [
+        {
+          "type": "audio/raw",
+          "supported_secure_playback": false
+        }
+      ]
+    },
+    {
+      "name": "OMX.google.raw.decoder",
+      "canonical": "c2.android.raw.decoder",
+      "encoder": false,
+      "alias": true,
+      "software": true,
+      "hardware": false,
+      "vendor": false,
+      "supported_type": [
+        {
+          "type": "audio/raw",
+          "supported_secure_playback": false
+        }
+      ]
+    },
+    {
+      "name": "c2.android.vorbis.decoder",
+      "canonical": "c2.android.vorbis.decoder",
+      "encoder": false,
+      "alias": false,
+      "software": true,
+      "hardware": false,
+      "vendor": false,
+      "supported_type": [
+        {
+          "type": "audio/vorbis",
+          "supported_secure_playback": false
+        }
+      ]
+    },
+    {
+      "name": "OMX.google.vorbis.decoder",
+      "canonical": "c2.android.vorbis.decoder",
+      "encoder": false,
+      "alias": true,
+      "software": true,
+      "hardware": false,
+      "vendor": false,
+      "supported_type": [
+        {
+          "type": "audio/vorbis",
+          "supported_secure_playback": false
+        }
+      ]
+    },
+    {
+      "name": "c2.ffmpeg.aac.decoder",
+      "canonical": "c2.ffmpeg.aac.decoder",
+      "encoder": false,
+      "alias": false,
+      "software": false,
+      "hardware": true,
+      "vendor": true,
+      "supported_type": [
+        {
+          "type": "audio/mp4a-latm",
+          "supported_secure_playback": false
+        }
+      ]
+    },
+    {
+      "name": "OMX.ffmpeg.aac.decoder",
+      "canonical": "c2.ffmpeg.aac.decoder",
+      "encoder": false,
+      "alias": true,
+      "software": false,
+      "hardware": true,
+      "vendor": true,
+      "supported_type": [
+        {
+          "type": "audio/mp4a-latm",
+          "supported_secure_playback": false
+        }
+      ]
+    },
+    {
+      "name": "c2.ffmpeg.ac3.decoder",
+      "canonical": "c2.ffmpeg.ac3.decoder",
+      "encoder": false,
+      "alias": false,
+      "software": false,
+      "hardware": true,
+      "vendor": true,
+      "supported_type": [
+        {
+          "type": "audio/ac3",
+          "supported_secure_playback": false
+        }
+      ]
+    },
+    {
+      "name": "OMX.ffmpeg.ac3.decoder",
+      "canonical": "c2.ffmpeg.ac3.decoder",
+      "encoder": false,
+      "alias": true,
+      "software": false,
+      "hardware": true,
+      "vendor": true,
+      "supported_type": [
+        {
+          "type": "audio/ac3",
+          "supported_secure_playback": false
+        }
+      ]
+    },
+    {
+      "name": "c2.ffmpeg.alac.decoder",
+      "canonical": "c2.ffmpeg.alac.decoder",
+      "encoder": false,
+      "alias": false,
+      "software": false,
+      "hardware": true,
+      "vendor": true,
+      "supported_type": [
+        {
+          "type": "audio/alac",
+          "supported_secure_playback": false
+        }
+      ]
+    },
+    {
+      "name": "OMX.ffmpeg.alac.decoder",
+      "canonical": "c2.ffmpeg.alac.decoder",
+      "encoder": false,
+      "alias": true,
+      "software": false,
+      "hardware": true,
+      "vendor": true,
+      "supported_type": [
+        {
+          "type": "audio/alac",
+          "supported_secure_playback": false
+        }
+      ]
+    },
+    {
+      "name": "c2.ffmpeg.flac.decoder",
+      "canonical": "c2.ffmpeg.flac.decoder",
+      "encoder": false,
+      "alias": false,
+      "software": false,
+      "hardware": true,
+      "vendor": true,
+      "supported_type": [
+        {
+          "type": "audio/flac",
+          "supported_secure_playback": false
+        }
+      ]
+    },
+    {
+      "name": "OMX.ffmpeg.flac.decoder",
+      "canonical": "c2.ffmpeg.flac.decoder",
+      "encoder": false,
+      "alias": true,
+      "software": false,
+      "hardware": true,
+      "vendor": true,
+      "supported_type": [
+        {
+          "type": "audio/flac",
+          "supported_secure_playback": false
+        }
+      ]
+    },
+    {
+      "name": "c2.ffmpeg.mp2.decoder",
+      "canonical": "c2.ffmpeg.mp2.decoder",
+      "encoder": false,
+      "alias": false,
+      "software": false,
+      "hardware": true,
+      "vendor": true,
+      "supported_type": [
+        {
+          "type": "audio/mpeg-L2",
+          "supported_secure_playback": false
+        }
+      ]
+    },
+    {
+      "name": "OMX.ffmpeg.mp2.decoder",
+      "canonical": "c2.ffmpeg.mp2.decoder",
+      "encoder": false,
+      "alias": true,
+      "software": false,
+      "hardware": true,
+      "vendor": true,
+      "supported_type": [
+        {
+          "type": "audio/mpeg-L2",
+          "supported_secure_playback": false
+        }
+      ]
+    },
+    {
+      "name": "c2.ffmpeg.mp3.decoder",
+      "canonical": "c2.ffmpeg.mp3.decoder",
+      "encoder": false,
+      "alias": false,
+      "software": false,
+      "hardware": true,
+      "vendor": true,
+      "supported_type": [
+        {
+          "type": "audio/mpeg",
+          "supported_secure_playback": false
+        }
+      ]
+    },
+    {
+      "name": "OMX.ffmpeg.mp3.decoder",
+      "canonical": "c2.ffmpeg.mp3.decoder",
+      "encoder": false,
+      "alias": true,
+      "software": false,
+      "hardware": true,
+      "vendor": true,
+      "supported_type": [
+        {
+          "type": "audio/mpeg",
+          "supported_secure_playback": false
+        }
+      ]
+    },
+    {
+      "name": "c2.ffmpeg.vorbis.decoder",
+      "canonical": "c2.ffmpeg.vorbis.decoder",
+      "encoder": false,
+      "alias": false,
+      "software": false,
+      "hardware": true,
+      "vendor": true,
+      "supported_type": [
+        {
+          "type": "audio/vorbis",
+          "supported_secure_playback": false
+        }
+      ]
+    },
+    {
+      "name": "OMX.ffmpeg.vorbisac3.decoder",
+      "canonical": "c2.ffmpeg.vorbis.decoder",
+      "encoder": false,
+      "alias": true,
+      "software": false,
+      "hardware": true,
+      "vendor": true,
+      "supported_type": [
+        {
+          "type": "audio/vorbis",
+          "supported_secure_playback": false
+        }
+      ]
+    },
+    {
+      "name": "c2.v4l2.avc.encoder",
+      "canonical": "c2.v4l2.avc.encoder",
+      "encoder": true,
+      "alias": false,
+      "software": false,
+      "hardware": true,
+      "vendor": true,
+      "supported_type": [
+        {
+          "type": "video/avc",
+          "codec_profile_level": [
+            {
+              "level": 32768,
+              "profile": 1
+            },
+            {
+              "level": 32768,
+              "profile": 2
+            },
+            {
+              "level": 32768,
+              "profile": 8
+            }
+          ],
+          "codec_color_format": [
+            2130708361,
+            2135033992,
+            19,
+            21,
+            20,
+            39
+          ],
+          "supported_secure_playback": false,
+          "supported_resolutions": {
+            "supported_360p_30fps": true,
+            "supported_480p_30fps": true,
+            "supported_720p_30fps": true,
+            "supported_1080p_30fps": true,
+            "supported_2k_30fps": true,
+            "supported_4k_30fps": true,
+            "supported_8k_30fps": false,
+            "supported_360p_60fps": true,
+            "supported_480p_60fps": true,
+            "supported_720p_60fps": true,
+            "supported_1080p_60fps": true,
+            "supported_2k_60fps": true,
+            "supported_4k_60fps": false,
+            "supported_8k_60fps": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "c2.v4l2.avc.decoder",
+      "canonical": "c2.v4l2.avc.decoder",
+      "encoder": false,
+      "alias": false,
+      "software": false,
+      "hardware": true,
+      "vendor": true,
+      "supported_type": [
+        {
+          "type": "video/avc",
+          "codec_profile_level": [
+            {
+              "level": 65536,
+              "profile": 1
+            },
+            {
+              "level": 65536,
+              "profile": 65536
+            },
+            {
+              "level": 65536,
+              "profile": 2
+            },
+            {
+              "level": 65536,
+              "profile": 8
+            },
+            {
+              "level": 65536,
+              "profile": 524288
+            }
+          ],
+          "codec_color_format": [
+            2130708361,
+            2135033992,
+            19,
+            21,
+            20,
+            39
+          ],
+          "supported_secure_playback": false,
+          "supported_resolutions": {
+            "supported_360p_30fps": true,
+            "supported_480p_30fps": true,
+            "supported_720p_30fps": true,
+            "supported_1080p_30fps": true,
+            "supported_2k_30fps": true,
+            "supported_4k_30fps": true,
+            "supported_8k_30fps": false,
+            "supported_360p_60fps": true,
+            "supported_480p_60fps": true,
+            "supported_720p_60fps": true,
+            "supported_1080p_60fps": true,
+            "supported_2k_60fps": true,
+            "supported_4k_60fps": false,
+            "supported_8k_60fps": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "c2.ffmpeg.av1.decoder",
+      "canonical": "c2.ffmpeg.av1.decoder",
+      "encoder": false,
+      "alias": false,
+      "software": false,
+      "hardware": true,
+      "vendor": true,
+      "supported_type": [
+        {
+          "type": "video/av01",
+          "codec_profile_level": [
+            {
+              "level": 32768,
+              "profile": 1
+            },
+            {
+              "level": 32768,
+              "profile": 2
+            }
+          ],
+          "codec_color_format": [
+            2130708361,
+            2135033992,
+            19,
+            21,
+            20,
+            39
+          ],
+          "supported_secure_playback": false,
+          "supported_resolutions": {
+            "supported_360p_30fps": true,
+            "supported_480p_30fps": true,
+            "supported_720p_30fps": true,
+            "supported_1080p_30fps": true,
+            "supported_2k_30fps": false,
+            "supported_4k_30fps": false,
+            "supported_8k_30fps": false,
+            "supported_360p_60fps": true,
+            "supported_480p_60fps": true,
+            "supported_720p_60fps": true,
+            "supported_1080p_60fps": true,
+            "supported_2k_60fps": false,
+            "supported_4k_60fps": false,
+            "supported_8k_60fps": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "OMX.ffmpeg.av1.decoder",
+      "canonical": "c2.ffmpeg.av1.decoder",
+      "encoder": false,
+      "alias": true,
+      "software": false,
+      "hardware": true,
+      "vendor": true,
+      "supported_type": [
+        {
+          "type": "video/av01",
+          "codec_profile_level": [
+            {
+              "level": 32768,
+              "profile": 1
+            },
+            {
+              "level": 32768,
+              "profile": 2
+            }
+          ],
+          "codec_color_format": [
+            2130708361,
+            2135033992,
+            19,
+            21,
+            20,
+            39
+          ],
+          "supported_secure_playback": false,
+          "supported_resolutions": {
+            "supported_360p_30fps": true,
+            "supported_480p_30fps": true,
+            "supported_720p_30fps": true,
+            "supported_1080p_30fps": true,
+            "supported_2k_30fps": false,
+            "supported_4k_30fps": false,
+            "supported_8k_30fps": false,
+            "supported_360p_60fps": true,
+            "supported_480p_60fps": true,
+            "supported_720p_60fps": true,
+            "supported_1080p_60fps": true,
+            "supported_2k_60fps": false,
+            "supported_4k_60fps": false,
+            "supported_8k_60fps": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "c2.ffmpeg.h263.decoder",
+      "canonical": "c2.ffmpeg.h263.decoder",
+      "encoder": false,
+      "alias": false,
+      "software": false,
+      "hardware": true,
+      "vendor": true,
+      "supported_type": [
+        {
+          "type": "video/3gpp",
+          "codec_color_format": [
+            2130708361,
+            2135033992,
+            19,
+            21,
+            20,
+            39
+          ],
+          "supported_secure_playback": false,
+          "supported_resolutions": {
+            "supported_360p_30fps": false,
+            "supported_480p_30fps": false,
+            "supported_720p_30fps": false,
+            "supported_1080p_30fps": false,
+            "supported_2k_30fps": false,
+            "supported_4k_30fps": false,
+            "supported_8k_30fps": false,
+            "supported_360p_60fps": false,
+            "supported_480p_60fps": false,
+            "supported_720p_60fps": false,
+            "supported_1080p_60fps": false,
+            "supported_2k_60fps": false,
+            "supported_4k_60fps": false,
+            "supported_8k_60fps": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "OMX.ffmpeg.h263.decoder",
+      "canonical": "c2.ffmpeg.h263.decoder",
+      "encoder": false,
+      "alias": true,
+      "software": false,
+      "hardware": true,
+      "vendor": true,
+      "supported_type": [
+        {
+          "type": "video/3gpp",
+          "codec_color_format": [
+            2130708361,
+            2135033992,
+            19,
+            21,
+            20,
+            39
+          ],
+          "supported_secure_playback": false,
+          "supported_resolutions": {
+            "supported_360p_30fps": false,
+            "supported_480p_30fps": false,
+            "supported_720p_30fps": false,
+            "supported_1080p_30fps": false,
+            "supported_2k_30fps": false,
+            "supported_4k_30fps": false,
+            "supported_8k_30fps": false,
+            "supported_360p_60fps": false,
+            "supported_480p_60fps": false,
+            "supported_720p_60fps": false,
+            "supported_1080p_60fps": false,
+            "supported_2k_60fps": false,
+            "supported_4k_60fps": false,
+            "supported_8k_60fps": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "c2.ffmpeg.h264.decoder",
+      "canonical": "c2.ffmpeg.h264.decoder",
+      "encoder": false,
+      "alias": false,
+      "software": false,
+      "hardware": true,
+      "vendor": true,
+      "supported_type": [
+        {
+          "type": "video/avc",
+          "codec_profile_level": [
+            {
+              "level": 65536,
+              "profile": 65536
+            },
+            {
+              "level": 65536,
+              "profile": 1
+            },
+            {
+              "level": 65536,
+              "profile": 2
+            },
+            {
+              "level": 65536,
+              "profile": 524288
+            },
+            {
+              "level": 65536,
+              "profile": 8
+            }
+          ],
+          "codec_color_format": [
+            2130708361,
+            2135033992,
+            19,
+            21,
+            20,
+            39
+          ],
+          "supported_secure_playback": false,
+          "supported_resolutions": {
+            "supported_360p_30fps": true,
+            "supported_480p_30fps": true,
+            "supported_720p_30fps": true,
+            "supported_1080p_30fps": true,
+            "supported_2k_30fps": true,
+            "supported_4k_30fps": true,
+            "supported_8k_30fps": false,
+            "supported_360p_60fps": true,
+            "supported_480p_60fps": true,
+            "supported_720p_60fps": true,
+            "supported_1080p_60fps": true,
+            "supported_2k_60fps": true,
+            "supported_4k_60fps": true,
+            "supported_8k_60fps": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "OMX.ffmpeg.h264.decoder",
+      "canonical": "c2.ffmpeg.h264.decoder",
+      "encoder": false,
+      "alias": true,
+      "software": false,
+      "hardware": true,
+      "vendor": true,
+      "supported_type": [
+        {
+          "type": "video/avc",
+          "codec_profile_level": [
+            {
+              "level": 65536,
+              "profile": 65536
+            },
+            {
+              "level": 65536,
+              "profile": 1
+            },
+            {
+              "level": 65536,
+              "profile": 2
+            },
+            {
+              "level": 65536,
+              "profile": 524288
+            },
+            {
+              "level": 65536,
+              "profile": 8
+            }
+          ],
+          "codec_color_format": [
+            2130708361,
+            2135033992,
+            19,
+            21,
+            20,
+            39
+          ],
+          "supported_secure_playback": false,
+          "supported_resolutions": {
+            "supported_360p_30fps": true,
+            "supported_480p_30fps": true,
+            "supported_720p_30fps": true,
+            "supported_1080p_30fps": true,
+            "supported_2k_30fps": true,
+            "supported_4k_30fps": true,
+            "supported_8k_30fps": false,
+            "supported_360p_60fps": true,
+            "supported_480p_60fps": true,
+            "supported_720p_60fps": true,
+            "supported_1080p_60fps": true,
+            "supported_2k_60fps": true,
+            "supported_4k_60fps": true,
+            "supported_8k_60fps": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "c2.ffmpeg.hevc.decoder",
+      "canonical": "c2.ffmpeg.hevc.decoder",
+      "encoder": false,
+      "alias": false,
+      "software": false,
+      "hardware": true,
+      "vendor": true,
+      "supported_type": [
+        {
+          "type": "video/hevc",
+          "codec_profile_level": [
+            {
+              "level": 524288,
+              "profile": 1
+            },
+            {
+              "level": 524288,
+              "profile": 2
+            },
+            {
+              "level": 524288,
+              "profile": 4
+            }
+          ],
+          "codec_color_format": [
+            2130708361,
+            2135033992,
+            19,
+            21,
+            20,
+            39
+          ],
+          "supported_secure_playback": false,
+          "supported_resolutions": {
+            "supported_360p_30fps": true,
+            "supported_480p_30fps": true,
+            "supported_720p_30fps": true,
+            "supported_1080p_30fps": true,
+            "supported_2k_30fps": true,
+            "supported_4k_30fps": true,
+            "supported_8k_30fps": false,
+            "supported_360p_60fps": true,
+            "supported_480p_60fps": true,
+            "supported_720p_60fps": true,
+            "supported_1080p_60fps": true,
+            "supported_2k_60fps": true,
+            "supported_4k_60fps": true,
+            "supported_8k_60fps": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "OMX.ffmpeg.hevc.decoder",
+      "canonical": "c2.ffmpeg.hevc.decoder",
+      "encoder": false,
+      "alias": true,
+      "software": false,
+      "hardware": true,
+      "vendor": true,
+      "supported_type": [
+        {
+          "type": "video/hevc",
+          "codec_profile_level": [
+            {
+              "level": 524288,
+              "profile": 1
+            },
+            {
+              "level": 524288,
+              "profile": 2
+            },
+            {
+              "level": 524288,
+              "profile": 4
+            }
+          ],
+          "codec_color_format": [
+            2130708361,
+            2135033992,
+            19,
+            21,
+            20,
+            39
+          ],
+          "supported_secure_playback": false,
+          "supported_resolutions": {
+            "supported_360p_30fps": true,
+            "supported_480p_30fps": true,
+            "supported_720p_30fps": true,
+            "supported_1080p_30fps": true,
+            "supported_2k_30fps": true,
+            "supported_4k_30fps": true,
+            "supported_8k_30fps": false,
+            "supported_360p_60fps": true,
+            "supported_480p_60fps": true,
+            "supported_720p_60fps": true,
+            "supported_1080p_60fps": true,
+            "supported_2k_60fps": true,
+            "supported_4k_60fps": true,
+            "supported_8k_60fps": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "c2.ffmpeg.mpeg2.decoder",
+      "canonical": "c2.ffmpeg.mpeg2.decoder",
+      "encoder": false,
+      "alias": false,
+      "software": false,
+      "hardware": true,
+      "vendor": true,
+      "supported_type": [
+        {
+          "type": "video/mpeg2",
+          "codec_profile_level": [
+            {
+              "level": 3,
+              "profile": 0
+            },
+            {
+              "level": 3,
+              "profile": 1
+            }
+          ],
+          "codec_color_format": [
+            2130708361,
+            2135033992,
+            19,
+            21,
+            20,
+            39
+          ],
+          "supported_secure_playback": false,
+          "supported_resolutions": {
+            "supported_360p_30fps": true,
+            "supported_480p_30fps": true,
+            "supported_720p_30fps": true,
+            "supported_1080p_30fps": true,
+            "supported_2k_30fps": false,
+            "supported_4k_30fps": false,
+            "supported_8k_30fps": false,
+            "supported_360p_60fps": true,
+            "supported_480p_60fps": true,
+            "supported_720p_60fps": true,
+            "supported_1080p_60fps": false,
+            "supported_2k_60fps": false,
+            "supported_4k_60fps": false,
+            "supported_8k_60fps": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "OMX.ffmpeg.mpeg2.decoder",
+      "canonical": "c2.ffmpeg.mpeg2.decoder",
+      "encoder": false,
+      "alias": true,
+      "software": false,
+      "hardware": true,
+      "vendor": true,
+      "supported_type": [
+        {
+          "type": "video/mpeg2",
+          "codec_profile_level": [
+            {
+              "level": 3,
+              "profile": 0
+            },
+            {
+              "level": 3,
+              "profile": 1
+            }
+          ],
+          "codec_color_format": [
+            2130708361,
+            2135033992,
+            19,
+            21,
+            20,
+            39
+          ],
+          "supported_secure_playback": false,
+          "supported_resolutions": {
+            "supported_360p_30fps": true,
+            "supported_480p_30fps": true,
+            "supported_720p_30fps": true,
+            "supported_1080p_30fps": true,
+            "supported_2k_30fps": false,
+            "supported_4k_30fps": false,
+            "supported_8k_30fps": false,
+            "supported_360p_60fps": true,
+            "supported_480p_60fps": true,
+            "supported_720p_60fps": true,
+            "supported_1080p_60fps": false,
+            "supported_2k_60fps": false,
+            "supported_4k_60fps": false,
+            "supported_8k_60fps": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "c2.ffmpeg.mpeg4.decoder",
+      "canonical": "c2.ffmpeg.mpeg4.decoder",
+      "encoder": false,
+      "alias": false,
+      "software": false,
+      "hardware": true,
+      "vendor": true,
+      "supported_type": [
+        {
+          "type": "video/mp4v-es",
+          "codec_color_format": [
+            2130708361,
+            2135033992,
+            19,
+            21,
+            20,
+            39
+          ],
+          "supported_secure_playback": false,
+          "supported_resolutions": {
+            "supported_360p_30fps": false,
+            "supported_480p_30fps": false,
+            "supported_720p_30fps": false,
+            "supported_1080p_30fps": false,
+            "supported_2k_30fps": false,
+            "supported_4k_30fps": false,
+            "supported_8k_30fps": false,
+            "supported_360p_60fps": false,
+            "supported_480p_60fps": false,
+            "supported_720p_60fps": false,
+            "supported_1080p_60fps": false,
+            "supported_2k_60fps": false,
+            "supported_4k_60fps": false,
+            "supported_8k_60fps": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "OMX.ffmpeg.mpeg4.decoder",
+      "canonical": "c2.ffmpeg.mpeg4.decoder",
+      "encoder": false,
+      "alias": true,
+      "software": false,
+      "hardware": true,
+      "vendor": true,
+      "supported_type": [
+        {
+          "type": "video/mp4v-es",
+          "codec_color_format": [
+            2130708361,
+            2135033992,
+            19,
+            21,
+            20,
+            39
+          ],
+          "supported_secure_playback": false,
+          "supported_resolutions": {
+            "supported_360p_30fps": false,
+            "supported_480p_30fps": false,
+            "supported_720p_30fps": false,
+            "supported_1080p_30fps": false,
+            "supported_2k_30fps": false,
+            "supported_4k_30fps": false,
+            "supported_8k_30fps": false,
+            "supported_360p_60fps": false,
+            "supported_480p_60fps": false,
+            "supported_720p_60fps": false,
+            "supported_1080p_60fps": false,
+            "supported_2k_60fps": false,
+            "supported_4k_60fps": false,
+            "supported_8k_60fps": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "c2.ffmpeg.vp8.decoder",
+      "canonical": "c2.ffmpeg.vp8.decoder",
+      "encoder": false,
+      "alias": false,
+      "software": false,
+      "hardware": true,
+      "vendor": true,
+      "supported_type": [
+        {
+          "type": "video/x-vnd.on2.vp8",
+          "codec_profile_level": [
+            {
+              "level": 1,
+              "profile": 1
+            }
+          ],
+          "codec_color_format": [
+            2130708361,
+            2135033992,
+            19,
+            21,
+            20,
+            39
+          ],
+          "supported_secure_playback": false,
+          "supported_resolutions": {
+            "supported_360p_30fps": true,
+            "supported_480p_30fps": true,
+            "supported_720p_30fps": true,
+            "supported_1080p_30fps": true,
+            "supported_2k_30fps": false,
+            "supported_4k_30fps": false,
+            "supported_8k_30fps": false,
+            "supported_360p_60fps": true,
+            "supported_480p_60fps": true,
+            "supported_720p_60fps": true,
+            "supported_1080p_60fps": true,
+            "supported_2k_60fps": false,
+            "supported_4k_60fps": false,
+            "supported_8k_60fps": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "OMX.ffmpeg.vp8.decoder",
+      "canonical": "c2.ffmpeg.vp8.decoder",
+      "encoder": false,
+      "alias": true,
+      "software": false,
+      "hardware": true,
+      "vendor": true,
+      "supported_type": [
+        {
+          "type": "video/x-vnd.on2.vp8",
+          "codec_profile_level": [
+            {
+              "level": 1,
+              "profile": 1
+            }
+          ],
+          "codec_color_format": [
+            2130708361,
+            2135033992,
+            19,
+            21,
+            20,
+            39
+          ],
+          "supported_secure_playback": false,
+          "supported_resolutions": {
+            "supported_360p_30fps": true,
+            "supported_480p_30fps": true,
+            "supported_720p_30fps": true,
+            "supported_1080p_30fps": true,
+            "supported_2k_30fps": false,
+            "supported_4k_30fps": false,
+            "supported_8k_30fps": false,
+            "supported_360p_60fps": true,
+            "supported_480p_60fps": true,
+            "supported_720p_60fps": true,
+            "supported_1080p_60fps": true,
+            "supported_2k_60fps": false,
+            "supported_4k_60fps": false,
+            "supported_8k_60fps": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "c2.ffmpeg.vp9.decoder",
+      "canonical": "c2.ffmpeg.vp9.decoder",
+      "encoder": false,
+      "alias": false,
+      "software": false,
+      "hardware": true,
+      "vendor": true,
+      "supported_type": [
+        {
+          "type": "video/x-vnd.on2.vp9",
+          "codec_profile_level": [
+            {
+              "level": 256,
+              "profile": 1
+            },
+            {
+              "level": 256,
+              "profile": 4
+            },
+            {
+              "level": 256,
+              "profile": 4096
+            }
+          ],
+          "codec_color_format": [
+            2130708361,
+            2135033992,
+            19,
+            21,
+            20,
+            39
+          ],
+          "supported_secure_playback": false,
+          "supported_resolutions": {
+            "supported_360p_30fps": true,
+            "supported_480p_30fps": true,
+            "supported_720p_30fps": true,
+            "supported_1080p_30fps": true,
+            "supported_2k_30fps": false,
+            "supported_4k_30fps": false,
+            "supported_8k_30fps": false,
+            "supported_360p_60fps": true,
+            "supported_480p_60fps": true,
+            "supported_720p_60fps": true,
+            "supported_1080p_60fps": true,
+            "supported_2k_60fps": false,
+            "supported_4k_60fps": false,
+            "supported_8k_60fps": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "OMX.ffmpeg.vp9.decoder",
+      "canonical": "c2.ffmpeg.vp9.decoder",
+      "encoder": false,
+      "alias": true,
+      "software": false,
+      "hardware": true,
+      "vendor": true,
+      "supported_type": [
+        {
+          "type": "video/x-vnd.on2.vp9",
+          "codec_profile_level": [
+            {
+              "level": 256,
+              "profile": 1
+            },
+            {
+              "level": 256,
+              "profile": 4
+            },
+            {
+              "level": 256,
+              "profile": 4096
+            }
+          ],
+          "codec_color_format": [
+            2130708361,
+            2135033992,
+            19,
+            21,
+            20,
+            39
+          ],
+          "supported_secure_playback": false,
+          "supported_resolutions": {
+            "supported_360p_30fps": true,
+            "supported_480p_30fps": true,
+            "supported_720p_30fps": true,
+            "supported_1080p_30fps": true,
+            "supported_2k_30fps": false,
+            "supported_4k_30fps": false,
+            "supported_8k_30fps": false,
+            "supported_360p_60fps": true,
+            "supported_480p_60fps": true,
+            "supported_720p_60fps": true,
+            "supported_1080p_60fps": true,
+            "supported_2k_60fps": false,
+            "supported_4k_60fps": false,
+            "supported_8k_60fps": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "c2.android.av1.decoder",
+      "canonical": "c2.android.av1.decoder",
+      "encoder": false,
+      "alias": false,
+      "software": true,
+      "hardware": false,
+      "vendor": false,
+      "supported_type": [
+        {
+          "type": "video/av01",
+          "codec_profile_level": [
+            {
+              "level": 32768,
+              "profile": 1
+            },
+            {
+              "level": 32768,
+              "profile": 2
+            }
+          ],
+          "codec_color_format": [
+            2135033992,
+            19,
+            21,
+            20,
+            39,
+            2130708361
+          ],
+          "supported_secure_playback": false,
+          "supported_resolutions": {
+            "supported_360p_30fps": true,
+            "supported_480p_30fps": true,
+            "supported_720p_30fps": true,
+            "supported_1080p_30fps": true,
+            "supported_2k_30fps": false,
+            "supported_4k_30fps": false,
+            "supported_8k_30fps": false,
+            "supported_360p_60fps": true,
+            "supported_480p_60fps": true,
+            "supported_720p_60fps": true,
+            "supported_1080p_60fps": true,
+            "supported_2k_60fps": false,
+            "supported_4k_60fps": false,
+            "supported_8k_60fps": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "c2.android.avc.decoder",
+      "canonical": "c2.android.avc.decoder",
+      "encoder": false,
+      "alias": false,
+      "software": true,
+      "hardware": false,
+      "vendor": false,
+      "supported_type": [
+        {
+          "type": "video/avc",
+          "codec_profile_level": [
+            {
+              "level": 65536,
+              "profile": 65536
+            },
+            {
+              "level": 65536,
+              "profile": 1
+            },
+            {
+              "level": 65536,
+              "profile": 2
+            },
+            {
+              "level": 65536,
+              "profile": 524288
+            },
+            {
+              "level": 65536,
+              "profile": 8
+            }
+          ],
+          "codec_color_format": [
+            2135033992,
+            19,
+            21,
+            20,
+            39,
+            2130708361
+          ],
+          "supported_secure_playback": false,
+          "supported_resolutions": {
+            "supported_360p_30fps": true,
+            "supported_480p_30fps": true,
+            "supported_720p_30fps": true,
+            "supported_1080p_30fps": true,
+            "supported_2k_30fps": true,
+            "supported_4k_30fps": true,
+            "supported_8k_30fps": false,
+            "supported_360p_60fps": true,
+            "supported_480p_60fps": true,
+            "supported_720p_60fps": true,
+            "supported_1080p_60fps": true,
+            "supported_2k_60fps": true,
+            "supported_4k_60fps": true,
+            "supported_8k_60fps": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "OMX.google.h264.decoder",
+      "canonical": "c2.android.avc.decoder",
+      "encoder": false,
+      "alias": true,
+      "software": true,
+      "hardware": false,
+      "vendor": false,
+      "supported_type": [
+        {
+          "type": "video/avc",
+          "codec_profile_level": [
+            {
+              "level": 65536,
+              "profile": 65536
+            },
+            {
+              "level": 65536,
+              "profile": 1
+            },
+            {
+              "level": 65536,
+              "profile": 2
+            },
+            {
+              "level": 65536,
+              "profile": 524288
+            },
+            {
+              "level": 65536,
+              "profile": 8
+            }
+          ],
+          "codec_color_format": [
+            2135033992,
+            19,
+            21,
+            20,
+            39,
+            2130708361
+          ],
+          "supported_secure_playback": false,
+          "supported_resolutions": {
+            "supported_360p_30fps": true,
+            "supported_480p_30fps": true,
+            "supported_720p_30fps": true,
+            "supported_1080p_30fps": true,
+            "supported_2k_30fps": true,
+            "supported_4k_30fps": true,
+            "supported_8k_30fps": false,
+            "supported_360p_60fps": true,
+            "supported_480p_60fps": true,
+            "supported_720p_60fps": true,
+            "supported_1080p_60fps": true,
+            "supported_2k_60fps": true,
+            "supported_4k_60fps": true,
+            "supported_8k_60fps": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "c2.android.avc.encoder",
+      "canonical": "c2.android.avc.encoder",
+      "encoder": true,
+      "alias": false,
+      "software": true,
+      "hardware": false,
+      "vendor": false,
+      "supported_type": [
+        {
+          "type": "video/avc",
+          "codec_profile_level": [
+            {
+              "level": 16384,
+              "profile": 1
+            },
+            {
+              "level": 16384,
+              "profile": 65536
+            },
+            {
+              "level": 16384,
+              "profile": 2
+            }
+          ],
+          "codec_color_format": [
+            2135033992,
+            19,
+            21,
+            20,
+            39,
+            2130708361
+          ],
+          "supported_secure_playback": false,
+          "supported_resolutions": {
+            "supported_360p_30fps": true,
+            "supported_480p_30fps": true,
+            "supported_720p_30fps": true,
+            "supported_1080p_30fps": true,
+            "supported_2k_30fps": false,
+            "supported_4k_30fps": false,
+            "supported_8k_30fps": false,
+            "supported_360p_60fps": true,
+            "supported_480p_60fps": true,
+            "supported_720p_60fps": true,
+            "supported_1080p_60fps": false,
+            "supported_2k_60fps": false,
+            "supported_4k_60fps": false,
+            "supported_8k_60fps": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "OMX.google.h264.encoder",
+      "canonical": "c2.android.avc.encoder",
+      "encoder": true,
+      "alias": true,
+      "software": true,
+      "hardware": false,
+      "vendor": false,
+      "supported_type": [
+        {
+          "type": "video/avc",
+          "codec_profile_level": [
+            {
+              "level": 16384,
+              "profile": 1
+            },
+            {
+              "level": 16384,
+              "profile": 65536
+            },
+            {
+              "level": 16384,
+              "profile": 2
+            }
+          ],
+          "codec_color_format": [
+            2135033992,
+            19,
+            21,
+            20,
+            39,
+            2130708361
+          ],
+          "supported_secure_playback": false,
+          "supported_resolutions": {
+            "supported_360p_30fps": true,
+            "supported_480p_30fps": true,
+            "supported_720p_30fps": true,
+            "supported_1080p_30fps": true,
+            "supported_2k_30fps": false,
+            "supported_4k_30fps": false,
+            "supported_8k_30fps": false,
+            "supported_360p_60fps": true,
+            "supported_480p_60fps": true,
+            "supported_720p_60fps": true,
+            "supported_1080p_60fps": false,
+            "supported_2k_60fps": false,
+            "supported_4k_60fps": false,
+            "supported_8k_60fps": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "c2.android.h263.decoder",
+      "canonical": "c2.android.h263.decoder",
+      "encoder": false,
+      "alias": false,
+      "software": true,
+      "hardware": false,
+      "vendor": false,
+      "supported_type": [
+        {
+          "type": "video/3gpp",
+          "codec_profile_level": [
+            {
+              "level": 16,
+              "profile": 1
+            },
+            {
+              "level": 8,
+              "profile": 1
+            },
+            {
+              "level": 16,
+              "profile": 8
+            },
+            {
+              "level": 8,
+              "profile": 8
+            }
+          ],
+          "codec_color_format": [
+            2135033992,
+            19,
+            21,
+            20,
+            39,
+            2130708361
+          ],
+          "supported_secure_playback": false,
+          "supported_resolutions": {
+            "supported_360p_30fps": false,
+            "supported_480p_30fps": false,
+            "supported_720p_30fps": false,
+            "supported_1080p_30fps": false,
+            "supported_2k_30fps": false,
+            "supported_4k_30fps": false,
+            "supported_8k_30fps": false,
+            "supported_360p_60fps": false,
+            "supported_480p_60fps": false,
+            "supported_720p_60fps": false,
+            "supported_1080p_60fps": false,
+            "supported_2k_60fps": false,
+            "supported_4k_60fps": false,
+            "supported_8k_60fps": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "OMX.google.h263.decoder",
+      "canonical": "c2.android.h263.decoder",
+      "encoder": false,
+      "alias": true,
+      "software": true,
+      "hardware": false,
+      "vendor": false,
+      "supported_type": [
+        {
+          "type": "video/3gpp",
+          "codec_profile_level": [
+            {
+              "level": 16,
+              "profile": 1
+            },
+            {
+              "level": 8,
+              "profile": 1
+            },
+            {
+              "level": 16,
+              "profile": 8
+            },
+            {
+              "level": 8,
+              "profile": 8
+            }
+          ],
+          "codec_color_format": [
+            2135033992,
+            19,
+            21,
+            20,
+            39,
+            2130708361
+          ],
+          "supported_secure_playback": false,
+          "supported_resolutions": {
+            "supported_360p_30fps": false,
+            "supported_480p_30fps": false,
+            "supported_720p_30fps": false,
+            "supported_1080p_30fps": false,
+            "supported_2k_30fps": false,
+            "supported_4k_30fps": false,
+            "supported_8k_30fps": false,
+            "supported_360p_60fps": false,
+            "supported_480p_60fps": false,
+            "supported_720p_60fps": false,
+            "supported_1080p_60fps": false,
+            "supported_2k_60fps": false,
+            "supported_4k_60fps": false,
+            "supported_8k_60fps": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "c2.android.h263.encoder",
+      "canonical": "c2.android.h263.encoder",
+      "encoder": true,
+      "alias": false,
+      "software": true,
+      "hardware": false,
+      "vendor": false,
+      "supported_type": [
+        {
+          "type": "video/3gpp",
+          "codec_profile_level": [
+            {
+              "level": 16,
+              "profile": 1
+            },
+            {
+              "level": 8,
+              "profile": 1
+            }
+          ],
+          "codec_color_format": [
+            2135033992,
+            19,
+            21,
+            20,
+            39,
+            2130708361
+          ],
+          "supported_secure_playback": false,
+          "supported_resolutions": {
+            "supported_360p_30fps": false,
+            "supported_480p_30fps": false,
+            "supported_720p_30fps": false,
+            "supported_1080p_30fps": false,
+            "supported_2k_30fps": false,
+            "supported_4k_30fps": false,
+            "supported_8k_30fps": false,
+            "supported_360p_60fps": false,
+            "supported_480p_60fps": false,
+            "supported_720p_60fps": false,
+            "supported_1080p_60fps": false,
+            "supported_2k_60fps": false,
+            "supported_4k_60fps": false,
+            "supported_8k_60fps": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "OMX.google.h263.encoder",
+      "canonical": "c2.android.h263.encoder",
+      "encoder": true,
+      "alias": true,
+      "software": true,
+      "hardware": false,
+      "vendor": false,
+      "supported_type": [
+        {
+          "type": "video/3gpp",
+          "codec_profile_level": [
+            {
+              "level": 16,
+              "profile": 1
+            },
+            {
+              "level": 8,
+              "profile": 1
+            }
+          ],
+          "codec_color_format": [
+            2135033992,
+            19,
+            21,
+            20,
+            39,
+            2130708361
+          ],
+          "supported_secure_playback": false,
+          "supported_resolutions": {
+            "supported_360p_30fps": false,
+            "supported_480p_30fps": false,
+            "supported_720p_30fps": false,
+            "supported_1080p_30fps": false,
+            "supported_2k_30fps": false,
+            "supported_4k_30fps": false,
+            "supported_8k_30fps": false,
+            "supported_360p_60fps": false,
+            "supported_480p_60fps": false,
+            "supported_720p_60fps": false,
+            "supported_1080p_60fps": false,
+            "supported_2k_60fps": false,
+            "supported_4k_60fps": false,
+            "supported_8k_60fps": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "c2.android.hevc.decoder",
+      "canonical": "c2.android.hevc.decoder",
+      "encoder": false,
+      "alias": false,
+      "software": true,
+      "hardware": false,
+      "vendor": false,
+      "supported_type": [
+        {
+          "type": "video/hevc",
+          "codec_profile_level": [
+            {
+              "level": 524288,
+              "profile": 1
+            },
+            {
+              "level": 524288,
+              "profile": 4
+            }
+          ],
+          "codec_color_format": [
+            2135033992,
+            19,
+            21,
+            20,
+            39,
+            2130708361
+          ],
+          "supported_secure_playback": false,
+          "supported_resolutions": {
+            "supported_360p_30fps": true,
+            "supported_480p_30fps": true,
+            "supported_720p_30fps": true,
+            "supported_1080p_30fps": true,
+            "supported_2k_30fps": true,
+            "supported_4k_30fps": false,
+            "supported_8k_30fps": false,
+            "supported_360p_60fps": true,
+            "supported_480p_60fps": true,
+            "supported_720p_60fps": true,
+            "supported_1080p_60fps": true,
+            "supported_2k_60fps": false,
+            "supported_4k_60fps": false,
+            "supported_8k_60fps": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "OMX.google.hevc.decoder",
+      "canonical": "c2.android.hevc.decoder",
+      "encoder": false,
+      "alias": true,
+      "software": true,
+      "hardware": false,
+      "vendor": false,
+      "supported_type": [
+        {
+          "type": "video/hevc",
+          "codec_profile_level": [
+            {
+              "level": 524288,
+              "profile": 1
+            },
+            {
+              "level": 524288,
+              "profile": 4
+            }
+          ],
+          "codec_color_format": [
+            2135033992,
+            19,
+            21,
+            20,
+            39,
+            2130708361
+          ],
+          "supported_secure_playback": false,
+          "supported_resolutions": {
+            "supported_360p_30fps": true,
+            "supported_480p_30fps": true,
+            "supported_720p_30fps": true,
+            "supported_1080p_30fps": true,
+            "supported_2k_30fps": true,
+            "supported_4k_30fps": false,
+            "supported_8k_30fps": false,
+            "supported_360p_60fps": true,
+            "supported_480p_60fps": true,
+            "supported_720p_60fps": true,
+            "supported_1080p_60fps": true,
+            "supported_2k_60fps": false,
+            "supported_4k_60fps": false,
+            "supported_8k_60fps": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "c2.android.hevc.encoder",
+      "canonical": "c2.android.hevc.encoder",
+      "encoder": true,
+      "alias": false,
+      "software": true,
+      "hardware": false,
+      "vendor": false,
+      "supported_type": [
+        {
+          "type": "video/hevc",
+          "codec_profile_level": [
+            {
+              "level": 262144,
+              "profile": 1
+            },
+            {
+              "level": 262144,
+              "profile": 4
+            }
+          ],
+          "codec_color_format": [
+            2135033992,
+            19,
+            21,
+            20,
+            39,
+            2130708361
+          ],
+          "supported_secure_playback": false,
+          "supported_resolutions": {
+            "supported_360p_30fps": false,
+            "supported_480p_30fps": false,
+            "supported_720p_30fps": false,
+            "supported_1080p_30fps": false,
+            "supported_2k_30fps": false,
+            "supported_4k_30fps": false,
+            "supported_8k_30fps": false,
+            "supported_360p_60fps": false,
+            "supported_480p_60fps": false,
+            "supported_720p_60fps": false,
+            "supported_1080p_60fps": false,
+            "supported_2k_60fps": false,
+            "supported_4k_60fps": false,
+            "supported_8k_60fps": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "c2.android.mpeg4.decoder",
+      "canonical": "c2.android.mpeg4.decoder",
+      "encoder": false,
+      "alias": false,
+      "software": true,
+      "hardware": false,
+      "vendor": false,
+      "supported_type": [
+        {
+          "type": "video/mp4v-es",
+          "codec_profile_level": [
+            {
+              "level": 256,
+              "profile": 1
+            }
+          ],
+          "codec_color_format": [
+            2135033992,
+            19,
+            21,
+            20,
+            39,
+            2130708361
+          ],
+          "supported_secure_playback": false,
+          "supported_resolutions": {
+            "supported_360p_30fps": true,
+            "supported_480p_30fps": true,
+            "supported_720p_30fps": true,
+            "supported_1080p_30fps": false,
+            "supported_2k_30fps": false,
+            "supported_4k_30fps": false,
+            "supported_8k_30fps": false,
+            "supported_360p_60fps": true,
+            "supported_480p_60fps": true,
+            "supported_720p_60fps": false,
+            "supported_1080p_60fps": false,
+            "supported_2k_60fps": false,
+            "supported_4k_60fps": false,
+            "supported_8k_60fps": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "OMX.google.mpeg4.decoder",
+      "canonical": "c2.android.mpeg4.decoder",
+      "encoder": false,
+      "alias": true,
+      "software": true,
+      "hardware": false,
+      "vendor": false,
+      "supported_type": [
+        {
+          "type": "video/mp4v-es",
+          "codec_profile_level": [
+            {
+              "level": 256,
+              "profile": 1
+            }
+          ],
+          "codec_color_format": [
+            2135033992,
+            19,
+            21,
+            20,
+            39,
+            2130708361
+          ],
+          "supported_secure_playback": false,
+          "supported_resolutions": {
+            "supported_360p_30fps": true,
+            "supported_480p_30fps": true,
+            "supported_720p_30fps": true,
+            "supported_1080p_30fps": false,
+            "supported_2k_30fps": false,
+            "supported_4k_30fps": false,
+            "supported_8k_30fps": false,
+            "supported_360p_60fps": true,
+            "supported_480p_60fps": true,
+            "supported_720p_60fps": false,
+            "supported_1080p_60fps": false,
+            "supported_2k_60fps": false,
+            "supported_4k_60fps": false,
+            "supported_8k_60fps": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "c2.android.mpeg4.encoder",
+      "canonical": "c2.android.mpeg4.encoder",
+      "encoder": true,
+      "alias": false,
+      "software": true,
+      "hardware": false,
+      "vendor": false,
+      "supported_type": [
+        {
+          "type": "video/mp4v-es",
+          "codec_profile_level": [
+            {
+              "level": 8,
+              "profile": 1
+            }
+          ],
+          "codec_color_format": [
+            2135033992,
+            19,
+            21,
+            20,
+            39,
+            2130708361
+          ],
+          "supported_secure_playback": false,
+          "supported_resolutions": {
+            "supported_360p_30fps": false,
+            "supported_480p_30fps": false,
+            "supported_720p_30fps": false,
+            "supported_1080p_30fps": false,
+            "supported_2k_30fps": false,
+            "supported_4k_30fps": false,
+            "supported_8k_30fps": false,
+            "supported_360p_60fps": false,
+            "supported_480p_60fps": false,
+            "supported_720p_60fps": false,
+            "supported_1080p_60fps": false,
+            "supported_2k_60fps": false,
+            "supported_4k_60fps": false,
+            "supported_8k_60fps": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "OMX.google.mpeg4.encoder",
+      "canonical": "c2.android.mpeg4.encoder",
+      "encoder": true,
+      "alias": true,
+      "software": true,
+      "hardware": false,
+      "vendor": false,
+      "supported_type": [
+        {
+          "type": "video/mp4v-es",
+          "codec_profile_level": [
+            {
+              "level": 8,
+              "profile": 1
+            }
+          ],
+          "codec_color_format": [
+            2135033992,
+            19,
+            21,
+            20,
+            39,
+            2130708361
+          ],
+          "supported_secure_playback": false,
+          "supported_resolutions": {
+            "supported_360p_30fps": false,
+            "supported_480p_30fps": false,
+            "supported_720p_30fps": false,
+            "supported_1080p_30fps": false,
+            "supported_2k_30fps": false,
+            "supported_4k_30fps": false,
+            "supported_8k_30fps": false,
+            "supported_360p_60fps": false,
+            "supported_480p_60fps": false,
+            "supported_720p_60fps": false,
+            "supported_1080p_60fps": false,
+            "supported_2k_60fps": false,
+            "supported_4k_60fps": false,
+            "supported_8k_60fps": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "c2.android.vp8.decoder",
+      "canonical": "c2.android.vp8.decoder",
+      "encoder": false,
+      "alias": false,
+      "software": true,
+      "hardware": false,
+      "vendor": false,
+      "supported_type": [
+        {
+          "type": "video/x-vnd.on2.vp8",
+          "codec_profile_level": [
+            {
+              "level": 1,
+              "profile": 1
+            }
+          ],
+          "codec_color_format": [
+            2135033992,
+            19,
+            21,
+            20,
+            39,
+            2130708361
+          ],
+          "supported_secure_playback": false,
+          "supported_resolutions": {
+            "supported_360p_30fps": true,
+            "supported_480p_30fps": true,
+            "supported_720p_30fps": true,
+            "supported_1080p_30fps": true,
+            "supported_2k_30fps": false,
+            "supported_4k_30fps": false,
+            "supported_8k_30fps": false,
+            "supported_360p_60fps": true,
+            "supported_480p_60fps": true,
+            "supported_720p_60fps": true,
+            "supported_1080p_60fps": true,
+            "supported_2k_60fps": false,
+            "supported_4k_60fps": false,
+            "supported_8k_60fps": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "OMX.google.vp8.decoder",
+      "canonical": "c2.android.vp8.decoder",
+      "encoder": false,
+      "alias": true,
+      "software": true,
+      "hardware": false,
+      "vendor": false,
+      "supported_type": [
+        {
+          "type": "video/x-vnd.on2.vp8",
+          "codec_profile_level": [
+            {
+              "level": 1,
+              "profile": 1
+            }
+          ],
+          "codec_color_format": [
+            2135033992,
+            19,
+            21,
+            20,
+            39,
+            2130708361
+          ],
+          "supported_secure_playback": false,
+          "supported_resolutions": {
+            "supported_360p_30fps": true,
+            "supported_480p_30fps": true,
+            "supported_720p_30fps": true,
+            "supported_1080p_30fps": true,
+            "supported_2k_30fps": false,
+            "supported_4k_30fps": false,
+            "supported_8k_30fps": false,
+            "supported_360p_60fps": true,
+            "supported_480p_60fps": true,
+            "supported_720p_60fps": true,
+            "supported_1080p_60fps": true,
+            "supported_2k_60fps": false,
+            "supported_4k_60fps": false,
+            "supported_8k_60fps": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "c2.android.vp8.encoder",
+      "canonical": "c2.android.vp8.encoder",
+      "encoder": true,
+      "alias": false,
+      "software": true,
+      "hardware": false,
+      "vendor": false,
+      "supported_type": [
+        {
+          "type": "video/x-vnd.on2.vp8",
+          "codec_profile_level": [
+            {
+              "level": 1,
+              "profile": 1
+            }
+          ],
+          "codec_color_format": [
+            2135033992,
+            19,
+            21,
+            20,
+            39,
+            2130708361
+          ],
+          "supported_secure_playback": false,
+          "supported_resolutions": {
+            "supported_360p_30fps": true,
+            "supported_480p_30fps": true,
+            "supported_720p_30fps": true,
+            "supported_1080p_30fps": true,
+            "supported_2k_30fps": false,
+            "supported_4k_30fps": false,
+            "supported_8k_30fps": false,
+            "supported_360p_60fps": true,
+            "supported_480p_60fps": true,
+            "supported_720p_60fps": true,
+            "supported_1080p_60fps": true,
+            "supported_2k_60fps": false,
+            "supported_4k_60fps": false,
+            "supported_8k_60fps": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "OMX.google.vp8.encoder",
+      "canonical": "c2.android.vp8.encoder",
+      "encoder": true,
+      "alias": true,
+      "software": true,
+      "hardware": false,
+      "vendor": false,
+      "supported_type": [
+        {
+          "type": "video/x-vnd.on2.vp8",
+          "codec_profile_level": [
+            {
+              "level": 1,
+              "profile": 1
+            }
+          ],
+          "codec_color_format": [
+            2135033992,
+            19,
+            21,
+            20,
+            39,
+            2130708361
+          ],
+          "supported_secure_playback": false,
+          "supported_resolutions": {
+            "supported_360p_30fps": true,
+            "supported_480p_30fps": true,
+            "supported_720p_30fps": true,
+            "supported_1080p_30fps": true,
+            "supported_2k_30fps": false,
+            "supported_4k_30fps": false,
+            "supported_8k_30fps": false,
+            "supported_360p_60fps": true,
+            "supported_480p_60fps": true,
+            "supported_720p_60fps": true,
+            "supported_1080p_60fps": true,
+            "supported_2k_60fps": false,
+            "supported_4k_60fps": false,
+            "supported_8k_60fps": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "c2.android.vp9.decoder",
+      "canonical": "c2.android.vp9.decoder",
+      "encoder": false,
+      "alias": false,
+      "software": true,
+      "hardware": false,
+      "vendor": false,
+      "supported_type": [
+        {
+          "type": "video/x-vnd.on2.vp9",
+          "codec_profile_level": [
+            {
+              "level": 256,
+              "profile": 1
+            },
+            {
+              "level": 256,
+              "profile": 4
+            },
+            {
+              "level": 256,
+              "profile": 4096
+            },
+            {
+              "level": 256,
+              "profile": 16384
+            }
+          ],
+          "codec_color_format": [
+            2135033992,
+            19,
+            21,
+            20,
+            39,
+            2130708361
+          ],
+          "supported_secure_playback": false,
+          "supported_resolutions": {
+            "supported_360p_30fps": true,
+            "supported_480p_30fps": true,
+            "supported_720p_30fps": true,
+            "supported_1080p_30fps": true,
+            "supported_2k_30fps": false,
+            "supported_4k_30fps": false,
+            "supported_8k_30fps": false,
+            "supported_360p_60fps": true,
+            "supported_480p_60fps": true,
+            "supported_720p_60fps": true,
+            "supported_1080p_60fps": true,
+            "supported_2k_60fps": false,
+            "supported_4k_60fps": false,
+            "supported_8k_60fps": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "OMX.google.vp9.decoder",
+      "canonical": "c2.android.vp9.decoder",
+      "encoder": false,
+      "alias": true,
+      "software": true,
+      "hardware": false,
+      "vendor": false,
+      "supported_type": [
+        {
+          "type": "video/x-vnd.on2.vp9",
+          "codec_profile_level": [
+            {
+              "level": 256,
+              "profile": 1
+            },
+            {
+              "level": 256,
+              "profile": 4
+            },
+            {
+              "level": 256,
+              "profile": 4096
+            },
+            {
+              "level": 256,
+              "profile": 16384
+            }
+          ],
+          "codec_color_format": [
+            2135033992,
+            19,
+            21,
+            20,
+            39,
+            2130708361
+          ],
+          "supported_secure_playback": false,
+          "supported_resolutions": {
+            "supported_360p_30fps": true,
+            "supported_480p_30fps": true,
+            "supported_720p_30fps": true,
+            "supported_1080p_30fps": true,
+            "supported_2k_30fps": false,
+            "supported_4k_30fps": false,
+            "supported_8k_30fps": false,
+            "supported_360p_60fps": true,
+            "supported_480p_60fps": true,
+            "supported_720p_60fps": true,
+            "supported_1080p_60fps": true,
+            "supported_2k_60fps": false,
+            "supported_4k_60fps": false,
+            "supported_8k_60fps": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "c2.android.vp9.encoder",
+      "canonical": "c2.android.vp9.encoder",
+      "encoder": true,
+      "alias": false,
+      "software": true,
+      "hardware": false,
+      "vendor": false,
+      "supported_type": [
+        {
+          "type": "video/x-vnd.on2.vp9",
+          "codec_profile_level": [
+            {
+              "level": 128,
+              "profile": 1
+            }
+          ],
+          "codec_color_format": [
+            2135033992,
+            19,
+            21,
+            20,
+            39,
+            2130708361
+          ],
+          "supported_secure_playback": false,
+          "supported_resolutions": {
+            "supported_360p_30fps": true,
+            "supported_480p_30fps": true,
+            "supported_720p_30fps": true,
+            "supported_1080p_30fps": false,
+            "supported_2k_30fps": false,
+            "supported_4k_30fps": false,
+            "supported_8k_30fps": false,
+            "supported_360p_60fps": true,
+            "supported_480p_60fps": true,
+            "supported_720p_60fps": true,
+            "supported_1080p_60fps": false,
+            "supported_2k_60fps": false,
+            "supported_4k_60fps": false,
+            "supported_8k_60fps": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "OMX.google.vp9.encoder",
+      "canonical": "c2.android.vp9.encoder",
+      "encoder": true,
+      "alias": true,
+      "software": true,
+      "hardware": false,
+      "vendor": false,
+      "supported_type": [
+        {
+          "type": "video/x-vnd.on2.vp9",
+          "codec_profile_level": [
+            {
+              "level": 128,
+              "profile": 1
+            }
+          ],
+          "codec_color_format": [
+            2135033992,
+            19,
+            21,
+            20,
+            39,
+            2130708361
+          ],
+          "supported_secure_playback": false,
+          "supported_resolutions": {
+            "supported_360p_30fps": true,
+            "supported_480p_30fps": true,
+            "supported_720p_30fps": true,
+            "supported_1080p_30fps": false,
+            "supported_2k_30fps": false,
+            "supported_4k_30fps": false,
+            "supported_8k_30fps": false,
+            "supported_360p_60fps": true,
+            "supported_480p_60fps": true,
+            "supported_720p_60fps": true,
+            "supported_1080p_60fps": false,
+            "supported_2k_60fps": false,
+            "supported_4k_60fps": false,
+            "supported_8k_60fps": false
+          }
+        }
+      ]
+    }
+  ]
+}

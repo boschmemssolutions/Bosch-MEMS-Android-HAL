@@ -40,8 +40,5 @@ cc_test {
         "VtsHalSensorsTargetTestUtils",
         "libaidlcommonsupport",
     ],
-    test_suites: [
-        "general-tests",
-        "vts",
-    ],
+    test_suites: ["vts-bosch"],
 }

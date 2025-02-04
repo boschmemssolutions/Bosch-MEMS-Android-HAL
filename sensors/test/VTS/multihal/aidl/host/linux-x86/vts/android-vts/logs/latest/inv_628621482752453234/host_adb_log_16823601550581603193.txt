@@ -1,0 +1,123 @@
+--- adb starting (pid 74) ---
+02-02 03:03:45.879    74    74 I adb     : main.cpp:63 Android Debug Bridge version 1.0.41
+02-02 03:03:45.879    74    74 I adb     : main.cpp:63 Version 35.0.2-12147458
+02-02 03:03:45.879    74    74 I adb     : main.cpp:63 Installed as /usr/bin/platform-tools/adb
+02-02 03:03:45.879    74    74 I adb     : main.cpp:63 Running on Linux 5.15.0-130-generic (x86_64)
+02-02 03:03:45.879    74    74 I adb     : main.cpp:63 
+02-02 03:03:45.879    74    74 W adb     : usb_libusb.cpp:1059 failed to initialize libusb: LIBUSB_ERROR_OTHER
+02-02 03:03:45.879    74    74 I adb     : auth.cpp:416 adb_auth_init...
+02-02 03:03:45.879    74    74 I adb     : auth.cpp:152 loaded new key from '/home/eae1rt/.android/adbkey' with fingerprint 34027AF2BB6056A76BFA10C8CC48828B35D806FCC8741053723DE5C06FDD431D
+02-02 03:03:45.879    74    74 I adb     : auth.cpp:391 adb_auth_inotify_init...
+02-02 03:03:45.880    74    74 I adb     : udp_socket.cpp:170 AdbUdpSocket fd=9
+02-02 03:03:45.880    74    74 I adb     : udp_socket.cpp:170 AdbUdpSocket fd=10
+02-02 03:03:45.880    74    74 I adb     : udp_socket.cpp:274 SetMulticastOutboundInterface for index=2
+02-02 03:03:45.880    74    74 I adb     : udp_socket.cpp:533 bind endpoint=0.0.0.0:5353
+02-02 03:03:45.880    74    74 I adb     : udp_socket.cpp:274 SetMulticastOutboundInterface for index=2
+02-02 03:03:45.880    74    74 I adb     : udp_socket.cpp:558 bind endpoint=[0000:0000:0000:0000:0000:0000:0000:0000]:5353 scope_id=0
+02-02 03:03:45.880    74    74 I adb     : udp_socket.cpp:170 AdbUdpSocket fd=11
+02-02 03:03:45.880    74    74 I adb     : udp_socket.cpp:170 AdbUdpSocket fd=12
+02-02 03:03:45.880    74    74 I adb     : udp_socket.cpp:274 SetMulticastOutboundInterface for index=3
+02-02 03:03:45.880    74    74 I adb     : udp_socket.cpp:533 bind endpoint=0.0.0.0:5353
+02-02 03:03:45.880    74    74 I adb     : udp_socket.cpp:274 SetMulticastOutboundInterface for index=3
+02-02 03:03:45.880    74    74 I adb     : udp_socket.cpp:558 bind endpoint=[0000:0000:0000:0000:0000:0000:0000:0000]:5353 scope_id=0
+02-02 03:03:45.880    74    74 I adb     : udp_socket.cpp:170 AdbUdpSocket fd=13
+02-02 03:03:45.880    74    74 I adb     : udp_socket.cpp:170 AdbUdpSocket fd=14
+02-02 03:03:45.880    74    74 I adb     : udp_socket.cpp:274 SetMulticastOutboundInterface for index=4
+02-02 03:03:45.880    74    74 I adb     : udp_socket.cpp:533 bind endpoint=0.0.0.0:5353
+02-02 03:03:45.880    74    74 I adb     : udp_socket.cpp:274 SetMulticastOutboundInterface for index=4
+02-02 03:03:45.880    74    74 I adb     : udp_socket.cpp:558 bind endpoint=[0000:0000:0000:0000:0000:0000:0000:0000]:5353 scope_id=0
+02-02 03:03:48.881    74    82 I adb     : transport.cpp:341 192.168.137.18:5555: read thread spawning
+02-02 03:03:48.881    74    83 I adb     : transport.cpp:313 192.168.137.18:5555: write thread spawning
+02-02 03:03:48.885    74    74 I adb     : adb.cpp:177 192.168.137.18:5555: already offline
+02-02 03:15:48.228    74    82 I adb     : transport.cpp:345 192.168.137.18:5555: read failed: Success
+02-02 03:15:48.228    74    82 I adb     : transport.cpp:1153 192.168.137.18:5555: connection terminated: read failed
+02-02 03:15:48.228    74    74 I adb     : adb.cpp:181 192.168.137.18:5555: offline
+02-02 03:15:48.228    74    74 I adb     : transport.cpp:836 destroying transport 192.168.137.18:5555
+02-02 03:15:48.228    74    74 I adb     : transport.cpp:413 BlockingConnectionAdapter(192.168.137.18:5555): stopping
+02-02 03:15:48.229    74    74 I adb     : transport.cpp:431 BlockingConnectionAdapter(192.168.137.18:5555): stopped
+02-02 03:15:48.480    74    75 I adb     : transport.cpp:300 BlockingConnectionAdapter(192.168.137.18:5555): destructing
+02-02 03:15:48.480    74    75 I adb     : transport.cpp:406 BlockingConnectionAdapter(192.168.137.18:5555): already stopped
+02-02 03:15:48.480    74   121 I adb     : transport.cpp:341 192.168.137.18:5555: read thread spawning
+02-02 03:15:48.480    74   122 I adb     : transport.cpp:313 192.168.137.18:5555: write thread spawning
+02-02 03:15:48.485    74    74 I adb     : adb.cpp:177 192.168.137.18:5555: already offline
+02-02 03:22:57.120    74   121 I adb     : transport.cpp:345 192.168.137.18:5555: read failed: Success
+02-02 03:22:57.121    74   121 I adb     : transport.cpp:1153 192.168.137.18:5555: connection terminated: read failed
+02-02 03:22:57.121    74    74 I adb     : adb.cpp:181 192.168.137.18:5555: offline
+02-02 03:22:57.121    74    74 I adb     : transport.cpp:836 destroying transport 192.168.137.18:5555
+02-02 03:22:57.121    74    74 I adb     : transport.cpp:413 BlockingConnectionAdapter(192.168.137.18:5555): stopping
+02-02 03:22:57.122    74    74 I adb     : transport.cpp:431 BlockingConnectionAdapter(192.168.137.18:5555): stopped
+02-02 03:22:57.383    74    75 W adb     : network.cpp:149 failed to connect to '192.168.137.18:5555': Connection refused
+02-02 03:24:04.342    74    75 I adb     : transport.cpp:300 BlockingConnectionAdapter(192.168.137.18:5555): destructing
+02-02 03:24:04.342    74    75 I adb     : transport.cpp:406 BlockingConnectionAdapter(192.168.137.18:5555): already stopped
+02-02 03:24:04.342    74 53209 I adb     : transport.cpp:341 192.168.137.18:5555: read thread spawning
+02-02 03:24:04.353    74 53210 I adb     : transport.cpp:313 192.168.137.18:5555: write thread spawning
+02-02 03:24:04.356    74    74 I adb     : adb.cpp:177 192.168.137.18:5555: already offline
+02-02 03:25:39.781    74 53209 I adb     : transport.cpp:345 192.168.137.18:5555: read failed: Connection reset by peer
+02-02 03:25:39.785    74 53209 I adb     : transport.cpp:1153 192.168.137.18:5555: connection terminated: read failed
+02-02 03:25:39.785    74    74 I adb     : adb.cpp:181 192.168.137.18:5555: offline
+02-02 03:25:39.785    74    74 I adb     : transport.cpp:836 destroying transport 192.168.137.18:5555
+02-02 03:25:39.785    74    74 I adb     : transport.cpp:413 BlockingConnectionAdapter(192.168.137.18:5555): stopping
+02-02 03:25:39.786    74    74 I adb     : transport.cpp:431 BlockingConnectionAdapter(192.168.137.18:5555): stopped
+02-02 03:25:40.038    74    75 I adb     : transport.cpp:300 BlockingConnectionAdapter(192.168.137.18:5555): destructing
+02-02 03:25:40.038    74    75 I adb     : transport.cpp:406 BlockingConnectionAdapter(192.168.137.18:5555): already stopped
+02-02 03:25:40.038    74 54085 I adb     : transport.cpp:341 192.168.137.18:5555: read thread spawning
+02-02 03:25:40.038    74 54086 I adb     : transport.cpp:313 192.168.137.18:5555: write thread spawning
+02-02 03:25:40.041    74    74 I adb     : adb.cpp:177 192.168.137.18:5555: already offline
+02-02 03:27:53.461    74 54085 I adb     : transport.cpp:345 192.168.137.18:5555: read failed: Connection reset by peer
+02-02 03:27:53.461    74 54085 I adb     : transport.cpp:1153 192.168.137.18:5555: connection terminated: read failed
+02-02 03:27:53.461    74    74 I adb     : adb.cpp:181 192.168.137.18:5555: offline
+02-02 03:27:53.462    74    74 I adb     : transport.cpp:836 destroying transport 192.168.137.18:5555
+02-02 03:27:53.462    74    74 I adb     : transport.cpp:413 BlockingConnectionAdapter(192.168.137.18:5555): stopping
+02-02 03:27:53.462    74    74 I adb     : transport.cpp:431 BlockingConnectionAdapter(192.168.137.18:5555): stopped
+02-02 03:27:53.713    74    75 I adb     : transport.cpp:300 BlockingConnectionAdapter(192.168.137.18:5555): destructing
+02-02 03:27:53.713    74    75 I adb     : transport.cpp:406 BlockingConnectionAdapter(192.168.137.18:5555): already stopped
+02-02 03:27:53.713    74 54249 I adb     : transport.cpp:341 192.168.137.18:5555: read thread spawning
+02-02 03:27:53.713    74 54250 I adb     : transport.cpp:313 192.168.137.18:5555: write thread spawning
+02-02 03:27:53.728    74    74 I adb     : adb.cpp:177 192.168.137.18:5555: already offline
+02-02 03:27:54.976    74 54249 I adb     : transport.cpp:345 192.168.137.18:5555: read failed: Connection reset by peer
+02-02 03:27:54.976    74 54249 I adb     : transport.cpp:1153 192.168.137.18:5555: connection terminated: read failed
+02-02 03:27:54.976    74    74 I adb     : adb.cpp:181 192.168.137.18:5555: offline
+02-02 03:27:54.976    74    74 I adb     : transport.cpp:836 destroying transport 192.168.137.18:5555
+02-02 03:27:54.976    74    74 I adb     : transport.cpp:413 BlockingConnectionAdapter(192.168.137.18:5555): stopping
+02-02 03:27:54.976    74    74 I adb     : transport.cpp:431 BlockingConnectionAdapter(192.168.137.18:5555): stopped
+02-02 03:27:55.227    74    75 I adb     : transport.cpp:300 BlockingConnectionAdapter(192.168.137.18:5555): destructing
+02-02 03:27:55.227    74    75 I adb     : transport.cpp:406 BlockingConnectionAdapter(192.168.137.18:5555): already stopped
+02-02 03:27:55.227    74 54259 I adb     : transport.cpp:341 192.168.137.18:5555: read thread spawning
+02-02 03:27:55.227    74 54260 I adb     : transport.cpp:313 192.168.137.18:5555: write thread spawning
+02-02 03:27:55.230    74    74 I adb     : adb.cpp:177 192.168.137.18:5555: already offline
+02-02 03:28:00.242    74 54268 I adb     : transport.cpp:300 BlockingConnectionAdapter(<unknown>): destructing
+02-02 03:28:00.242    74 54268 I adb     : transport.cpp:401 BlockingConnectionAdapter(<unknown>): not started
+02-02 03:28:00.253    74 54273 I adb     : transport.cpp:300 BlockingConnectionAdapter(<unknown>): destructing
+02-02 03:28:00.253    74 54273 I adb     : transport.cpp:401 BlockingConnectionAdapter(<unknown>): not started
+02-02 03:28:00.272    74 54276 I adb     : transport.cpp:300 BlockingConnectionAdapter(<unknown>): destructing
+02-02 03:28:00.272    74 54276 I adb     : transport.cpp:401 BlockingConnectionAdapter(<unknown>): not started
+02-02 03:28:03.521    74 54259 I adb     : transport.cpp:345 192.168.137.18:5555: read failed: Connection reset by peer
+02-02 03:28:03.521    74 54259 I adb     : transport.cpp:1153 192.168.137.18:5555: connection terminated: read failed
+02-02 03:28:03.521    74    74 I adb     : adb.cpp:181 192.168.137.18:5555: offline
+02-02 03:28:03.521    74    74 I adb     : transport.cpp:836 destroying transport 192.168.137.18:5555
+02-02 03:28:03.521    74    74 I adb     : transport.cpp:413 BlockingConnectionAdapter(192.168.137.18:5555): stopping
+02-02 03:28:03.521    74    74 I adb     : transport.cpp:431 BlockingConnectionAdapter(192.168.137.18:5555): stopped
+02-02 03:28:03.773    74    75 I adb     : transport.cpp:300 BlockingConnectionAdapter(192.168.137.18:5555): destructing
+02-02 03:28:03.773    74    75 I adb     : transport.cpp:406 BlockingConnectionAdapter(192.168.137.18:5555): already stopped
+02-02 03:28:03.773    74 54333 I adb     : transport.cpp:341 192.168.137.18:5555: read thread spawning
+02-02 03:28:03.773    74 54334 I adb     : transport.cpp:313 192.168.137.18:5555: write thread spawning
+02-02 03:28:03.778    74    74 I adb     : adb.cpp:177 192.168.137.18:5555: already offline
+02-02 03:28:07.435    74 54333 I adb     : transport.cpp:345 192.168.137.18:5555: read failed: Connection reset by peer
+02-02 03:28:07.435    74 54333 I adb     : transport.cpp:1153 192.168.137.18:5555: connection terminated: read failed
+02-02 03:28:07.436    74    74 I adb     : adb.cpp:181 192.168.137.18:5555: offline
+02-02 03:28:07.436    74    74 I adb     : transport.cpp:836 destroying transport 192.168.137.18:5555
+02-02 03:28:07.436    74    74 I adb     : transport.cpp:413 BlockingConnectionAdapter(192.168.137.18:5555): stopping
+02-02 03:28:07.436    74    74 I adb     : transport.cpp:431 BlockingConnectionAdapter(192.168.137.18:5555): stopped
+02-02 03:28:07.687    74    75 W adb     : network.cpp:149 failed to connect to '192.168.137.18:5555': Connection refused
+02-02 03:28:08.436    74    74 W adb     : sockets.cpp:310 timeout expired while flushing socket, closing
+02-02 03:28:10.689    74    75 I adb     : transport.cpp:300 BlockingConnectionAdapter(192.168.137.18:5555): destructing
+02-02 03:28:10.689    74    75 I adb     : transport.cpp:406 BlockingConnectionAdapter(192.168.137.18:5555): already stopped
+02-02 03:28:10.689    74 54364 I adb     : transport.cpp:341 192.168.137.18:5555: read thread spawning
+02-02 03:28:10.689    74 54365 I adb     : transport.cpp:313 192.168.137.18:5555: write thread spawning
+02-02 03:28:10.693    74    74 I adb     : adb.cpp:177 192.168.137.18:5555: already offline
+02-02 03:28:15.748    74 54375 I adb     : transport.cpp:300 BlockingConnectionAdapter(<unknown>): destructing
+02-02 03:28:15.748    74 54375 I adb     : transport.cpp:401 BlockingConnectionAdapter(<unknown>): not started
+02-02 03:28:15.761    74 54378 I adb     : transport.cpp:300 BlockingConnectionAdapter(<unknown>): destructing
+02-02 03:28:15.761    74 54378 I adb     : transport.cpp:401 BlockingConnectionAdapter(<unknown>): not started
+02-02 03:28:15.773    74 54381 I adb     : transport.cpp:300 BlockingConnectionAdapter(<unknown>): destructing
+02-02 03:28:15.773    74 54381 I adb     : transport.cpp:401 BlockingConnectionAdapter(<unknown>): not started

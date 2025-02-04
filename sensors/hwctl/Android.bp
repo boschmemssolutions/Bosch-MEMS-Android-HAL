@@ -24,6 +24,6 @@ cc_library_static {
         "libutils",
     ],
     srcs: [
-        "hwctl.cpp",
+        "FileHandler.cpp",
     ],
 }

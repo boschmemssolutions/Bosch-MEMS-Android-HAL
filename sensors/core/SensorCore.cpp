@@ -21,11 +21,13 @@
 #include <utils/SystemClock.h>
 
 #include <algorithm>
-#include <sstream>
-
-#include "hwctl.h"
 
 using namespace bosch::sensors;
+
+void SensorCore::setDevice(const std::string& device) {
+  mDevice = device;
+  mFileHandler.init(mDevice, mSensorData.sysfsRaw);
+}
 
 void SensorCore::activate(bool enable) { activateByType(mSensorData.type, enable); }
 
@@ -64,10 +66,12 @@ void SensorCore::updateSamplingRate() {
 }
 
 bool SensorCore::readSensorTemperature(float* temperature) {
-  std::string data;
   if (mSensorData.temperatureSysfsRaw.empty()) return false;
 
-  if (0 == hwctl::readFromFile(mDevice + mSensorData.temperatureSysfsRaw, data)) {
+  std::string data;
+  bosch::hwctl::ReadHandler fileHandler(mDevice, mSensorData.temperatureSysfsRaw);
+
+  if (0 == fileHandler.read(data)) {
     *temperature = (::atof(data.c_str()) + mSensorData.temperatureOffset) * mSensorData.temperatureScale;
     return true;
   } else {
@@ -85,16 +89,10 @@ std::vector<SensorValues> SensorCore::readSensorValues() {
 void SensorCore::readPollingData(std::vector<SensorValues>& values) {
   SensorValues value{};
   value.timestamp = ::android::elapsedRealtimeNano();
-
-  for (const auto& sysfs : mSensorData.sysfsRaw) {
-    std::string data;
-    if (0 == hwctl::readFromFile(mDevice + sysfs, data)) {
-      value.data.push_back(::atof(data.c_str()) * mSensorData.resolution);
-    } else {
-      ALOGE("Sensor readPollingData failed");
-      return;
-    }
+  const int status = mFileHandler.read(value.data, mSensorData.resolution);
+  if (status != 0) {
+    ALOGE("Sensor readPollingData failed");
+    return;
   }
-
   values.push_back(value);
 }

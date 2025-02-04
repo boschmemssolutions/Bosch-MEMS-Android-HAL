@@ -1,0 +1,20 @@
+TEXT: 
+============================================
+================= Results ==================
+=============== Consumed Time ==============
+    arm64-v8a BoschHalSensorsV2_1TargetTest: 10m 25s
+Total aggregated tests run time: 10m 25s
+============== TOP 1 Slow Modules ==============
+    arm64-v8a BoschHalSensorsV2_1TargetTest: 0.10 tests/sec [63 tests / 625830 msec]
+============== Modules Preparation Times ==============
+    arm64-v8a BoschHalSensorsV2_1TargetTest => prep = 4059 ms || clean = 34320 ms
+Total preparation time: 4s  ||  Total tear down time: 34s
+=======================================================
+=============== Summary ===============
+Total Run time: 11m 49s
+1/1 modules completed
+Total Tests       : 63
+PASSED            : 63
+FAILED            : 0
+============== End of Results ==============
+============================================

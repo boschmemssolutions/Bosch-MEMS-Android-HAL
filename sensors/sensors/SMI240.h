@@ -29,10 +29,22 @@ public:
   ~Smi240Acc() = default;
 };
 
+class Smi240AccUncalibrated : public Smi240Acc {
+public:
+  Smi240AccUncalibrated();
+  ~Smi240AccUncalibrated() = default;
+};
+
 class Smi240Gyro : public SensorCore {
 public:
   Smi240Gyro();
   ~Smi240Gyro() = default;
+};
+
+class Smi240GyroUncalibrated : public Smi240Gyro {
+public:
+  Smi240GyroUncalibrated();
+  ~Smi240GyroUncalibrated() = default;
 };
 
 class Smi240LinearAcc : public LinearAcceleration {

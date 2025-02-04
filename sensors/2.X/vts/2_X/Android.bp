@@ -37,6 +37,7 @@ cc_defaults {
         "libfmq",
         "VtsHalSensorsTargetTestUtils",
     ],
+    test_suites: ["vts-bosch"],
 }
 
 cc_test_library {

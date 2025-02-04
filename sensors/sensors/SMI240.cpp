@@ -36,6 +36,11 @@ Smi240Acc::Smi240Acc() : SensorCore() {
   mSensorData.reportMode = CONTINUOUS;
 }
 
+Smi240AccUncalibrated::Smi240AccUncalibrated() {
+  mSensorData.sensorName = "SMI240 BOSCH Accelerometer Uncalibrated Sensor";
+  mSensorData.type = BoschSensorType::ACCEL_UNCALIBRATED;
+}
+
 Smi240Gyro::Smi240Gyro() : SensorCore() {
   mSensorData.driverName = "smi240";
   mSensorData.sensorName = "SMI240 BOSCH Gyroscope Sensor";
@@ -50,6 +55,11 @@ Smi240Gyro::Smi240Gyro() : SensorCore() {
   mSensorData.temperatureScale = 1.0f / 256;
   mSensorData.temperatureOffset = 25.0f * 256;
   mSensorData.reportMode = CONTINUOUS;
+}
+
+Smi240GyroUncalibrated::Smi240GyroUncalibrated() {
+  mSensorData.sensorName = "SMI240 BOSCH Gyroscope Uncalibrated Sensor";
+  mSensorData.type = BoschSensorType::GYRO_UNCALIBRATED;
 }
 
 Smi240LinearAcc::Smi240LinearAcc(const std::shared_ptr<SensorCore> accel, const std::shared_ptr<SensorCore> gyro) {

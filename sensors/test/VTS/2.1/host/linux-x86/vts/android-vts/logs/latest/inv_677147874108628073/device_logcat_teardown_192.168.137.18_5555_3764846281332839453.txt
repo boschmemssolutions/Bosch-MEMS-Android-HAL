@@ -1,0 +1,28 @@
+01-29 12:53:25.716 10088  4197  4197 D PreprocessingManager: (Third pass) Split notification groups by seen and unseen: [-1|android|55|null|1000: [-1|android|55|null|1000]]
+01-29 12:53:25.716 10088  4197  4197 D PreprocessingManager: (Fourth pass) Split notification groups that do not meet minimum grouping threshold of 4 : [-1|android|55|null|1000: [-1|android|55|null|1000]]
+01-29 12:53:25.717 10088  4197  4197 D PreprocessingManager: (Fifth pass) Group notifications without child notifications are removed: [-1|android|55|null|1000: [-1|android|55|null|1000]]
+01-29 12:53:25.717 10088  4197  4197 D PreprocessingManager: Grouped notifications: [-1|android|55|null|1000: [-1|android|55|null|1000]]
+01-29 12:53:25.717 10088  4197  4197 D NotificationViewControl: Processed notification groups: [-1|android|55|null|1000: [-1|android|55|null|1000]]
+01-29 12:53:25.717 10088  4197  4197 D CarNotificationAdapter: Seen notifications: []
+01-29 12:53:25.717 10088  4197  4197 D CarNotificationAdapter: Unseen notifications: [-1|android|55|null|1000: [-1|android|55|null|1000]]
+01-29 12:53:25.717 10088  4197  4197 D CarNotificationAdapter: Updated adapter view holders: [notification_header: [], notification_recents: [], -1|android|55|null|1000: [-1|android|55|null|1000], notification_footer: []]
+01-29 12:53:26.111 10101  4812  4946 W MediaProvider: isAppCloneUserPair for user 0: false
+01-29 12:53:26.113 10101  4812  4946 V MediaProvider: Inserted id:1000000338 less than next row id backup:1000001000.
+01-29 12:53:26.293 10101  4812  5991 I MediaProvider: Deleted 1 0 0 0 0 0 0 items on external_primary due to com.android.shell
+01-29 12:53:26.389  1000  3909  3935 I ActivityManager: Force stopping android.tradefed.contentprovider appid=10108 user=-1: deletePackageX
+01-29 12:53:26.404  root   335   354 D installd: Found valid user 12
+01-29 12:53:26.404  root   335   354 D installd: Found valid user 10
+01-29 12:53:26.404  root   335   354 D installd: Found valid user 11
+01-29 12:53:26.522  root     0     0 I logd    : start watching /data/system/packages.list ...
+01-29 12:53:26.530  root     0     0 I logd    : ReadPackageList, total packages: 114
+01-29 12:53:26.560  1000  3909  3926 W Looper  : Slow dispatch took 143ms android.fg h=android.os.Handler c=<recycled PooledLambda@66c3af6> m=0
+01-29 12:53:26.562  1000  3909  3954 D PackageManager: Instant App installer not found with android.intent.action.INSTALL_INSTANT_APP_PACKAGE
+01-29 12:53:26.562  1000  3909  3954 D PackageManager: Clear ephemeral installer activity
+01-29 12:53:26.565  1000  3909  5075 E TaskPersister: File error accessing recents directory (directory doesn't exist?).
+01-29 12:53:26.565  1000  3909  5075 E TaskPersister: File error accessing recents directory (directory doesn't exist?).
+01-29 12:53:26.567  1000  3909  5075 E TaskPersister: File error accessing recents directory (directory doesn't exist?).
+01-29 12:53:26.579  1000  3909  3954 I ActivityManager: Force stopping android.tradefed.contentprovider appid=10108 user=10: pkg removed
+01-29 12:53:26.580  1000  3909  3954 D OomAdjuster: Not killing cached processes
+01-29 12:53:26.581  1000  3909  3954 D CompatibilityChangeReporter: Compat change id reported: 181136395; UID 1010052; state: DISABLED
+01-29 12:53:26.582  1000  3909  3954 D CompatibilityChangeReporter: Compat change id reported: 174042936; UID 1010052; state: DISABLED
+01-29 12:53:26.592  1000  3909  3954 I ActivityManager: Force stopping android.tradefed.contentprovider appid=10108 user=0: pkg removed

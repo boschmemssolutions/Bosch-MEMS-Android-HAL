@@ -117,10 +117,20 @@ public:
                                 .type = (int32_t)event.sensorType,
                                 .reserved0 = 0,
                                 .timestamp = event.timestamp};
-          ev.acceleration.x = event.payload.get<Event::EventPayload::vec3>().x;
-          ev.acceleration.y = event.payload.get<Event::EventPayload::vec3>().y;
-          ev.acceleration.z = event.payload.get<Event::EventPayload::vec3>().z;
-          ev.acceleration.status = (int32_t)event.payload.get<Event::EventPayload::vec3>().status;
+          if ((event.sensorType == SensorType::GYROSCOPE_UNCALIBRATED) ||
+              (event.sensorType == SensorType::ACCELEROMETER_UNCALIBRATED)) {
+            ev.uncalibrated_gyro.x_uncalib = event.payload.get<Event::EventPayload::uncal>().x;
+            ev.uncalibrated_gyro.y_uncalib = event.payload.get<Event::EventPayload::uncal>().y;
+            ev.uncalibrated_gyro.z_uncalib = event.payload.get<Event::EventPayload::uncal>().z;
+            ev.uncalibrated_gyro.x_bias = event.payload.get<Event::EventPayload::uncal>().xBias;
+            ev.uncalibrated_gyro.y_bias = event.payload.get<Event::EventPayload::uncal>().yBias;
+            ev.uncalibrated_gyro.z_bias = event.payload.get<Event::EventPayload::uncal>().zBias;
+          } else {
+            ev.acceleration.x = event.payload.get<Event::EventPayload::vec3>().x;
+            ev.acceleration.y = event.payload.get<Event::EventPayload::vec3>().y;
+            ev.acceleration.z = event.payload.get<Event::EventPayload::vec3>().z;
+            ev.acceleration.status = (int32_t)event.payload.get<Event::EventPayload::vec3>().status;
+          }
           channel->write(&ev);
           channel->sampleCount[event.sensorHandle] = 0;
         }

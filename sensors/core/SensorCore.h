@@ -20,6 +20,7 @@
 #include <cmath>
 #include <map>
 
+#include "FileHandler.h"
 #include "ISensorHal.h"
 
 namespace bosch {
@@ -39,7 +40,7 @@ public:
   void batch(int64_t samplingPeriodNs, int64_t maxReportLatencyNs) override;
   const SensorData& getSensorData() const override { return mSensorData; }
 
-  void setDevice(const std::string& device) { mDevice = device; }
+  void setDevice(const std::string& device);
   void setAvailable(bool available) { mAvailable = available; }
   bool isAvailable() const { return mAvailable; }
 
@@ -61,6 +62,8 @@ private:
   bool mIsEnabled{false};
   std::map<BoschSensorType, bool> mEnableState{};
   std::map<BoschSensorType, int64_t> mSamplingPeriods{};
+
+  bosch::hwctl::RawSysfsHandler mFileHandler;
 };
 
 }  // namespace sensors
