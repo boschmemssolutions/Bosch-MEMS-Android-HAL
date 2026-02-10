@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2023 Robert Bosch GmbH
+ * Copyright (C) 2024 Robert Bosch GmbH
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,46 +17,62 @@
 #ifndef ANDROID_HARDWARE_BOSCH_SENSORS_SMI230_H
 #define ANDROID_HARDWARE_BOSCH_SENSORS_SMI230_H
 
+#include "Accelerometer.h"
 #include "CompositeSensors.h"
-#include "SensorCore.h"
+#include "Gyroscope.h"
 
 namespace bosch {
 namespace sensors {
 
-class Smi230Acc : public SensorCore {
+class Smi230Acc : public Accelerometer {
 public:
-  Smi230Acc();
+  Smi230Acc(const std::shared_ptr<ISensorThread> sensorThread);
   ~Smi230Acc() = default;
 
-  void setPowerMode(bool enable) override;
-
 private:
-  const std::string mSysfsPowerMode = "pwr";
-  const std::string mSysfsOdr = "odr";
+  const AccelData mAccelData = {
+    .sysfsEnable = "1",
+    .sysfsDisable = "0",
+    .sysfsTrigger = "smi230acc-trigger",
+    .defaultRange = AccelRange::RANGE_4G,
+    .minRange = AccelRange::RANGE_2G,
+    .maxRange = AccelRange::RANGE_16G,
+    .odrMap =
+      {
+        {80000, "12.500000000"},
+        {40000, "25.000000000"},
+        {20000, "50.000000000"},
+        {10000, "100.000000000"},
+        {5000, "200.000000000"},
+        {2500, "400.000000000"},
+        {1250, "800.000000000"},
+        {625, "1600.000000000"},
+      },
+  };
 };
 
-class Smi230AccUncalibrated : public Smi230Acc {
+class Smi230Gyro : public Gyroscope {
 public:
-  Smi230AccUncalibrated();
-  ~Smi230AccUncalibrated() = default;
-};
-
-class Smi230Gyro : public SensorCore {
-public:
-  Smi230Gyro();
+  Smi230Gyro(const std::shared_ptr<ISensorThread> sensorThread);
   ~Smi230Gyro() = default;
 
-  void setPowerMode(bool enable) override;
-
 private:
-  const std::string mSysfsPowerMode = "pwr";
-  const std::string mSysfsOdr = "bw_odr";
-};
-
-class Smi230GyroUncalibrated : public Smi230Gyro {
-public:
-  Smi230GyroUncalibrated();
-  ~Smi230GyroUncalibrated() = default;
+  const GyroData mGyroData = {
+    .sysfsEnable = "1",
+    .sysfsDisable = "0",
+    .sysfsTrigger = "smi230gyro-trigger",
+    .defaultRange = GyroRange::RANGE_2000_DEG_S,
+    .minRange = GyroRange::RANGE_125_DEG_S,
+    .maxRange = GyroRange::RANGE_2000_DEG_S,
+    .odrMap =
+      {
+        {10000, "101"},
+        {5000, "201"},
+        {2500, "400"},
+        {1000, "1000"},
+      },
+    .powerOnForChange = true,
+  };
 };
 
 class Smi230LinearAcc : public LinearAcceleration {
@@ -69,6 +85,18 @@ class Smi230Gravity : public Gravity {
 public:
   Smi230Gravity(const std::shared_ptr<SensorCore> accel, const std::shared_ptr<SensorCore> gyro);
   ~Smi230Gravity() = default;
+};
+
+class Smi230AccUncalibrated : public Dummy {
+public:
+  Smi230AccUncalibrated(const std::shared_ptr<SensorCore> base);
+  ~Smi230AccUncalibrated() = default;
+};
+
+class Smi230GyroUncalibrated : public Dummy {
+public:
+  Smi230GyroUncalibrated(const std::shared_ptr<SensorCore> base);
+  ~Smi230GyroUncalibrated() = default;
 };
 
 }  // namespace sensors

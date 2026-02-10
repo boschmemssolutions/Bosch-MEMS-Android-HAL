@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2023 The Android Open Source Project
+ * Copyright (C) 2021 The Android Open Source Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -35,14 +35,14 @@ using aidl::android::hardware::sensors::ISensorsCallback;
 
 static constexpr size_t MAX_RECEIVE_BUFFER_EVENT_COUNT = 256;
 
-class SensorsAidlTest;
+class BoschSensorTest;
 
 class SensorsAidlEnvironment : public SensorsVtsEnvironmentBase<Event> {
 public:
   virtual void TearDown() override;
 
 protected:
-  friend SensorsAidlTest;
+  friend BoschSensorTest;
   SensorsAidlEnvironment(const std::string& service_name);
 
   /**
@@ -68,8 +68,6 @@ protected:
    * Reads and saves sensor events from the Event FMQ
    */
   void readEvents();
-
-  GTEST_DISALLOW_COPY_AND_ASSIGN_(SensorsAidlEnvironment);
 
   /**
    * Pointer to the Sensors HAL Interface that allows the test to call HAL functions.

@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2023 The Android Open Source Project
+ * Copyright (C) 2021 The Android Open Source Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,6 +18,7 @@
 
 #include <aidlcommonsupport/NativeHandle.h>
 #include <fmq/AidlMessageQueue.h>
+#include <hidl/HidlSupport.h>
 #include <hidl/Status.h>
 
 #include "ConvertUtils.h"
@@ -30,6 +31,8 @@ using ::aidl::android::hardware::common::fmq::MQDescriptor;
 using ::aidl::android::hardware::common::fmq::SynchronizedReadWrite;
 using ::aidl::android::hardware::sensors::ISensors;
 using ::aidl::android::hardware::sensors::ISensorsCallback;
+using ::android::hardware::hidl_string;
+using ::android::hardware::hidl_vec;
 using ::android::hardware::sensors::V2_1::implementation::convertToOldEvent;
 using ::ndk::ScopedAStatus;
 
@@ -194,11 +197,16 @@ ScopedAStatus HalProxyAidl::unregisterDirectChannel(int32_t in_channelHandle) {
   return resultToAStatus(HalProxy::unregisterDirectChannel(in_channelHandle));
 }
 
-binder_status_t HalProxyAidl::dump(int fd, const char** /* args */, uint32_t /* numArgs */) {
+binder_status_t HalProxyAidl::dump(int fd, const char** args, uint32_t numArgs) {
   native_handle_t* nativeHandle = native_handle_create(1 /* numFds */, 0 /* numInts */);
   nativeHandle->data[0] = fd;
 
-  HalProxy::debug(nativeHandle, {} /* args */);
+  hidl_vec<hidl_string> hidl_args;
+  hidl_args.resize(numArgs);
+  for (size_t i = 0; i < numArgs; ++i) {
+    hidl_args[i] = args[i];
+  }
+  HalProxy::debug(nativeHandle, hidl_args);
 
   native_handle_delete(nativeHandle);
   return STATUS_OK;

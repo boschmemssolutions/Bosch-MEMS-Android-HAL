@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2023 Robert Bosch GmbH
+ * Copyright (C) 2024-2026 Robert Bosch GmbH
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,125 +16,74 @@
 
 #include "SMI330.h"
 
-#include <unistd.h>
-
-#include "FileHandler.h"
-
 namespace bosch::sensors {
 
 static constexpr float SMI330_GYRO_VAR = 4.9e-5;  // (rad/s)^2 / Hz
 
-void Smi330Imu::setPowerMode(Index idx, bool enable, const std::string& device) {
-  mIsEnabled[idx] = enable;
-  updateSamplingRate(device);
-  bosch::hwctl::WriteHandler handler(device, mSysfsPowerMode[idx], enable ? "3" : "0");
-  usleep(200000);
-}
-
-void Smi330Imu::setSamplingRate(Index idx, int64_t samplingPeriodNs, const std::string& device) {
-  mSamplingPeriodNs[idx] = samplingPeriodNs;
-  updateSamplingRate(device);
-}
-
-void Smi330Imu::updateSamplingRate(const std::string& device) {
-  int64_t samplingPeriodNs = 0;
-  if (mIsEnabled[Index::ACCEL] && mIsEnabled[Index::GYRO]) {
-    samplingPeriodNs = std::min(mSamplingPeriodNs[Index::ACCEL], mSamplingPeriodNs[Index::GYRO]);
-  } else if (mIsEnabled[Index::ACCEL]) {
-    samplingPeriodNs = mSamplingPeriodNs[Index::ACCEL];
-  } else if (mIsEnabled[Index::GYRO]) {
-    samplingPeriodNs = mSamplingPeriodNs[Index::GYRO];
-  } else {
-    return;
-  }
-
-  int64_t odr = 1e9 / mMaxSamplingRateNs;
-  for (int64_t samplingRate = mMaxSamplingRateNs; samplingRate >= mMinSamplingRateNs; samplingRate /= 2) {
-    if (samplingPeriodNs >= samplingRate) {
-      odr = 1e9 / samplingRate;
-      break;
-    }
-  }
-  bosch::hwctl::WriteHandler handler(device, mSysfsOdr, std::to_string(odr));
-}
-
-Smi330Acc::Smi330Acc() {
+Smi330Acc::Smi330Acc(const std::shared_ptr<ISensorThread> sensorThread) : Accelerometer(sensorThread, mAccelData) {
   mSensorData.driverName = "smi330";
   mSensorData.sensorName = "SMI330 BOSCH Accelerometer Sensor";
-  mSensorData.sysfsRaw = {"in_accel_x_raw", "in_accel_y_raw", "in_accel_z_raw"};
-  mSensorData.temperatureSysfsRaw = "in_temp_object_raw";
-  mSensorData.type = BoschSensorType::ACCEL;
+  mSensorData.propertyIdentifier = "smi330";
+  mSensorData.temperatureSysfsRaw = "in_temp_raw";
   mSensorData.minDelayUs = 5000;
-  mSensorData.maxDelayUs = 1280000;
+  mSensorData.scanType = readScanType(ScanType::DRDY);
+  if ((mSensorData.scanType == ScanType::DRDY) || (mSensorData.scanType == ScanType::HW_FIFO)) {
+    mSensorData.maxDelayUs = 80000;
+  } else {
+    mSensorData.maxDelayUs = 2000000;
+  }
   mSensorData.power = 0.4f;
-  mSensorData.range = gravityToAcceleration(8);
-  mSensorData.resolution = gravityToAcceleration(1.0f / 4096);
   mSensorData.temperatureScale = 1.0f / 512;
   mSensorData.temperatureOffset = 23.0f * 512;
-  mSensorData.reportMode = CONTINUOUS;
 }
 
-Smi330AccUncalibrated::Smi330AccUncalibrated() {
-  mSensorData.sensorName = "SMI330 BOSCH Accelerometer Uncalibrated Sensor";
-  mSensorData.type = BoschSensorType::ACCEL_UNCALIBRATED;
-}
-
-Smi330Gyro::Smi330Gyro() {
+Smi330Gyro::Smi330Gyro(const std::shared_ptr<ISensorThread> sensorThread) : Gyroscope(sensorThread, mGyroData) {
   mSensorData.driverName = "smi330";
   mSensorData.sensorName = "SMI330 BOSCH Gyroscope Sensor";
-  mSensorData.sysfsRaw = {"in_anglvel_x_raw", "in_anglvel_y_raw", "in_anglvel_z_raw"};
-  mSensorData.temperatureSysfsRaw = "in_temp_object_raw";
-  mSensorData.type = BoschSensorType::GYRO;
+  mSensorData.propertyIdentifier = "smi330";
+  mSensorData.temperatureSysfsRaw = "in_temp_raw";
   mSensorData.minDelayUs = 5000;
-  mSensorData.maxDelayUs = 1280000;
+  mSensorData.scanType = readScanType(ScanType::DRDY);
+  if ((mSensorData.scanType == ScanType::DRDY) || (mSensorData.scanType == ScanType::HW_FIFO)) {
+    mSensorData.maxDelayUs = 80000;
+  } else {
+    mSensorData.maxDelayUs = 2000000;
+  }
   mSensorData.power = 0.4f;
-  mSensorData.range = degreeToRad(250);
-  mSensorData.resolution = degreeToRad(1.0f / 131.072f);
   mSensorData.temperatureScale = 1.0f / 512;
   mSensorData.temperatureOffset = 23.0f * 512;
+}
+
+Smi330LinearAcc::Smi330LinearAcc(const std::shared_ptr<SensorCore> accel, const std::shared_ptr<SensorCore> gyro)
+  : LinearAcceleration(accel, gyro) {
+  mSensorData.sensorName = "SMI330 BOSCH Linear Accelerometer Sensor";
+  mSensorData.minDelayUs = 5000;
+  mSensorData.maxDelayUs = 20000;
   mSensorData.reportMode = CONTINUOUS;
+
+  mGyroVar = SMI330_GYRO_VAR;
 }
 
-void Smi330Gyro::setScale() {
-  // Fixed range of 250 °/s
-  bosch::hwctl::WriteHandler handler(mDevice, mSysfsScale, "0.007629395");
+Smi330Gravity::Smi330Gravity(const std::shared_ptr<SensorCore> accel, const std::shared_ptr<SensorCore> gyro)
+  : Gravity(accel, gyro) {
+  mSensorData.sensorName = "SMI330 BOSCH Gravity Sensor";
+  mSensorData.minDelayUs = 5000;
+  mSensorData.maxDelayUs = 20000;
+  mSensorData.reportMode = CONTINUOUS;
+
+  mGyroVar = SMI330_GYRO_VAR;
 }
 
-Smi330GyroUncalibrated::Smi330GyroUncalibrated() {
+Smi330AccUncalibrated::Smi330AccUncalibrated(const std::shared_ptr<SensorCore> base) : Dummy(base) {
+  mSensorData.sensorName = "SMI330 BOSCH Accelerometer Uncalibrated Sensor";
+  mSensorData.type = BoschSensorType::ACCEL_UNCALIBRATED;
+  mSensorData.minDelayUs = 5000;
+}
+
+Smi330GyroUncalibrated::Smi330GyroUncalibrated(const std::shared_ptr<SensorCore> base) : Dummy(base) {
   mSensorData.sensorName = "SMI330 BOSCH Gyroscope Uncalibrated Sensor";
   mSensorData.type = BoschSensorType::GYRO_UNCALIBRATED;
-}
-
-Smi330LinearAcc::Smi330LinearAcc(const std::shared_ptr<SensorCore> accel, const std::shared_ptr<SensorCore> gyro) {
-  mSensorData.sensorName = "SMI330 BOSCH Linear Accelerometer Sensor";
-  mSensorData.type = BoschSensorType::LINEAR_ACCEL;
   mSensorData.minDelayUs = 5000;
-  mSensorData.maxDelayUs = 20000;
-  mSensorData.power = accel->getSensorData().power + gyro->getSensorData().power;
-  mSensorData.range = accel->getSensorData().range;
-  mSensorData.resolution = accel->getSensorData().resolution;
-  mSensorData.reportMode = CONTINUOUS;
-
-  mGyroVar = SMI330_GYRO_VAR;
-
-  mDependencyList.push_back(accel);
-  mDependencyList.push_back(gyro);
-}
-
-Smi330Gravity::Smi330Gravity(const std::shared_ptr<SensorCore> accel, const std::shared_ptr<SensorCore> gyro) {
-  mSensorData.sensorName = "SMI330 BOSCH Gravity Sensor";
-  mSensorData.type = BoschSensorType::GRAVITY;
-  mSensorData.minDelayUs = 5000;
-  mSensorData.maxDelayUs = 20000;
-  mSensorData.power = accel->getSensorData().power + gyro->getSensorData().power;
-  mSensorData.range = accel->getSensorData().range;
-  mSensorData.resolution = accel->getSensorData().resolution;
-  mSensorData.reportMode = CONTINUOUS;
-
-  mGyroVar = SMI330_GYRO_VAR;
-
-  mDependencyList.push_back(accel);
-  mDependencyList.push_back(gyro);
 }
 
 }  // namespace bosch::sensors

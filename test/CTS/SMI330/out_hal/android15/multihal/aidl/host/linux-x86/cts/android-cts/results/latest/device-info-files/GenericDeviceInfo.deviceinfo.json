@@ -1,0 +1,22 @@
+{
+  "build_id": "BP1A.250505.005",
+  "build_product": "bosch_hal_aidl",
+  "build_device": "rpi4",
+  "build_board": "bcm2711",
+  "build_manufacturer": "Raspberry",
+  "build_brand": "Raspberry",
+  "build_model": "Pi 4",
+  "build_type": "userdebug",
+  "build_fingerprint": "Raspberry/bosch_hal_aidl/rpi4:15/BP1A.250505.005/3:userdebug/test-keys",
+  "build_abi": "arm64-v8a",
+  "build_abi2": "",
+  "build_serial": "100000003ca749f4",
+  "build_version_release": "15",
+  "build_version_sdk": "35",
+  "build_reference_fingerprint": "",
+  "build_abis": "arm64-v8a",
+  "build_abis_32": "",
+  "build_abis_64": "arm64-v8a",
+  "build_version_base_os": "",
+  "build_version_security_patch": "2025-05-05"
+}

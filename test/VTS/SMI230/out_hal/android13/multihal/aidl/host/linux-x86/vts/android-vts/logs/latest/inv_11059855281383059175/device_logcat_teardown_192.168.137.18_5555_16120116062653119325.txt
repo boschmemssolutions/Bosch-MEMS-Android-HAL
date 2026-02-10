@@ -1,0 +1,2 @@
+
+========== beginning of new [logcat] output ==========

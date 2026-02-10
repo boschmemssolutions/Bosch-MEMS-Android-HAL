@@ -1,6 +1,6 @@
 /*
- * Copyright (C) 2023 Robert Bosch GmbH
- * Copyright (C) 2023 The Android Open Source Project
+ * Copyright (C) 2019 The Android Open Source Project
+ * Copyright (C) 2024-2025 Robert Bosch GmbH
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,8 +16,6 @@
  */
 
 #pragma once
-
-#include <log/log.h>
 
 #include <vector>
 
@@ -37,8 +35,11 @@ namespace implementation {
 
 using ::android::hardware::sensors::V1_0::OperationMode;
 using ::android::hardware::sensors::V1_0::Result;
-using ::android::hardware::sensors::V2_1::SensorType;
 
+/**
+ * Implementation of a ISensorsSubHal that can be used to test the implementation of multihal 2.0.
+ * See the README file for more details on how this class can be used for testing.
+ */
 class ISensorsSubHalBase : public ISensorsEventCallback {
 protected:
   using Event = ::android::hardware::sensors::V2_1::Event;
@@ -72,20 +73,15 @@ public:
 
   Return<void> debug(const hidl_handle& fd, const hidl_vec<hidl_string>& args);
 
-  // Methods from
-  // ::android::hardware::sensors::V2_0::implementation::ISensorsSubHal follow.
+  // Methods from ::android::hardware::sensors::V2_0::implementation::ISensorsSubHal follow.
   const std::string getName() { return "BoschSubHal"; }
 
   // Method from ISensorsEventCallback.
   void postEvents(const std::vector<Event>& events, bool wakeup) override;
-  void writeToDirectBuffer(const std::vector<Event>& events, int64_t samplingPeriodNs) override;
+  void writeToDirectBuffer(const std::vector<Event>& events) override;
 
 protected:
   void AddSensors();
-  /**
-   * A map of the report latency in nanoseconds
-   */
-  std::map<int32_t, int64_t> mReportLatencyNs;
 
   /**
    * A map of the available sensors
@@ -93,23 +89,23 @@ protected:
   std::map<int32_t, std::shared_ptr<Sensor>> mSensors;
 
   /**
-   * The next available sensor handle
-   */
-  int32_t mNextHandle = 1;
-
-  /**
-   * Callback used to communicate to the HalProxy when dynamic sensors are
-   * connected / disconnected, sensor events need to be sent to the framework,
-   * and when a wakelock should be acquired.
+   * Callback used to communicate to the HalProxy when dynamic sensors are connected /
+   * disconnected, sensor events need to be sent to the framework, and when a wakelock should be
+   * acquired.
    */
   std::unique_ptr<IHalProxyCallbackWrapperBase> mCallback;
 
 private:
   /**
-   * The current operation mode of the multihal framework. Ensures that all
-   * subhals are set to the same operation mode.
+   * The current operation mode of the multihal framework. Ensures that all subhals are set to
+   * the same operation mode.
    */
   OperationMode mCurrentOperationMode = OperationMode::NORMAL;
+
+  /**
+   * The next available sensor handle
+   */
+  int32_t mNextHandle = 1;
 
   /**
    * A list of the available sensors

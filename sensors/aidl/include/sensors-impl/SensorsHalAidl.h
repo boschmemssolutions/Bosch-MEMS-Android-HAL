@@ -1,6 +1,6 @@
 /*
- * Copyright (C) 2023 Robert Bosch GmbH
- * Copyright (C) 2023 The Android Open Source Project
+ * Copyright (C) 2021 The Android Open Source Project
+ * Copyright (C) 2025 Robert Bosch GmbH
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -87,55 +87,52 @@ public:
       return;
     }
     if (mEventQueue->write(&events.front(), events.size())) {
+      if (mEventQueueFlag == nullptr) {
+        // Don't take the wake lock if we can't wake the receiver to avoid holding it
+        // indefinitely.
+        return;
+      }
       mEventQueueFlag->wake(static_cast<uint32_t>(BnSensors::EVENT_QUEUE_FLAG_BITS_READ_AND_PROCESS));
-
       if (wakeup) {
-        // Keep track of the number of outstanding WAKE_UP events in order to
-        // properly hold a wake lock until the framework has secured a wake lock
+        // Keep track of the number of outstanding WAKE_UP events in order to properly hold
+        // a wake lock until the framework has secured a wake lock
         updateWakeLock(events.size(), 0 /* eventsHandled */);
       }
     }
   }
 
-  void writeToDirectBuffer(const std::vector<Event>& events, int64_t samplingPeriodNs) override {
-    if (mChannelMutex.try_lock()) {
-      for (const auto& event : events) {
-        for (auto& [channelHandle, channel] : mDirectChannels) {
-          if (std::find(channel->sensorHandles.begin(), channel->sensorHandles.end(), event.sensorHandle) ==
-              channel->sensorHandles.end()) {
-            continue;  // Skip channels that sensorHandle not match
-          }
-          if (channel->rateNs[event.sensorHandle] == 0) {
-            continue;  // Skip channels that are not active
-          }
-          channel->sampleCount[event.sensorHandle]++;
-          if (samplingPeriodNs * channel->sampleCount[event.sensorHandle] < channel->rateNs[event.sensorHandle]) {
-            continue;  // Skip channels that have faster sampling period
-          }
-          sensors_event_t ev = {.version = sizeof(sensors_event_t),
-                                .sensor = event.sensorHandle,
-                                .type = (int32_t)event.sensorType,
-                                .reserved0 = 0,
-                                .timestamp = event.timestamp};
-          if ((event.sensorType == SensorType::GYROSCOPE_UNCALIBRATED) ||
-              (event.sensorType == SensorType::ACCELEROMETER_UNCALIBRATED)) {
-            ev.uncalibrated_gyro.x_uncalib = event.payload.get<Event::EventPayload::uncal>().x;
-            ev.uncalibrated_gyro.y_uncalib = event.payload.get<Event::EventPayload::uncal>().y;
-            ev.uncalibrated_gyro.z_uncalib = event.payload.get<Event::EventPayload::uncal>().z;
-            ev.uncalibrated_gyro.x_bias = event.payload.get<Event::EventPayload::uncal>().xBias;
-            ev.uncalibrated_gyro.y_bias = event.payload.get<Event::EventPayload::uncal>().yBias;
-            ev.uncalibrated_gyro.z_bias = event.payload.get<Event::EventPayload::uncal>().zBias;
-          } else {
-            ev.acceleration.x = event.payload.get<Event::EventPayload::vec3>().x;
-            ev.acceleration.y = event.payload.get<Event::EventPayload::vec3>().y;
-            ev.acceleration.z = event.payload.get<Event::EventPayload::vec3>().z;
-            ev.acceleration.status = (int32_t)event.payload.get<Event::EventPayload::vec3>().status;
-          }
-          channel->write(&ev);
-          channel->sampleCount[event.sensorHandle] = 0;
+  void writeToDirectBuffer(const std::vector<Event>& events) override {
+    std::lock_guard<std::mutex> lock(mChannelMutex);
+
+    for (const auto& event : events) {
+      for (auto& [channelHandle, channel] : mDirectChannels) {
+        if (auto iter = channel->sensorHandles.find(event.sensorHandle); iter == channel->sensorHandles.end()) {
+          continue;  // Skip channels that sensorHandle not match
         }
+        if (channel->rateNs[event.sensorHandle] == 0) {
+          continue;  // Skip channels that are not active
+        }
+        sensors_event_t ev = {.version = sizeof(sensors_event_t),
+                              .sensor = event.sensorHandle,
+                              .type = (int32_t)event.sensorType,
+                              .reserved0 = 0,
+                              .timestamp = event.timestamp};
+        if ((event.sensorType == SensorType::GYROSCOPE_UNCALIBRATED) ||
+            (event.sensorType == SensorType::ACCELEROMETER_UNCALIBRATED)) {
+          ev.uncalibrated_gyro.x_uncalib = event.payload.get<Event::EventPayload::uncal>().x;
+          ev.uncalibrated_gyro.y_uncalib = event.payload.get<Event::EventPayload::uncal>().y;
+          ev.uncalibrated_gyro.z_uncalib = event.payload.get<Event::EventPayload::uncal>().z;
+          ev.uncalibrated_gyro.x_bias = event.payload.get<Event::EventPayload::uncal>().xBias;
+          ev.uncalibrated_gyro.y_bias = event.payload.get<Event::EventPayload::uncal>().yBias;
+          ev.uncalibrated_gyro.z_bias = event.payload.get<Event::EventPayload::uncal>().zBias;
+        } else {
+          ev.acceleration.x = event.payload.get<Event::EventPayload::vec3>().x;
+          ev.acceleration.y = event.payload.get<Event::EventPayload::vec3>().y;
+          ev.acceleration.z = event.payload.get<Event::EventPayload::vec3>().z;
+          ev.acceleration.status = (int32_t)event.payload.get<Event::EventPayload::vec3>().status;
+        }
+        channel->write(&ev);
       }
-      mChannelMutex.unlock();
     }
   }
 
@@ -145,6 +142,8 @@ protected:
 
   // Utility function to delete the Event Flag
   void deleteEventFlag() {
+    // Hold the lock to ensure we don't delete the flag while it's being used in postEvents()
+    std::lock_guard<std::mutex> lock(mWriteLock);
     if (mEventQueueFlag != nullptr) {
       status_t status = EventFlag::deleteEventFlag(&mEventQueueFlag);
       if (status != OK) {
@@ -155,16 +154,14 @@ protected:
 
   static void startReadWakeLockThread(SensorsHalAidl* sensors) { sensors->readWakeLockFMQ(); }
 
-  // Function to read the Wake Lock FMQ and release the wake lock when
-  // appropriate
+  // Function to read the Wake Lock FMQ and release the wake lock when appropriate
   void readWakeLockFMQ() {
     while (mReadWakeLockQueueRun.load()) {
       constexpr int64_t kReadTimeoutNs = 500 * 1000 * 1000;  // 500 ms
       int32_t eventsHandled = 0;
 
-      // Read events from the Wake Lock FMQ. Timeout after a reasonable amount
-      // of time to ensure that any held wake lock is able to be released if it
-      // is held for too long.
+      // Read events from the Wake Lock FMQ. Timeout after a reasonable amount of time to
+      // ensure that any held wake lock is able to be released if it is held for too long.
       mWakeLockQueue->readBlocking(&eventsHandled, 1 /* count */, 0 /* readNotification */,
                                    static_cast<uint32_t>(WAKE_LOCK_QUEUE_FLAG_BITS_DATA_WRITTEN), kReadTimeoutNs);
       updateWakeLock(0 /* eventsWritten */, eventsHandled);
@@ -172,8 +169,7 @@ protected:
   }
 
   /**
-   * Responsible for acquiring and releasing a wake lock when there are
-   * unhandled WAKE_UP events
+   * Responsible for acquiring and releasing a wake lock when there are unhandled WAKE_UP events
    */
   void updateWakeLock(int32_t eventsWritten, int32_t eventsHandled) {
     std::lock_guard<std::mutex> lock(mWakeLockLock);
@@ -193,13 +189,10 @@ protected:
       mHasWakeLock = true;
     } else if (mHasWakeLock) {
       // Check if the wake lock should be released automatically if
-      // SensorTimeout::WAKE_LOCK_SECONDS has elapsed since the last WAKE_UP
-      // event was written to the Wake Lock FMQ.
+      // SensorTimeout::WAKE_LOCK_SECONDS has elapsed since the last WAKE_UP event was written
+      // to the Wake Lock FMQ.
       if (::android::uptimeMillis() > mAutoReleaseWakeLockTime) {
-        ALOGD(
-          "No events read from wake lock FMQ for %d seconds, auto releasing "
-          "wake lock",
-          WAKE_LOCK_TIMEOUT_SECONDS);
+        ALOGD("No events read from wake lock FMQ for %d seconds, auto releasing wake lock", WAKE_LOCK_TIMEOUT_SECONDS);
         mOutstandingWakeUpEvents = 0;
       }
 
@@ -212,19 +205,15 @@ protected:
 private:
   // The Event FMQ where sensor events are written
   std::unique_ptr<AidlMessageQueue<Event, SynchronizedReadWrite>> mEventQueue;
-  // The Wake Lock FMQ that is read to determine when the framework has handled
-  // WAKE_UP events
+  // The Wake Lock FMQ that is read to determine when the framework has handled WAKE_UP events
   std::unique_ptr<AidlMessageQueue<int32_t, SynchronizedReadWrite>> mWakeLockQueue;
-  // Event Flag to signal to the framework when sensor events are available to
-  // be read
+  // Event Flag to signal to the framework when sensor events are available to be read
   EventFlag* mEventQueueFlag;
   // Callback for asynchronous events, such as dynamic sensor connections.
   std::shared_ptr<::aidl::android::hardware::sensors::ISensorsCallback> mCallback;
-  // A map of the report latency in nanoseconds
-  std::map<int32_t, int64_t> mReportLatencyNs;
   // A map of the available sensors.
   std::map<int32_t, std::shared_ptr<Sensor>> mSensors;
-  // The next available sensor handle
+  // The next available sensor handle.
   int32_t mNextHandle;
   // A list of the available sensors
   bosch::sensors::SensorList mSensorList;
@@ -232,8 +221,7 @@ private:
   std::mutex mWriteLock;
   // Lock to protect acquiring and releasing the wake lock
   std::mutex mWakeLockLock;
-  // Track the number of WAKE_UP events that have not been handled by the
-  // framework
+  // Track the number of WAKE_UP events that have not been handled by the framework
   uint32_t mOutstandingWakeUpEvents;
   // A thread to read the Wake Lock FMQ
   std::thread mWakeLockThread;
@@ -244,7 +232,7 @@ private:
   // Flag to indicate if a wake lock has been acquired
   bool mHasWakeLock;
 
-  /**
+  /*
    * Direct channel support
    */
   std::map<int32_t, std::unique_ptr<::android::DirectChannelBase>> mDirectChannels;

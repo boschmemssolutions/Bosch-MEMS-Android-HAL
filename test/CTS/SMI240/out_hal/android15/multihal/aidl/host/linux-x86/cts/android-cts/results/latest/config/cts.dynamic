@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no' ?>
+<dynamicConfig>
+  <entry key="media_files_url">
+    <value>https://dl.google.com/dl/android/cts/android-cts-media-1.5.zip</value>
+  </entry>
+  <entry key="business_logic_extended_device_info">
+    <value>MemoryDeviceInfo:total_memory</value>
+  </entry>
+  <entry key="business_logic_device_packages">
+    <value>com.google.android.gms</value>
+    <value>com.android.vending</value>
+  </entry>
+  <entry key="remote_config_retrieved">
+    <value>true</value>
+  </entry>
+  <entry key="business_logic_device_features">
+    <value>android.hardware.type.automotive</value>
+    <value>android.hardware.type.television</value>
+    <value>android.hardware.type.watch</value>
+    <value>android.hardware.type.embedded</value>
+    <value>android.hardware.type.pc</value>
+    <value>android.software.leanback</value>
+    <value>com.google.android.feature.PIXEL_EXPERIENCE</value>
+    <value>android.hardware.telephony</value>
+    <value>android.hardware.vr.high_performance</value>
+    <value>cn.google.services</value>
+    <value>com.google.android.feature.RU</value>
+    <value>android.hardware.ram.low</value>
+    <value>com.google.android.feature.EEA_DEVICE</value>
+    <value>com.google.android.paid.chrome</value>
+    <value>com.google.android.paid.search</value>
+  </entry>
+  <entry key="business_logic_device_properties">
+    <value>ro.build.fingerprint</value>
+    <value>ro.build.version.sdk</value>
+    <value>ro.product.brand</value>
+    <value>ro.product.first_api_level</value>
+    <value>ro.product.manufacturer</value>
+    <value>ro.product.model</value>
+    <value>ro.product.name</value>
+  </entry>
+</dynamicConfig>

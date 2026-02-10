@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2023 The Android Open Source Project
+ * Copyright (C) 2019 The Android Open Source Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,12 +16,12 @@
 
 #pragma once
 
+#include "ScopedWakelock.h"
+
 #include <android/hardware/sensors/1.0/types.h>
 #include <android/hardware/sensors/2.0/ISensors.h>
 
 #include <vector>
-
-#include "ScopedWakelock.h"
 
 // Indicates the current version of the multiHAL interface formatted as (HAL major version) << 24 |
 // (HAL minor version) << 16 | (multiHAL version)
@@ -44,44 +44,44 @@ using ::android::hardware::sensors::V1_0::SensorInfo;
  * manner.
  */
 class IHalProxyCallback : public ISensorsCallback {
-public:
-  /**
-   * Thread-safe callback used to post events to the HalProxy. Sub-HALs should invoke this
-   * whenever new sensor events need to be delivered to the sensors framework. Once invoked, the
-   * HalProxy will attempt to send events to the sensors framework using a blocking write with a
-   * 5 second timeout. This write may be done asynchronously if the queue used to communicate
-   * with the framework is full to avoid blocking sub-HALs for the length of the timeout. If the
-   * write fails, the events will be dropped and any wake locks held will be released.
-   *
-   * The provided ScopedWakelock must be locked if the events are from wakeup sensors. If it's
-   * not locked accordingly, the HalProxy will crash as this indicates the sub-HAL isn't compliant
-   * with the sensors HAL 2.0 specification. Additionally, since ScopedWakelock isn't copyable,
-   * the HalProxy will take ownership of the wake lock given when this method is invoked. Once the
-   * method returns, the HalProxy will handle holding the wake lock, if necessary, until the
-   * framework has successfully processed any wakeup events.
-   *
-   * No return type is used for this callback to avoid sub-HALs trying to resend events when
-   * writes fail. Writes should only fail when the framework is under inordinate stress which will
-   * likely result in a framework restart so retrying will likely only result in overloading the
-   * HalProxy. Sub-HALs should always assume that the write was a success and perform any
-   * necessary cleanup. Additionally, the HalProxy will ensure it logs any errors (through ADB and
-   * bug reports) it encounters during delivery to ensure it's obvious that a failure occurred.
-   *
-   * @param events the events that should be sent to the sensors framework
-   * @param wakelock ScopedWakelock that should be locked to send events from wake sensors and
-   *     unlocked otherwise.
-   */
-  virtual void postEvents(const std::vector<Event>& events, ScopedWakelock wakelock) = 0;
+  public:
+    /**
+     * Thread-safe callback used to post events to the HalProxy. Sub-HALs should invoke this
+     * whenever new sensor events need to be delivered to the sensors framework. Once invoked, the
+     * HalProxy will attempt to send events to the sensors framework using a blocking write with a
+     * 5 second timeout. This write may be done asynchronously if the queue used to communicate
+     * with the framework is full to avoid blocking sub-HALs for the length of the timeout. If the
+     * write fails, the events will be dropped and any wake locks held will be released.
+     *
+     * The provided ScopedWakelock must be locked if the events are from wakeup sensors. If it's
+     * not locked accordingly, the HalProxy will crash as this indicates the sub-HAL isn't compliant
+     * with the sensors HAL 2.0 specification. Additionally, since ScopedWakelock isn't copyable,
+     * the HalProxy will take ownership of the wake lock given when this method is invoked. Once the
+     * method returns, the HalProxy will handle holding the wake lock, if necessary, until the
+     * framework has successfully processed any wakeup events.
+     *
+     * No return type is used for this callback to avoid sub-HALs trying to resend events when
+     * writes fail. Writes should only fail when the framework is under inordinate stress which will
+     * likely result in a framework restart so retrying will likely only result in overloading the
+     * HalProxy. Sub-HALs should always assume that the write was a success and perform any
+     * necessary cleanup. Additionally, the HalProxy will ensure it logs any errors (through ADB and
+     * bug reports) it encounters during delivery to ensure it's obvious that a failure occurred.
+     *
+     * @param events the events that should be sent to the sensors framework
+     * @param wakelock ScopedWakelock that should be locked to send events from wake sensors and
+     *     unlocked otherwise.
+     */
+    virtual void postEvents(const std::vector<Event>& events, ScopedWakelock wakelock) = 0;
 
-  /**
-   * Initializes a ScopedWakelock on the stack that, when locked, will increment the reference
-   * count for the sub-HAL's wake lock managed inside the HalProxy. See the ScopedWakelock class
-   * definition for how it should be used.
-   *
-   * @param lock whether the ScopedWakelock should be locked before it's returned.
-   * @return the created ScopedWakelock
-   */
-  virtual ScopedWakelock createScopedWakelock(bool lock) = 0;
+    /**
+     * Initializes a ScopedWakelock on the stack that, when locked, will increment the reference
+     * count for the sub-HAL's wake lock managed inside the HalProxy. See the ScopedWakelock class
+     * definition for how it should be used.
+     *
+     * @param lock whether the ScopedWakelock should be locked before it's returned.
+     * @return the created ScopedWakelock
+     */
+    virtual ScopedWakelock createScopedWakelock(bool lock) = 0;
 };
 
 /**
@@ -100,49 +100,50 @@ public:
  * sub-HALs can continue to use the lower 3 bytes of the handle.
  */
 class ISensorsSubHal : public ISensors {
-public:
-  // The ISensors version of initialize isn't used for multihal. Instead, sub-HALs must implement
-  // the version below to allow communciation logic to centralized in the HalProxy
-  Return<Result> initialize(const ::android::hardware::MQDescriptorSync<Event>& /* eventQueueDescriptor */,
-                            const ::android::hardware::MQDescriptorSync<uint32_t>& /* wakeLockDescriptor */,
-                            const sp<ISensorsCallback>& /* sensorsCallback */) final {
-    return Result::INVALID_OPERATION;
-  }
+  public:
+    // The ISensors version of initialize isn't used for multihal. Instead, sub-HALs must implement
+    // the version below to allow communciation logic to centralized in the HalProxy
+    Return<Result> initialize(
+            const ::android::hardware::MQDescriptorSync<Event>& /* eventQueueDescriptor */,
+            const ::android::hardware::MQDescriptorSync<uint32_t>& /* wakeLockDescriptor */,
+            const sp<ISensorsCallback>& /* sensorsCallback */) final {
+        return Result::INVALID_OPERATION;
+    }
 
-  /**
-   * Method defined in ::android::hidl::base::V1_0::IBase.
-   *
-   * This method should write debug information to hidl_handle that is useful for debugging
-   * issues. Suggestions include:
-   * - Sensor info including handle values and any other state available in the SensorInfo class
-   * - List of active sensors and their current sampling period and reporting latency
-   * - Information about pending flush requests
-   * - Current operating mode
-   * - Currently registered direct channel info
-   * - A history of any of the above
-   */
-  virtual Return<void> debug(const hidl_handle& fd, const hidl_vec<hidl_string>& args) = 0;
+    /**
+     * Method defined in ::android::hidl::base::V1_0::IBase.
+     *
+     * This method should write debug information to hidl_handle that is useful for debugging
+     * issues. Suggestions include:
+     * - Sensor info including handle values and any other state available in the SensorInfo class
+     * - List of active sensors and their current sampling period and reporting latency
+     * - Information about pending flush requests
+     * - Current operating mode
+     * - Currently registered direct channel info
+     * - A history of any of the above
+     */
+    virtual Return<void> debug(const hidl_handle& fd, const hidl_vec<hidl_string>& args) = 0;
 
-  /**
-   * @return A human-readable name for use in wake locks and logging.
-   */
-  virtual const std::string getName() = 0;
+    /**
+     * @return A human-readable name for use in wake locks and logging.
+     */
+    virtual const std::string getName() = 0;
 
-  /**
-   * This is the first method invoked on the sub-HAL after it's allocated through
-   * sensorsHalGetSubHal() by the HalProxy. Sub-HALs should use this to initialize any state and
-   * retain the callback given in order to communicate with the HalProxy. Method will be called
-   * anytime the sensors framework restarts. Therefore, this method will be responsible for
-   * reseting the state of the subhal and cleaning up and reallocating any previously allocated
-   * data. Initialize should ensure that the subhal has reset its operation mode to NORMAL state
-   * as well.
-   *
-   * @param halProxyCallback callback used to inform the HalProxy when a dynamic sensor's state
-   *     changes, new sensor events should be sent to the framework, and when a new ScopedWakelock
-   *     should be created.
-   * @return result OK on success
-   */
-  virtual Return<Result> initialize(const sp<IHalProxyCallback>& halProxyCallback) = 0;
+    /**
+     * This is the first method invoked on the sub-HAL after it's allocated through
+     * sensorsHalGetSubHal() by the HalProxy. Sub-HALs should use this to initialize any state and
+     * retain the callback given in order to communicate with the HalProxy. Method will be called
+     * anytime the sensors framework restarts. Therefore, this method will be responsible for
+     * reseting the state of the subhal and cleaning up and reallocating any previously allocated
+     * data. Initialize should ensure that the subhal has reset its operation mode to NORMAL state
+     * as well.
+     *
+     * @param halProxyCallback callback used to inform the HalProxy when a dynamic sensor's state
+     *     changes, new sensor events should be sent to the framework, and when a new ScopedWakelock
+     *     should be created.
+     * @return result OK on success
+     */
+    virtual Return<Result> initialize(const sp<IHalProxyCallback>& halProxyCallback) = 0;
 };
 
 }  // namespace implementation
@@ -165,4 +166,5 @@ using ::android::hardware::sensors::V2_0::implementation::ISensorsSubHal;
  *     SUB_HAL_2_0_VERSION.
  * @return A statically allocated, valid ISensorsSubHal implementation.
  */
-__attribute__((visibility("default"))) extern "C" ISensorsSubHal* sensorsHalGetSubHal(uint32_t* version);
+__attribute__((visibility("default"))) extern "C" ISensorsSubHal* sensorsHalGetSubHal(
+        uint32_t* version);

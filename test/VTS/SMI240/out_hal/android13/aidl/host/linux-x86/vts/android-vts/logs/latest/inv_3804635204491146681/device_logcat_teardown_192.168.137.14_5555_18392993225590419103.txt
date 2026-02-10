@@ -1,0 +1,3 @@
+
+========== beginning of new [logcat] output ==========
+--------- beginning of kernel

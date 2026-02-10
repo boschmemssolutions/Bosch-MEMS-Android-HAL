@@ -1,0 +1,24 @@
+{
+  "system_vibrator": {
+    "has_vibrator": false,
+    "has_amplitude_control": false,
+    "effect_support_returns_unknown": false,
+    "supported_effects": [],
+    "supported_primitives": [],
+    "vibrator_id": -1,
+    "has_frequency_control": false
+  },
+  "manager_vibrators": [],
+  "haptics_device_config": {
+    "default_haptic_feedback_intensity": 2,
+    "default_notification_vibration_intensity": 2,
+    "default_ring_vibration_intensity": 2,
+    "default_alarm_vibration_intensity": 2,
+    "default_media_vibration_intensity": 2,
+    "default_vibration_amplitude": 255,
+    "haptic_channel_max_vibration_amplitude": 0.0,
+    "ringtone_effect_uris_array_size": 0
+  },
+  "audio_manager_is_haptic_playback_supported": false,
+  "haptic_generator_is_available": false
+}

@@ -1,0 +1,858 @@
+{
+  "feature": [
+    {
+      "name": "android.hardware.sensor.accelerometer",
+      "type": "sdk",
+      "available": true,
+      "version": 0
+    },
+    {
+      "name": "android.software.telecom",
+      "type": "sdk",
+      "available": true,
+      "version": 0
+    },
+    {
+      "name": "android.hardware.broadcastradio",
+      "type": "sdk",
+      "available": true,
+      "version": 0
+    },
+    {
+      "name": "android.hardware.usb.accessory",
+      "type": "sdk",
+      "available": true,
+      "version": 0
+    },
+    {
+      "name": "android.hardware.hdmi.cec",
+      "type": "sdk",
+      "available": true,
+      "version": 0
+    },
+    {
+      "name": "android.hardware.touchscreen",
+      "type": "sdk",
+      "available": true,
+      "version": 0
+    },
+    {
+      "name": "android.hardware.ethernet",
+      "type": "sdk",
+      "available": true,
+      "version": 0
+    },
+    {
+      "name": "android.hardware.sensor.gyroscope_limited_axes_uncalibrated",
+      "type": "sdk",
+      "available": true,
+      "version": 0
+    },
+    {
+      "name": "android.software.activities_on_secondary_displays",
+      "type": "sdk",
+      "available": true,
+      "version": 0
+    },
+    {
+      "name": "android.hardware.sensor.accelerometer_limited_axes",
+      "type": "sdk",
+      "available": true,
+      "version": 0
+    },
+    {
+      "name": "android.software.voice_recognizers",
+      "type": "sdk",
+      "available": true,
+      "version": 0
+    },
+    {
+      "name": "android.hardware.sensor.gyroscope",
+      "type": "sdk",
+      "available": true,
+      "version": 0
+    },
+    {
+      "name": "android.software.vulkan.deqp.level",
+      "type": "sdk",
+      "available": true,
+      "version": 132514561
+    },
+    {
+      "name": "android.software.cant_save_state",
+      "type": "sdk",
+      "available": true,
+      "version": 0
+    },
+    {
+      "name": "android.hardware.security.model.compatible",
+      "type": "sdk",
+      "available": true,
+      "version": 0
+    },
+    {
+      "name": "android.hardware.bluetooth",
+      "type": "sdk",
+      "available": true,
+      "version": 0
+    },
+    {
+      "name": "android.hardware.camera.autofocus",
+      "type": "sdk",
+      "available": true,
+      "version": 0
+    },
+    {
+      "name": "android.software.opengles.deqp.level",
+      "type": "sdk",
+      "available": true,
+      "version": 132514561
+    },
+    {
+      "name": "android.hardware.camera.concurrent",
+      "type": "sdk",
+      "available": true,
+      "version": 0
+    },
+    {
+      "name": "android.hardware.usb.host",
+      "type": "sdk",
+      "available": true,
+      "version": 0
+    },
+    {
+      "name": "android.hardware.audio.output",
+      "type": "sdk",
+      "available": true,
+      "version": 0
+    },
+    {
+      "name": "android.hardware.camera.flash",
+      "type": "sdk",
+      "available": true,
+      "version": 0
+    },
+    {
+      "name": "android.hardware.camera.front",
+      "type": "sdk",
+      "available": true,
+      "version": 0
+    },
+    {
+      "name": "android.software.home_screen",
+      "type": "sdk",
+      "available": true,
+      "version": 0
+    },
+    {
+      "name": "android.hardware.microphone",
+      "type": "sdk",
+      "available": true,
+      "version": 0
+    },
+    {
+      "name": "android.software.autofill",
+      "type": "sdk",
+      "available": true,
+      "version": 0
+    },
+    {
+      "name": "android.hardware.bluetooth_le",
+      "type": "sdk",
+      "available": true,
+      "version": 0
+    },
+    {
+      "name": "android.software.input_methods",
+      "type": "sdk",
+      "available": true,
+      "version": 0
+    },
+    {
+      "name": "android.hardware.vulkan.version",
+      "type": "sdk",
+      "available": true,
+      "version": 4202496
+    },
+    {
+      "name": "android.software.companion_device_setup",
+      "type": "sdk",
+      "available": true,
+      "version": 0
+    },
+    {
+      "name": "android.software.device_admin",
+      "type": "sdk",
+      "available": true,
+      "version": 0
+    },
+    {
+      "name": "android.hardware.camera",
+      "type": "sdk",
+      "available": true,
+      "version": 0
+    },
+    {
+      "name": "android.hardware.ram.normal",
+      "type": "sdk",
+      "available": true,
+      "version": 0
+    },
+    {
+      "name": "android.hardware.type.automotive",
+      "type": "sdk",
+      "available": true,
+      "version": 0
+    },
+    {
+      "name": "android.software.webview",
+      "type": "sdk",
+      "available": true,
+      "version": 0
+    },
+    {
+      "name": "android.hardware.camera.capability.manual_post_processing",
+      "type": "sdk",
+      "available": true,
+      "version": 0
+    },
+    {
+      "name": "android.hardware.camera.any",
+      "type": "sdk",
+      "available": true,
+      "version": 0
+    },
+    {
+      "name": "android.hardware.camera.capability.raw",
+      "type": "sdk",
+      "available": true,
+      "version": 0
+    },
+    {
+      "name": "android.hardware.location.network",
+      "type": "sdk",
+      "available": true,
+      "version": 0
+    },
+    {
+      "name": "android.software.cts",
+      "type": "sdk",
+      "available": true,
+      "version": 0
+    },
+    {
+      "name": "android.hardware.camera.capability.manual_sensor",
+      "type": "sdk",
+      "available": true,
+      "version": 0
+    },
+    {
+      "name": "android.software.app_enumeration",
+      "type": "other",
+      "available": true,
+      "version": 0
+    },
+    {
+      "name": "android.hardware.camera.level.full",
+      "type": "sdk",
+      "available": true,
+      "version": 0
+    },
+    {
+      "name": "android.software.live_wallpaper",
+      "type": "sdk",
+      "available": true,
+      "version": 0
+    },
+    {
+      "name": "android.software.ipsec_tunnels",
+      "type": "sdk",
+      "available": true,
+      "version": 0
+    },
+    {
+      "name": "android.hardware.sensor.gyroscope_limited_axes",
+      "type": "sdk",
+      "available": true,
+      "version": 0
+    },
+    {
+      "name": "android.software.midi",
+      "type": "sdk",
+      "available": true,
+      "version": 0
+    },
+    {
+      "name": "android.hardware.hardware_keystore",
+      "type": "sdk",
+      "available": true,
+      "version": 41
+    },
+    {
+      "name": "android.hardware.wifi",
+      "type": "sdk",
+      "available": true,
+      "version": 0
+    },
+    {
+      "name": "android.hardware.location",
+      "type": "sdk",
+      "available": true,
+      "version": 0
+    },
+    {
+      "name": "android.hardware.vulkan.level",
+      "type": "sdk",
+      "available": true,
+      "version": 0
+    },
+    {
+      "name": "android.hardware.sensor.accelerometer_limited_axes_uncalibrated",
+      "type": "sdk",
+      "available": true,
+      "version": 0
+    },
+    {
+      "name": "android.hardware.camera.external",
+      "type": "sdk",
+      "available": true,
+      "version": 0
+    },
+    {
+      "name": "android.software.secure_lock_screen",
+      "type": "sdk",
+      "available": true,
+      "version": 0
+    },
+    {
+      "name": "android.software.adoptable_storage",
+      "type": "sdk",
+      "available": false
+    },
+    {
+      "name": "android.software.app_widgets",
+      "type": "sdk",
+      "available": false
+    },
+    {
+      "name": "android.hardware.sensor.assist",
+      "type": "sdk",
+      "available": false
+    },
+    {
+      "name": "android.hardware.audio.low_latency",
+      "type": "sdk",
+      "available": false
+    },
+    {
+      "name": "android.hardware.audio.pro",
+      "type": "sdk",
+      "available": false
+    },
+    {
+      "name": "android.software.backup",
+      "type": "sdk",
+      "available": false
+    },
+    {
+      "name": "android.hardware.camera.ar",
+      "type": "sdk",
+      "available": false
+    },
+    {
+      "name": "android.software.communal_mode",
+      "type": "sdk",
+      "available": false
+    },
+    {
+      "name": "android.software.connectionservice",
+      "type": "sdk",
+      "available": false
+    },
+    {
+      "name": "android.hardware.consumerir",
+      "type": "sdk",
+      "available": false
+    },
+    {
+      "name": "android.hardware.context_hub",
+      "type": "sdk",
+      "available": false
+    },
+    {
+      "name": "android.software.controls",
+      "type": "sdk",
+      "available": false
+    },
+    {
+      "name": "android.software.device_id_attestation",
+      "type": "sdk",
+      "available": false
+    },
+    {
+      "name": "android.hardware.type.embedded",
+      "type": "sdk",
+      "available": false
+    },
+    {
+      "name": "android.software.erofs",
+      "type": "sdk",
+      "available": false
+    },
+    {
+      "name": "android.software.erofs_legacy",
+      "type": "sdk",
+      "available": false
+    },
+    {
+      "name": "android.software.expanded_picture_in_picture",
+      "type": "sdk",
+      "available": false
+    },
+    {
+      "name": "android.hardware.biometrics.face",
+      "type": "sdk",
+      "available": false
+    },
+    {
+      "name": "android.hardware.faketouch",
+      "type": "sdk",
+      "available": false
+    },
+    {
+      "name": "android.hardware.faketouch.multitouch.distinct",
+      "type": "sdk",
+      "available": false
+    },
+    {
+      "name": "android.hardware.faketouch.multitouch.jazzhand",
+      "type": "sdk",
+      "available": false
+    },
+    {
+      "name": "android.software.file_based_encryption",
+      "type": "sdk",
+      "available": false
+    },
+    {
+      "name": "android.hardware.fingerprint",
+      "type": "sdk",
+      "available": false
+    },
+    {
+      "name": "android.software.freeform_window_management",
+      "type": "sdk",
+      "available": false
+    },
+    {
+      "name": "android.hardware.gamepad",
+      "type": "sdk",
+      "available": false
+    },
+    {
+      "name": "android.software.game_service",
+      "type": "sdk",
+      "available": false
+    },
+    {
+      "name": "android.hardware.sensor.hifi_sensors",
+      "type": "sdk",
+      "available": false
+    },
+    {
+      "name": "android.hardware.identity_credential",
+      "type": "sdk",
+      "available": false
+    },
+    {
+      "name": "android.hardware.identity_credential_direct_access",
+      "type": "sdk",
+      "available": false
+    },
+    {
+      "name": "android.software.incremental_delivery",
+      "type": "sdk",
+      "available": false
+    },
+    {
+      "name": "android.hardware.biometrics.iris",
+      "type": "sdk",
+      "available": false
+    },
+    {
+      "name": "android.hardware.keystore.app_attest_key",
+      "type": "sdk",
+      "available": false
+    },
+    {
+      "name": "android.hardware.keystore.limited_use_key",
+      "type": "sdk",
+      "available": false
+    },
+    {
+      "name": "android.hardware.keystore.single_use_key",
+      "type": "sdk",
+      "available": false
+    },
+    {
+      "name": "android.software.leanback",
+      "type": "sdk",
+      "available": false
+    },
+    {
+      "name": "android.software.leanback_only",
+      "type": "sdk",
+      "available": false
+    },
+    {
+      "name": "android.software.live_tv",
+      "type": "sdk",
+      "available": false
+    },
+    {
+      "name": "android.hardware.location.gps",
+      "type": "sdk",
+      "available": false
+    },
+    {
+      "name": "android.hardware.lowpan",
+      "type": "sdk",
+      "available": false
+    },
+    {
+      "name": "android.software.managed_users",
+      "type": "sdk",
+      "available": false
+    },
+    {
+      "name": "android.software.managed_users",
+      "type": "sdk",
+      "available": false
+    },
+    {
+      "name": "android.hardware.nfc",
+      "type": "sdk",
+      "available": false
+    },
+    {
+      "name": "android.hardware.nfc.any",
+      "type": "sdk",
+      "available": false
+    },
+    {
+      "name": "android.sofware.nfc.beam",
+      "type": "sdk",
+      "available": false
+    },
+    {
+      "name": "android.hardware.nfc.hce",
+      "type": "sdk",
+      "available": false
+    },
+    {
+      "name": "android.hardware.nfc.hce",
+      "type": "sdk",
+      "available": false
+    },
+    {
+      "name": "android.hardware.nfc.hcef",
+      "type": "sdk",
+      "available": false
+    },
+    {
+      "name": "android.hardware.nfc.ese",
+      "type": "sdk",
+      "available": false
+    },
+    {
+      "name": "android.hardware.nfc.uicc",
+      "type": "sdk",
+      "available": false
+    },
+    {
+      "name": "android.hardware.opengles.aep",
+      "type": "sdk",
+      "available": false
+    },
+    {
+      "name": "android.hardware.type.pc",
+      "type": "sdk",
+      "available": false
+    },
+    {
+      "name": "android.software.picture_in_picture",
+      "type": "sdk",
+      "available": false
+    },
+    {
+      "name": "android.software.print",
+      "type": "sdk",
+      "available": false
+    },
+    {
+      "name": "android.hardware.ram.low",
+      "type": "sdk",
+      "available": false
+    },
+    {
+      "name": "android.hardware.reboot_escrow",
+      "type": "sdk",
+      "available": false
+    },
+    {
+      "name": "android.hardware.screen.landscape",
+      "type": "sdk",
+      "available": false
+    },
+    {
+      "name": "android.hardware.screen.portrait",
+      "type": "sdk",
+      "available": false
+    },
+    {
+      "name": "android.software.securely_removes_users",
+      "type": "sdk",
+      "available": false
+    },
+    {
+      "name": "android.hardware.sensor.ambient_temperature",
+      "type": "sdk",
+      "available": false
+    },
+    {
+      "name": "android.hardware.sensor.barometer",
+      "type": "sdk",
+      "available": false
+    },
+    {
+      "name": "android.hardware.sensor.compass",
+      "type": "sdk",
+      "available": false
+    },
+    {
+      "name": "android.hardware.sensor.dynamic.head_tracker",
+      "type": "sdk",
+      "available": false
+    },
+    {
+      "name": "android.hardware.sensor.heading",
+      "type": "sdk",
+      "available": false
+    },
+    {
+      "name": "android.hardware.sensor.heartrate",
+      "type": "sdk",
+      "available": false
+    },
+    {
+      "name": "android.hardware.sensor.heartrate.ecg",
+      "type": "sdk",
+      "available": false
+    },
+    {
+      "name": "android.hardware.sensor.hinge_angle",
+      "type": "sdk",
+      "available": false
+    },
+    {
+      "name": "android.hardware.sensor.light",
+      "type": "sdk",
+      "available": false
+    },
+    {
+      "name": "android.hardware.sensor.proximity",
+      "type": "sdk",
+      "available": false
+    },
+    {
+      "name": "android.hardware.sensor.relative_humidity",
+      "type": "sdk",
+      "available": false
+    },
+    {
+      "name": "android.hardware.sensor.stepcounter",
+      "type": "sdk",
+      "available": false
+    },
+    {
+      "name": "android.hardware.sensor.stepdetector",
+      "type": "sdk",
+      "available": false
+    },
+    {
+      "name": "android.hardware.se.omapi.ese",
+      "type": "sdk",
+      "available": false
+    },
+    {
+      "name": "android.hardware.se.omapi.sd",
+      "type": "sdk",
+      "available": false
+    },
+    {
+      "name": "android.hardware.se.omapi.uicc",
+      "type": "sdk",
+      "available": false
+    },
+    {
+      "name": "android.software.sip",
+      "type": "sdk",
+      "available": false
+    },
+    {
+      "name": "android.software.sip.voip",
+      "type": "sdk",
+      "available": false
+    },
+    {
+      "name": "android.hardware.strongbox_keystore",
+      "type": "sdk",
+      "available": false
+    },
+    {
+      "name": "android.hardware.telephony",
+      "type": "sdk",
+      "available": false
+    },
+    {
+      "name": "android.hardware.telephony.calling",
+      "type": "sdk",
+      "available": false
+    },
+    {
+      "name": "android.hardware.telephony.carrierlock",
+      "type": "sdk",
+      "available": false
+    },
+    {
+      "name": "android.hardware.telephony.cdma",
+      "type": "sdk",
+      "available": false
+    },
+    {
+      "name": "android.hardware.telephony.data",
+      "type": "sdk",
+      "available": false
+    },
+    {
+      "name": "android.hardware.telephony.euicc",
+      "type": "sdk",
+      "available": false
+    },
+    {
+      "name": "android.hardware.telephony.euicc.mep",
+      "type": "sdk",
+      "available": false
+    },
+    {
+      "name": "android.hardware.telephony.gsm",
+      "type": "sdk",
+      "available": false
+    },
+    {
+      "name": "android.hardware.telephony.ims",
+      "type": "sdk",
+      "available": false
+    },
+    {
+      "name": "android.hardware.telephony.ims.singlereg",
+      "type": "sdk",
+      "available": false
+    },
+    {
+      "name": "android.hardware.telephony.mbms",
+      "type": "sdk",
+      "available": false
+    },
+    {
+      "name": "android.hardware.telephony.messaging",
+      "type": "sdk",
+      "available": false
+    },
+    {
+      "name": "android.hardware.telephony.radio.access",
+      "type": "sdk",
+      "available": false
+    },
+    {
+      "name": "android.hardware.telephony.subscription",
+      "type": "sdk",
+      "available": false
+    },
+    {
+      "name": "android.hardware.type.television",
+      "type": "sdk",
+      "available": false
+    },
+    {
+      "name": "android.hardware.touchscreen.multitouch",
+      "type": "sdk",
+      "available": false
+    },
+    {
+      "name": "android.hardware.touchscreen.multitouch.distinct",
+      "type": "sdk",
+      "available": false
+    },
+    {
+      "name": "android.hardware.touchscreen.multitouch.jazzhand",
+      "type": "sdk",
+      "available": false
+    },
+    {
+      "name": "android.software.verified_boot",
+      "type": "sdk",
+      "available": false
+    },
+    {
+      "name": "android.hardware.vr.headtracking",
+      "type": "sdk",
+      "available": false
+    },
+    {
+      "name": "android.software.vr.mode",
+      "type": "sdk",
+      "available": false
+    },
+    {
+      "name": "android.hardware.vr.high_performance",
+      "type": "sdk",
+      "available": false
+    },
+    {
+      "name": "android.hardware.vulkan.compute",
+      "type": "sdk",
+      "available": false
+    },
+    {
+      "name": "android.hardware.type.watch",
+      "type": "sdk",
+      "available": false
+    },
+    {
+      "name": "android.hardware.wifi.aware",
+      "type": "sdk",
+      "available": false
+    },
+    {
+      "name": "android.hardware.wifi.direct",
+      "type": "sdk",
+      "available": false
+    },
+    {
+      "name": "android.hardware.wifi.passpoint",
+      "type": "sdk",
+      "available": false
+    },
+    {
+      "name": "android.hardware.wifi.rtt",
+      "type": "sdk",
+      "available": false
+    },
+    {
+      "name": "android.software.window_magnification",
+      "type": "sdk",
+      "available": false
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<configuration>
+  <target_preparer class="com.android.compatibility.common.tradefed.targetprep.LocationCheck" />
+  <target_preparer class="com.android.tradefed.targetprep.suite.SuiteApkInstaller">
+    <option name="test-file-name" value="CtsSensorTestCases.apk" />
+  </target_preparer>
+  <target_preparer class="com.android.tradefed.targetprep.RunCommandTargetPreparer">
+    <option name="run-command" value="dumpsys sensorservice restrict .cts" />
+    <option name="run-command" value="cmd sensor_privacy disable 0 microphone" />
+    <option name="teardown-command" value="dumpsys sensorservice enable" />
+    <option name="teardown-command" value="cmd sensor_privacy reset 0 microphone" />
+  </target_preparer>
+  <device_requirements class="com.android.tradefed.device.DeviceSelectionOptions" />
+  <device_options class="com.android.tradefed.device.TestDeviceOptions" />
+  <test class="com.android.tradefed.testtype.AndroidJUnitTest">
+    <option name="exclude-annotation" value="com.android.compatibility.common.util.CtsDownstreamingTest" />
+    <option name="exclude-annotation" value="android.platform.test.annotations.AsbSecurityTest" />
+    <option name="exclude-annotation" value="android.platform.test.annotations.AppModeInstant" />
+    <option name="package" value="android.hardware.sensor.cts" />
+    <option name="runtime-hint" value="2848000" />
+    <option name="test-timeout" value="3600000" />
+  </test>
+  <config_desc class="com.android.tradefed.config.ConfigurationDescriptor">
+    <option name="metadata" key="component" value="location" />
+    <option name="metadata" key="parameter" value="instant_app" />
+    <option name="metadata" key="parameter" value="multi_abi" />
+    <option name="metadata" key="parameter" value="secondary_user" />
+    <option name="metadata" key="parameter" value="secondary_user_on_secondary_display" />
+    <option name="metadata" key="parameter" value="run_on_sdk_sandbox" />
+    <option name="test-suite-tag" value="cts" />
+  </config_desc>
+  <coverage class="com.android.tradefed.testtype.coverage.CoverageOptions" />
+</configuration>

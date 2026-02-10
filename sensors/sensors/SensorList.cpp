@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2023 Robert Bosch GmbH
+ * Copyright (C) 2024-2025 Robert Bosch GmbH
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,13 +21,12 @@
 namespace bosch::sensors {
 
 std::vector<std::shared_ptr<ISensorHal>> SensorList::getAvailableSensors() {
-  std::string device{};
+  int deviceNum;
   std::vector<std::shared_ptr<ISensorHal>> availableSensors{};
 
   for (const auto& sensor : mSensorList) {
-    if (bosch::hwctl::isSensorAvailable(sensor->getSensorData().driverName, device)) {
-      sensor->setAvailable(true);
-      sensor->setDevice(device);
+    if (bosch::hwctl::isSensorAvailable(sensor->getSensorData().driverName, &deviceNum)) {
+      sensor->init(deviceNum);
       availableSensors.push_back(sensor);
     }
   }
@@ -40,6 +39,7 @@ std::vector<std::shared_ptr<ISensorHal>> SensorList::getAvailableSensors() {
       }
     }
     if (dependentSensors == compositeSensor->getDependencyList().size()) {
+      compositeSensor->init();
       availableSensors.push_back(compositeSensor);
     }
   }

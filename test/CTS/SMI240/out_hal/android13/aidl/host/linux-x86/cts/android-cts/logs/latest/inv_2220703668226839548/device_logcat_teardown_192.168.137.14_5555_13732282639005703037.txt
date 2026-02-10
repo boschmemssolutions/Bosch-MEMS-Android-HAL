@@ -1,0 +1,114 @@
+01-07 11:34:26.568 10102  1402  1512 W MediaProvider: isAppCloneUserPair for user 0: false
+01-07 11:34:26.571 10102  1402  1512 V MediaProvider: Inserted id:1000000335 less than next row id backup:1000001000.
+01-07 11:34:26.742 10102  1402  2592 I MediaProvider: Deleted 1 0 0 0 0 0 0 items on external_primary due to com.android.shell
+01-07 11:34:27.597 shell 10463 10463 D AndroidRuntime: >>>>>> START com.android.internal.os.RuntimeInit uid 2000 <<<<<<
+01-07 11:34:27.608 shell 10463 10463 I AndroidRuntime: Using default boot image
+01-07 11:34:27.608 shell 10463 10463 I AndroidRuntime: Leaving lock profiling enabled
+01-07 11:34:27.615 shell 10463 10463 W app_process: ART APEX data files are untrusted.
+01-07 11:34:27.615 shell 10463 10463 I app_process: Core platform API reporting enabled, enforcing=false
+01-07 11:34:27.862 shell 10463 10463 D app_process: Time zone APEX ICU file found: /apex/com.android.tzdata/etc/icu/icu_tzdata.dat
+01-07 11:34:27.862 shell 10463 10463 D app_process: I18n APEX ICU file found: /apex/com.android.i18n/etc/icu/icudt70l.dat
+01-07 11:34:27.922 shell 10463 10463 D AndroidRuntime: Calling main entry com.android.commands.content.Content
+01-07 11:34:27.927  1000   483  4220 D CompatibilityChangeReporter: Compat change id reported: 135634846; UID 1010111; state: DISABLED
+01-07 11:34:27.928  1000   483  4220 D CompatibilityChangeReporter: Compat change id reported: 177438394; UID 1010111; state: DISABLED
+01-07 11:34:27.928  1000   483  4220 D CompatibilityChangeReporter: Compat change id reported: 135772972; UID 1010111; state: DISABLED
+01-07 11:34:27.928  1000   483  4220 D CompatibilityChangeReporter: Compat change id reported: 135754954; UID 1010111; state: DISABLED
+01-07 11:34:27.928  1000   483   510 D CompatibilityChangeReporter: Compat change id reported: 143937733; UID 1010111; state: DISABLED
+01-07 11:34:27.929  root   255   255 W Zygote  : forkRepeatedly terminated due to non-simple command
+01-07 11:34:27.929  root   255   255 D Zygote  : mbuffer starts with 15, nice name is , mEnd = 2261, mNext = 35, mLinesLeft = 13, mFd = 5
+01-07 11:34:27.932  root   255   255 I Zygote  : Entering forkRepeatedly native zygote loop
+01-07 11:34:27.942  root   255   255 D Zygote  : Forked child process 10482
+01-07 11:34:27.943  1000   483   510 I ActivityManager: Start proc 10482:android.tradefed.contentprovider/u10a111 for content provider {android.tradefed.contentprovider/android.tradefed.contentprovider.ManagedFileContentProvider}
+01-07 11:34:27.951  root 10482 10482 I Zygote  : seccomp disabled by setenforce 0
+01-07 11:34:27.952 1010111 10482 10482 I libc    : SetHeapTaggingLevel: tag level set to 0
+01-07 11:34:27.970 shell   324   365 I adbd    : jdwp connection from 10482
+01-07 11:34:27.981  1000   483  8092 D CompatibilityChangeReporter: Compat change id reported: 168419799; UID 1010111; state: DISABLED
+01-07 11:34:27.982  1000   483  8092 D CompatibilityChangeReporter: Compat change id reported: 273564678; UID 1010111; state: DISABLED
+01-07 11:34:27.988 1010111 10482 10482 D CompatibilityChangeReporter: Compat change id reported: 171979766; UID 1010111; state: DISABLED
+01-07 11:34:27.995 1010111 10482 10482 D ApplicationLoaders: Returning zygote-cached class loader: /system/framework/android.test.base.jar
+01-07 11:34:28.034 1010111 10482 10482 V GraphicsEnvironment: ANGLE Developer option for 'android.tradefed.contentprovider' set to: 'default'
+01-07 11:34:28.034 1010111 10482 10482 V GraphicsEnvironment: ANGLE GameManagerService for android.tradefed.contentprovider: false
+01-07 11:34:28.035 1010111 10482 10482 V GraphicsEnvironment: Neither updatable production driver nor prerelease driver is supported.
+01-07 11:34:28.038 1010111 10482 10482 D NetworkSecurityConfig: No Network Security Config specified, using platform default
+01-07 11:34:28.038 1010111 10482 10482 D NetworkSecurityConfig: No Network Security Config specified, using platform default
+01-07 11:34:28.046 1010111 10482 10497 E TradefedContentProvider: Query - File from uri: 'content://android.tradefed.contentprovider/%252Fsdcard%252Freport-log-files%252F' does not exists.
+01-07 11:34:28.051 shell 10463 10463 D AndroidRuntime: Shutting down VM
+01-07 11:34:29.051  1000   483   509 I ActivityManager: Force stopping android.tradefed.contentprovider appid=10111 user=-1: deletePackageX
+01-07 11:34:29.051  1000   483   509 I ActivityManager: Killing 10482:android.tradefed.contentprovider/u10a111 (adj 905): stop android.tradefed.contentprovider due to deletePackageX
+01-07 11:34:29.058  1000   483   511 I libprocessgroup: Successfully killed process cgroup uid 1010111 pid 10482 in 5ms
+01-07 11:34:29.062  root   332  2852 D installd: Found valid user 11
+01-07 11:34:29.062  root   332  2852 D installd: Found valid user 12
+01-07 11:34:29.062  root   332  2852 D installd: Found valid user 10
+01-07 11:34:29.072  1000   483  4220 V ActivityManager: Got obituary of 10482:android.tradefed.contentprovider
+01-07 11:34:29.073  root   255   255 I Zygote  : Process 10482 exited due to signal 9 (Killed)
+01-01 02:18:07.942  root     0     0 I logd    : start watching /data/system/packages.list ...
+01-01 02:18:07.949  root     0     0 I logd    : ReadPackageList, total packages: 116
+01-07 11:34:29.219  1000   483   500 W Looper  : Slow dispatch took 153ms android.fg h=android.os.Handler c=<recycled PooledLambda@8158a30> m=0
+01-07 11:34:29.221  1000   483   529 D PackageManager: Instant App installer not found with android.intent.action.INSTALL_INSTANT_APP_PACKAGE
+01-07 11:34:29.221  1000   483   529 D PackageManager: Clear ephemeral installer activity
+01-07 11:34:29.223  1000   483  1389 E TaskPersister: File error accessing recents directory (directory doesn't exist?).
+01-07 11:34:29.224  1000   483  1389 E TaskPersister: File error accessing recents directory (directory doesn't exist?).
+01-07 11:34:29.226  1000   483  1389 E TaskPersister: File error accessing recents directory (directory doesn't exist?).
+01-07 11:34:29.236  1000   483   529 I ActivityManager: Force stopping android.tradefed.contentprovider appid=10111 user=10: pkg removed
+01-07 11:34:29.241  1000   483   529 I ActivityManager: Force stopping android.tradefed.contentprovider appid=10111 user=0: pkg removed
+01-07 11:34:29.310 1010102  1726  1726 I MediaProvider: Invalidating LocalCallingIdentity cache for package android.tradefed.contentprovider. Reason: package android.intent.action.PACKAGE_REMOVED
+01-07 11:34:29.313 1010102  1726  1726 W MediaProvider: WorkProfileOwnerApps cache is empty
+01-07 11:34:29.318  1000   483   553 I RoleService: Granting default roles...
+01-07 11:34:29.324 radio   758   758 D CarrierSvcBindHelper: onPackageRemoved: android.tradefed.contentprovider
+01-07 11:34:29.325  1000   706   923 D CarPackageManagerService: Updating allowlist and denylist mapping for package: android.tradefed.contentprovider for UserId: 10
+01-07 11:34:29.326  1000   483   572 V StorageManagerService: Package android.tradefed.contentprovider does not have legacy storage
+01-07 11:34:29.326  1000   706   923 W CarPackageManagerService: android.tradefed.contentprovider not installed! User Id: 10
+01-07 11:34:29.326  1000   706   923 D CarPackageManagerService: Updating allowlist and denylist mapping for package: android.tradefed.contentprovider for UserId: 0
+01-07 11:34:29.336 1010100  2369 10271 W Role    : Cannot get ApplicationInfo for default holder: com.android.messaging
+01-07 11:34:29.338  1000   706   923 W CarPackageManagerService: android.tradefed.contentprovider not installed! User Id: 0
+01-07 11:34:29.338 10102  1402  1402 I MediaProvider: Invalidating LocalCallingIdentity cache for package android.tradefed.contentprovider. Reason: package android.intent.action.PACKAGE_REMOVED
+01-07 11:34:29.339 10102  1402  1402 W MediaProvider: WorkProfileOwnerApps cache is empty
+01-07 11:34:29.351  1000   483   572 V StorageManagerService: Package android.tradefed.contentprovider does not have legacy storage
+01-07 11:34:29.352  1000   483   598 W WifiService: Couldn't get PackageInfo for package:android.tradefed.contentprovider
+01-07 11:34:29.352  1000   483   598 D WifiService: Remove settings for package:android.tradefed.contentprovider
+01-07 11:34:29.352  1000   483   598 D WifiConfigManager: Remove all networks for app ApplicationInfo{e063a78 android.tradefed.contentprovider}
+01-07 11:34:29.353  1000   483   566 I InputReader: Reconfiguring input devices, changes=KEYBOARD_LAYOUTS | 
+01-07 11:34:29.356  1000   706   923 D CarPackageManagerService: Updating allowlist and denylist mapping for package: android.tradefed.contentprovider for UserId: 10
+01-07 11:34:29.358  1000   706   923 W CarPackageManagerService: android.tradefed.contentprovider not installed! User Id: 10
+01-07 11:34:29.358  1000   706   923 D CarPackageManagerService: Updating allowlist and denylist mapping for package: android.tradefed.contentprovider for UserId: 0
+01-07 11:34:29.358 radio   758   758 D CarrierSvcBindHelper: onPackageRemoved: android.tradefed.contentprovider
+01-07 11:34:29.360  1000   706   923 W CarPackageManagerService: android.tradefed.contentprovider not installed! User Id: 0
+01-07 11:34:29.363  1000   483   547 I RollbackManager: broadcast=ACTION_PACKAGE_FULLY_REMOVED pkg=android.tradefed.contentprovider
+01-07 11:34:29.367  1000   483   547 I RollbackManager: broadcast=ACTION_PACKAGE_FULLY_REMOVED pkg=android.tradefed.contentprovider
+01-07 11:34:29.371  1000   483   508 W TextServicesManagerService: no available spell checker services found
+01-07 11:34:29.374  root   332  2852 D installd: Found valid user 11
+01-07 11:34:29.374  root   332  2852 D installd: Found valid user 12
+01-07 11:34:29.374  root   332  2852 D installd: Found valid user 10
+01-07 11:34:29.415  1000   483   598 D WifiConfigStore: Writing to stores completed in 63 ms.
+01-07 11:34:29.415  1000   483   598 I PasspointManager: No app ops listener found for android.tradefed.contentprovider
+01-07 11:34:29.479  1000   483   493 I system_server: Background concurrent copying GC freed 321705(18MB) AllocSpace objects, 51(2004KB) LOS objects, 49% free, 16MB/32MB, paused 315us,221us total 254.777ms
+01-07 11:34:29.483  1000   483   648 W system_server: Long monitor contention with owner PackageManager (529) at void com.android.server.pm.PackageManagerService$PackageManagerInternalImpl.writePermissionSettings(int[], boolean)(PackageManagerService.java:6450) waiters=0 in com.android.server.pm.Computer com.android.server.pm.PackageManagerService.snapshotComputer() for 107ms
+01-07 11:34:29.485  1000   483   509 W system_server: Long monitor contention with owner binder:483_4 (648) at com.android.server.pm.Computer com.android.server.pm.PackageManagerService.snapshotComputer()(PackageManagerService.java:1111) waiters=1 in com.android.server.pm.Computer com.android.server.pm.PackageManagerService.snapshotComputer() for 108ms
+01-07 11:34:29.486  1000   483   508 W system_server: Long monitor contention with owner binder:483_4 (648) at com.android.server.pm.Computer com.android.server.pm.PackageManagerService.snapshotComputer()(PackageManagerService.java:1111) waiters=2 in com.android.server.pm.Computer com.android.server.pm.PackageManagerService.snapshotComputer() for 108ms
+01-07 11:34:29.487  1000   483   500 W Looper  : Slow dispatch took 157ms android.fg h=android.os.Handler c=<recycled PooledLambda@8008466> m=0
+01-07 11:34:29.488  1000   483   598 W WifiService: Couldn't get PackageInfo for package:android.tradefed.contentprovider
+01-07 11:34:29.488  1000   483   598 D WifiService: Remove settings for package:android.tradefed.contentprovider
+01-07 11:34:29.488  1000   483   598 D WifiConfigManager: Remove all networks for app ApplicationInfo{d73a3a7 android.tradefed.contentprovider}
+01-07 11:34:29.518  1000   483   598 D WifiConfigStore: Writing to stores completed in 29 ms.
+01-07 11:34:29.519  1000   483   598 I PasspointManager: No app ops listener found for android.tradefed.contentprovider
+01-01 02:18:08.317  root     0     0 I logd    : start watching /data/system/packages.list ...
+01-01 02:18:08.325  root     0     0 I logd    : ReadPackageList, total packages: 115
+01-07 11:34:29.594  1000   483   500 W Looper  : Slow delivery took 263ms android.fg h=android.os.Handler c=<recycled PooledLambda@31a2dc6> m=0
+01-07 11:34:29.594  1000   483   500 W Looper  : Slow dispatch took 107ms android.fg h=android.os.Handler c=<recycled PooledLambda@31a2dc6> m=0
+01-07 11:34:29.595  1000   483   509 W system_server: Long monitor contention with owner binder:483_E (4220) at com.android.server.pm.Computer com.android.server.pm.PackageManagerService.snapshotComputer()(PackageManagerService.java:1111) waiters=2 in com.android.server.pm.Computer com.android.server.pm.PackageManagerService.snapshotComputer() for 102ms
+01-07 11:34:29.597  1000   483   529 D PackageManager: Instant App installer not found with android.intent.action.INSTALL_INSTANT_APP_PACKAGE
+01-07 11:34:29.597  1000   483   529 D PackageManager: Clear ephemeral installer activity
+01-07 11:34:29.602  1000   483  1389 E TaskPersister: File error accessing recents directory (directory doesn't exist?).
+01-07 11:34:29.602  1000   483  1389 E TaskPersister: File error accessing recents directory (directory doesn't exist?).
+01-07 11:34:29.606  1000   483   509 W BroadcastQueue: Background execution not allowed: receiving Intent { act=android.intent.action.PACKAGE_REMOVED dat=package: flg=0x4000010 (has extras) } to com.android.gallery3d/.app.PackagesMonitor
+01-07 11:34:29.606  1000   483   483 W system_server: Long monitor contention with owner ActivityManager (509) at void com.android.server.am.BroadcastQueue.processNextBroadcast(boolean)(BroadcastQueue.java:1156) waiters=0 in void com.android.server.am.ActivityManagerService$LocalService.updateDeviceIdleTempAllowlist(int[], int, boolean, long, int, int, java.lang.String, int) for 295ms
+01-07 11:34:29.611  1000   483  1389 E TaskPersister: File error accessing recents directory (directory doesn't exist?).
+01-07 11:34:29.612  1000   483   595 W BestClock: java.time.DateTimeException: Missing NTP fix
+01-07 11:34:29.614  1000   483   483 D CompatibilityChangeReporter: Compat change id reported: 168419799; UID 1001000; state: DISABLED
+01-07 11:34:29.616  1000   483   483 D CompatibilityChangeReporter: Compat change id reported: 273564678; UID 1001000; state: DISABLED
+01-07 11:34:29.618  1000   483   483 W Looper  : Slow dispatch took 307ms main h=android.app.ActivityThread$H c=android.app.LoadedApk$ReceiverDispatcher$Args$$ExternalSyntheticLambda0@f4b2f9e m=0
+01-07 11:34:29.619  1000   483   483 W Looper  : Slow delivery took 308ms main h=android.app.ActivityThread$H c=android.app.LoadedApk$ReceiverDispatcher$Args$$ExternalSyntheticLambda0@253aa4c m=0
+01-07 11:34:29.622  1000   483   483 I GameManagerService: Disabling downscale for android.tradefed.contentprovider
+01-07 11:34:29.628  1000   483   529 I ActivityManager: Force stopping com.android.tradefed.utils.wifi appid=10109 user=10: pkg removed
+01-07 11:34:29.629  1000   483   508 W TextServicesManagerService: no available spell checker services found
+01-07 11:34:29.648  1000   483   595 W BestClock: java.time.DateTimeException: Missing NTP fix

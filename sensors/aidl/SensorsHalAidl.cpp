@@ -1,5 +1,6 @@
 /*
- * Copyright (C) 2023 The Android Open Source Project
+ * Copyright (C) 2021 The Android Open Source Project
+ * Copyright (C) 2025 Robert Bosch GmbH
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,46 +26,12 @@ using ::aidl::android::hardware::sensors::Event;
 using ::aidl::android::hardware::sensors::ISensors;
 using ::aidl::android::hardware::sensors::ISensorsCallback;
 using ::aidl::android::hardware::sensors::SensorInfo;
-using ::bosch::sensor::hal::configuration::V1_0::Configuration;
 using ::ndk::ScopedAStatus;
 
 namespace aidl {
 namespace android {
 namespace hardware {
 namespace sensors {
-
-#define SENSOR_XML_CONFIG_FILE_NAME "sensor_hal_configuration.xml"
-static const char* gSensorConfigLocationList[] = {"/odm/etc/sensors/", "/vendor/etc/sensors/"};
-static const int gSensorConfigLocationListSize =
-  (sizeof(gSensorConfigLocationList) / sizeof(gSensorConfigLocationList[0]));
-#define MODULE_NAME "bosch-hal"
-
-static std::optional<std::vector<Configuration>> getSensorConfiguration(
-  const std::vector<::bosch::sensor::hal::configuration::V1_0::Sensor>& sensor_list, const std::string& name,
-  SensorType type) {
-  for (auto sensor : sensor_list) {
-    if ((name.compare(sensor.getName()) == 0) && (type == (SensorType)sensor.getType())) {
-      return sensor.getConfiguration();
-    }
-  }
-  return std::nullopt;
-}
-
-static std::optional<std::vector<::bosch::sensor::hal::configuration::V1_0::Sensor>> readSensorsConfigFromXml() {
-  for (int i = 0; i < gSensorConfigLocationListSize; i++) {
-    const auto sensor_config_file = std::string(gSensorConfigLocationList[i]) + SENSOR_XML_CONFIG_FILE_NAME;
-    auto sensorConfig = ::bosch::sensor::hal::configuration::V1_0::read(sensor_config_file.c_str());
-    if (sensorConfig) {
-      auto modulesList = sensorConfig->getFirstModules()->get_module();
-      for (auto module : modulesList) {
-        if (module.getHalName().compare(MODULE_NAME) == 0) {
-          return module.getFirstSensors()->getSensor();
-        }
-      }
-    }
-  }
-  return std::nullopt;
-}
 
 ScopedAStatus SensorsHalAidl::activate(int32_t in_sensorHandle, bool in_enabled) {
   auto sensor = mSensors.find(in_sensorHandle);
@@ -78,22 +45,9 @@ ScopedAStatus SensorsHalAidl::activate(int32_t in_sensorHandle, bool in_enabled)
 
 ScopedAStatus SensorsHalAidl::batch(int32_t in_sensorHandle, int64_t in_samplingPeriodNs,
                                     int64_t in_maxReportLatencyNs) {
-  int64_t usedLatency = in_maxReportLatencyNs;
-  if (in_maxReportLatencyNs > 0) {
-    mReportLatencyNs[in_sensorHandle] = in_maxReportLatencyNs;
-    for (auto sensor : mSensors) {
-      if (sensor.second->isEnabled()) {
-        auto latency = mReportLatencyNs.find(in_sensorHandle);
-        if (latency != mReportLatencyNs.end()) {
-          usedLatency = std::min(usedLatency, latency->second);
-        }
-      }
-    }
-  }
-
   auto sensor = mSensors.find(in_sensorHandle);
   if (sensor != mSensors.end()) {
-    sensor->second->batch(in_samplingPeriodNs, usedLatency);
+    sensor->second->batch(in_samplingPeriodNs, in_maxReportLatencyNs);
     return ScopedAStatus::ok();
   }
 
@@ -141,9 +95,7 @@ void SensorsHalAidl::AddSensors() {
     sensorInfo.maxRange = data.range;
     sensorInfo.resolution = data.resolution;
 
-    const auto sensors_config_list = readSensorsConfigFromXml();
-    const auto& sensorconfig = getSensorConfiguration(*sensors_config_list, sensorInfo.name, sensorInfo.type);
-    std::shared_ptr<Sensor> halSensor = std::make_shared<Sensor>(this /* callback */, sensorInfo, sensor, sensorconfig);
+    std::shared_ptr<Sensor> halSensor = std::make_shared<Sensor>(this /* callback */, sensorInfo, sensor);
     mSensors[halSensor->getSensorInfo().sensorHandle] = halSensor;
     ALOGD("AddSensor[%d] %s", halSensor->getSensorInfo().sensorHandle, halSensor->getSensorInfo().name.c_str());
   }
@@ -204,7 +156,7 @@ ScopedAStatus SensorsHalAidl::configDirectReport(int32_t in_sensorHandle, int32_
       return ndk::ScopedAStatus::fromExceptionCode(EX_ILLEGAL_ARGUMENT);
   }
 
-  channelIt->second->sensorHandles.push_back(in_sensorHandle);
+  channelIt->second->sensorHandles.insert(in_sensorHandle);
   sensorIt->second->addDirectChannel(in_channelHandle, channelIt->second->rateNs[in_sensorHandle]);
 
   *_aidl_return = in_sensorHandle;
@@ -264,15 +216,14 @@ ScopedAStatus SensorsHalAidl::initialize(
   // Ensure that any existing EventFlag is properly deleted
   deleteEventFlag();
 
-  // Create the EventFlag that is used to signal to the framework that sensor
-  // events have been written to the Event FMQ
+  // Create the EventFlag that is used to signal to the framework that sensor events have been
+  // written to the Event FMQ
   if (EventFlag::createEventFlag(mEventQueue->getEventFlagWord(), &mEventQueueFlag) != OK) {
     result = ScopedAStatus::fromExceptionCode(EX_ILLEGAL_ARGUMENT);
   }
 
-  // Create the Wake Lock FMQ that is used by the framework to communicate
-  // whenever WAKE_UP events have been successfully read and handled by the
-  // framework.
+  // Create the Wake Lock FMQ that is used by the framework to communicate whenever WAKE_UP
+  // events have been successfully read and handled by the framework.
   mWakeLockQueue =
     std::make_unique<AidlMessageQueue<int32_t, SynchronizedReadWrite>>(in_wakeLockDescriptor, true /* resetPointers */);
 
@@ -337,9 +288,8 @@ ScopedAStatus SensorsHalAidl::unregisterDirectChannel(int32_t in_channelHandle) 
         sensorIt->second->removeDirectChannel(in_channelHandle);
       }
     }
+    mDirectChannels.erase(in_channelHandle);
   }
-
-  mDirectChannels.erase(in_channelHandle);
 
   return ndk::ScopedAStatus::ok();
 }

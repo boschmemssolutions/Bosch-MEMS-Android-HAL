@@ -32,7 +32,10 @@ cc_library_static {
     ],
     srcs: [
         "SensorCore.cpp",
+        "SensorThread.cpp",
         "CompositeSensors.cpp",
         "DirectChannel.cpp",
+        "Accelerometer.cpp",
+        "Gyroscope.cpp",
     ],
 }

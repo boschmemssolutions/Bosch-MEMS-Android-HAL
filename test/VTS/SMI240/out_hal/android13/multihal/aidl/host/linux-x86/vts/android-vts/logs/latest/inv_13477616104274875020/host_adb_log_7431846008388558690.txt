@@ -1,0 +1,224 @@
+--- adb starting (pid 75) ---
+adb I 01-22 12:01:22    75    75 main.cpp:60] Android Debug Bridge version 1.0.41
+adb I 01-22 12:01:22    75    75 main.cpp:60] Version 28.0.2-debian
+adb I 01-22 12:01:22    75    75 main.cpp:60] Installed as /usr/lib/android-sdk/platform-tools/adb
+adb I 01-22 12:01:22    75    75 main.cpp:60] 
+adb I 01-22 12:01:22    75    75 auth.cpp:405] adb_auth_init...
+adb I 01-22 12:01:22    75    75 auth.cpp:380] adb_auth_inotify_init...
+adb I 01-22 12:01:25    75    85 transport.cpp:294] 192.168.137.14:5555: write thread spawning
+adb I 01-22 12:01:25    75    84 transport.cpp:281] 192.168.137.14:5555: read thread spawning
+adb I 01-22 12:01:25    75    75 adb.cpp:108] 192.168.137.14:5555: already offline
+adb I 01-22 12:10:53    75    84 transport.cpp:285] 192.168.137.14:5555: read failed: Success
+adb I 01-22 12:10:53    75    84 transport.cpp:698] 192.168.137.14:5555: connection terminated: read failed
+adb I 01-22 12:10:53    75    75 adb.cpp:112] 192.168.137.14:5555: offline
+adb I 01-22 12:10:53    75    75 transport.cpp:785] destroying transport 192.168.137.14:5555
+adb I 01-22 12:10:53    75    75 transport.cpp:357] BlockingConnectionAdapter(192.168.137.14:5555): stopping
+adb I 01-22 12:10:53    75    75 transport.cpp:375] BlockingConnectionAdapter(192.168.137.14:5555): stopped
+adb W 01-22 12:10:54    75    76 network.cpp:147] failed to connect to '192.168.137.14:5555': Connection refused
+adb I 01-22 12:12:08    75    76 transport.cpp:269] BlockingConnectionAdapter(192.168.137.14:5555): destructing
+adb I 01-22 12:12:08    75    76 transport.cpp:349] BlockingConnectionAdapter(192.168.137.14:5555): already stopped
+adb I 01-22 12:12:08    75 51353 transport.cpp:294] 192.168.137.14:5555: write thread spawning
+adb I 01-22 12:12:08    75 51352 transport.cpp:281] 192.168.137.14:5555: read thread spawning
+adb I 01-22 12:12:08    75    75 adb.cpp:108] 192.168.137.14:5555: already offline
+adb I 01-22 12:13:26    75 51352 transport.cpp:285] 192.168.137.14:5555: read failed: Connection reset by peer
+adb I 01-22 12:13:26    75 51352 transport.cpp:698] 192.168.137.14:5555: connection terminated: read failed
+adb I 01-22 12:13:26    75    75 adb.cpp:112] 192.168.137.14:5555: offline
+adb I 01-22 12:13:26    75    75 transport.cpp:785] destroying transport 192.168.137.14:5555
+adb I 01-22 12:13:26    75    75 transport.cpp:357] BlockingConnectionAdapter(192.168.137.14:5555): stopping
+adb I 01-22 12:13:26    75    75 transport.cpp:375] BlockingConnectionAdapter(192.168.137.14:5555): stopped
+adb I 01-22 12:13:26    75    76 transport.cpp:269] BlockingConnectionAdapter(192.168.137.14:5555): destructing
+adb I 01-22 12:13:26    75    76 transport.cpp:349] BlockingConnectionAdapter(192.168.137.14:5555): already stopped
+adb I 01-22 12:13:26    75 52157 transport.cpp:294] 192.168.137.14:5555: write thread spawning
+adb I 01-22 12:13:26    75 52156 transport.cpp:281] 192.168.137.14:5555: read thread spawning
+adb I 01-22 12:13:26    75    75 adb.cpp:108] 192.168.137.14:5555: already offline
+adb I 01-22 12:15:12    75 52156 transport.cpp:285] 192.168.137.14:5555: read failed: Connection reset by peer
+adb I 01-22 12:15:17    75 52156 transport.cpp:698] 192.168.137.14:5555: connection terminated: read failed
+adb I 01-22 12:15:17    75    75 adb.cpp:112] 192.168.137.14:5555: offline
+adb I 01-22 12:15:17    75    75 transport.cpp:785] destroying transport 192.168.137.14:5555
+adb I 01-22 12:15:17    75    75 transport.cpp:357] BlockingConnectionAdapter(192.168.137.14:5555): stopping
+adb I 01-22 12:15:17    75    75 transport.cpp:375] BlockingConnectionAdapter(192.168.137.14:5555): stopped
+adb I 01-22 12:15:18    75    76 transport.cpp:269] BlockingConnectionAdapter(192.168.137.14:5555): destructing
+adb I 01-22 12:15:18    75    76 transport.cpp:349] BlockingConnectionAdapter(192.168.137.14:5555): already stopped
+adb I 01-22 12:15:18    75 52223 transport.cpp:281] 192.168.137.14:5555: read thread spawning
+adb I 01-22 12:15:18    75 52224 transport.cpp:294] 192.168.137.14:5555: write thread spawning
+adb I 01-22 12:15:18    75    75 adb.cpp:108] 192.168.137.14:5555: already offline
+adb W 01-22 12:15:18    75    75 sockets.cpp:278] timeout expired while flushing socket, closing
+adb W 01-22 12:15:18    75    75 sockets.cpp:278] timeout expired while flushing socket, closing
+adb I 01-22 12:15:21    75 52223 transport.cpp:285] 192.168.137.14:5555: read failed: Connection reset by peer
+adb I 01-22 12:15:21    75 52223 transport.cpp:698] 192.168.137.14:5555: connection terminated: read failed
+adb I 01-22 12:15:21    75    75 adb.cpp:112] 192.168.137.14:5555: offline
+adb I 01-22 12:15:21    75    75 transport.cpp:785] destroying transport 192.168.137.14:5555
+adb I 01-22 12:15:21    75    75 transport.cpp:357] BlockingConnectionAdapter(192.168.137.14:5555): stopping
+adb I 01-22 12:15:21    75    75 transport.cpp:375] BlockingConnectionAdapter(192.168.137.14:5555): stopped
+adb I 01-22 12:15:22    75    76 transport.cpp:269] BlockingConnectionAdapter(192.168.137.14:5555): destructing
+adb I 01-22 12:15:22    75    76 transport.cpp:349] BlockingConnectionAdapter(192.168.137.14:5555): already stopped
+adb I 01-22 12:15:22    75 52233 transport.cpp:281] 192.168.137.14:5555: read thread spawning
+adb I 01-22 12:15:22    75 52234 transport.cpp:294] 192.168.137.14:5555: write thread spawning
+adb I 01-22 12:15:22    75    75 adb.cpp:108] 192.168.137.14:5555: already offline
+adb I 01-22 12:15:30    75 52242 transport.cpp:269] BlockingConnectionAdapter(): destructing
+adb I 01-22 12:15:30    75 52242 transport.cpp:344] BlockingConnectionAdapter(): not started
+adb I 01-22 12:15:30    75 52245 transport.cpp:269] BlockingConnectionAdapter(): destructing
+adb I 01-22 12:15:30    75 52245 transport.cpp:344] BlockingConnectionAdapter(): not started
+adb I 01-22 12:15:31    75 52248 transport.cpp:269] BlockingConnectionAdapter(): destructing
+adb I 01-22 12:15:31    75 52248 transport.cpp:344] BlockingConnectionAdapter(): not started
+adb I 01-22 12:15:34    75 52233 transport.cpp:285] 192.168.137.14:5555: read failed: Connection reset by peer
+adb I 01-22 12:15:34    75 52233 transport.cpp:698] 192.168.137.14:5555: connection terminated: read failed
+adb I 01-22 12:15:34    75    75 adb.cpp:112] 192.168.137.14:5555: offline
+adb I 01-22 12:15:34    75    75 transport.cpp:785] destroying transport 192.168.137.14:5555
+adb I 01-22 12:15:34    75    75 transport.cpp:357] BlockingConnectionAdapter(192.168.137.14:5555): stopping
+adb I 01-22 12:15:34    75    75 transport.cpp:375] BlockingConnectionAdapter(192.168.137.14:5555): stopped
+adb I 01-22 12:15:34    75    76 transport.cpp:269] BlockingConnectionAdapter(192.168.137.14:5555): destructing
+adb I 01-22 12:15:34    75    76 transport.cpp:349] BlockingConnectionAdapter(192.168.137.14:5555): already stopped
+adb I 01-22 12:15:34    75 52301 transport.cpp:281] 192.168.137.14:5555: read thread spawning
+adb I 01-22 12:15:34    75 52302 transport.cpp:294] 192.168.137.14:5555: write thread spawning
+adb I 01-22 12:15:34    75    75 adb.cpp:108] 192.168.137.14:5555: already offline
+adb I 01-22 12:16:56    75 52301 transport.cpp:285] 192.168.137.14:5555: read failed: Connection reset by peer
+adb I 01-22 12:16:56    75 52301 transport.cpp:698] 192.168.137.14:5555: connection terminated: read failed
+adb I 01-22 12:16:56    75    75 adb.cpp:112] 192.168.137.14:5555: offline
+adb I 01-22 12:16:56    75    75 transport.cpp:785] destroying transport 192.168.137.14:5555
+adb I 01-22 12:16:56    75    75 transport.cpp:357] BlockingConnectionAdapter(192.168.137.14:5555): stopping
+adb I 01-22 12:16:56    75    75 transport.cpp:375] BlockingConnectionAdapter(192.168.137.14:5555): stopped
+adb I 01-22 12:16:57    75    76 transport.cpp:269] BlockingConnectionAdapter(192.168.137.14:5555): destructing
+adb I 01-22 12:16:57    75    76 transport.cpp:349] BlockingConnectionAdapter(192.168.137.14:5555): already stopped
+adb I 01-22 12:16:57    75 52370 transport.cpp:294] 192.168.137.14:5555: write thread spawning
+adb I 01-22 12:16:57    75 52369 transport.cpp:281] 192.168.137.14:5555: read thread spawning
+adb I 01-22 12:16:57    75    75 adb.cpp:108] 192.168.137.14:5555: already offline
+adb I 01-22 12:17:01    75 52369 transport.cpp:285] 192.168.137.14:5555: read failed: Connection reset by peer
+adb I 01-22 12:17:01    75 52369 transport.cpp:698] 192.168.137.14:5555: connection terminated: read failed
+adb I 01-22 12:17:01    75    75 adb.cpp:112] 192.168.137.14:5555: offline
+adb I 01-22 12:17:01    75    75 transport.cpp:785] destroying transport 192.168.137.14:5555
+adb I 01-22 12:17:01    75    75 transport.cpp:357] BlockingConnectionAdapter(192.168.137.14:5555): stopping
+adb I 01-22 12:17:01    75    75 transport.cpp:375] BlockingConnectionAdapter(192.168.137.14:5555): stopped
+adb I 01-22 12:17:01    75    76 transport.cpp:269] BlockingConnectionAdapter(192.168.137.14:5555): destructing
+adb I 01-22 12:17:01    75    76 transport.cpp:349] BlockingConnectionAdapter(192.168.137.14:5555): already stopped
+adb I 01-22 12:17:01    75 52381 transport.cpp:294] 192.168.137.14:5555: write thread spawning
+adb I 01-22 12:17:01    75 52380 transport.cpp:281] 192.168.137.14:5555: read thread spawning
+adb I 01-22 12:17:01    75    75 adb.cpp:108] 192.168.137.14:5555: already offline
+adb I 01-22 12:17:06    75 52389 transport.cpp:269] BlockingConnectionAdapter(): destructing
+adb I 01-22 12:17:06    75 52389 transport.cpp:344] BlockingConnectionAdapter(): not started
+adb I 01-22 12:17:06    75 52392 transport.cpp:269] BlockingConnectionAdapter(): destructing
+adb I 01-22 12:17:06    75 52392 transport.cpp:344] BlockingConnectionAdapter(): not started
+adb I 01-22 12:17:06    75 52395 transport.cpp:269] BlockingConnectionAdapter(): destructing
+adb I 01-22 12:17:06    75 52395 transport.cpp:344] BlockingConnectionAdapter(): not started
+adb I 01-22 12:17:10    75 52380 transport.cpp:285] 192.168.137.14:5555: read failed: Connection reset by peer
+adb I 01-22 12:17:10    75 52380 transport.cpp:698] 192.168.137.14:5555: connection terminated: read failed
+adb I 01-22 12:17:10    75    75 adb.cpp:112] 192.168.137.14:5555: offline
+adb I 01-22 12:17:10    75    75 transport.cpp:785] destroying transport 192.168.137.14:5555
+adb I 01-22 12:17:10    75    75 transport.cpp:357] BlockingConnectionAdapter(192.168.137.14:5555): stopping
+adb I 01-22 12:17:10    75    75 transport.cpp:375] BlockingConnectionAdapter(192.168.137.14:5555): stopped
+adb I 01-22 12:17:10    75    76 transport.cpp:269] BlockingConnectionAdapter(192.168.137.14:5555): destructing
+adb I 01-22 12:17:10    75    76 transport.cpp:349] BlockingConnectionAdapter(192.168.137.14:5555): already stopped
+adb I 01-22 12:17:10    75 52448 transport.cpp:281] 192.168.137.14:5555: read thread spawning
+adb I 01-22 12:17:10    75 52449 transport.cpp:294] 192.168.137.14:5555: write thread spawning
+adb I 01-22 12:17:10    75    75 adb.cpp:108] 192.168.137.14:5555: already offline
+adb I 01-22 12:17:14    75 52448 transport.cpp:285] 192.168.137.14:5555: read failed: Connection reset by peer
+adb I 01-22 12:17:14    75 52448 transport.cpp:698] 192.168.137.14:5555: connection terminated: read failed
+adb I 01-22 12:17:14    75    75 adb.cpp:112] 192.168.137.14:5555: offline
+adb I 01-22 12:17:14    75    75 transport.cpp:785] destroying transport 192.168.137.14:5555
+adb I 01-22 12:17:14    75    75 transport.cpp:357] BlockingConnectionAdapter(192.168.137.14:5555): stopping
+adb I 01-22 12:17:14    75    75 transport.cpp:375] BlockingConnectionAdapter(192.168.137.14:5555): stopped
+adb W 01-22 12:17:14    75    76 network.cpp:147] failed to connect to '192.168.137.14:5555': Connection refused
+adb W 01-22 12:17:15    75    75 sockets.cpp:278] timeout expired while flushing socket, closing
+adb W 01-22 12:17:18    75    75 sockets.cpp:278] timeout expired while flushing socket, closing
+adb I 01-22 12:17:22    75 52482 transport.cpp:269] BlockingConnectionAdapter(): destructing
+adb I 01-22 12:17:22    75 52482 transport.cpp:344] BlockingConnectionAdapter(): not started
+adb I 01-22 12:17:22    75 52485 transport.cpp:269] BlockingConnectionAdapter(): destructing
+adb I 01-22 12:17:22    75 52485 transport.cpp:344] BlockingConnectionAdapter(): not started
+adb I 01-22 12:17:22    75 52488 transport.cpp:269] BlockingConnectionAdapter(): destructing
+adb I 01-22 12:17:22    75 52488 transport.cpp:344] BlockingConnectionAdapter(): not started
+adb I 01-22 12:17:22    75 52491 transport.cpp:269] BlockingConnectionAdapter(): destructing
+adb I 01-22 12:17:22    75 52491 transport.cpp:344] BlockingConnectionAdapter(): not started
+adb I 01-22 12:17:22    75 52494 transport.cpp:269] BlockingConnectionAdapter(): destructing
+adb I 01-22 12:17:22    75 52494 transport.cpp:344] BlockingConnectionAdapter(): not started
+adb I 01-22 12:17:22    75 52497 transport.cpp:269] BlockingConnectionAdapter(): destructing
+adb I 01-22 12:17:22    75 52497 transport.cpp:344] BlockingConnectionAdapter(): not started
+adb I 01-22 12:17:24    75    76 transport.cpp:269] BlockingConnectionAdapter(192.168.137.14:5555): destructing
+adb I 01-22 12:17:24    75    76 transport.cpp:349] BlockingConnectionAdapter(192.168.137.14:5555): already stopped
+adb I 01-22 12:17:24    75 52500 transport.cpp:281] 192.168.137.14:5555: read thread spawning
+adb I 01-22 12:17:24    75 52501 transport.cpp:294] 192.168.137.14:5555: write thread spawning
+adb I 01-22 12:17:24    75    75 adb.cpp:108] 192.168.137.14:5555: already offline
+adb I 01-22 12:17:28    75 52500 transport.cpp:285] 192.168.137.14:5555: read failed: Connection reset by peer
+adb I 01-22 12:17:28    75 52500 transport.cpp:698] 192.168.137.14:5555: connection terminated: read failed
+adb I 01-22 12:17:28    75    75 adb.cpp:112] 192.168.137.14:5555: offline
+adb I 01-22 12:17:28    75    75 transport.cpp:785] destroying transport 192.168.137.14:5555
+adb I 01-22 12:17:28    75    75 transport.cpp:357] BlockingConnectionAdapter(192.168.137.14:5555): stopping
+adb I 01-22 12:17:28    75    75 transport.cpp:375] BlockingConnectionAdapter(192.168.137.14:5555): stopped
+adb I 01-22 12:17:28    75    76 transport.cpp:269] BlockingConnectionAdapter(192.168.137.14:5555): destructing
+adb I 01-22 12:17:28    75    76 transport.cpp:349] BlockingConnectionAdapter(192.168.137.14:5555): already stopped
+adb I 01-22 12:17:28    75 52510 transport.cpp:281] 192.168.137.14:5555: read thread spawning
+adb I 01-22 12:17:28    75 52511 transport.cpp:294] 192.168.137.14:5555: write thread spawning
+adb I 01-22 12:17:28    75    75 adb.cpp:108] 192.168.137.14:5555: already offline
+adb I 01-22 12:17:31    75 52510 transport.cpp:285] 192.168.137.14:5555: read failed: Connection reset by peer
+adb I 01-22 12:17:31    75 52510 transport.cpp:698] 192.168.137.14:5555: connection terminated: read failed
+adb I 01-22 12:17:31    75    75 adb.cpp:112] 192.168.137.14:5555: offline
+adb I 01-22 12:17:31    75    75 transport.cpp:785] destroying transport 192.168.137.14:5555
+adb I 01-22 12:17:31    75    75 transport.cpp:357] BlockingConnectionAdapter(192.168.137.14:5555): stopping
+adb I 01-22 12:17:31    75    75 transport.cpp:375] BlockingConnectionAdapter(192.168.137.14:5555): stopped
+adb W 01-22 12:17:31    75    76 network.cpp:147] failed to connect to '192.168.137.14:5555': Connection refused
+adb W 01-22 12:17:32    75    75 sockets.cpp:278] timeout expired while flushing socket, closing
+adb W 01-22 12:17:35    75    75 sockets.cpp:278] timeout expired while flushing socket, closing
+adb I 01-22 12:17:39    75 52531 transport.cpp:269] BlockingConnectionAdapter(): destructing
+adb I 01-22 12:17:39    75 52531 transport.cpp:344] BlockingConnectionAdapter(): not started
+adb I 01-22 12:17:39    75 52534 transport.cpp:269] BlockingConnectionAdapter(): destructing
+adb I 01-22 12:17:39    75 52534 transport.cpp:344] BlockingConnectionAdapter(): not started
+adb I 01-22 12:17:39    75 52537 transport.cpp:269] BlockingConnectionAdapter(): destructing
+adb I 01-22 12:17:39    75 52537 transport.cpp:344] BlockingConnectionAdapter(): not started
+adb I 01-22 12:17:39    75 52540 transport.cpp:269] BlockingConnectionAdapter(): destructing
+adb I 01-22 12:17:39    75 52540 transport.cpp:344] BlockingConnectionAdapter(): not started
+adb I 01-22 12:17:39    75 52543 transport.cpp:269] BlockingConnectionAdapter(): destructing
+adb I 01-22 12:17:39    75 52543 transport.cpp:344] BlockingConnectionAdapter(): not started
+adb I 01-22 12:17:39    75 52546 transport.cpp:269] BlockingConnectionAdapter(): destructing
+adb I 01-22 12:17:39    75 52546 transport.cpp:344] BlockingConnectionAdapter(): not started
+adb I 01-22 12:17:41    75    76 transport.cpp:269] BlockingConnectionAdapter(192.168.137.14:5555): destructing
+adb I 01-22 12:17:41    75    76 transport.cpp:349] BlockingConnectionAdapter(192.168.137.14:5555): already stopped
+adb I 01-22 12:17:41    75 52547 transport.cpp:281] 192.168.137.14:5555: read thread spawning
+adb I 01-22 12:17:41    75 52548 transport.cpp:294] 192.168.137.14:5555: write thread spawning
+adb I 01-22 12:17:41    75    75 adb.cpp:108] 192.168.137.14:5555: already offline
+adb I 01-22 12:17:45    75 52547 transport.cpp:285] 192.168.137.14:5555: read failed: Connection reset by peer
+adb I 01-22 12:17:45    75 52547 transport.cpp:698] 192.168.137.14:5555: connection terminated: read failed
+adb I 01-22 12:17:45    75    75 adb.cpp:112] 192.168.137.14:5555: offline
+adb I 01-22 12:17:45    75    75 transport.cpp:785] destroying transport 192.168.137.14:5555
+adb I 01-22 12:17:45    75    75 transport.cpp:357] BlockingConnectionAdapter(192.168.137.14:5555): stopping
+adb I 01-22 12:17:45    75    75 transport.cpp:375] BlockingConnectionAdapter(192.168.137.14:5555): stopped
+adb I 01-22 12:17:45    75    76 transport.cpp:269] BlockingConnectionAdapter(192.168.137.14:5555): destructing
+adb I 01-22 12:17:45    75    76 transport.cpp:349] BlockingConnectionAdapter(192.168.137.14:5555): already stopped
+adb I 01-22 12:17:45    75 52559 transport.cpp:281] 192.168.137.14:5555: read thread spawning
+adb I 01-22 12:17:45    75 52560 transport.cpp:294] 192.168.137.14:5555: write thread spawning
+adb I 01-22 12:17:45    75    75 adb.cpp:108] 192.168.137.14:5555: already offline
+adb I 01-22 12:17:47    75 52559 transport.cpp:285] 192.168.137.14:5555: read failed: Connection reset by peer
+adb I 01-22 12:17:47    75 52559 transport.cpp:698] 192.168.137.14:5555: connection terminated: read failed
+adb I 01-22 12:17:47    75    75 adb.cpp:112] 192.168.137.14:5555: offline
+adb I 01-22 12:17:47    75    75 transport.cpp:785] destroying transport 192.168.137.14:5555
+adb I 01-22 12:17:47    75    75 transport.cpp:357] BlockingConnectionAdapter(192.168.137.14:5555): stopping
+adb I 01-22 12:17:47    75    75 transport.cpp:375] BlockingConnectionAdapter(192.168.137.14:5555): stopped
+adb W 01-22 12:17:48    75    76 network.cpp:147] failed to connect to '192.168.137.14:5555': Connection refused
+adb W 01-22 12:17:48    75    75 sockets.cpp:278] timeout expired while flushing socket, closing
+adb W 01-22 12:17:51    75    75 sockets.cpp:278] timeout expired while flushing socket, closing
+adb I 01-22 12:17:55    75 52578 transport.cpp:269] BlockingConnectionAdapter(): destructing
+adb I 01-22 12:17:55    75 52578 transport.cpp:344] BlockingConnectionAdapter(): not started
+adb I 01-22 12:17:55    75 52581 transport.cpp:269] BlockingConnectionAdapter(): destructing
+adb I 01-22 12:17:55    75 52581 transport.cpp:344] BlockingConnectionAdapter(): not started
+adb I 01-22 12:17:55    75 52584 transport.cpp:269] BlockingConnectionAdapter(): destructing
+adb I 01-22 12:17:55    75 52584 transport.cpp:344] BlockingConnectionAdapter(): not started
+adb I 01-22 12:17:55    75 52587 transport.cpp:269] BlockingConnectionAdapter(): destructing
+adb I 01-22 12:17:55    75 52587 transport.cpp:344] BlockingConnectionAdapter(): not started
+adb I 01-22 12:17:55    75 52590 transport.cpp:269] BlockingConnectionAdapter(): destructing
+adb I 01-22 12:17:55    75 52590 transport.cpp:344] BlockingConnectionAdapter(): not started
+adb I 01-22 12:17:56    75 52593 transport.cpp:269] BlockingConnectionAdapter(): destructing
+adb I 01-22 12:17:56    75 52593 transport.cpp:344] BlockingConnectionAdapter(): not started
+adb I 01-22 12:17:58    75    76 transport.cpp:269] BlockingConnectionAdapter(192.168.137.14:5555): destructing
+adb I 01-22 12:17:58    75    76 transport.cpp:349] BlockingConnectionAdapter(192.168.137.14:5555): already stopped
+adb I 01-22 12:17:58    75 52596 transport.cpp:281] 192.168.137.14:5555: read thread spawning
+adb I 01-22 12:17:58    75 52597 transport.cpp:294] 192.168.137.14:5555: write thread spawning
+adb I 01-22 12:17:58    75    75 adb.cpp:108] 192.168.137.14:5555: already offline
+adb I 01-22 12:18:01    75 52596 transport.cpp:285] 192.168.137.14:5555: read failed: Connection reset by peer
+adb I 01-22 12:18:01    75 52596 transport.cpp:698] 192.168.137.14:5555: connection terminated: read failed
+adb I 01-22 12:18:01    75    75 adb.cpp:112] 192.168.137.14:5555: offline
+adb I 01-22 12:18:01    75    75 transport.cpp:785] destroying transport 192.168.137.14:5555
+adb I 01-22 12:18:01    75    75 transport.cpp:357] BlockingConnectionAdapter(192.168.137.14:5555): stopping
+adb I 01-22 12:18:01    75    75 transport.cpp:375] BlockingConnectionAdapter(192.168.137.14:5555): stopped
+adb I 01-22 12:18:01    75    76 transport.cpp:269] BlockingConnectionAdapter(192.168.137.14:5555): destructing
+adb I 01-22 12:18:01    75    76 transport.cpp:349] BlockingConnectionAdapter(192.168.137.14:5555): already stopped
+adb I 01-22 12:18:01    75 52606 transport.cpp:281] 192.168.137.14:5555: read thread spawning
+adb I 01-22 12:18:01    75 52607 transport.cpp:294] 192.168.137.14:5555: write thread spawning
+adb I 01-22 12:18:01    75    75 adb.cpp:108] 192.168.137.14:5555: already offline

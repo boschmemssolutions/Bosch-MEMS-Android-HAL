@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2023 Robert Bosch GmbH
+ * Copyright (C) 2024 Robert Bosch GmbH
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,86 +17,66 @@
 #ifndef ANDROID_HARDWARE_BOSCH_SENSORS_SMI330_H
 #define ANDROID_HARDWARE_BOSCH_SENSORS_SMI330_H
 
-#include <array>
-
+#include "Accelerometer.h"
 #include "CompositeSensors.h"
-#include "SensorCore.h"
+#include "Gyroscope.h"
 
 namespace bosch {
 namespace sensors {
 
-class Smi330Imu {
+class Smi330Acc : public Accelerometer {
 public:
-  Smi330Imu(const Smi330Imu&) = delete;
-  Smi330Imu& operator=(const Smi330Imu&) = delete;
-
-  static Smi330Imu& getInstance() {
-    static Smi330Imu instance;
-    return instance;
-  }
-
-  enum Index { ACCEL, GYRO, LENGTH };
-
-  void setPowerMode(Index idx, bool enable, const std::string& device);
-  void setSamplingRate(Index idx, int64_t samplingPeriodNs, const std::string& device);
-
-private:
-  Smi330Imu() = default;
-  ~Smi330Imu() = default;
-
-  void updateSamplingRate(const std::string& device);
-
-  const int64_t mMinSamplingRateNs = 2500000;
-  const int64_t mMaxSamplingRateNs = 1280000000;
-  const std::string mSysfsOdr{"in_sampling_frequency"};
-  const std::array<std::string, Index::LENGTH> mSysfsPowerMode{"in_accel_en", "in_anglvel_en"};
-
-  std::array<bool, Index::LENGTH> mIsEnabled{false, false};
-  std::array<int64_t, Index::LENGTH> mSamplingPeriodNs{mMaxSamplingRateNs, mMaxSamplingRateNs};
-};
-
-class Smi330Acc : public SensorCore {
-public:
-  Smi330Acc();
+  Smi330Acc(const std::shared_ptr<ISensorThread> sensorThread);
   ~Smi330Acc() = default;
 
-  void setPowerMode(bool enable) override {
-    Smi330Imu::getInstance().setPowerMode(Smi330Imu::Index::ACCEL, enable, mDevice);
-  };
-  void setSamplingRate(int64_t samplingPeriodNs) override {
-    Smi330Imu::getInstance().setSamplingRate(Smi330Imu::Index::ACCEL, samplingPeriodNs, mDevice);
+private:
+  const AccelData mAccelData = {
+    .sysfsEnable = "7",
+    .sysfsDisable = "0",
+    .sysfsTrigger = "smi330-trigger",
+    .defaultRange = AccelRange::RANGE_8G,
+    .minRange = AccelRange::RANGE_2G,
+    .maxRange = AccelRange::RANGE_16G,
+    .odrMap =
+      {
+        {80000, "12"},
+        {40000, "25"},
+        {20000, "50"},
+        {10000, "100"},
+        {5000, "200"},
+        {2500, "400"},
+        {1250, "800"},
+        {625, "1600"},
+      },
   };
 };
 
-class Smi330AccUncalibrated : public Smi330Acc {
+class Smi330Gyro : public Gyroscope {
 public:
-  Smi330AccUncalibrated();
-  ~Smi330AccUncalibrated() = default;
-};
-
-class Smi330Gyro : public SensorCore {
-public:
-  Smi330Gyro();
+  Smi330Gyro(const std::shared_ptr<ISensorThread> sensorThread);
   ~Smi330Gyro() = default;
 
-  void setPowerMode(bool enable) override {
-    if (enable) setScale();
-    Smi330Imu::getInstance().setPowerMode(Smi330Imu::Index::GYRO, enable, mDevice);
-  };
-  void setSamplingRate(int64_t samplingPeriodNs) override {
-    Smi330Imu::getInstance().setSamplingRate(Smi330Imu::Index::GYRO, samplingPeriodNs, mDevice);
-  };
-
 private:
-  void setScale();
-
-  const std::string mSysfsScale{"in_anglvel_scale"};
-};
-
-class Smi330GyroUncalibrated : public Smi330Gyro {
-public:
-  Smi330GyroUncalibrated();
-  ~Smi330GyroUncalibrated() = default;
+  const GyroData mGyroData = {
+    .sysfsEnable = "7",
+    .sysfsDisable = "0",
+    .sysfsTrigger = "smi330-trigger",
+    .defaultRange = GyroRange::RANGE_250_DEG_S,
+    .minRange = GyroRange::RANGE_125_DEG_S,
+    .maxRange = GyroRange::RANGE_500_DEG_S,
+    .odrMap =
+      {
+        {80000, "12"},
+        {40000, "25"},
+        {20000, "50"},
+        {10000, "100"},
+        {5000, "200"},
+        {2500, "400"},
+        {1250, "800"},
+        {625, "1600"},
+      },
+    .powerOnForChange = false,
+  };
 };
 
 class Smi330LinearAcc : public LinearAcceleration {
@@ -109,6 +89,18 @@ class Smi330Gravity : public Gravity {
 public:
   Smi330Gravity(const std::shared_ptr<SensorCore> accel, const std::shared_ptr<SensorCore> gyro);
   ~Smi330Gravity() = default;
+};
+
+class Smi330AccUncalibrated : public Dummy {
+public:
+  Smi330AccUncalibrated(const std::shared_ptr<SensorCore> base);
+  ~Smi330AccUncalibrated() = default;
+};
+
+class Smi330GyroUncalibrated : public Dummy {
+public:
+  Smi330GyroUncalibrated(const std::shared_ptr<SensorCore> base);
+  ~Smi330GyroUncalibrated() = default;
 };
 
 }  // namespace sensors

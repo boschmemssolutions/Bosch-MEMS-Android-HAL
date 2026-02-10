@@ -1,6 +1,6 @@
 /*
- * Copyright (C) 2023 Robert Bosch GmbH
- * Copyright (C) 2023 The Android Open Source Project
+ * Copyright (C) 2021 The Android Open Source Project
+ * Copyright (C) 2025 Robert Bosch GmbH
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,16 +14,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
- 
-filegroup {
-    name: "sensors-bosch.rc",
-    srcs: ["android.hardware.sensors@aidl-service-bosch.rc"],
-}
-
-filegroup {
-    name: "sensors-bosch.xml",
-    srcs: ["android.hardware.sensors@aidl-bosch.xml"],
-}
 
 cc_library_static {
     name: "libsensorsboschimpl",
@@ -53,9 +43,6 @@ cc_library_static {
     visibility: [
         ":__subpackages__",
     ],
-    generated_sources: ["bosch_sensor_hal_configuration_V1_0"],
-    generated_headers: ["bosch_sensor_hal_configuration_V1_0"],
-    export_generated_headers: ["bosch_sensor_hal_configuration_V1_0"],
 }
 
 cc_binary {
@@ -64,8 +51,8 @@ cc_binary {
     relative_install_path: "hw",
     vendor: true,
     proprietary: true,
-    init_rc: [":sensors-bosch.rc"],
-    vintf_fragments: [":sensors-bosch.xml"],
+    init_rc: ["android.hardware.sensors@aidl-service-bosch.rc"],
+    vintf_fragments: ["android.hardware.sensors@aidl-bosch.xml"],
     shared_libs: [
         "libbase",
         "libbinder_ndk",

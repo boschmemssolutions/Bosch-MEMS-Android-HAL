@@ -1,0 +1,262 @@
+01-07 13:10:24.112 10126  1695  1812 W MediaProvider: isAppCloneUserPair for user 0: false
+01-07 13:10:24.261 10126  1695  1812 W MediaProvider: Ignoring param:deletedata post U for external apps
+01-07 13:10:24.272 10126  1695  1812 I MediaProvider: Deleted 1 0 0 0 0 0 0 items on external_primary due to com.android.shell
+01-07 13:10:24.596  1000   755   875 I commit_sys_config_file: [settings-0-0,16]
+01-07 13:10:24.817 shell  8381  8381 D AndroidRuntime: >>>>>> START com.android.internal.os.RuntimeInit uid 2000 <<<<<<
+01-07 13:10:24.831 shell  8381  8381 I AndroidRuntime: Using default boot image
+01-07 13:10:24.831 shell  8381  8381 I AndroidRuntime: Leaving lock profiling enabled
+01-07 13:10:24.838 shell  8381  8381 I app_process: Core platform API reporting enabled, enforcing=false
+01-07 13:10:24.840 shell  8381  8381 I app_process: Using CollectorTypeCMC GC.
+01-07 13:10:25.078 shell  8381  8381 D nativeloader: InitDefaultPublicLibraries for_preload=1: libandroid.so:libaaudio.so:libamidi.so:libbinder_ndk.so:libc.so:libcamera2ndk.so:libdl.so:libEGL.so:libGLESv1_CM.so:libGLESv2.so:libGLESv3.so:libicu.so:libicui18n.so:libicuuc.so:libjnigraphics.so:liblog.so:libmediandk.so:libm.so:libnativehelper.so:libnativewindow.so:libOpenMAXAL.so:libOpenSLES.so:libRS.so:libstdc++.so:libsync.so:libvulkan.so:libwebviewchromium_plat_support.so:libz.so
+01-07 13:10:25.110 shell  8381  8381 D nativeloader: Load libicu_jni.so using APEX ns com_android_art for caller /apex/com.android.art/javalib/core-oj.jar: ok
+01-07 13:10:25.111 shell  8381  8381 D app_process: u_setTimeZoneFilesDirectory("/apex/com.android.tzdata/etc/tz/versioned/8/icu") succeeded. 
+01-07 13:10:25.111 shell  8381  8381 D app_process: I18n APEX ICU file found: /apex/com.android.i18n/etc/icu/icudt75l.dat
+01-07 13:10:25.113 shell  8381  8381 D nativeloader: Load libjavacore.so using APEX ns com_android_art for caller /apex/com.android.art/javalib/core-oj.jar: ok
+01-07 13:10:25.116 shell  8381  8381 D nativeloader: Load libopenjdk.so using APEX ns com_android_art for caller /apex/com.android.art/javalib/core-oj.jar: ok
+01-07 13:10:25.185 shell  8381  8381 D nativeloader: Load libframework-connectivity-tiramisu-jni.so using APEX ns com_android_tethering for caller /apex/com.android.tethering/javalib/framework-connectivity-t.jar: ok
+01-07 13:10:25.185 shell  8381  8381 D AndroidRuntime: Calling main entry com.android.commands.content.Content
+01-07 13:10:25.220  1000   755  1073 D ActivityManager: sync unfroze 3580 android.tradefed.contentprovider for 7
+01-07 13:10:25.220  1000   755  1073 I am_mem_factor: [0,1]
+01-07 13:10:25.221  1000   755  1073 I am_uid_active: 1010139
+01-07 13:10:25.222  1000   755   972 D BackgroundInstallControlService: Package event received: 0
+01-07 13:10:25.222  1000   755   876 I am_unfreeze: [3580,android.tradefed.contentprovider,7]
+01-07 13:10:25.231 1010139  3580  3590 E TradefedContentProvider: Query - File from uri: 'content://android.tradefed.contentprovider/%252Fsdcard%252Freport-log-files%252F' does not exists.
+01-07 13:10:25.235 shell  8381  8381 D AndroidRuntime: Shutting down VM
+01-07 13:10:25.244  root   499   612 I netd    : tetherGetStats() -> {[]} <4.30ms>
+01-07 13:10:26.184  1000   755   843 I AppsFilter: interaction: PackageSetting{18e7090 com.android.microdroid.empty_payload/10132} -> PackageSetting{98cd6a7 android.tradefed.contentprovider/10139} BLOCKED
+01-07 13:10:26.184  1000   755   843 I AppsFilter: interaction: PackageSetting{18e7090 com.android.microdroid.empty_payload/10132} -> PackageSetting{98cd6a7 android.tradefed.contentprovider/10139} BLOCKED
+01-07 13:10:26.184  1000   755   819 I ActivityManager: Force stopping android.tradefed.contentprovider appid=10139 user=-1: deletePackageX
+01-07 13:10:26.185  1000   755   819 I am_uid_stopped: 1010139
+01-07 13:10:26.185  1000   755   808 D DisplayManagerService: Drop pending events for gone uid 1010139
+01-07 13:10:26.186  1000   755   819 I ActivityManager: Killing 3580:android.tradefed.contentprovider/u10a139 (adj 905): stop android.tradefed.contentprovider due to deletePackageX
+01-07 13:10:26.187  1000   755   819 I am_kill : [10,3580,android.tradefed.contentprovider,905,stop android.tradefed.contentprovider due to deletePackageX,77496]
+01-07 13:10:26.203  1000   755  1841 V ActivityManager: Got obituary of 3580:android.tradefed.contentprovider
+01-07 13:10:26.204  1000   755   821 I libprocessgroup: Removed cgroup /sys/fs/cgroup/uid_1010139/pid_3580
+01-07 13:10:26.204  root   501   501 I Zygote  : Process 3580 exited due to signal 9 (Killed)
+01-07 13:10:26.213  1017   288   315 I keystore2: system/security/keystore2/src/maintenance.rs:461 - clearNamespace(r#APP, nspace=10139)
+01-07 13:10:26.216  1017   288   315 I keystore2: system/security/keystore2/src/maintenance.rs:461 - clearNamespace(r#APP, nspace=1010139)
+01-07 13:10:26.302  1000   755   843 I commit_sys_config_file: [package,82]
+01-07 13:10:26.303  1000   755   843 D PackageManager: Instant App installer not found with android.intent.action.INSTALL_INSTANT_APP_PACKAGE
+01-07 13:10:26.303  1000   755   843 D PackageManager: Clear ephemeral installer activity
+01-07 13:10:26.305  1000   755  1706 E TaskPersister: File error accessing recents directory (directory doesn't exist?).
+01-07 13:10:26.305  1000   755  1706 E TaskPersister: File error accessing recents directory (directory doesn't exist?).
+01-07 13:10:26.305  1000   755  1706 E TaskPersister: File error accessing recents directory (directory doesn't exist?).
+01-07 13:10:26.309  1000   755   972 D BackgroundInstallControlService: Package event received: 2
+01-07 13:10:26.309  1000   755   972 D BackgroundInstallControlService: handlePackageRemove: removing android.tradefed.contentprovider from 0
+01-07 13:10:26.306  root     0     0 I logd    : start watching /data/system/packages.list ...
+01-07 13:10:26.315  root     0     0 I logd    : ReadPackageList, total packages: 142
+01-07 13:10:26.329  1000   755   843 I ActivityManager: Force stopping android.tradefed.contentprovider appid=10139 user=10: pkg removed
+01-07 13:10:26.335  1000   755   843 W IPCThreadState: Sending oneway calls to frozen process.
+01-07 13:10:26.339  1000   755   841 I commit_sys_config_file: [package-user-0,37]
+01-07 13:10:26.341  1000   755   843 I ActivityManager: Force stopping android.tradefed.contentprovider appid=10139 user=0: pkg removed
+01-07 13:10:26.343  1000   755   843 W IPCThreadState: Sending oneway calls to frozen process.
+01-07 13:10:26.349  1000   755   896 I system_server: AssetManager2(0xb400006fc5d3dc18) locale list changing from [] to [en-US]
+01-07 13:10:26.350  1000   755   897 V StorageManagerService: Package android.tradefed.contentprovider does not have legacy storage
+01-07 13:10:26.351  1000   755   896 I system_server: AssetManager2(0xb400006fc5d42a38) locale list changing from [] to [en-US]
+01-07 13:10:26.354  1000   755   807 I ServiceWatcher: [TrustManagerService] chose new implementation null
+01-07 13:10:26.355  1000   755   893 I system_server: AssetManager2(0xb400006fc5d3d2b8) locale list changing from [] to [en-US]
+01-07 13:10:26.357  1000   755   897 V StorageManagerService: Package android.tradefed.contentprovider does not have legacy storage
+01-07 13:10:26.360  1000   755   919 W WifiService: Couldn't get PackageInfo for package:android.tradefed.contentprovider
+01-07 13:10:26.360  1000   755   919 D WifiService: Remove settings for package:android.tradefed.contentprovider
+01-07 13:10:26.360  1000   755   919 D WifiConfigManager: Remove all networks for app ApplicationInfo{ab72b95 android.tradefed.contentprovider}
+01-07 13:10:26.360  1000   755   919 I PasspointManager: No app ops listener found for android.tradefed.contentprovider
+01-07 13:10:26.360  1000   755   896 I system_server: AssetManager2(0xb400006fc5d40af8) locale list changing from [] to [en-US]
+01-07 13:10:26.362  1000   755   807 I ServiceWatcher: [TrustManagerService] chose new implementation null
+01-07 13:10:26.365 radio  1145  1145 D CarrierSvcBindHelper: onPackageRemoved: android.tradefed.contentprovider
+01-07 13:10:26.368  1000  1013  1057 D CarPackageManagerService: Updating allowlist and denylist mapping for package: android.tradefed.contentprovider for UserId: 10
+01-07 13:10:26.368  1000   755   896 I system_server: AssetManager2(0xb400006fc5d34618) locale list changing from [] to [en-US]
+01-07 13:10:26.369  1000  1013  1057 W CarPackageManagerService: android.tradefed.contentprovider not installed! User Id: 10
+01-07 13:10:26.369  1000  1013  1057 D CarPackageManagerService: Updating allowlist and denylist mapping for package: android.tradefed.contentprovider for UserId: 0
+01-07 13:10:26.369  1000  1013  1057 W CarPackageManagerService: android.tradefed.contentprovider not installed! User Id: 0
+01-07 13:10:26.372  1000   755   810 I dvm_lock_sample: [system_server,1,android.display,29,ActivityManagerService.java,15753,void com.android.server.am.ActivityManagerService.trimApplications(boolean, int),,0,null,5]
+01-07 13:10:26.374  1000   755   818 W TextServicesManagerService: no available spell checker services found
+01-07 13:10:26.375  1000   755   810 I system_server: AssetManager2(0xb400006fc5d36238) locale list changing from [] to [en-US]
+01-07 13:10:26.376  1000  1013  1057 D CarPackageManagerService: Updating allowlist and denylist mapping for package: android.tradefed.contentprovider for UserId: 10
+01-07 13:10:26.376  1000  1013  1057 W CarPackageManagerService: android.tradefed.contentprovider not installed! User Id: 10
+01-07 13:10:26.376  1000  1013  1057 D CarPackageManagerService: Updating allowlist and denylist mapping for package: android.tradefed.contentprovider for UserId: 0
+01-07 13:10:26.379  1000  1013  1057 W CarPackageManagerService: android.tradefed.contentprovider not installed! User Id: 0
+01-07 13:10:26.380  1000   755   971 D ShortcutService: received package broadcast intent: Intent { act=android.intent.action.PACKAGE_REMOVED dat=package: flg=0x4000010 (has extras) }
+01-07 13:10:26.380  1000   755   971 D ShortcutService: removing package: android.tradefed.contentprovider userId=10
+01-07 13:10:26.380  1000   755   971 D ShortcutService: handlePackageRemoved: android.tradefed.contentprovider userId=10
+01-07 13:10:26.380  1000   755   971 D ShortcutService: received package broadcast intent: Intent { act=android.intent.action.PACKAGE_REMOVED dat=package: flg=0x4000010 (has extras) }
+01-07 13:10:26.380  1000   755   971 D ShortcutService: removing package: android.tradefed.contentprovider userId=0
+01-07 13:10:26.381  1000   755   971 D ShortcutService: handlePackageRemoved: android.tradefed.contentprovider userId=0
+01-07 13:10:26.385 radio  1145  1145 D CarrierSvcBindHelper: onPackageRemoved: android.tradefed.contentprovider
+01-07 13:10:26.399  1000   755   818 W TextServicesManagerService: no available spell checker services found
+01-07 13:10:26.408  1000   755   919 W WifiService: Couldn't get PackageInfo for package:android.tradefed.contentprovider
+01-07 13:10:26.408  1000   755   919 D WifiService: Remove settings for package:android.tradefed.contentprovider
+01-07 13:10:26.408  1000   755   919 D WifiConfigManager: Remove all networks for app ApplicationInfo{f946d5f android.tradefed.contentprovider}
+01-07 13:10:26.408  1000   755   919 I PasspointManager: No app ops listener found for android.tradefed.contentprovider
+01-07 13:10:26.409  1000   755   896 I service_manager_slow: [35,ecm_enhanced_confirmation]
+01-07 13:10:26.413  1000   755   870 I RollbackManager: broadcast=ACTION_PACKAGE_FULLY_REMOVED pkg=android.tradefed.contentprovider
+01-07 13:10:26.414  1000   755   870 I RollbackManager: broadcast=ACTION_PACKAGE_FULLY_REMOVED pkg=android.tradefed.contentprovider
+01-07 13:10:26.417  1000   755   896 W MagnificationConnectionManager: requestConnection duplicated request: connect=false, mConnectionState=DISCONNECTED
+01-07 13:10:26.424 1010126  1937  1937 I MediaProvider: Invalidating LocalCallingIdentity cache for package android.tradefed.contentprovider. Reason: package android.intent.action.PACKAGE_REMOVED
+01-07 13:10:26.425 1010126  1937  1937 W MediaProvider: WorkProfileOwnerApps cache is empty
+01-07 13:10:26.426 1010126  1937  1937 D PickerSyncLockManager: Trying to acquire lock com.android.providers.media.photopicker.sync.CloseableReentrantLock@8ca13f4[Unlocked]. Lock Name = CLOUD_PROVIDER_LOCK. Threads that may be waiting to acquire this lock = []
+01-07 13:10:26.427 10126  1695  1695 W MediaProvider: WorkProfileOwnerApps cache is empty
+01-07 13:10:26.427 10126  1695  1695 D PickerSyncLockManager: Trying to acquire lock com.android.providers.media.photopicker.sync.CloseableReentrantLock@8ca13f4[Unlocked]. Lock Name = CLOUD_PROVIDER_LOCK. Threads that may be waiting to acquire this lock = []
+01-07 13:10:26.427 10126  1695  1695 D CloseableReentrantLock: Successfully acquired lock com.android.providers.media.photopicker.sync.CloseableReentrantLock@8ca13f4[Locked by thread main]. Lock Name = CLOUD_PROVIDER_LOCK. Threads that may be waiting to acquire this lock = []
+01-07 13:10:26.428 10126  1695  1695 D CloseableReentrantLock: Successfully released lock com.android.providers.media.photopicker.sync.CloseableReentrantLock@8ca13f4[Unlocked]. Lock Name = CLOUD_PROVIDER_LOCK. Threads that may be waiting to acquire this lock = []
+01-07 13:10:26.430 1010126  1937  1937 D CloseableReentrantLock: Successfully acquired lock com.android.providers.media.photopicker.sync.CloseableReentrantLock@8ca13f4[Locked by thread main]. Lock Name = CLOUD_PROVIDER_LOCK. Threads that may be waiting to acquire this lock = []
+01-07 13:10:26.430 1010126  1937  1937 D CloseableReentrantLock: Successfully released lock com.android.providers.media.photopicker.sync.CloseableReentrantLock@8ca13f4[Unlocked]. Lock Name = CLOUD_PROVIDER_LOCK. Threads that may be waiting to acquire this lock = []
+01-07 13:10:26.433  1000   755  4324 W JobInfo : Job 'com.android.providers.media.module/com.android.providers.media.MediaService#-300' has a deadline with no functional constraints. The deadline won't improve job execution latency. Consider removing the deadline.
+01-07 13:10:26.437  1000   755   878 I RoleService: Granting default roles...
+01-07 13:10:26.447  root   499   612 I netd    : tetherGetStats() -> {[]} <7.26ms>
+01-07 13:10:26.449  1000   755  1841 W JobInfo : Job 'com.android.providers.media.module/com.android.providers.media.MediaService#-300' has a deadline with no functional constraints. The deadline won't improve job execution latency. Consider removing the deadline.
+01-07 13:10:26.455  1000   755   841 I commit_sys_config_file: [package-user-10,154]
+01-07 13:10:26.464  1000   755  2775 W Role    : Cannot get ApplicationInfo for default holder: com.android.messaging
+01-07 13:10:26.471  1000   755   962 I commit_sys_config_file: [session_index,60]
+01-07 13:10:26.504  1000   755   962 I commit_sys_config_file: [blobs_index,32]
+01-07 13:10:26.533  1000   755   972 D BackgroundInstallControlService: Package event received: 0
+01-07 13:10:26.533  1000   755   972 D BackgroundInstallControlService: Package event received: 0
+01-07 13:10:26.533  1000   755   972 D BackgroundInstallControlService: Package event received: 0
+01-07 13:10:26.548  1000   755  1073 W system_server: Long monitor contention with owner PackageManager (843) at int com.android.server.am.ActivityManagerService$LocalService.broadcastIntent(android.content.Intent, android.content.IIntentReceiver, java.lang.String[], boolean, int, int[], java.util.function.BiFunction, android.os.Bundle)(ActivityManagerService.java:17183) waiters=0 in void com.android.server.am.ActivityManagerService.serviceDoneExecuting(android.os.IBinder, int, int, int, android.content.Intent) for 154ms
+01-07 13:10:26.549  1000   755  1073 I dvm_lock_sample: [system_server,0,binder:755_8,154,ActivityManagerService.java,13983,void com.android.server.am.ActivityManagerService.serviceDoneExecuting(android.os.IBinder, int, int, int, android.content.Intent),-,17183,int com.android.server.am.ActivityManagerService$LocalService.broadcastIntent(android.content.Intent, android.content.IIntentReceiver, java.lang.String[], boolean, int, int[], java.util.function.BiFunction, android.os.Bundle),30]
+01-07 13:10:26.549  1000   755   755 I dvm_lock_sample: [system_server,1,main,120,ActivityManagerService.java,13695,android.content.ComponentName com.android.server.am.ActivityManagerService.startService(android.app.IApplicationThread, android.content.Intent, java.lang.String, boolean, java.lang.String, java.lang.String, int, boolean, int, java.lang.String, java.lang.String),,0,null,24]
+01-07 13:10:26.557  1000   755   755 W Looper  : Slow dispatch took 160ms main h=android.app.ActivityThread$H c=android.app.LoadedApk$ReceiverDispatcher$Args$$ExternalSyntheticLambda0@9b491d1 m=0
+01-07 13:10:26.558  1000   755   755 W Looper  : Slow delivery took 202ms main h=android.app.ActivityThread$H c=android.app.LoadedApk$ReceiverDispatcher$Args$$ExternalSyntheticLambda0@ef5f436 m=0
+01-07 13:10:26.559  1000   755  4324 I dvm_lock_sample: [system_server,1,binder:755_17,113,ActivityManagerService.java,10365,int com.android.server.am.ActivityManagerService.getMemoryTrimLevel(),,0,null,22]
+01-07 13:10:26.568  1000   755   755 I Telecom : CarModeTracker: Package android.tradefed.contentprovider is not tracked.: SSH.oR@AHE🔒
+01-07 13:10:26.569  1000   755   755 I Telecom : InCallController: updateCarModeForConnections: car mode apps: : SSH.oR@AHE🔒
+01-07 13:10:26.570  1000   755   755 I Telecom : InCallController: update carmode current:UserHandle{10} parent:null: SSH.oR@AHE🔒
+01-07 13:10:26.573  1000   755   755 I notification_cancel_all: [1000,755,android.tradefed.contentprovider,10,0,0,5,NULL]
+01-07 13:10:26.583  1000   755   878 I RoleService: Granting default roles...
+01-07 13:10:26.584  1000   755  2774 W Role    : Cannot get ApplicationInfo for default holder: com.android.messaging
+01-07 13:10:26.586  1000   755  2774 I system_server: AssetManager2(0xb400006fc5d11398) locale list changing from [] to [en-US]
+01-07 13:10:26.588  1000   755  2774 W Role    : Cannot get ApplicationInfo for default holder: com.android.contacts
+01-07 13:10:26.588  1000   755   776 I system_server: Background concurrent mark compact GC freed 19MB AllocSpace bytes, 61(2520KB) LOS objects, 49% free, 23MB/46MB, paused 2.703ms,2.703ms total 280.056ms
+01-07 13:10:26.589  1000   755  2774 W Role    : Cannot get ApplicationInfo for default holder: com.android.settings.intelligence
+01-07 13:10:26.648  1000   755  2774 W Role    : Cannot get ApplicationInfo for default holder: com.android.gallery3d
+01-07 13:10:26.649  1000   755   755 I ConditionProviders: Disallowing condition provider android.tradefed.contentprovider (userSet: true)
+01-07 13:10:26.657  1000   755   893 I system_server: AssetManager2(0xb400006fc5d3bff8) locale list changing from [] to [en-US]
+01-07 13:10:26.660 1010128  2508  2508 D PersistedStoragePackageUninstalledReceiver: Received android.intent.action.PACKAGE_FULLY_REMOVED for android.tradefed.contentprovider for u10
+01-07 13:10:26.660  1000   755   972 D BackgroundInstallControlService: Package event received: 0
+01-07 13:10:26.669 10105  1146  1146 D DockPackageChangeReceiver: package name: android.tradefed.contentprovider
+01-07 13:10:26.669 10105  1146  1146 D DockPackageChangeReceiver: ACTION_PACKAGE_REMOVED
+01-07 13:10:26.669 10105  1146  1146 D DockViewModel: createDockList called
+01-07 13:10:26.669  1000   755   755 W IPCThreadState: Sending oneway calls to frozen process.
+01-07 13:10:26.670  1000   755   755 I notification_cancel_all: [1000,755,android.tradefed.contentprovider,0,0,0,5,NULL]
+01-07 13:10:26.672  1000   755   843 I AppsFilter: interaction: PackageSetting{18e7090 com.android.microdroid.empty_payload/10132} -> PackageSetting{e852cdb com.android.tradefed.utils.wifi/10136} BLOCKED
+01-07 13:10:26.672  1000   755   843 I AppsFilter: interaction: PackageSetting{18e7090 com.android.microdroid.empty_payload/10132} -> PackageSetting{e852cdb com.android.tradefed.utils.wifi/10136} BLOCKED
+01-07 13:10:26.681 10105  1146  1146 D DockProtoDataController: Save dock to file /data/user_de/0/com.android.systemui/files/__USER_10_dock_item_data
+01-07 13:10:26.687  1000   755   755 I ConditionProviders: Disallowing condition provider android.tradefed.contentprovider (userSet: true)
+01-07 13:10:26.697  1000   755   819 I ActivityManager: Force stopping com.android.tradefed.utils.wifi appid=10136 user=-1: deletePackageX
+01-07 13:10:26.698  1000   755   913 W BestClock: java.time.DateTimeException: No network time available
+01-07 13:10:26.700  1000  8301  8310 I VirtualizationService: virtualizationservice::aidl: ignoring packageRemoved(user_id=10, app_id=10139)
+01-07 13:10:26.707  1000   755   917 I commit_sys_config_file: [net-policy,15]
+01-07 13:10:26.709  1000   755   972 D BackgroundInstallControlService: Package event received: 0
+01-07 13:10:26.709  1000   755   972 D BackgroundInstallControlService: Package event received: 0
+01-07 13:10:26.718  root   499   612 I netd    : tetherGetStats() -> {[]} <1.63ms>
+01-07 13:10:26.722  1000   755  2774 E AppOpService: Blocked setUidMode call for runtime permission app op: uid = 10091, code = FINE_LOCATION, mode = foreground, callingUid = 1000, oldMode = allow
+01-07 13:10:26.722  1000   755  2774 E AppOpService: java.lang.RuntimeException
+01-07 13:10:26.722  1000   755  2774 E AppOpService: 	at com.android.server.permission.access.appop.AppOpService.setUidMode(AppOpService.kt:268)
+01-07 13:10:26.722  1000   755  2774 E AppOpService: 	at com.android.server.appop.AppOpsCheckingServiceTracingDecorator.setUidMode(AppOpsCheckingServiceTracingDecorator.java:120)
+01-07 13:10:26.722  1000   755  2774 E AppOpService: 	at com.android.server.appop.AppOpsService.setUidMode(AppOpsService.java:2149)
+01-07 13:10:26.722  1000   755  2774 E AppOpService: 	at com.android.server.appop.AppOpsService.setUidMode(AppOpsService.java:2093)
+01-07 13:10:26.722  1000   755  2774 E AppOpService: 	at android.app.AppOpsManager.setUidMode(AppOpsManager.java:8294)
+01-07 13:10:26.722  1000   755  2774 E AppOpService: 	at com.android.role.controller.model.Permissions.setAppOpModeAsUser(Permissions.java:908)
+01-07 13:10:26.722  1000   755  2774 E AppOpService: 	at com.android.role.controller.model.Permissions.setAppOpUidModeAsUser(Permissions.java:885)
+01-07 13:10:26.722  1000   755  2774 E AppOpService: 	at com.android.role.controller.model.Permissions.grantPermissionAndAppOpAsUser(Permissions.java:373)
+01-07 13:10:26.722  1000   755  2774 E AppOpService: 	at com.android.role.controller.model.Permissions.grantSingleAsUser(Permissions.java:247)
+01-07 13:10:26.722  1000   755  2774 E AppOpService: 	at com.android.role.controller.model.Permissions.grantAsUser(Permissions.java:205)
+01-07 13:10:26.722  1000   755  2774 E AppOpService: 	at com.android.role.controller.behavior.BrowserRoleBehavior.grantAsUser(BrowserRoleBehavior.java:142)
+01-07 13:10:26.722  1000   755  2774 E AppOpService: 	at com.android.role.controller.model.Role.grantAsUser(Role.java:944)
+01-07 13:10:26.722  1000   755  2774 E AppOpService: 	at com.android.role.controller.service.RoleControllerServiceImpl.addRoleHolderInternal(RoleControllerServiceImpl.java:376)
+01-07 13:10:26.722  1000   755  2774 E AppOpService: 	at com.android.role.controller.service.RoleControllerServiceImpl.onGrantDefaultRoles(RoleControllerServiceImpl.java:163)
+01-07 13:10:26.722  1000   755  2774 E AppOpService: 	at com.android.role.LocalRoleController.lambda$grantDefaultRoles$1(LocalRoleController.java:56)
+01-07 13:10:26.722  1000   755  2774 E AppOpService: 	at com.android.role.LocalRoleController.$r8$lambda$ye-flP7Mf14AbTzwSmiTgndT6Cg(LocalRoleController.java:0)
+01-07 13:10:26.722  1000   755  2774 E AppOpService: 	at com.android.role.LocalRoleController$$ExternalSyntheticLambda1.run(R8$$SyntheticClass:0)
+01-07 13:10:26.722  1000   755  2774 E AppOpService: 	at android.os.Handler.handleCallback(Handler.java:991)
+01-07 13:10:26.722  1000   755  2774 E AppOpService: 	at android.os.Handler.dispatchMessage(Handler.java:102)
+01-07 13:10:26.722  1000   755  2774 E AppOpService: 	at android.os.Looper.loopOnce(Looper.java:232)
+01-07 13:10:26.722  1000   755  2774 E AppOpService: 	at android.os.Looper.loop(Looper.java:317)
+01-07 13:10:26.722  1000   755  2774 E AppOpService: 	at android.os.HandlerThread.run(HandlerThread.java:85)
+01-07 13:10:26.722  1000   755   917 I commit_sys_config_file: [net-policy,14]
+01-07 13:10:26.722  1000   755   913 W BestClock: java.time.DateTimeException: No network time available
+01-07 13:10:26.722  1000   755   913 I netstats_mobile_sample: [0,0,0,0,0,0,0,0,1767791426722]
+01-07 13:10:26.722  1000   755   913 I netstats_wifi_sample: [0,0,0,0,0,0,0,0,1767791426722]
+01-07 13:10:26.723  1000   755  2774 E AppOpService: Blocked setUidMode call for runtime permission app op: uid = 10091, code = COARSE_LOCATION, mode = foreground, callingUid = 1000, oldMode = allow
+01-07 13:10:26.723  1000   755  2774 E AppOpService: java.lang.RuntimeException
+01-07 13:10:26.723  1000   755  2774 E AppOpService: 	at com.android.server.permission.access.appop.AppOpService.setUidMode(AppOpService.kt:268)
+01-07 13:10:26.723  1000   755  2774 E AppOpService: 	at com.android.server.appop.AppOpsCheckingServiceTracingDecorator.setUidMode(AppOpsCheckingServiceTracingDecorator.java:120)
+01-07 13:10:26.723  1000   755  2774 E AppOpService: 	at com.android.server.appop.AppOpsService.setUidMode(AppOpsService.java:2149)
+01-07 13:10:26.723  1000   755  2774 E AppOpService: 	at com.android.server.appop.AppOpsService.setUidMode(AppOpsService.java:2093)
+01-07 13:10:26.723  1000   755  2774 E AppOpService: 	at android.app.AppOpsManager.setUidMode(AppOpsManager.java:8294)
+01-07 13:10:26.723  1000   755  2774 E AppOpService: 	at com.android.role.controller.model.Permissions.setAppOpModeAsUser(Permissions.java:908)
+01-07 13:10:26.723  1000   755  2774 E AppOpService: 	at com.android.role.controller.model.Permissions.setAppOpUidModeAsUser(Permissions.java:885)
+01-07 13:10:26.723  1000   755  2774 E AppOpService: 	at com.android.role.controller.model.Permissions.grantPermissionAndAppOpAsUser(Permissions.java:373)
+01-07 13:10:26.723  1000   755  2774 E AppOpService: 	at com.android.role.controller.model.Permissions.grantSingleAsUser(Permissions.java:247)
+01-07 13:10:26.723  1000   755  2774 E AppOpService: 	at com.android.role.controller.model.Permissions.grantAsUser(Permissions.java:205)
+01-07 13:10:26.723  1000   755  2774 E AppOpService: 	at com.android.role.controller.behavior.BrowserRoleBehavior.grantAsUser(BrowserRoleBehavior.java:142)
+01-07 13:10:26.723  1000   755  2774 E AppOpService: 	at com.android.role.controller.model.Role.grantAsUser(Role.java:944)
+01-07 13:10:26.723  1000   755  2774 E AppOpService: 	at com.android.role.controller.service.RoleControllerServiceImpl.addRoleHolderInternal(RoleControllerServiceImpl.java:376)
+01-07 13:10:26.723  1000   755  2774 E AppOpService: 	at com.android.role.controller.service.RoleControllerServiceImpl.onGrantDefaultRoles(RoleControllerServiceImpl.java:163)
+01-07 13:10:26.723  1000   755  2774 E AppOpService: 	at com.android.role.LocalRoleController.lambda$grantDefaultRoles$1(LocalRoleController.java:56)
+01-07 13:10:26.723  1000   755  2774 E AppOpService: 	at com.android.role.LocalRoleController.$r8$lambda$ye-flP7Mf14AbTzwSmiTgndT6Cg(LocalRoleController.java:0)
+01-07 13:10:26.723  1000   755  2774 E AppOpService: 	at com.android.role.LocalRoleController$$ExternalSyntheticLambda1.run(R8$$SyntheticClass:0)
+01-07 13:10:26.723  1000   755  2774 E AppOpService: 	at android.os.Handler.handleCallback(Handler.java:991)
+01-07 13:10:26.723  1000   755  2774 E AppOpService: 	at android.os.Handler.dispatchMessage(Handler.java:102)
+01-07 13:10:26.723  1000   755  2774 E AppOpService: 	at android.os.Looper.loopOnce(Looper.java:232)
+01-07 13:10:26.723  1000   755  2774 E AppOpService: 	at android.os.Looper.loop(Looper.java:317)
+01-07 13:10:26.723  1000   755  2774 E AppOpService: 	at android.os.HandlerThread.run(HandlerThread.java:85)
+01-07 13:10:26.734  1000   755   755 W Looper  : Drained
+01-07 13:10:26.743 10126  1695  1895 I MediaProvider: Begin Intent { act=android.intent.action.PACKAGE_FULLY_REMOVED dat=package: flg=0x5000010 cmp=com.android.providers.media.module/com.android.providers.media.MediaService (has extras) }
+01-07 13:10:26.745 1010126  1937  2128 I MediaProvider: Begin Intent { act=android.intent.action.PACKAGE_FULLY_REMOVED dat=package: flg=0x5000010 cmp=com.android.providers.media.module/com.android.providers.media.MediaService (has extras) }
+01-07 13:10:26.747 10126  1695  1895 D MediaProvider: Deleted 0 Android/media items belonging to android.tradefed.contentprovider on /data/user/0/com.android.providers.media.module/databases/external.db
+01-07 13:10:26.748 1010126  1937  2128 D MediaProvider: Deleted 0 Android/media items belonging to android.tradefed.contentprovider on /data/user/10/com.android.providers.media.module/databases/external.db
+01-07 13:10:26.750 1010126  1937  2128 D MediaGrants: Removed 0 media_grants for 10 user for [android.tradefed.contentprovider]. Reason: Package orphaned
+01-07 13:10:26.752 10126  1695  1895 D MediaGrants: Removed 0 media_grants for 0 user for [android.tradefed.contentprovider]. Reason: Package orphaned
+01-07 13:10:26.753 1010126  1937  2128 I MediaProvider: End Intent { act=android.intent.action.PACKAGE_FULLY_REMOVED dat=package: flg=0x5000010 cmp=com.android.providers.media.module/com.android.providers.media.MediaService (has extras) }
+01-07 13:10:26.756 10126  1695  1895 I MediaProvider: End Intent { act=android.intent.action.PACKAGE_FULLY_REMOVED dat=package: flg=0x5000010 cmp=com.android.providers.media.module/com.android.providers.media.MediaService (has extras) }
+01-07 13:10:26.756  1017   288   315 I keystore2: system/security/keystore2/src/maintenance.rs:461 - clearNamespace(r#APP, nspace=10136)
+01-07 13:10:26.759  1017   288   315 I keystore2: system/security/keystore2/src/maintenance.rs:461 - clearNamespace(r#APP, nspace=1010136)
+01-07 13:10:26.842  1000   755   843 I commit_sys_config_file: [package,77]
+01-07 13:10:26.849  1000   755  4326 W system_server: Long monitor contention with owner PackageManager (843) at void com.android.server.pm.RemovePackageHelper.clearPackageStateForUserLIF(com.android.server.pm.PackageSetting, int, int)(RemovePackageHelper.java:333) waiters=0 in com.android.server.pm.Computer com.android.server.pm.PackageManagerService.snapshotComputer(boolean) for 102ms
+01-07 13:10:26.849  1000   755  4326 I dvm_lock_sample: [system_server,1,binder:755_19,102,PackageManagerService.java,1211,com.android.server.pm.Computer com.android.server.pm.PackageManagerService.snapshotComputer(boolean),RemovePackageHelper.java,333,void com.android.server.pm.RemovePackageHelper.clearPackageStateForUserLIF(com.android.server.pm.PackageSetting, int, int),20]
+01-07 13:10:26.851  1000   755   913 W system_server: Long monitor contention with owner binder:755_19 (4326) at com.android.server.pm.Computer com.android.server.pm.PackageManagerService.snapshotComputer(boolean)(PackageManagerService.java:1224) waiters=1 in com.android.server.pm.Computer com.android.server.pm.PackageManagerService.snapshotComputer(boolean) for 110ms
+01-07 13:10:26.852  1000   755   913 I dvm_lock_sample: [system_server,0,NetworkStats,110,PackageManagerService.java,1198,com.android.server.pm.Computer com.android.server.pm.PackageManagerService.snapshotComputer(boolean),-,1224,com.android.server.pm.Computer com.android.server.pm.PackageManagerService.snapshotComputer(boolean),22]
+01-07 13:10:26.852  1000   755  4324 W system_server: Long monitor contention with owner NetworkStats (913) at int com.android.server.am.BroadcastController.broadcastIntentWithFeature(android.app.IApplicationThread, java.lang.String, android.content.Intent, java.lang.String, android.content.IIntentReceiver, int, java.lang.String, android.os.Bundle, java.lang.String[], java.lang.String[], java.lang.String[], int, android.os.Bundle, boolean, boolean, int)(BroadcastController.java:748) waiters=1 in void com.android.server.am.BroadcastController.finishReceiver(android.os.IBinder, int, java.lang.String, android.os.Bundle, boolean, int) for 112ms
+01-07 13:10:26.853  1000   755  4324 I dvm_lock_sample: [system_server,0,binder:755_17,112,BroadcastController.java,1792,void com.android.server.am.BroadcastController.finishReceiver(android.os.IBinder, int, java.lang.String, android.os.Bundle, boolean, int),-,748,int com.android.server.am.BroadcastController.broadcastIntentWithFeature(android.app.IApplicationThread, java.lang.String, android.content.Intent, java.lang.String, android.content.IIntentReceiver, int, java.lang.String, android.os.Bundle, java.lang.String[], java.lang.String[], java.lang.String[], int, android.os.Bundle, boolean, boolean, int),22]
+01-07 13:10:26.854  1000   755   843 D PackageManager: Instant App installer not found with android.intent.action.INSTALL_INSTANT_APP_PACKAGE
+01-07 13:10:26.854  1000   755   843 D PackageManager: Clear ephemeral installer activity
+01-07 13:10:26.855  1000   755   972 D BackgroundInstallControlService: Package event received: 2
+01-07 13:10:26.855  1000   755   972 D BackgroundInstallControlService: handlePackageRemove: removing com.android.tradefed.utils.wifi from 0
+01-07 13:10:26.846  root     0     0 I logd    : start watching /data/system/packages.list ...
+01-07 13:10:26.854  root     0     0 I logd    : ReadPackageList, total packages: 141
+01-07 13:10:26.859  1000   755  1706 E TaskPersister: File error accessing recents directory (directory doesn't exist?).
+01-07 13:10:26.859  1000   755  1706 E TaskPersister: File error accessing recents directory (directory doesn't exist?).
+01-07 13:10:26.859  1000   755  1706 E TaskPersister: File error accessing recents directory (directory doesn't exist?).
+01-07 13:10:26.865  1000  8301  8310 I VirtualizationService: virtualizationservice::aidl: ignoring packageRemoved(user_id=0, app_id=10139)
+01-07 13:10:26.865  1041   577   577 I AF::TrackHandle: opChanged OP_PLAY_AUDIO callback received for 
+01-07 13:10:26.870  1041   577   577 I AF::TrackHandle: opChanged OP_PLAY_AUDIO callback received for 
+01-07 13:10:26.871  1041   577   577 I AF::TrackHandle: opChanged OP_PLAY_AUDIO callback received for 
+01-07 13:10:26.877  1041   577   577 I AF::TrackHandle: opChanged OP_PLAY_AUDIO callback received for 
+01-07 13:10:26.878  1041   577   577 I AF::TrackHandle: opChanged OP_PLAY_AUDIO callback received for 
+01-07 13:10:26.878  1041   577   577 I AF::TrackHandle: opChanged OP_PLAY_AUDIO callback received for 
+01-07 13:10:26.880  1000   755  2775 I service_manager_stats: [794,138,5001]
+01-07 13:10:26.884  1041   577   577 I AF::TrackHandle: opChanged OP_PLAY_AUDIO callback received for 
+01-07 13:10:26.884  1041   577   577 I AF::TrackHandle: opChanged OP_PLAY_AUDIO callback received for 
+01-07 13:10:26.885  1041   577   577 I AF::TrackHandle: opChanged OP_PLAY_AUDIO callback received for 
+01-07 13:10:26.885  1041   577   577 I AF::TrackHandle: opChanged OP_PLAY_AUDIO callback received for 
+01-07 13:10:26.887  1041   577   595 I AF::TrackHandle: opChanged OP_PLAY_AUDIO callback received for 
+01-07 13:10:26.887  1041   577   595 I AF::TrackHandle: opChanged OP_PLAY_AUDIO callback received for 
+01-07 13:10:26.888  1041   577   577 I AF::TrackHandle: opChanged OP_PLAY_AUDIO callback received for 
+01-07 13:10:26.891  1041   577   577 I AF::TrackHandle: opChanged OP_PLAY_AUDIO callback received for 
+01-07 13:10:26.894  1041   577   577 I AF::TrackHandle: opChanged OP_PLAY_AUDIO callback received for 
+01-07 13:10:26.895  1041   577   595 I AF::TrackHandle: opChanged OP_PLAY_AUDIO callback received for 
+01-07 13:10:26.899 10128  2173  2173 D PersistedStoragePackageUninstalledReceiver: Received android.intent.action.PACKAGE_FULLY_REMOVED for android.tradefed.contentprovider for u0
+01-07 13:10:26.904  1000   755   841 I commit_sys_config_file: [package-user-0,62]
+01-07 13:10:26.906  1000   755  1456 E AtomicFile: Failed to rename /data/system/cachequota.xml.new to /data/system/cachequota.xml
+01-07 13:10:26.911  1000   755   843 I ActivityManager: Force stopping com.android.tradefed.utils.wifi appid=10136 user=10: pkg removed
+01-07 13:10:26.915  1000   755   843 W IPCThreadState: Sending oneway calls to frozen process.
+01-07 13:10:26.923  1000   755   971 D ShortcutService: received package broadcast intent: Intent { act=android.intent.action.PACKAGE_REMOVED dat=package: flg=0x4000010 (has extras) }
+01-07 13:10:26.923  1000   755   971 D ShortcutService: removing package: com.android.tradefed.utils.wifi userId=10
+01-07 13:10:26.923  1000   755   971 D ShortcutService: handlePackageRemoved: com.android.tradefed.utils.wifi userId=10
+01-07 13:10:26.929  1000   755   809 I commit_sys_config_file: [notification-policy,24]
+01-07 13:10:26.932 radio  1145  1145 D CarrierSvcBindHelper: onPackageRemoved: com.android.tradefed.utils.wifi
+01-07 13:10:26.933  1000   755   818 I system_server: AssetManager2(0xb400006fc5d3b058) locale list changing from [] to [en-US]
+01-07 13:10:26.935  1000  1013  1057 D CarPackageManagerService: Updating allowlist and denylist mapping for package: com.android.tradefed.utils.wifi for UserId: 10
+01-07 13:10:26.937  1000  1013  1057 W CarPackageManagerService: com.android.tradefed.utils.wifi not installed! User Id: 10
+01-07 13:10:26.937  1000  1013  1057 D CarPackageManagerService: Updating allowlist and denylist mapping for package: com.android.tradefed.utils.wifi for UserId: 0
+01-07 13:10:26.941  1000  1013  1057 W CarPackageManagerService: com.android.tradefed.utils.wifi not installed! User Id: 0

@@ -1,0 +1,861 @@
+01-22 11:54:56 D/Configuration: Resolve and download remote files from @Option
+01-22 11:54:56 I/TestInvocation: Invocation was started with cmd: vts-bosch -s 192.168.137.14:5555 --primary-abi-only -l INFO
+01-22 11:54:56 D/InvocationExecution: Skip linking external directory as FileProperty was set.
+01-22 11:54:56 D/RunUtil: Running command [adb, version] with timeout: 2m 0s
+01-22 11:54:56 D/TestInvocation: Fetch build duration: 10 ms
+01-22 11:54:56 D/RunUtil: Running command [adb, -s, 192.168.137.14:5555, shell, getprop, ro.build.version.sdk] with timeout: 45s
+01-22 11:54:56 D/GlobalTestFilter: Setting up global filters
+01-22 11:54:56 D/BackgroundDeviceAction: Sleep for 5000 before starting logcat for 192.168.137.14:5555.
+01-22 11:54:56 I/TestInvocation: Starting invocation for 'vts-bosch' with '[ DeviceBuildInfo{bid=eng.she2rt.20250514.110827, serial=192.168.137.14:5555} on device '192.168.137.14:5555'] 
+01-22 11:54:56 D/RunUtil: Running command [chmod, ug+rwx, /tmp/eng.she2rt.20250514.110827] with timeout: 10s
+01-22 11:54:56 D/RunUtil: Running command [chmod, ug+rwx, /tmp/eng.she2rt.20250514.110827/vts-bosch] with timeout: 10s
+01-22 11:54:56 D/FileUtil: Creating temp directory at /tmp/eng.she2rt.20250514.110827/vts-bosch with prefix "inv_"
+01-22 11:54:56 D/RunUtil: Running command [chmod, ug+rwx, /tmp/eng.she2rt.20250514.110827/vts-bosch/inv_18433047322957939324] with timeout: 10s
+01-22 11:54:56 D/FileSystemLogSaver: Using log file directory /tmp/eng.she2rt.20250514.110827/vts-bosch/inv_18433047322957939324
+01-22 11:54:56 D/FileUtil: Creating temp directory at /tmp/eng.she2rt.20250514.110827/vts-bosch/inv_18433047322957939324 with prefix "inv_"
+01-22 11:54:56 I/LogFileSaver: Using log file directory /tmp/eng.she2rt.20250514.110827/vts-bosch/inv_18433047322957939324/inv_17069590350201713958
+01-22 11:54:56 D/CompatibilityProtoResultReporter: Proto Results Directory: /home/btm5rt/jenkins/RT-C-008FN/SMI240-rpi4-arm64-spi-android/workspace/sch-MEMS-Android-HAL_development/build/SMI240/out_hal/android13/aidl/host/linux-x86/vts/android-vts/results/2026.01.22_11.54.56/proto
+01-22 11:54:56 D/FileUtil: Creating temp file at /home/btm5rt/jenkins/RT-C-008FN/SMI240-rpi4-arm64-spi-android/workspace/sch-MEMS-Android-HAL_development/build/SMI240/out_hal/android13/aidl/host/linux-x86/vts/android-vts/results/2026.01.22_11.54.56/proto with prefix "tmp-proto" suffix ""
+01-22 11:54:56 D/CertificationSuiteResultReporter: Initializing result directory
+01-22 11:54:56 D/CertificationSuiteResultReporter: Results Directory: /home/btm5rt/jenkins/RT-C-008FN/SMI240-rpi4-arm64-spi-android/workspace/sch-MEMS-Android-HAL_development/build/SMI240/out_hal/android13/aidl/host/linux-x86/vts/android-vts/results/2026.01.22_11.54.56
+01-22 11:54:56 D/CertificationSuiteResultReporter: Created log dir /home/btm5rt/jenkins/RT-C-008FN/SMI240-rpi4-arm64-spi-android/workspace/sch-MEMS-Android-HAL_development/build/SMI240/out_hal/android13/aidl/host/linux-x86/vts/android-vts/logs/2026.01.22_11.54.56
+01-22 11:54:56 D/FileUtil: Creating temp directory at /home/btm5rt/jenkins/RT-C-008FN/SMI240-rpi4-arm64-spi-android/workspace/sch-MEMS-Android-HAL_development/build/SMI240/out_hal/android13/aidl/host/linux-x86/vts/android-vts/logs/2026.01.22_11.54.56 with prefix "inv_"
+01-22 11:54:56 I/LogFileSaver: Using log file directory /home/btm5rt/jenkins/RT-C-008FN/SMI240-rpi4-arm64-spi-android/workspace/sch-MEMS-Android-HAL_development/build/SMI240/out_hal/android13/aidl/host/linux-x86/vts/android-vts/logs/2026.01.22_11.54.56/inv_3804635204491146681
+01-22 11:54:56 D/CompatibilityProtoResultReporter: Proto Results Directory: /home/btm5rt/jenkins/RT-C-008FN/SMI240-rpi4-arm64-spi-android/workspace/sch-MEMS-Android-HAL_development/build/SMI240/out_hal/android13/aidl/host/linux-x86/vts/android-vts/results/2026.01.22_11.54.56/proto
+01-22 11:54:56 D/LogFileSaver: Log data for tradefed-expanded-config is already compressed, skipping compression
+01-22 11:54:56 D/FileUtil: Creating temp file at /home/btm5rt/jenkins/RT-C-008FN/SMI240-rpi4-arm64-spi-android/workspace/sch-MEMS-Android-HAL_development/build/SMI240/out_hal/android13/aidl/host/linux-x86/vts/android-vts/logs/2026.01.22_11.54.56/inv_3804635204491146681 with prefix "tradefed-expanded-config_" suffix ".xml"
+01-22 11:54:56 I/LogFileSaver: Saved log file /home/btm5rt/jenkins/RT-C-008FN/SMI240-rpi4-arm64-spi-android/workspace/sch-MEMS-Android-HAL_development/build/SMI240/out_hal/android13/aidl/host/linux-x86/vts/android-vts/logs/2026.01.22_11.54.56/inv_3804635204491146681/tradefed-expanded-config_10479203860977065745.xml. [size=5167, elapsed=0ms]
+01-22 11:54:56 D/CertificationSuiteResultReporter: Saved logs for tradefed-expanded-config in /home/btm5rt/jenkins/RT-C-008FN/SMI240-rpi4-arm64-spi-android/workspace/sch-MEMS-Android-HAL_development/build/SMI240/out_hal/android13/aidl/host/linux-x86/vts/android-vts/logs/2026.01.22_11.54.56/inv_3804635204491146681/tradefed-expanded-config_10479203860977065745.xml
+01-22 11:54:56 D/LogFileSaver: Log data for tradefed-expanded-config is already compressed, skipping compression
+01-22 11:54:56 D/FileUtil: Creating temp file at /tmp/eng.she2rt.20250514.110827/vts-bosch/inv_18433047322957939324/inv_17069590350201713958 with prefix "tradefed-expanded-config_" suffix ".xml"
+01-22 11:54:56 I/LogFileSaver: Saved log file /tmp/eng.she2rt.20250514.110827/vts-bosch/inv_18433047322957939324/inv_17069590350201713958/tradefed-expanded-config_8520147725097522519.xml. [size=5167, elapsed=1ms]
+01-22 11:54:56 D/InvocationExecution: Starting device pre invocation setup for : '192.168.137.14:5555'
+01-22 11:54:56 D/NativeDevice: Using connection: com.android.tradefed.device.connection.DefaultConnection@41a3ee18
+01-22 11:54:56 I/CommandInterrupter: Interrupt allowed
+01-22 11:54:56 D/InvocationExecution: Starting setup for device: '192.168.137.14:5555'
+01-22 11:54:56 D/InvocationExecution: starting preparer 'com.android.compatibility.common.tradefed.targetprep.VtsDeviceInfoCollector@ad5b3a5' on device: '192.168.137.14:5555'
+01-22 11:54:56 I/NativeDeviceStateMonitor: Device 192.168.137.14:5555 is already ONLINE
+01-22 11:54:56 I/NativeDeviceStateMonitor: Waiting 360000 ms for device 192.168.137.14:5555 boot complete
+01-22 11:54:56 I/DeviceStateMonitor: Waiting 359928 ms for device 192.168.137.14:5555 package manager
+01-22 11:54:56 I/NativeDeviceStateMonitor: Waiting 359831 ms for device 192.168.137.14:5555 external store
+01-22 11:54:57 D/RunUtil: Running command [adb, -s, 192.168.137.14:5555, shell, getprop, ro.product.vendor.manufacturer] with timeout: 45s
+01-22 11:54:57 D/RunUtil: Running command [adb, -s, 192.168.137.14:5555, shell, getprop, ro.product.first_api_level] with timeout: 45s
+01-22 11:54:57 D/RunUtil: Running command [adb, -s, 192.168.137.14:5555, shell, getprop, ro.product.vendor.manufacturer] with timeout: 45s
+01-22 11:54:57 D/RunUtil: Running command [adb, -s, 192.168.137.14:5555, shell, getprop, ro.product.cpu.abilist32] with timeout: 45s
+01-22 11:54:57 D/RunUtil: Running command [adb, -s, 192.168.137.14:5555, shell, getprop, ro.build.reference.fingerprint] with timeout: 45s
+01-22 11:54:57 D/RunUtil: Running command [adb, -s, 192.168.137.14:5555, shell, getprop, ro.product.name] with timeout: 45s
+01-22 11:54:57 D/RunUtil: Running command [adb, -s, 192.168.137.14:5555, shell, getprop, ro.build.tags] with timeout: 45s
+01-22 11:54:57 D/RunUtil: Running command [adb, -s, 192.168.137.14:5555, shell, getprop, ro.product.brand] with timeout: 45s
+01-22 11:54:57 D/RunUtil: Running command [adb, -s, 192.168.137.14:5555, shell, getprop, ro.build.fingerprint] with timeout: 45s
+01-22 11:54:57 D/RunUtil: Running command [adb, -s, 192.168.137.14:5555, shell, getprop, ro.product.vendor.model] with timeout: 45s
+01-22 11:54:57 D/RunUtil: Running command [adb, -s, 192.168.137.14:5555, shell, getprop, ro.product.device] with timeout: 45s
+01-22 11:54:57 D/RunUtil: Running command [adb, -s, 192.168.137.14:5555, shell, getprop, ro.build.id] with timeout: 45s
+01-22 11:54:57 D/RunUtil: Running command [adb, -s, 192.168.137.14:5555, shell, getprop, ro.bootimage.build.fingerprint] with timeout: 45s
+01-22 11:54:57 D/RunUtil: Running command [adb, -s, 192.168.137.14:5555, shell, getprop, ro.build.version.sdk] with timeout: 45s
+01-22 11:54:57 D/RunUtil: Running command [adb, -s, 192.168.137.14:5555, shell, getprop, ro.build.fingerprint] with timeout: 45s
+01-22 11:54:57 D/RunUtil: Running command [adb, -s, 192.168.137.14:5555, shell, getprop, ro.product.vendor.model] with timeout: 45s
+01-22 11:54:57 D/RunUtil: Running command [adb, -s, 192.168.137.14:5555, shell, getprop, ro.serialno] with timeout: 45s
+01-22 11:54:57 D/RunUtil: Running command [adb, -s, 192.168.137.14:5555, shell, getprop, ro.build.version.security_patch] with timeout: 45s
+01-22 11:54:58 D/RunUtil: Running command [adb, -s, 192.168.137.14:5555, shell, getprop, ro.product.cpu.abi] with timeout: 45s
+01-22 11:54:58 D/RunUtil: Running command [adb, -s, 192.168.137.14:5555, shell, getprop, ro.product.cpu.abilist64] with timeout: 45s
+01-22 11:54:58 D/RunUtil: Running command [adb, -s, 192.168.137.14:5555, shell, getprop, ro.build.version.base_os] with timeout: 45s
+01-22 11:54:58 D/RunUtil: Running command [adb, -s, 192.168.137.14:5555, shell, getprop, ro.vendor.build.fingerprint] with timeout: 45s
+01-22 11:54:58 D/RunUtil: Running command [adb, -s, 192.168.137.14:5555, shell, getprop, ro.product.board] with timeout: 45s
+01-22 11:54:58 D/RunUtil: Running command [adb, -s, 192.168.137.14:5555, shell, getprop, ro.build.type] with timeout: 45s
+01-22 11:54:58 D/RunUtil: Running command [adb, -s, 192.168.137.14:5555, shell, getprop, ro.product.cpu.abilist] with timeout: 45s
+01-22 11:54:58 D/RunUtil: Running command [adb, -s, 192.168.137.14:5555, shell, getprop, ro.build.version.release] with timeout: 45s
+01-22 11:54:58 D/RunUtil: Running command [adb, -s, 192.168.137.14:5555, shell, getprop, ro.product.cpu.abi2] with timeout: 45s
+01-22 11:54:58 D/RunUtil: Running command [adb, -s, 192.168.137.14:5555, shell, getprop, ro.odm.build.fingerprint] with timeout: 45s
+01-22 11:54:58 D/RunUtil: Running command [adb, -s, 192.168.137.14:5555, shell, getprop, ro.odm.build.version.incremental] with timeout: 45s
+01-22 11:54:58 D/RunUtil: Running command [adb, -s, 192.168.137.14:5555, shell, getprop, ro.product.odm.device] with timeout: 45s
+01-22 11:54:58 D/RunUtil: Running command [adb, -s, 192.168.137.14:5555, shell, getprop, ro.boot.product.hardware.sku] with timeout: 45s
+01-22 11:54:58 D/InvocationExecution: done with preparer 'com.android.compatibility.common.tradefed.targetprep.VtsDeviceInfoCollector@ad5b3a5' on device: '192.168.137.14:5555' in 2s
+01-22 11:54:58 D/InvocationExecution: starting preparer 'com.android.compatibility.common.tradefed.targetprep.DeviceInfoCollector@1f5885b0' on device: '192.168.137.14:5555'
+01-22 11:54:58 D/RunUtil: Running command [adb, -s, 192.168.137.14:5555, shell, getprop, ro.product.model] with timeout: 45s
+01-22 11:54:58 D/RunUtil: Running command [adb, -s, 192.168.137.14:5555, shell, getprop, ro.product.device] with timeout: 45s
+01-22 11:54:58 D/RunUtil: Running command [adb, -s, 192.168.137.14:5555, shell, getprop, ro.build.id] with timeout: 45s
+01-22 11:54:58 D/RunUtil: Running command [adb, -s, 192.168.137.14:5555, shell, getprop, ro.bootimage.build.fingerprint] with timeout: 45s
+01-22 11:54:58 D/RunUtil: Running command [adb, -s, 192.168.137.14:5555, shell, getprop, ro.build.version.sdk] with timeout: 45s
+01-22 11:54:58 D/RunUtil: Running command [adb, -s, 192.168.137.14:5555, shell, getprop, ro.product.manufacturer] with timeout: 45s
+01-22 11:54:58 D/RunUtil: Running command [adb, -s, 192.168.137.14:5555, shell, getprop, ro.serialno] with timeout: 45s
+01-22 11:54:58 D/RunUtil: Running command [adb, -s, 192.168.137.14:5555, shell, getprop, ro.build.version.security_patch] with timeout: 45s
+01-22 11:54:59 D/RunUtil: Running command [adb, -s, 192.168.137.14:5555, shell, getprop, ro.product.cpu.abilist32] with timeout: 45s
+01-22 11:54:59 D/RunUtil: Running command [adb, -s, 192.168.137.14:5555, shell, getprop, ro.build.reference.fingerprint] with timeout: 45s
+01-22 11:54:59 D/RunUtil: Running command [adb, -s, 192.168.137.14:5555, shell, getprop, ro.product.cpu.abi] with timeout: 45s
+01-22 11:54:59 D/RunUtil: Running command [adb, -s, 192.168.137.14:5555, shell, getprop, ro.product.cpu.abilist64] with timeout: 45s
+01-22 11:54:59 D/RunUtil: Running command [adb, -s, 192.168.137.14:5555, shell, getprop, ro.product.name] with timeout: 45s
+01-22 11:54:59 D/RunUtil: Running command [adb, -s, 192.168.137.14:5555, shell, getprop, ro.build.tags] with timeout: 45s
+01-22 11:54:59 D/RunUtil: Running command [adb, -s, 192.168.137.14:5555, shell, getprop, ro.build.version.incremental] with timeout: 45s
+01-22 11:54:59 D/RunUtil: Running command [adb, -s, 192.168.137.14:5555, shell, getprop, ro.product.brand] with timeout: 45s
+01-22 11:54:59 D/RunUtil: Running command [adb, -s, 192.168.137.14:5555, shell, getprop, ro.build.fingerprint] with timeout: 45s
+01-22 11:54:59 D/RunUtil: Running command [adb, -s, 192.168.137.14:5555, shell, getprop, ro.vendor.build.fingerprint] with timeout: 45s
+01-22 11:54:59 D/RunUtil: Running command [adb, -s, 192.168.137.14:5555, shell, getprop, ro.build.version.base_os] with timeout: 45s
+01-22 11:54:59 D/RunUtil: Running command [adb, -s, 192.168.137.14:5555, shell, getprop, ro.product.cpu.abilist] with timeout: 45s
+01-22 11:54:59 D/RunUtil: Running command [adb, -s, 192.168.137.14:5555, shell, getprop, ro.product.board] with timeout: 45s
+01-22 11:54:59 D/RunUtil: Running command [adb, -s, 192.168.137.14:5555, shell, getprop, ro.build.type] with timeout: 45s
+01-22 11:54:59 D/RunUtil: Running command [adb, -s, 192.168.137.14:5555, shell, getprop, ro.build.version.release] with timeout: 45s
+01-22 11:54:59 D/RunUtil: Running command [adb, -s, 192.168.137.14:5555, shell, getprop, ro.product.cpu.abi2] with timeout: 45s
+01-22 11:54:59 I/NativeDeviceStateMonitor: Device 192.168.137.14:5555 is already ONLINE
+01-22 11:54:59 I/NativeDeviceStateMonitor: Waiting 360000 ms for device 192.168.137.14:5555 boot complete
+01-22 11:55:00 I/DeviceStateMonitor: Waiting 359934 ms for device 192.168.137.14:5555 package manager
+01-22 11:55:00 I/NativeDeviceStateMonitor: Waiting 359837 ms for device 192.168.137.14:5555 external store
+01-22 11:55:00 I/ApkInstrumentationPreparer: Instrumenting package: com.android.compatibility.common.deviceinfo
+01-22 11:55:00 D/RunUtil: Running command [adb, -s, 192.168.137.14:5555, shell, getprop, ro.build.version.codename] with timeout: 45s
+01-22 11:55:00 D/RunUtil: Running command [adb, -s, 192.168.137.14:5555, shell, getprop, ro.build.version.sdk] with timeout: 45s
+01-22 11:55:00 D/AndroidJUnitTest: Disabled test storage as it's not supported on that branch.
+01-22 11:55:00 D/RunUtil: Running command [adb, -s, 192.168.137.14:5555, shell, getprop, ro.build.version.codename] with timeout: 45s
+01-22 11:55:00 D/RunUtil: Running command [adb, -s, 192.168.137.14:5555, shell, getprop, ro.build.version.sdk] with timeout: 45s
+01-22 11:55:00 D/RunUtil: Running command [adb, -s, 192.168.137.14:5555, shell, getprop, ro.build.version.sdk] with timeout: 45s
+01-22 11:55:00 D/CtsDeviceInfo.apk: Uploading CtsDeviceInfo.apk onto device '192.168.137.14:5555'
+01-22 11:55:00 D/Device: Uploading file onto device '192.168.137.14:5555'
+01-22 11:55:01 D/BackgroundDeviceAction: Waiting for device 192.168.137.14:5555 online before starting.
+01-22 11:55:01 D/BackgroundDeviceAction: Device 192.168.137.14:5555 now online.
+01-22 11:55:01 D/BackgroundDeviceAction: Starting logcat for 192.168.137.14:5555.
+01-22 11:55:03 D/RunUtil: Running command [aapt, dump, badging, /home/btm5rt/jenkins/RT-C-008FN/SMI240-rpi4-arm64-spi-android/workspace/sch-MEMS-Android-HAL_development/build/SMI240/out_hal/android13/aidl/host/linux-x86/vts/android-vts/testcases/CtsDeviceInfo/arm64/CtsDeviceInfo.apk] with timeout: 1m 0s
+01-22 11:55:03 W/FileUtil: Filename for prefix: temporary-stdout-[aapt, dump, badging, /home/btm5rt/jenkins/RT-C-008FN/SMI240-rpi4-arm64-spi-android/workspace/sch-MEMS-Android-HAL_development/build/SMI240/out_hal/android13/aidl/host/linux-x86/vts/android-vts/testcases/CtsDeviceInfo/arm64/CtsDeviceInfo.apk] and suffix: .txt, would be too long for FileSystem,truncating it.
+01-22 11:55:03 W/FileUtil: Filename for prefix: temporary-errout-[aapt, dump, badging, /home/btm5rt/jenkins/RT-C-008FN/SMI240-rpi4-arm64-spi-android/workspace/sch-MEMS-Android-HAL_development/build/SMI240/out_hal/android13/aidl/host/linux-x86/vts/android-vts/testcases/CtsDeviceInfo/arm64/CtsDeviceInfo.apk] and suffix: .txt, would be too long for FileSystem,truncating it.
+01-22 11:55:03 D/RunUtil: Running command [aapt, dump, xmltree, /home/btm5rt/jenkins/RT-C-008FN/SMI240-rpi4-arm64-spi-android/workspace/sch-MEMS-Android-HAL_development/build/SMI240/out_hal/android13/aidl/host/linux-x86/vts/android-vts/testcases/CtsDeviceInfo/arm64/CtsDeviceInfo.apk, AndroidManifest.xml] with timeout: 1m 0s
+01-22 11:55:03 W/FileUtil: Filename for prefix: temporary-stdout-[aapt, dump, xmltree, /home/btm5rt/jenkins/RT-C-008FN/SMI240-rpi4-arm64-spi-android/workspace/sch-MEMS-Android-HAL_development/build/SMI240/out_hal/android13/aidl/host/linux-x86/vts/android-vts/testcases/CtsDeviceInfo/arm64/CtsDeviceInfo.apk, AndroidManifest.xml] and suffix: .txt, would be too long for FileSystem,truncating it.
+01-22 11:55:03 W/FileUtil: Filename for prefix: temporary-errout-[aapt, dump, xmltree, /home/btm5rt/jenkins/RT-C-008FN/SMI240-rpi4-arm64-spi-android/workspace/sch-MEMS-Android-HAL_development/build/SMI240/out_hal/android13/aidl/host/linux-x86/vts/android-vts/testcases/CtsDeviceInfo/arm64/CtsDeviceInfo.apk, AndroidManifest.xml] and suffix: .txt, would be too long for FileSystem,truncating it.
+01-22 11:55:03 D/RunUtil: Running command [adb, -s, 192.168.137.14:5555, shell, appops, write-settings] with timeout: 2m 0s
+01-22 11:55:03 D/ListInstrumentationParser: instrumentation:com.android.compatibility.common.deviceinfo/androidx.test.runner.AndroidJUnitRunner (target=com.android.compatibility.common.deviceinfo)
+01-22 11:55:03 D/ListInstrumentationParser: 
+01-22 11:55:03 I/InstrumentationTest: No runner name specified. Using: androidx.test.runner.AndroidJUnitRunner.
+01-22 11:55:03 D/RunUtil: Running command [adb, -s, 192.168.137.14:5555, shell, getprop, ro.build.version.codename] with timeout: 45s
+01-22 11:55:03 D/RunUtil: Running command [adb, -s, 192.168.137.14:5555, shell, getprop, ro.build.version.sdk] with timeout: 45s
+01-22 11:55:03 D/RunUtil: Running command [adb, -s, 192.168.137.14:5555, shell, getprop, ro.build.version.codename] with timeout: 45s
+01-22 11:55:03 D/RunUtil: Running command [adb, -s, 192.168.137.14:5555, shell, getprop, ro.build.version.sdk] with timeout: 45s
+01-22 11:55:03 D/InstrumentationTest: Initializing com.android.tradefed.device.metric.CountTestCasesCollector for instrumentation.
+01-22 11:55:03 I/RemoteAndroidTest: Running am instrument -w -r --no-isolated-storage   -e newRunListenerMode true -e timeout_msec 300000 com.android.compatibility.common.deviceinfo/androidx.test.runner.AndroidJUnitRunner on raspberry_pi_4-192.168.137.14:5555
+01-22 11:55:31 D/TestDevice: Uninstalling com.android.compatibility.common.deviceinfo with extra args 
+01-22 11:55:32 D/ApkInstrumentationPreparer: Target preparation successful
+01-22 11:55:32 D/RunUtil: Running command [adb, -s, 192.168.137.14:5555, shell, getprop, ro.build.version.codename] with timeout: 45s
+01-22 11:55:32 D/RunUtil: Running command [adb, -s, 192.168.137.14:5555, shell, getprop, ro.build.version.sdk] with timeout: 45s
+01-22 11:55:32 D/RunUtil: Running command [adb, -s, 192.168.137.14:5555, shell, getprop, ro.build.version.sdk] with timeout: 45s
+01-22 11:55:32 D/RunUtil: Running command [adb, -s, 192.168.137.14:5555, shell, getprop, ro.build.version.codename] with timeout: 45s
+01-22 11:55:32 D/RunUtil: Running command [adb, -s, 192.168.137.14:5555, shell, getprop, ro.build.version.sdk] with timeout: 45s
+01-22 11:55:32 D/RunUtil: Running command [adb, -s, 192.168.137.14:5555, shell, getprop, ro.build.version.sdk] with timeout: 45s
+01-22 11:55:32 D/TradefedContentProvider.apk5641213739065929736.apk: Uploading TradefedContentProvider.apk5641213739065929736.apk onto device '192.168.137.14:5555'
+01-22 11:55:32 D/Device: Uploading file onto device '192.168.137.14:5555'
+01-22 11:55:33 D/RunUtil: Running command [aapt, dump, badging, /tmp/TradefedContentProvider.apk5641213739065929736.apk] with timeout: 1m 0s
+01-22 11:55:33 D/RunUtil: Running command [aapt, dump, xmltree, /tmp/TradefedContentProvider.apk5641213739065929736.apk, AndroidManifest.xml] with timeout: 1m 0s
+01-22 11:55:33 D/RunUtil: Running command [adb, -s, 192.168.137.14:5555, shell, appops, write-settings] with timeout: 2m 0s
+01-22 11:55:33 D/RunUtil: Running command [adb, -s, 192.168.137.14:5555, shell, cmd, appops, set, android.tradefed.contentprovider, android:legacy_storage, allow] with timeout: 2m 0s
+01-22 11:55:33 D/RunUtil: Running command [adb, -s, 192.168.137.14:5555, shell, cmd, appops, get, android.tradefed.contentprovider] with timeout: 2m 0s
+01-22 11:55:34 D/RunUtil: Running command [adb, -s, 192.168.137.14:5555, shell, getprop, ro.build.version.codename] with timeout: 45s
+01-22 11:55:34 D/RunUtil: Running command [adb, -s, 192.168.137.14:5555, shell, getprop, ro.build.version.sdk] with timeout: 45s
+01-22 11:55:35 D/ContentProviderHandler: Received from content provider:
+Row: 0 name=AppStandbyDeviceInfo.deviceinfo.json, absolute_path=/sdcard/device-info-files/AppStandbyDeviceInfo.deviceinfo.json, is_directory=false, mime_type=application/json, metadata=NULL
+Row: 1 name=CameraDeviceInfo.deviceinfo.json, absolute_path=/sdcard/device-info-files/CameraDeviceInfo.deviceinfo.json, is_directory=false, mime_type=application/json, metadata=NULL
+Row: 2 name=ClientIdDeviceInfo.deviceinfo.json, absolute_path=/sdcard/device-info-files/ClientIdDeviceInfo.deviceinfo.json, is_directory=false, mime_type=application/json, metadata=NULL
+Row: 3 name=ConfigurationDeviceInfo.deviceinfo.json, absolute_path=/sdcard/device-info-files/ConfigurationDeviceInfo.deviceinfo.json, is_directory=false, mime_type=application/json, metadata=NULL
+Row: 4 name=CpuDeviceInfo.deviceinfo.json, absolute_path=/sdcard/device-info-files/CpuDeviceInfo.deviceinfo.json, is_directory=false, mime_type=application/json, metadata=NULL
+Row: 5 name=FeatureDeviceInfo.deviceinfo.json, absolute_path=/sdcard/device-info-files/FeatureDeviceInfo.deviceinfo.json, is_directory=false, mime_type=application/json, metadata=NULL
+Row: 6 name=GenericDeviceInfo.deviceinfo.json, absolute_path=/sdcard/device-info-files/GenericDeviceInfo.deviceinfo.json, is_directory=false, mime_type=application/json, metadata=NULL
+Row: 7 name=GraphicsDeviceInfo.deviceinfo.json, absolute_path=/sdcard/device-info-files/GraphicsDeviceInfo.deviceinfo.json, is_directory=false, mime_type=application/json, metadata=NULL
+Row: 8 name=HapticsDeviceInfo.deviceinfo.json, absolute_path=/sdcard/device-info-files/HapticsDeviceInfo.deviceinfo.json, is_directory=false, mime_type=application/json, metadata=NULL
+Row: 9 name=InputDeviceInfo.deviceinfo.json, absolute_path=/sdcard/device-info-files/InputDeviceInfo.deviceinfo.json, is_directory=false, mime_type=application/json, metadata=NULL
+Row: 10 name=LocaleDeviceInfo.deviceinfo.json, absolute_path=/sdcard/device-info-files/LocaleDeviceInfo.deviceinfo.json, is_directory=false, mime_type=application/json, metadata=NULL
+Row: 11 name=MediaDeviceInfo.deviceinfo.json, absolute_path=/sdcard/device-info-files/MediaDeviceInfo.deviceinfo.json, is_directory=false, mime_type=application/json, metadata=NULL
+Row: 12 name=MemoryDeviceInfo.deviceinfo.json, absolute_path=/sdcard/device-info-files/MemoryDeviceInfo.deviceinfo.json, is_directory=false, mime_type=application/json, metadata=NULL
+Row: 13 name=PackageDeviceInfo.deviceinfo.json, absolute_path=/sdcard/device-info-files/PackageDeviceInfo.deviceinfo.json, is_directory=false, mime_type=application/json, metadata=NULL
+Row: 14 name=ScreenDeviceInfo.deviceinfo.json, absolute_path=/sdcard/device-info-files/ScreenDeviceInfo.deviceinfo.json, is_directory=false, mime_type=application/json, metadata=NULL
+Row: 15 name=SensorDeviceInfo.deviceinfo.json, absolute_path=/sdcard/device-info-files/SensorDeviceInfo.deviceinfo.json, is_directory=false, mime_type=application/json, metadata=NULL
+Row: 16 name=StorageDeviceInfo.deviceinfo.json, absolute_path=/sdcard/device-info-files/StorageDeviceInfo.deviceinfo.json, is_directory=false, mime_type=application/json, metadata=NULL
+Row: 17 name=UserDeviceInfo.deviceinfo.json, absolute_path=/sdcard/device-info-files/UserDeviceInfo.deviceinfo.json, is_directory=false, mime_type=application/json, metadata=NULL
+Row: 18 name=VintfDeviceInfo.deviceinfo.json, absolute_path=/sdcard/device-info-files/VintfDeviceInfo.deviceinfo.json, is_directory=false, mime_type=application/json, metadata=NULL
+Row: 19 name=VulkanDeviceInfo.deviceinfo.json, absolute_path=/sdcard/device-info-files/VulkanDeviceInfo.deviceinfo.json, is_directory=false, mime_type=application/json, metadata=NULL
+Row: 20 name=device_compatibility_matrix.xml, absolute_path=/sdcard/device-info-files/device_compatibility_matrix.xml, is_directory=false, mime_type=text/xml, metadata=NULL
+Row: 21 name=device_manifest.xml, absolute_path=/sdcard/device-info-files/device_manifest.xml, is_directory=false, mime_type=text/xml, metadata=NULL
+Row: 22 name=framework_compatibility_matrix.xml, absolute_path=/sdcard/device-info-files/framework_compatibility_matrix.xml, is_directory=false, mime_type=text/xml, metadata=NULL
+Row: 23 name=framework_manifest.xml, absolute_path=/sdcard/device-info-files/framework_manifest.xml, is_directory=false, mime_type=text/xml, metadata=NULL
+
+01-22 11:55:35 D/RunUtil: Running command [adb, -s, 192.168.137.14:5555, shell, content, read, --user, 10, --uri, content://android.tradefed.contentprovider/%252Fsdcard%252Fdevice-info-files%252FAppStandbyDeviceInfo.deviceinfo.json] with timeout: 2m 0s
+01-22 11:55:37 D/RunUtil: Running command [adb, -s, 192.168.137.14:5555, shell, content, read, --user, 10, --uri, content://android.tradefed.contentprovider/%252Fsdcard%252Fdevice-info-files%252FCameraDeviceInfo.deviceinfo.json] with timeout: 2m 0s
+01-22 11:55:38 D/RunUtil: Running command [adb, -s, 192.168.137.14:5555, shell, content, read, --user, 10, --uri, content://android.tradefed.contentprovider/%252Fsdcard%252Fdevice-info-files%252FClientIdDeviceInfo.deviceinfo.json] with timeout: 2m 0s
+01-22 11:55:39 D/RunUtil: Running command [adb, -s, 192.168.137.14:5555, shell, content, read, --user, 10, --uri, content://android.tradefed.contentprovider/%252Fsdcard%252Fdevice-info-files%252FConfigurationDeviceInfo.deviceinfo.json] with timeout: 2m 0s
+01-22 11:55:41 D/RunUtil: Running command [adb, -s, 192.168.137.14:5555, shell, content, read, --user, 10, --uri, content://android.tradefed.contentprovider/%252Fsdcard%252Fdevice-info-files%252FCpuDeviceInfo.deviceinfo.json] with timeout: 2m 0s
+01-22 11:55:42 D/RunUtil: Running command [adb, -s, 192.168.137.14:5555, shell, content, read, --user, 10, --uri, content://android.tradefed.contentprovider/%252Fsdcard%252Fdevice-info-files%252FFeatureDeviceInfo.deviceinfo.json] with timeout: 2m 0s
+01-22 11:55:44 D/RunUtil: Running command [adb, -s, 192.168.137.14:5555, shell, content, read, --user, 10, --uri, content://android.tradefed.contentprovider/%252Fsdcard%252Fdevice-info-files%252FGenericDeviceInfo.deviceinfo.json] with timeout: 2m 0s
+01-22 11:55:45 D/RunUtil: Running command [adb, -s, 192.168.137.14:5555, shell, content, read, --user, 10, --uri, content://android.tradefed.contentprovider/%252Fsdcard%252Fdevice-info-files%252FGraphicsDeviceInfo.deviceinfo.json] with timeout: 2m 0s
+01-22 11:55:47 D/RunUtil: Running command [adb, -s, 192.168.137.14:5555, shell, content, read, --user, 10, --uri, content://android.tradefed.contentprovider/%252Fsdcard%252Fdevice-info-files%252FHapticsDeviceInfo.deviceinfo.json] with timeout: 2m 0s
+01-22 11:55:49 D/RunUtil: Running command [adb, -s, 192.168.137.14:5555, shell, content, read, --user, 10, --uri, content://android.tradefed.contentprovider/%252Fsdcard%252Fdevice-info-files%252FInputDeviceInfo.deviceinfo.json] with timeout: 2m 0s
+01-22 11:55:51 D/RunUtil: Running command [adb, -s, 192.168.137.14:5555, shell, content, read, --user, 10, --uri, content://android.tradefed.contentprovider/%252Fsdcard%252Fdevice-info-files%252FLocaleDeviceInfo.deviceinfo.json] with timeout: 2m 0s
+01-22 11:55:52 D/RunUtil: Running command [adb, -s, 192.168.137.14:5555, shell, content, read, --user, 10, --uri, content://android.tradefed.contentprovider/%252Fsdcard%252Fdevice-info-files%252FMediaDeviceInfo.deviceinfo.json] with timeout: 2m 0s
+01-22 11:55:54 D/RunUtil: Running command [adb, -s, 192.168.137.14:5555, shell, content, read, --user, 10, --uri, content://android.tradefed.contentprovider/%252Fsdcard%252Fdevice-info-files%252FMemoryDeviceInfo.deviceinfo.json] with timeout: 2m 0s
+01-22 11:55:55 D/RunUtil: Running command [adb, -s, 192.168.137.14:5555, shell, content, read, --user, 10, --uri, content://android.tradefed.contentprovider/%252Fsdcard%252Fdevice-info-files%252FPackageDeviceInfo.deviceinfo.json] with timeout: 2m 0s
+01-22 11:55:56 D/RunUtil: Running command [adb, -s, 192.168.137.14:5555, shell, content, read, --user, 10, --uri, content://android.tradefed.contentprovider/%252Fsdcard%252Fdevice-info-files%252FScreenDeviceInfo.deviceinfo.json] with timeout: 2m 0s
+01-22 11:55:58 D/RunUtil: Running command [adb, -s, 192.168.137.14:5555, shell, content, read, --user, 10, --uri, content://android.tradefed.contentprovider/%252Fsdcard%252Fdevice-info-files%252FSensorDeviceInfo.deviceinfo.json] with timeout: 2m 0s
+01-22 11:55:59 D/RunUtil: Running command [adb, -s, 192.168.137.14:5555, shell, content, read, --user, 10, --uri, content://android.tradefed.contentprovider/%252Fsdcard%252Fdevice-info-files%252FStorageDeviceInfo.deviceinfo.json] with timeout: 2m 0s
+01-22 11:56:01 D/RunUtil: Running command [adb, -s, 192.168.137.14:5555, shell, content, read, --user, 10, --uri, content://android.tradefed.contentprovider/%252Fsdcard%252Fdevice-info-files%252FUserDeviceInfo.deviceinfo.json] with timeout: 2m 0s
+01-22 11:56:02 D/RunUtil: Running command [adb, -s, 192.168.137.14:5555, shell, content, read, --user, 10, --uri, content://android.tradefed.contentprovider/%252Fsdcard%252Fdevice-info-files%252FVintfDeviceInfo.deviceinfo.json] with timeout: 2m 0s
+01-22 11:56:03 D/RunUtil: Running command [adb, -s, 192.168.137.14:5555, shell, content, read, --user, 10, --uri, content://android.tradefed.contentprovider/%252Fsdcard%252Fdevice-info-files%252FVulkanDeviceInfo.deviceinfo.json] with timeout: 2m 0s
+01-22 11:56:05 D/RunUtil: Running command [adb, -s, 192.168.137.14:5555, shell, content, read, --user, 10, --uri, content://android.tradefed.contentprovider/%252Fsdcard%252Fdevice-info-files%252Fdevice_compatibility_matrix.xml] with timeout: 2m 0s
+01-22 11:56:06 D/RunUtil: Running command [adb, -s, 192.168.137.14:5555, shell, content, read, --user, 10, --uri, content://android.tradefed.contentprovider/%252Fsdcard%252Fdevice-info-files%252Fdevice_manifest.xml] with timeout: 2m 0s
+01-22 11:56:08 D/RunUtil: Running command [adb, -s, 192.168.137.14:5555, shell, content, read, --user, 10, --uri, content://android.tradefed.contentprovider/%252Fsdcard%252Fdevice-info-files%252Fframework_compatibility_matrix.xml] with timeout: 2m 0s
+01-22 11:56:09 D/RunUtil: Running command [adb, -s, 192.168.137.14:5555, shell, content, read, --user, 10, --uri, content://android.tradefed.contentprovider/%252Fsdcard%252Fdevice-info-files%252Fframework_manifest.xml] with timeout: 2m 0s
+01-22 11:56:10 D/FileUtil: Creating temp file at /tmp/eng.she2rt.20250514.110827/vts-bosch/inv_18433047322957939324/inv_17069590350201713958 with prefix "InputDeviceInfo.deviceinfo.json_" suffix ".txt.gz"
+01-22 11:56:10 I/LogFileSaver: Saved gzip log file /tmp/eng.she2rt.20250514.110827/vts-bosch/inv_18433047322957939324/inv_17069590350201713958/InputDeviceInfo.deviceinfo.json_10108518839663483026.txt.gz. [size=10, elapsed=1ms]
+01-22 11:56:10 D/FileUtil: Creating temp file at /tmp/eng.she2rt.20250514.110827/vts-bosch/inv_18433047322957939324/inv_17069590350201713958 with prefix "CpuDeviceInfo.deviceinfo.json_" suffix ".txt.gz"
+01-22 11:56:10 I/LogFileSaver: Saved gzip log file /tmp/eng.she2rt.20250514.110827/vts-bosch/inv_18433047322957939324/inv_17069590350201713958/CpuDeviceInfo.deviceinfo.json_2564552724984290762.txt.gz. [size=10, elapsed=0ms]
+01-22 11:56:10 D/FileUtil: Creating temp file at /tmp/eng.she2rt.20250514.110827/vts-bosch/inv_18433047322957939324/inv_17069590350201713958 with prefix "ScreenDeviceInfo.deviceinfo.json_" suffix ".txt.gz"
+01-22 11:56:10 I/LogFileSaver: Saved gzip log file /tmp/eng.she2rt.20250514.110827/vts-bosch/inv_18433047322957939324/inv_17069590350201713958/ScreenDeviceInfo.deviceinfo.json_14048275042376487079.txt.gz. [size=10, elapsed=1ms]
+01-22 11:56:11 D/FileUtil: Creating temp file at /tmp/eng.she2rt.20250514.110827/vts-bosch/inv_18433047322957939324/inv_17069590350201713958 with prefix "SensorDeviceInfo.deviceinfo.json_" suffix ".txt.gz"
+01-22 11:56:11 I/LogFileSaver: Saved gzip log file /tmp/eng.she2rt.20250514.110827/vts-bosch/inv_18433047322957939324/inv_17069590350201713958/SensorDeviceInfo.deviceinfo.json_10856073513211933143.txt.gz. [size=10, elapsed=0ms]
+01-22 11:56:11 D/FileUtil: Creating temp file at /tmp/eng.she2rt.20250514.110827/vts-bosch/inv_18433047322957939324/inv_17069590350201713958 with prefix "ClientIdDeviceInfo.deviceinfo.json_" suffix ".txt.gz"
+01-22 11:56:11 I/LogFileSaver: Saved gzip log file /tmp/eng.she2rt.20250514.110827/vts-bosch/inv_18433047322957939324/inv_17069590350201713958/ClientIdDeviceInfo.deviceinfo.json_4973487232451977967.txt.gz. [size=10, elapsed=1ms]
+01-22 11:56:11 D/FileUtil: Creating temp file at /tmp/eng.she2rt.20250514.110827/vts-bosch/inv_18433047322957939324/inv_17069590350201713958 with prefix "UserDeviceInfo.deviceinfo.json_" suffix ".txt.gz"
+01-22 11:56:11 I/LogFileSaver: Saved gzip log file /tmp/eng.she2rt.20250514.110827/vts-bosch/inv_18433047322957939324/inv_17069590350201713958/UserDeviceInfo.deviceinfo.json_396836850909076264.txt.gz. [size=10, elapsed=0ms]
+01-22 11:56:11 D/FileUtil: Creating temp file at /home/btm5rt/jenkins/RT-C-008FN/SMI240-rpi4-arm64-spi-android/workspace/sch-MEMS-Android-HAL_development/build/SMI240/out_hal/android13/aidl/host/linux-x86/vts/android-vts/logs/2026.01.22_11.54.56/inv_3804635204491146681 with prefix "framework_compatibility_matrix.xml_" suffix ".txt.gz"
+01-22 11:56:11 I/LogFileSaver: Saved gzip log file /home/btm5rt/jenkins/RT-C-008FN/SMI240-rpi4-arm64-spi-android/workspace/sch-MEMS-Android-HAL_development/build/SMI240/out_hal/android13/aidl/host/linux-x86/vts/android-vts/logs/2026.01.22_11.54.56/inv_3804635204491146681/framework_compatibility_matrix.xml_7026354138229873573.txt.gz. [size=10, elapsed=1ms]
+01-22 11:56:11 D/CertificationSuiteResultReporter: Saved logs for framework_compatibility_matrix.xml in /home/btm5rt/jenkins/RT-C-008FN/SMI240-rpi4-arm64-spi-android/workspace/sch-MEMS-Android-HAL_development/build/SMI240/out_hal/android13/aidl/host/linux-x86/vts/android-vts/logs/2026.01.22_11.54.56/inv_3804635204491146681/framework_compatibility_matrix.xml_7026354138229873573.txt.gz
+01-22 11:56:11 D/FileUtil: Creating temp file at /tmp/eng.she2rt.20250514.110827/vts-bosch/inv_18433047322957939324/inv_17069590350201713958 with prefix "framework_compatibility_matrix.xml_" suffix ".txt.gz"
+01-22 11:56:11 I/LogFileSaver: Saved gzip log file /tmp/eng.she2rt.20250514.110827/vts-bosch/inv_18433047322957939324/inv_17069590350201713958/framework_compatibility_matrix.xml_4881155319847143909.txt.gz. [size=10, elapsed=1ms]
+01-22 11:56:11 D/FileUtil: Creating temp file at /tmp/eng.she2rt.20250514.110827/vts-bosch/inv_18433047322957939324/inv_17069590350201713958 with prefix "HapticsDeviceInfo.deviceinfo.json_" suffix ".txt.gz"
+01-22 11:56:11 I/LogFileSaver: Saved gzip log file /tmp/eng.she2rt.20250514.110827/vts-bosch/inv_18433047322957939324/inv_17069590350201713958/HapticsDeviceInfo.deviceinfo.json_15995190370141559173.txt.gz. [size=10, elapsed=1ms]
+01-22 11:56:11 D/FileUtil: Creating temp file at /tmp/eng.she2rt.20250514.110827/vts-bosch/inv_18433047322957939324/inv_17069590350201713958 with prefix "MemoryDeviceInfo.deviceinfo.json_" suffix ".txt.gz"
+01-22 11:56:11 I/LogFileSaver: Saved gzip log file /tmp/eng.she2rt.20250514.110827/vts-bosch/inv_18433047322957939324/inv_17069590350201713958/MemoryDeviceInfo.deviceinfo.json_18057537429050060385.txt.gz. [size=10, elapsed=1ms]
+01-22 11:56:11 D/FileUtil: Creating temp file at /tmp/eng.she2rt.20250514.110827/vts-bosch/inv_18433047322957939324/inv_17069590350201713958 with prefix "ConfigurationDeviceInfo.deviceinfo.json_" suffix ".txt.gz"
+01-22 11:56:11 I/LogFileSaver: Saved gzip log file /tmp/eng.she2rt.20250514.110827/vts-bosch/inv_18433047322957939324/inv_17069590350201713958/ConfigurationDeviceInfo.deviceinfo.json_3844812178243975963.txt.gz. [size=10, elapsed=1ms]
+01-22 11:56:11 D/FileUtil: Creating temp file at /tmp/eng.she2rt.20250514.110827/vts-bosch/inv_18433047322957939324/inv_17069590350201713958 with prefix "GenericDeviceInfo.deviceinfo.json_" suffix ".txt.gz"
+01-22 11:56:11 I/LogFileSaver: Saved gzip log file /tmp/eng.she2rt.20250514.110827/vts-bosch/inv_18433047322957939324/inv_17069590350201713958/GenericDeviceInfo.deviceinfo.json_17655537796968391387.txt.gz. [size=10, elapsed=0ms]
+01-22 11:56:11 D/FileUtil: Creating temp file at /tmp/eng.she2rt.20250514.110827/vts-bosch/inv_18433047322957939324/inv_17069590350201713958 with prefix "VintfDeviceInfo.deviceinfo.json_" suffix ".txt.gz"
+01-22 11:56:11 I/LogFileSaver: Saved gzip log file /tmp/eng.she2rt.20250514.110827/vts-bosch/inv_18433047322957939324/inv_17069590350201713958/VintfDeviceInfo.deviceinfo.json_10321988306636328482.txt.gz. [size=10, elapsed=0ms]
+01-22 11:56:11 D/FileUtil: Creating temp file at /tmp/eng.she2rt.20250514.110827/vts-bosch/inv_18433047322957939324/inv_17069590350201713958 with prefix "MediaDeviceInfo.deviceinfo.json_" suffix ".txt.gz"
+01-22 11:56:11 I/LogFileSaver: Saved gzip log file /tmp/eng.she2rt.20250514.110827/vts-bosch/inv_18433047322957939324/inv_17069590350201713958/MediaDeviceInfo.deviceinfo.json_2676770964541670180.txt.gz. [size=10, elapsed=0ms]
+01-22 11:56:11 D/FileUtil: Creating temp file at /tmp/eng.she2rt.20250514.110827/vts-bosch/inv_18433047322957939324/inv_17069590350201713958 with prefix "VulkanDeviceInfo.deviceinfo.json_" suffix ".txt.gz"
+01-22 11:56:11 I/LogFileSaver: Saved gzip log file /tmp/eng.she2rt.20250514.110827/vts-bosch/inv_18433047322957939324/inv_17069590350201713958/VulkanDeviceInfo.deviceinfo.json_13982657878047579583.txt.gz. [size=10, elapsed=1ms]
+01-22 11:56:11 D/FileUtil: Creating temp file at /tmp/eng.she2rt.20250514.110827/vts-bosch/inv_18433047322957939324/inv_17069590350201713958 with prefix "CameraDeviceInfo.deviceinfo.json_" suffix ".txt.gz"
+01-22 11:56:11 I/LogFileSaver: Saved gzip log file /tmp/eng.she2rt.20250514.110827/vts-bosch/inv_18433047322957939324/inv_17069590350201713958/CameraDeviceInfo.deviceinfo.json_6753506750749495943.txt.gz. [size=10, elapsed=0ms]
+01-22 11:56:11 D/FileUtil: Creating temp file at /tmp/eng.she2rt.20250514.110827/vts-bosch/inv_18433047322957939324/inv_17069590350201713958 with prefix "GraphicsDeviceInfo.deviceinfo.json_" suffix ".txt.gz"
+01-22 11:56:11 I/LogFileSaver: Saved gzip log file /tmp/eng.she2rt.20250514.110827/vts-bosch/inv_18433047322957939324/inv_17069590350201713958/GraphicsDeviceInfo.deviceinfo.json_2445395952459541469.txt.gz. [size=10, elapsed=1ms]
+01-22 11:56:11 D/FileUtil: Creating temp file at /home/btm5rt/jenkins/RT-C-008FN/SMI240-rpi4-arm64-spi-android/workspace/sch-MEMS-Android-HAL_development/build/SMI240/out_hal/android13/aidl/host/linux-x86/vts/android-vts/logs/2026.01.22_11.54.56/inv_3804635204491146681 with prefix "framework_manifest.xml_" suffix ".txt.gz"
+01-22 11:56:11 I/LogFileSaver: Saved gzip log file /home/btm5rt/jenkins/RT-C-008FN/SMI240-rpi4-arm64-spi-android/workspace/sch-MEMS-Android-HAL_development/build/SMI240/out_hal/android13/aidl/host/linux-x86/vts/android-vts/logs/2026.01.22_11.54.56/inv_3804635204491146681/framework_manifest.xml_9443712601613228479.txt.gz. [size=10, elapsed=3ms]
+01-22 11:56:11 D/CertificationSuiteResultReporter: Saved logs for framework_manifest.xml in /home/btm5rt/jenkins/RT-C-008FN/SMI240-rpi4-arm64-spi-android/workspace/sch-MEMS-Android-HAL_development/build/SMI240/out_hal/android13/aidl/host/linux-x86/vts/android-vts/logs/2026.01.22_11.54.56/inv_3804635204491146681/framework_manifest.xml_9443712601613228479.txt.gz
+01-22 11:56:11 D/FileUtil: Creating temp file at /tmp/eng.she2rt.20250514.110827/vts-bosch/inv_18433047322957939324/inv_17069590350201713958 with prefix "framework_manifest.xml_" suffix ".txt.gz"
+01-22 11:56:11 I/LogFileSaver: Saved gzip log file /tmp/eng.she2rt.20250514.110827/vts-bosch/inv_18433047322957939324/inv_17069590350201713958/framework_manifest.xml_13258822073980430757.txt.gz. [size=10, elapsed=0ms]
+01-22 11:56:11 D/FileUtil: Creating temp file at /tmp/eng.she2rt.20250514.110827/vts-bosch/inv_18433047322957939324/inv_17069590350201713958 with prefix "LocaleDeviceInfo.deviceinfo.json_" suffix ".txt.gz"
+01-22 11:56:11 I/LogFileSaver: Saved gzip log file /tmp/eng.she2rt.20250514.110827/vts-bosch/inv_18433047322957939324/inv_17069590350201713958/LocaleDeviceInfo.deviceinfo.json_4975396814255678573.txt.gz. [size=10, elapsed=0ms]
+01-22 11:56:11 D/FileUtil: Creating temp file at /tmp/eng.she2rt.20250514.110827/vts-bosch/inv_18433047322957939324/inv_17069590350201713958 with prefix "FeatureDeviceInfo.deviceinfo.json_" suffix ".txt.gz"
+01-22 11:56:11 I/LogFileSaver: Saved gzip log file /tmp/eng.she2rt.20250514.110827/vts-bosch/inv_18433047322957939324/inv_17069590350201713958/FeatureDeviceInfo.deviceinfo.json_6767905295217974744.txt.gz. [size=10, elapsed=0ms]
+01-22 11:56:11 D/FileUtil: Creating temp file at /tmp/eng.she2rt.20250514.110827/vts-bosch/inv_18433047322957939324/inv_17069590350201713958 with prefix "PackageDeviceInfo.deviceinfo.json_" suffix ".txt.gz"
+01-22 11:56:11 I/LogFileSaver: Saved gzip log file /tmp/eng.she2rt.20250514.110827/vts-bosch/inv_18433047322957939324/inv_17069590350201713958/PackageDeviceInfo.deviceinfo.json_11871096686289975643.txt.gz. [size=21712, elapsed=5ms]
+01-22 11:56:11 D/FileUtil: Creating temp file at /home/btm5rt/jenkins/RT-C-008FN/SMI240-rpi4-arm64-spi-android/workspace/sch-MEMS-Android-HAL_development/build/SMI240/out_hal/android13/aidl/host/linux-x86/vts/android-vts/logs/2026.01.22_11.54.56/inv_3804635204491146681 with prefix "device_manifest.xml_" suffix ".txt.gz"
+01-22 11:56:11 I/LogFileSaver: Saved gzip log file /home/btm5rt/jenkins/RT-C-008FN/SMI240-rpi4-arm64-spi-android/workspace/sch-MEMS-Android-HAL_development/build/SMI240/out_hal/android13/aidl/host/linux-x86/vts/android-vts/logs/2026.01.22_11.54.56/inv_3804635204491146681/device_manifest.xml_5625445664446902660.txt.gz. [size=10, elapsed=1ms]
+01-22 11:56:11 D/CertificationSuiteResultReporter: Saved logs for device_manifest.xml in /home/btm5rt/jenkins/RT-C-008FN/SMI240-rpi4-arm64-spi-android/workspace/sch-MEMS-Android-HAL_development/build/SMI240/out_hal/android13/aidl/host/linux-x86/vts/android-vts/logs/2026.01.22_11.54.56/inv_3804635204491146681/device_manifest.xml_5625445664446902660.txt.gz
+01-22 11:56:11 D/FileUtil: Creating temp file at /tmp/eng.she2rt.20250514.110827/vts-bosch/inv_18433047322957939324/inv_17069590350201713958 with prefix "device_manifest.xml_" suffix ".txt.gz"
+01-22 11:56:11 I/LogFileSaver: Saved gzip log file /tmp/eng.she2rt.20250514.110827/vts-bosch/inv_18433047322957939324/inv_17069590350201713958/device_manifest.xml_166566137631069209.txt.gz. [size=10, elapsed=0ms]
+01-22 11:56:11 D/FileUtil: Creating temp file at /tmp/eng.she2rt.20250514.110827/vts-bosch/inv_18433047322957939324/inv_17069590350201713958 with prefix "AppStandbyDeviceInfo.deviceinfo.json_" suffix ".txt.gz"
+01-22 11:56:11 I/LogFileSaver: Saved gzip log file /tmp/eng.she2rt.20250514.110827/vts-bosch/inv_18433047322957939324/inv_17069590350201713958/AppStandbyDeviceInfo.deviceinfo.json_6363970650171965486.txt.gz. [size=10, elapsed=0ms]
+01-22 11:56:11 D/FileUtil: Creating temp file at /home/btm5rt/jenkins/RT-C-008FN/SMI240-rpi4-arm64-spi-android/workspace/sch-MEMS-Android-HAL_development/build/SMI240/out_hal/android13/aidl/host/linux-x86/vts/android-vts/logs/2026.01.22_11.54.56/inv_3804635204491146681 with prefix "device_compatibility_matrix.xml_" suffix ".txt.gz"
+01-22 11:56:11 I/LogFileSaver: Saved gzip log file /home/btm5rt/jenkins/RT-C-008FN/SMI240-rpi4-arm64-spi-android/workspace/sch-MEMS-Android-HAL_development/build/SMI240/out_hal/android13/aidl/host/linux-x86/vts/android-vts/logs/2026.01.22_11.54.56/inv_3804635204491146681/device_compatibility_matrix.xml_11396883642933016424.txt.gz. [size=10, elapsed=1ms]
+01-22 11:56:11 D/CertificationSuiteResultReporter: Saved logs for device_compatibility_matrix.xml in /home/btm5rt/jenkins/RT-C-008FN/SMI240-rpi4-arm64-spi-android/workspace/sch-MEMS-Android-HAL_development/build/SMI240/out_hal/android13/aidl/host/linux-x86/vts/android-vts/logs/2026.01.22_11.54.56/inv_3804635204491146681/device_compatibility_matrix.xml_11396883642933016424.txt.gz
+01-22 11:56:11 D/FileUtil: Creating temp file at /tmp/eng.she2rt.20250514.110827/vts-bosch/inv_18433047322957939324/inv_17069590350201713958 with prefix "device_compatibility_matrix.xml_" suffix ".txt.gz"
+01-22 11:56:11 I/LogFileSaver: Saved gzip log file /tmp/eng.she2rt.20250514.110827/vts-bosch/inv_18433047322957939324/inv_17069590350201713958/device_compatibility_matrix.xml_10770398247601264545.txt.gz. [size=10, elapsed=1ms]
+01-22 11:56:11 D/FileUtil: Creating temp file at /tmp/eng.she2rt.20250514.110827/vts-bosch/inv_18433047322957939324/inv_17069590350201713958 with prefix "StorageDeviceInfo.deviceinfo.json_" suffix ".txt.gz"
+01-22 11:56:11 I/LogFileSaver: Saved gzip log file /tmp/eng.she2rt.20250514.110827/vts-bosch/inv_18433047322957939324/inv_17069590350201713958/StorageDeviceInfo.deviceinfo.json_11370400790286527634.txt.gz. [size=10, elapsed=0ms]
+01-22 11:56:11 D/InvocationExecution: done with preparer 'com.android.compatibility.common.tradefed.targetprep.DeviceInfoCollector@1f5885b0' on device: '192.168.137.14:5555' in 1m 12s
+01-22 11:56:11 D/InvocationExecution: Done with setup of device: '192.168.137.14:5555'
+01-22 11:56:11 D/RunUtil: Running command [adb, -s, 192.168.137.14:5555, shell, uname, -a] with timeout: 2m 0s
+01-22 11:56:11 D/RunUtil: Running command [adb, -s, 192.168.137.14:5555, shell, getprop, ro.system.build.fingerprint] with timeout: 45s
+01-22 11:56:11 D/RunUtil: Running command [adb, -s, 192.168.137.14:5555, shell, getprop, ro.vendor.build.fingerprint] with timeout: 45s
+01-22 11:56:11 D/InvocationExecution: Total setup duration: 1m 14s'
+01-22 11:56:11 D/LogFileSaver: Log data for device_logcat_setup_192.168.137.14:5555 is already compressed, skipping compression
+01-22 11:56:11 D/FileUtil: Creating temp file at /home/btm5rt/jenkins/RT-C-008FN/SMI240-rpi4-arm64-spi-android/workspace/sch-MEMS-Android-HAL_development/build/SMI240/out_hal/android13/aidl/host/linux-x86/vts/android-vts/logs/2026.01.22_11.54.56/inv_3804635204491146681 with prefix "device_logcat_setup_192.168.137.14:5555_" suffix ".txt"
+01-22 11:56:11 I/LogFileSaver: Saved log file /home/btm5rt/jenkins/RT-C-008FN/SMI240-rpi4-arm64-spi-android/workspace/sch-MEMS-Android-HAL_development/build/SMI240/out_hal/android13/aidl/host/linux-x86/vts/android-vts/logs/2026.01.22_11.54.56/inv_3804635204491146681/device_logcat_setup_192.168.137.14:5555_1344925055598679505.txt. [size=2937298, elapsed=3ms]
+01-22 11:56:11 D/CertificationSuiteResultReporter: Saved logs for device_logcat_setup_192.168.137.14:5555 in /home/btm5rt/jenkins/RT-C-008FN/SMI240-rpi4-arm64-spi-android/workspace/sch-MEMS-Android-HAL_development/build/SMI240/out_hal/android13/aidl/host/linux-x86/vts/android-vts/logs/2026.01.22_11.54.56/inv_3804635204491146681/device_logcat_setup_192.168.137.14:5555_1344925055598679505.txt
+01-22 11:56:11 D/LogFileSaver: Log data for device_logcat_setup_192.168.137.14:5555 is already compressed, skipping compression
+01-22 11:56:11 D/FileUtil: Creating temp file at /tmp/eng.she2rt.20250514.110827/vts-bosch/inv_18433047322957939324/inv_17069590350201713958 with prefix "device_logcat_setup_192.168.137.14:5555_" suffix ".txt"
+01-22 11:56:11 I/LogFileSaver: Saved log file /tmp/eng.she2rt.20250514.110827/vts-bosch/inv_18433047322957939324/inv_17069590350201713958/device_logcat_setup_192.168.137.14:5555_6570722549029693713.txt. [size=2937298, elapsed=3ms]
+01-22 11:56:11 D/PrettyPrintDelimiter: 
+===============================
+===== TEST PHASE STARTING =====
+===============================
+01-22 11:56:11 D/RunUtil: Running command [adb, -s, 192.168.137.14:5555, shell, cmd, device_state, print-states] with timeout: 2m 0s
+01-22 11:56:11 D/RunUtil: Running command [adb, -s, 192.168.137.14:5555, shell, getprop, ro.product.cpu.abi] with timeout: 45s
+01-22 11:56:11 D/BaseTestSuite: Initializing ModuleRepo
+ABIs:[{arm64-v8a, bitness=64}]
+Test Args:[]
+Module Args:[]
+
+Excludes: {arm64-v8a VtsHalConfirmationUIV1_0TargetTest=[VtsHalConfirmationUIV1_0TargetTest *ConfirmationUIHidlTest.AbortTest/*, VtsHalConfirmationUIV1_0TargetTest *ConfirmationUIHidlTest.PortableMessageTest2/*, VtsHalConfirmationUIV1_0TargetTest *ConfirmationUIHidlTest.PortableMessageTest2Magnified/*, VtsHalConfirmationUIV1_0TargetTest *ConfirmationUIHidlTest.PortableMessageTest1/*, VtsHalConfirmationUIV1_0TargetTest *ConfirmationUIHidlTest.PortableMessageTest1Magnified/*, VtsHalConfirmationUIV1_0TargetTest *ConfirmationUIHidlTest.UserOkTest/*, VtsHalConfirmationUIV1_0TargetTest *ConfirmationUIHidlTest.MessageTooLongTest/*, VtsHalConfirmationUIV1_0TargetTest *ConfirmationUIHidlTest.UserCancelTest/*, VtsHalConfirmationUIV1_0TargetTest *ConfirmationUIHidlTest.MalformedUTF8Test3/*, VtsHalConfirmationUIV1_0TargetTest *ConfirmationUIHidlTest.MalformedUTF8Test1/*, VtsHalConfirmationUIV1_0TargetTest *ConfirmationUIHidlTest.MessageWayTooLongTest/*, VtsHalConfirmationUIV1_0TargetTest *ConfirmationUIHidlTest.MalformedUTF8Test2/*], arm64-v8a VtsAidlHalSensorsTargetTest=[VtsAidlHalSensorsTargetTest *SensorsAidlTest.DirectChannelGralloc/*], arm64-v8a vts_virtual_ab_test=[vts_virtual_ab_test VirtualAbRequirementTest.EnabledOnLaunchR]}
+01-22 11:56:11 D/BaseTestSuite: Foldable states: [foldable:0:DEFAULT]
+01-22 11:56:11 D/ITestSuite: Resource not found for allowed preparers: /suite/google-allowed-preparers.txt
+01-22 11:56:11 D/ITestSuite: [Total Unique Modules = 3]
+01-22 11:56:11 D/BaseTestSuite: Filters for 'arm64-v8a BoschAidlHalSensorsTargetTest': []
+01-22 11:56:11 I/ITestSuite: Running system status checker before module execution: arm64-v8a BoschAidlHalSensorsTargetTest
+01-22 11:56:11 D/RunUtil: Running command [adb, -s, 192.168.137.14:5555, shell, getprop, ro.build.version.codename] with timeout: 45s
+01-22 11:56:11 D/RunUtil: Running command [adb, -s, 192.168.137.14:5555, shell, getprop, ro.build.version.sdk] with timeout: 45s
+01-22 11:56:11 D/RunUtil: Running command [adb, -s, 192.168.137.14:5555, shell, getprop, ro.build.version.codename] with timeout: 45s
+01-22 11:56:11 D/RunUtil: Running command [adb, -s, 192.168.137.14:5555, shell, getprop, ro.build.version.sdk] with timeout: 45s
+01-22 11:56:11 D/RunUtil: Running command [adb, -s, 192.168.137.14:5555, shell, getprop, ro.build.version.codename] with timeout: 45s
+01-22 11:56:11 D/RunUtil: Running command [adb, -s, 192.168.137.14:5555, shell, getprop, ro.build.version.sdk] with timeout: 45s
+01-22 11:56:11 D/RunUtil: Running command [adb, -s, 192.168.137.14:5555, shell, getprop, ro.build.version.codename] with timeout: 45s
+01-22 11:56:11 D/RunUtil: Running command [adb, -s, 192.168.137.14:5555, shell, getprop, ro.build.version.sdk] with timeout: 45s
+01-22 11:56:12 D/RunUtil: Running command [adb, -s, 192.168.137.14:5555, shell, getprop, ro.build.version.sdk] with timeout: 45s
+01-22 11:56:12 D/RunUtil: Running command [adb, -s, 192.168.137.14:5555, shell, getprop, ro.build.version.sdk] with timeout: 45s
+01-22 11:56:12 D/RunUtil: Running command [adb, -s, 192.168.137.14:5555, shell, getprop, ro.build.version.sdk] with timeout: 45s
+01-22 11:56:13 I/DeviceBaselineChecker: Enable device baselines disable_os_auto_update,keep_screen_on,disable_usb_app_verification,clear_lock_screen in 1902 millis.
+01-22 11:56:13 D/ModuleDefinition: Running module arm64-v8a BoschAidlHalSensorsTargetTest
+01-22 11:56:13 D/ModuleDefinition: Running setup preparer: RootTargetPreparer
+01-22 11:56:13 I/NativeDevice: adb root on device 192.168.137.14:5555
+01-22 11:56:13 D/RunUtil: Running command [adb, -s, 192.168.137.14:5555, root] with timeout: 2m 0s
+01-22 11:56:13 D/BackgroundDeviceAction: Sleep for 5000 before starting logcat for 192.168.137.14:5555.
+01-22 11:56:14 I/NativeDeviceStateMonitor: Waiting for device 192.168.137.14:5555 to be in NOT_AVAILABLE mode for '2s'; it is currently in ONLINE mode...
+01-22 11:56:16 W/NativeDevice: Did not detect device 192.168.137.14:5555 becoming unavailable after root
+01-22 11:56:16 D/ModuleDefinition: Running setup preparer: StopServicesSetup
+01-22 11:56:17 D/ModuleDefinition: Running setup preparer: PushFilePreparer
+01-22 11:56:17 D/RunUtil: Running command [adb, -s, 192.168.137.14:5555, shell, getprop, ro.build.version.sdk] with timeout: 45s
+01-22 11:56:17 D/RunUtil: Running command [adb, -s, 192.168.137.14:5555, shell, getprop, ro.build.id] with timeout: 45s
+01-22 11:56:17 D/RunUtil: Running command [adb, -s, 192.168.137.14:5555, shell, getprop, ro.revision] with timeout: 45s
+01-22 11:56:17 D/RunUtil: Running command [adb, -s, 192.168.137.14:5555, shell, getprop, gsm.sim.state] with timeout: 45s
+01-22 11:56:17 D/RunUtil: Running command [adb, -s, 192.168.137.14:5555, shell, getprop, gsm.operator.alpha] with timeout: 45s
+01-22 11:56:17 D/PushFilePreparer: Trying to push local 'BoschAidlHalSensorsTargetTest' to remote '/data/local/tmp/BoschAidlHalSensorsTargetTest'
+01-22 11:56:17 D/NativeDevice: Using 'ls' to check doesFileExist(/data/local/tmp/BoschAidlHalSensorsTargetTest)
+01-22 11:56:17 D/NativeDevice: /home/btm5rt/jenkins/RT-C-008FN/SMI240-rpi4-arm64-spi-android/workspace/sch-MEMS-Android-HAL_development/build/SMI240/out_hal/android13/aidl/host/linux-x86/vts/android-vts/testcases/BoschAidlHalSensorsTargetTest/arm directory was not pushed because it was filtered.
+01-22 11:56:17 D/NativeDevice: Using 'ls' to check doesFileExist(/data/local/tmp/BoschAidlHalSensorsTargetTest)
+01-22 11:56:18 I/GTest: Running gtest /data/local/tmp/BoschAidlHalSensorsTargetTest/arm64/BoschAidlHalSensorsTargetTest --gtest_print_time  on 192.168.137.14:5555
+01-22 11:56:18 D/ModuleListener: ModuleListener.testRunStarted(BoschAidlHalSensorsTargetTest, 14, 0) on 192.168.137.14:5555
+01-22 11:56:18 D/ModuleListener: ModuleListener.testStarted(Sensors/BoschSensorTest#SensorListContainsBoschSensor/0_android_hardware_sensors_ISensors_default) on 192.168.137.14:5555
+01-22 11:56:18 D/BackgroundDeviceAction: Waiting for device 192.168.137.14:5555 online before starting.
+01-22 11:56:18 D/BackgroundDeviceAction: Device 192.168.137.14:5555 now online.
+01-22 11:56:18 D/BackgroundDeviceAction: Starting logcat for 192.168.137.14:5555.
+01-22 11:56:21 I/ModuleListener: [1/14] 192.168.137.14:5555 BoschAidlHalSensorsTargetTest Sensors/BoschSensorTest#SensorListContainsBoschSensor/0_android_hardware_sensors_ISensors_default PASSED
+01-22 11:56:21 D/ModuleListener: ModuleListener.testStarted(Sensors/BoschSensorTest#AccelerometerCheckSensorVector/0_android_hardware_sensors_ISensors_default) on 192.168.137.14:5555
+01-22 11:56:29 I/ModuleListener: [2/14] 192.168.137.14:5555 BoschAidlHalSensorsTargetTest Sensors/BoschSensorTest#AccelerometerCheckSensorVector/0_android_hardware_sensors_ISensors_default PASSED
+01-22 11:56:29 D/ModuleListener: ModuleListener.testStarted(Sensors/BoschSensorTest#GyroscopeCheckSensorVector/0_android_hardware_sensors_ISensors_default) on 192.168.137.14:5555
+01-22 11:56:32 I/ModuleListener: [3/14] 192.168.137.14:5555 BoschAidlHalSensorsTargetTest Sensors/BoschSensorTest#GyroscopeCheckSensorVector/0_android_hardware_sensors_ISensors_default PASSED
+01-22 11:56:32 D/ModuleListener: ModuleListener.testStarted(Sensors/BoschSensorTest#GravityCheckSensorVector/0_android_hardware_sensors_ISensors_default) on 192.168.137.14:5555
+01-22 11:56:37 I/ModuleListener: [4/14] 192.168.137.14:5555 BoschAidlHalSensorsTargetTest Sensors/BoschSensorTest#GravityCheckSensorVector/0_android_hardware_sensors_ISensors_default PASSED
+01-22 11:56:37 D/ModuleListener: ModuleListener.testStarted(Sensors/BoschSensorTest#LinearAccelerationCheckSensorVector/0_android_hardware_sensors_ISensors_default) on 192.168.137.14:5555
+01-22 11:56:41 I/ModuleListener: [5/14] 192.168.137.14:5555 BoschAidlHalSensorsTargetTest Sensors/BoschSensorTest#LinearAccelerationCheckSensorVector/0_android_hardware_sensors_ISensors_default PASSED
+01-22 11:56:41 D/ModuleListener: ModuleListener.testStarted(Sensors/BoschSensorTest#AccelerometerCheckDirectChVector/0_android_hardware_sensors_ISensors_default) on 192.168.137.14:5555
+01-22 11:56:48 I/ModuleListener: [6/14] 192.168.137.14:5555 BoschAidlHalSensorsTargetTest Sensors/BoschSensorTest#AccelerometerCheckDirectChVector/0_android_hardware_sensors_ISensors_default PASSED
+01-22 11:56:48 D/ModuleListener: ModuleListener.testStarted(Sensors/BoschSensorTest#GyroscopeCheckDirectChVector/0_android_hardware_sensors_ISensors_default) on 192.168.137.14:5555
+01-22 11:56:54 I/ModuleListener: [7/14] 192.168.137.14:5555 BoschAidlHalSensorsTargetTest Sensors/BoschSensorTest#GyroscopeCheckDirectChVector/0_android_hardware_sensors_ISensors_default PASSED
+01-22 11:56:54 D/ModuleListener: ModuleListener.testStarted(Sensors/BoschSensorTest#GravityCheckDirectChVector/0_android_hardware_sensors_ISensors_default) on 192.168.137.14:5555
+01-22 11:57:01 I/ModuleListener: [8/14] 192.168.137.14:5555 BoschAidlHalSensorsTargetTest Sensors/BoschSensorTest#GravityCheckDirectChVector/0_android_hardware_sensors_ISensors_default PASSED
+01-22 11:57:10 D/ModuleListener: ModuleListener.testStarted(Sensors/BoschSensorTest#LinearAccelerationCheckDirectChVector/0_android_hardware_sensors_ISensors_default) on 192.168.137.14:5555
+01-22 11:57:10 I/ModuleListener: [9/14] 192.168.137.14:5555 BoschAidlHalSensorsTargetTest Sensors/BoschSensorTest#LinearAccelerationCheckDirectChVector/0_android_hardware_sensors_ISensors_default PASSED
+01-22 11:57:10 D/ModuleListener: ModuleListener.testStarted(Sensors/BoschSensorTest#AccelerometerCheckMultiChannelVector/0_android_hardware_sensors_ISensors_default) on 192.168.137.14:5555
+01-22 11:57:14 I/ModuleListener: [10/14] 192.168.137.14:5555 BoschAidlHalSensorsTargetTest Sensors/BoschSensorTest#AccelerometerCheckMultiChannelVector/0_android_hardware_sensors_ISensors_default PASSED
+01-22 11:57:14 D/ModuleListener: ModuleListener.testStarted(Sensors/BoschSensorTest#GyroscopeCheckMultiChannelVector/0_android_hardware_sensors_ISensors_default) on 192.168.137.14:5555
+01-22 11:57:20 I/ModuleListener: [11/14] 192.168.137.14:5555 BoschAidlHalSensorsTargetTest Sensors/BoschSensorTest#GyroscopeCheckMultiChannelVector/0_android_hardware_sensors_ISensors_default PASSED
+01-22 11:57:20 D/ModuleListener: ModuleListener.testStarted(Sensors/BoschSensorTest#LinearAccelerationCheckMultiChannelVector/0_android_hardware_sensors_ISensors_default) on 192.168.137.14:5555
+01-22 11:57:27 I/ModuleListener: [12/14] 192.168.137.14:5555 BoschAidlHalSensorsTargetTest Sensors/BoschSensorTest#LinearAccelerationCheckMultiChannelVector/0_android_hardware_sensors_ISensors_default PASSED
+01-22 11:57:27 D/ModuleListener: ModuleListener.testStarted(Sensors/BoschSensorTest#GravityCheckMultiChannelVector/0_android_hardware_sensors_ISensors_default) on 192.168.137.14:5555
+01-22 11:57:33 I/ModuleListener: [13/14] 192.168.137.14:5555 BoschAidlHalSensorsTargetTest Sensors/BoschSensorTest#GravityCheckMultiChannelVector/0_android_hardware_sensors_ISensors_default PASSED
+01-22 11:57:40 D/ModuleListener: ModuleListener.testStarted(Sensors/BoschSensorTest#ConfigCheck/0_android_hardware_sensors_ISensors_default) on 192.168.137.14:5555
+01-22 11:57:40 I/ModuleListener: [14/14] 192.168.137.14:5555 BoschAidlHalSensorsTargetTest Sensors/BoschSensorTest#ConfigCheck/0_android_hardware_sensors_ISensors_default PASSED
+01-22 11:57:40 D/ModuleListener: ModuleListener.testRunEnded(78761) on 192.168.137.14:5555
+01-22 11:57:40 I/NativeDeviceStateMonitor: Device 192.168.137.14:5555 is already ONLINE
+01-22 11:57:40 I/NativeDeviceStateMonitor: Waiting 359999 ms for device 192.168.137.14:5555 boot complete
+01-22 11:57:40 I/DeviceStateMonitor: Waiting 359933 ms for device 192.168.137.14:5555 package manager
+01-22 11:57:50 I/DeviceStateMonitor: pm path android on device 192.168.137.14:5555 failed: ShellCommandUnresponsiveException(message: null)
+01-22 11:58:02 I/DeviceStateMonitor: pm path android on device 192.168.137.14:5555 failed: timeout
+01-22 11:58:08 D/BackgroundDeviceAction: Sleep for 5000 before starting logcat for 192.168.137.14:5555.
+01-22 11:58:08 I/NativeDeviceStateMonitor: Waiting 331771 ms for device 192.168.137.14:5555 external store
+01-22 11:58:09 I/NativeDevice: adb unroot on device 192.168.137.14:5555
+01-22 11:58:09 D/RunUtil: Running command [adb, -s, 192.168.137.14:5555, unroot] with timeout: 2m 0s
+01-22 11:58:09 I/NativeDeviceStateMonitor: Waiting for device 192.168.137.14:5555 to be in NOT_AVAILABLE mode for '5s'; it is currently in ONLINE mode...
+01-22 11:58:13 D/BackgroundDeviceAction: Waiting for device 192.168.137.14:5555 online before starting.
+01-22 11:58:13 D/BackgroundDeviceAction: Device 192.168.137.14:5555 now online.
+01-22 11:58:13 D/BackgroundDeviceAction: Starting logcat for 192.168.137.14:5555.
+01-22 11:58:14 W/NativeDevice: Did not detect device 192.168.137.14:5555 becoming unavailable after unroot
+01-22 11:58:14 D/RunUtil: Running command [adb, connect, 192.168.137.14:5555] with timeout: 20s
+01-22 11:58:17 D/RemoteAndroidDevice: adb connect output: status: SUCCESS stdout: already connected to 192.168.137.14:5555
+
+01-22 11:58:17 D/RunUtil: Running command [adb, connect, 192.168.137.14:5555] with timeout: 20s
+01-22 11:58:17 D/RemoteAndroidDevice: adb connect confirmed:
+stdout: already connected to 192.168.137.14:5555
+
+
+01-22 11:58:17 I/RemoteAndroidDevice: Waiting 120000 ms for adb connection.
+01-22 11:58:17 D/RunUtil: Running command [adb, connect, 192.168.137.14:5555] with timeout: 20s
+01-22 11:58:17 D/RemoteAndroidDevice: adb connect confirmed:
+stdout: already connected to 192.168.137.14:5555
+
+
+01-22 11:58:17 D/RemoteAndroidDevice: Adb connection confirmed.
+01-22 11:58:17 I/NativeDeviceStateMonitor: Device 192.168.137.14:5555 is already ONLINE
+01-22 11:58:17 I/NativeDeviceStateMonitor: Device 192.168.137.14:5555 is already ONLINE
+01-22 11:58:17 I/NativeDeviceStateMonitor: Waiting 360000 ms for device 192.168.137.14:5555 boot complete
+01-22 11:58:17 I/DeviceStateMonitor: Waiting 359928 ms for device 192.168.137.14:5555 package manager
+01-22 11:58:17 I/NativeDeviceStateMonitor: Waiting 359831 ms for device 192.168.137.14:5555 external store
+01-22 11:58:17 D/RunUtil: Running command [adb, -s, 192.168.137.14:5555, shell, getprop, ro.build.version.sdk] with timeout: 45s
+01-22 11:58:18 D/RunUtil: Running command [adb, -s, 192.168.137.14:5555, shell, getprop, persist.sys.boot.reason.history] with timeout: 45s
+01-22 11:58:18 W/NativeDevice: There is no reboot history since 1767777646000
+01-22 11:58:18 E/ModuleDefinition: Detected a soft-restart after module arm64-v8a BoschAidlHalSensorsTargetTest
+01-22 11:58:18 I/ConsoleReporter: [192.168.137.14:5555] Starting arm64-v8a BoschAidlHalSensorsTargetTest with 14 tests
+01-22 11:58:18 I/ConsoleReporter: [1/14 arm64-v8a BoschAidlHalSensorsTargetTest 192.168.137.14:5555] Sensors/BoschSensorTest#SensorListContainsBoschSensor/0_android_hardware_sensors_ISensors_default pass
+01-22 11:58:18 I/ConsoleReporter: [2/14 arm64-v8a BoschAidlHalSensorsTargetTest 192.168.137.14:5555] Sensors/BoschSensorTest#AccelerometerCheckSensorVector/0_android_hardware_sensors_ISensors_default pass
+01-22 11:58:18 I/ConsoleReporter: [3/14 arm64-v8a BoschAidlHalSensorsTargetTest 192.168.137.14:5555] Sensors/BoschSensorTest#GyroscopeCheckSensorVector/0_android_hardware_sensors_ISensors_default pass
+01-22 11:58:18 I/ConsoleReporter: [4/14 arm64-v8a BoschAidlHalSensorsTargetTest 192.168.137.14:5555] Sensors/BoschSensorTest#GravityCheckSensorVector/0_android_hardware_sensors_ISensors_default pass
+01-22 11:58:18 I/ConsoleReporter: [5/14 arm64-v8a BoschAidlHalSensorsTargetTest 192.168.137.14:5555] Sensors/BoschSensorTest#LinearAccelerationCheckSensorVector/0_android_hardware_sensors_ISensors_default pass
+01-22 11:58:18 I/ConsoleReporter: [6/14 arm64-v8a BoschAidlHalSensorsTargetTest 192.168.137.14:5555] Sensors/BoschSensorTest#AccelerometerCheckDirectChVector/0_android_hardware_sensors_ISensors_default pass
+01-22 11:58:18 I/ConsoleReporter: [7/14 arm64-v8a BoschAidlHalSensorsTargetTest 192.168.137.14:5555] Sensors/BoschSensorTest#GyroscopeCheckDirectChVector/0_android_hardware_sensors_ISensors_default pass
+01-22 11:58:18 I/ConsoleReporter: [8/14 arm64-v8a BoschAidlHalSensorsTargetTest 192.168.137.14:5555] Sensors/BoschSensorTest#GravityCheckDirectChVector/0_android_hardware_sensors_ISensors_default pass
+01-22 11:58:18 I/ConsoleReporter: [9/14 arm64-v8a BoschAidlHalSensorsTargetTest 192.168.137.14:5555] Sensors/BoschSensorTest#LinearAccelerationCheckDirectChVector/0_android_hardware_sensors_ISensors_default pass
+01-22 11:58:18 I/ConsoleReporter: [10/14 arm64-v8a BoschAidlHalSensorsTargetTest 192.168.137.14:5555] Sensors/BoschSensorTest#AccelerometerCheckMultiChannelVector/0_android_hardware_sensors_ISensors_default pass
+01-22 11:58:18 I/ConsoleReporter: [11/14 arm64-v8a BoschAidlHalSensorsTargetTest 192.168.137.14:5555] Sensors/BoschSensorTest#GyroscopeCheckMultiChannelVector/0_android_hardware_sensors_ISensors_default pass
+01-22 11:58:18 I/ConsoleReporter: [12/14 arm64-v8a BoschAidlHalSensorsTargetTest 192.168.137.14:5555] Sensors/BoschSensorTest#LinearAccelerationCheckMultiChannelVector/0_android_hardware_sensors_ISensors_default pass
+01-22 11:58:18 I/ConsoleReporter: [13/14 arm64-v8a BoschAidlHalSensorsTargetTest 192.168.137.14:5555] Sensors/BoschSensorTest#GravityCheckMultiChannelVector/0_android_hardware_sensors_ISensors_default pass
+01-22 11:58:18 I/ConsoleReporter: [14/14 arm64-v8a BoschAidlHalSensorsTargetTest 192.168.137.14:5555] Sensors/BoschSensorTest#ConfigCheck/0_android_hardware_sensors_ISensors_default pass
+01-22 11:58:18 I/ConsoleReporter: [192.168.137.14:5555] arm64-v8a BoschAidlHalSensorsTargetTest completed in 2m 0s. 14 passed, 0 failed, 0 not executed
+01-22 11:58:18 I/ITestSuite: Running system status checker after module execution: arm64-v8a BoschAidlHalSensorsTargetTest
+01-22 11:58:18 D/FileUtil: Creating temp file at /home/btm5rt/jenkins/RT-C-008FN/SMI240-rpi4-arm64-spi-android/workspace/sch-MEMS-Android-HAL_development/build/SMI240/out_hal/android13/aidl/host/linux-x86/vts/android-vts/results/2026.01.22_11.54.56/proto with prefix "tmp-proto" suffix ""
+01-22 11:58:18 D/BaseTestSuite: Filters for 'arm64-v8a VtsAidlHalSensorsTargetTest': [VtsAidlHalSensorsTargetTest *SensorsAidlTest.DirectChannelGralloc/*]
+01-22 11:58:18 I/ITestSuite: Running system status checker before module execution: arm64-v8a VtsAidlHalSensorsTargetTest
+01-22 11:58:18 D/RunUtil: Running command [adb, -s, 192.168.137.14:5555, shell, getprop, ro.build.version.codename] with timeout: 45s
+01-22 11:58:18 D/RunUtil: Running command [adb, -s, 192.168.137.14:5555, shell, getprop, ro.build.version.sdk] with timeout: 45s
+01-22 11:58:18 D/RunUtil: Running command [adb, -s, 192.168.137.14:5555, shell, getprop, ro.build.version.codename] with timeout: 45s
+01-22 11:58:18 D/RunUtil: Running command [adb, -s, 192.168.137.14:5555, shell, getprop, ro.build.version.sdk] with timeout: 45s
+01-22 11:58:18 D/RunUtil: Running command [adb, -s, 192.168.137.14:5555, shell, getprop, ro.build.version.codename] with timeout: 45s
+01-22 11:58:18 D/RunUtil: Running command [adb, -s, 192.168.137.14:5555, shell, getprop, ro.build.version.sdk] with timeout: 45s
+01-22 11:58:18 D/RunUtil: Running command [adb, -s, 192.168.137.14:5555, shell, getprop, ro.build.version.codename] with timeout: 45s
+01-22 11:58:18 D/RunUtil: Running command [adb, -s, 192.168.137.14:5555, shell, getprop, ro.build.version.sdk] with timeout: 45s
+01-22 11:58:18 D/RunUtil: Running command [adb, -s, 192.168.137.14:5555, shell, getprop, ro.build.version.sdk] with timeout: 45s
+01-22 11:58:18 D/RunUtil: Running command [adb, -s, 192.168.137.14:5555, shell, getprop, ro.build.version.sdk] with timeout: 45s
+01-22 11:58:18 D/RunUtil: Running command [adb, -s, 192.168.137.14:5555, shell, getprop, ro.build.version.sdk] with timeout: 45s
+01-22 11:58:23 I/DeviceBaselineChecker: Enable device baselines disable_os_auto_update,keep_screen_on,disable_usb_app_verification,clear_lock_screen in 5274 millis.
+01-22 11:58:23 D/ModuleDefinition: Running module arm64-v8a VtsAidlHalSensorsTargetTest
+01-22 11:58:23 D/ModuleDefinition: Running setup preparer: RootTargetPreparer
+01-22 11:58:23 I/NativeDevice: adb root on device 192.168.137.14:5555
+01-22 11:58:23 D/RunUtil: Running command [adb, -s, 192.168.137.14:5555, root] with timeout: 2m 0s
+01-22 11:58:23 D/BackgroundDeviceAction: Sleep for 5000 before starting logcat for 192.168.137.14:5555.
+01-22 11:58:24 I/NativeDeviceStateMonitor: Waiting for device 192.168.137.14:5555 to be in NOT_AVAILABLE mode for '2s'; it is currently in ONLINE mode...
+01-22 11:58:26 W/NativeDevice: Did not detect device 192.168.137.14:5555 becoming unavailable after root
+01-22 11:58:26 D/ModuleDefinition: Running setup preparer: StopServicesSetup
+01-22 11:58:26 D/ModuleDefinition: Running setup preparer: PushFilePreparer
+01-22 11:58:26 D/RunUtil: Running command [adb, -s, 192.168.137.14:5555, shell, getprop, ro.build.version.sdk] with timeout: 45s
+01-22 11:58:27 D/RunUtil: Running command [adb, -s, 192.168.137.14:5555, shell, getprop, ro.build.id] with timeout: 45s
+01-22 11:58:27 D/RunUtil: Running command [adb, -s, 192.168.137.14:5555, shell, getprop, ro.revision] with timeout: 45s
+01-22 11:58:27 D/RunUtil: Running command [adb, -s, 192.168.137.14:5555, shell, getprop, gsm.sim.state] with timeout: 45s
+01-22 11:58:27 D/RunUtil: Running command [adb, -s, 192.168.137.14:5555, shell, getprop, gsm.operator.alpha] with timeout: 45s
+01-22 11:58:27 D/PushFilePreparer: Trying to push local 'VtsAidlHalSensorsTargetTest' to remote '/data/local/tmp/VtsAidlHalSensorsTargetTest'
+01-22 11:58:27 D/NativeDevice: Using 'ls' to check doesFileExist(/data/local/tmp/VtsAidlHalSensorsTargetTest)
+01-22 11:58:27 D/NativeDevice: /home/btm5rt/jenkins/RT-C-008FN/SMI240-rpi4-arm64-spi-android/workspace/sch-MEMS-Android-HAL_development/build/SMI240/out_hal/android13/aidl/host/linux-x86/vts/android-vts/testcases/VtsAidlHalSensorsTargetTest/arm directory was not pushed because it was filtered.
+01-22 11:58:27 D/NativeDevice: Using 'ls' to check doesFileExist(/data/local/tmp/VtsAidlHalSensorsTargetTest)
+01-22 11:58:28 I/GTest: Running gtest /data/local/tmp/VtsAidlHalSensorsTargetTest/arm64/VtsAidlHalSensorsTargetTest --gtest_print_time --gtest_filter=-*SensorsAidlTest.DirectChannelGralloc/* on 192.168.137.14:5555
+01-22 11:58:28 D/ModuleListener: ModuleListener.testRunStarted(VtsAidlHalSensorsTargetTest, 12, 0) on 192.168.137.14:5555
+01-22 11:58:28 D/ModuleListener: ModuleListener.testStarted(Sensors/SensorsAidlTest#SensorListValid/0_android_hardware_sensors_ISensors_default) on 192.168.137.14:5555
+01-22 11:58:28 D/BackgroundDeviceAction: Waiting for device 192.168.137.14:5555 online before starting.
+01-22 11:58:28 D/BackgroundDeviceAction: Device 192.168.137.14:5555 now online.
+01-22 11:58:28 D/BackgroundDeviceAction: Starting logcat for 192.168.137.14:5555.
+01-22 11:58:31 I/ModuleListener: [1/12] 192.168.137.14:5555 VtsAidlHalSensorsTargetTest Sensors/SensorsAidlTest#SensorListValid/0_android_hardware_sensors_ISensors_default PASSED
+01-22 11:58:31 D/ModuleListener: ModuleListener.testStarted(Sensors/SensorsAidlTest#SetOperationMode/0_android_hardware_sensors_ISensors_default) on 192.168.137.14:5555
+01-22 11:58:35 I/ModuleListener: [2/12] 192.168.137.14:5555 VtsAidlHalSensorsTargetTest Sensors/SensorsAidlTest#SetOperationMode/0_android_hardware_sensors_ISensors_default PASSED
+01-22 11:58:35 D/ModuleListener: ModuleListener.testStarted(Sensors/SensorsAidlTest#InjectSensorEventData/0_android_hardware_sensors_ISensors_default) on 192.168.137.14:5555
+01-22 11:58:38 I/ModuleListener: [3/12] 192.168.137.14:5555 VtsAidlHalSensorsTargetTest Sensors/SensorsAidlTest#InjectSensorEventData/0_android_hardware_sensors_ISensors_default PASSED
+01-22 11:58:38 D/ModuleListener: ModuleListener.testStarted(Sensors/SensorsAidlTest#CallInitializeTwice/0_android_hardware_sensors_ISensors_default) on 192.168.137.14:5555
+01-22 11:58:50 I/ModuleListener: [4/12] 192.168.137.14:5555 VtsAidlHalSensorsTargetTest Sensors/SensorsAidlTest#CallInitializeTwice/0_android_hardware_sensors_ISensors_default PASSED
+01-22 11:58:50 D/ModuleListener: ModuleListener.testStarted(Sensors/SensorsAidlTest#CleanupConnectionsOnInitialize/0_android_hardware_sensors_ISensors_default) on 192.168.137.14:5555
+01-22 11:58:58 I/ModuleListener: [5/12] 192.168.137.14:5555 VtsAidlHalSensorsTargetTest Sensors/SensorsAidlTest#CleanupConnectionsOnInitialize/0_android_hardware_sensors_ISensors_default PASSED
+01-22 11:58:58 D/ModuleListener: ModuleListener.testStarted(Sensors/SensorsAidlTest#FlushSensor/0_android_hardware_sensors_ISensors_default) on 192.168.137.14:5555
+01-22 11:59:01 I/ModuleListener: [6/12] 192.168.137.14:5555 VtsAidlHalSensorsTargetTest Sensors/SensorsAidlTest#FlushSensor/0_android_hardware_sensors_ISensors_default PASSED
+01-22 11:59:01 D/ModuleListener: ModuleListener.testStarted(Sensors/SensorsAidlTest#FlushOneShotSensor/0_android_hardware_sensors_ISensors_default) on 192.168.137.14:5555
+01-22 11:59:05 I/ModuleListener: [7/12] 192.168.137.14:5555 VtsAidlHalSensorsTargetTest Sensors/SensorsAidlTest#FlushOneShotSensor/0_android_hardware_sensors_ISensors_default PASSED
+01-22 11:59:05 D/ModuleListener: ModuleListener.testStarted(Sensors/SensorsAidlTest#FlushInactiveSensor/0_android_hardware_sensors_ISensors_default) on 192.168.137.14:5555
+01-22 11:59:09 I/ModuleListener: [8/12] 192.168.137.14:5555 VtsAidlHalSensorsTargetTest Sensors/SensorsAidlTest#FlushInactiveSensor/0_android_hardware_sensors_ISensors_default PASSED
+01-22 11:59:09 D/ModuleListener: ModuleListener.testStarted(Sensors/SensorsAidlTest#Batch/0_android_hardware_sensors_ISensors_default) on 192.168.137.14:5555
+01-22 11:59:13 I/ModuleListener: [9/12] 192.168.137.14:5555 VtsAidlHalSensorsTargetTest Sensors/SensorsAidlTest#Batch/0_android_hardware_sensors_ISensors_default PASSED
+01-22 11:59:13 D/ModuleListener: ModuleListener.testStarted(Sensors/SensorsAidlTest#Activate/0_android_hardware_sensors_ISensors_default) on 192.168.137.14:5555
+01-22 11:59:16 I/ModuleListener: [10/12] 192.168.137.14:5555 VtsAidlHalSensorsTargetTest Sensors/SensorsAidlTest#Activate/0_android_hardware_sensors_ISensors_default PASSED
+01-22 11:59:16 D/ModuleListener: ModuleListener.testStarted(Sensors/SensorsAidlTest#NoStaleEvents/0_android_hardware_sensors_ISensors_default) on 192.168.137.14:5555
+01-22 11:59:21 I/ModuleListener: [11/12] 192.168.137.14:5555 VtsAidlHalSensorsTargetTest Sensors/SensorsAidlTest#NoStaleEvents/0_android_hardware_sensors_ISensors_default PASSED
+01-22 11:59:21 D/ModuleListener: ModuleListener.testStarted(Sensors/SensorsAidlTest#DirectChannelAshmem/0_android_hardware_sensors_ISensors_default) on 192.168.137.14:5555
+01-22 11:59:24 I/ModuleListener: [12/12] 192.168.137.14:5555 VtsAidlHalSensorsTargetTest Sensors/SensorsAidlTest#DirectChannelAshmem/0_android_hardware_sensors_ISensors_default PASSED
+01-22 11:59:24 D/ModuleListener: ModuleListener.testRunEnded(56605) on 192.168.137.14:5555
+01-22 11:59:25 I/NativeDeviceStateMonitor: Device 192.168.137.14:5555 is already ONLINE
+01-22 11:59:25 I/NativeDeviceStateMonitor: Waiting 360000 ms for device 192.168.137.14:5555 boot complete
+01-22 11:59:53 D/BackgroundDeviceAction: Sleep for 5000 before starting logcat for 192.168.137.14:5555.
+01-22 11:59:54 I/DeviceStateMonitor: Waiting 330413 ms for device 192.168.137.14:5555 package manager
+01-22 11:59:54 I/NativeDeviceStateMonitor: Waiting 330327 ms for device 192.168.137.14:5555 external store
+01-22 11:59:55 I/NativeDevice: adb unroot on device 192.168.137.14:5555
+01-22 11:59:55 D/RunUtil: Running command [adb, -s, 192.168.137.14:5555, unroot] with timeout: 2m 0s
+01-22 11:59:55 I/NativeDeviceStateMonitor: Waiting for device 192.168.137.14:5555 to be in NOT_AVAILABLE mode for '5s'; it is currently in ONLINE mode...
+01-22 11:59:58 D/BackgroundDeviceAction: Waiting for device 192.168.137.14:5555 online before starting.
+01-22 11:59:58 D/BackgroundDeviceAction: Device 192.168.137.14:5555 now online.
+01-22 11:59:58 D/BackgroundDeviceAction: Starting logcat for 192.168.137.14:5555.
+01-22 12:00:00 W/NativeDevice: Did not detect device 192.168.137.14:5555 becoming unavailable after unroot
+01-22 12:00:00 D/RunUtil: Running command [adb, connect, 192.168.137.14:5555] with timeout: 20s
+01-22 12:00:00 D/RemoteAndroidDevice: adb connect output: status: SUCCESS stdout: already connected to 192.168.137.14:5555
+
+01-22 12:00:00 D/RunUtil: Running command [adb, connect, 192.168.137.14:5555] with timeout: 20s
+01-22 12:00:00 D/RemoteAndroidDevice: adb connect confirmed:
+stdout: already connected to 192.168.137.14:5555
+
+
+01-22 12:00:00 I/RemoteAndroidDevice: Waiting 120000 ms for adb connection.
+01-22 12:00:00 D/RunUtil: Running command [adb, connect, 192.168.137.14:5555] with timeout: 20s
+01-22 12:00:00 D/RemoteAndroidDevice: adb connect confirmed:
+stdout: already connected to 192.168.137.14:5555
+
+
+01-22 12:00:00 D/RemoteAndroidDevice: Adb connection confirmed.
+01-22 12:00:00 I/NativeDeviceStateMonitor: Device 192.168.137.14:5555 is already ONLINE
+01-22 12:00:00 I/NativeDeviceStateMonitor: Device 192.168.137.14:5555 is already ONLINE
+01-22 12:00:00 I/NativeDeviceStateMonitor: Waiting 359999 ms for device 192.168.137.14:5555 boot complete
+01-22 12:00:00 I/DeviceStateMonitor: Waiting 359928 ms for device 192.168.137.14:5555 package manager
+01-22 12:00:00 I/NativeDeviceStateMonitor: Waiting 359828 ms for device 192.168.137.14:5555 external store
+01-22 12:00:01 D/RunUtil: Running command [adb, -s, 192.168.137.14:5555, shell, getprop, ro.build.version.sdk] with timeout: 45s
+01-22 12:00:01 D/RunUtil: Running command [adb, -s, 192.168.137.14:5555, shell, getprop, persist.sys.boot.reason.history] with timeout: 45s
+01-22 12:00:01 W/NativeDevice: There is no reboot history since 1767777750000
+01-22 12:00:01 E/ModuleDefinition: Detected a soft-restart after module arm64-v8a VtsAidlHalSensorsTargetTest
+01-22 12:00:01 I/ConsoleReporter: [192.168.137.14:5555] Starting arm64-v8a VtsAidlHalSensorsTargetTest with 12 tests
+01-22 12:00:01 I/ConsoleReporter: [1/12 arm64-v8a VtsAidlHalSensorsTargetTest 192.168.137.14:5555] Sensors/SensorsAidlTest#SensorListValid/0_android_hardware_sensors_ISensors_default pass
+01-22 12:00:01 I/ConsoleReporter: [2/12 arm64-v8a VtsAidlHalSensorsTargetTest 192.168.137.14:5555] Sensors/SensorsAidlTest#SetOperationMode/0_android_hardware_sensors_ISensors_default pass
+01-22 12:00:01 I/ConsoleReporter: [3/12 arm64-v8a VtsAidlHalSensorsTargetTest 192.168.137.14:5555] Sensors/SensorsAidlTest#InjectSensorEventData/0_android_hardware_sensors_ISensors_default pass
+01-22 12:00:01 I/ConsoleReporter: [4/12 arm64-v8a VtsAidlHalSensorsTargetTest 192.168.137.14:5555] Sensors/SensorsAidlTest#CallInitializeTwice/0_android_hardware_sensors_ISensors_default pass
+01-22 12:00:01 I/ConsoleReporter: [5/12 arm64-v8a VtsAidlHalSensorsTargetTest 192.168.137.14:5555] Sensors/SensorsAidlTest#CleanupConnectionsOnInitialize/0_android_hardware_sensors_ISensors_default pass
+01-22 12:00:01 I/ConsoleReporter: [6/12 arm64-v8a VtsAidlHalSensorsTargetTest 192.168.137.14:5555] Sensors/SensorsAidlTest#FlushSensor/0_android_hardware_sensors_ISensors_default pass
+01-22 12:00:01 I/ConsoleReporter: [7/12 arm64-v8a VtsAidlHalSensorsTargetTest 192.168.137.14:5555] Sensors/SensorsAidlTest#FlushOneShotSensor/0_android_hardware_sensors_ISensors_default pass
+01-22 12:00:01 I/ConsoleReporter: [8/12 arm64-v8a VtsAidlHalSensorsTargetTest 192.168.137.14:5555] Sensors/SensorsAidlTest#FlushInactiveSensor/0_android_hardware_sensors_ISensors_default pass
+01-22 12:00:01 I/ConsoleReporter: [9/12 arm64-v8a VtsAidlHalSensorsTargetTest 192.168.137.14:5555] Sensors/SensorsAidlTest#Batch/0_android_hardware_sensors_ISensors_default pass
+01-22 12:00:01 I/ConsoleReporter: [10/12 arm64-v8a VtsAidlHalSensorsTargetTest 192.168.137.14:5555] Sensors/SensorsAidlTest#Activate/0_android_hardware_sensors_ISensors_default pass
+01-22 12:00:01 I/ConsoleReporter: [11/12 arm64-v8a VtsAidlHalSensorsTargetTest 192.168.137.14:5555] Sensors/SensorsAidlTest#NoStaleEvents/0_android_hardware_sensors_ISensors_default pass
+01-22 12:00:01 I/ConsoleReporter: [12/12 arm64-v8a VtsAidlHalSensorsTargetTest 192.168.137.14:5555] Sensors/SensorsAidlTest#DirectChannelAshmem/0_android_hardware_sensors_ISensors_default pass
+01-22 12:00:01 I/ConsoleReporter: [192.168.137.14:5555] arm64-v8a VtsAidlHalSensorsTargetTest completed in 1m 34s. 12 passed, 0 failed, 0 not executed
+01-22 12:00:01 I/ITestSuite: Running system status checker after module execution: arm64-v8a VtsAidlHalSensorsTargetTest
+01-22 12:00:01 D/FileUtil: Creating temp file at /home/btm5rt/jenkins/RT-C-008FN/SMI240-rpi4-arm64-spi-android/workspace/sch-MEMS-Android-HAL_development/build/SMI240/out_hal/android13/aidl/host/linux-x86/vts/android-vts/results/2026.01.22_11.54.56/proto with prefix "tmp-proto" suffix ""
+01-22 12:00:01 D/BaseTestSuite: Filters for 'arm64-v8a VtsHalSensorManagerV1_0TargetTest': []
+01-22 12:00:01 I/ITestSuite: Running system status checker before module execution: arm64-v8a VtsHalSensorManagerV1_0TargetTest
+01-22 12:00:01 D/RunUtil: Running command [adb, -s, 192.168.137.14:5555, shell, getprop, ro.build.version.codename] with timeout: 45s
+01-22 12:00:02 D/RunUtil: Running command [adb, -s, 192.168.137.14:5555, shell, getprop, ro.build.version.sdk] with timeout: 45s
+01-22 12:00:02 D/RunUtil: Running command [adb, -s, 192.168.137.14:5555, shell, getprop, ro.build.version.codename] with timeout: 45s
+01-22 12:00:02 D/RunUtil: Running command [adb, -s, 192.168.137.14:5555, shell, getprop, ro.build.version.sdk] with timeout: 45s
+01-22 12:00:02 D/RunUtil: Running command [adb, -s, 192.168.137.14:5555, shell, getprop, ro.build.version.codename] with timeout: 45s
+01-22 12:00:02 D/RunUtil: Running command [adb, -s, 192.168.137.14:5555, shell, getprop, ro.build.version.sdk] with timeout: 45s
+01-22 12:00:02 D/RunUtil: Running command [adb, -s, 192.168.137.14:5555, shell, getprop, ro.build.version.codename] with timeout: 45s
+01-22 12:00:02 D/RunUtil: Running command [adb, -s, 192.168.137.14:5555, shell, getprop, ro.build.version.sdk] with timeout: 45s
+01-22 12:00:02 D/RunUtil: Running command [adb, -s, 192.168.137.14:5555, shell, getprop, ro.build.version.sdk] with timeout: 45s
+01-22 12:00:02 D/RunUtil: Running command [adb, -s, 192.168.137.14:5555, shell, getprop, ro.build.version.sdk] with timeout: 45s
+01-22 12:00:02 D/RunUtil: Running command [adb, -s, 192.168.137.14:5555, shell, getprop, ro.build.version.sdk] with timeout: 45s
+01-22 12:00:03 I/DeviceBaselineChecker: Enable device baselines disable_os_auto_update,keep_screen_on,disable_usb_app_verification,clear_lock_screen in 1973 millis.
+01-22 12:00:03 D/ModuleDefinition: Running module arm64-v8a VtsHalSensorManagerV1_0TargetTest
+01-22 12:00:03 D/ModuleDefinition: Running setup preparer: RootTargetPreparer
+01-22 12:00:04 I/NativeDevice: adb root on device 192.168.137.14:5555
+01-22 12:00:04 D/RunUtil: Running command [adb, -s, 192.168.137.14:5555, root] with timeout: 2m 0s
+01-22 12:00:04 D/BackgroundDeviceAction: Sleep for 5000 before starting logcat for 192.168.137.14:5555.
+01-22 12:00:04 I/NativeDeviceStateMonitor: Waiting for device 192.168.137.14:5555 to be in NOT_AVAILABLE mode for '2s'; it is currently in ONLINE mode...
+01-22 12:00:06 W/NativeDevice: Did not detect device 192.168.137.14:5555 becoming unavailable after root
+01-22 12:00:06 D/ModuleDefinition: Running setup preparer: PushFilePreparer
+01-22 12:00:06 D/RunUtil: Running command [adb, -s, 192.168.137.14:5555, shell, getprop, ro.build.version.sdk] with timeout: 45s
+01-22 12:00:06 D/RunUtil: Running command [adb, -s, 192.168.137.14:5555, shell, getprop, ro.build.id] with timeout: 45s
+01-22 12:00:06 D/RunUtil: Running command [adb, -s, 192.168.137.14:5555, shell, getprop, ro.revision] with timeout: 45s
+01-22 12:00:06 D/RunUtil: Running command [adb, -s, 192.168.137.14:5555, shell, getprop, gsm.sim.state] with timeout: 45s
+01-22 12:00:06 D/RunUtil: Running command [adb, -s, 192.168.137.14:5555, shell, getprop, gsm.operator.alpha] with timeout: 45s
+01-22 12:00:07 D/PushFilePreparer: Trying to push local 'VtsHalSensorManagerV1_0TargetTest' to remote '/data/local/tmp/VtsHalSensorManagerV1_0TargetTest'
+01-22 12:00:07 D/NativeDevice: Using 'ls' to check doesFileExist(/data/local/tmp/VtsHalSensorManagerV1_0TargetTest)
+01-22 12:00:07 D/NativeDevice: /home/btm5rt/jenkins/RT-C-008FN/SMI240-rpi4-arm64-spi-android/workspace/sch-MEMS-Android-HAL_development/build/SMI240/out_hal/android13/aidl/host/linux-x86/vts/android-vts/testcases/VtsHalSensorManagerV1_0TargetTest/arm directory was not pushed because it was filtered.
+01-22 12:00:07 D/NativeDevice: Using 'ls' to check doesFileExist(/data/local/tmp/VtsHalSensorManagerV1_0TargetTest)
+01-22 12:00:07 I/GTest: Running gtest /data/local/tmp/VtsHalSensorManagerV1_0TargetTest/arm64/VtsHalSensorManagerV1_0TargetTest --gtest_print_time  on 192.168.137.14:5555
+01-22 12:00:08 D/ModuleListener: ModuleListener.testRunStarted(VtsHalSensorManagerV1_0TargetTest, 4, 0) on 192.168.137.14:5555
+01-22 12:00:08 D/ModuleListener: ModuleListener.testStarted(PerInstance/SensorManagerTest#List/0_default) on 192.168.137.14:5555
+01-22 12:00:08 I/ModuleListener: [1/4] 192.168.137.14:5555 VtsHalSensorManagerV1_0TargetTest PerInstance/SensorManagerTest#List/0_default PASSED
+01-22 12:00:08 D/ModuleListener: ModuleListener.testStarted(PerInstance/SensorManagerTest#Ashmem/0_default) on 192.168.137.14:5555
+01-22 12:00:08 I/ModuleListener: [2/4] 192.168.137.14:5555 VtsHalSensorManagerV1_0TargetTest PerInstance/SensorManagerTest#Ashmem/0_default PASSED
+01-22 12:00:08 D/ModuleListener: ModuleListener.testStarted(PerInstance/SensorManagerTest#GetDefaultAccelerometer/0_default) on 192.168.137.14:5555
+01-22 12:00:08 I/ModuleListener: [3/4] 192.168.137.14:5555 VtsHalSensorManagerV1_0TargetTest PerInstance/SensorManagerTest#GetDefaultAccelerometer/0_default PASSED
+01-22 12:00:08 D/ModuleListener: ModuleListener.testStarted(PerInstance/SensorManagerTest#Accelerometer/0_default) on 192.168.137.14:5555
+01-22 12:00:08 I/ModuleListener: [4/4] 192.168.137.14:5555 VtsHalSensorManagerV1_0TargetTest PerInstance/SensorManagerTest#Accelerometer/0_default IGNORED
+01-22 12:00:08 D/ModuleListener: ModuleListener.testRunEnded(18) on 192.168.137.14:5555
+01-22 12:00:08 I/NativeDevice: adb unroot on device 192.168.137.14:5555
+01-22 12:00:08 D/RunUtil: Running command [adb, -s, 192.168.137.14:5555, unroot] with timeout: 2m 0s
+01-22 12:00:09 D/BackgroundDeviceAction: Waiting for device 192.168.137.14:5555 online before starting.
+01-22 12:00:09 D/BackgroundDeviceAction: Device 192.168.137.14:5555 now online.
+01-22 12:00:09 D/BackgroundDeviceAction: Starting logcat for 192.168.137.14:5555.
+01-22 12:00:11 W/NativeDevice: Command exited with status: FAILED
+01-22 12:00:11 W/NativeDevice: Command stdout:
+restarting adbd as non root
+
+
+01-22 12:00:11 W/NativeDevice: Command stderr:
+timeout expired while waiting for device
+
+
+01-22 12:00:11 I/NativeDeviceStateMonitor: Waiting for device 192.168.137.14:5555 to be in NOT_AVAILABLE mode for '5s'; it is currently in ONLINE mode...
+01-22 12:00:16 W/NativeDevice: Did not detect device 192.168.137.14:5555 becoming unavailable after unroot
+01-22 12:00:16 D/RunUtil: Running command [adb, connect, 192.168.137.14:5555] with timeout: 20s
+01-22 12:00:16 D/RemoteAndroidDevice: adb connect output: status: SUCCESS stdout: already connected to 192.168.137.14:5555
+
+01-22 12:00:16 D/RunUtil: Running command [adb, connect, 192.168.137.14:5555] with timeout: 20s
+01-22 12:00:16 D/RemoteAndroidDevice: adb connect confirmed:
+stdout: already connected to 192.168.137.14:5555
+
+
+01-22 12:00:16 I/RemoteAndroidDevice: Waiting 120000 ms for adb connection.
+01-22 12:00:16 D/RunUtil: Running command [adb, connect, 192.168.137.14:5555] with timeout: 20s
+01-22 12:00:16 D/RemoteAndroidDevice: adb connect confirmed:
+stdout: already connected to 192.168.137.14:5555
+
+
+01-22 12:00:16 D/RemoteAndroidDevice: Adb connection confirmed.
+01-22 12:00:16 I/NativeDeviceStateMonitor: Device 192.168.137.14:5555 is already ONLINE
+01-22 12:00:16 W/NativeDevice: AdbCommandRejectedException (device offline) when attempting shell id on device 192.168.137.14:5555
+01-22 12:00:16 I/RemoteAndroidDevice: Reconnecting to 192.168.137.14:5555 for recovery
+01-22 12:00:16 D/RunUtil: Running command [adb, connect, 192.168.137.14:5555] with timeout: 20s
+01-22 12:00:16 D/RemoteAndroidDevice: adb connect output: status: SUCCESS stdout: already connected to 192.168.137.14:5555
+
+01-22 12:00:16 D/RunUtil: Running command [adb, connect, 192.168.137.14:5555] with timeout: 20s
+01-22 12:00:16 D/RemoteAndroidDevice: adb connect confirmed:
+stdout: already connected to 192.168.137.14:5555
+
+
+01-22 12:00:16 I/RemoteAndroidDevice: Waiting 120000 ms for adb connection.
+01-22 12:00:16 D/RunUtil: Running command [adb, connect, 192.168.137.14:5555] with timeout: 20s
+01-22 12:00:16 D/RemoteAndroidDevice: adb connect confirmed:
+stdout: already connected to 192.168.137.14:5555
+
+
+01-22 12:00:16 D/RemoteAndroidDevice: Adb connection confirmed.
+01-22 12:00:16 I/NativeDevice: Attempting recovery on 192.168.137.14:5555
+01-22 12:00:16 I/WaitDeviceRecovery: Pausing for 5000 for 192.168.137.14:5555 to recover
+01-22 12:00:19 D/BackgroundDeviceAction: com.android.ddmlib.AdbCommandRejectedException while running logcat on 192.168.137.14:5555. May see duplicated content in log.
+01-22 12:00:19 D/BackgroundDeviceAction: Waiting for device 192.168.137.14:5555 online before starting.
+01-22 12:00:19 D/BackgroundDeviceAction: Device 192.168.137.14:5555 now online.
+01-22 12:00:19 D/BackgroundDeviceAction: Sleep for 5000 before starting logcat for 192.168.137.14:5555.
+01-22 12:00:21 I/NativeDeviceStateMonitor: Device 192.168.137.14:5555 is already ONLINE
+01-22 12:00:21 I/NativeDeviceStateMonitor: Waiting 30000 ms for device 192.168.137.14:5555 shell to be responsive
+01-22 12:00:21 I/NativeDeviceStateMonitor: shell ready. id output: uid=2000(shell) gid=2000(shell) groups=2000(shell),1004(input),1007(log),1011(adb),1015(sdcard_rw),1028(sdcard_r),1078(ext_data_rw),1079(ext_obb_rw),3001(net_bt_admin),3002(net_bt),3003(inet),3006(net_bw_stats),3009(readproc),3011(uhid),3012(readtracefs) context=u:r:shell:s0
+
+01-22 12:00:21 I/NativeDeviceStateMonitor: Device 192.168.137.14:5555 is already ONLINE
+01-22 12:00:21 I/NativeDeviceStateMonitor: Waiting 240000 ms for device 192.168.137.14:5555 boot complete
+01-22 12:00:21 I/DeviceStateMonitor: Waiting 239928 ms for device 192.168.137.14:5555 package manager
+01-22 12:00:21 I/NativeDeviceStateMonitor: Waiting 239832 ms for device 192.168.137.14:5555 external store
+01-22 12:00:22 I/NativeDeviceStateMonitor: Device 192.168.137.14:5555 is already ONLINE
+01-22 12:00:22 D/NativeDevice: postBootSetup started
+01-22 12:00:22 I/NativeDevice: adb root on device 192.168.137.14:5555
+01-22 12:00:22 D/RunUtil: Running command [adb, -s, 192.168.137.14:5555, root] with timeout: 2m 0s
+01-22 12:00:22 I/NativeDeviceStateMonitor: Waiting for device 192.168.137.14:5555 to be in NOT_AVAILABLE mode for '2s'; it is currently in ONLINE mode...
+01-22 12:00:24 D/BackgroundDeviceAction: Waiting for device 192.168.137.14:5555 online before starting.
+01-22 12:00:24 D/BackgroundDeviceAction: Device 192.168.137.14:5555 now online.
+01-22 12:00:24 D/BackgroundDeviceAction: Starting logcat for 192.168.137.14:5555.
+01-22 12:00:24 W/NativeDevice: Did not detect device 192.168.137.14:5555 becoming unavailable after root
+01-22 12:00:24 D/RunUtil: Running command [adb, -s, 192.168.137.14:5555, shell, getprop, ro.build.version.sdk] with timeout: 45s
+01-22 12:00:24 I/TestDevice: Attempting to disable keyguard on 192.168.137.14:5555 using wm dismiss-keyguard
+01-22 12:00:24 I/TestDevice: output of wm dismiss-keyguard: 
+01-22 12:00:24 D/NativeDevice: postBootSetup done: 2s
+01-22 12:00:24 I/NativeDevice: Recovery successful for 192.168.137.14:5555
+01-22 12:00:24 W/NativeDevice: 'adb unroot' on 192.168.137.14:5555 unsuccessful on attempt 1 of 3. Output: 'restarting adbd as non root
+'
+01-22 12:00:24 D/RunUtil: Running command [adb, -s, 192.168.137.14:5555, unroot] with timeout: 2m 0s
+01-22 12:00:24 D/BackgroundDeviceAction: Sleep for 5000 before starting logcat for 192.168.137.14:5555.
+01-22 12:00:27 W/NativeDevice: Command exited with status: FAILED
+01-22 12:00:27 W/NativeDevice: Command stdout:
+
+
+01-22 12:00:27 W/NativeDevice: Command stderr:
+timeout expired while waiting for device
+
+
+01-22 12:00:27 I/NativeDeviceStateMonitor: Waiting for device 192.168.137.14:5555 to be in NOT_AVAILABLE mode for '5s'; it is currently in ONLINE mode...
+01-22 12:00:30 D/BackgroundDeviceAction: Waiting for device 192.168.137.14:5555 online before starting.
+01-22 12:00:30 D/BackgroundDeviceAction: Device 192.168.137.14:5555 now online.
+01-22 12:00:30 D/BackgroundDeviceAction: Starting logcat for 192.168.137.14:5555.
+01-22 12:00:32 W/NativeDevice: Did not detect device 192.168.137.14:5555 becoming unavailable after unroot
+01-22 12:00:32 D/RunUtil: Running command [adb, connect, 192.168.137.14:5555] with timeout: 20s
+01-22 12:00:32 D/RemoteAndroidDevice: adb connect output: status: SUCCESS stdout: already connected to 192.168.137.14:5555
+
+01-22 12:00:32 D/RunUtil: Running command [adb, connect, 192.168.137.14:5555] with timeout: 20s
+01-22 12:00:33 D/RemoteAndroidDevice: adb connect confirmed:
+stdout: already connected to 192.168.137.14:5555
+
+
+01-22 12:00:33 I/RemoteAndroidDevice: Waiting 120000 ms for adb connection.
+01-22 12:00:33 D/RunUtil: Running command [adb, connect, 192.168.137.14:5555] with timeout: 20s
+01-22 12:00:33 D/RemoteAndroidDevice: adb connect confirmed:
+stdout: already connected to 192.168.137.14:5555
+
+
+01-22 12:00:33 D/RemoteAndroidDevice: Adb connection confirmed.
+01-22 12:00:33 I/NativeDeviceStateMonitor: Device 192.168.137.14:5555 is already ONLINE
+01-22 12:00:33 W/NativeDevice: AdbCommandRejectedException (device offline) when attempting shell id on device 192.168.137.14:5555
+01-22 12:00:33 I/RemoteAndroidDevice: Reconnecting to 192.168.137.14:5555 for recovery
+01-22 12:00:33 D/RunUtil: Running command [adb, connect, 192.168.137.14:5555] with timeout: 20s
+01-22 12:00:33 D/RemoteAndroidDevice: adb connect output: status: SUCCESS stdout: already connected to 192.168.137.14:5555
+
+01-22 12:00:33 D/RunUtil: Running command [adb, connect, 192.168.137.14:5555] with timeout: 20s
+01-22 12:00:33 D/RemoteAndroidDevice: adb connect confirmed:
+stdout: already connected to 192.168.137.14:5555
+
+
+01-22 12:00:33 I/RemoteAndroidDevice: Waiting 120000 ms for adb connection.
+01-22 12:00:33 D/RunUtil: Running command [adb, connect, 192.168.137.14:5555] with timeout: 20s
+01-22 12:00:33 D/RemoteAndroidDevice: adb connect confirmed:
+stdout: already connected to 192.168.137.14:5555
+
+
+01-22 12:00:33 D/RemoteAndroidDevice: Adb connection confirmed.
+01-22 12:00:33 I/NativeDevice: Attempting recovery on 192.168.137.14:5555
+01-22 12:00:33 I/WaitDeviceRecovery: Pausing for 5000 for 192.168.137.14:5555 to recover
+01-22 12:00:38 I/NativeDeviceStateMonitor: Device 192.168.137.14:5555 is already ONLINE
+01-22 12:00:38 I/NativeDeviceStateMonitor: Waiting 30000 ms for device 192.168.137.14:5555 shell to be responsive
+01-22 12:00:38 I/NativeDeviceStateMonitor: shell ready. id output: uid=2000(shell) gid=2000(shell) groups=2000(shell),1004(input),1007(log),1011(adb),1015(sdcard_rw),1028(sdcard_r),1078(ext_data_rw),1079(ext_obb_rw),3001(net_bt_admin),3002(net_bt),3003(inet),3006(net_bw_stats),3009(readproc),3011(uhid),3012(readtracefs) context=u:r:shell:s0
+
+01-22 12:00:38 I/NativeDeviceStateMonitor: Device 192.168.137.14:5555 is already ONLINE
+01-22 12:00:38 I/NativeDeviceStateMonitor: Waiting 240000 ms for device 192.168.137.14:5555 boot complete
+01-22 12:00:38 I/DeviceStateMonitor: Waiting 239928 ms for device 192.168.137.14:5555 package manager
+01-22 12:00:38 I/NativeDeviceStateMonitor: Waiting 239832 ms for device 192.168.137.14:5555 external store
+01-22 12:00:38 I/NativeDeviceStateMonitor: Device 192.168.137.14:5555 is already ONLINE
+01-22 12:00:38 D/NativeDevice: postBootSetup started
+01-22 12:00:38 I/NativeDevice: adb root on device 192.168.137.14:5555
+01-22 12:00:38 D/RunUtil: Running command [adb, -s, 192.168.137.14:5555, root] with timeout: 2m 0s
+01-22 12:00:39 I/NativeDeviceStateMonitor: Waiting for device 192.168.137.14:5555 to be in NOT_AVAILABLE mode for '2s'; it is currently in ONLINE mode...
+01-22 12:00:40 D/BackgroundDeviceAction: com.android.ddmlib.AdbCommandRejectedException while running logcat on 192.168.137.14:5555. May see duplicated content in log.
+01-22 12:00:40 D/BackgroundDeviceAction: Waiting for device 192.168.137.14:5555 online before starting.
+01-22 12:00:40 D/BackgroundDeviceAction: Device 192.168.137.14:5555 now online.
+01-22 12:00:40 D/BackgroundDeviceAction: Sleep for 5000 before starting logcat for 192.168.137.14:5555.
+01-22 12:00:41 W/NativeDevice: Did not detect device 192.168.137.14:5555 becoming unavailable after root
+01-22 12:00:41 D/RunUtil: Running command [adb, -s, 192.168.137.14:5555, shell, getprop, ro.build.version.sdk] with timeout: 45s
+01-22 12:00:41 I/TestDevice: Attempting to disable keyguard on 192.168.137.14:5555 using wm dismiss-keyguard
+01-22 12:00:41 I/TestDevice: output of wm dismiss-keyguard: 
+01-22 12:00:41 D/NativeDevice: postBootSetup done: 2s
+01-22 12:00:41 I/NativeDevice: Recovery successful for 192.168.137.14:5555
+01-22 12:00:41 W/NativeDevice: 'adb unroot' on 192.168.137.14:5555 unsuccessful on attempt 2 of 3. Output: ''
+01-22 12:00:41 D/RunUtil: Running command [adb, -s, 192.168.137.14:5555, unroot] with timeout: 2m 0s
+01-22 12:00:44 W/NativeDevice: Command exited with status: FAILED
+01-22 12:00:44 W/NativeDevice: Command stdout:
+restarting adbd as non root
+
+
+01-22 12:00:44 W/NativeDevice: Command stderr:
+timeout expired while waiting for device
+
+
+01-22 12:00:44 I/NativeDeviceStateMonitor: Waiting for device 192.168.137.14:5555 to be in NOT_AVAILABLE mode for '5s'; it is currently in ONLINE mode...
+01-22 12:00:45 D/BackgroundDeviceAction: Waiting for device 192.168.137.14:5555 online before starting.
+01-22 12:00:45 D/BackgroundDeviceAction: Device 192.168.137.14:5555 now online.
+01-22 12:00:45 D/BackgroundDeviceAction: Starting logcat for 192.168.137.14:5555.
+01-22 12:00:49 W/NativeDevice: Did not detect device 192.168.137.14:5555 becoming unavailable after unroot
+01-22 12:00:49 D/RunUtil: Running command [adb, connect, 192.168.137.14:5555] with timeout: 20s
+01-22 12:00:49 D/RemoteAndroidDevice: adb connect output: status: SUCCESS stdout: already connected to 192.168.137.14:5555
+
+01-22 12:00:49 D/RunUtil: Running command [adb, connect, 192.168.137.14:5555] with timeout: 20s
+01-22 12:00:49 D/RemoteAndroidDevice: adb connect confirmed:
+stdout: already connected to 192.168.137.14:5555
+
+
+01-22 12:00:49 I/RemoteAndroidDevice: Waiting 120000 ms for adb connection.
+01-22 12:00:49 D/RunUtil: Running command [adb, connect, 192.168.137.14:5555] with timeout: 20s
+01-22 12:00:49 D/RemoteAndroidDevice: adb connect confirmed:
+stdout: already connected to 192.168.137.14:5555
+
+
+01-22 12:00:49 D/RemoteAndroidDevice: Adb connection confirmed.
+01-22 12:00:49 I/NativeDeviceStateMonitor: Device 192.168.137.14:5555 is already ONLINE
+01-22 12:00:49 W/NativeDevice: AdbCommandRejectedException (device offline) when attempting shell id on device 192.168.137.14:5555
+01-22 12:00:49 I/RemoteAndroidDevice: Reconnecting to 192.168.137.14:5555 for recovery
+01-22 12:00:49 D/RunUtil: Running command [adb, connect, 192.168.137.14:5555] with timeout: 20s
+01-22 12:00:49 D/RemoteAndroidDevice: adb connect output: status: SUCCESS stdout: already connected to 192.168.137.14:5555
+
+01-22 12:00:49 D/RunUtil: Running command [adb, connect, 192.168.137.14:5555] with timeout: 20s
+01-22 12:00:49 D/RemoteAndroidDevice: adb connect confirmed:
+stdout: already connected to 192.168.137.14:5555
+
+
+01-22 12:00:49 I/RemoteAndroidDevice: Waiting 120000 ms for adb connection.
+01-22 12:00:49 D/RunUtil: Running command [adb, connect, 192.168.137.14:5555] with timeout: 20s
+01-22 12:00:49 D/RemoteAndroidDevice: adb connect confirmed:
+stdout: already connected to 192.168.137.14:5555
+
+
+01-22 12:00:49 D/RemoteAndroidDevice: Adb connection confirmed.
+01-22 12:00:49 I/NativeDevice: Attempting recovery on 192.168.137.14:5555
+01-22 12:00:49 I/WaitDeviceRecovery: Pausing for 5000 for 192.168.137.14:5555 to recover
+01-22 12:00:54 I/NativeDeviceStateMonitor: Device 192.168.137.14:5555 is already ONLINE
+01-22 12:00:54 I/NativeDeviceStateMonitor: Waiting 30000 ms for device 192.168.137.14:5555 shell to be responsive
+01-22 12:00:54 I/NativeDeviceStateMonitor: shell ready. id output: uid=2000(shell) gid=2000(shell) groups=2000(shell),1004(input),1007(log),1011(adb),1015(sdcard_rw),1028(sdcard_r),1078(ext_data_rw),1079(ext_obb_rw),3001(net_bt_admin),3002(net_bt),3003(inet),3006(net_bw_stats),3009(readproc),3011(uhid),3012(readtracefs) context=u:r:shell:s0
+
+01-22 12:00:54 I/NativeDeviceStateMonitor: Device 192.168.137.14:5555 is already ONLINE
+01-22 12:00:54 I/NativeDeviceStateMonitor: Waiting 240000 ms for device 192.168.137.14:5555 boot complete
+01-22 12:00:54 I/DeviceStateMonitor: Waiting 239929 ms for device 192.168.137.14:5555 package manager
+01-22 12:00:55 D/BackgroundDeviceAction: com.android.ddmlib.AdbCommandRejectedException while running logcat on 192.168.137.14:5555. May see duplicated content in log.
+01-22 12:00:55 D/BackgroundDeviceAction: Waiting for device 192.168.137.14:5555 online before starting.
+01-22 12:00:55 D/BackgroundDeviceAction: Device 192.168.137.14:5555 now online.
+01-22 12:00:55 D/BackgroundDeviceAction: Sleep for 5000 before starting logcat for 192.168.137.14:5555.
+01-22 12:00:55 I/NativeDeviceStateMonitor: Waiting 239832 ms for device 192.168.137.14:5555 external store
+01-22 12:00:55 I/NativeDeviceStateMonitor: Device 192.168.137.14:5555 is already ONLINE
+01-22 12:00:55 D/NativeDevice: postBootSetup started
+01-22 12:00:55 I/NativeDevice: adb root on device 192.168.137.14:5555
+01-22 12:00:55 D/RunUtil: Running command [adb, -s, 192.168.137.14:5555, root] with timeout: 2m 0s
+01-22 12:00:55 I/NativeDeviceStateMonitor: Waiting for device 192.168.137.14:5555 to be in NOT_AVAILABLE mode for '2s'; it is currently in ONLINE mode...
+01-22 12:00:57 W/NativeDevice: Did not detect device 192.168.137.14:5555 becoming unavailable after root
+01-22 12:00:58 D/RunUtil: Running command [adb, -s, 192.168.137.14:5555, shell, getprop, ro.build.version.sdk] with timeout: 45s
+01-22 12:00:58 I/TestDevice: Attempting to disable keyguard on 192.168.137.14:5555 using wm dismiss-keyguard
+01-22 12:00:58 I/TestDevice: output of wm dismiss-keyguard: 
+01-22 12:00:58 D/NativeDevice: postBootSetup done: 2s
+01-22 12:00:58 I/NativeDevice: Recovery successful for 192.168.137.14:5555
+01-22 12:00:58 W/NativeDevice: 'adb unroot' on 192.168.137.14:5555 unsuccessful on attempt 3 of 3. Output: 'restarting adbd as non root
+'
+01-22 12:00:58 I/NativeDeviceStateMonitor: Device 192.168.137.14:5555 is already ONLINE
+01-22 12:00:58 I/NativeDeviceStateMonitor: Waiting 360000 ms for device 192.168.137.14:5555 boot complete
+01-22 12:00:58 I/DeviceStateMonitor: Waiting 359924 ms for device 192.168.137.14:5555 package manager
+01-22 12:00:58 I/NativeDeviceStateMonitor: Waiting 359827 ms for device 192.168.137.14:5555 external store
+01-22 12:00:59 D/RunUtil: Running command [adb, -s, 192.168.137.14:5555, shell, getprop, ro.build.version.sdk] with timeout: 45s
+01-22 12:00:59 D/RunUtil: Running command [adb, -s, 192.168.137.14:5555, shell, getprop, persist.sys.boot.reason.history] with timeout: 45s
+01-22 12:00:59 W/NativeDevice: There is no reboot history since 1767777807000
+01-22 12:00:59 E/ModuleDefinition: Detected a soft-restart after module arm64-v8a VtsHalSensorManagerV1_0TargetTest
+01-22 12:00:59 I/ConsoleReporter: [192.168.137.14:5555] Starting arm64-v8a VtsHalSensorManagerV1_0TargetTest with 4 tests
+01-22 12:00:59 I/ConsoleReporter: [1/4 arm64-v8a VtsHalSensorManagerV1_0TargetTest 192.168.137.14:5555] PerInstance/SensorManagerTest#List/0_default pass
+01-22 12:00:59 I/ConsoleReporter: [2/4 arm64-v8a VtsHalSensorManagerV1_0TargetTest 192.168.137.14:5555] PerInstance/SensorManagerTest#Ashmem/0_default pass
+01-22 12:00:59 I/ConsoleReporter: [3/4 arm64-v8a VtsHalSensorManagerV1_0TargetTest 192.168.137.14:5555] PerInstance/SensorManagerTest#GetDefaultAccelerometer/0_default pass
+01-22 12:00:59 I/ConsoleReporter: [4/4 arm64-v8a VtsHalSensorManagerV1_0TargetTest 192.168.137.14:5555] PerInstance/SensorManagerTest#Accelerometer/0_default ignore
+01-22 12:00:59 I/ConsoleReporter: [192.168.137.14:5555] arm64-v8a VtsHalSensorManagerV1_0TargetTest completed in 51s. 3 passed, 0 failed, 0 not executed
+01-22 12:00:59 I/ITestSuite: Running system status checker after module execution: arm64-v8a VtsHalSensorManagerV1_0TargetTest
+01-22 12:00:59 D/FileUtil: Creating temp file at /home/btm5rt/jenkins/RT-C-008FN/SMI240-rpi4-arm64-spi-android/workspace/sch-MEMS-Android-HAL_development/build/SMI240/out_hal/android13/aidl/host/linux-x86/vts/android-vts/results/2026.01.22_11.54.56/proto with prefix "tmp-proto" suffix ""
+01-22 12:00:59 D/PrettyPrintDelimiter: 
+=============================
+===== TEST PHASE ENDING =====
+=============================
+01-22 12:00:59 D/LogFileSaver: Log data for device_logcat_test_192.168.137.14:5555 is already compressed, skipping compression
+01-22 12:00:59 D/FileUtil: Creating temp file at /home/btm5rt/jenkins/RT-C-008FN/SMI240-rpi4-arm64-spi-android/workspace/sch-MEMS-Android-HAL_development/build/SMI240/out_hal/android13/aidl/host/linux-x86/vts/android-vts/logs/2026.01.22_11.54.56/inv_3804635204491146681 with prefix "device_logcat_test_192.168.137.14:5555_" suffix ".txt"
+01-22 12:00:59 I/LogFileSaver: Saved log file /home/btm5rt/jenkins/RT-C-008FN/SMI240-rpi4-arm64-spi-android/workspace/sch-MEMS-Android-HAL_development/build/SMI240/out_hal/android13/aidl/host/linux-x86/vts/android-vts/logs/2026.01.22_11.54.56/inv_3804635204491146681/device_logcat_test_192.168.137.14:5555_10005608607459448318.txt. [size=15143310, elapsed=21ms]
+01-22 12:00:59 D/CertificationSuiteResultReporter: Saved logs for device_logcat_test_192.168.137.14:5555 in /home/btm5rt/jenkins/RT-C-008FN/SMI240-rpi4-arm64-spi-android/workspace/sch-MEMS-Android-HAL_development/build/SMI240/out_hal/android13/aidl/host/linux-x86/vts/android-vts/logs/2026.01.22_11.54.56/inv_3804635204491146681/device_logcat_test_192.168.137.14:5555_10005608607459448318.txt
+01-22 12:00:59 D/LogFileSaver: Log data for device_logcat_test_192.168.137.14:5555 is already compressed, skipping compression
+01-22 12:00:59 D/FileUtil: Creating temp file at /tmp/eng.she2rt.20250514.110827/vts-bosch/inv_18433047322957939324/inv_17069590350201713958 with prefix "device_logcat_test_192.168.137.14:5555_" suffix ".txt"
+01-22 12:00:59 I/LogFileSaver: Saved log file /tmp/eng.she2rt.20250514.110827/vts-bosch/inv_18433047322957939324/inv_17069590350201713958/device_logcat_test_192.168.137.14:5555_7963162928578618176.txt. [size=15143310, elapsed=15ms]
+01-22 12:00:59 I/CommandInterrupter: Interrupt blocked
+01-22 12:00:59 D/FileUtil: Creating temp file at /home/btm5rt/jenkins/RT-C-008FN/SMI240-rpi4-arm64-spi-android/workspace/sch-MEMS-Android-HAL_development/build/SMI240/out_hal/android13/aidl/host/linux-x86/vts/android-vts/logs/2026.01.22_11.54.56/inv_3804635204491146681 with prefix "executeShellCommandLog_192.168.137.14:5555_" suffix ".txt.gz"
+01-22 12:00:59 I/LogFileSaver: Saved gzip log file /home/btm5rt/jenkins/RT-C-008FN/SMI240-rpi4-arm64-spi-android/workspace/sch-MEMS-Android-HAL_development/build/SMI240/out_hal/android13/aidl/host/linux-x86/vts/android-vts/logs/2026.01.22_11.54.56/inv_3804635204491146681/executeShellCommandLog_192.168.137.14:5555_12558421381621701987.txt.gz. [size=10, elapsed=1ms]
+01-22 12:00:59 D/CertificationSuiteResultReporter: Saved logs for executeShellCommandLog_192.168.137.14:5555 in /home/btm5rt/jenkins/RT-C-008FN/SMI240-rpi4-arm64-spi-android/workspace/sch-MEMS-Android-HAL_development/build/SMI240/out_hal/android13/aidl/host/linux-x86/vts/android-vts/logs/2026.01.22_11.54.56/inv_3804635204491146681/executeShellCommandLog_192.168.137.14:5555_12558421381621701987.txt.gz
+01-22 12:00:59 D/FileUtil: Creating temp file at /tmp/eng.she2rt.20250514.110827/vts-bosch/inv_18433047322957939324/inv_17069590350201713958 with prefix "executeShellCommandLog_192.168.137.14:5555_" suffix ".txt.gz"
+01-22 12:00:59 I/LogFileSaver: Saved gzip log file /tmp/eng.she2rt.20250514.110827/vts-bosch/inv_18433047322957939324/inv_17069590350201713958/executeShellCommandLog_192.168.137.14:5555_2310104466739193237.txt.gz. [size=10, elapsed=1ms]
+01-22 12:00:59 D/TestInvocation: Checking that devices are online.
+01-22 12:00:59 I/NativeDeviceStateMonitor: Device 192.168.137.14:5555 is already ONLINE
+01-22 12:00:59 I/NativeDeviceStateMonitor: Waiting 360000 ms for device 192.168.137.14:5555 boot complete
+01-22 12:00:59 I/DeviceStateMonitor: Waiting 359923 ms for device 192.168.137.14:5555 package manager
+01-22 12:00:59 I/NativeDeviceStateMonitor: Waiting 359822 ms for device 192.168.137.14:5555 external store
+01-22 12:00:59 D/InvocationExecution: starting tearDown 'com.android.compatibility.common.tradefed.targetprep.DeviceInfoCollector@1f5885b0' on device: '192.168.137.14:5555'
+01-22 12:00:59 D/InvocationExecution: done with tearDown 'com.android.compatibility.common.tradefed.targetprep.DeviceInfoCollector@1f5885b0' on device: '192.168.137.14:5555' in 5 ms
+01-22 12:00:59 D/InvocationExecution: starting tearDown 'com.android.compatibility.common.tradefed.targetprep.VtsDeviceInfoCollector@ad5b3a5' on device: '192.168.137.14:5555'
+01-22 12:00:59 D/InvocationExecution: done with tearDown 'com.android.compatibility.common.tradefed.targetprep.VtsDeviceInfoCollector@ad5b3a5' on device: '192.168.137.14:5555' in 9 ms
+01-22 12:00:59 D/TestDevice: Uninstalling android.tradefed.contentprovider with extra args 
+01-22 12:01:00 D/BackgroundDeviceAction: Waiting for device 192.168.137.14:5555 online before starting.
+01-22 12:01:00 D/BackgroundDeviceAction: Device 192.168.137.14:5555 now online.
+01-22 12:01:00 D/BackgroundDeviceAction: Starting logcat for 192.168.137.14:5555.
+01-22 12:01:00 D/RunUtil: Running command [id, -u, btm5rt] with timeout: 1m 0s
+01-22 12:01:00 D/RunUtil: Running command [tail, -c, 10MB, /tmp/adb.1914105774.log] with timeout: 1m 0s
+01-22 12:01:00 D/LogFileSaver: Log data for host_adb_log is already compressed, skipping compression
+01-22 12:01:00 D/FileUtil: Creating temp file at /home/btm5rt/jenkins/RT-C-008FN/SMI240-rpi4-arm64-spi-android/workspace/sch-MEMS-Android-HAL_development/build/SMI240/out_hal/android13/aidl/host/linux-x86/vts/android-vts/logs/2026.01.22_11.54.56/inv_3804635204491146681 with prefix "host_adb_log_" suffix ".txt"
+01-22 12:01:00 I/LogFileSaver: Saved log file /home/btm5rt/jenkins/RT-C-008FN/SMI240-rpi4-arm64-spi-android/workspace/sch-MEMS-Android-HAL_development/build/SMI240/out_hal/android13/aidl/host/linux-x86/vts/android-vts/logs/2026.01.22_11.54.56/inv_3804635204491146681/host_adb_log_6329219833699183092.txt. [size=22838, elapsed=0ms]
+01-22 12:01:00 D/CertificationSuiteResultReporter: Saved logs for host_adb_log in /home/btm5rt/jenkins/RT-C-008FN/SMI240-rpi4-arm64-spi-android/workspace/sch-MEMS-Android-HAL_development/build/SMI240/out_hal/android13/aidl/host/linux-x86/vts/android-vts/logs/2026.01.22_11.54.56/inv_3804635204491146681/host_adb_log_6329219833699183092.txt
+01-22 12:01:00 D/LogFileSaver: Log data for host_adb_log is already compressed, skipping compression
+01-22 12:01:00 D/FileUtil: Creating temp file at /tmp/eng.she2rt.20250514.110827/vts-bosch/inv_18433047322957939324/inv_17069590350201713958 with prefix "host_adb_log_" suffix ".txt"
+01-22 12:01:00 I/LogFileSaver: Saved log file /tmp/eng.she2rt.20250514.110827/vts-bosch/inv_18433047322957939324/inv_17069590350201713958/host_adb_log_9134920338231111239.txt. [size=22838, elapsed=0ms]
+01-22 12:01:00 D/LogFileSaver: Log data for device_logcat_teardown_192.168.137.14:5555 is already compressed, skipping compression
+01-22 12:01:00 D/FileUtil: Creating temp file at /home/btm5rt/jenkins/RT-C-008FN/SMI240-rpi4-arm64-spi-android/workspace/sch-MEMS-Android-HAL_development/build/SMI240/out_hal/android13/aidl/host/linux-x86/vts/android-vts/logs/2026.01.22_11.54.56/inv_3804635204491146681 with prefix "device_logcat_teardown_192.168.137.14:5555_" suffix ".txt"
+01-22 12:01:00 I/LogFileSaver: Saved log file /home/btm5rt/jenkins/RT-C-008FN/SMI240-rpi4-arm64-spi-android/workspace/sch-MEMS-Android-HAL_development/build/SMI240/out_hal/android13/aidl/host/linux-x86/vts/android-vts/logs/2026.01.22_11.54.56/inv_3804635204491146681/device_logcat_teardown_192.168.137.14:5555_18392993225590419103.txt. [size=86, elapsed=0ms]
+01-22 12:01:00 D/CertificationSuiteResultReporter: Saved logs for device_logcat_teardown_192.168.137.14:5555 in /home/btm5rt/jenkins/RT-C-008FN/SMI240-rpi4-arm64-spi-android/workspace/sch-MEMS-Android-HAL_development/build/SMI240/out_hal/android13/aidl/host/linux-x86/vts/android-vts/logs/2026.01.22_11.54.56/inv_3804635204491146681/device_logcat_teardown_192.168.137.14:5555_18392993225590419103.txt
+01-22 12:01:00 D/LogFileSaver: Log data for device_logcat_teardown_192.168.137.14:5555 is already compressed, skipping compression
+01-22 12:01:00 D/FileUtil: Creating temp file at /tmp/eng.she2rt.20250514.110827/vts-bosch/inv_18433047322957939324/inv_17069590350201713958 with prefix "device_logcat_teardown_192.168.137.14:5555_" suffix ".txt"
+01-22 12:01:00 I/LogFileSaver: Saved log file /tmp/eng.she2rt.20250514.110827/vts-bosch/inv_18433047322957939324/inv_17069590350201713958/device_logcat_teardown_192.168.137.14:5555_9642978513521662216.txt. [size=86, elapsed=0ms]
+01-22 12:01:00 D/BackgroundDeviceAction: com.android.ddmlib.TimeoutException while running logcat on 192.168.137.14:5555. May see duplicated content in log.
+01-22 12:01:00 D/BackgroundDeviceAction: Waiting for device 192.168.137.14:5555 online before starting.
+01-22 12:01:00 I/TestInvocation: Done stopping logcat for 192.168.137.14:5555
+01-22 12:01:00 D/CommandScheduler: TestDeviceState for releasing '192.168.137.14:5555(class com.android.tradefed.device.RemoteAndroidDevice)' is 'ONLINE'
+01-22 12:01:00 I/NativeDeviceStateMonitor: Waiting 30000 ms for device 192.168.137.14:5555 shell to be responsive
+01-22 12:01:00 I/NativeDeviceStateMonitor: shell ready. id output: uid=0(root) gid=0(root) groups=0(root),1004(input),1007(log),1011(adb),1015(sdcard_rw),1028(sdcard_r),1078(ext_data_rw),1079(ext_obb_rw),3001(net_bt_admin),3002(net_bt),3003(inet),3006(net_bw_stats),3009(readproc),3011(uhid),3012(readtracefs) context=u:r:su:s0
+
+01-22 12:01:00 D/CommandScheduler: Release map of the devices: {com.android.tradefed.device.RemoteAndroidDevice@1863fb7=AVAILABLE}
+01-22 12:01:00 W/NativeDevice: Attempting to stop logcat when not capturing for 192.168.137.14:5555

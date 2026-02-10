@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2023 Robert Bosch GmbH
+ * Copyright (C) 2026 Robert Bosch GmbH
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,29 +29,6 @@ static constexpr float DEFAULT_ACC_STDEV = 0.015f;     // m/s^2 (measured 0.08 /
 static constexpr float DEFAULT_MAG_STDEV = 0.1f;       // uT    (measured 0.7  / CDD 0.5)
 static constexpr float DEFAULT_GYRO_VAR = 1e-6;        // (rad/s)^2 / s
 static constexpr float DEFAULT_GYRO_BIAS_VAR = 1e-12;  // (rad/s)^2 / s (guessed)
-
-void CompositeSensorCore::activate(bool enable) {
-  for (const auto& sensor : mDependencyList) {
-    sensor->activateByType(mSensorData.type, enable);
-  }
-  mJustStarted = true;
-}
-
-bool CompositeSensorCore::readSensorTemperature(float* temperature) {
-  for (const auto& sensor : mDependencyList) {
-    if (sensor->readSensorTemperature(temperature)) {
-      return true;
-    }
-  }
-  return false;
-}
-
-void CompositeSensorCore::batch(int64_t samplingPeriodNs, int64_t maxReportLatencyNs) {
-  for (const auto& sensor : mDependencyList) {
-    sensor->batchByType(mSensorData.type, samplingPeriodNs, maxReportLatencyNs);
-  }
-  mSamplingPeriodNs = samplingPeriodNs;
-}
 
 static android::mat<float, 3, 3> crossMatrix(const android::vec<float, 3>& p, float diag) {
   android::mat<float, 3, 3> r;
@@ -86,7 +63,244 @@ static android::mat33_t scaleCovariance(const android::mat33_t& A, const android
   return APAt;
 }
 
-void CompositeSensorCore::checkState() {
+static android::vec3_t getOrthogonal(const android::vec3_t& v) {
+  android::vec3_t w;
+  if (fabsf(v[0]) <= fabsf(v[1]) && fabsf(v[0]) <= fabsf(v[2])) {
+    w[0] = 0.f;
+    w[1] = v[2];
+    w[2] = -v[1];
+  } else if (fabsf(v[1]) <= fabsf(v[2])) {
+    w[0] = v[2];
+    w[1] = 0.f;
+    w[2] = -v[0];
+  } else {
+    w[0] = v[1];
+    w[1] = -v[0];
+    w[2] = 0.f;
+  }
+  return normalize(w);
+}
+
+void CompositeSensorCore::init() {
+  mSensorData.range = mDependencyList[0]->getSensorData().range;
+  mSensorData.resolution = mDependencyList[0]->getSensorData().resolution;
+
+  batch(mSensorData.minDelayUs * 1000, 0);  // Set default batch parameters
+}
+
+void CompositeSensorCore::registerObserver(const std::shared_ptr<ISensorValues>& observer) {
+  std::lock_guard<std::mutex> lock(mMutex);
+  mObservers.push_back(observer);
+}
+
+void CompositeSensorCore::removeObserver(const std::shared_ptr<ISensorValues>& observer) {
+  std::lock_guard<std::mutex> lock(mMutex);
+  mObservers.erase(
+    std::remove_if(mObservers.begin(), mObservers.end(),
+                   [observer](const std::weak_ptr<ISensorValues>& obs) { return obs.lock() == observer; }),
+    mObservers.end());
+}
+
+void CompositeSensorCore::cleanAndCopyObservers(std::vector<std::weak_ptr<ISensorValues>>& observersCopy) {
+  mObservers.erase(std::remove_if(mObservers.begin(), mObservers.end(),
+                                  [&observersCopy](const std::weak_ptr<ISensorValues>& obs) {
+                                    std::shared_ptr<ISensorValues> sharedObs = obs.lock();
+                                    if (sharedObs) {
+                                      observersCopy.push_back(obs);
+                                      return false;
+                                    }
+                                    return true;
+                                  }),
+                   mObservers.end());
+}
+
+bool CompositeSensorCore::readSensorTemperature(float* temperature) {
+  for (const auto& sensor : mDependencyList) {
+    if (sensor->readSensorTemperature(temperature)) {
+      return true;
+    }
+  }
+  return false;
+}
+
+void CompositeSensorCore::batch(int64_t samplingPeriodNs, int64_t maxReportLatencyNs) {
+  {
+    std::lock_guard<std::mutex> lock(mMutex);
+    mSamplingPeriodNs = samplingPeriodNs;
+    mJustStarted = true;
+  }
+
+  for (const auto& sensor : mDependencyList) {
+    sensor->batchByType(mSensorData.type, samplingPeriodNs, maxReportLatencyNs);
+  }
+}
+
+void CompositeSensorCore::flush() {
+  for (const auto& sensor : mDependencyList) {
+    sensor->flush();
+  }
+}
+
+void CompositeSensorCore::updateValidTimestampFactor(int64_t odrNs) {
+  std::lock_guard<std::mutex> lock(mMutex);
+  const float factor = (mSamplingPeriodNs / odrNs) / (mSamplingPeriodNs / static_cast<float>(odrNs));
+  mMinValidDiffNs = mSamplingPeriodNs * std::max(factor * VALID_TIMESTAMP_FACTOR, MIN_VALID_TIMESTAMP_FACTOR);
+  ALOGD("CompositeSensorCore[%s]: Set check diff to %ld ns\n", mSensorData.sensorName.c_str(), mMinValidDiffNs);
+}
+
+CompositeSensor::CompositeSensor(const std::shared_ptr<SensorCore> accel, const std::shared_ptr<SensorCore> gyro,
+                                 std::function<SensorValues(const SensorValues&, const SensorValues&)> calcCallback)
+  : mCalcCallback(calcCallback) {
+  mSensorData.power = accel->getSensorData().power + gyro->getSensorData().power;
+
+  mDependencyList.push_back(accel);
+  mDependencyList.push_back(gyro);
+
+  mRunThread = std::thread(startThread, this);
+}
+
+CompositeSensor::~CompositeSensor() {
+  {
+    std::lock_guard<std::mutex> lock(mMutex);
+    mStopThread = true;
+  }
+  mWaitCV.notify_all();
+  mRunThread.join();
+}
+
+void CompositeSensor::activate(bool enable) {
+  {
+    std::lock_guard<std::mutex> lock(mMutex);
+    mAccValues.clear();
+    mGyroValues.clear();
+    mMetaValues.clear();
+    mJustStarted = true;
+  }
+
+  for (const auto& sensor : mDependencyList) {
+    if (enable) {
+      sensor->registerCompositeObserver(shared_from_this());
+    } else {
+      sensor->removeCompositeObserver(shared_from_this());
+    }
+  }
+
+  for (const auto& sensor : mDependencyList) {
+    sensor->activateByType(mSensorData.type, enable);
+  }
+}
+
+void CompositeSensor::startThread(CompositeSensor* sensor) { sensor->run(); }
+
+void CompositeSensor::run() {
+  std::unique_lock<std::mutex> lock(mMutex);
+  while (!mStopThread) {
+    mWaitCV.wait(
+      lock, [this] { return mStopThread || (!mAccValues.empty() && !mGyroValues.empty()) || !mMetaValues.empty(); });
+
+    if (mStopThread) break;
+
+    // Sync both queues
+    while (!mAccValues.empty() && !mGyroValues.empty()) {
+      const int64_t accelTime = mAccValues.front().timestamp;
+      const int64_t gyroTime = mGyroValues.front().timestamp;
+
+      if (accelTime < gyroTime - mSamplingPeriodNs / 2) {
+        mAccValues.pop_front();
+      } else if (gyroTime < accelTime - mSamplingPeriodNs / 2) {
+        mGyroValues.pop_front();
+      } else {
+        break;  // synced
+      }
+    }
+
+    const size_t minSize = std::min(mAccValues.size(), mGyroValues.size());
+
+    const std::vector<SensorValues> accValues({mAccValues.begin(), mAccValues.begin() + minSize});
+    const std::vector<SensorValues> gyroValues({mGyroValues.begin(), mGyroValues.begin() + minSize});
+    const std::vector<SensorValues> metaValues({mMetaValues.begin(), mMetaValues.end()});
+
+    mAccValues.erase(mAccValues.begin(), mAccValues.begin() + minSize);
+    mGyroValues.erase(mGyroValues.begin(), mGyroValues.begin() + minSize);
+    mMetaValues.clear();
+
+    if ((minSize == 0) && metaValues.empty()) {
+      continue;  // nothing to process
+    }
+
+    std::vector<std::weak_ptr<ISensorValues>> observersCopy;
+    cleanAndCopyObservers(observersCopy);
+    lock.unlock();  // allow update function to push new values while we are processing
+
+    std::vector<SensorValues> values;
+
+    for (size_t i = 0; i < minSize; ++i) {
+      const SensorValues result = mCalcCallback(accValues[i], gyroValues[i]);
+      values.push_back(result);
+    }
+
+    for (const auto& meta : metaValues) {
+      values.push_back(meta);
+    }
+
+    for (const auto& obs : observersCopy) {
+      if (auto observerPtr = obs.lock()) {
+        observerPtr->update(values);
+      }
+    }
+
+    lock.lock();
+  }
+}
+
+void CompositeSensor::update(const std::vector<SensorValues>& values) {
+  std::lock_guard<std::mutex> lock(mMutex);
+
+  for (const auto& value : values) {
+    if (value.type == BoschSensorType::ACCEL) {
+      if (value.flushRequest) {
+        mAccelFlushRequestCount++;
+      } else {
+        const int64_t timeDiff = value.timestamp - mLastAccTimestampNs;
+        if (timeDiff >= mMinValidDiffNs) {
+          if (mAccValues.size() >= MAX_QUEUE_SIZE) {
+            mAccValues.pop_front();
+          }
+          mAccValues.push_back(value);
+          mLastAccTimestampNs = value.timestamp;
+        }
+      }
+    } else if (value.type == BoschSensorType::GYRO) {
+      if (value.flushRequest) {
+        mGyroFlushRequestCount++;
+      } else {
+        const int64_t timeDiff = value.timestamp - mLastGyroTimestampNs;
+        if (timeDiff >= mMinValidDiffNs) {
+          if (mGyroValues.size() >= MAX_QUEUE_SIZE) {
+            mGyroValues.pop_front();
+          }
+          mGyroValues.push_back(value);
+          mLastGyroTimestampNs = value.timestamp;
+        }
+      }
+    }
+  }
+
+  if ((mAccelFlushRequestCount > 0) && (mGyroFlushRequestCount > 0)) {
+    SensorValues metaData{};
+    metaData.type = BoschSensorType::META_DATA;
+    metaData.flushRequest = true;
+    mMetaValues.push_back(metaData);
+    mAccelFlushRequestCount--;
+    mGyroFlushRequestCount--;
+  }
+
+  if ((!mAccValues.empty() && !mGyroValues.empty()) || !mMetaValues.empty()) {
+    mWaitCV.notify_all();
+  }
+}
+
+void CompositeSensor::checkState() {
   // P needs to stay positive semidefinite or the fusion diverges. When we
   // detect divergence, we reset the fusion.
   // TODO(braun): Instead, find the reason for the divergence and fix it.
@@ -96,7 +310,7 @@ void CompositeSensorCore::checkState() {
   }
 }
 
-android::mat<float, 3, 4> CompositeSensorCore::getF(const android::vec4_t& q) {
+android::mat<float, 3, 4> CompositeSensor::getF(const android::vec4_t& q) {
   android::mat<float, 3, 4> F;
 
   // This is used to compute the derivative of q
@@ -118,7 +332,7 @@ android::mat<float, 3, 4> CompositeSensorCore::getF(const android::vec4_t& q) {
   return F;
 }
 
-void CompositeSensorCore::predict(const android::vec3_t& w, float dT) {
+void CompositeSensor::predict(const android::vec3_t& w, float dT) {
   const android::vec4_t q = mX0;
   const android::vec3_t b = mX1;
   android::vec3_t we = w - b;
@@ -186,7 +400,7 @@ void CompositeSensorCore::predict(const android::vec3_t& w, float dT) {
   checkState();
 }
 
-void CompositeSensorCore::update(const android::vec3_t& z, const android::vec3_t& Bi, float sigma) {
+void CompositeSensor::updateFusion(const android::vec3_t& z, const android::vec3_t& Bi, float sigma) {
   android::vec4_t q(mX0);
   // measured vector in body space: h(p) = A(p)*Bi
   const android::mat33_t A(quatToMatrix(q));
@@ -232,26 +446,12 @@ void CompositeSensorCore::update(const android::vec3_t& z, const android::vec3_t
   checkState();
 }
 
-android::vec3_t getOrthogonal(const android::vec3_t& v) {
-  android::vec3_t w;
-  if (fabsf(v[0]) <= fabsf(v[1]) && fabsf(v[0]) <= fabsf(v[2])) {
-    w[0] = 0.f;
-    w[1] = v[2];
-    w[2] = -v[1];
-  } else if (fabsf(v[1]) <= fabsf(v[2])) {
-    w[0] = v[2];
-    w[1] = 0.f;
-    w[2] = -v[0];
-  } else {
-    w[0] = v[1];
-    w[1] = -v[0];
-    w[2] = 0.f;
-  }
-  return normalize(w);
-}
-
-void CompositeSensorCore::initFusion(const android::vec4_t& q) {
+void CompositeSensor::initFusion(const android::vec4_t& q) {
   if (mGyroVar == 0) mGyroVar = DEFAULT_GYRO_VAR;
+
+  mPhi[0][1] = 0;
+  mPhi[1][1] = 1;
+
   mBa.x = 0;
   mBa.y = 0;
   mBa.z = 1;
@@ -296,30 +496,32 @@ void CompositeSensorCore::initFusion(const android::vec4_t& q) {
   mP = 0;
 }
 
-void CompositeSensorCore::initRodrParams(const android::vec3_t& acc) {
+void CompositeSensor::initRodrParams(const android::vec3_t& acc) {
   android::mat33_t R;
   android::vec3_t up(normalize(acc));
   android::vec3_t east(getOrthogonal(up));
   android::vec3_t north(cross_product(up, east));
   R << east << north << up;
-  CompositeSensorCore::initFusion(android::matrixToQuat(R));
+  initFusion(android::matrixToQuat(R));
 }
 
-SensorValues CompositeSensorCore::calculateGravity(std::vector<SensorValues> accValues,
-                                                   std::vector<SensorValues> gyroValues) {
+SensorValues CompositeSensor::calculateGravity(const SensorValues& accValues, const SensorValues& gyroValues) {
   android::vec3_t pulse;
   android::vec3_t accel;
   android::vec3_t g;
   float deltaTime;
   SensorValues result;
 
-  accel.x = accValues[0].data[0];
-  accel.y = accValues[0].data[1];
-  accel.z = accValues[0].data[2];
+  accel.x = accValues.data[0];
+  accel.y = accValues.data[1];
+  accel.z = accValues.data[2];
 
-  if (mJustStarted) {
-    CompositeSensorCore::initRodrParams(accel);
-    mJustStarted = false;
+  {
+    std::lock_guard<std::mutex> lock(mMutex);
+    if (mJustStarted) {
+      initRodrParams(accel);
+      mJustStarted = false;
+    }
   }
 
   const float l = android::length(accel);
@@ -328,19 +530,19 @@ SensorValues CompositeSensorCore::calculateGravity(std::vector<SensorValues> acc
     const float l_inv = 1.0f / l;
     android::vec3_t m;
     m = android::quatToMatrix(mX0) * mBm;
-    update(m, mBm, DEFAULT_MAG_STDEV);
+    updateFusion(m, mBm, DEFAULT_MAG_STDEV);
     android::vec3_t unityA = accel * l_inv;
     const float d = sqrtf(fabsf(l - NOMINAL_GRAVITY));
     const float p = l_inv * DEFAULT_ACC_STDEV * expf(d);
 
-    update(unityA, mBa, p);
+    updateFusion(unityA, mBa, p);
   }
 
-  pulse.x = gyroValues[0].data[0];
-  pulse.y = gyroValues[0].data[1];
-  pulse.z = gyroValues[0].data[2];
-  deltaTime = gyroValues[0].timestamp - mLastTimestamp;
-  mLastTimestamp = gyroValues[0].timestamp;
+  pulse.x = gyroValues.data[0];
+  pulse.y = gyroValues.data[1];
+  pulse.z = gyroValues.data[2];
+  deltaTime = gyroValues.timestamp - mLastTimestamp;
+  mLastTimestamp = gyroValues.timestamp;
 
   predict(pulse, deltaTime / 1e9f);
 
@@ -350,52 +552,128 @@ SensorValues CompositeSensorCore::calculateGravity(std::vector<SensorValues> acc
   result.data.push_back(g.x);
   result.data.push_back(g.y);
   result.data.push_back(g.z);
-  result.timestamp = mLastTimestamp;
+  result.timestamp = (accValues.timestamp + gyroValues.timestamp) / 2;
 
   return result;
 }
 
-// TODO: use proper sensor fusion algorithm
-std::vector<SensorValues> LinearAcceleration::readSensorValues() {
-  std::vector<SensorValues> accValues{};
-  std::vector<SensorValues> gyroValues{};
-  SensorValues result;
-  std::vector<SensorValues> sensorValues{};
-  for (const auto& sensor : mDependencyList) {
-    if (sensor->getSensorData().type == BoschSensorType::ACCEL) {
-      accValues = sensor->readSensorValues();
-    } else if (sensor->getSensorData().type == BoschSensorType::GYRO) {
-      gyroValues = sensor->readSensorValues();
-    }
-  }
-
-  result = calculateGravity(accValues, gyroValues);
-  accValues[0].data[0] -= result.data[0];
-  accValues[0].data[1] -= result.data[1];
-  accValues[0].data[2] -= result.data[2];
-
-  sensorValues.push_back(accValues[0]);
-
-  return sensorValues;
+LinearAcceleration::LinearAcceleration(const std::shared_ptr<SensorCore> accel, const std::shared_ptr<SensorCore> gyro)
+  : CompositeSensor(accel, gyro,
+                    std::bind(&LinearAcceleration::calc, this, std::placeholders::_1, std::placeholders::_2)) {
+  mSensorData.type = BoschSensorType::LINEAR_ACCEL;
 }
 
-// TODO: use proper sensor fusion algorithm
-std::vector<SensorValues> Gravity::readSensorValues() {
-  std::vector<SensorValues> accValues{};
-  std::vector<SensorValues> gyroValues{};
-  SensorValues result;
-  std::vector<SensorValues> sensorValues{};
+SensorValues LinearAcceleration::calc(const SensorValues& accValues, const SensorValues& gyroValues) {
+  SensorValues result = calculateGravity(accValues, gyroValues);
+  result.data[0] = accValues.data[0] - result.data[0];
+  result.data[1] = accValues.data[1] - result.data[1];
+  result.data[2] = accValues.data[2] - result.data[2];
+  result.type = BoschSensorType::LINEAR_ACCEL;
+  return result;
+}
+
+Gravity::Gravity(const std::shared_ptr<SensorCore> accel, const std::shared_ptr<SensorCore> gyro)
+  : CompositeSensor(accel, gyro, std::bind(&Gravity::calc, this, std::placeholders::_1, std::placeholders::_2)) {
+  mSensorData.type = BoschSensorType::GRAVITY;
+}
+
+SensorValues Gravity::calc(const SensorValues& accValues, const SensorValues& gyroValues) {
+  SensorValues result = calculateGravity(accValues, gyroValues);
+  result.type = BoschSensorType::GRAVITY;
+  return result;
+}
+
+Dummy::Dummy(const std::shared_ptr<SensorCore> base) {
+  mSensorData.minDelayUs = base->getSensorData().minDelayUs;
+  mSensorData.maxDelayUs = base->getSensorData().maxDelayUs;
+  mSensorData.power = base->getSensorData().power;
+  mSensorData.reportMode = base->getSensorData().reportMode;
+
+  mDependencyList.push_back(base);
+
+  mRunThread = std::thread(startThread, this);
+}
+
+Dummy::~Dummy() {
+  {
+    std::lock_guard<std::mutex> lock(mMutex);
+    mStopThread = true;
+  }
+  mWaitCV.notify_all();
+  mRunThread.join();
+}
+
+void Dummy::activate(bool enable) {
+  {
+    std::lock_guard<std::mutex> lock(mMutex);
+    mValues.clear();
+  }
+
   for (const auto& sensor : mDependencyList) {
-    if (sensor->getSensorData().type == BoschSensorType::ACCEL) {
-      accValues = sensor->readSensorValues();
-    } else if (sensor->getSensorData().type == BoschSensorType::GYRO) {
-      gyroValues = sensor->readSensorValues();
+    if (enable) {
+      sensor->registerCompositeObserver(shared_from_this());
+    } else {
+      sensor->removeCompositeObserver(shared_from_this());
     }
   }
 
-  result = calculateGravity(accValues, gyroValues);
+  for (const auto& sensor : mDependencyList) {
+    sensor->activateByType(mSensorData.type, enable);
+  }
+}
 
-  sensorValues.push_back(result);
+void Dummy::startThread(Dummy* sensor) { sensor->run(); }
 
-  return sensorValues;
+void Dummy::run() {
+  std::unique_lock<std::mutex> lock(mMutex);
+  while (!mStopThread) {
+    mWaitCV.wait(lock, [this] { return mStopThread || !mValues.empty(); });
+
+    if (mStopThread) break;
+
+    std::vector<SensorValues> values;
+    values.swap(mValues);
+
+    std::vector<std::weak_ptr<ISensorValues>> observersCopy;
+    cleanAndCopyObservers(observersCopy);
+    lock.unlock();
+
+    for (const auto& obs : observersCopy) {
+      if (auto observerPtr = obs.lock()) {
+        observerPtr->update(values);
+      }
+    }
+
+    lock.lock();
+  }
+}
+
+void Dummy::update(const std::vector<SensorValues>& values) {
+  std::lock_guard<std::mutex> lock(mMutex);
+
+  for (const auto& value : values) {
+    if (value.flushRequest) {
+      SensorValues metaData{};
+      metaData.type = BoschSensorType::META_DATA;
+      metaData.flushRequest = true;
+      mValues.push_back(metaData);
+    } else {
+      const int64_t timeDiff = value.timestamp - mLastTimestampNs;
+      if (timeDiff >= mMinValidDiffNs) {
+        SensorValues val{value};
+        if (mSensorData.type == BoschSensorType::GYRO_UNCALIBRATED) {
+          for (auto& data : val.data) {
+            data += mSensorData.resolution;
+          }
+        }
+        val.type = mSensorData.type;
+        mValues.push_back(val);
+        mLastTimestampNs = value.timestamp;
+      }
+    }
+  }
+
+  if (!mValues.empty()) {
+    mWaitCV.notify_all();
+  }
 }

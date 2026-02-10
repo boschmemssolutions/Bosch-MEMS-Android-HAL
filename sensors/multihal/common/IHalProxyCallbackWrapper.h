@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2023 The Android Open Source Project
+ * Copyright (C) 2020 The Android Open Source Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,11 +28,10 @@ namespace subhal {
 namespace implementation {
 
 /**
- * The following callback wrapper classes abstract away common functionality
- * across V2.0 and V2.1 interfaces. Much of the logic is common between the two
- * versions and this allows users of the classes to only care about the type
- * used at initialization and then interact with either version of the callback
- * interface without worrying about the type.
+ * The following callback wrapper classes abstract away common functionality across V2.0 and V2.1
+ * interfaces. Much of the logic is common between the two versions and this allows users of the
+ * classes to only care about the type used at initialization and then interact with either version
+ * of the callback interface without worrying about the type.
  */
 class IHalProxyCallbackWrapperBase {
 protected:

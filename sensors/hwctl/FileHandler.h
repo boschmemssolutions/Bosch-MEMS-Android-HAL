@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2023 Robert Bosch GmbH
+ * Copyright (C) 2024-2026 Robert Bosch GmbH
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,7 +19,6 @@
 #include <array>
 #include <fstream>
 #include <memory>
-#include <mutex>
 #include <string>
 #include <vector>
 
@@ -27,40 +26,44 @@ namespace bosch::hwctl {
 
 class ReadHandler {
 public:
-  ReadHandler(const std::string& path, const std::string& file);
-  ~ReadHandler();
+  ReadHandler(const std::string& path, const std::string& file) noexcept;
+  ~ReadHandler() noexcept = default;
 
-  int read(std::string& result);
+  int read(std::string& result) noexcept;
 
 private:
-  std::ifstream mFstream;
-  std::mutex mSysfsMutex;
+  std::string mFilePath;
 };
 
 class WriteHandler {
 public:
-  WriteHandler(const std::string& path, const std::string& file);
-  WriteHandler(const std::string& path, const std::string& file, const std::string& content);
-  ~WriteHandler();
+  WriteHandler(const std::string& path, const std::string& file) noexcept;
+  WriteHandler(const std::string& path, const std::string& file, const std::string& content) noexcept;
+  ~WriteHandler() noexcept = default;
 
-  int write(const std::string& content);
+  int write(const std::string& content) noexcept;
 
 private:
-  std::ofstream mFstream;
-  std::mutex mSysfsMutex;
+  std::string mFilePath;
 };
 
-class RawSysfsHandler {
+class WriteReadbackHandler {
 public:
-  void init(const std::string& path, const std::array<std::string, 3>& files);
-  int read(std::vector<float>& results, float resolution);
+  WriteReadbackHandler(const std::string& path, const std::string& file) noexcept;
+  WriteReadbackHandler(const std::string& path, const std::string& file, const std::string& content) noexcept;
+  ~WriteReadbackHandler() noexcept = default;
+
+  int writeAndRead(const std::string& content) noexcept;
 
 private:
-  bool isValidInteger(const std::string& s) const;
-
-  std::vector<std::unique_ptr<ReadHandler>> mFileHandlers{};
+  std::string mPath;
+  std::string mFile;
+  static constexpr int kMaxRetries = 5;
+  static constexpr useconds_t kRetryDelayUs = 1000;
 };
 
-bool isSensorAvailable(const std::string& driverName, std::string& device);
+bool isSensorAvailable(const std::string& driverName, int* deviceNum) noexcept;
+bool isTriggerAvailable(const std::string& triggerName, int* triggerNum) noexcept;
+int createDirectory(const std::string& path) noexcept;
 
 }  // namespace bosch::hwctl

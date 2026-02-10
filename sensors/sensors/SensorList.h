@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2023 Robert Bosch GmbH
+ * Copyright (C) 2024-2025 Robert Bosch GmbH
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,6 +24,7 @@
 #include "SMI240.h"
 #include "SMI330.h"
 #include "SensorCore.h"
+#include "SensorThread.h"
 
 namespace bosch {
 namespace sensors {
@@ -33,26 +34,36 @@ public:
   std::vector<std::shared_ptr<ISensorHal>> getAvailableSensors();
 
 private:
-  std::vector<std::shared_ptr<SensorCore>> mSensorList{std::make_shared<Smi330Acc>(),
-                                                       std::make_shared<Smi330Gyro>(),
-                                                       std::make_shared<Smi240Acc>(),
-                                                       std::make_shared<Smi240Gyro>(),
-                                                       std::make_shared<Smi230Acc>(),
-                                                       std::make_shared<Smi230Gyro>(),
-                                                       std::make_shared<Smi330AccUncalibrated>(),
-                                                       std::make_shared<Smi330GyroUncalibrated>(),
-                                                       std::make_shared<Smi240AccUncalibrated>(),
-                                                       std::make_shared<Smi240GyroUncalibrated>(),
-                                                       std::make_shared<Smi230AccUncalibrated>(),
-                                                       std::make_shared<Smi230GyroUncalibrated>()};
+  enum SensorThreadIndex { SMI330_THREAD, SMI240_THREAD, SMI230_ACC_THREAD, SMI230_GYRO_THREAD };
+  enum SensorCoreIndex { SMI330_ACC, SMI330_GYRO, SMI240_ACC, SMI240_GYRO, SMI230_ACC, SMI230_GYRO };
+
+  std::vector<std::shared_ptr<ISensorThread>> mSensorThread{
+    std::make_shared<SensorThreadCombined>(),  // SMI330_THREAD (ACC and GYRO combined)
+    std::make_shared<SensorThreadCombined>(),  // SMI240_THREAD (ACC and GYRO combined)
+    std::make_shared<SensorThreadSeparate>(),  // SMI230_ACC_THREAD
+    std::make_shared<SensorThreadSeparate>()   // SMI230_GYRO_THREAD
+  };
+
+  std::vector<std::shared_ptr<SensorCore>> mSensorList{std::make_shared<Smi330Acc>(mSensorThread[SMI330_THREAD]),
+                                                       std::make_shared<Smi330Gyro>(mSensorThread[SMI330_THREAD]),
+                                                       std::make_shared<Smi240Acc>(mSensorThread[SMI240_THREAD]),
+                                                       std::make_shared<Smi240Gyro>(mSensorThread[SMI240_THREAD]),
+                                                       std::make_shared<Smi230Acc>(mSensorThread[SMI230_ACC_THREAD]),
+                                                       std::make_shared<Smi230Gyro>(mSensorThread[SMI230_GYRO_THREAD])};
 
   std::vector<std::shared_ptr<CompositeSensorCore>> mCompositeSensorList{
-    std::make_shared<Smi330Gravity>(mSensorList[0], mSensorList[1]),
-    std::make_shared<Smi330LinearAcc>(mSensorList[0], mSensorList[1]),
-    std::make_shared<Smi240Gravity>(mSensorList[2], mSensorList[3]),
-    std::make_shared<Smi240LinearAcc>(mSensorList[2], mSensorList[3]),
-    std::make_shared<Smi230Gravity>(mSensorList[4], mSensorList[5]),
-    std::make_shared<Smi230LinearAcc>(mSensorList[4], mSensorList[5])};
+    std::make_shared<Smi330AccUncalibrated>(mSensorList[SMI330_ACC]),
+    std::make_shared<Smi330GyroUncalibrated>(mSensorList[SMI330_GYRO]),
+    std::make_shared<Smi330Gravity>(mSensorList[SMI330_ACC], mSensorList[SMI330_GYRO]),
+    std::make_shared<Smi330LinearAcc>(mSensorList[SMI330_ACC], mSensorList[SMI330_GYRO]),
+    std::make_shared<Smi240AccUncalibrated>(mSensorList[SMI240_ACC]),
+    std::make_shared<Smi240GyroUncalibrated>(mSensorList[SMI240_GYRO]),
+    std::make_shared<Smi240Gravity>(mSensorList[SMI240_ACC], mSensorList[SMI240_GYRO]),
+    std::make_shared<Smi240LinearAcc>(mSensorList[SMI240_ACC], mSensorList[SMI240_GYRO]),
+    std::make_shared<Smi230AccUncalibrated>(mSensorList[SMI230_ACC]),
+    std::make_shared<Smi230GyroUncalibrated>(mSensorList[SMI230_GYRO]),
+    std::make_shared<Smi230Gravity>(mSensorList[SMI230_ACC], mSensorList[SMI230_GYRO]),
+    std::make_shared<Smi230LinearAcc>(mSensorList[SMI230_ACC], mSensorList[SMI230_GYRO])};
 };
 
 }  // namespace sensors

@@ -1,0 +1,6 @@
+{
+  "input": {
+    "palm_rejection_enabled": false,
+    "velocitytracker_strategy": "default"
+  }
+}

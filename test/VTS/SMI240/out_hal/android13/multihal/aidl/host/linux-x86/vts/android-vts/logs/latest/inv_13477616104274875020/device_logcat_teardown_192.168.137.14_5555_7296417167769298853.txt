@@ -1,0 +1,341 @@
+
+========== beginning of new [logcat] output ==========
+--------- beginning of kernel
+01-01 00:00:00.000  root     0     0 I         : Booting Linux on physical CPU 0x0000000000 [0x410fd083]
+01-01 00:00:00.000  root     0     0 I         : Linux version 5.15.131-v8-g41e890d4dfe0-dirty-ab14 (root@RT-C-006JM) (aarch64-linux-gnu-gcc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0, GNU ld (GNU Binutils for Ubuntu) 2.38) #1 SMP PREEMPT Wed Dec 17 09:36:35 UTC 2025
+01-01 00:00:00.000  root     0     0 I random  : crng init done
+01-01 00:00:00.000  root     0     0 I Machine model: Raspberry Pi 4 Model B Rev 1.5
+01-01 00:00:00.000  root     0     0 I efi     : UEFI not found.
+01-01 00:00:00.000  root     0     0 I Reserved memory: created CMA memory pool at 0x000000000ec00000, size 512 MiB
+01-01 00:00:00.000  root     0     0 I OF      : reserved mem: initialized node linux,cma, compatible id shared-dma-pool
+01-01 00:00:00.000  root     0     0 I OF      : reserved mem: 0x000000000ec00000..0x000000002ebfffff (524288 KiB) map reusable linux,cma
+01-01 00:00:00.000  root     0     0 I OF      : reserved mem: 0x000000003f128d60..0x000000003f12915f (1 KiB) nomap non-reusable nvram@1
+01-01 00:00:00.000  root     0     0 I OF      : reserved mem: 0x000000003f1291a0..0x000000003f1291d5 (0 KiB) nomap non-reusable nvram@0
+01-01 00:00:00.000  root     0     0 I Zone ranges:  
+01-01 00:00:00.000  root     0     0 I         : DMA      [mem 0x0000000000000000-0x000000003fffffff]
+01-01 00:00:00.000  root     0     0 I         : DMA32    [mem 0x0000000040000000-0x00000000fbffffff]
+01-01 00:00:00.000  root     0     0 I         : Normal   empty
+01-01 00:00:00.000  root     0     0 I         : Movable zone start for each node
+01-01 00:00:00.000  root     0     0 I         : Early memory node ranges
+01-01 00:00:00.000  root     0     0 I node   0: [mem 0x0000000000000000-0x000000003b3fffff]
+01-01 00:00:00.000  root     0     0 I node   0: [mem 0x0000000040000000-0x00000000fbffffff]
+01-01 00:00:00.000  root     0     0 I         : Initmem setup node 0 [mem 0x0000000000000000-0x00000000fbffffff]
+01-01 00:00:00.000  root     0     0 I         : On node 0, zone DMA32: 19456 pages in unavailable ranges
+01-01 00:00:00.000  root     0     0 I         : On node 0, zone DMA32: 16384 pages in unavailable ranges
+01-01 00:00:00.000  root     0     0 I percpu  : Embedded 29 pages/cpu s80152 r8192 d30440 u118784
+01-01 00:00:00.000  root     0     0 D pcpu-alloc: s80152 r8192 d30440 u118784 alloc=29*4096
+01-01 00:00:00.000  root     0     0 D pcpu-alloc: [0] 0 [0] 1 [0] 2 [0] 3
+01-01 00:00:00.000  root     0     0 I         : Detected PIPT I-cache on CPU0
+01-01 00:00:00.000  root     0     0 I CPU features: detected: Spectre-v2
+01-01 00:00:00.000  root     0     0 I CPU features: detected: Spectre-v3a
+01-01 00:00:00.000  root     0     0 I CPU features: detected: Spectre-v4
+01-01 00:00:00.000  root     0     0 I CPU features: detected: Spectre-BHB
+01-01 00:00:00.000  root     0     0 I CPU features: kernel page table isolation forced ON by KASLR
+01-01 00:00:00.000  root     0     0 I CPU features: detected: Kernel page table isolation (KPTI)
+01-01 00:00:00.000  root     0     0 I CPU features: detected: ARM errata 1165522, 1319367, or 1530923
+01-01 00:00:00.000  root     0     0 I         : Built 1 zonelists, mobility grouping on.  Total pages: 996912
+01-01 00:00:00.000  root     0     0 I         : Kernel command line: coherent_pool=1M 8250.nr_uarts=1 snd_bcm2835.enable_compat_alsa=0 snd_bcm2835.enable_hdmi=1  smsc95xx.macaddr=D8:3A:DD:0C:30:83 vc_mem.mem_base=0x3ec00000 vc_mem.mem_size=0x40000000  console=ttyS0,115200 no_console_suspend root=/dev/ram0 rootwait androidboot.hardware=rpi4 androidboot.selinux=permissive androidboot.serialno=100000001845ae63 androidboot.btmacaddr=11:22:18:45:ae:63
+01-01 00:00:00.000  root     0     0 I         : Dentry cache hash table entries: 524288 (order: 10, 4194304 bytes, linear)
+01-01 00:00:00.000  root     0     0 I         : Inode-cache hash table entries: 262144 (order: 9, 2097152 bytes, linear)
+01-01 00:00:00.000  root     0     0 I mem auto-init: stack:off, heap alloc:off, heap free:off
+01-01 00:00:00.000  root     0     0 I         : software IO TLB: mapped [mem 0x0000000037400000-0x000000003b400000] (64MB)
+01-01 00:00:00.000  root     0     0 I Memory  : 3343652K/4050944K available (16640K kernel code, 2178K rwdata, 7572K rodata, 4864K init, 1365K bss, 183004K reserved, 524288K cma-reserved)
+01-01 00:00:00.000  root     0     0 I SLUB    : HWalign=64, Order=0-3, MinObjects=0, CPUs=4, Nodes=1
+01-01 00:00:00.000  root     0     0 I ftrace  : allocating 51391 entries in 201 pages
+01-01 00:00:00.000  root     0     0 I ftrace  : allocated 201 pages with 4 groups
+01-01 00:00:00.000  root     0     0 I         : trace event string verifier disabled
+01-01 00:00:00.000  root     0     0 I rcu     : Preemptible hierarchical RCU implementation.
+01-01 00:00:00.000  root     0     0 I rcu     : RCU event tracing is enabled.
+01-01 00:00:00.000  root     0     0 I rcu     : RCU restricting CPUs from NR_CPUS=256 to nr_cpu_ids=4.
+01-01 00:00:00.000  root     0     0 I         : Trampoline variant of Tasks RCU enabled.
+01-01 00:00:00.000  root     0     0 I         : Rude variant of Tasks RCU enabled.
+01-01 00:00:00.000  root     0     0 I         : Tracing variant of Tasks RCU enabled.
+01-01 00:00:00.000  root     0     0 I rcu     : RCU calculated value of scheduler-enlistment delay is 25 jiffies.
+01-01 00:00:00.000  root     0     0 I rcu     : Adjusting geometry for rcu_fanout_leaf=16, nr_cpu_ids=4
+01-01 00:00:00.000  root     0     0 I NR_IRQS : 64, nr_irqs: 64, preallocated irqs: 0
+01-01 00:00:00.000  root     0     0 I         : Root IRQ handler: gic_handle_irq
+01-01 00:00:00.000  root     0     0 I GIC     : Using split EOI/Deactivate mode
+01-01 00:00:00.000  root     0     0 I irq_brcmstb_l2: registered L2 intc (/soc/interrupt-controller@7ef00100, parent irq: 10)
+01-01 00:00:00.000  root     0     0 I kfence  : initialized - using 2097152 bytes for 255 objects at 0x(____ptrval____)-0x(____ptrval____)
+01-01 00:00:00.000  root     0     0 I arch_timer: cp15 timer(s) running at 54.00MHz (phys).
+01-01 00:00:00.000  root     0     0 I clocksource: arch_sys_counter: mask: 0xffffffffffffff max_cycles: 0xc743ce346, max_idle_ns: 440795203123 ns
+01-01 00:00:00.000  root     0     0 I sched_clock: 56 bits at 54MHz, resolution 18ns, wraps every 4398046511102ns
+01-01 00:00:00.000  root     0     0 I         : Calibrating delay loop (skipped), value calculated using timer frequency.. 108.00 BogoMIPS (lpj=216000)
+01-01 00:00:00.000  root     0     0 I pid_max : default: 32768 minimum: 301
+01-01 00:00:00.000  root     0     0 I LSM     : Security Framework initializing
+01-01 00:00:00.000  root     0     0 I SELinux : Initializing.
+01-01 00:00:00.000  root     0     0 I         : Mount-cache hash table entries: 8192 (order: 4, 65536 bytes, linear)
+01-01 00:00:00.000  root     0     0 I         : Mountpoint-cache hash table entries: 8192 (order: 4, 65536 bytes, linear)
+01-01 00:00:00.002  root     0     0 I cgroup  : Disabling memory control group subsystem
+01-01 00:00:00.006  root     0     0 I rcu     : Hierarchical SRCU implementation.
+01-01 00:00:00.007  root     0     0 I         : EFI services will not be available.
+01-01 00:00:00.008  root     0     0 I smp     : Bringing up secondary CPUs ...
+01-01 00:00:00.009  root     0     0 I         : Detected PIPT I-cache on CPU1
+01-01 00:00:00.009  root     0     0 I CPU1    : Booted secondary processor 0x0000000001 [0x410fd083]
+01-01 00:00:00.010  root     0     0 I         : Detected PIPT I-cache on CPU2
+01-01 00:00:00.011  root     0     0 I CPU2    : Booted secondary processor 0x0000000002 [0x410fd083]
+01-01 00:00:00.012  root     0     0 I         : Detected PIPT I-cache on CPU3
+01-01 00:00:00.012  root     0     0 I CPU3    : Booted secondary processor 0x0000000003 [0x410fd083]
+01-01 00:00:00.012  root     0     0 I smp     : Brought up 1 node, 4 CPUs
+01-01 00:00:00.012  root     0     0 I SMP     : Total of 4 processors activated.
+01-01 00:00:00.012  root     0     0 I CPU features: detected: 32-bit EL0 Support
+01-01 00:00:00.012  root     0     0 I CPU features: detected: 32-bit EL1 Support
+01-01 00:00:00.012  root     0     0 I CPU features: detected: CRC32 instructions
+01-01 00:00:00.013  root     0     0 I CPU features: emulated: Privileged Access Never (PAN) using TTBR0_EL1 switching
+01-01 00:00:00.060  root     0     0 I         : CPU: All CPU(s) started at EL2
+01-01 00:00:00.060  root     0     0 I alternatives: patching kernel code
+01-01 00:00:00.062  root     0     0 I devtmpfs: initialized
+01-01 00:00:00.074  root     0     0 I         : Enabled cp15_barrier support
+01-01 00:00:00.075  root     0     0 I         : Enabled setend support
+01-01 00:00:00.075  root     0     0 I         : KASLR enabled
+01-01 00:00:00.075  root     0     0 I clocksource: jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 7645041785100000 ns
+01-01 00:00:00.075  root     0     0 I         : futex hash table entries: 1024 (order: 4, 65536 bytes, linear)
+01-01 00:00:00.088  root     0     0 I pinctrl core: initialized pinctrl subsystem
+01-01 00:00:00.089  root     0     0 I         : DMI not present or invalid.
+01-01 00:00:00.090  root     0     0 I NET     : Registered PF_NETLINK/PF_ROUTE protocol family
+01-01 00:00:00.094  root     0     0 I DMA     : preallocated 1024 KiB GFP_KERNEL pool for atomic allocations
+01-01 00:00:00.094  root     0     0 I DMA     : preallocated 1024 KiB GFP_KERNEL|GFP_DMA pool for atomic allocations
+01-01 00:00:00.095  root     0     0 I DMA     : preallocated 1024 KiB GFP_KERNEL|GFP_DMA32 pool for atomic allocations
+01-01 00:00:00.095  root     0     0 I audit   : initializing netlink subsys (disabled)
+01-01 00:00:00.096  root     0     0 I thermal_sys: Registered thermal governor 'step_wise'
+01-01 00:00:00.097  root     0     0 I cpuidle : using governor menu
+01-01 00:00:00.097  root     0     0 I hw-breakpoint: found 6 breakpoint and 4 watchpoint registers.
+01-01 00:00:00.097  root     0     0 I         : ASID allocator initialised with 32768 entries
+01-01 00:00:00.097  root     0     0 I Serial  : AMBA PL011 UART driver
+01-01 00:00:00.113  root     0     0 I bcm2835-mbox fe00b880.mailbox: mailbox enabled
+01-01 00:00:00.148  root     0     0 I raspberrypi-firmware soc: firmware: Attached to firmware from 2023-01-18T12:28:54, variant start_x
+01-01 00:00:00.152  root     0     0 I raspberrypi-firmware soc: firmware: Firmware hash is 658f02cc8edcb68a568273f05d2b6ceede181e15
+01-01 00:00:00.211  root     0     0 I bcm2835-dma fe007000.dma: DMA legacy API manager, dmachans=0x1
+01-01 00:00:00.216  root     0     0 I vgaarb  : loaded
+01-01 00:00:00.217  root     0     0 I         : SCSI subsystem initialized
+01-01 00:00:00.217  root     0     0 I usbcore : registered new interface driver usbfs
+01-01 00:00:00.217  root     0     0 I usbcore : registered new interface driver hub
+01-01 00:00:00.217  root     0     0 I usbcore : registered new device driver usb
+01-01 00:00:00.218  root     0     0 W usb_phy_generic phy: supply vcc not found, using dummy regulator
+01-01 00:00:00.218  root     0     0 W usb_phy_generic phy: dummy supplies not allowed for exclusive requests
+01-01 00:00:00.219  root     0     0 I mc      : Linux media interface: v0.10
+01-01 00:00:00.219  root     0     0 I videodev: Linux video capture interface: v2.00
+01-01 00:00:00.219  root     0     0 I pps_core: LinuxPPS API ver. 1 registered
+01-01 00:00:00.219  root     0     0 I pps_core: Software ver. 5.3.6 - Copyright 2005-2007 Rodolfo Giometti <giometti@linux.it>
+01-01 00:00:00.219  root     0     0 I         : PTP clock support registered
+01-01 00:00:00.219  root     0     0 I         : Advanced Linux Sound Architecture Driver Initialized.
+01-01 00:00:00.220  root     0     0 I Bluetooth: Core ver 2.22
+01-01 00:00:00.220  root     0     0 I NET     : Registered PF_BLUETOOTH protocol family
+01-01 00:00:00.220  root     0     0 I Bluetooth: HCI device and connection manager initialized
+01-01 00:00:00.220  root     0     0 I Bluetooth: HCI socket layer initialized
+01-01 00:00:00.220  root     0     0 I Bluetooth: L2CAP socket layer initialized
+01-01 00:00:00.220  root     0     0 I Bluetooth: SCO socket layer initialized
+01-01 00:00:00.221  root     0     0 I clocksource: Switched to clocksource arch_sys_counter
+01-01 00:00:00.322  root     0     0 I VFS     : Disk quotas dquot_6.6.0
+01-01 00:00:00.322  root     0     0 I VFS     : Dquot-cache hash table entries: 512 (order 0, 4096 bytes)
+01-01 00:00:00.323  root     0     0 I FS-Cache: Loaded
+01-01 00:00:00.323  root     0     0 I CacheFiles: Loaded
+01-01 00:00:00.325  root     0     0 I NET     : Registered PF_INET protocol family
+01-01 00:00:00.325  root     0     0 I         : IP idents hash table entries: 65536 (order: 7, 524288 bytes, linear)
+01-01 00:00:00.329  root     0     0 I         : tcp_listen_portaddr_hash hash table entries: 2048 (order: 3, 32768 bytes, linear)
+01-01 00:00:00.329  root     0     0 I         : Table-perturb hash table entries: 65536 (order: 6, 262144 bytes, linear)
+01-01 00:00:00.329  root     0     0 I         : TCP established hash table entries: 32768 (order: 6, 262144 bytes, linear)
+01-01 00:00:00.329  root     0     0 I         : TCP bind hash table entries: 32768 (order: 7, 524288 bytes, linear)
+01-01 00:00:00.330  root     0     0 I TCP     : Hash tables configured (established 32768 bind 32768)
+01-01 00:00:00.330  root     0     0 I         : UDP hash table entries: 2048 (order: 4, 65536 bytes, linear)
+01-01 00:00:00.330  root     0     0 I         : UDP-Lite hash table entries: 2048 (order: 4, 65536 bytes, linear)
+01-01 00:00:00.330  root     0     0 I NET     : Registered PF_UNIX/PF_LOCAL protocol family
+01-01 00:00:00.331  root     0     0 I PCI     : CLS 0 bytes, default 64
+01-01 00:00:00.332  root     0     0 I         : Trying to unpack rootfs image as initramfs...
+01-01 00:00:00.338  root     0     0 I hw perfevents: enabled with armv8_cortex_a72 PMU driver, 7 counters available
+01-01 00:00:00.338  root     0     0 I kvm [1] : IPA Size Limit: 44 bits
+01-01 00:00:00.340  root     0     0 I kvm [1] : vgic interrupt IRQ9
+01-01 00:00:00.340  root     0     0 I kvm [1] : Hyp mode initialized successfully
+01-01 00:00:00.370  root     0     0 I         : Initialise system trusted keyrings
+01-01 00:00:00.370  root     0     0 I workingset: timestamp_bits=46 max_order=20 bucket_order=0
+01-01 00:00:00.379  root     0     0 I zbud    : loaded
+01-01 00:00:00.383  root     0     0 I         : Key type cifs.idmap registered
+01-01 00:00:00.384  root     0     0 I fuse    : init (API version 7.36)
+01-01 00:00:00.424  root     0     0 I         : Freeing initrd memory: 1400K
+01-01 00:00:00.451  root     0     0 I         : Key type asymmetric registered
+01-01 00:00:00.451  root     0     0 I         : Asymmetric key parser 'x509' registered
+01-01 00:00:00.452  root     0     0 I         : Block layer SCSI generic (bsg) driver version 0.4 loaded (major 244)
+01-01 00:00:00.452  root     0     0 I         : io scheduler mq-deadline registered
+01-01 00:00:00.452  root     0     0 I         : io scheduler kyber registered
+01-01 00:00:00.463  root     0     0 I brcm-pcie fd500000.pcie: host bridge /scb/pcie@7d500000 ranges:
+01-01 00:00:00.463  root     0     0 I brcm-pcie fd500000.pcie: No bus range found for /scb/pcie@7d500000, using [bus 00-ff]
+01-01 00:00:00.463  root     0     0 I brcm-pcie fd500000.pcie: MEM 0x0600000000..0x063fffffff -> 0x00c0000000
+01-01 00:00:00.463  root     0     0 I brcm-pcie fd500000.pcie: IB MEM 0x0000000000..0x00ffffffff -> 0x0400000000
+01-01 00:00:00.528  root     0     0 I brcm-pcie fd500000.pcie: link up, 5.0 GT/s PCIe x1 (SSC)
+01-01 00:00:00.528  root     0     0 I brcm-pcie fd500000.pcie: PCI host bridge to bus 0000:00
+01-01 00:00:00.528  root     0     0 I pci_bus 0000: 00: root bus resource [bus 00-ff]
+01-01 00:00:00.528  root     0     0 I pci_bus 0000: 00: root bus resource [mem 0x600000000-0x63fffffff] (bus address [0xc0000000-0xffffffff])
+01-01 00:00:00.528  root     0     0 I pci 0000: 00:00.0: [14e4:2711] type 01 class 0x060400
+01-01 00:00:00.528  root     0     0 I pci 0000: 00:00.0: PME# supported from D0 D3hot
+01-01 00:00:00.532  root     0     0 I pci 0000: 00:00.0: bridge configuration invalid ([bus 00-00]), reconfiguring
+01-01 00:00:00.533  logd  1106  1106 I pci 0000: 01:00.0: [1106:3483] type 00 class 0x0c0330
+01-01 00:00:00.533  root     0     0 I pci 0000: 01:00.0: reg 0x10: [mem 0x00000000-0x00000fff 64bit]
+01-01 00:00:00.533  root     0     0 I pci 0000: 01:00.0: PME# supported from D0 D3hot
+01-01 00:00:00.549  root     0     0 I pci_bus 0000: 01: busn_res: [bus 01-ff] end is updated to 01
+01-01 00:00:00.549  root     0     0 I pci 0000: 00:00.0: BAR 8: assigned [mem 0x600000000-0x6000fffff]
+01-01 00:00:00.549  root     0     0 I pci 0000: 01:00.0: BAR 0: assigned [mem 0x600000000-0x600000fff 64bit]
+01-01 00:00:00.549  root     0     0 I pci 0000: 00:00.0: PCI bridge to [bus 01]
+01-01 00:00:00.549  root     0     0 I pci 0000: 00:00.0:   bridge window [mem 0x600000000-0x6000fffff]
+01-01 00:00:00.559  root     0     0 I Serial  : 8250/16550 driver, 1 ports, IRQ sharing enabled
+01-01 00:00:00.562  root     0     0 I iproc-rng200 fe104000.rng: hwrng registered
+01-01 00:00:00.562  root     0     0 I vc-mem  : phys_addr:0x00000000 mem_base=0x3ec00000 mem_size:0x40000000(1024 MiB)
+01-01 00:00:00.564  root     0     0 I gpiomem-bcm2835 fe200000.gpiomem: Initialised: Registers at 0xfe200000
+01-01 00:00:00.576  root     0     0 I vc4-drm gpu: bound fe400000.hvs (ops vc4_hvs_ops)
+01-01 00:00:00.594  root     0     0 I brd     : module loaded
+01-01 00:00:00.605  root     0     0 I loop    : module loaded
+01-01 00:00:00.607  root     0     0 I         : Loading iSCSI transport class v2.0-870.
+01-01 00:00:00.610  root     0     0 I wireguard: WireGuard 1.0.0 loaded. See www.wireguard.com for information.
+01-01 00:00:00.610  root     0     0 I wireguard: Copyright (C) 2015-2019 Jason A. Donenfeld <Jason@zx2c4.com>. All Rights Reserved.
+01-01 00:00:00.613  root     0     0 I tun     : Universal TUN/TAP device driver, 1.6
+01-01 00:00:00.614  root     0     0 I bcmgenet fd580000.ethernet: GENET 5.0 EPHY: 0x0000
+01-01 00:00:00.710  root     0     0 I unimac-mdio.-19: Broadcom UniMAC MDIO bus
+01-01 00:00:00.711  root     0     0 I         : PPP generic driver version 2.4.2
+01-01 00:00:00.711  root     0     0 I         : PPP BSD Compression module registered
+01-01 00:00:00.711  root     0     0 I         : PPP Deflate Compression module registered
+01-01 00:00:00.711  root     0     0 I         : PPP MPPE Compression module registered
+01-01 00:00:00.711  root     0     0 I NET     : Registered PF_PPPOX protocol family
+01-01 00:00:00.711  root     0     0 I         : PPTP driver version 0.8.5
+01-01 00:00:00.712  root     0     0 I usbcore : registered new interface driver brcmfmac
+01-01 00:00:00.712  root     0     0 I usbcore : registered new interface driver r8152
+01-01 00:00:00.712  root     0     0 I usbcore : registered new interface driver lan78xx
+01-01 00:00:00.712  root     0     0 I usbcore : registered new interface driver asix
+01-01 00:00:00.712  root     0     0 I usbcore : registered new interface driver ax88179_178a
+01-01 00:00:00.713  root     0     0 I usbcore : registered new interface driver cdc_ether
+01-01 00:00:00.713  root     0     0 I usbcore : registered new interface driver smsc95xx
+01-01 00:00:00.713  root     0     0 I usbcore : registered new interface driver net1080
+01-01 00:00:00.713  root     0     0 I usbcore : registered new interface driver cdc_subset
+01-01 00:00:00.713  root     0     0 I usbcore : registered new interface driver zaurus
+01-01 00:00:00.713  root     0     0 I usbcore : registered new interface driver cdc_ncm
+01-01 00:00:00.713  root     0     0 I usbcore : registered new interface driver r8153_ecm
+01-01 00:00:00.713  root     0     0 I ehci_hcd: USB 2.0 'Enhanced' Host Controller (EHCI) Driver
+01-01 00:00:00.713  root     0     0 I ehci-pci: EHCI PCI platform driver
+01-01 00:00:00.759  root     0     0 I pci 0000: 00:00.0: enabling device (0000 -> 0002)
+01-01 00:00:00.759  root     0     0 I xhci_hcd 0000: 01:00.0: xHCI Host Controller
+01-01 00:00:00.759  root     0     0 I xhci_hcd 0000: 01:00.0: new USB bus registered, assigned bus number 1
+01-01 00:00:00.760  root     0     0 I xhci_hcd 0000: 01:00.0: hcc params 0x002841eb hci version 0x100 quirks 0x0003840000000890
+01-01 00:00:00.761  root     0     0 I xhci_hcd 0000: 01:00.0: xHCI Host Controller
+01-01 00:00:00.761  root     0     0 I xhci_hcd 0000: 01:00.0: new USB bus registered, assigned bus number 2
+01-01 00:00:00.761  root     0     0 I xhci_hcd 0000: 01:00.0: Host supports USB 3.0 SuperSpeed
+01-01 00:00:00.762  root     0     0 I usb1    : New USB device found, idVendor=1d6b, idProduct=0002, bcdDevice= 5.15
+01-01 00:00:00.762  root     0     0 I usb1    : New USB device strings: Mfr=3, Product=2, SerialNumber=1
+01-01 00:00:00.762  root     0     0 I usb1    : Product: xHCI Host Controller
+01-01 00:00:00.762  root     0     0 I usb1    : Manufacturer: Linux 5.15.131-v8-g41e890d4dfe0-dirty-ab14 xhci-hcd
+01-01 00:00:00.762  root     0     0 I usb1    : SerialNumber: 0000:01:00.0
+01-01 00:00:00.763  root     0     0 I hub 1-0 : 1.0: USB hub found
+01-01 00:00:00.763  root     0     0 I hub 1-0 : 1.0: 1 port detected
+01-01 00:00:00.764  root     0     0 I usb2    : New USB device found, idVendor=1d6b, idProduct=0003, bcdDevice= 5.15
+01-01 00:00:00.764  root     0     0 I usb2    : New USB device strings: Mfr=3, Product=2, SerialNumber=1
+01-01 00:00:00.764  root     0     0 I usb2    : Product: xHCI Host Controller
+01-01 00:00:00.764  root     0     0 I usb2    : Manufacturer: Linux 5.15.131-v8-g41e890d4dfe0-dirty-ab14 xhci-hcd
+01-01 00:00:00.764  root     0     0 I usb2    : SerialNumber: 0000:01:00.0
+01-01 00:00:00.765  root     0     0 I hub 2-0 : 1.0: USB hub found
+01-01 00:00:00.765  root     0     0 I hub 2-0 : 1.0: 4 ports detected
+01-01 00:00:00.767  root     0     0 I dwc_otg : version 3.00a 10-AUG-2012 (platform bus)
+01-01 00:00:00.768  root     0     0 D dwc_otg : FIQ enabled
+01-01 00:00:00.768  root     0     0 D dwc_otg : NAK holdoff enabled
+01-01 00:00:00.768  root     0     0 D dwc_otg : FIQ split-transaction FSM enabled
+01-01 00:00:00.768  root     0     0 D         : Module dwc_common_port init
+01-01 00:00:00.794  root     0     0 W dwc2 fe980000.usb: supply vusb_d not found, using dummy regulator
+01-01 00:00:00.794  root     0     0 W dwc2 fe980000.usb: supply vusb_a not found, using dummy regulator
+01-01 00:00:00.897  root     0     0 I dwc2 fe980000.usb: EPs: 8, dedicated fifos, 4080 entries in SPRAM
+01-01 00:00:00.898  root     0     0 I usbcore : registered new interface driver cdc_acm
+01-01 00:00:00.898  root     0     0 I cdc_acm : USB Abstract Control Model driver for USB modems and ISDN adapters
+01-01 00:00:00.899  root     0     0 I usbcore : registered new interface driver uas
+01-01 00:00:00.899  root     0     0 I usbcore : registered new interface driver usb-storage
+01-01 00:00:00.899  root     0     0 I usbcore : registered new interface driver cp210x
+01-01 00:00:00.899  root     0     0 I usbserial: USB Serial support registered for cp210x
+01-01 00:00:00.899  root     0     0 I usbcore : registered new interface driver pl2303
+01-01 00:00:00.899  root     0     0 I usbserial: USB Serial support registered for pl2303
+01-01 00:00:00.899  root     0     0 I mousedev: PS/2 mouse device common for all mice
+01-01 00:00:00.900  root     0     0 I usbcore : registered new interface driver xpad
+01-01 00:00:00.900  root     0     0 I usbcore : registered new interface driver usb_acecad
+01-01 00:00:00.900  root     0     0 I usbcore : registered new interface driver aiptek
+01-01 00:00:00.900  root     0     0 I usbcore : registered new interface driver hanwang
+01-01 00:00:00.900  root     0     0 I usbcore : registered new interface driver kbtab
+01-01 00:00:00.900  root     0     0 W         : SPI driver ads7846 has no spi_device_id for ti,tsc2046
+01-01 00:00:00.900  root     0     0 W         : SPI driver ads7846 has no spi_device_id for ti,ads7843
+01-01 00:00:00.900  root     0     0 W         : SPI driver ads7846 has no spi_device_id for ti,ads7845
+01-01 00:00:00.900  root     0     0 W         : SPI driver ads7846 has no spi_device_id for ti,ads7873
+01-01 00:00:00.900  root     0     0 I usbcore : registered new interface driver usbtouchscreen
+01-01 00:00:00.901  root     0     0 I i2c_dev : i2c /dev entries driver
+01-01 00:00:00.903  root     0     0 I brcmstb-i2c fef04500.i2c: @97500hz registered in polling mode
+01-01 00:00:00.903  root     0     0 I brcmstb-i2c fef09500.i2c: @97500hz registered in polling mode
+01-01 00:00:00.905  root     0     0 I         : IR NEC protocol handler initialized
+01-01 00:00:00.905  root     0     0 I         : IR RC5(x/sz) protocol handler initialized
+01-01 00:00:00.905  root     0     0 I         : IR RC6 protocol handler initialized
+01-01 00:00:00.905  root     0     0 I         : IR JVC protocol handler initialized
+01-01 00:00:00.905  root     0     0 I         : IR Sony protocol handler initialized
+01-01 00:00:00.905  root     0     0 I         : IR SANYO protocol handler initialized
+01-01 00:00:00.905  root     0     0 I         : IR Sharp protocol handler initialized
+01-01 00:00:00.905  root     0     0 I         : IR MCE Keyboard/mouse protocol handler initialized
+01-01 00:00:00.905  root     0     0 I         : IR XMP protocol handler initialized
+01-01 00:00:00.905  root     0     0 I ir_imon_decoder: IR iMON protocol handler initialized
+01-01 00:00:00.905  root     0     0 I         : IR RCMM protocol handler initialized
+01-01 00:00:00.906  root     0     0 I usbcore : registered new interface driver uvcvideo
+01-01 00:00:00.910  root     0     0 I device-mapper: uevent: version 1.0.3
+01-01 00:00:00.910  root     0     0 I device-mapper: ioctl: 4.45.0-ioctl (2021-03-22) initialised: dm-devel@redhat.com
+01-01 00:00:00.910  root     0     0 I Bluetooth: HCI UART driver ver 2.3
+01-01 00:00:00.910  root     0     0 I Bluetooth: HCI UART protocol H4 registered
+01-01 00:00:00.911  root     0     0 I Bluetooth: HCI UART protocol Broadcom registered
+01-01 00:00:00.915  root     0     0 I sdhci   : Secure Digital Host Controller Interface driver
+01-01 00:00:00.915  root     0     0 I sdhci   : Copyright(c) Pierre Ossman
+01-01 00:00:00.916  root     0     0 I sdhci-pltfm: SDHCI platform and OF driver helper
+01-01 00:00:00.921  root     0     0 I ledtrig-cpu: registered to indicate activity on CPUs
+01-01 00:00:00.921  root     0     0 I hid     : raw HID events driver (C) Jiri Kosina
+01-01 00:00:00.924  root     0     0 I usbcore : registered new interface driver usbhid
+01-01 00:00:00.924  root     0     0 I usbhid  : USB HID core driver
+01-01 00:00:00.925  root     0     0 I rpivid feb10000.codec: Device registered as /dev/video19
+01-01 00:00:00.926  root     0     0 I ashmem  : initialized
+01-01 00:00:00.937  root     0     0 I         : bcm2835_audio bcm2835_audio: card created with 8 channels
+01-01 00:00:01.017  root     0     0 I usb 1-1 : new high-speed USB device number 2 using xhci_hcd
+01-01 00:00:01.168  root     0     0 I usb 1-1 : New USB device found, idVendor=2109, idProduct=3431, bcdDevice= 4.21
+01-01 00:00:01.168  root     0     0 I usb 1-1 : New USB device strings: Mfr=0, Product=1, SerialNumber=0
+01-01 00:00:01.168  root     0     0 I usb 1-1 : Product: USB2.0 Hub
+01-01 00:00:01.170  root     0     0 I hub 1-1 : 1.0: USB hub found
+01-01 00:00:01.170  root     0     0 I hub 1-1 : 1.0: 4 ports detected
+01-01 00:00:01.255  root     0     0 I bcm2835_vc_sm_cma_probe: Videocore shared memory driver
+01-01 00:00:01.255  root     0     0 I [vc_sm_connected_init]: start
+01-01 00:00:01.255  root     0     0 I [vc_sm_connected_init]: installed successfully
+01-01 00:00:01.259  root     0     0 I         : bcm2835-codec bcm2835-codec: Device registered as /dev/video10
+01-01 00:00:01.259  root     0     0 I         : bcm2835-codec bcm2835-codec: Loaded V4L2 decode
+01-01 00:00:01.261  root     0     0 I         : bcm2835-codec bcm2835-codec: Device registered as /dev/video11
+01-01 00:00:01.262  root     0     0 I         : bcm2835-codec bcm2835-codec: Loaded V4L2 encode
+01-01 00:00:01.264  root     0     0 I         : bcm2835-codec bcm2835-codec: Device registered as /dev/video12
+01-01 00:00:01.264  root     0     0 I         : bcm2835-codec bcm2835-codec: Loaded V4L2 isp
+01-01 00:00:01.267  root     0     0 I         : bcm2835-codec bcm2835-codec: Device registered as /dev/video18
+01-01 00:00:01.267  root     0     0 I         : bcm2835-codec bcm2835-codec: Loaded V4L2 image_fx
+01-01 00:00:01.270  root     0     0 I         : bcm2835-codec bcm2835-codec: Device registered as /dev/video31
+01-01 00:00:01.270  root     0     0 I         : bcm2835-codec bcm2835-codec: Loaded V4L2 encode_image
+01-01 00:00:01.274  root     0     0 I         : bcm2835-isp bcm2835-isp: Device node output[0] registered as /dev/video13
+01-01 00:00:01.274  root     0     0 I         : bcm2835-isp bcm2835-isp: Device node capture[0] registered as /dev/video14
+01-01 00:00:01.274  root     0     0 I         : bcm2835-isp bcm2835-isp: Device node capture[1] registered as /dev/video15
+01-01 00:00:01.274  root     0     0 I         : bcm2835-isp bcm2835-isp: Device node stats[2] registered as /dev/video16
+01-01 00:00:01.274  root     0     0 I         : bcm2835-isp bcm2835-isp: Register output node 0 with media controller
+01-01 00:00:01.274  root     0     0 I         : bcm2835-isp bcm2835-isp: Register capture node 1 with media controller
+01-01 00:00:01.274  root     0     0 I         : bcm2835-isp bcm2835-isp: Register capture node 2 with media controller
+01-01 00:00:01.274  root     0     0 I         : bcm2835-isp bcm2835-isp: Register capture node 3 with media controller
+01-01 00:00:01.277  root     0     0 I         : bcm2835-isp bcm2835-isp: Device node output[0] registered as /dev/video20
+01-01 00:00:01.277  root     0     0 I         : bcm2835-isp bcm2835-isp: Device node capture[0] registered as /dev/video21
+01-01 00:00:01.277  root     0     0 I         : bcm2835-isp bcm2835-isp: Device node capture[1] registered as /dev/video22
+01-01 00:00:01.277  root     0     0 I         : bcm2835-isp bcm2835-isp: Device node stats[2] registered as /dev/video23
+01-01 00:00:01.277  root     0     0 I         : bcm2835-isp bcm2835-isp: Register output node 0 with media controller
+01-01 00:00:01.277  root     0     0 I         : bcm2835-isp bcm2835-isp: Register capture node 1 with media controller
+01-01 00:00:01.278  root     0     0 I         : bcm2835-isp bcm2835-isp: Register capture node 2 with media controller
+01-01 00:00:01.278  root     0     0 I         : bcm2835-isp bcm2835-isp: Register capture node 3 with media controller
+01-01 00:00:01.278  root     0     0 I         : bcm2835-isp bcm2835-isp: Loaded V4L2 bcm2835-isp
+01-01 00:00:01.278  root     0     0 W         : SPI driver st-accel-spi has no spi_device_id for st,lis302dl-spi
+01-01 00:00:01.278  root     0     0 W         : SPI driver st-accel-spi has no spi_device_id for st,lis3lv02dl-accel
+01-01 00:00:01.278  root     0     0 W         : SPI driver st-accel-spi has no spi_device_id for st,lis3dh-accel
+01-01 00:00:01.278  root     0     0 W         : SPI driver st-accel-spi has no spi_device_id for st,lsm330d-accel
+01-01 00:00:01.278  root     0     0 W         : SPI driver st-accel-spi has no spi_device_id for st,lsm330dl-accel
+01-01 00:00:01.278  root     0     0 W         : SPI driver st-accel-spi has no spi_device_id for st,lsm330dlc-accel
+01-01 00:00:01.278  root     0     0 W         : SPI driver st-accel-spi has no spi_device_id for st,lis331dlh-accel
+01-01 00:00:01.278  root     0     0 W         : SPI driver st-accel-spi has no spi_device_id for st,lsm330-accel
+01-01 00:00:01.278  root     0     0 W         : SPI driver st-accel-spi has no spi_device_id for st,lsm303agr-accel
+01-01 00:00:01.278  root     0     0 W         : SPI driver st-accel-spi has no spi_device_id for st,lis2dh12-accel
+01-01 00:00:01.278  root     0     0 W         : SPI driver st-accel-spi has no spi_device_id for st,lng2dm-accel
+01-01 00:00:01.278  root     0     0 W         : SPI driver st-accel-spi has no spi_device_id for st,h3lis331dl-accel
+01-01 00:00:01.278  root     0     0 W         : SPI driver st-accel-spi has no spi_device_id for st,lis331dl-accel
+01-01 00:00:01.278  root     0     0 W         : SPI driver st-magn-spi has no spi_device_id for st,lis3mdl-magn
+01-01 00:00:01.278  root     0     0 W         : SPI driver st-magn-spi has no spi_device_id for st,lsm303agr-magn
+01-01 00:00:01.278  root     0     0 W         : SPI driver st-magn-spi has no spi_device_id for st,lsm9ds1-magn

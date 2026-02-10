@@ -1,6 +1,6 @@
 /*
- * Copyright (C) 2023 Robert Bosch GmbH
- * Copyright (C) 2023 The Android Open Source Project
+ * Copyright (C) 2021 The Android Open Source Project
+ * Copyright (C) 2025 Robert Bosch GmbH
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,11 +20,8 @@
 #include <aidl/android/hardware/sensors/BnSensors.h>
 
 #include <map>
-#include <string>
-#include <thread>
 
 #include "ISensorHal.h"
-#include "bosch_sensor_hal_configuration_V1_0.h"
 
 namespace aidl {
 namespace android {
@@ -37,10 +34,10 @@ public:
 
   virtual ~ISensorsEventCallback(){};
   virtual void postEvents(const std::vector<Event>& events, bool wakeup) = 0;
-  virtual void writeToDirectBuffer(const std::vector<Event>& events, int64_t samplingPeriodNs) = 0;
+  virtual void writeToDirectBuffer(const std::vector<Event>& events) = 0;
 };
 
-class Sensor {
+class Sensor : public bosch::sensors::ISensorValues, public std::enable_shared_from_this<Sensor> {
 public:
   using OperationMode = ::aidl::android::hardware::sensors::ISensors::OperationMode;
   using Event = ::aidl::android::hardware::sensors::Event;
@@ -50,13 +47,12 @@ public:
   using MetaDataEventType = ::aidl::android::hardware::sensors::Event::EventPayload::MetaData::MetaDataEventType;
   using AdditionalInfo = ::aidl::android::hardware::sensors::AdditionalInfo;
   using AdditionalInfoType = ::aidl::android::hardware::sensors::AdditionalInfo::AdditionalInfoType;
-  using Location = ::bosch::sensor::hal::configuration::V1_0::Location;
-  using Orientation = ::bosch::sensor::hal::configuration::V1_0::Orientation;
-  using Configuration = ::bosch::sensor::hal::configuration::V1_0::Configuration;
 
   Sensor(ISensorsEventCallback* callback, const SensorInfo& sensorInfo,
-         std::shared_ptr<bosch::sensors::ISensorHal> sensor, const std::optional<std::vector<Configuration>>& config);
+         std::shared_ptr<bosch::sensors::ISensorHal> sensor);
   ~Sensor();
+
+  void update(const std::vector<bosch::sensors::SensorValues>& values) override;
 
   const SensorInfo& getSensorInfo() const;
   void batch(int64_t samplingPeriodNs, int64_t maxReportLatencyNs);
@@ -71,28 +67,23 @@ public:
   void addDirectChannel(int32_t channelHandle, int64_t samplingPeriodNs);
   void stopDirectChannel(int32_t channelHandle);
   void removeDirectChannel(int32_t channelHandle);
-  void updateDirectChannel();
 
 private:
-  void run();
-  std::vector<Event> readEvents();
-  static void startThread(Sensor* sensor);
   ndk::ScopedAStatus getSensorPlacement(std::vector<AdditionalInfo>& additionalInfoFrames);
   ndk::ScopedAStatus getSensorTemperature(std::vector<AdditionalInfo>& additionalInfoFrames);
-  std::optional<std::vector<Location>> getLocation();
-  std::optional<std::vector<Orientation>> getOrientation();
-  ndk::ScopedAStatus setSensorPlacementData(AdditionalInfo* sensorPlacement, int index, float value);
   void sendAdditionalInfoReport();
 
   bool isWakeUpSensor();
 
-  bool mIsEnabled;
-  bool mDirectChannelEnabled;
-  int64_t mSamplingPeriodNs;
-  int64_t mNextSampleTimeNs;
-  int64_t mDirectChannelRateNs;
-  int64_t mNextDirectChannelNs;
-  SensorInfo mSensorInfo;
+  void updateDirectChannel();
+
+  bool mIsEnabled{false};
+  bool mDirectChannelEnabled{false};
+  int64_t mFlushRequestCount{0};
+  int64_t mSamplingPeriodNs{0};
+  int64_t mDirectChannelRateNs{0};
+  int64_t mNextSampleTimeNs{std::numeric_limits<int64_t>::max()};
+  int64_t mNextDirectChannelNs{std::numeric_limits<int64_t>::max()};
 
   struct DirectChannel {
     bool enabled;
@@ -100,24 +91,12 @@ private:
   };
   std::map<int32_t, DirectChannel> mDirectChannels{};
 
-  static constexpr uint8_t LOCATION_X_IDX = 3;
-  static constexpr uint8_t LOCATION_Y_IDX = 7;
-  static constexpr uint8_t LOCATION_Z_IDX = 11;
-  static constexpr uint8_t ROTATION_X_IDX = 0;
-  static constexpr uint8_t ROTATION_Y_IDX = 1;
-  static constexpr uint8_t ROTATION_Z_IDX = 2;
-
-  AdditionalInfo::AdditionalInfoPayload::FloatValues mAdditionalInfoValues;
-
-  std::atomic_bool mStopThread;
-  std::condition_variable mWaitCV;
-  std::mutex mRunMutex;
-  std::thread mRunThread;
+  SensorInfo mSensorInfo;
 
   ISensorsEventCallback* mCallback;
-
   std::shared_ptr<bosch::sensors::ISensorHal> mSensor;
-  std::optional<std::vector<Configuration>> mConfig;
+
+  std::mutex mMutex;
 };
 
 }  // namespace sensors

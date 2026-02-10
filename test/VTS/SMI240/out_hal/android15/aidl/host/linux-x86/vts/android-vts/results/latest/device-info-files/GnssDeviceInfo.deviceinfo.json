@@ -1,0 +1,19 @@
+{
+  "gnss_hardware_model_name": "no_gnss_hardware",
+  "gnss_capabilities": {
+    "has_low_power_mode": false,
+    "has_geofencing": false,
+    "has_measurements": false,
+    "has_measurement_corrections": false,
+    "has_measurement_corrections_los_sats": false,
+    "has_measurement_corrections_excess_path_length": false,
+    "has_satellite_blocklist": false,
+    "has_navigation_messages": false,
+    "has_measurement_corrections_reflecting_plane": false,
+    "has_antenna_info": false,
+    "has_satellite_pvt": false,
+    "has_measurement_correlation_vectors": false,
+    "has_measurement_corrections_for_driving": false
+  },
+  "has_valid_accumulated_delta_range": false
+}

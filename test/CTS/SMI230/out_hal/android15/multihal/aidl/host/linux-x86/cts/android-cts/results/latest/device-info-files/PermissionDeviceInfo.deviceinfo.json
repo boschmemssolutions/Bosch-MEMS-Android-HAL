@@ -1,0 +1,34 @@
+{
+  "signature_permission_allowlists": [
+    {
+      "partition": "system",
+      "packages": []
+    },
+    {
+      "partition": "vendor",
+      "packages": []
+    },
+    {
+      "partition": "product",
+      "packages": []
+    },
+    {
+      "partition": "system-ext",
+      "packages": []
+    },
+    {
+      "partition": "apex",
+      "packages": [
+        {
+          "name": "android.permission.cts_root.apps.signaturepermissionallowlist.normal",
+          "permissions": [
+            {
+              "name": "android.permission.RESERVED_FOR_TESTING_SIGNATURE"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "signature_permission_allowlist_enabled": true
+}

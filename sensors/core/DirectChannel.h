@@ -23,7 +23,7 @@
 
 #include <map>
 #include <memory>
-#include <vector>
+#include <unordered_set>
 
 namespace android {
 
@@ -53,9 +53,8 @@ public:
   int getError();
   void write(const sensors_event_t* ev);
 
-  std::vector<int32_t> sensorHandles;
+  std::unordered_set<int32_t> sensorHandles;
   std::map<int32_t, int64_t> rateNs;
-  std::map<int32_t, int32_t> sampleCount;
 
 protected:
   int mError = NO_INIT;

@@ -1,0 +1,27 @@
+TEXT: 
+============================================
+================= Results ==================
+=============== Consumed Time ==============
+    arm64-v8a BoschAidlHalSensorsTargetTest: 1m 54s
+    arm64-v8a VtsAidlHalSensorsTargetTest: 1m 33s
+    arm64-v8a VtsHalSensorManagerV1_0TargetTest: 51s
+Total aggregated tests run time: 4m 19s
+============== TOP 3 Slow Modules ==============
+    arm64-v8a VtsHalSensorManagerV1_0TargetTest: 0.08 tests/sec [4 tests / 51936 msec]
+    arm64-v8a BoschAidlHalSensorsTargetTest: 0.12 tests/sec [14 tests / 114119 msec]
+    arm64-v8a VtsAidlHalSensorsTargetTest: 0.13 tests/sec [12 tests / 93884 msec]
+============== Modules Preparation Times ==============
+    arm64-v8a VtsAidlHalSensorsTargetTest => prep = 4191 ms || clean = 36000 ms
+    arm64-v8a VtsHalSensorManagerV1_0TargetTest => prep = 3267 ms || clean = 51154 ms
+    arm64-v8a BoschAidlHalSensorsTargetTest => prep = 4209 ms || clean = 36121 ms
+Total preparation time: 11s  ||  Total tear down time: 2m 3s
+=======================================================
+=============== Summary ===============
+Total Run time: 5m 53s
+3/3 modules completed
+Total Tests       : 30
+PASSED            : 29
+FAILED            : 0
+IGNORED           : 1
+============== End of Results ==============
+============================================

@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2023 Robert Bosch GmbH
+ * Copyright (C) 2024,2026 Robert Bosch GmbH
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,6 +18,7 @@
 #define ANDROID_HARDWARE_BOSCH_SENSORS_SMI240_H
 
 #include "CompositeSensors.h"
+#include "ISensorThread.h"
 #include "SensorCore.h"
 
 namespace bosch {
@@ -25,26 +26,28 @@ namespace sensors {
 
 class Smi240Acc : public SensorCore {
 public:
-  Smi240Acc();
+  Smi240Acc(const std::shared_ptr<ISensorThread> sensorThread);
   ~Smi240Acc() = default;
-};
 
-class Smi240AccUncalibrated : public Smi240Acc {
-public:
-  Smi240AccUncalibrated();
-  ~Smi240AccUncalibrated() = default;
+  void init(int deviceNum) override;
+  void enableSensor(bool enable) override;
+  void setSamplingRate(int64_t samplingPeriodNs, int64_t reportLatencyNs) override;
+
+private:
+  const std::shared_ptr<ISensorThread> mSensorThread;
 };
 
 class Smi240Gyro : public SensorCore {
 public:
-  Smi240Gyro();
+  Smi240Gyro(const std::shared_ptr<ISensorThread> sensorThread);
   ~Smi240Gyro() = default;
-};
 
-class Smi240GyroUncalibrated : public Smi240Gyro {
-public:
-  Smi240GyroUncalibrated();
-  ~Smi240GyroUncalibrated() = default;
+  void init(int deviceNum) override;
+  void enableSensor(bool enable) override;
+  void setSamplingRate(int64_t samplingPeriodNs, int64_t reportLatencyNs) override;
+
+private:
+  const std::shared_ptr<ISensorThread> mSensorThread;
 };
 
 class Smi240LinearAcc : public LinearAcceleration {
@@ -57,6 +60,18 @@ class Smi240Gravity : public Gravity {
 public:
   Smi240Gravity(const std::shared_ptr<SensorCore> accel, const std::shared_ptr<SensorCore> gyro);
   ~Smi240Gravity() = default;
+};
+
+class Smi240AccUncalibrated : public Dummy {
+public:
+  Smi240AccUncalibrated(const std::shared_ptr<SensorCore> base);
+  ~Smi240AccUncalibrated() = default;
+};
+
+class Smi240GyroUncalibrated : public Dummy {
+public:
+  Smi240GyroUncalibrated(const std::shared_ptr<SensorCore> base);
+  ~Smi240GyroUncalibrated() = default;
 };
 
 }  // namespace sensors

@@ -1,0 +1,16 @@
+{
+  "num_physical": 0,
+  "num_emulated": 1,
+  "raw_partition": [
+    "Filesystem           1K-blocks    Used Available Use% Mounted on",
+    "/dev/block/mmcblk0p2   2064208 1574468    473356  77% /",
+    "tmpfs                  1937100    1220   1935880   1% /dev",
+    "tmpfs                  1937100       0   1937100   0% /mnt",
+    "/dev/block/mmcblk0p3    245728  127356    113132  53% /vendor",
+    "tmpfs                  1937100      12   1937088   1% /apex",
+    "tmpfs                  1937100     568   1936532   1% /linkerconfig",
+    "tmpfs                  1937100       0   1937100   0% /data_mirror",
+    "/dev/fuse              4612280   97604   4255860   3% /storage/emulated"
+  ],
+  "compression": false
+}

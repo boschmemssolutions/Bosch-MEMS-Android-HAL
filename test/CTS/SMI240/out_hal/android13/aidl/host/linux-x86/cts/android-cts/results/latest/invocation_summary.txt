@@ -1,0 +1,26 @@
+TEXT: 
+============================================
+================= Results ==================
+=============== Consumed Time ==============
+    arm64-v8a CtsSensorTestCases[instant]: 47m 51s
+    armeabi-v7a CtsSensorTestCases: 43m 31s
+    arm64-v8a CtsSensorTestCases: 43m 30s
+Total aggregated tests run time: 2h 14m 52s
+============== TOP 3 Slow Modules ==============
+    arm64-v8a CtsSensorTestCases[instant]: 0.15 tests/sec [417 tests / 2871394 msec]
+    armeabi-v7a CtsSensorTestCases: 0.15 tests/sec [399 tests / 2611079 msec]
+    arm64-v8a CtsSensorTestCases: 0.15 tests/sec [399 tests / 2610290 msec]
+============== Modules Preparation Times ==============
+    arm64-v8a CtsSensorTestCases => prep = 4750 ms || clean = 1626 ms
+    arm64-v8a CtsSensorTestCases[instant] => prep = 2856 ms || clean = 1584 ms
+    armeabi-v7a CtsSensorTestCases => prep = 4728 ms || clean = 1599 ms
+Total preparation time: 12s  ||  Total tear down time: 4s
+=======================================================
+=============== Summary ===============
+Total Run time: 2h 17m 1s
+3/3 modules completed
+Total Tests       : 1215
+PASSED            : 1215
+FAILED            : 0
+============== End of Results ==============
+============================================

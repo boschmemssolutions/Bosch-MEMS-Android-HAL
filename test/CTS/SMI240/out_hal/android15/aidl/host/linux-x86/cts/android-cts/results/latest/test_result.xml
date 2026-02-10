@@ -1,0 +1,961 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no' ?><?xml-stylesheet type="text/xsl" href="compatibility_result.xsl"?>
+<Result start="1769074235312" end="1769079958144" start_display="Thu Jan 22 09:30:35 UTC 2026" end_display="Thu Jan 22 11:05:58 UTC 2026" command_line_args="cts -s 192.168.0.12:5555 --skip-all-system-status-check --retry-strategy RETRY_ANY_FAILURE --max-testcase-run-count 3 -m CtsSensorTestCases -l INFO" suite_name="CTS" suite_variant="CTS" suite_version="15_r1" suite_plan="cts" suite_build_number="eng.coder" report_version="5.0" devices="192.168.0.12:5555" host_name="CLJ-C-005DF" os_name="Linux" os_version="6.5.0-26-generic" os_arch="amd64" java_vendor="N/A" java_version="21.0.4">
+  <Build invocation-id="1" command_line_args="cts -s 192.168.0.12:5555 --skip-all-system-status-check --retry-strategy RETRY_ANY_FAILURE --max-testcase-run-count 3 -m CtsSensorTestCases -l INFO" invocation-external-dependencies="com.android.tradefed.dependencies.connectivity.NetworkDependency" adb_version="1.0.41 subVersion: 28.0.2-debian install path: /usr/lib/android-sdk/platform-tools/adb" java_version="21.0.4" java_classpath="/home/btm5rt/jenkins/CLJ-C-005DF/SMI240-rpi4-arm64-spi-android/workspace/MEMS-Android-HAL-CTS_development/build/SMI240/out_hal/android15/aidl/host/linux-x86/cts/android-cts/tools/tradefed.jar:/home/btm5rt/jenkins/CLJ-C-005DF/SMI240-rpi4-arm64-spi-android/workspace/MEMS-Android-HAL-CTS_development/build/SMI240/out_hal/android15/aidl/host/linux-x86/cts/android-cts/tools/ats_console_deploy.jar:/home/btm5rt/jenkins/CLJ-C-005DF/SMI240-rpi4-arm64-spi-android/workspace/MEMS-Android-HAL-CTS_development/build/SMI240/out_hal/android15/aidl/host/linux-x86/cts/android-cts/tools/ats_olc_server_local_mode_deploy.jar:/home/btm5rt/jenkins/CLJ-C-005DF/SMI240-rpi4-arm64-spi-android/workspace/MEMS-Android-HAL-CTS_development/build/SMI240/out_hal/android15/aidl/host/linux-x86/cts/android-cts/tools/compatibility-host-util.jar:/home/btm5rt/jenkins/CLJ-C-005DF/SMI240-rpi4-arm64-spi-android/workspace/MEMS-Android-HAL-CTS_development/build/SMI240/out_hal/android15/aidl/host/linux-x86/cts/android-cts/tools/compatibility-tradefed.jar:/home/btm5rt/jenkins/CLJ-C-005DF/SMI240-rpi4-arm64-spi-android/workspace/MEMS-Android-HAL-CTS_development/build/SMI240/out_hal/android15/aidl/host/linux-x86/cts/android-cts/tools/cts-tradefed-tests.jar:/home/btm5rt/jenkins/CLJ-C-005DF/SMI240-rpi4-arm64-spi-android/workspace/MEMS-Android-HAL-CTS_development/build/SMI240/out_hal/android15/aidl/host/linux-x86/cts/android-cts/tools/cts-tradefed.jar:/home/btm5rt/jenkins/CLJ-C-005DF/SMI240-rpi4-arm64-spi-android/workspace/MEMS-Android-HAL-CTS_development/build/SMI240/out_hal/android15/aidl/host/linux-x86/cts/android-cts/tools/loganalysis.jar" log_saving_time="30" target-preparer-setup-latency_com.android.compatibility.common.tradefed.targetprep.DynamicConfigPusher="5556" collector_time_ms="4" test-type-count_AndroidJUnitTest="880" server_reference="0f72c519-fb2d-4e1c-a2c5-aaa8964baf5b" target-preparer-teardown-latency_com.android.compatibility.common.tradefed.targetprep.PropertyCheck="1" target-preparer-teardown-latency_com.android.compatibility.common.tradefed.targetprep.StayAwakePreparer="1" target-preparer-setup-latency_com.android.compatibility.common.tradefed.targetprep.WifiCheck="7767" target-preparer-setup-latency_com.android.compatibility.common.tradefed.targetprep.ReportLogCollector="1" device_done_timestamp="1769079958104" push_file_time_ms="2192" target-preparer-setup-latency_com.android.compatibility.common.tradefed.targetprep.ApkPreconditionCheck="12977" teardown_disk_usage_bytes="0" tf_dynamic_resolver_pair_timestamp="1769074235098:1769074235113" pull_file_count="2" does_file_exists_time_ms="391" pull_dir_count="2" target-preparer-teardown-latency_com.android.compatibility.common.tradefed.targetprep.SettingsPreparer="0" target-preparer-teardown-latency_com.android.compatibility.common.tradefed.targetprep.DynamicConfigPusher="0" fetch_build_time_ms="7" does_file_exists_count="5" tf_module_setup_pair_timestamp="1769074418879:1769074421753,1769077313401:1769077318507" target-preparer-teardown-latency_com.android.compatibility.common.tradefed.targetprep.ReportLogCollector="1672" tf_setup_end_timestamp="1769074235780" pull_dir_time_ms="62163" test_teardown="1769079955546:1769079958093" device_release_state="AVAILABLE" log_saving_count="44" target-preparer-teardown-latency_com.android.compatibility.common.tradefed.targetprep.WifiCheck="0" delete_device_file_count="1" check_device_availability="1769079955097:1769079955546" target-preparer-setup-latency_com.android.compatibility.common.tradefed.targetprep.PackageDisabler="384" target-preparer-teardown-latency_com.android.compatibility.common.tradefed.targetprep.ApkPreconditionCheck="0" pre_multi_preparer="1769074235780:1769074235780" tf_teardown_start_timestamp="1769079955546" target-preparer-setup-latency_com.android.compatibility.common.tradefed.targetprep.StayAwakePreparer="249" lab_setup="1769074235780:1769074235780" tf_module_teardown_pair_timestamp="1769077309288:1769077313365,1769079953094:1769079954859" tf_invocation_end_timestamp="1769079958113" target-preparer-setup-latency_com.android.compatibility.common.tradefed.targetprep.DeviceInfoCollector="154040" pull_file_time_ms="91" package_install_time_ms="22732" start_logcat="1769074235122:1769074235226" setup_time_ms="182776" target-preparer-setup-latency_com.android.compatibility.common.tradefed.targetprep.PropertyCheck="154" total_test_count="880" tf_test_teardown_pair_timestamp="1769079955546:1769079957385" fetch_artifact="1769074235114:1769074235121" tf_fetch_build_start_timestamp="1769074235114" target-preparer-setup-latency_com.android.compatibility.common.tradefed.targetprep.DeviceFileCollector="416" target-preparer-setup-latency_com.android.tradefed.targetprep.RunCommandTargetPreparer="803" tf_test_setup_pair_timestamp="1769074235780:1769074235780,1769074235780:1769074418556,1769074418573:1769074418754" tf_invocation_start_timestamp="1769074235092" invocation_warm_up="1769074235092:1769074235096" target-preparer-teardown-latency_com.android.tradefed.targetprep.RunCommandTargetPreparer="161" target-preparer-teardown-latency_com.android.compatibility.common.tradefed.targetprep.DeviceInfoCollector="2" tf_setup_start_timestamp="1769074235780" package_install_count="9" tf_teardown_end_timestamp="1769079958093" device_count="1" tf_fetch_build_end_timestamp="1769074235121" tf_fetch_build_pair_timestamp="1769074235114:1769074235121" tf_teardown_pair_timestamp="1769079955018:1769079955546,1769079957385:1769079958078" target-preparer-setup-latency_com.android.compatibility.common.tradefed.targetprep.SettingsPreparer="259" tf_test_pair_timestamp="1769074418571:1769079954884" sharding="1769074235227:1769074235228" load_test_configs_time_ms="24" dynamic_download="1769074235098:1769074235113" test_setup="1769074235780:1769074418556" test_execution="1769074418571:1769079954884" target-preparer-teardown-latency_com.android.compatibility.common.tradefed.targetprep.DeviceFileCollector="0" log_and_release_device="1769079958093:1769079958104" tf_setup_pair_timestamp="1769074235777:1769074235779,1769074235780:1769074235780" instru_collect_tests="1769074421851:1769074429727,1769077322080:1769077325903" delete_device_file_time_ms="199" target-preparer-teardown-latency_com.android.compatibility.common.tradefed.targetprep.PackageDisabler="0" push_file_count="2" tf_objects_tracking="com.android.tradefed.testtype.AndroidJUnitTest=2,com.android.compatibility.common.tradefed.targetprep.ApkInstrumentationPreparer=2,com.android.compatibility.common.tradefed.targetprep.WifiCheck=1,com.android.tradefed.targetprep.suite.SuiteApkInstaller=2,com.android.compatibility.common.tradefed.targetprep.DynamicConfigPusher=1,com.android.tradefed.targetprep.BaseTargetPreparer=23,com.android.compatibility.common.tradefed.targetprep.ApkPreconditionCheck=1,com.android.compatibility.common.tradefed.targetprep.DeviceInfoCollector=1,com.android.compatibility.common.tradefed.testtype.suite.CompatibilityTestSuite=1,com.android.tradefed.testtype.InstrumentationTest=2,com.android.compatibility.common.tradefed.targetprep.PreconditionPreparer=14,com.android.compatibility.common.tradefed.targetprep.PropertyCheck=3,com.android.compatibility.common.tradefed.build.CompatibilityBuildProvider=1,com.android.compatibility.common.tradefed.targetprep.StayAwakePreparer=1,com.android.compatibility.common.tradefed.targetprep.PackageDisabler=1,com.android.tradefed.targetprep.RunCommandTargetPreparer=5,com.android.tradefed.testtype.suite.BaseTestSuite=1,com.android.tradefed.testtype.suite.ITestSuite=1,com.android.compatibility.common.tradefed.targetprep.SettingsPreparer=5,com.android.compatibility.common.tradefed.targetprep.DeviceFileCollector=2,com.android.tradefed.targetprep.TestAppInstallSetup=2,com.android.compatibility.common.tradefed.targetprep.ReportLogCollector=1,com.android.compatibility.common.tradefed.targetprep.LocationCheck=2" device_kernel_info="Linux localhost 6.6.116-v8-g06e9d6ca8fe9-dirty #1 SMP PREEMPT Wed Dec 17 09:53:32 UTC 2025 aarch64 Toybox" system_img_info="Raspberry/bosch_hal_aidl/rpi4:15/BP1A.250505.005/3:userdebug/test-keys" vendor_img_info="Raspberry/bosch_hal_aidl/rpi4:15/BP1A.250505.005/3:userdebug/test-keys" build_manufacturer="Raspberry" build_abis_32="" build_reference_fingerprint="" build_product="bosch_hal_aidl" build_tags="test-keys" build_version_incremental="3" build_brand="Raspberry" build_fingerprint="Raspberry/bosch_hal_aidl/rpi4:15/BP1A.250505.005/3:userdebug/test-keys" build_model="Pi 4" build_device="rpi4" build_id="BP1A.250505.005" build_bootimage_fingerprint="" build_version_sdk="35" build_serial="1000000023072340" build_version_security_patch="2025-05-05" build_abi="arm64-v8a" build_abis_64="arm64-v8a" build_vendor_fingerprint="Raspberry/bosch_hal_aidl/rpi4:15/BP1A.250505.005/3:userdebug/test-keys" build_version_base_os="" build_abis="arm64-v8a" build_board="bcm2711" build_type="userdebug" build_version_release="15" build_abi2="" />
+  <Summary pass="846" failed="0" modules_done="2" modules_total="2" />
+  <Module name="CtsSensorTestCases" abi="arm64-v8a" runtime="2623492" done="true" pass="418" total_tests="418">
+    <TestCase name="android.hardware.cts.SensorAdditionalInfoTest">
+      <Test result="pass" name="testSensorAdditionalInfo" />
+    </TestCase>
+    <TestCase name="android.hardware.cts.SensorBatchingFifoTest">
+      <Test result="pass" name="testAccelerometerFifoLength" />
+      <Test result="pass" name="testGameRotationVectorFifoLength" />
+      <Test result="pass" name="testPressureFifoLength" />
+      <Test result="pass" name="testUncalMagnetometerFifoLength" />
+    </TestCase>
+    <TestCase name="android.hardware.cts.SensorBatchingTests">
+      <Test result="pass" name="testAccelUncalibrated" />
+      <Test result="pass" name="testAccelUncalibrated_50hz_batching" />
+      <Test result="pass" name="testAccelUncalibrated_50hz_flush" />
+      <Test result="pass" name="testAccelUncalibrated_fastest_flush" />
+      <Test result="pass" name="testAccelerometerLimitedAxesUncalibrated" />
+      <Test result="pass" name="testAccelerometerLimitedAxesUncalibrated_50hz_batching" />
+      <Test result="pass" name="testAccelerometerLimitedAxesUncalibrated_50hz_flush" />
+      <Test result="pass" name="testAccelerometerLimitedAxesUncalibrated_fastest_batching" />
+      <Test result="pass" name="testAccelerometerLimitedAxesUncalibrated_fastest_flush" />
+      <Test result="pass" name="testAccelerometerLimitedAxes_50hz_batching" />
+      <Test result="pass" name="testAccelerometerLimitedAxes_50hz_flush" />
+      <Test result="pass" name="testAccelerometerLimitedAxes_fastest_batching" />
+      <Test result="pass" name="testAccelerometerLimitedAxes_fastest_flush" />
+      <Test result="pass" name="testAccelerometerUncalibrated_fastest_batching" />
+      <Test result="pass" name="testAccelerometer_50hz_batching" />
+      <Test result="pass" name="testAccelerometer_50hz_flush" />
+      <Test result="pass" name="testAccelerometer_fastest_batching" />
+      <Test result="pass" name="testAccelerometer_fastest_flush" />
+      <Test result="pass" name="testGameRotationVector_50hz_batching" />
+      <Test result="pass" name="testGameRotationVector_50hz_flush" />
+      <Test result="pass" name="testGameRotationVector_fastest_batching" />
+      <Test result="pass" name="testGameRotationVector_fastest_flush" />
+      <Test result="pass" name="testGeomagneticRotationVector_50hz_batching" />
+      <Test result="pass" name="testGeomagneticRotationVector_50hz_flush" />
+      <Test result="pass" name="testGeomagneticRotationVector_fastest_batching" />
+      <Test result="pass" name="testGeomagneticRotationVector_fastest_flush" />
+      <Test result="pass" name="testGravity_50hz_batching" />
+      <Test result="pass" name="testGravity_50hz_flush" />
+      <Test result="pass" name="testGravity_fastest_batching" />
+      <Test result="pass" name="testGravity_fastest_flush" />
+      <Test result="pass" name="testGyroscopeLimitedAxesUncalibrated_50hz_batching" />
+      <Test result="pass" name="testGyroscopeLimitedAxesUncalibrated_50hz_flush" />
+      <Test result="pass" name="testGyroscopeLimitedAxesUncalibrated_fastest_batching" />
+      <Test result="pass" name="testGyroscopeLimitedAxesUncalibrated_fastest_flush" />
+      <Test result="pass" name="testGyroscopeLimitedAxes_50hz_batching" />
+      <Test result="pass" name="testGyroscopeLimitedAxes_50hz_flush" />
+      <Test result="pass" name="testGyroscopeLimitedAxes_fastest_batching" />
+      <Test result="pass" name="testGyroscopeLimitedAxes_fastest_flush" />
+      <Test result="pass" name="testGyroscopeUncalibrated_50hz_batching" />
+      <Test result="pass" name="testGyroscopeUncalibrated_50hz_flush" />
+      <Test result="pass" name="testGyroscopeUncalibrated_fastest_batching" />
+      <Test result="pass" name="testGyroscopeUncalibrated_fastest_flush" />
+      <Test result="pass" name="testGyroscope_50hz_batching" />
+      <Test result="pass" name="testGyroscope_50hz_flush" />
+      <Test result="pass" name="testGyroscope_fastest_batching" />
+      <Test result="pass" name="testGyroscope_fastest_flush" />
+      <Test result="pass" name="testLinearAcceleration_50hz_batching" />
+      <Test result="pass" name="testLinearAcceleration_50hz_flush" />
+      <Test result="pass" name="testLinearAcceleration_fastest_batching" />
+      <Test result="pass" name="testLinearAcceleration_fastest_flush" />
+      <Test result="pass" name="testMagneticFieldUncalibrated_50hz_batching" />
+      <Test result="pass" name="testMagneticFieldUncalibrated_50hz_flush" />
+      <Test result="pass" name="testMagneticFieldUncalibrated_fastest_batching" />
+      <Test result="pass" name="testMagneticFieldUncalibrated_fastest_flush" />
+      <Test result="pass" name="testMagneticField_50hz_batching" />
+      <Test result="pass" name="testMagneticField_50hz_flush" />
+      <Test result="pass" name="testMagneticField_fastest_batching" />
+      <Test result="pass" name="testMagneticField_fastest_flush" />
+      <Test result="pass" name="testOrientation_50hz_batching" />
+      <Test result="pass" name="testOrientation_50hz_flush" />
+      <Test result="pass" name="testOrientation_fastest_batching" />
+      <Test result="pass" name="testOrientation_fastest_flush" />
+      <Test result="pass" name="testPressure_50hz_batching" />
+      <Test result="pass" name="testPressure_50hz_flush" />
+      <Test result="pass" name="testPressure_fastest_batching" />
+      <Test result="pass" name="testPressure_fastest_flush" />
+      <Test result="pass" name="testRotationVector_50hz_batching" />
+      <Test result="pass" name="testRotationVector_50hz_flush" />
+      <Test result="pass" name="testRotationVector_fastest_batching" />
+      <Test result="pass" name="testRotationVector_fastest_flush" />
+    </TestCase>
+    <TestCase name="android.hardware.cts.SensorDirectReportTest">
+      <Test result="pass" name="testAccelerometerAshmemFast" />
+      <Test result="pass" name="testAccelerometerAshmemFastUidIdle" />
+      <Test result="pass" name="testAccelerometerAshmemNormal" />
+      <Test result="pass" name="testAccelerometerAshmemNormalUidIdle" />
+      <Test result="pass" name="testAccelerometerAshmemVeryFast" />
+      <Test result="pass" name="testAccelerometerAshmemVeryFastUidIdle" />
+      <Test result="pass" name="testAccelerometerHardwareBufferFast" />
+      <Test result="pass" name="testAccelerometerHardwareBufferFastUidIdle" />
+      <Test result="pass" name="testAccelerometerHardwareBufferNormal" />
+      <Test result="pass" name="testAccelerometerHardwareBufferNormalUidIdle" />
+      <Test result="pass" name="testAccelerometerHardwareBufferVeryFast" />
+      <Test result="pass" name="testAccelerometerHardwareBufferVeryFastUidIdle" />
+      <Test result="pass" name="testGyroscopeAshmemFast" />
+      <Test result="pass" name="testGyroscopeAshmemFastUidIdle" />
+      <Test result="pass" name="testGyroscopeAshmemNormal" />
+      <Test result="pass" name="testGyroscopeAshmemNormalUidIdle" />
+      <Test result="pass" name="testGyroscopeAshmemVeryFast" />
+      <Test result="pass" name="testGyroscopeAshmemVeryFastUidIdle" />
+      <Test result="pass" name="testGyroscopeHardwareBufferFast" />
+      <Test result="pass" name="testGyroscopeHardwareBufferFastUidIdle" />
+      <Test result="pass" name="testGyroscopeHardwareBufferNormal" />
+      <Test result="pass" name="testGyroscopeHardwareBufferNormalUidIdle" />
+      <Test result="pass" name="testGyroscopeHardwareBufferVeryFast" />
+      <Test result="pass" name="testGyroscopeHardwareBufferVeryFastUidIdle" />
+      <Test result="pass" name="testMagneticFieldAshmemFast" />
+      <Test result="pass" name="testMagneticFieldAshmemFastUidIdle" />
+      <Test result="pass" name="testMagneticFieldAshmemNormal" />
+      <Test result="pass" name="testMagneticFieldAshmemNormalUidIdle" />
+      <Test result="pass" name="testMagneticFieldAshmemVeryFast" />
+      <Test result="pass" name="testMagneticFieldAshmemVeryFastUidIdle" />
+      <Test result="pass" name="testMagneticFieldHardwareBufferFast" />
+      <Test result="pass" name="testMagneticFieldHardwareBufferFastUidIdle" />
+      <Test result="pass" name="testMagneticFieldHardwareBufferNormal" />
+      <Test result="pass" name="testMagneticFieldHardwareBufferNormalUidIdle" />
+      <Test result="pass" name="testMagneticFieldHardwareBufferVeryFast" />
+      <Test result="pass" name="testMagneticFieldHardwareBufferVeryFastUidIdle" />
+      <Test result="pass" name="testSharedMemoryAllocation" />
+    </TestCase>
+    <TestCase name="android.hardware.cts.SensorHeadTrackerTest">
+      <Test result="pass" name="testAddSecondSensor" />
+      <Test result="pass" name="testArrayOfSixFloats" />
+      <Test result="pass" name="testDisconnectionReconnection" />
+      <Test result="pass" name="testDiscontinuity" />
+      <Test result="pass" name="testIsDynamicSensorDiscoverySupported" />
+      <Test result="pass" name="testIsNotDynamicSensorDiscoverySupported" />
+      <Test result="pass" name="testRegisterDynamicSensorCallback" />
+      <Test result="pass" name="testSensorManagerFlush" />
+    </TestCase>
+    <TestCase name="android.hardware.cts.SensorIntegrationTests">
+      <Test result="pass" name="testAccelerometerAccelerometerStopping" />
+      <Test result="pass" name="testAccelerometerGyroscopeStopping" />
+      <Test result="pass" name="testAccelerometerLimitedAxesAccelerometerLimitedAxesStopping" />
+      <Test result="pass" name="testAccelerometerLimitedAxesGyroscopeLimitedAxesStopping" />
+      <Test result="pass" name="testAccelerometerLimitedAxesMagneticFieldStopping" />
+      <Test result="pass" name="testAccelerometerLimitedAxesReconfigureWhileActive" />
+      <Test result="pass" name="testAccelerometerLimitedAxesUncalibratedReconfigureWhileActive" />
+      <Test result="pass" name="testAccelerometerMagneticFieldStopping" />
+      <Test result="pass" name="testAccelerometerReconfigureWhileActive" />
+      <Test result="pass" name="testGameRotationVectorReconfigureWhileActive" />
+      <Test result="pass" name="testGeomagneticRotationVectorReconfigureWhileActive" />
+      <Test result="pass" name="testGravityReconfigureWhileActive" />
+      <Test result="pass" name="testGyroscopeAccelerometerStopping" />
+      <Test result="pass" name="testGyroscopeGyroscopeStopping" />
+      <Test result="pass" name="testGyroscopeLimitedAxesAccelerometerLimitedAxesStopping" />
+      <Test result="pass" name="testGyroscopeLimitedAxesGyroscopeLimitedAxesStopping" />
+      <Test result="pass" name="testGyroscopeLimitedAxesMagneticFieldStopping" />
+      <Test result="pass" name="testGyroscopeLimitedAxesReconfigureWhileActive" />
+      <Test result="pass" name="testGyroscopeLimitedAxesUncalibratedReconfigureWhileActive" />
+      <Test result="pass" name="testGyroscopeMagneticFieldStopping" />
+      <Test result="pass" name="testGyroscopeReconfigureWhileActive" />
+      <Test result="pass" name="testLinearAccelerationReconfigureWhileActive" />
+      <Test result="pass" name="testMagneticFieldAccelerometerLimitedAxesStopping" />
+      <Test result="pass" name="testMagneticFieldAccelerometerStopping" />
+      <Test result="pass" name="testMagneticFieldGyroscopeLimitedAxesStopping" />
+      <Test result="pass" name="testMagneticFieldGyroscopeStopping" />
+      <Test result="pass" name="testMagneticFieldMagneticFieldStopping" />
+      <Test result="pass" name="testMagneticFieldReconfigureWhileActive" />
+      <Test result="pass" name="testOrientationReconfigureWhileActive" />
+      <Test result="pass" name="testPressureReconfigureWhileActive" />
+      <Test result="pass" name="testRotationVectorReconfigureWhileActive" />
+      <Test result="pass" name="testSensorsMovingRates" />
+      <Test result="pass" name="testSensorsWithSeveralClients" />
+      <Test result="pass" name="testUncalibratedAccelerometerReconfigureWhileActive" />
+      <Test result="pass" name="testUncalibratedGyroscopeReconfigureWhileActive" />
+      <Test result="pass" name="testUncalibratedMagneticFieldReconfigureWhileActive" />
+    </TestCase>
+    <TestCase name="android.hardware.cts.SensorManagerStaticTest">
+      <Test result="pass" name="testGetAltitude" />
+      <Test result="pass" name="testGetAngleChange" />
+      <Test result="pass" name="testGetInclination" />
+      <Test result="pass" name="testGetOrientation" />
+      <Test result="pass" name="testGetQuaternionFromVector" />
+      <Test result="pass" name="testGetRotationMatrix" />
+      <Test result="pass" name="testGetRotationMatrixFromVector" />
+      <Test result="pass" name="testRemapCoordinateSystem" />
+    </TestCase>
+    <TestCase name="android.hardware.cts.SensorNativeTest">
+      <Test result="pass" name="testNative" />
+    </TestCase>
+    <TestCase name="android.hardware.cts.SensorParameterRangeTest">
+      <Test result="pass" name="testAccelerometerFifoLength" />
+      <Test result="pass" name="testAccelerometerRange" />
+      <Test result="pass" name="testGyroscopeRange" />
+      <Test result="pass" name="testMagnetometerRange" />
+      <Test result="pass" name="testPressureFifoLength" />
+      <Test result="pass" name="testPressureRange" />
+      <Test result="pass" name="testProximityFifoLength" />
+      <Test result="pass" name="testStaticSensorId" />
+      <Test result="pass" name="testStepDetectorFifoLength" />
+      <Test result="pass" name="testUncalMagnetometerFifoLength" />
+    </TestCase>
+    <TestCase name="android.hardware.cts.SensorSupportTest">
+      <Test result="pass" name="testGameRotationVectorInputSensorSupport" />
+      <Test result="pass" name="testGeomagneticRotationVectorInputSensorSupport" />
+      <Test result="pass" name="testGravityInputSensorSupport" />
+      <Test result="pass" name="testLinearAccelerationInputSensorSupport" />
+      <Test result="pass" name="testRotationVectorInputSensorSupport" />
+      <Test result="pass" name="testStepCounterInputSensorSupport" />
+      <Test result="pass" name="testStepDetectorInputSensorSupport" />
+      <Test result="pass" name="testSupportsAccelerometer" />
+      <Test result="pass" name="testSupportsAccelerometerUncalibrated" />
+      <Test result="pass" name="testSupportsGameRotationVector" />
+      <Test result="pass" name="testSupportsGeoMagneticField" />
+      <Test result="pass" name="testSupportsGravityAndLinearAccelIfHasAG" />
+      <Test result="pass" name="testSupportsGyroscope" />
+      <Test result="pass" name="testSupportsGyroscopeUncalibrated" />
+      <Test result="pass" name="testSupportsMagneticFieldUncalibrated" />
+      <Test result="pass" name="testSupportsPressure" />
+      <Test result="pass" name="testSupportsRotationVectorIfHasAGM" />
+      <Test result="pass" name="testSupportsSignificantMotion" />
+      <Test result="pass" name="testSupportsStepCounter" />
+      <Test result="pass" name="testSupportsStepDetector" />
+      <Test result="pass" name="testSupportsTiltDetector" />
+      <Test result="pass" name="testUncalibratedGeomagneticFieldInputSensorSupport" />
+      <Test result="pass" name="testUncalibratedGyroscopeInputSensorSupport" />
+    </TestCase>
+    <TestCase name="android.hardware.cts.SensorTest">
+      <Test result="pass" name="testBatchAndFlush" />
+      <Test result="pass" name="testBatchAndFlushUidIdle" />
+      <Test result="pass" name="testBatchAndFlushUseDefaultHandler" />
+      <Test result="pass" name="testBatchAndFlushWithHandler" />
+      <Test result="pass" name="testBatchAndFlushWithMultipleSensors" />
+      <Test result="pass" name="testBodySensorOperations" />
+      <Test result="pass" name="testCancelTriggerWithNonTriggerSensor" />
+      <Test result="pass" name="testGetDefaultSensorWithWakeUpFlag" />
+      <Test result="pass" name="testLegacySensorOperations" />
+      <Test result="pass" name="testRegisterTwiceWithSameSensor" />
+      <Test result="pass" name="testRegisterWithTriggerSensor" />
+      <Test result="pass" name="testRequestTriggerWithNonTriggerSensor" />
+      <Test result="pass" name="testSanitizedContinuousEventsUidIdle" />
+      <Test result="pass" name="testSensorOperations_accelerometer" />
+      <Test result="pass" name="testSensorOperations_accelerometerLimitedAxes" />
+      <Test result="pass" name="testSensorOperations_accelerometerLimitedAxesUncalibrated" />
+      <Test result="pass" name="testSensorOperations_gyroscope" />
+      <Test result="pass" name="testSensorOperations_gyroscopeLimitedAxes" />
+      <Test result="pass" name="testSensorOperations_gyroscopeLimitedAxesUncalibrated" />
+      <Test result="pass" name="testSensorOperations_heading" />
+      <Test result="pass" name="testSensorOperations_hingeAngle" />
+      <Test result="pass" name="testSensorOperations_magneticField" />
+      <Test result="pass" name="testSensorOperations_orientation" />
+      <Test result="pass" name="testSensorOperations_pressure" />
+      <Test result="pass" name="testSensorOperations_stepCounter" />
+      <Test result="pass" name="testSensorOperations_stepDetector" />
+      <Test result="pass" name="testSensorOperations_temperature" />
+      <Test result="pass" name="testSensorStringTypes" />
+      <Test result="pass" name="testSensorTimeStamps" />
+      <Test result="pass" name="testValuesForAllSensors" />
+      <Test result="pass" name="testWakeUpFlags" />
+    </TestCase>
+    <TestCase name="android.hardware.cts.SingleSensorTests">
+      <Test result="pass" name="testAccelUncalibrated_100hz" />
+      <Test result="pass" name="testAccelUncalibrated_10hz" />
+      <Test result="pass" name="testAccelUncalibrated_15hz" />
+      <Test result="pass" name="testAccelUncalibrated_1hz" />
+      <Test result="pass" name="testAccelUncalibrated_200hz" />
+      <Test result="pass" name="testAccelUncalibrated_25hz" />
+      <Test result="pass" name="testAccelUncalibrated_50hz" />
+      <Test result="pass" name="testAccelUncalibrated_5hz" />
+      <Test result="pass" name="testAccelUncalibrated_automotive" />
+      <Test result="pass" name="testAccelUncalibrated_fastest" />
+      <Test result="pass" name="testAccelerometerLimitedAxesUncalibrated_100hz" />
+      <Test result="pass" name="testAccelerometerLimitedAxesUncalibrated_10hz" />
+      <Test result="pass" name="testAccelerometerLimitedAxesUncalibrated_15hz" />
+      <Test result="pass" name="testAccelerometerLimitedAxesUncalibrated_1hz" />
+      <Test result="pass" name="testAccelerometerLimitedAxesUncalibrated_200hz" />
+      <Test result="pass" name="testAccelerometerLimitedAxesUncalibrated_25hz" />
+      <Test result="pass" name="testAccelerometerLimitedAxesUncalibrated_50hz" />
+      <Test result="pass" name="testAccelerometerLimitedAxesUncalibrated_5hz" />
+      <Test result="pass" name="testAccelerometerLimitedAxesUncalibrated_automotive" />
+      <Test result="pass" name="testAccelerometerLimitedAxesUncalibrated_fastest" />
+      <Test result="pass" name="testAccelerometerLimitedAxes_100hz" />
+      <Test result="pass" name="testAccelerometerLimitedAxes_10hz" />
+      <Test result="pass" name="testAccelerometerLimitedAxes_15hz" />
+      <Test result="pass" name="testAccelerometerLimitedAxes_1hz" />
+      <Test result="pass" name="testAccelerometerLimitedAxes_200hz" />
+      <Test result="pass" name="testAccelerometerLimitedAxes_25hz" />
+      <Test result="pass" name="testAccelerometerLimitedAxes_50hz" />
+      <Test result="pass" name="testAccelerometerLimitedAxes_5hz" />
+      <Test result="pass" name="testAccelerometerLimitedAxes_automotive" />
+      <Test result="pass" name="testAccelerometerLimitedAxes_fastest" />
+      <Test result="pass" name="testAccelerometer_100hz" />
+      <Test result="pass" name="testAccelerometer_10hz" />
+      <Test result="pass" name="testAccelerometer_15hz" />
+      <Test result="pass" name="testAccelerometer_1hz" />
+      <Test result="pass" name="testAccelerometer_200hz" />
+      <Test result="pass" name="testAccelerometer_25hz" />
+      <Test result="pass" name="testAccelerometer_50hz" />
+      <Test result="pass" name="testAccelerometer_5hz" />
+      <Test result="pass" name="testAccelerometer_automotive" />
+      <Test result="pass" name="testAccelerometer_fastest" />
+      <Test result="pass" name="testGameRotationVector_100hz" />
+      <Test result="pass" name="testGameRotationVector_10hz" />
+      <Test result="pass" name="testGameRotationVector_15hz" />
+      <Test result="pass" name="testGameRotationVector_1hz" />
+      <Test result="pass" name="testGameRotationVector_200hz" />
+      <Test result="pass" name="testGameRotationVector_25hz" />
+      <Test result="pass" name="testGameRotationVector_50hz" />
+      <Test result="pass" name="testGameRotationVector_5hz" />
+      <Test result="pass" name="testGameRotationVector_fastest" />
+      <Test result="pass" name="testGeomagneticRotationVector_fastest" />
+      <Test result="pass" name="testGravity_100hz" />
+      <Test result="pass" name="testGravity_10hz" />
+      <Test result="pass" name="testGravity_15hz" />
+      <Test result="pass" name="testGravity_1hz" />
+      <Test result="pass" name="testGravity_200hz" />
+      <Test result="pass" name="testGravity_25hz" />
+      <Test result="pass" name="testGravity_50hz" />
+      <Test result="pass" name="testGravity_5hz" />
+      <Test result="pass" name="testGravity_fastest" />
+      <Test result="pass" name="testGyroscopeLimitedAxesUncalibrated_100hz" />
+      <Test result="pass" name="testGyroscopeLimitedAxesUncalibrated_10hz" />
+      <Test result="pass" name="testGyroscopeLimitedAxesUncalibrated_15hz" />
+      <Test result="pass" name="testGyroscopeLimitedAxesUncalibrated_1hz" />
+      <Test result="pass" name="testGyroscopeLimitedAxesUncalibrated_200hz" />
+      <Test result="pass" name="testGyroscopeLimitedAxesUncalibrated_25hz" />
+      <Test result="pass" name="testGyroscopeLimitedAxesUncalibrated_50hz" />
+      <Test result="pass" name="testGyroscopeLimitedAxesUncalibrated_5hz" />
+      <Test result="pass" name="testGyroscopeLimitedAxesUncalibrated_fastest" />
+      <Test result="pass" name="testGyroscopeLimitedAxes_100hz" />
+      <Test result="pass" name="testGyroscopeLimitedAxes_10hz" />
+      <Test result="pass" name="testGyroscopeLimitedAxes_15hz" />
+      <Test result="pass" name="testGyroscopeLimitedAxes_1hz" />
+      <Test result="pass" name="testGyroscopeLimitedAxes_200hz" />
+      <Test result="pass" name="testGyroscopeLimitedAxes_25hz" />
+      <Test result="pass" name="testGyroscopeLimitedAxes_50hz" />
+      <Test result="pass" name="testGyroscopeLimitedAxes_5hz" />
+      <Test result="pass" name="testGyroscopeLimitedAxes_fastest" />
+      <Test result="pass" name="testGyroscopeUncalibrated_100hz" />
+      <Test result="pass" name="testGyroscopeUncalibrated_10hz" />
+      <Test result="pass" name="testGyroscopeUncalibrated_15hz" />
+      <Test result="pass" name="testGyroscopeUncalibrated_1hz" />
+      <Test result="pass" name="testGyroscopeUncalibrated_200hz" />
+      <Test result="pass" name="testGyroscopeUncalibrated_25hz" />
+      <Test result="pass" name="testGyroscopeUncalibrated_50hz" />
+      <Test result="pass" name="testGyroscopeUncalibrated_5hz" />
+      <Test result="pass" name="testGyroscopeUncalibrated_fastest" />
+      <Test result="pass" name="testGyroscope_100hz" />
+      <Test result="pass" name="testGyroscope_10hz" />
+      <Test result="pass" name="testGyroscope_15hz" />
+      <Test result="pass" name="testGyroscope_1hz" />
+      <Test result="pass" name="testGyroscope_200hz" />
+      <Test result="pass" name="testGyroscope_25hz" />
+      <Test result="pass" name="testGyroscope_50hz" />
+      <Test result="pass" name="testGyroscope_5hz" />
+      <Test result="pass" name="testGyroscope_fastest" />
+      <Test result="pass" name="testHeading_1hz" />
+      <Test result="pass" name="testHeading_automotive" />
+      <Test result="pass" name="testLinearAcceleration_100hz" />
+      <Test result="pass" name="testLinearAcceleration_10hz" />
+      <Test result="pass" name="testLinearAcceleration_15hz" />
+      <Test result="pass" name="testLinearAcceleration_1hz" />
+      <Test result="pass" name="testLinearAcceleration_200hz" />
+      <Test result="pass" name="testLinearAcceleration_25hz" />
+      <Test result="pass" name="testLinearAcceleration_50hz" />
+      <Test result="pass" name="testLinearAcceleration_5hz" />
+      <Test result="pass" name="testMagneticFieldUncalibrated_100hz" />
+      <Test result="pass" name="testMagneticFieldUncalibrated_10hz" />
+      <Test result="pass" name="testMagneticFieldUncalibrated_15hz" />
+      <Test result="pass" name="testMagneticFieldUncalibrated_1hz" />
+      <Test result="pass" name="testMagneticFieldUncalibrated_200hz" />
+      <Test result="pass" name="testMagneticFieldUncalibrated_25hz" />
+      <Test result="pass" name="testMagneticFieldUncalibrated_50hz" />
+      <Test result="pass" name="testMagneticFieldUncalibrated_5hz" />
+      <Test result="pass" name="testMagneticFieldUncalibrated_fastest" />
+      <Test result="pass" name="testMagneticField_100hz" />
+      <Test result="pass" name="testMagneticField_10hz" />
+      <Test result="pass" name="testMagneticField_15hz" />
+      <Test result="pass" name="testMagneticField_1hz" />
+      <Test result="pass" name="testMagneticField_200hz" />
+      <Test result="pass" name="testMagneticField_25hz" />
+      <Test result="pass" name="testMagneticField_50hz" />
+      <Test result="pass" name="testMagneticField_5hz" />
+      <Test result="pass" name="testMagneticField_fastest" />
+      <Test result="pass" name="testOrientation_100hz" />
+      <Test result="pass" name="testOrientation_10hz" />
+      <Test result="pass" name="testOrientation_15hz" />
+      <Test result="pass" name="testOrientation_1hz" />
+      <Test result="pass" name="testOrientation_200hz" />
+      <Test result="pass" name="testOrientation_25hz" />
+      <Test result="pass" name="testOrientation_50hz" />
+      <Test result="pass" name="testOrientation_5hz" />
+      <Test result="pass" name="testOrientation_fastest" />
+      <Test result="pass" name="testPressure_100hz" />
+      <Test result="pass" name="testPressure_10hz" />
+      <Test result="pass" name="testPressure_15hz" />
+      <Test result="pass" name="testPressure_1hz" />
+      <Test result="pass" name="testPressure_200hz" />
+      <Test result="pass" name="testPressure_25hz" />
+      <Test result="pass" name="testPressure_50hz" />
+      <Test result="pass" name="testPressure_5hz" />
+      <Test result="pass" name="testPressure_fastest" />
+      <Test result="pass" name="testRotationVector_100hz" />
+      <Test result="pass" name="testRotationVector_10hz" />
+      <Test result="pass" name="testRotationVector_15hz" />
+      <Test result="pass" name="testRotationVector_1hz" />
+      <Test result="pass" name="testRotationVector_200hz" />
+      <Test result="pass" name="testRotationVector_25hz" />
+      <Test result="pass" name="testRotationVector_50hz" />
+      <Test result="pass" name="testRotationVector_5hz" />
+      <Test result="pass" name="testRotationVector_fastest" />
+      <Test result="pass" name="testSensorProperties" />
+    </TestCase>
+    <TestCase name="android.hardware.cts.helpers.SensorCtsHelperTest">
+      <Test result="pass" name="testGetFrequency" />
+      <Test result="pass" name="testGetPeriod" />
+    </TestCase>
+    <TestCase name="android.hardware.cts.helpers.SensorStatsTest">
+      <Test result="pass" name="testFlatten" />
+    </TestCase>
+    <TestCase name="android.hardware.cts.helpers.sensoroperations.SensorOperationTest">
+      <Test result="pass" name="testDelaySensorOperation" />
+      <Test result="pass" name="testFakeSensorOperation" />
+      <Test result="pass" name="testParallelSensorOperation" />
+      <Test result="pass" name="testParallelSensorOperation_fail" />
+      <Test result="pass" name="testParallelSensorOperation_timeout" />
+      <Test result="pass" name="testRepeatingSensorOperation" />
+      <Test result="pass" name="testRepeatingSensorOperation_fail" />
+      <Test result="pass" name="testSequentialSensorOperation" />
+      <Test result="pass" name="testSequentialSensorOperation_fail" />
+    </TestCase>
+    <TestCase name="android.hardware.cts.helpers.sensorverification.EventBasicVerificationTest">
+      <Test result="pass" name="testVerify" />
+    </TestCase>
+    <TestCase name="android.hardware.cts.helpers.sensorverification.EventGapVerificationTest">
+      <Test result="pass" name="testVerify_correct" />
+      <Test result="pass" name="testVerify_jitter" />
+      <Test result="pass" name="testVerify_missing_events" />
+      <Test result="pass" name="testVerify_no_events" />
+    </TestCase>
+    <TestCase name="android.hardware.cts.helpers.sensorverification.EventOrderingVerificationTest">
+      <Test result="pass" name="testMultipleOutOfOrder" />
+      <Test result="pass" name="testNoEvents" />
+      <Test result="pass" name="testSequentialTimestamp" />
+      <Test result="pass" name="testSingleOutofOrder" />
+    </TestCase>
+    <TestCase name="android.hardware.cts.helpers.sensorverification.FrequencyVerificationTest">
+      <Test result="pass" name="testVerifification" />
+    </TestCase>
+    <TestCase name="android.hardware.cts.helpers.sensorverification.InitialValueVerificationTest">
+      <Test result="pass" name="testVerify" />
+    </TestCase>
+    <TestCase name="android.hardware.cts.helpers.sensorverification.JitterVerificationTest">
+      <Test result="pass" name="testCalculateDelta" />
+      <Test result="pass" name="testVerify" />
+    </TestCase>
+    <TestCase name="android.hardware.cts.helpers.sensorverification.MagnitudeVerificationTest">
+      <Test result="pass" name="testVerify" />
+    </TestCase>
+    <TestCase name="android.hardware.cts.helpers.sensorverification.MeanLargerThanVerificationTest">
+      <Test result="pass" name="testVerify" />
+    </TestCase>
+    <TestCase name="android.hardware.cts.helpers.sensorverification.MeanVerificationTest">
+      <Test result="pass" name="testVerify" />
+    </TestCase>
+    <TestCase name="android.hardware.cts.helpers.sensorverification.OffsetVerificationTest">
+      <Test result="pass" name="testMultipleEventVerify" />
+      <Test result="pass" name="testSingleEventVerify" />
+    </TestCase>
+    <TestCase name="android.hardware.cts.helpers.sensorverification.StandardDeviationVerificationTest">
+      <Test result="pass" name="testVerify" />
+    </TestCase>
+    <TestCase name="android.hardware.cts.helpers.sensorverification.TimestampClockSourceVerificationTest">
+      <Test result="pass" name="testVerify_fail" />
+      <Test result="pass" name="testVerify_jitter_fail" />
+      <Test result="pass" name="testVerify_jitter_pass" />
+      <Test result="pass" name="testVerify_missing_events_fail" />
+      <Test result="pass" name="testVerify_missing_events_pass" />
+      <Test result="pass" name="testVerify_no_events_fail" />
+      <Test result="pass" name="testVerify_pass" />
+    </TestCase>
+  </Module>
+  <Module name="CtsSensorTestCases[instant]" abi="arm64-v8a" runtime="2875604" done="true" pass="428" total_tests="428">
+    <TestCase name="android.hardware.cts.SensorAdditionalInfoTest">
+      <Test result="pass" name="testSensorAdditionalInfo" />
+    </TestCase>
+    <TestCase name="android.hardware.cts.SensorBatchingFifoTest">
+      <Test result="pass" name="testAccelerometerFifoLength" />
+      <Test result="pass" name="testGameRotationVectorFifoLength" />
+      <Test result="pass" name="testPressureFifoLength" />
+      <Test result="pass" name="testUncalMagnetometerFifoLength" />
+    </TestCase>
+    <TestCase name="android.hardware.cts.SensorBatchingTests">
+      <Test result="pass" name="testAccelUncalibrated" />
+      <Test result="pass" name="testAccelUncalibrated_50hz_batching" />
+      <Test result="pass" name="testAccelUncalibrated_50hz_flush" />
+      <Test result="pass" name="testAccelUncalibrated_fastest_flush" />
+      <Test result="pass" name="testAccelerometerLimitedAxesUncalibrated" />
+      <Test result="pass" name="testAccelerometerLimitedAxesUncalibrated_50hz_batching" />
+      <Test result="pass" name="testAccelerometerLimitedAxesUncalibrated_50hz_flush" />
+      <Test result="pass" name="testAccelerometerLimitedAxesUncalibrated_fastest_batching" />
+      <Test result="pass" name="testAccelerometerLimitedAxesUncalibrated_fastest_flush" />
+      <Test result="pass" name="testAccelerometerLimitedAxes_50hz_batching" />
+      <Test result="pass" name="testAccelerometerLimitedAxes_50hz_flush" />
+      <Test result="pass" name="testAccelerometerLimitedAxes_fastest_batching" />
+      <Test result="pass" name="testAccelerometerLimitedAxes_fastest_flush" />
+      <Test result="pass" name="testAccelerometerUncalibrated_fastest_batching" />
+      <Test result="pass" name="testAccelerometer_50hz_batching" />
+      <Test result="pass" name="testAccelerometer_50hz_flush" />
+      <Test result="pass" name="testAccelerometer_fastest_batching" />
+      <Test result="pass" name="testAccelerometer_fastest_flush" />
+      <Test result="pass" name="testGameRotationVector_50hz_batching" />
+      <Test result="pass" name="testGameRotationVector_50hz_flush" />
+      <Test result="pass" name="testGameRotationVector_fastest_batching" />
+      <Test result="pass" name="testGameRotationVector_fastest_flush" />
+      <Test result="pass" name="testGeomagneticRotationVector_50hz_batching" />
+      <Test result="pass" name="testGeomagneticRotationVector_50hz_flush" />
+      <Test result="pass" name="testGeomagneticRotationVector_fastest_batching" />
+      <Test result="pass" name="testGeomagneticRotationVector_fastest_flush" />
+      <Test result="pass" name="testGravity_50hz_batching" />
+      <Test result="pass" name="testGravity_50hz_flush" />
+      <Test result="pass" name="testGravity_fastest_batching" />
+      <Test result="pass" name="testGravity_fastest_flush" />
+      <Test result="pass" name="testGyroscopeLimitedAxesUncalibrated_50hz_batching" />
+      <Test result="pass" name="testGyroscopeLimitedAxesUncalibrated_50hz_flush" />
+      <Test result="pass" name="testGyroscopeLimitedAxesUncalibrated_fastest_batching" />
+      <Test result="pass" name="testGyroscopeLimitedAxesUncalibrated_fastest_flush" />
+      <Test result="pass" name="testGyroscopeLimitedAxes_50hz_batching" />
+      <Test result="pass" name="testGyroscopeLimitedAxes_50hz_flush" />
+      <Test result="pass" name="testGyroscopeLimitedAxes_fastest_batching" />
+      <Test result="pass" name="testGyroscopeLimitedAxes_fastest_flush" />
+      <Test result="pass" name="testGyroscopeUncalibrated_50hz_batching" />
+      <Test result="pass" name="testGyroscopeUncalibrated_50hz_flush" />
+      <Test result="pass" name="testGyroscopeUncalibrated_fastest_batching" />
+      <Test result="pass" name="testGyroscopeUncalibrated_fastest_flush" />
+      <Test result="pass" name="testGyroscope_50hz_batching" />
+      <Test result="pass" name="testGyroscope_50hz_flush" />
+      <Test result="pass" name="testGyroscope_fastest_batching" />
+      <Test result="pass" name="testGyroscope_fastest_flush" />
+      <Test result="pass" name="testLinearAcceleration_50hz_batching" />
+      <Test result="pass" name="testLinearAcceleration_50hz_flush" />
+      <Test result="pass" name="testLinearAcceleration_fastest_batching" />
+      <Test result="pass" name="testLinearAcceleration_fastest_flush" />
+      <Test result="pass" name="testMagneticFieldUncalibrated_50hz_batching" />
+      <Test result="pass" name="testMagneticFieldUncalibrated_50hz_flush" />
+      <Test result="pass" name="testMagneticFieldUncalibrated_fastest_batching" />
+      <Test result="pass" name="testMagneticFieldUncalibrated_fastest_flush" />
+      <Test result="pass" name="testMagneticField_50hz_batching" />
+      <Test result="pass" name="testMagneticField_50hz_flush" />
+      <Test result="pass" name="testMagneticField_fastest_batching" />
+      <Test result="pass" name="testMagneticField_fastest_flush" />
+      <Test result="pass" name="testOrientation_50hz_batching" />
+      <Test result="pass" name="testOrientation_50hz_flush" />
+      <Test result="pass" name="testOrientation_fastest_batching" />
+      <Test result="pass" name="testOrientation_fastest_flush" />
+      <Test result="pass" name="testPressure_50hz_batching" />
+      <Test result="pass" name="testPressure_50hz_flush" />
+      <Test result="pass" name="testPressure_fastest_batching" />
+      <Test result="pass" name="testPressure_fastest_flush" />
+      <Test result="pass" name="testRotationVector_50hz_batching" />
+      <Test result="pass" name="testRotationVector_50hz_flush" />
+      <Test result="pass" name="testRotationVector_fastest_batching" />
+      <Test result="pass" name="testRotationVector_fastest_flush" />
+    </TestCase>
+    <TestCase name="android.hardware.cts.SensorDirectReportTest">
+      <Test result="pass" name="testAccelerometerAshmemFast" />
+      <Test result="pass" name="testAccelerometerAshmemFastUidIdle" />
+      <Test result="pass" name="testAccelerometerAshmemNormal" />
+      <Test result="pass" name="testAccelerometerAshmemNormalUidIdle" />
+      <Test result="pass" name="testAccelerometerAshmemVeryFast" />
+      <Test result="pass" name="testAccelerometerAshmemVeryFastUidIdle" />
+      <Test result="pass" name="testAccelerometerHardwareBufferFast" />
+      <Test result="pass" name="testAccelerometerHardwareBufferFastUidIdle" />
+      <Test result="pass" name="testAccelerometerHardwareBufferNormal" />
+      <Test result="pass" name="testAccelerometerHardwareBufferNormalUidIdle" />
+      <Test result="pass" name="testAccelerometerHardwareBufferVeryFast" />
+      <Test result="pass" name="testAccelerometerHardwareBufferVeryFastUidIdle" />
+      <Test result="pass" name="testAtomicCounterAccel" />
+      <Test result="pass" name="testAtomicCounterGyro" />
+      <Test result="pass" name="testAtomicCounterMag" />
+      <Test result="pass" name="testCloseWithoutConfigStop" />
+      <Test result="pass" name="testGyroscopeAshmemFast" />
+      <Test result="pass" name="testGyroscopeAshmemFastUidIdle" />
+      <Test result="pass" name="testGyroscopeAshmemNormal" />
+      <Test result="pass" name="testGyroscopeAshmemNormalUidIdle" />
+      <Test result="pass" name="testGyroscopeAshmemVeryFast" />
+      <Test result="pass" name="testGyroscopeAshmemVeryFastUidIdle" />
+      <Test result="pass" name="testGyroscopeHardwareBufferFast" />
+      <Test result="pass" name="testGyroscopeHardwareBufferFastUidIdle" />
+      <Test result="pass" name="testGyroscopeHardwareBufferNormal" />
+      <Test result="pass" name="testGyroscopeHardwareBufferNormalUidIdle" />
+      <Test result="pass" name="testGyroscopeHardwareBufferVeryFast" />
+      <Test result="pass" name="testGyroscopeHardwareBufferVeryFastUidIdle" />
+      <Test result="pass" name="testMagneticFieldAshmemFast" />
+      <Test result="pass" name="testMagneticFieldAshmemFastUidIdle" />
+      <Test result="pass" name="testMagneticFieldAshmemNormal" />
+      <Test result="pass" name="testMagneticFieldAshmemNormalUidIdle" />
+      <Test result="pass" name="testMagneticFieldAshmemVeryFast" />
+      <Test result="pass" name="testMagneticFieldAshmemVeryFastUidIdle" />
+      <Test result="pass" name="testMagneticFieldHardwareBufferFast" />
+      <Test result="pass" name="testMagneticFieldHardwareBufferFastUidIdle" />
+      <Test result="pass" name="testMagneticFieldHardwareBufferNormal" />
+      <Test result="pass" name="testMagneticFieldHardwareBufferNormalUidIdle" />
+      <Test result="pass" name="testMagneticFieldHardwareBufferVeryFast" />
+      <Test result="pass" name="testMagneticFieldHardwareBufferVeryFastUidIdle" />
+      <Test result="pass" name="testRateIndependencyAccelGyroSingleChannel" />
+      <Test result="pass" name="testRateIndependencyAccelMagSingleChannel" />
+      <Test result="pass" name="testRateIndependencyAccelMultiChannel" />
+      <Test result="pass" name="testRateIndependencyAccelMultiMode" />
+      <Test result="pass" name="testRateIndependencyAccelUncalAccelSingleChannel" />
+      <Test result="pass" name="testRateIndependencyGyroMagSingleChannel" />
+      <Test result="pass" name="testRateIndependencyGyroMultiChannel" />
+      <Test result="pass" name="testRateIndependencyGyroMultiMode" />
+      <Test result="pass" name="testRateIndependencyGyroUncalGyroSingleChannel" />
+      <Test result="pass" name="testRateIndependencyMagMultiChannel" />
+      <Test result="pass" name="testRateIndependencyMagMultiMode" />
+      <Test result="pass" name="testRateIndependencyMagUncalMagSingleChannel" />
+      <Test result="pass" name="testReconfigure" />
+      <Test result="pass" name="testRegisterMultipleChannels" />
+      <Test result="pass" name="testRegisterMultipleChannelsUsingSameMemory" />
+      <Test result="pass" name="testSharedMemoryAllocation" />
+      <Test result="pass" name="testTimestampAccel" />
+      <Test result="pass" name="testTimestampGyro" />
+      <Test result="pass" name="testTimestampMag" />
+    </TestCase>
+    <TestCase name="android.hardware.cts.SensorIntegrationTests">
+      <Test result="pass" name="testAccelerometerAccelerometerStopping" />
+      <Test result="pass" name="testAccelerometerGyroscopeStopping" />
+      <Test result="pass" name="testAccelerometerLimitedAxesAccelerometerLimitedAxesStopping" />
+      <Test result="pass" name="testAccelerometerLimitedAxesGyroscopeLimitedAxesStopping" />
+      <Test result="pass" name="testAccelerometerLimitedAxesMagneticFieldStopping" />
+      <Test result="pass" name="testAccelerometerLimitedAxesReconfigureWhileActive" />
+      <Test result="pass" name="testAccelerometerLimitedAxesUncalibratedReconfigureWhileActive" />
+      <Test result="pass" name="testAccelerometerMagneticFieldStopping" />
+      <Test result="pass" name="testAccelerometerReconfigureWhileActive" />
+      <Test result="pass" name="testGameRotationVectorReconfigureWhileActive" />
+      <Test result="pass" name="testGeomagneticRotationVectorReconfigureWhileActive" />
+      <Test result="pass" name="testGravityReconfigureWhileActive" />
+      <Test result="pass" name="testGyroscopeAccelerometerStopping" />
+      <Test result="pass" name="testGyroscopeGyroscopeStopping" />
+      <Test result="pass" name="testGyroscopeLimitedAxesAccelerometerLimitedAxesStopping" />
+      <Test result="pass" name="testGyroscopeLimitedAxesGyroscopeLimitedAxesStopping" />
+      <Test result="pass" name="testGyroscopeLimitedAxesMagneticFieldStopping" />
+      <Test result="pass" name="testGyroscopeLimitedAxesReconfigureWhileActive" />
+      <Test result="pass" name="testGyroscopeLimitedAxesUncalibratedReconfigureWhileActive" />
+      <Test result="pass" name="testGyroscopeMagneticFieldStopping" />
+      <Test result="pass" name="testGyroscopeReconfigureWhileActive" />
+      <Test result="pass" name="testLinearAccelerationReconfigureWhileActive" />
+      <Test result="pass" name="testMagneticFieldAccelerometerLimitedAxesStopping" />
+      <Test result="pass" name="testMagneticFieldAccelerometerStopping" />
+      <Test result="pass" name="testMagneticFieldGyroscopeLimitedAxesStopping" />
+      <Test result="pass" name="testMagneticFieldGyroscopeStopping" />
+      <Test result="pass" name="testMagneticFieldMagneticFieldStopping" />
+      <Test result="pass" name="testMagneticFieldReconfigureWhileActive" />
+      <Test result="pass" name="testOrientationReconfigureWhileActive" />
+      <Test result="pass" name="testPressureReconfigureWhileActive" />
+      <Test result="pass" name="testRotationVectorReconfigureWhileActive" />
+      <Test result="pass" name="testSensorsMovingRates" />
+      <Test result="pass" name="testSensorsWithSeveralClients" />
+      <Test result="pass" name="testUncalibratedAccelerometerReconfigureWhileActive" />
+      <Test result="pass" name="testUncalibratedGyroscopeReconfigureWhileActive" />
+      <Test result="pass" name="testUncalibratedMagneticFieldReconfigureWhileActive" />
+    </TestCase>
+    <TestCase name="android.hardware.cts.SensorManagerStaticTest">
+      <Test result="pass" name="testGetAltitude" />
+      <Test result="pass" name="testGetAngleChange" />
+      <Test result="pass" name="testGetInclination" />
+      <Test result="pass" name="testGetOrientation" />
+      <Test result="pass" name="testGetQuaternionFromVector" />
+      <Test result="pass" name="testGetRotationMatrix" />
+      <Test result="pass" name="testGetRotationMatrixFromVector" />
+      <Test result="pass" name="testRemapCoordinateSystem" />
+    </TestCase>
+    <TestCase name="android.hardware.cts.SensorNativeTest">
+      <Test result="pass" name="testNative" />
+    </TestCase>
+    <TestCase name="android.hardware.cts.SensorParameterRangeTest">
+      <Test result="pass" name="testAccelerometerFifoLength" />
+      <Test result="pass" name="testPressureFifoLength" />
+      <Test result="pass" name="testPressureRange" />
+      <Test result="pass" name="testProximityFifoLength" />
+      <Test result="pass" name="testStaticSensorId" />
+      <Test result="pass" name="testStepDetectorFifoLength" />
+      <Test result="pass" name="testUncalMagnetometerFifoLength" />
+    </TestCase>
+    <TestCase name="android.hardware.cts.SensorSupportTest">
+      <Test result="pass" name="testGameRotationVectorInputSensorSupport" />
+      <Test result="pass" name="testGeomagneticRotationVectorInputSensorSupport" />
+      <Test result="pass" name="testGravityInputSensorSupport" />
+      <Test result="pass" name="testLinearAccelerationInputSensorSupport" />
+      <Test result="pass" name="testRotationVectorInputSensorSupport" />
+      <Test result="pass" name="testStepCounterInputSensorSupport" />
+      <Test result="pass" name="testStepDetectorInputSensorSupport" />
+      <Test result="pass" name="testSupportsAccelerometer" />
+      <Test result="pass" name="testSupportsAccelerometerUncalibrated" />
+      <Test result="pass" name="testSupportsGameRotationVector" />
+      <Test result="pass" name="testSupportsGeoMagneticField" />
+      <Test result="pass" name="testSupportsGravityAndLinearAccelIfHasAG" />
+      <Test result="pass" name="testSupportsGyroscope" />
+      <Test result="pass" name="testSupportsGyroscopeUncalibrated" />
+      <Test result="pass" name="testSupportsMagneticFieldUncalibrated" />
+      <Test result="pass" name="testSupportsPressure" />
+      <Test result="pass" name="testSupportsRotationVectorIfHasAGM" />
+      <Test result="pass" name="testSupportsSignificantMotion" />
+      <Test result="pass" name="testSupportsStepCounter" />
+      <Test result="pass" name="testSupportsStepDetector" />
+      <Test result="pass" name="testSupportsTiltDetector" />
+      <Test result="pass" name="testUncalibratedGeomagneticFieldInputSensorSupport" />
+      <Test result="pass" name="testUncalibratedGyroscopeInputSensorSupport" />
+    </TestCase>
+    <TestCase name="android.hardware.cts.SensorTest">
+      <Test result="pass" name="testBatchAndFlush" />
+      <Test result="pass" name="testBatchAndFlushUidIdle" />
+      <Test result="pass" name="testBatchAndFlushUseDefaultHandler" />
+      <Test result="pass" name="testBatchAndFlushWithHandler" />
+      <Test result="pass" name="testBatchAndFlushWithMultipleSensors" />
+      <Test result="pass" name="testCancelTriggerWithNonTriggerSensor" />
+      <Test result="pass" name="testGetDefaultSensorWithWakeUpFlag" />
+      <Test result="pass" name="testLegacySensorOperations" />
+      <Test result="pass" name="testRegisterTwiceWithSameSensor" />
+      <Test result="pass" name="testRegisterWithTriggerSensor" />
+      <Test result="pass" name="testRequestTriggerWithNonTriggerSensor" />
+      <Test result="pass" name="testSanitizedContinuousEventsUidIdle" />
+      <Test result="pass" name="testSensorOperations_accelerometer" />
+      <Test result="pass" name="testSensorOperations_accelerometerLimitedAxes" />
+      <Test result="pass" name="testSensorOperations_accelerometerLimitedAxesUncalibrated" />
+      <Test result="pass" name="testSensorOperations_gyroscope" />
+      <Test result="pass" name="testSensorOperations_gyroscopeLimitedAxes" />
+      <Test result="pass" name="testSensorOperations_gyroscopeLimitedAxesUncalibrated" />
+      <Test result="pass" name="testSensorOperations_heading" />
+      <Test result="pass" name="testSensorOperations_hingeAngle" />
+      <Test result="pass" name="testSensorOperations_magneticField" />
+      <Test result="pass" name="testSensorOperations_orientation" />
+      <Test result="pass" name="testSensorOperations_pressure" />
+      <Test result="pass" name="testSensorOperations_stepCounter" />
+      <Test result="pass" name="testSensorOperations_stepDetector" />
+      <Test result="pass" name="testSensorOperations_temperature" />
+      <Test result="pass" name="testSensorStringTypes" />
+      <Test result="pass" name="testSensorTimeStamps" />
+      <Test result="pass" name="testValuesForAllSensors" />
+      <Test result="pass" name="testWakeUpFlags" />
+    </TestCase>
+    <TestCase name="android.hardware.cts.SingleSensorTests">
+      <Test result="pass" name="testAccelUncalibrated_100hz" />
+      <Test result="pass" name="testAccelUncalibrated_10hz" />
+      <Test result="pass" name="testAccelUncalibrated_15hz" />
+      <Test result="pass" name="testAccelUncalibrated_1hz" />
+      <Test result="pass" name="testAccelUncalibrated_200hz" />
+      <Test result="pass" name="testAccelUncalibrated_25hz" />
+      <Test result="pass" name="testAccelUncalibrated_50hz" />
+      <Test result="pass" name="testAccelUncalibrated_5hz" />
+      <Test result="pass" name="testAccelUncalibrated_automotive" />
+      <Test result="pass" name="testAccelUncalibrated_fastest" />
+      <Test result="pass" name="testAccelerometerLimitedAxesUncalibrated_100hz" />
+      <Test result="pass" name="testAccelerometerLimitedAxesUncalibrated_10hz" />
+      <Test result="pass" name="testAccelerometerLimitedAxesUncalibrated_15hz" />
+      <Test result="pass" name="testAccelerometerLimitedAxesUncalibrated_1hz" />
+      <Test result="pass" name="testAccelerometerLimitedAxesUncalibrated_200hz" />
+      <Test result="pass" name="testAccelerometerLimitedAxesUncalibrated_25hz" />
+      <Test result="pass" name="testAccelerometerLimitedAxesUncalibrated_50hz" />
+      <Test result="pass" name="testAccelerometerLimitedAxesUncalibrated_5hz" />
+      <Test result="pass" name="testAccelerometerLimitedAxesUncalibrated_automotive" />
+      <Test result="pass" name="testAccelerometerLimitedAxesUncalibrated_fastest" />
+      <Test result="pass" name="testAccelerometerLimitedAxes_100hz" />
+      <Test result="pass" name="testAccelerometerLimitedAxes_10hz" />
+      <Test result="pass" name="testAccelerometerLimitedAxes_15hz" />
+      <Test result="pass" name="testAccelerometerLimitedAxes_1hz" />
+      <Test result="pass" name="testAccelerometerLimitedAxes_200hz" />
+      <Test result="pass" name="testAccelerometerLimitedAxes_25hz" />
+      <Test result="pass" name="testAccelerometerLimitedAxes_50hz" />
+      <Test result="pass" name="testAccelerometerLimitedAxes_5hz" />
+      <Test result="pass" name="testAccelerometerLimitedAxes_automotive" />
+      <Test result="pass" name="testAccelerometerLimitedAxes_fastest" />
+      <Test result="pass" name="testAccelerometer_100hz" />
+      <Test result="pass" name="testAccelerometer_10hz" />
+      <Test result="pass" name="testAccelerometer_15hz" />
+      <Test result="pass" name="testAccelerometer_1hz" />
+      <Test result="pass" name="testAccelerometer_200hz" />
+      <Test result="pass" name="testAccelerometer_25hz" />
+      <Test result="pass" name="testAccelerometer_50hz" />
+      <Test result="pass" name="testAccelerometer_5hz" />
+      <Test result="pass" name="testAccelerometer_automotive" />
+      <Test result="pass" name="testAccelerometer_fastest" />
+      <Test result="pass" name="testGameRotationVector_100hz" />
+      <Test result="pass" name="testGameRotationVector_10hz" />
+      <Test result="pass" name="testGameRotationVector_15hz" />
+      <Test result="pass" name="testGameRotationVector_1hz" />
+      <Test result="pass" name="testGameRotationVector_200hz" />
+      <Test result="pass" name="testGameRotationVector_25hz" />
+      <Test result="pass" name="testGameRotationVector_50hz" />
+      <Test result="pass" name="testGameRotationVector_5hz" />
+      <Test result="pass" name="testGameRotationVector_fastest" />
+      <Test result="pass" name="testGeomagneticRotationVector_fastest" />
+      <Test result="pass" name="testGravity_100hz" />
+      <Test result="pass" name="testGravity_10hz" />
+      <Test result="pass" name="testGravity_15hz" />
+      <Test result="pass" name="testGravity_1hz" />
+      <Test result="pass" name="testGravity_200hz" />
+      <Test result="pass" name="testGravity_25hz" />
+      <Test result="pass" name="testGravity_50hz" />
+      <Test result="pass" name="testGravity_5hz" />
+      <Test result="pass" name="testGravity_fastest" />
+      <Test result="pass" name="testGyroscopeLimitedAxesUncalibrated_100hz" />
+      <Test result="pass" name="testGyroscopeLimitedAxesUncalibrated_10hz" />
+      <Test result="pass" name="testGyroscopeLimitedAxesUncalibrated_15hz" />
+      <Test result="pass" name="testGyroscopeLimitedAxesUncalibrated_1hz" />
+      <Test result="pass" name="testGyroscopeLimitedAxesUncalibrated_200hz" />
+      <Test result="pass" name="testGyroscopeLimitedAxesUncalibrated_25hz" />
+      <Test result="pass" name="testGyroscopeLimitedAxesUncalibrated_50hz" />
+      <Test result="pass" name="testGyroscopeLimitedAxesUncalibrated_5hz" />
+      <Test result="pass" name="testGyroscopeLimitedAxesUncalibrated_fastest" />
+      <Test result="pass" name="testGyroscopeLimitedAxes_100hz" />
+      <Test result="pass" name="testGyroscopeLimitedAxes_10hz" />
+      <Test result="pass" name="testGyroscopeLimitedAxes_15hz" />
+      <Test result="pass" name="testGyroscopeLimitedAxes_1hz" />
+      <Test result="pass" name="testGyroscopeLimitedAxes_200hz" />
+      <Test result="pass" name="testGyroscopeLimitedAxes_25hz" />
+      <Test result="pass" name="testGyroscopeLimitedAxes_50hz" />
+      <Test result="pass" name="testGyroscopeLimitedAxes_5hz" />
+      <Test result="pass" name="testGyroscopeLimitedAxes_fastest" />
+      <Test result="pass" name="testGyroscopeUncalibrated_100hz" />
+      <Test result="pass" name="testGyroscopeUncalibrated_10hz" />
+      <Test result="pass" name="testGyroscopeUncalibrated_15hz" />
+      <Test result="pass" name="testGyroscopeUncalibrated_1hz" />
+      <Test result="pass" name="testGyroscopeUncalibrated_200hz" />
+      <Test result="pass" name="testGyroscopeUncalibrated_25hz" />
+      <Test result="pass" name="testGyroscopeUncalibrated_50hz" />
+      <Test result="pass" name="testGyroscopeUncalibrated_5hz" />
+      <Test result="pass" name="testGyroscopeUncalibrated_fastest" />
+      <Test result="pass" name="testGyroscope_100hz" />
+      <Test result="pass" name="testGyroscope_10hz" />
+      <Test result="pass" name="testGyroscope_15hz" />
+      <Test result="pass" name="testGyroscope_1hz" />
+      <Test result="pass" name="testGyroscope_200hz" />
+      <Test result="pass" name="testGyroscope_25hz" />
+      <Test result="pass" name="testGyroscope_50hz" />
+      <Test result="pass" name="testGyroscope_5hz" />
+      <Test result="pass" name="testGyroscope_fastest" />
+      <Test result="pass" name="testHeading_1hz" />
+      <Test result="pass" name="testHeading_automotive" />
+      <Test result="pass" name="testLinearAcceleration_100hz" />
+      <Test result="pass" name="testLinearAcceleration_10hz" />
+      <Test result="pass" name="testLinearAcceleration_15hz" />
+      <Test result="pass" name="testLinearAcceleration_1hz" />
+      <Test result="pass" name="testLinearAcceleration_200hz" />
+      <Test result="pass" name="testLinearAcceleration_25hz" />
+      <Test result="pass" name="testLinearAcceleration_50hz" />
+      <Test result="pass" name="testLinearAcceleration_5hz" />
+      <Test result="pass" name="testMagneticFieldUncalibrated_100hz" />
+      <Test result="pass" name="testMagneticFieldUncalibrated_10hz" />
+      <Test result="pass" name="testMagneticFieldUncalibrated_15hz" />
+      <Test result="pass" name="testMagneticFieldUncalibrated_1hz" />
+      <Test result="pass" name="testMagneticFieldUncalibrated_200hz" />
+      <Test result="pass" name="testMagneticFieldUncalibrated_25hz" />
+      <Test result="pass" name="testMagneticFieldUncalibrated_50hz" />
+      <Test result="pass" name="testMagneticFieldUncalibrated_5hz" />
+      <Test result="pass" name="testMagneticFieldUncalibrated_fastest" />
+      <Test result="pass" name="testMagneticField_100hz" />
+      <Test result="pass" name="testMagneticField_10hz" />
+      <Test result="pass" name="testMagneticField_15hz" />
+      <Test result="pass" name="testMagneticField_1hz" />
+      <Test result="pass" name="testMagneticField_200hz" />
+      <Test result="pass" name="testMagneticField_25hz" />
+      <Test result="pass" name="testMagneticField_50hz" />
+      <Test result="pass" name="testMagneticField_5hz" />
+      <Test result="pass" name="testMagneticField_fastest" />
+      <Test result="pass" name="testOrientation_100hz" />
+      <Test result="pass" name="testOrientation_10hz" />
+      <Test result="pass" name="testOrientation_15hz" />
+      <Test result="pass" name="testOrientation_1hz" />
+      <Test result="pass" name="testOrientation_200hz" />
+      <Test result="pass" name="testOrientation_25hz" />
+      <Test result="pass" name="testOrientation_50hz" />
+      <Test result="pass" name="testOrientation_5hz" />
+      <Test result="pass" name="testOrientation_fastest" />
+      <Test result="pass" name="testPressure_100hz" />
+      <Test result="pass" name="testPressure_10hz" />
+      <Test result="pass" name="testPressure_15hz" />
+      <Test result="pass" name="testPressure_1hz" />
+      <Test result="pass" name="testPressure_200hz" />
+      <Test result="pass" name="testPressure_25hz" />
+      <Test result="pass" name="testPressure_50hz" />
+      <Test result="pass" name="testPressure_5hz" />
+      <Test result="pass" name="testPressure_fastest" />
+      <Test result="pass" name="testRotationVector_100hz" />
+      <Test result="pass" name="testRotationVector_10hz" />
+      <Test result="pass" name="testRotationVector_15hz" />
+      <Test result="pass" name="testRotationVector_1hz" />
+      <Test result="pass" name="testRotationVector_200hz" />
+      <Test result="pass" name="testRotationVector_25hz" />
+      <Test result="pass" name="testRotationVector_50hz" />
+      <Test result="pass" name="testRotationVector_5hz" />
+      <Test result="pass" name="testRotationVector_fastest" />
+      <Test result="pass" name="testSensorProperties" />
+    </TestCase>
+    <TestCase name="android.hardware.cts.helpers.SensorCtsHelperTest">
+      <Test result="pass" name="testGetFrequency" />
+      <Test result="pass" name="testGetPeriod" />
+    </TestCase>
+    <TestCase name="android.hardware.cts.helpers.SensorStatsTest">
+      <Test result="pass" name="testFlatten" />
+    </TestCase>
+    <TestCase name="android.hardware.cts.helpers.sensoroperations.SensorOperationTest">
+      <Test result="pass" name="testDelaySensorOperation" />
+      <Test result="pass" name="testFakeSensorOperation" />
+      <Test result="pass" name="testParallelSensorOperation" />
+      <Test result="pass" name="testParallelSensorOperation_fail" />
+      <Test result="pass" name="testParallelSensorOperation_timeout" />
+      <Test result="pass" name="testRepeatingSensorOperation" />
+      <Test result="pass" name="testRepeatingSensorOperation_fail" />
+      <Test result="pass" name="testSequentialSensorOperation" />
+      <Test result="pass" name="testSequentialSensorOperation_fail" />
+    </TestCase>
+    <TestCase name="android.hardware.cts.helpers.sensorverification.EventBasicVerificationTest">
+      <Test result="pass" name="testVerify" />
+    </TestCase>
+    <TestCase name="android.hardware.cts.helpers.sensorverification.EventGapVerificationTest">
+      <Test result="pass" name="testVerify_correct" />
+      <Test result="pass" name="testVerify_jitter" />
+      <Test result="pass" name="testVerify_missing_events" />
+      <Test result="pass" name="testVerify_no_events" />
+    </TestCase>
+    <TestCase name="android.hardware.cts.helpers.sensorverification.EventOrderingVerificationTest">
+      <Test result="pass" name="testMultipleOutOfOrder" />
+      <Test result="pass" name="testNoEvents" />
+      <Test result="pass" name="testSequentialTimestamp" />
+      <Test result="pass" name="testSingleOutofOrder" />
+    </TestCase>
+    <TestCase name="android.hardware.cts.helpers.sensorverification.FrequencyVerificationTest">
+      <Test result="pass" name="testVerifification" />
+    </TestCase>
+    <TestCase name="android.hardware.cts.helpers.sensorverification.InitialValueVerificationTest">
+      <Test result="pass" name="testVerify" />
+    </TestCase>
+    <TestCase name="android.hardware.cts.helpers.sensorverification.JitterVerificationTest">
+      <Test result="pass" name="testCalculateDelta" />
+      <Test result="pass" name="testVerify" />
+    </TestCase>
+    <TestCase name="android.hardware.cts.helpers.sensorverification.MagnitudeVerificationTest">
+      <Test result="pass" name="testVerify" />
+    </TestCase>
+    <TestCase name="android.hardware.cts.helpers.sensorverification.MeanLargerThanVerificationTest">
+      <Test result="pass" name="testVerify" />
+    </TestCase>
+    <TestCase name="android.hardware.cts.helpers.sensorverification.MeanVerificationTest">
+      <Test result="pass" name="testVerify" />
+    </TestCase>
+    <TestCase name="android.hardware.cts.helpers.sensorverification.OffsetVerificationTest">
+      <Test result="pass" name="testMultipleEventVerify" />
+      <Test result="pass" name="testSingleEventVerify" />
+    </TestCase>
+    <TestCase name="android.hardware.cts.helpers.sensorverification.StandardDeviationVerificationTest">
+      <Test result="pass" name="testVerify" />
+    </TestCase>
+    <TestCase name="android.hardware.cts.helpers.sensorverification.TimestampClockSourceVerificationTest">
+      <Test result="pass" name="testVerify_fail" />
+      <Test result="pass" name="testVerify_jitter_fail" />
+      <Test result="pass" name="testVerify_jitter_pass" />
+      <Test result="pass" name="testVerify_missing_events_fail" />
+      <Test result="pass" name="testVerify_missing_events_pass" />
+      <Test result="pass" name="testVerify_no_events_fail" />
+      <Test result="pass" name="testVerify_pass" />
+    </TestCase>
+  </Module>
+</Result>
