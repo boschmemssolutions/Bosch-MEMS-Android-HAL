@@ -202,26 +202,30 @@ on post-fs
 
 ## 5. Runtime Configuration & Properties
 
-Adapt your vendor property makefiles. Example values:
-```properties
-# SMI230
-persist.vendor.bosch.sensor.smi230.rotation_matrix.config = 1.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0
-persist.vendor.bosch.sensor.smi230.location_vector.config = 0.0,0.0,0.0
-persist.vendor.bosch.sensor.smi230.scan_type.config = drdy
-persist.vendor.bosch.sensor.smi230.acc_range.config = 4
-persist.vendor.bosch.sensor.smi230.gyro_range.config = 2000
+Extend system properties :
 
-# SMI240
-persist.vendor.bosch.sensor.smi240.rotation_matrix.config = 1.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0
-persist.vendor.bosch.sensor.smi240.location_vector.config = 0.0,0.0,0.0
-persist.vendor.bosch.sensor.smi240.scan_type.config = sw_timer
+open $(ANDROID_ROOT)/device/<my device>/device.mk and add the following content
+```plaintext
+PRODUCT_VENDOR_PROPERTIES += \
+    persist.vendor.bosch.sensor.smi230.rotation_matrix.config=1.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0 \
+    persist.vendor.bosch.sensor.smi230.location_vector.config=0.0,0.0,0.0 \
+    persist.vendor.bosch.sensor.smi230.scan_type.config=drdy \
+    persist.vendor.bosch.sensor.smi230.acc_range.config=4 \
+    persist.vendor.bosch.sensor.smi230.gyro_range.config=2000 \
+    persist.vendor.bosch.sensor.smi240.rotation_matrix.config=1.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0 \
+    persist.vendor.bosch.sensor.smi240.location_vector.config=0.0,0.0,0.0 \
+    persist.vendor.bosch.sensor.smi240.scan_type.config=sw_timer \
+    persist.vendor.bosch.sensor.smi330.rotation_matrix.config=1.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0 \
+    persist.vendor.bosch.sensor.smi330.location_vector.config=0.0,0.0,0.0 \
+    persist.vendor.bosch.sensor.smi330.scan_type.config=drdy \
+    persist.vendor.bosch.sensor.smi330.acc_range.config=8 \
+    persist.vendor.bosch.sensor.smi330.gyro_range.config=250
+```
 
-# SMI330
-persist.vendor.bosch.sensor.smi330.rotation_matrix.config = 1.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0
-persist.vendor.bosch.sensor.smi330.location_vector.config = 0.0,0.0,0.0
-persist.vendor.bosch.sensor.smi330.scan_type.config = drdy
-persist.vendor.bosch.sensor.smi330.acc_range.config = 8
-persist.vendor.bosch.sensor.smi330.gyro_range.config = 250
+alternatively use the bosch_sensors.prop
+open $(ANDROID_ROOT)/device/<my device>/device.mk and add the following content
+```plaintext
+TARGET_VENDOR_PROP += $(YOUR_PATH_TO)/bosch_sensors.prop
 ```
 
 > 📝 **Note**: SMI240 does not support configurable range properties as its measurement ranges are hardware-dependent.
